@@ -3,69 +3,69 @@ import React from 'react'
 const SubHeader = () => {
   return (
     <div>
-        <section class="subheader simple-search">
-  <div class="container">
-    <h1>Find your new home today.</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec risus egestas, vestibulum arcu.</p>
+      <section class="subheader simple-search">
+        <div class="container">
+          <h1>Find your new home today.</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec risus egestas, vestibulum arcu.</p>
 
-    <form class="simple-search-form">
-      <div class="tabs">
-        <ul>
-          <li><a href="#tabs-1">All</a></li>
-          <li><a href="#tabs-2">For Sale</a></li>
-          <li><a href="#tabs-3">For Rent</a></li>
-        </ul>
-        <div id="tabs-1" class="ui-tabs-hide">
-          <input type="text" placeholder="Enter an address or city..." />
-          <input type="submit" value="GO" />
-        </div>
-        <div id="tabs-2" class="ui-tabs-hide">
-          <input type="text" placeholder="Enter an address or city..." />
-          <input type="submit" value="GO" />
-        </div>
-        <div id="tabs-3" class="ui-tabs-hide">
-          <input type="text" placeholder="Enter an address or city..." />
-          <input type="submit" value="GO" />
-        </div>
-      </div>
-    </form>
+          <form class="simple-search-form">
+            <div class="tabs">
+              <ul>
+                <li><a href="#tabs-1">All</a></li>
+                <li><a href="#tabs-2">For Sale</a></li>
+                <li><a href="#tabs-3">For Rent</a></li>
+              </ul>
+              <div id="tabs-1" class="ui-tabs-hide">
+                <input type="text" placeholder="Enter an address or city..." />
+                <input type="submit" value="GO" />
+              </div>
+              <div id="tabs-2" class="ui-tabs-hide">
+                <input type="text" placeholder="Enter an address or city..." />
+                <input type="submit" value="GO" />
+              </div>
+              <div id="tabs-3" class="ui-tabs-hide">
+                <input type="text" placeholder="Enter an address or city..." />
+                <input type="submit" value="GO" />
+              </div>
+            </div>
+          </form>
 
-  </div>
-</section>
+        </div>
+      </section>
 
-<section class="module services">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-4">
-        <div class="service-item shadow-hover">
-          <i class="fa fa-home"></i>
-          <h4>Sell Property</h4>
-          <p>Morbi accumsan ipsum velit Nam nec tellus 
-          a odio tincidunt auctor a ornare odio sedlon 
-          maurisvitae erat consequat auctor</p>
+      <section class="module services">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-4">
+              <div class="service-item shadow-hover">
+                <i class="fa fa-home"></i>
+                <h4>Sell Property</h4>
+                <p>Morbi accumsan ipsum velit Nam nec tellus 
+                a odio tincidunt auctor a ornare odio sedlon 
+                maurisvitae erat consequat auctor</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+              <div class="service-item shadow-hover">
+                <i class="fa fa-group"></i>
+                <h4>Expert Agents</h4>
+                <p>Morbi accumsan ipsum velit Nam nec tellus 
+                a odio tincidunt auctor a ornare odio sedlon 
+                maurisvitae erat consequat auctor</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+              <div class="service-item shadow-hover">
+                <i class="fa fa-file-text"></i>
+                <h4>Daily Listings</h4>
+                <p>Morbi accumsan ipsum velit Nam nec tellus 
+                a odio tincidunt auctor a ornare odio sedlon 
+                maurisvitae erat consequat auctor</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-4">
-        <div class="service-item shadow-hover">
-          <i class="fa fa-group"></i>
-          <h4>Expert Agents</h4>
-          <p>Morbi accumsan ipsum velit Nam nec tellus 
-          a odio tincidunt auctor a ornare odio sedlon 
-          maurisvitae erat consequat auctor</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-4">
-        <div class="service-item shadow-hover">
-          <i class="fa fa-file-text"></i>
-          <h4>Daily Listings</h4>
-          <p>Morbi accumsan ipsum velit Nam nec tellus 
-          a odio tincidunt auctor a ornare odio sedlon 
-          maurisvitae erat consequat auctor</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
 {/* =============================================================== */}
 

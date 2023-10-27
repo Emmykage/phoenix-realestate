@@ -15,21 +15,21 @@ const Properties = () => {
   <div class="container">
   
 	<div class="property-listing-header">
-		<span class="property-count left">8 properties found</span>
-		<form action="#" method="get" class="right">
-			<select name="sort_by" onchange="this.form.submit();">
-				<option value="date_desc">New to Old</option>
-				<option value="date_asc">Old to New</option>
-				<option value="price_desc">Price (High to Low)</option>
-				<option value="price_asc">Price (Low to High)</option>
-			</select>
-		</form>
-		<div class="property-layout-toggle right">
-			<a href="property-listing-grid.html" class="property-layout-toggle-item active"><i class="fa fa-th-large"></i></a>
-			<a href="property-listing-row.html" class="property-layout-toggle-item"><i class="fa fa-bars"></i></a>
-		</div>
-		<div class="clear"></div>
-	</div>
+    <span class="property-count left">8 properties found</span>
+      <form action="#" method="get" class="right">
+        <select name="sort_by" onchange="this.form.submit();">
+          <option value="date_desc">New to Old</option>
+          <option value="date_asc">Old to New</option>
+          <option value="price_desc">Price (High to Low)</option>
+          <option value="price_asc">Price (Low to High)</option>
+        </select>
+      </form>
+      <div class="property-layout-toggle right">
+        <a href="property-listing-grid.html" class="property-layout-toggle-item active"><i class="fa fa-th-large"></i></a>
+        <a href="property-listing-row.html" class="property-layout-toggle-item"><i class="fa fa-bars"></i></a>
+      </div>
+      <div class="clear"></div>
+	  </div>
     
     <div class="row">
         <div class="col-lg-4 col-md-4">
