@@ -402,8 +402,14 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 	height:auto;
 	min-height:83px;
 	padding-left:0px;
+	width: 150px;
+	height: 150px;
 }
-.navbar-brand img { max-width:100%; }
+.navbar-brand img { 
+	max-width:100%;
+	
+	
+ }
 
 /* MENU TOGGLE */
 .navbar-toggle { 
