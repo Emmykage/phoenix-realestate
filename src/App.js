@@ -7,16 +7,19 @@ import { Route, Routes } from 'react-router-dom';
 import About from './pages/About';
 import Login from './pages/auth/Login';
 import FAQ from './pages/FAQ';
+import Dashboard from './pages/Dashboard';
+import MainLayout from './layouts/MainLayout';
 
 function App() {
   return (
     <div className="App">
-      <Nav/>
+
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/properties" element={<Properties/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/faq' element={<FAQ/>}/>
+        <Route path="/" element={<MainLayout><Home/></MainLayout>}/>
+        <Route path="/properties" element={<MainLayout><Properties/></MainLayout>}/>
+        <Route path='/about' element={<MainLayout><About/></MainLayout>}/>
+        <Route path='/faq' element={<MainLayout><FAQ/></MainLayout>}/>
+        <Route path='/dashboard' element={<Dashboard/>}/>
 
         <Route path='auth'>
           <Route path='login' element={<Login/>}/>   

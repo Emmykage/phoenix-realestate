@@ -1805,3 +1805,85 @@ footer .divider { background:rgba(255, 255, 255, 0.1); }
 	position:relative;
 	z-index:10;
 }
+
+/* 
+================================================================
+		Dashboard
+================================================================= */
+
+.dashboard{
+	position: relative;
+	display: flex;
+	height: 100vh;
+	background-color: white;
+}
+
+.dashboard .main-content{
+	flex: 1;
+}
+.dashboard aside{
+	max-width: 300px;
+	width: 100%;
+	height: 100%;
+	padding: 1rem;
+	/* background-color: blue; */
+	border: 1px solid gray;
+}
+.dashboard aside ul{
+	margin-top: 3rem;
+	/* background-color: red; */
+	background: white;
+}
+.dashboard aside ul li{
+
+	padding: 1rem;
+	border-bottom: 1px solid gray;
+
+}
+.dashboard .logo{
+	margin-top: 3rem;
+}
+.dashboard aside .nav-list{
+	margin-top: 6rem;
+}
+.dashboard .grid{
+	display: grid;
+	padding: 2rem;
+}
+.grid-3{
+	grid-template-columns: 1fr 1fr 1fr;
+
+
+}
+.grid-2{
+	grid-template-columns: 1fr 1fr;
+
+
+}
+.form-card{
+	padding: 1rem;
+	border-radius: 0.6rem;
+}
+.gap-1{
+gap: 1%;
+}
+.gap-2{
+	gap: 2%;
+	}
+.dashboard .grid > div{
+	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+	/* display: flex; */
+}
+.dashboard .top-details{
+	width: 100%;
+	min-height: 300px;
+	padding: 30px 10px ;
+	border: 1px solid gray;
+
+}
+.dashboard .cards .card{
+	padding: 1rem;
+}
+.bg-green{
+	background-color: green !important;
+}
