@@ -9,6 +9,12 @@ import Login from './pages/auth/Login';
 import FAQ from './pages/FAQ';
 import Dashboard from './pages/Dashboard';
 import MainLayout from './layouts/MainLayout';
+import Wallet from './components/dashboard/Wallet';
+import Account from './components/dashboard/Account';
+import References from './components/dashboard/References';
+import Main from './components/dashboard/Main';
+import Portfolios from './components/dashboard/Portfolios';
+import Bonus from './components/dashboard/Bonus';
 
 function App() {
   return (
@@ -19,7 +25,15 @@ function App() {
         <Route path="/properties" element={<MainLayout><Properties/></MainLayout>}/>
         <Route path='/about' element={<MainLayout><About/></MainLayout>}/>
         <Route path='/faq' element={<MainLayout><FAQ/></MainLayout>}/>
-        <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/dashboard' element={<Dashboard/>}>
+          <Route path='wallet' element={<Main/>} >
+          <Route path='wallet' element={<Main/>}/>
+          <Route path='portfolios' element={<Portfolios/>}/>
+          <Route path='bonuses' element={<Bonus/>}/>
+          </Route>
+          <Route path='account' element={<Account/>} />
+          <Route path='reference' element={<References/>} />          
+        </Route>
 
         <Route path='auth'>
           <Route path='login' element={<Login/>}/>   

@@ -1887,3 +1887,35 @@ gap: 1%;
 .bg-green{
 	background-color: green !important;
 }
+.border{
+	border: 1px solid gray
+}
+.modal-container{
+	position: absolute;
+	left: 0;
+	height: 100vh;
+	top: 0;
+	width: 100%;
+	opacity: 0;
+	pointer-events: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.5);
+}
+.modal-container.show-modal{
+	opacity: 1;
+	pointer-events: all;
+}
+
+.modal-info{
+	width: 50%;
+	height: 300px;
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 0 22px rgba(0, 0, 0, 0.5) ;
+}
+.modal-info .close-icon{
+	padding-right: 1rem ;
+	padding-top: 1rem;
+}
