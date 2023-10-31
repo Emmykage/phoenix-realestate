@@ -15,6 +15,7 @@ import References from './components/dashboard/References';
 import Main from './components/dashboard/Main';
 import Portfolios from './components/dashboard/Portfolios';
 import Bonus from './components/dashboard/Bonus';
+import Transaction from './components/dashboard/Transaction';
 
 function App() {
   return (
@@ -27,9 +28,9 @@ function App() {
         <Route path='/faq' element={<MainLayout><FAQ/></MainLayout>}/>
         <Route path='/dashboard' element={<Dashboard/>}>
           <Route path='wallet' element={<Main/>} >
-          <Route path='wallet' element={<Main/>}/>
-          <Route path='portfolios' element={<Portfolios/>}/>
-          <Route path='bonuses' element={<Bonus/>}/>
+            <Route path='wallet' element={<Transaction/>}/>
+            <Route path='portfolios' element={<Portfolios/>}/>
+            <Route path='bonuses' element={<Bonus/>}/>
           </Route>
           <Route path='account' element={<Account/>} />
           <Route path='reference' element={<References/>} />          

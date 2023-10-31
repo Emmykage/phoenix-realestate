@@ -1919,3 +1919,13 @@ gap: 1%;
 	padding-right: 1rem ;
 	padding-top: 1rem;
 }
+
+.bg-red{
+	background-color: red;
+}
+.bg-yellow{
+	background-color: yellow;
+}
+.bg-blue{
+	background-color: blue;
+}
