@@ -16,7 +16,7 @@ import Main from './components/dashboard/Main';
 import Portfolios from './components/dashboard/Portfolios';
 import Bonus from './components/dashboard/Bonus';
 import Transaction from './components/dashboard/Transaction';
-
+import AHome from './pages/Admin/AdminHome';
 function App() {
   return (
     <div className="App">
@@ -42,9 +42,12 @@ function App() {
 
 
         </Route>
+        <Route path={"admin"} >
+          <Route path='dashoard' element={<AHome/>}/>
+
+        </Route>
       </Routes>
 
-      <Footer/>
     </div>
   );
 }

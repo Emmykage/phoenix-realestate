@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const Aside = () => {
   return (
-        <aside className='pt-8  text-left'>
+        <aside className='box-shadow pt-8  text-left'>
           <div className='logo'>
             <h3>PhoenixHomes</h3>
           </div>
