@@ -13,8 +13,8 @@ const AdminLayout = ({ children }) => {
   const { user, loading, error } = useSelector((state) => state.user);
   const navigation = useNavigate()
   useEffect(() => {
-    dispatch(getUser());
-    dispatch(userLog())
+    // dispatch(getUser());
+    // dispatch(userLog())
   }, []);
   if (loading) {
     return (<Loader />);
@@ -26,11 +26,11 @@ const AdminLayout = ({ children }) => {
       {' '}
     </div>;
   }
-  if(user == null){
-    (navigation('/auth/admin_login '))
-  }else{
+  // if(user == null){
+  //   (navigation('/auth/admin_login '))
+  // }else{
 
-    user.role === "admin" && <h1 className='text-gray'>You are not Authorized to view this page</h1>
+    // user.role === "admin" && <h1 className='text-gray'>You are not Authorized to view this page</h1>
 
   return (
     <div className="admin container">
@@ -43,7 +43,7 @@ const AdminLayout = ({ children }) => {
 
     </div>
   );
-};
+// };
     
 }
 

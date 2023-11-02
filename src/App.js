@@ -1,15 +1,12 @@
 import './App.css';
 import Home from './pages/Home';
-import Footer from './components/Footer';
 import Properties from './pages/Properties';
-import Nav from './components/Nav';
 import { Route, Routes } from 'react-router-dom';
 import About from './pages/About';
 import Login from './pages/auth/Login';
 import FAQ from './pages/FAQ';
 import Dashboard from './pages/Dashboard';
 import MainLayout from './layouts/MainLayout';
-import Wallet from './components/dashboard/Wallet';
 import Account from './components/dashboard/Account';
 import References from './components/dashboard/References';
 import Main from './components/dashboard/Main';
@@ -17,6 +14,7 @@ import Portfolios from './components/dashboard/Portfolios';
 import Bonus from './components/dashboard/Bonus';
 import Transaction from './components/dashboard/Transaction';
 import AHome from './pages/Admin/AdminHome';
+import AdminLayout from './layouts/AdminLayout';
 function App() {
   return (
     <div className="App">
@@ -42,8 +40,8 @@ function App() {
 
 
         </Route>
-        <Route path={"admin"} >
-          <Route path='dashoard' element={<AHome/>}/>
+        <Route path={"/admin"}>
+          <Route path='dashboard' element={<AdminLayout><AHome/></AdminLayout>}/>
 
         </Route>
       </Routes>

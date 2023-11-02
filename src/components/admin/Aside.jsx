@@ -8,7 +8,7 @@ import { GiReceiveMoney } from 'react-icons/gi';
 import { IoAnalyticsSharp, IoAddSharp } from 'react-icons/io5';
 import { RiMessageLine } from 'react-icons/ri';
 import { FiSettings } from 'react-icons/fi';
-import LOGO from '../../assets/image/logo.png';
+import LOGO from '../../assets/images/logo1.jpg';
 
 const Aside = () => {
   const activeLink = 'active';

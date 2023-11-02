@@ -4,7 +4,7 @@ import { BsFillMoonFill } from 'react-icons/bs';
 import { TfiShine } from 'react-icons/tfi';
 
 import { NavLink } from 'react-router-dom';
-import img from '../../assets/user/no-profile-picture-icon-14.jpg';
+import img from '../../assets/users/profile_pic.jpg';
 
 const Right = () => (
   <div className="right">
