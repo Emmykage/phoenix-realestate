@@ -17,6 +17,7 @@ import AHome from './pages/Admin/AdminHome';
 import AdminLayout from './layouts/AdminLayout';
 import AdminLogin from './pages/auth/AdminLogin';
 import AdminRegister from './pages/auth/AdminRegister';
+import Register from './pages/auth/Register';
 function App() {
   return (
     <div className="App">

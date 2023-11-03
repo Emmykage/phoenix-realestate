@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Register = () => {
   return (
@@ -7,7 +8,7 @@ const Register = () => {
 <section class="subheader">
   <div class="container">
     <h1>Register</h1>
-    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">Register</a></div>
+    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <NavLink to="#" class="current">Register</NavLink></div>
     <div class="clear"></div>
   </div>
 </section>
@@ -17,7 +18,7 @@ const Register = () => {
 
     <div class="row">
       <div class="col-lg-4 col-lg-offset-4"> 
-        <p>Already have an account? <strong><a href="login.html">Login here.</a></strong></p> 
+        <p>Already have an account? <strong><NavLink to="login.html">Login here.</NavLink></strong></p> 
             <form method="post" class="login-form">
             <div class="form-block">
                 <label>Name</label>

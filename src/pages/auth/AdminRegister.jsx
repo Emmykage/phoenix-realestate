@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const AdminRegister = () => {
   const [formInput, setFormInput] = useState({first_name: "", last_name: "", email: "", password: "", role: "admin"})
-  const handleInput = () => {
-
+  const handleInput = (e) => {
+    setFormInput({
+      ...formInput,
+      [e.target.name]: e.target.value
+    })
   }
   return (
     <div>
