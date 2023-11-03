@@ -15,6 +15,8 @@ import Bonus from './components/dashboard/Bonus';
 import Transaction from './components/dashboard/Transaction';
 import AHome from './pages/Admin/AdminHome';
 import AdminLayout from './layouts/AdminLayout';
+import AdminLogin from './pages/auth/AdminLogin';
+import AdminRegister from './pages/auth/AdminRegister';
 function App() {
   return (
     <div className="App">
@@ -36,7 +38,9 @@ function App() {
 
         <Route path='auth'>
           <Route path='login' element={<Login/>}/>   
-          <Route path='register' element={<Login/>}/>   
+          <Route path='register' element={<Register/>}/>   
+          <Route path='login' element={<AdminLogin/>}/>   
+          <Route path='register' element={<AdminRegister/>}/>   
 
 
         </Route>
