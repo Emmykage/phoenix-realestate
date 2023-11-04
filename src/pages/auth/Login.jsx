@@ -9,14 +9,14 @@ const Login = () => {
     const {user} = useSelector(state => state.user)
     const [formInput, setFormInput] = useState({email: "", password: ""})
 
-    const handleInputChange = ()=> {
+    const handleInputChange = (e)=> {
         setFormInput({
             ...formInput,
             [e.target.name]: e.target.value
         })
     }
 
-    const handleFormSubmit = () => {
+    const handleFormSubmit = (e) => {
         e.preventDefault()
         dispatch(userSession())
     }
