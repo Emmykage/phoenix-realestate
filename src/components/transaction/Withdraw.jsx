@@ -24,7 +24,7 @@ const Withdraw = ({toggleModal, setToggleModal}) => {
                 <label className='block m-1'>Select Coin to receive payment</label> 
                 <div className=''>
                
-                <select name='coin_type' className='border bg-green' value={withdraw.coin_type} onChange={handleWithdrawalInput} required>
+                <select name='coin_type' className='border' value={withdraw.coin_type} onChange={handleWithdrawalInput} required>
                     <option className='border' value="USD THETHER" selected>USD THETHER</option>
                     <option value="BITCOIN">BITCOIN</option>
                     <option value="ETHERUM">ETHERUM (ERC-20)</option>

@@ -1,6 +1,4 @@
 :root {
-  /* --color-theme: rgba(92, 64, 101); */
-
   --color-primary: #7380ec;
   --color-danger: #ff7782;
   --color-success: #41f1b6;
@@ -38,7 +36,6 @@
 }
 
 aside {
-  /* background-color: green; */
   height: 100vh;
 }
 
@@ -113,7 +110,6 @@ aside {
 }
 
 aside .top {
-  /* background-color: grey; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -136,7 +132,6 @@ aside .close {
 }
 
 aside .side-bar {
-  /* background-color: white; */
   display: flex;
   flex-direction: column;
   height: 86vh;
@@ -159,8 +154,6 @@ aside .side-bar a {
 aside .side-bar a.active {
   background: var(--color-light);
   color: var(--color-primary);
-
-  /* background: #7380ec; */
 }
 
 aside .side-bar a span {
@@ -280,12 +273,9 @@ main .insights .progress {
   width: 92px;
   height: 92px;
   border-radius: 50%;
-
-  /* background-color: red; */
 }
 
 main .insights .progress svg {
-  /* background: green; */
   width: 7rem;
   height: 7rem;
 }
@@ -300,10 +290,7 @@ main .insights .progress circle {
   stroke-dashoffset: 92;
 }
 
-/* main .insights .sales .progress svg circle{
-    stroke-dashoffset: -30;
-    stroke-dasharray: 260;
-  } */
+
 main .insights .sales .progress svg circle {
   stroke-dashoffset: 30;
   stroke-dasharray: 80;
@@ -371,7 +358,7 @@ main .recent-orders a {
   color: var(--color-primary);
 }
 
-.right {
+.admin .right {
   margin-top: 1.4rem;
 }
 
@@ -379,10 +366,6 @@ main .recent-orders a {
   display: flex;
   justify-content: flex-end;
   gap: 2rem;
-
-  /* background-color: rgb(158, 158, 158); */
-
-  /* background-color: white; */
 }
 
 .right .top .theme-toggler {
@@ -497,8 +480,6 @@ main .recent-orders a {
 
 .right .sales-analytics .add-product {
   background: var(--color-success);
-
-  /* border: 2px ; */
   border: 2px dashed var(--color-primary);
   color: var(--color-primary);
   display: flex;
@@ -595,9 +576,6 @@ main .recent-orders a {
     grid-template-columns: 7rem auto 23rem;
   }
 
-  /* aside{
-      position: fixed;
-    } */
   aside .logo h2 {
     display: none;
   }
@@ -614,7 +592,6 @@ main .recent-orders a {
     position: relative;
     margin-top: 1.8rem;
 
-    /* background-color: blue; */
   }
 
   main .insights {
@@ -706,7 +683,7 @@ main .recent-orders a {
     margin: 0;
   }
 
-  .right {
+  .admin .right {
     width: 94%;
     margin: 0 auto 4rem;
   }

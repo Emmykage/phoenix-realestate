@@ -94,7 +94,7 @@ const Nav = () => {
             <li class="menu-item-has-childre">
               <NavLink to="properties">Properties</NavLink>
             </li>
-            <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+            <li><NavLink to="/dashboard/wallet">Dashboard</NavLink></li>
 
             <li><NavLink to="/about">About</NavLink></li>
             
