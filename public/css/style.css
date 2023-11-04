@@ -1815,7 +1815,7 @@ footer .divider { background:rgba(255, 255, 255, 0.1); }
 	position: relative;
 	display: flex;
 	height: 100vh;
-	background-color: white;
+	background-color: white
 }
 
 .dashboard .main-content{

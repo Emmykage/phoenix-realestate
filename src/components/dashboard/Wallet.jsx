@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import Withdraw from '../transaction/Withdraw'
-import Deposit from '../transaction/Deposite'
+
 import { NavLink, Outlet } from 'react-router-dom'
 
-const Wallet = ({toggleModal, setToggleModal}) => {
+const Wallet = () => {
 
   return (
     <>
@@ -14,10 +13,10 @@ const Wallet = ({toggleModal, setToggleModal}) => {
               <NavLink to={'/dashboard/wallet/wallet'}>Wallet</NavLink>
             </div>
             <div className='card'><p>Portfolios</p>
-              <h2>$119.0</h2>
+              <h2>$00.0</h2>
               <NavLink to={'/dashboard/wallet/portfolios'}>View</NavLink></div>
             <div className='card'><p>Bonus</p>
-              <h2>$119.0</h2>
+              <h2>$00.0</h2>
               <NavLink to={'/dashboard/wallet/bonuses'} className='text-bold'>View</NavLink></div>
 
         </div>

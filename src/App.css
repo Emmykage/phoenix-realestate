@@ -1,9 +1,16 @@
-/* .portfolios{
+.App{
 
 }
-.portfolio .portfolio-img{
 
-} */
+aside .dash-logo{
+  /* background-color: blue; */
+  width: 100%;
+  height: 100px;
+  margin-top: 2rem;
+}
+aside .dash-logo img{
+  height: 100%;
+}
 .portfolios img{
   width: 100%;
 }
@@ -52,6 +59,12 @@
 }
 .w-3-4{
   max-width: 1500px;
+}
+.m-h-300{
+  min-height: 300px;
+}
+.w-full{
+  width: 100%;
 }
 
 .box-shadow{
