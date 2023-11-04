@@ -22,7 +22,6 @@ import UserLayout from './layouts/UserLayout';
 function App() {
   return (
     <div className="App">
-
       <Routes>
         <Route path="/" element={<MainLayout><Home/></MainLayout>}/>
         <Route path="/properties" element={<MainLayout><Properties/></MainLayout>}/>
@@ -39,7 +38,7 @@ function App() {
         </Route>
 
         <Route path='auth'>
-          <Route path='login' element={<Login/>}/>   
+          <Route path='login' element={<Login/>}/>  
           <Route path='register' element={<Register/>}/>   
           <Route path='login' element={<AdminLogin/>}/>   
           <Route path='register' element={<AdminRegister/>}/>   
