@@ -18,7 +18,7 @@ import AdminLayout from './layouts/AdminLayout';
 import AdminLogin from './pages/auth/AdminLogin';
 import AdminRegister from './pages/auth/AdminRegister';
 import Register from './pages/auth/Register';
-import UserLayout from './layouts/UserLayout';
+import UserLayout from './layouts/UserLayouts';
 // import UserLayout from './layouts/UserLayout';
 function App() {
   return (
