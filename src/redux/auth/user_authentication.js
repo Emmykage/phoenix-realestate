@@ -15,7 +15,7 @@ const userSlice = createSlice({
   reducers: {
     userLog: (state) => {
       try {
-        const auth = localStorage.getItem('edge_auth');
+        const auth = localStorage.getItem('phoenix_auth');
         return {
           ...state,
           user: JSON.parse(auth),
@@ -34,7 +34,7 @@ const userSlice = createSlice({
       const response = action.payload;
       if (response.user) {
         const collect = JSON.stringify(response);
-        localStorage.setItem('edge_auth', collect);
+        localStorage.setItem('phoenix_auth', collect);
 
         return {
 
@@ -77,7 +77,7 @@ const userSlice = createSlice({
       const response = action.payload;
       if (response.user) {
         const collect = JSON.stringify(response);
-        localStorage.setItem('edge_auth', collect);
+        localStorage.setItem('phoenix_auth', collect);
         return {
 
           ...state,

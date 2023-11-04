@@ -1,7 +1,39 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { registerUser } from '../../redux/actions/auth'
 
 const Register = () => {
+  const navigation = useNavigate()
+  const dispatch = useDispatch()
+  const {user} = useSelector(state => state.user)
+  const [formInput, setFormInput] = useState({first_name: "", last_name: "", email: "", password: "", role: "client", confirm_password: "", completed: false})
+
+  const handleInputChange = (e) => {
+    if (e.target.name === "completed"){
+      setFormInput({
+        ...formInput,
+        [e.target.name]: e.target.checked
+      })
+    }else{
+    setFormInput({
+      ...formInput,
+      [e.target.name]: e.target.value
+    })
+  }
+    console.log(formInput)
+  }
+  const handleFormSubmit = (e) => {
+    e.preventDefault()
+    dispatch(registerUser(formInput))
+    console.log(formInput)
+
+
+    
+    
+  }
+  if(user == null || user == undefined){
+
   return (
     <div>
         
@@ -18,24 +50,33 @@ const Register = () => {
 
     <div class="row">
       <div class="col-lg-4 col-lg-offset-4"> 
-        <p>Already have an account? <strong><NavLink to="login.html">Login here.</NavLink></strong></p> 
-            <form method="post" class="login-form">
+        <p>Already have an account? <strong><NavLink to="/auth/login">Login here.</NavLink></strong></p> 
+            <form onSubmit={handleFormSubmit} class="login-form">
             <div class="form-block">
-                <label>Name</label>
-                <input class="border" type="text" name="name" />
+                <label>First Name</label>
+                <input class="border" type="text" name="first_name" onChange={handleInputChange} />
+            </div>
+            <div class="form-block">
+                <label>Last Name</label>
+                <input class="border" type="text" name="last_name" onChange={handleInputChange}/>
             </div>
             <div class="form-block">
                 <label>Email</label>
-                <input class="border" type="text" name="email" />
+                <input class="border" type="text" name="email" onChange={handleInputChange}/>
             </div>
             <div class="form-block">
                 <label>Password</label>
-                <input class="border" type="password" name="pass" />
+                <input class="border" type="password" name="password" onChange={handleInputChange}/>
             </div>
             <div class="form-block">
                 <label>Confirm Password</label>
-                <input class="border" type="password" name="pass-confirm" />
+                <input class="border" type="password" name="confirm_password" onChange={handleInputChange} />
             </div>
+            <div class="form-block">
+                <label>check</label>
+                <input class="border" type="checkbox" name="completed"  checked={formInput.completed} onChange={handleInputChange} />
+            </div>
+            
             <div class="form-block">
                 <button class="button button-icon" type="submit"><i class="fa fa-angle-right"></i>Register</button>
             </div>
@@ -65,7 +106,11 @@ const Register = () => {
   </div>
 </section>
     </div>
-  )
+  )  
+}else{
+  navigation('/dashboard/wallet/wallet')
+}
+
 }
 
 export default Register

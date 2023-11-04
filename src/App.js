@@ -18,6 +18,7 @@ import AdminLayout from './layouts/AdminLayout';
 import AdminLogin from './pages/auth/AdminLogin';
 import AdminRegister from './pages/auth/AdminRegister';
 import Register from './pages/auth/Register';
+import UserLayout from './layouts/UserLayout'
 function App() {
   return (
     <div className="App">
@@ -27,7 +28,7 @@ function App() {
         <Route path="/properties" element={<MainLayout><Properties/></MainLayout>}/>
         <Route path='/about' element={<MainLayout><About/></MainLayout>}/>
         <Route path='/faq' element={<MainLayout><FAQ/></MainLayout>}/>
-        <Route path='/dashboard' element={<Dashboard/>}>
+        <Route path='/dashboard' element={<UserLayout><Dashboard/></UserLayout> }>
           <Route path='wallet' element={<Main/>} >
             <Route path='wallet' element={<Transaction/>}/>
             <Route path='portfolios' element={<Portfolios/>}/>
