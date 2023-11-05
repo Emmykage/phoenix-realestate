@@ -20,6 +20,13 @@ import AdminRegister from './pages/auth/AdminRegister';
 import Register from './pages/auth/Register';
 import UserLayout from './layouts/UserLayouts';
 import Assets from './pages/Admin/assets/Assets';
+import Clients from './pages/Admin/clients/Clients';
+import Orders from './pages/Admin/orders/Orders';
+import Analytics from './pages/Admin/analytics/Analytics';
+import AlertMessages from './pages/Admin/messages/AlertMessages';
+import Reports from './pages/Admin/reports/Reports';
+import Settings from './pages/Admin/settings/Settings';
+import AddAsset from './pages/Admin/assets/AddAsset';
 function App() {
   return (
     <div className="App">
@@ -49,8 +56,13 @@ function App() {
         <Route path={"/admin"}>
         <Route path='dashboard' element={<AdminLayout><AHome/></AdminLayout>}/>
         <Route path='assets' element={<AdminLayout><Assets/></AdminLayout>}/>
-        <Route path='dashboard' element={<AdminLayout><AHome/></AdminLayout>}/>
-        <Route path='dashboard' element={<AdminLayout><AHome/></AdminLayout>}/>
+        <Route path='clients' element={<AdminLayout><Clients/></AdminLayout>}/>
+        <Route path='orders' element={<AdminLayout><Orders/></AdminLayout>}/>
+        <Route path='analytics' element={<AdminLayout><Analytics/></AdminLayout>}/>
+        <Route path='messages' element={<AdminLayout><AlertMessages/></AdminLayout>}/>
+        <Route path='reports' element={<AdminLayout><Reports/></AdminLayout>}/>
+        <Route path='settings' element={<AdminLayout><Settings/></AdminLayout>}/>
+        <Route path='add_asset' element={<AdminLayout><AddAsset/></AdminLayout>}/>
 
         </Route>
       </Routes>

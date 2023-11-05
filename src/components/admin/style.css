@@ -120,11 +120,11 @@ aside .logo {
   display: flex;
   gap: 0.8rem;
   align-items: center;
+  height: 150px;
 }
 
 aside .logo img {
-  width: 2rem;
-  height: 2rem;
+  width: 100%;
 }
 
 aside .close {
