@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import baseUrl from '../baseURL';
 
-const token = () => JSON.parse(localStorage.getItem('edge_auth')).token;
+const token = () => JSON.parse(localStorage.getItem('phoenix_auth')).token;
 const listUsers = createAsyncThunk('user/get_clients', async () => {
   const response = await fetch(`${baseUrl}users`, {
     method: 'GET',

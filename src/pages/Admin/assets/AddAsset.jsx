@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createAsset } from '../../../redux/actions/assets';
-// import { createAsset } from '../../../redux/actions/assets'
 
 const AddAsset = () => {
   const [toggleForm, setToggleForm] = useState('false');

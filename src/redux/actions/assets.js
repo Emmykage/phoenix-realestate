@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import baseUrl from '../url';
+import baseUrl from '../baseURL';
+
 
 const token = () => JSON.parse(localStorage.getItem('phoenix_auth')).token;
 
