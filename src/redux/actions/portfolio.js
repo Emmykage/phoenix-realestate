@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import baseUrl from '../baseURL';
 
 
-const token = () => JSON.parse(localStorage.getItem('edge_auth')).token;
+const token = () => JSON.parse(localStorage.getItem('phoenix_auth')).token;
 
 const createPortfolio = createAsyncThunk('portfolio/create_portfolios', async (data) => {
   const response = await fetch(`${baseUrl}portfolios`, {

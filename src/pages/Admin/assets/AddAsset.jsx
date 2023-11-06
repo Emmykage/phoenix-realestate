@@ -6,7 +6,7 @@ const AddAsset = () => {
   const [toggleForm, setToggleForm] = useState('false');
   const dispatch = useDispatch();
   const [assetForm, setAssetForm] = useState({
-    asset_name: '', minimum_investment: null, term: '', asset_type: 'other', title: '', description: '', share_in_excess: '', annual_mangt_fee: '', annual_flat_expense: '', overview_description: '', overview_note: '',
+    name: '', address: "", tenure: '', asset_type: 'other', area: '', number_of_bedrooms: '', number_of_bathrooms: '', status: ''
   });
 
   const handleInput = (e) => {
@@ -24,43 +24,24 @@ const AddAsset = () => {
     <div className="assets-forms">
       <div className="asset-div border">
 
-        <span onClick={() => setToggleForm(!toggleForm)}>Add Asset</span>
+        <span onClick={() => setToggleForm(!toggleForm)}>Add Property</span>
         <form onSubmit={handleSubmit} className={toggleForm && 'hide-form'}>
+          
           <div>
-            <label>Asset Type</label>
-            <select
-              name="asset_type"
-              onChange={handleInput}
-            >
-              <option value="other"> other</option>
-              <option value="art">Art</option>
-              <option value="Real Estate">Real Estate</option>
-              <option value="venture_capital">Venture Capital</option>
-              <option value="private equity">Private Equity</option>
-              <option value="private_credit">Private Credit Estate</option>
-              <option value="crypto">Crypto</option>
-              <option value="short_term_note">Short Term Note</option>
-              <option value="legal">Legal</option>
-              <option value="transportation">Transportation</option>
-            </select>
-
+            <label>Property Title</label>
+            <input type="text" id="name" name="name" value={assetForm.name} onChange={handleInput} />
           </div>
           <div>
-            <label>Asset</label>
-            <input type="text" id="asset_name" name="asset_name" value={assetForm.asset_name} onChange={handleInput} />
-          </div>
-          <div>
-            <label>Min. Investment</label>
-            <input type="text" id="minimum_investment" name="minimum_investment" value={assetForm.minimum_investment} onChange={handleInput} />
+            <label>Address</label>
+            <input type="text" id="address" name="address" value={assetForm.address} onChange={handleInput} />
           </div>
 
           <div>
-            <label>Payment Schedule</label>
-            {/* <input type="text" name="payment_schedule" value={assetForm.payment_schedule} onChange={handleInput} /> */}
+            <label>Tenure</label>
             <select
-              name="payment_schedule"
-              id="payment_schedule"
-              value={assetForm.payment_schedule}
+              name="tenure"
+              id="tenure"
+              value={assetForm.tenure}
               onChange={handleInput}
             >
               <option value="event Based">Event based </option>
@@ -71,49 +52,47 @@ const AddAsset = () => {
 
             </select>
           </div>
+          <div>
+            <label>Sale Type</label>
+            <select
+              name="sale_type"
+              id="sale_type"
+              value={assetForm.sale_type}
+              onChange={handleInput}
+            >
+              <option value="event Based">Rent </option>
+              <option value="monthly">Sale </option>
+            </select>
+          </div>
           <h3>Details</h3>
           <div>
             {' '}
-            <labal>Title</labal>
-            <input type="text" name="title" value={assetForm.title} onChange={handleInput} />
+            <labal>Area</labal>
+            <input type="text" name="area" value={assetForm.area} onChange={handleInput} />
           </div>
           <div>
             {' '}
-            <labal>Description</labal>
-            <input type="text" name="description" value={assetForm.description} onChange={handleInput} />
+            <labal>Number of Bedrooms</labal>
+            <input type="number" name="number_of_bedrooms" value={assetForm.number_of_bedrooms} onChange={handleInput} />
+          </div>
+          <div>
+            {' '}
+            <labal>Number of Bathrooms</labal>
+            <input type="number" name="number_of_bathrooms" value={assetForm.number_of_bathrooms} onChange={handleInput} />
           </div>
           <h4>Return & Management fees</h4>
           <div>
             {' '}
-            <labal>Annual Management fee</labal>
-            <input type="number" name="annual_mangt_fee" value={assetForm.annual_mangt_fee} onChange={handleInput} />
+            <labal>status</labal>
+            <input type="text" name="status" value={assetForm.status} onChange={handleInput} />
           </div>
           <div>
             {' '}
-            <labal>Share In Excess Profit</labal>
-            <input type="number" name="share_in_excess" value={assetForm.share_in_excess} onChange={handleInput} />
+            <labal>image</labal>
+            <input type="text" name="images" value={assetForm.images} onChange={handleInput} />
           </div>
 
-          <h4>Schedule</h4>
-          <div>
-            <label>Term</label>
-            <input type="text" name="term" id="term" value={assetForm.term} onChange={handleInput} />
-          </div>
-          <h4>Structure</h4>
-          <div>
-            <label>Annual Flat Expense</label>
-            <input type="number" name="annual_flat_expense" id="term" value={assetForm.annual_flat_expense} onChange={handleInput} />
-          </div>
-
-          <h3>Overview</h3>
-          <div>
-            <label>Description</label>
-            <textarea onChange={handleInput} name="overview_description" id="" cols="30" rows="10" value={assetForm.overview_description} />
-          </div>
-          <div>
-            <label>Overview note</label>
-            <textarea onChange={handleInput} name="overview_note" id="" cols="30" rows="10" value={assetForm.overview_note} />
-          </div>
+         
 
           <button className="btn" type="submit"> create assets</button>
         </form>

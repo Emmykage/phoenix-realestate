@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { userSession } from '../../redux/actions/auth'
+import { userLog } from '../../redux/auth/user_authentication'
 
 const Login = () => {
     const navigation = useNavigate()
     const dispatch = useDispatch()
     const {user} = useSelector(state => state.user)
     const [formInput, setFormInput] = useState({email: "", password: ""})
-
+    useEffect(()=> {
+        dispatch(userLog())
+    },[])
     const handleInputChange = (e)=> {
         setFormInput({
             ...formInput,
@@ -18,7 +21,7 @@ const Login = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
-        dispatch(userSession())
+        dispatch(userSession({user: formInput}))
     }
     if(user ==  null || user == undefined){
 

@@ -14,7 +14,7 @@ const registerUser = createAsyncThunk('user/register', async (data) => {
   return response;
 });
 const userSession = createAsyncThunk('user/session', async (data) => {
-  const response = await fetch(`${baseUrl}login`, {
+  const response = await fetch(`${baseUrl}users/login`, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
@@ -22,6 +22,7 @@ const userSession = createAsyncThunk('user/session', async (data) => {
     },
     body: JSON.stringify(data),
   }).then((res) => res.json());
+
   return response;
 });
 
