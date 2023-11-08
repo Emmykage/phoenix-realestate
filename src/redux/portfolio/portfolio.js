@@ -4,7 +4,7 @@ import { createPortfolio, getPortfolios, makePayment } from '../actions/portfoli
 const initialState = {
   portfolios: [],
   new_portfolio: {},
-  loading: false,
+  loading: true,
   error: false,
   status: '',
   paid: false,
@@ -22,6 +22,7 @@ const portfolioSlice = createSlice({
       ...state,
       status: 'succrssfully purchased an asset',
       loading: false,
+      error: false,
       new_portfolio: action.payload,
     }),
     [createPortfolio.rejected]: (state, action) => ({
@@ -34,6 +35,7 @@ const portfolioSlice = createSlice({
       ...state,
       status: '',
       loading: true,
+      error: false
     }),
     [makePayment.fulfilled]: (state, action) => {
       if (action.payload.paid) {

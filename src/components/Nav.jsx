@@ -1,7 +1,13 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
-const Nav = () => {
+const Nav = ({user}) => {
+  const navigation = useNavigate()
+  const logout = () => {
+    localStorage.setItem('phoenix_auth', null);
+    navigation('/auth/login')
+  }
+
   return (
     <header class="header-default">
 
@@ -16,8 +22,13 @@ const Nav = () => {
             <div class="clear"></div>
           </div>
           <div class="top-bar-right right">
+            {user ? <span  onClick={logout} class="cursor-pointer top-bar-item"><i class="fa fa-sign-out icon"></i>Logout</span> : (<>
+         
+
             <NavLink to="/auth/login" class="top-bar-item"><i class="fa fa-sign-in icon"></i>Login</NavLink>
             <NavLink to="/auth/register" class="top-bar-item"><i class="fa fa-user-plus icon"></i>Register</NavLink>
+            </>
+          )}
             <div class="clear"></div>
           </div>
           <div class="clear"></div>
@@ -92,7 +103,7 @@ const Nav = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li class="menu-item-has-childre">
-              <NavLink to="properties">Properties</NavLink>
+              <NavLink to="/properties">Properties</NavLink>
             </li>
             <li><NavLink to="/dashboard/wallet">Dashboard</NavLink></li>
 

@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { createAsset, getAssets } from "../actions/assets"
+import { createAsset, getAsset, getAssets } from "../actions/assets"
 
 const initialState = {
     assets: [],
     loading: true,
     offers: [],
-    error: false
+    error: false,
+    asset: {}
 
 }
 
@@ -31,12 +32,15 @@ const assetSlice = createSlice({
             loading: false,
             error: true
         }),
-        [getAssets.fulfilled]: (state, action) => ({
+        [getAssets.fulfilled]: (state, action) => {
+            // console.log(action.payload)
+            return{
             ...state,
             loading: false,
             offers: action.payload,
             error: false,
-          }),
+          }},
+
           [getAssets.rejected]: (state) => ({
             ...state,
             loading: false,

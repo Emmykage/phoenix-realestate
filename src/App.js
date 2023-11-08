@@ -27,12 +27,15 @@ import AlertMessages from './pages/Admin/messages/AlertMessages';
 import Reports from './pages/Admin/reports/Reports';
 import Settings from './pages/Admin/settings/Settings';
 import AddAsset from './pages/Admin/assets/AddAsset';
+import AssetDetails from './pages/AssetDetails';
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<MainLayout><Home/></MainLayout>}/>
         <Route path="/properties" element={<MainLayout><Properties/></MainLayout>}/>
+        <Route path="/assets_details/:id" element={<MainLayout><AssetDetails/></MainLayout>}/>
+
         <Route path='/about' element={<MainLayout><About/></MainLayout>}/>
         <Route path='/faq' element={<MainLayout><FAQ/></MainLayout>}/>
         <Route path='/dashboard' element={<UserLayout><Dashboard/></UserLayout> }>

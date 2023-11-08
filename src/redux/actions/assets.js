@@ -27,7 +27,20 @@ const getAssets = createAsyncThunk('asset/get_assets', async (data) => {
     },
 
   }).then((res) => res.json());
+  // console.log(response)
+  return response;
+});
+const getAsset = createAsyncThunk('asset/get_assets', async (id) => {
+  const response = await fetch(`${baseUrl}assets/${id}`, {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${token}`,
+
+    },
+
+  }).then((res) => res.json());
   return response;
 });
 
-export { createAsset, getAssets };
+export { createAsset, getAssets, getAsset };
