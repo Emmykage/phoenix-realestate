@@ -98,6 +98,7 @@ gap: 1%;
 .modal-info{
 	width: 50%;
 	min-height: 100px;
+	padding-bottom: 1rem;
 	background-color: white;
 	border-radius: 8px;
 	box-shadow: 0 0 22px rgba(0, 0, 0, 0.5) ;
@@ -221,14 +222,20 @@ aside .dash-logo img{
   cursor: pointer;
 }
 .property-display{
-  width: 1300px;
+  width: 100%;
 }
 .property-display .property-img{
   width: 800px;
 }
 .asset-details{
   width: 100%;
-  max-width: 1200px;
+  max-width: 1140px;
   margin: auto;
   padding-top: 3rem;
+}
+.property-img{
+
+}
+.property-img img{
+	width: 100%;
 }

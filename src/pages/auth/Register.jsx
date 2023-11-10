@@ -24,14 +24,11 @@ const Register = () => {
       [e.target.name]: e.target.value
     })
   }
-    console.log(formInput)
+ 
   }
   const handleFormSubmit = (e) => {
     e.preventDefault()
-    dispatch(registerUser({user: formInput}))
-
-
-    
+    dispatch(registerUser({user: formInput}))    
     
   }
   if(user == null || user == undefined){

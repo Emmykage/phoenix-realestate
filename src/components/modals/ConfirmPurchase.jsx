@@ -28,6 +28,7 @@ const ConfirmPurchase = ({toggleModal, setToggleModal, portfolio}) => {
               </span>   
            <i class="bi bi-x-lg"></i>
            </div>
+           <div><h3 className='text-center'>Confirm Purchase</h3></div>
            <div className='bg- h-full items-center flex'>
 
             <div className='flex justify-around w-full'>

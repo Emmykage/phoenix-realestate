@@ -49,7 +49,7 @@ const Properties = () => {
     {offers.map((asset) => (
       <div class="col-lg-4 col-md-4">
       <div class="property shadow-hover">
-        <NavLink to={`/assets_details/${asset.id}`} class="property-img">
+        <NavLink to={`/assets_details/${asset.id}`} className="property-img">
           <div class="img-fade"></div>
           <div class="property-tag button status">{asset.sale_type}</div>
           <div class="property-price">${asset.price}</div>

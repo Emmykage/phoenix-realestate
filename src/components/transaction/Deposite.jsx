@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
-const Deposit = ({toggleModal, setToggleModal}) => {
-    const [deposit, setDeposit] = useState({coin_type: "USD THETHER", amount: "", wallet_address: "", transaction_type: "deposit"})
+const Deposit = ({setToggleModal, deposit, setDeposit}) => {
     const handleWithdrawalModal = (e) => {
         e.preventDefault()
         setToggleModal("show-modal")
@@ -16,7 +15,6 @@ const Deposit = ({toggleModal, setToggleModal}) => {
         })        
 
     }
-    console.log(deposit)
   return (
     <div className='form-card'>
            <div className='bg-white box-shadow p-3 b-radius-1 text-left'>
