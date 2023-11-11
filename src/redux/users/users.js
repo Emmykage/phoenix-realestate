@@ -5,7 +5,7 @@ const initialState = {
     users: [],
     user: {},
     loading: true,
-    erroe: false,
+    error: false,
     message: null
 }
 
@@ -20,7 +20,8 @@ const usersSlice = createSlice({
                 return{
                     ...state,
                     error: true,
-                    loading: false
+                    loading: false,
+                    message: response.message
                 }
             }else{
                 return{
@@ -41,22 +42,27 @@ const usersSlice = createSlice({
             }
         },
         [getUser.fulfilled]: (state, action) => {
+            const response = action.payload;
+
             if(action.payload.message){
                 return {
                     ...state,
                     error: true,
-                    loading: false
+                    loading: false,
+                    message: response.message
                 }
             }else{
                 return{
                     ...state,
-                user: action.payload,
+                user: response,
                 loading: false,
                 error: false
                 }
             }
         },
         [getUser.pending]: (state)=> {
+            console.log("loadiing...")
+
             return{
                 ...state,
                 loading: true,
@@ -66,10 +72,12 @@ const usersSlice = createSlice({
 
         },
         [getUser.rejected]: (state) => {
+          
             return{
                 ...state,
                 loading: false,
-                error: true
+                error: true,
+                message: "No internet"
             }
         }
 

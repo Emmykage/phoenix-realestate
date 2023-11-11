@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
+// import Loader
 import { NavLink, Outlet } from 'react-router-dom'
 import { usd_format } from '../misc/USD'
 import { getUser } from '../../redux/actions/users'
+import Loader from '../loader/Loader'
 
 const Wallet = () => {
   const dispatch = useDispatch()
-  const {user} = useSelector(state => state.users)
+  const {user, error, message, loading} = useSelector(state => state.users)
 
   useEffect(() => {
       dispatch(getUser())
   }, [])
-if(Object.keys(user).length === 0){
-  return(
-    <h2>Loading</h2>
+
+if(error){
+  return (
+    <h3 className='text-center'>{message}</h3>
+  )
+}
+  if(loading){
+    return(
+    <h2><Loader/></h2>
   )
 }else{
 
