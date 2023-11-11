@@ -55,21 +55,21 @@ paid: false
 
 
         }),
-        [approveTransaction.fulfilled]: (state, action) => {
+        [approveTransaction.fulfilled]: (state) => {
      
             return{
             ...state,
             loading: false,
-            status: "successful"
+            status: "success"
         }},
-        [approveTransaction.rejected]: (state, action) => {
+        [approveTransaction.rejected]: (state) => {
      
             return {
             ...state,
             status: "failed",
             loading: false
         }},
-        [approveTransaction.pending]: (state, action) => ({
+        [approveTransaction.pending]: (state) => ({
             ...state,
             loading: true,
             status: "pending"

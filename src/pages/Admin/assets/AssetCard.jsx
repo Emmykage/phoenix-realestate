@@ -7,13 +7,13 @@ const AssetCard = ({ asset }) => {
     <li className="flex-justify-space border m-3 p-2 shadow radius">
       <div>
         {' '}
-        <span>{asset.asset_type}</span>
-        <p>{asset.title}</p>
+        <span>{asset.name}</span>
+        <p>{asset.address}</p>
       </div>
       <div>
         {' '}
-        <span onClick={() => navigation(`/admin/assets/${asset.id}`)}> view</span>
-        <p>delete</p>
+        <span onClick={() => navigation(`/admin/asset/${asset.id}`)}> view</span>
+        <span>delete</span>
       </div>
     </li>
   );

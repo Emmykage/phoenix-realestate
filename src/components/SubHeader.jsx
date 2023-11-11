@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const SubHeader = () => {
   return (
@@ -222,43 +223,43 @@ const SubHeader = () => {
 
     <div class="row">
       <div class="col-lg-8 col-md-8">
-        <a href="#" class="property-cat property-cat-apartments">
+        <NavLink to="/studio_homes" className="property-cat property-cat-apartments">
           <h3>Studio Apartments</h3>
           <div class="color-bar"></div>
           <span class="button small">234 Properties</span>
-        </a>
+        </NavLink>
       </div>
       <div class="col-lg-4 col-md-4">
-        <a href="#" class="property-cat property-cat-houses">
+        <NavLink to="/family_homes" className="property-cat property-cat-houses">
           <h3>Family Homes</h3>
           <div class="color-bar"></div>
           <span class="button small">234 Properties</span>
-        </a>
+        </NavLink>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-lg-4 col-md-4">
+      {/* <div class="col-lg-4 col-md-4">
         <a href="#" class="property-cat property-cat-condos">
           <h3>Condos & Villas</h3>
           <div class="color-bar"></div>
           <span class="button small">234 Properties</span>
         </a>
-      </div>
-      <div class="col-lg-4 col-md-4">
+      </div> */}
+      {/* <div class="col-lg-4 col-md-4">
         <a href="#" class="property-cat property-cat-waterfront">
           <h3>Waterfront Homes</h3>
           <div class="color-bar"></div>
           <span class="button small">234 Properties</span>
         </a>
-      </div>
-      <div class="col-lg-4 col-md-4">
+      </div> */}
+      {/* <div class="col-lg-4 col-md-4">
         <a href="#" class="property-cat property-cat-cozy">
           <h3>Cozy Houses</h3>
           <div class="color-bar"></div>
           <span class="button small">234 Properties</span>
         </a>
-      </div>
+      </div> */}
     </div>
 
   </div>

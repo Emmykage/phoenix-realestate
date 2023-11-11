@@ -1000,11 +1000,11 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 	background-repeat:no-repeat;
 	transition:all 0.4s;
 }
-.property-cat h3 { color:white; font-weight:200; }
+.property-cat h3 { color:white; font-weight:200; background-color: rgba(0, 0, 0, 0.7);}
 .property-cat:hover .color-bar { width:130px; }
 
-.property-cat-apartments { background-image:url(../images/1000x560.png);}
-.property-cat-houses { background-image:url(../images/1000x560.png);}
+.property-cat-apartments { background-image:url(../images/d4mq83s-0511e07c-421c-4282-b2f6-22357513ffd5.jpg);}
+.property-cat-houses { background-image:url(../images/ai-generative-interior-design-decor-showing-modern-bedroom-area-in-open-plan-luxury-studio-apartment-showroom-with-sofa-bed-photo.jpg);}
 .property-cat-condos { background-image:url(../images/1000x560.png);}
 .property-cat-waterfront { background-image:url(../images/1000x560.png);}
 .property-cat-cozy { background-image:url(../images/1000x560.png);}

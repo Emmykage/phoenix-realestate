@@ -7,6 +7,7 @@ const DepositModal = ({toggleModal, setToggleModal, deposit}) => {
   const dispatch = useDispatch()
   const handleDeposit =() => {
    dispatch(createTransaction(deposit))
+   console.log(deposit)
 
   
   }  

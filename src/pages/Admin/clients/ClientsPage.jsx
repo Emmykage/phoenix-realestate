@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './client.css';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import default_photo from '../../../assets/user/no-profile-picture-icon-14.jpg';
+import default_photo from '../../../assets/users/profile_pic.jpg';
 import { listUsers } from '../../../redux/actions/users';
 import { userLog } from '../../../redux/auth/user_authentication';
 import Loader from '../../../components/loader/Loader';
@@ -24,6 +24,7 @@ const ClientsPage = () => {
   }
 
   const user = users.find((user) => user.id == id);
+  console.log(user)
 
   if (user == undefined) {
     return (
@@ -82,15 +83,15 @@ const ClientsPage = () => {
             total inestment
           </span>
           <span>
-            value: 200000
+            value: {user.total_asset}
           </span>
         </p>
         <hr />
         <div>
-          <h2>{usd_format(user.wallet.balance)}</h2>
+          <h2>{usd_format(user.wallet.wallet_balance)}</h2>
 
           <p>{user.wallet.transactions.map(transaction => (
-            <li className='flex-justify-space'> 
+              <li className='flex-justify-space'>
               <span>{transaction.coin_type}</span>
               <span>{transaction.amount}</span>
               <span>{transaction.status}</span>
@@ -110,7 +111,7 @@ const ClientsPage = () => {
               <a href="" />
 
               <div className="asset-info flex-space">
-                <span>{portfolio.asset.asset_type}</span>
+                <span>{portfolio.asset.name}</span>
                 <span>
                   $
                   {portfolio.amount}

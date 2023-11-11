@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const Withdraw = ({toggleModal, setToggleModal, setWithdrawal, withdrawal}) => {
     const handleWithdrawalModal = (e) => {
         e.preventDefault()
-        setToggleModal("show-modal")
+        setToggleModal("show-modal withdrawal")
 
     }
     const handleWithdrawalInput = (e) => {

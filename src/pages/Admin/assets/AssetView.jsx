@@ -32,42 +32,45 @@ const AssetView = () => {
             <span>Asset Title: </span>
             <span>
               {' '}
-              {asset.title}
+              {asset.name}
             </span>
           </div>
           <div className="grid-display-assets border-b">
-            <span>Description: </span>
-            <span>{ asset.description}</span>
+            <span>Price: </span>
+            <span>
+              {' '}
+              {asset.price}
+            </span>
           </div>
           <div className="grid-display-assets border-b">
-            <span>minimum_investment: </span>
-            <span>{ asset.minimum_investment}</span>
+            <span>Property Address: </span>
+            <span>{ asset.address}</span>
           </div>
           <div className="grid-display-assets border-b">
-            <span>Term: </span>
-            <span>{asset.minimum_investment}</span>
+            <span>tenure: </span>
+            <span>{ asset.tenure}</span>
           </div>
           <div className="grid-display-assets border-b">
-            <span>Payment Schedule: </span>
-            <span>{asset.payment_schedule}</span>
+            <span>Sale Type: </span>
+            <span>{asset.sale_type}</span>
           </div>
           <div className="grid-display-assets border-b">
-            <span>Overview Description: </span>
-            <span>{asset.overview_description}</span>
+            <span>Area: </span>
+            <span>{asset.area}</span>
           </div>
           <div className="grid-display-assets border-b">
-            <span>Overview note: </span>
-            <span>{asset.overview_note}</span>
+            <span>Bedrooms: </span>
+            <span>{asset.number_of_bedrooms}</span>
           </div>
           <div className="grid-display-assets border-b">
-            <span>Share in Excess: </span>
-            <span>{asset.share_in_excess}</span>
+            <span>Bathrooms: </span>
+            <span>{asset.number_of_bathrooms}</span>
           </div>
           <div className="grid-display-assets border-b">
-            <span>Annual Flat Expense in %: </span>
-            <span>{asset.annual_flat_expense}</span>
+            <span>Status: </span>
+            <span>{asset.status}</span>
           </div>
-
+          
         </div>
       </div>
     );

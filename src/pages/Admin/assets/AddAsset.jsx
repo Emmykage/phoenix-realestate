@@ -6,7 +6,7 @@ const AddAsset = () => {
   const [toggleForm, setToggleForm] = useState('false');
   const dispatch = useDispatch();
   const [assetForm, setAssetForm] = useState({
-    name: '', address: "", tenure: '', asset_type: 'other', area: '', number_of_bedrooms: '', number_of_bathrooms: '', status: ''
+    name: '',asset_category: "", address: "", tenure: '', sale_type: '', area: '', number_of_bedrooms: '', number_of_bathrooms: '', status: ''
   });
 
   const handleInput = (e) => {
@@ -26,7 +26,22 @@ const AddAsset = () => {
 
         <span onClick={() => setToggleForm(!toggleForm)}>Add Property</span>
         <form onSubmit={handleSubmit} className={toggleForm && 'hide-form'}>
-          
+        <div>
+            <label>Asset Category</label>
+            <select
+              name="asset_category"
+              id="asset_category"
+              value={assetForm.asset_category}
+              onChange={handleInput}
+            >
+              <option value="Family Home">Family Home </option>
+              <option value="Studio Apartment">Studio Apartment </option>
+              <option value="quarteCondo & Villarly">Condo & Villa </option>
+              <option value="Water Front Home">Water Front Home  </option>
+              <option value="Cozy Home">Cozy Home </option>
+
+            </select>
+          </div>
           <div>
             <label>Property Title</label>
             <input type="text" id="name" name="name" value={assetForm.name} onChange={handleInput} />
@@ -65,8 +80,8 @@ const AddAsset = () => {
               value={assetForm.sale_type}
               onChange={handleInput}
             >
-              <option value="event Based">Rent </option>
-              <option value="monthly">Sale </option>
+              <option value="Rent">Rent </option>
+              <option value="Sale">Sale </option>
             </select>
           </div>
           <h3>Details</h3>

@@ -28,12 +28,18 @@ import Reports from './pages/Admin/reports/Reports';
 import Settings from './pages/Admin/settings/Settings';
 import AddAsset from './pages/Admin/assets/AddAsset';
 import AssetDetails from './pages/AssetDetails';
+import ClientsPage from './pages/Admin/clients/ClientsPage';
+import AssetView from './pages/Admin/assets/AssetView';
+import Family from './pages/categorypages/Family';
+import StudioApartment from './pages/categorypages/Studio';
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<MainLayout><Home/></MainLayout>}/>
         <Route path="/properties" element={<MainLayout><Properties/></MainLayout>}/>
+        <Route path="/family_homes" element={<MainLayout><Family/></MainLayout>}/>
+        <Route path="/studio_homes" element={<MainLayout><StudioApartment/></MainLayout>}/>
         <Route path="/assets_details/:id" element={<MainLayout><AssetDetails/></MainLayout>}/>
 
         <Route path='/about' element={<MainLayout><About/></MainLayout>}/>
@@ -59,7 +65,9 @@ function App() {
         <Route path={"/admin"}>
         <Route path='dashboard' element={<AdminLayout><AHome/></AdminLayout>}/>
         <Route path='assets' element={<AdminLayout><Assets/></AdminLayout>}/>
+        <Route path='asset/:id' element={<AdminLayout><AssetView/></AdminLayout>}/>
         <Route path='clients' element={<AdminLayout><Clients/></AdminLayout>}/>
+        <Route path='client/:id' element={<AdminLayout><ClientsPage/></AdminLayout>}/>
         <Route path='orders' element={<AdminLayout><Orders/></AdminLayout>}/>
         <Route path='analytics' element={<AdminLayout><Analytics/></AdminLayout>}/>
         <Route path='messages' element={<AdminLayout><AlertMessages/></AdminLayout>}/>

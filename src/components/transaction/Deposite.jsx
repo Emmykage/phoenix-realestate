@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const Deposit = ({setToggleModal, deposit, setDeposit}) => {
     const handleWithdrawalModal = (e) => {
         e.preventDefault()
-        setToggleModal("show-modal")
+        setToggleModal("show-modal deposit")
 
 
     }
@@ -24,7 +24,7 @@ const Deposit = ({setToggleModal, deposit, setDeposit}) => {
                 <label className='block m-1'>Select Coin to receive payment</label> 
                 <div className=''>
                
-                <select name='coin_type' className='bg-green form-select form-select-lg mb-3 ' value={deposit.coin_type} onChange={handleDepositInput} required>
+                <select name='coin_type' className='border form-select form-select-lg mb-3 ' value={deposit.coin_type} onChange={handleDepositInput} required>
                     <option className='border' value="USD THETHER" selected>USD THETHER</option>
                     <option value="BITCOIN">BITCOIN</option>
                     <option value="ETHERUM">ETHERUM (ERC-20)</option>

@@ -22,7 +22,7 @@ const WithdrawalModal = ({toggleModal, setToggleModal, withdrawal}) => {
 </svg>   </span>   
            <i class="bi bi-x-lg"></i>
            </div>
-           <h3>Confirm Deposit</h3>
+           <h3>Confirm Withdrawal</h3>
            <div className='bg- h-full items-center flex'>
 
             <div className='flex justify-around w-full'>
