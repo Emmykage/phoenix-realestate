@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux'
 
 const Dashboard = () => {
   const {user} = useSelector(state => state.users)
-  console.log(user)
   return (
     <div className='dashboard '>
       <Aside/>

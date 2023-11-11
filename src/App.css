@@ -111,6 +111,15 @@ gap: 1%;
 .h-full{
   height: 100%;
 }
+.block {
+	display: block;
+}
+.primary-text{
+	color: #062E62;
+}
+.flex{
+	display: flex;
+}
 .bg-red{
 	background-color: red;
 }
@@ -131,8 +140,13 @@ aside .dash-logo{
   height: 100px;
   margin-top: 2rem;
 }
+aside .dash-logo a{
+	height: 100%;
+
+}
 aside .dash-logo img{
   height: 100%;
+
 }
 .portfolios img{
   width: 100%;

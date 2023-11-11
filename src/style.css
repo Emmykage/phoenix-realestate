@@ -530,7 +530,7 @@ header { background:white; width:100%; position:relative; z-index:1000; }
  /* 04 SUBHEADER
 /*====================================================================================*/
 .subheader {
-	background:#787c8a url(../images/1920x250.png) no-repeat center;
+	background:#787c8a url(../public/images/1920x250.png) no-repeat center;
 	background-size:cover;
 	color:white;
 	padding-top:160px;
@@ -563,7 +563,7 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 .subheader.simple-search {
 	text-align:center;
 	padding:200px 0px;
-	background-image:url(../images/Real-Estate-Wallpaper-05-2866x1516-1-scaled.jpg);
+	background-image:url(../public/images/Real-Estate-Wallpaper-05-2866x1516-1-scaled.jpg);
 }
 .subheader.simple-search h1 { float:none; font-size:48px; font-weight:700; }
 .subheader.simple-search p {
@@ -635,12 +635,12 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 .subheader.subheader-slider p { font-size:24px; }
 .subheader.subheader-slider p .fa { font-size:19px; margin-right:10px; }
 .subheader.subheader-slider .slide { 
-	background:url(../images/1920x950.png) no-repeat center;
+	background:url(../public/images/1920x950.png) no-repeat center;
 	background-size:cover;
 	padding:200px 0px 210px 0px;
 	text-align:center;
 }
-.subheader.subheader-slider .slide:nth-child(2) { background:url(../images/1920x950.png) no-repeat center; background-size:cover; }
+.subheader.subheader-slider .slide:nth-child(2) { background:url(../public/images/1920x950.png) no-repeat center; background-size:cover; }
 .subheader.subheader-slider .slide .container { position:relative; z-index:10; }
 .subheader.subheader-slider .slider-simple-buttons { margin-top:25px; }
 .subheader.subheader-slider .slider-simple-buttons .button:last-child { 
@@ -1003,11 +1003,11 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 .property-cat h3 { color:white; font-weight:200; background-color: rgba(0, 0, 0, 0.7);}
 .property-cat:hover .color-bar { width:130px; }
 
-.property-cat-apartments { background-image:url(../images/d4mq83s-0511e07c-421c-4282-b2f6-22357513ffd5.jpg);}
-.property-cat-houses { background-image:url(../images/ai-generative-interior-design-decor-showing-modern-bedroom-area-in-open-plan-luxury-studio-apartment-showroom-with-sofa-bed-photo.jpg);}
-.property-cat-condos { background-image:url(../images/1000x560.png);}
-.property-cat-waterfront { background-image:url(../images/1000x560.png);}
-.property-cat-cozy { background-image:url(../images/1000x560.png);}
+.property-cat-apartments { background-image:url(../public/images/d4mq83s-0511e07c-421c-4282-b2f6-22357513ffd5.jpg);}
+.property-cat-houses { background-image:url(../public/images/ai-generative-interior-design-decor-showing-modern-bedroom-area-in-open-plan-luxury-studio-apartment-showroom-with-sofa-bed-photo.jpg);}
+.property-cat-condos { background-image:url(../public/images/1000x560.png);}
+.property-cat-waterfront { background-image:url(../public/images/1000x560.png);}
+.property-cat-cozy { background-image:url(../public/images/1000x560.png);}
 
 /** PROPERTY SINGLE **/
 .property-single-item { margin-bottom:45px; background:white; padding:30px; }
@@ -1093,13 +1093,13 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 .property-gallery.full-width .slide .img-fade { height:180px; }
 .property-gallery.full-width .slider-nav { top:37%; }
 
-.property-gallery.full-width #slide1 { background:url(../images/1837x1206.png) center / cover no-repeat; }
-.property-gallery.full-width #slide2 { background:url(../images/1837x1206.png) center / cover no-repeat; }
-.property-gallery.full-width #slide3 { background:url(../images/1837x1206.png) center / cover no-repeat; }
-.property-gallery.full-width #slide4 { background:url(../images/1837x1206.png) center / cover no-repeat; }
-.property-gallery.full-width #slide5 { background:url(../images/1837x1206.png) center / cover no-repeat; }
-.property-gallery.full-width #slide6 { background:url(../images/1837x1206.png) center / cover no-repeat; }
-.property-gallery.full-width #slide7 { background:url(../images/1837x1206.png) center / cover no-repeat; }
+.property-gallery.full-width #slide1 { background:url(../public/images/1837x1206.png) center / cover no-repeat; }
+.property-gallery.full-width #slide2 { background:url(../public/images/1837x1206.png) center / cover no-repeat; }
+.property-gallery.full-width #slide3 { background:url(../public/images/1837x1206.png) center / cover no-repeat; }
+.property-gallery.full-width #slide4 { background:url(../public/images/1837x1206.png) center / cover no-repeat; }
+.property-gallery.full-width #slide5 { background:url(../public/images/1837x1206.png) center / cover no-repeat; }
+.property-gallery.full-width #slide6 { background:url(../public/images/1837x1206.png) center / cover no-repeat; }
+.property-gallery.full-width #slide7 { background:url(../public/images/1837x1206.png) center / cover no-repeat; }
 
 .additional-details-list {
 	columns:2; 
@@ -1239,7 +1239,7 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 /* GLOBAL AGENT MODULE */
 .agents-featured {
 	border-top:1px solid #d6e1e8;
-	background:#eff5f9 url(../images/agent-bg.png) no-repeat;
+	background:#eff5f9 url(../public/images/agent-bg.png) no-repeat;
 	background-position:bottom;
 	background-size:cover;
 }
@@ -1371,7 +1371,7 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 .blog-post-img { position:relative; display:block; }
 .blog-post-date { 
 	position:absolute; 
-	background:url(../images/hexagon.png) no-repeat;
+	background:url(../public/images/hexagon.png) no-repeat;
 	line-height:1.1; 
 	bottom:-21px;
 	padding-top:7px; 
@@ -1627,7 +1627,7 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 
 .cta.newsletter {
 	background:#59aee9;
-	background-image:url(../images/send.png);
+	background-image:url(../public/images/send.png);
 	background-repeat:no-repeat;
 	background-position:20% 50%;
 }
@@ -1658,7 +1658,7 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 	top:23px;
 }
 
-.cta.hexs { background:#59aee9 url(../images/pattern.jpg) no-repeat bottom; background-size:cover; }
+.cta.hexs { background:#59aee9 url(../public/images/pattern.jpg) no-repeat bottom; background-size:cover; }
 .cta.hexs .hex { min-height:195px; padding-top:57px; text-align:center; position:relative; }
 .cta.hexs .hex p { position:relative; z-index:10; }
 .cta.hexs .hex p span { font-size:33px; font-weight:700; display:block; }
@@ -1668,7 +1668,7 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 	padding:150px 0px;
 	position:relative;
 	text-align:center;
-	background:#59aee9 url(../images/1920x950.png) no-repeat center; 
+	background:#59aee9 url(../public/images/1920x950.png) no-repeat center; 
 	background-attachment:fixed;
 	background-size:cover; 
 }
@@ -1677,7 +1677,7 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 
 /** TESTIMONIALS **/
 .testimonials {
-	background:#59aee9 url(../images/pattern.jpg) no-repeat;
+	background:#59aee9 url(../public/images/pattern.jpg) no-repeat;
 	background-size:cover;
 	background-position:bottom;
 	color:white;
@@ -1730,7 +1730,7 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 
 /** CONTACT **/
 .contact-details {
-	background:#48a0dc url(../images/contact-bg.png) no-repeat bottom;
+	background:#48a0dc url(../public/images/contact-bg.png) no-repeat bottom;
 	background-size:cover;
 }
 .contact-item { min-height:220px; background:rgba(0, 0, 0, 0.05); border:1px solid rgba(255, 255, 255, 0.3); padding:30px; color:white; text-align:center; }
