@@ -9,7 +9,6 @@ const Wallet = () => {
   const dispatch = useDispatch()
   const {user} = useSelector(state => state.users)
 
-  console.log(user)
   useEffect(() => {
       dispatch(getUser())
   }, [])
@@ -29,7 +28,7 @@ if(Object.keys(user).length === 0){
               <NavLink to={'/dashboard/wallet/wallet'}>Wallet</NavLink>
             </div>
             <div className='card'><p>Portfolios</p>
-              <h2>$00.0</h2>
+              <h2>{usd_format(user.total_asset)}</h2>
               <NavLink to={'/dashboard/wallet/portfolios'}>View</NavLink></div>
             <div className='card'><p>Bonus</p>
               <h2>$00.0</h2>

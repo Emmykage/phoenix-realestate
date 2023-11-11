@@ -7,15 +7,9 @@ import DepositModal from '../modals/DepositModal'
 
 const Transaction = () => {
   const {user} = useSelector(state => state.users)
-  console.log(user)
     const [toggleModal, setToggleModal] = useState(null)
     const [deposit, setDeposit] = useState({coin_type: "USD THETHER", amount: "", wallet_address: "bc1qusn333vtanazyywdvr5u5mwk5eq32h5n5lpchr", transaction_type: "deposit"})
     const [withdraw, setWithdraw] = useState({coin_type: "USD THETHER", amount: "", wallet_address: "", transaction_type: "withdraw"})
-
-    console.log(deposit)
-
-
-
     
   return (
     <>

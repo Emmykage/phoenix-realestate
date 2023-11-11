@@ -5,14 +5,13 @@ import { NavLink } from 'react-router-dom'
 
 const Properties = () => {
   const dispatch = useDispatch()
-  const {assets, offers} = useSelector(state => state.assets)
+  const {offers} = useSelector(state => state.assets)
   useEffect(()=> {
 
     dispatch(getAssets())
 
   },[])
 
-  // console.log(offers)
 
   return (
     <div>

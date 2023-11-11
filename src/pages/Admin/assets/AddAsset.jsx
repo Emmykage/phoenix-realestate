@@ -37,6 +37,11 @@ const AddAsset = () => {
           </div>
 
           <div>
+            <label>Price</label>
+            <input type="number" id="price" name="price" value={assetForm.price} onChange={handleInput} />
+          </div>
+
+          <div>
             <label>Tenure</label>
             <select
               name="tenure"

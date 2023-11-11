@@ -14,7 +14,6 @@ const ConfirmPurchase = ({toggleModal, setToggleModal, portfolio}) => {
       setToggleModal(null)
     }
   },[loading, error])
-  console.log(portfolio.id)
   return (
     <div>
        <div className={`modal-container ${toggleModal}`}>

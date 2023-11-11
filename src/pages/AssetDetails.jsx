@@ -15,7 +15,6 @@ const AssetDetails = () => {
   useEffect(()=> {
   dispatch(getAssets())
  },[])
- console.log(asset)
  if(!asset){
   <div>
     <Loader/>

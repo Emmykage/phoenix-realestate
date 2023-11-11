@@ -33,7 +33,6 @@ const assetSlice = createSlice({
             error: true
         }),
         [getAssets.fulfilled]: (state, action) => {
-            // console.log(action.payload)
             return{
             ...state,
             loading: false,

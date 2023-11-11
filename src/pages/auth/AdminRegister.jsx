@@ -24,16 +24,11 @@ const AdminRegister = () => {
       [e.target.name]: e.target.value
     })
   }
-    console.log(formInput)
   }
   const handleFormSubmit = (e) => {
     e.preventDefault()
     dispatch(registerUser(formInput))
-    console.log(formInput)
-
-
-    
-    
+  
   }
   if(user == null || user == undefined){
 

@@ -10,8 +10,6 @@ const Portfolios = () => {
     useEffect(()=> {
         dispatch(getPortfolios())
     },[])
-    console.log(portfolios)
-
 
   return (
     <div className='portfolios p-3 w-3-4'>
