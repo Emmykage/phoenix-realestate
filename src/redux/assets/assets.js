@@ -36,7 +36,8 @@ const assetSlice = createSlice({
             return{
             ...state,
             loading: false,
-            offers: action.payload,
+            offers: action.payload.assets,
+            assets: action.payload.recently_added,
             error: false,
           }},
 

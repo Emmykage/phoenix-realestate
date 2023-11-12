@@ -43,6 +43,7 @@ const usersSlice = createSlice({
         },
         [getUser.fulfilled]: (state, action) => {
             const response = action.payload;
+            console.log("response")
 
             if(action.payload.message){
                 return {
@@ -72,7 +73,8 @@ const usersSlice = createSlice({
 
         },
         [getUser.rejected]: (state) => {
-          
+            console.log("response")
+
             return{
                 ...state,
                 loading: false,
