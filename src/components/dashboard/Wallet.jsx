@@ -9,11 +9,11 @@ import Loader from '../loader/Loader'
 const Wallet = () => {
   const dispatch = useDispatch()
   const {user, error, message, loading} = useSelector(state => state.users)
+  const pendingTransaction = useSelector(state => state.transactions.loading)
 
   useEffect(() => {
       dispatch(getUser())
-  }, [])
-
+  }, [pendingTransaction])
 if(error){
   return (
     <h3 className='text-center'>{message}</h3>

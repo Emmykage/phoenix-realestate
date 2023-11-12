@@ -1,10 +1,16 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { createTransaction } from '../../redux/actions/wallet'
 
 const DepositModal = ({toggleModal, setToggleModal, deposit}) => {
-
+const {loading, error} = useSelector(state => state.transactions)
   const dispatch = useDispatch()
+  useEffect(()=> {
+    if(!loading && !error){
+      setToggleModal(null)
+    }
+
+  },[loading, error])
   const handleDeposit =() => {
    dispatch(createTransaction(deposit))
   
@@ -24,7 +30,7 @@ const DepositModal = ({toggleModal, setToggleModal, deposit}) => {
               </span>   
            <i class="bi bi-x-lg"></i>
            </div>
-           <h3>Confirm Deposit</h3>
+           <h3 className='text-center'>Confirm Deposit</h3>
            <div className='bg- h-full items-center flex'>
             <div className='flex justify-around w-full'>
               <button onClick={()=> setToggleModal(null)} className='btn cancel'>Cancel</button>

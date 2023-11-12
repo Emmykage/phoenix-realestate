@@ -1,10 +1,17 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { createTransaction } from '../../redux/actions/wallet'
 
 const WithdrawalModal = ({toggleModal, setToggleModal, withdrawal}) => {
 
   const dispatch = useDispatch()
+  const {loading, error} = useSelector(state => state.transactions)
+  useEffect(()=> {
+    if(!loading && !error){
+      setToggleModal(null)
+    }
+
+  },[loading, error])
   const handleWithdrawl =() => {
   dispatch(createTransaction(withdrawal))
 
@@ -22,7 +29,7 @@ const WithdrawalModal = ({toggleModal, setToggleModal, withdrawal}) => {
 </svg>   </span>   
            <i class="bi bi-x-lg"></i>
            </div>
-           <h3>Confirm Withdrawal</h3>
+           <h3 className='text-center'>Confirm Withdrawal</h3>
            <div className='bg- h-full items-center flex'>
 
             <div className='flex justify-around w-full'>

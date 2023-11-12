@@ -3,7 +3,7 @@ import { approveTransaction, createTransaction } from "../actions/wallet";
 
 const initialState = {
     transaction: "",
-    loading: false,
+    loading: true,
     error: false,
     status: '',
     paid: false,
