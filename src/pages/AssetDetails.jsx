@@ -23,7 +23,7 @@ const AssetDetails = () => {
  }else{
   return (
     <>
-    <div className='asset-details'>
+    <div className='asset-details container'>
         <div class="">
           <div class="property property-display shadow-hover">
             <a href="#" class="property-img">

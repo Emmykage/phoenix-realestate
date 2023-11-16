@@ -2,19 +2,32 @@
 .dashboard{
 	position: relative;
 	display: flex;
-	height: 100vh;
+	min-height: 100vh;
 	background-color: white
 }
 
 .dashboard .main-content{
 	flex: 1;
+	height: 100vh;
+	overflow-x: auto;
+}
+.fixed{
+	position: fixed;
+}
+.relative{
+	position: relative;
+}.absolute{
+	position: absolute;
 }
 .dashboard aside{
+
 	max-width: 300px;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	padding: 1rem;
-	/* border: 1px solid gray; */
+}
+.bg-blue{
+	background: blue;
 }
 .dashboard aside ul{
 	margin-top: 3rem;
@@ -36,6 +49,35 @@
 	display: grid;
 	padding: 2rem;
 }
+
+.text-xs{
+	font-size: 12px;
+}
+.text-sm{
+	font-size: 14px;
+}.text-base{
+	font-size: 16px;
+}.text-lg{
+	font-size: 18px;
+}.text-xl{
+	font-size: 20px;
+}
+.text-2xl{
+	font-size: 22px;
+}
+
+.font-normal{
+	font-weight: 400;
+}
+.font-medium{
+	font-weight: 500;
+}
+.font-semibold{
+	font-weight: 600;
+}
+.font-bold{
+	font-weight: 700;
+}
 .grid-3{
 	grid-template-columns: 1fr 1fr 1fr;
 
@@ -45,6 +87,54 @@
 	grid-template-columns: 1fr 1fr;
 
 
+}
+.p-2{
+	padding: 2rem;
+}
+.p-4{
+	padding: 4rem;
+}
+.p-1{
+	padding: 0.5rem;
+  }
+  .p-2{
+	padding: 1rem;
+  }
+  .p-3{
+	padding: 1.5rem;
+  }
+  .px-1{
+	padding: 0.5rem;
+  }
+  .px-2{
+	padding: 1rem;
+  }
+  .px-3{
+	padding: 1.5rem;
+  }
+.px-4{
+	padding-left: 4rem;
+	padding-right: 4rem;
+}
+.py-1{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.py-2{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.py-3{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.py-4{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.my-1{
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 .form-card{
 	padding: 1rem;
@@ -99,7 +189,7 @@ gap: 1%;
 .modal-info{
 	width: 50%;
 	min-height: 100px;
-	padding-bottom: 1rem;
+	padding-bottom: 4rem;
 	background-color: white;
 	border-radius: 8px;
 	box-shadow: 0 0 22px rgba(0, 0, 0, 0.5) ;
@@ -177,15 +267,7 @@ aside .dash-logo img{
 .flex-3{
   flex: 3;
 }
-.p-1{
-  padding: 0.5rem;
-}
-.p-2{
-  padding: 1rem;
-}
-.p-3{
-  padding: 1.5rem;
-}
+
 .rounded-base{
   border-radius: 1rem;
 }
@@ -212,16 +294,27 @@ aside .dash-logo img{
   max-width: 800px;
 }
 .btn{
-  /* background-color: #3B3F89; */
   background-color: #0B2C62;
   border-radius: 8px;
   color: white;
 }
 .btn.cancel{
-  /* background-color: #3B3F89; */
   background-color: #989898;
   border-radius: 8px;
   color: white;
+}
+.status{
+	background-color: rgb(52, 109, 52);
+	border-radius: 8px;
+	color: white;
+	padding: 1rem;
+	text-align: center;
+	font-weight: 500;
+}
+.status.cancel{
+	background-color: #989898;
+	border-radius: 8px;
+	color: white;
 }
 
 .btn:hover{
@@ -244,11 +337,14 @@ aside .dash-logo img{
   width: 100%;
 }
 .asset-details{
-  width: 100%;
-  max-width: 1140px;
-  margin: auto;
-  padding-top: 3rem;
+
 }
 .property-img img{
 	width: 100%;
+}
+@media only screen and  (min-width: 800px) {
+	.container{
+	/* background-color: red; */
+	}
+	
 }

@@ -77,25 +77,26 @@ const ClientsPage = () => {
       <hr />
 
       <div className="asset-details">
-        <p>
-          <span>
+        <p className='p-1 flex justify-around'>
+          <span className='font-bold'>
             total inestment
           </span>
-          <span>
+          <span className='font-bold'>
             value: {user.total_asset}
           </span>
         </p>
-        <hr />
-        <div>
+        <hr/>
+        <div className='p-2'>
           <h2>{usd_format(user.wallet.wallet_balance)}</h2>
 
           <p>{user.wallet.transactions.map(transaction => (
-              <li className='flex-justify-space'>
-              <span>{transaction.coin_type}</span>
-              <span>{transaction.amount}</span>
-              <span>{transaction.status}</span>
-              <span>{transaction.id}</span>
-              <button className='approve' onClick={()=> handleApprove(transaction.id)}>Approve</button>
+              <li className='flex items-center my-1 px-1 py-2 justify-between box-shadow'>
+              <span className='flex-1'>{transaction.coin_type}</span>
+              <span className='flex-1'>{transaction.transaction_type}</span>
+              <span className='flex-1'>{transaction.amount}</span>
+              <span className='flex-1'>{transaction.status}</span>
+              <span className='flex-2'>{transaction.id}</span>
+              <button className='approve text-sm' onClick={()=> handleApprove(transaction.id)}>Approve</button>
             </li>
            
             

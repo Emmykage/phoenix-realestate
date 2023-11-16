@@ -10,20 +10,21 @@ const Dashboard = () => {
     <div className='dashboard '>
       <Aside/>
       <div className='main-content'>
-          <div className='top-details box-shadow'>
-            <div className=''>
-              <div className='text-left'>
-                <h2>welcome, {user.first_name}</h2>
-                <p >Individual Account</p>
-              </div>
-
+        <div className='box-shadow p-2'> hwey </div>
+        <div className='top-details box-shadow'>
+          <div className=''>
+            <div className='text-left'>
+              <h2>welcome, {user.first_name}</h2>
+              <p>Individual Account</p>
             </div>
-            
-              
-          </div>
-            <Outlet/>
 
           </div>
+          
+            
+        </div>
+        <Outlet/>
+
+      </div>
 
     
     </div>
