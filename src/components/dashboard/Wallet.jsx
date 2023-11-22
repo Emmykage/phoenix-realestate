@@ -19,6 +19,7 @@ if(error){
     <h3 className='text-center'>{message}</h3>
   )
 }
+console.log(user)
   if(loading){
     return(
     <h2><Loader/></h2>

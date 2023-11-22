@@ -5,7 +5,9 @@
 	min-height: 100vh;
 	background-color: white
 }
-
+.dashboard .title{
+	background: linear-gradient(#323746, #505461);
+}
 .dashboard .main-content{
 	flex: 1;
 	height: 100vh;
@@ -19,12 +21,16 @@
 }.absolute{
 	position: absolute;
 }
+.text-white{
+	color: white;
+}
 .dashboard aside{
 
 	max-width: 300px;
 	width: 100%;
 	height: 100vh;
 	padding: 1rem;
+	/* background: linear-gradient(white, rgba(0,0,0,0.84)); */
 }
 .bg-blue{
 	background: blue;
@@ -335,6 +341,12 @@ aside .dash-logo img{
   border-radius: 8px;
   color: white;
 }
+.btn-primary{
+	display: block;
+	background-color: #4fba6f;
+	border-radius: 8px;
+	color: white;
+  }
 .btn.cancel{
   background-color: #989898;
   border-radius: 8px;

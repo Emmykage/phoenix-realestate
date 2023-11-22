@@ -18,7 +18,7 @@ const Contact = () => {
                 <div className='grid grid-2'>
                     <div className='flex justify-center items-center'>
 
-                    <div class=" text-center py-3">
+                    <div class=" text-center py-3 font-semibold">
                         <ul class="list-unstyled mb-0 w-full">
                             <li><i class="fas fa-map-marker-alt fa-2x"></i>
                                 <p>San Francisco, CA 94126, USA</p>
@@ -106,7 +106,7 @@ const Contact = () => {
                         <div class="text-md-left">
                             <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
                         </div>
-                        <div class="status"></div>
+                        {/* <div class="status"></div> */}
                     </div>
 
                    
