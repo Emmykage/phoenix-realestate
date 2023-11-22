@@ -7,7 +7,7 @@ const SubHeader = () => {
   return (
     <div>
       <section class="subheader simple-search">
-        <div class="container">
+        <div class="container bg-gray-light-trans p-3">
           <h1>Find your new home today.</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec risus egestas, vestibulum arcu.</p>
 

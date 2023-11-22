@@ -163,6 +163,28 @@ gap: 1%;
 .bg-green{
 	background-color: green !important;
 }
+.bg-blue-light{
+	background-color: rgb(68, 68, 230) !important;
+}
+.bg-gray-light{
+	background-color: rgb(205, 205, 205) !important;
+}
+.bg-gray-light-trans{
+	background-color: rgba(205, 205, 205, 0.6) !important;
+}
+.bg-gray-dark{
+	background: #323746;
+
+}
+.bg-gray-dark-trans{
+	background: rgba(51, 56, 72, 0.7)
+
+}
+.bg-gray-light{
+	background: #5f636e;
+
+}
+
 .border{
 	border: 1px solid gray
 }
@@ -342,9 +364,16 @@ aside .dash-logo img{
 .property-img img{
 	width: 100%;
 }
-@media only screen and  (min-width: 800px) {
-	.container{
-	/* background-color: red; */
+@media only screen and  (max-width: 900px) {
+	.md-bg-blue-light{
+		background: rgb(58, 58, 159);
+
 	}
-	
+	.md-bg-gray-dark{
+		background: #323746;
+
+	}
+	.sub-menu{
+		width: 100%;
+	}
 }

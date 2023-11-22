@@ -93,7 +93,7 @@ const Nav = ({user}) => {
       {/* <!-- main menu --> */}
       <div class="navbar-collapse collapse">
         <div class="main-menu-wrap">
-          <div class="container-fixed">
+          <div class="container-fixed md-bg-gray-dark">
   
           <div class="member-actions right">
             <a href="user-submit-property.html" class="button small alt button-icon"><i class="fa fa-plus"></i>Submit Property</a>
@@ -102,14 +102,38 @@ const Nav = ({user}) => {
             <li class="current-menu-item">
               <NavLink to="/">Home</NavLink>
             </li>
-            <li class="menu-item-has-childre">
-              <NavLink to="/properties">Properties</NavLink>
+            <li class="menu-item-has-children">
+              <NavLink to="/properties">Property Investments</NavLink>
+              <ul class="sub-menu">
+              <li><NavLink to="/united_kingdom">UNITED KIGDOM</NavLink></li>
+              <li><NavLink to="/dubai">DUBAI</NavLink></li>
+              <li><NavLink to="/spain">SPAIN</NavLink></li>
+              <li><NavLink to="/berlin">BERLIN</NavLink></li>
+              <li><NavLink to="/tokyo">TOKYO</NavLink></li>
+              <li><NavLink to="/shangai">SHANGAI</NavLink></li>
+              {/* <li class="menu-item-has-children">
+                <a href="property-single.html">Property Single</a>
+                <ul class="sub-menu">
+                  <li><a href="property-single.html">Property Single Classic</a></li>
+                  <li><a href="property-single-full.html">Property Single Full Width</a></li>
+                </ul>
+              </li> */}
+            </ul>
             </li>
-            <li><NavLink to="/dashboard/wallet">Dashboard</NavLink></li>
+            <li><NavLink to="/dashboard/wallet">Press Release Income</NavLink></li>
+            <li><NavLink to="#">Passive Income</NavLink></li>
+            <li><NavLink to="/dashboard/wallet">Contacts</NavLink></li>
 
-            <li><NavLink to="/about">About</NavLink></li>
+            <li><NavLink to="/about">Careers</NavLink></li>
             
-            <li><NavLink to="/faq">FAQ</NavLink></li>
+            <li>
+            {user ? <a onClick={logout}>Logout</a> : (<>
+         
+
+         <NavLink to="/auth/login">Login</NavLink>
+         </>
+       )}
+          </li>
           </ul>
           <div class="clear"></div>
   

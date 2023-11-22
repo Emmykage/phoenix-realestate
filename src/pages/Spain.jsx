@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getAssets } from '../redux/actions/assets'
 import { NavLink } from 'react-router-dom'
 
-const Properties = () => {
+const Spain = () => {
   const dispatch = useDispatch()
   const {offers} = useSelector(state => state.assets)
   useEffect(()=> {
+
 
     dispatch(getAssets())
 
@@ -17,7 +18,7 @@ const Properties = () => {
     <div>
         <section class="subheader">
   <div class="container">
-    <h1 className='bg-gray-dark-trans p-2'>Property Listing Grid</h1>
+    <h1 className='bg-gray-dark-trans p-2'>Spain</h1>
     <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">Properties</a></div>
     <div class="clear"></div>
   </div>
@@ -103,4 +104,4 @@ const Properties = () => {
   )
 }
 
-export default Properties
+export default Spain

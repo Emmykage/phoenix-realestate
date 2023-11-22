@@ -39,7 +39,7 @@ const Register = () => {
 <section class="subheader">
   <div class="container">
     <h1>Register</h1>
-    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <NavLink to="#" class="current">Register</NavLink></div>
+    <div class="breadcrumb right"><NavLink to={'/'}>Home</NavLink>  <i class="fa fa-angle-right"></i> <NavLink to="#" class="current">Register</NavLink></div>
     <div class="clear"></div>
   </div>
 </section>

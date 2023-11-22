@@ -33,12 +33,24 @@ import ClientsPage from './pages/Admin/clients/ClientsPage';
 import AssetView from './pages/Admin/assets/AssetView';
 import Family from './pages/categorypages/Family';
 import StudioApartment from './pages/categorypages/Studio';
+import Berlin from './pages/Berlin';
+import Dubai from './pages/Dubai';
+import Shangai from './pages/Shangai';
+import Spain from './pages/Spain';
+import Tokyo from './pages/Tokyo';
+import UnitedKingdom from './pages/UnitedKingdom';
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<MainLayout><Home/></MainLayout>}/>
         <Route path="/properties" element={<MainLayout><Properties/></MainLayout>}/>
+        <Route path="/berlin" element={<MainLayout><Berlin/></MainLayout>}/>
+        <Route path="/unted_kingdom" element={<MainLayout><UnitedKingdom/></MainLayout>}/>
+        <Route path="/dubai" element={<MainLayout><Dubai/></MainLayout>}/>
+        <Route path="/shangai" element={<MainLayout><Shangai/></MainLayout>}/>
+        <Route path="/spain" element={<MainLayout><Spain/></MainLayout>}/>
+        <Route path="/tokyo" element={<MainLayout><Tokyo/></MainLayout>}/>
         <Route path="/family_homes" element={<MainLayout><Family/></MainLayout>}/>
         <Route path="/studio_homes" element={<MainLayout><StudioApartment/></MainLayout>}/>
         <Route path="/assets_details/:id" element={<MainLayout><AssetDetails/></MainLayout>}/>
