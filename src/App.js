@@ -39,14 +39,19 @@ import Shangai from './pages/Shangai';
 import Spain from './pages/Spain';
 import Tokyo from './pages/Tokyo';
 import UnitedKingdom from './pages/UnitedKingdom';
+import Contact from './pages/Contact';
+import Press from './pages/Press';
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<MainLayout><Home/></MainLayout>}/>
         <Route path="/properties" element={<MainLayout><Properties/></MainLayout>}/>
+        <Route path="/contact" element={<MainLayout><Contact/></MainLayout>}/>
+        <Route path="/press" element={<Press/>}/>
         <Route path="/berlin" element={<MainLayout><Berlin/></MainLayout>}/>
         <Route path="/unted_kingdom" element={<MainLayout><UnitedKingdom/></MainLayout>}/>
+        
         <Route path="/dubai" element={<MainLayout><Dubai/></MainLayout>}/>
         <Route path="/shangai" element={<MainLayout><Shangai/></MainLayout>}/>
         <Route path="/spain" element={<MainLayout><Spain/></MainLayout>}/>

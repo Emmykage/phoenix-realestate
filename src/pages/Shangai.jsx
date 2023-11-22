@@ -6,6 +6,8 @@ import { NavLink } from 'react-router-dom'
 const Shangai = () => {
   const dispatch = useDispatch()
   const {offers} = useSelector(state => state.assets)
+  const shangaiCategory = offers.filter((asset) => asset.city == "shangai")
+
   useEffect(()=> {
     dispatch(getAssets())
 
@@ -27,7 +29,7 @@ const Shangai = () => {
    
   
 	<div class="property-listing-header">
-    <span class="property-count left">{offers.length} properties found</span>
+    <span class="property-count left">{shangaiCategory.length} properties found</span>
       <form action="#" method="get" class="right">
         <select name="sort_by" onchange="this.form.submit();">
           <option value="date_desc">New to Old</option>
@@ -44,7 +46,7 @@ const Shangai = () => {
 	  </div>
     
     <div class="row">
-    {offers.map((asset) => (
+    {shangaiCategory.map((asset) => (
       <div class="col-lg-4 col-md-4">
       <div class="property shadow-hover">
         <NavLink to={`/assets_details/${asset.id}`} className="property-img">

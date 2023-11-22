@@ -120,9 +120,9 @@ const Nav = ({user}) => {
               </li> */}
             </ul>
             </li>
-            <li><NavLink to="/dashboard/wallet">Press Release Income</NavLink></li>
-            <li><NavLink to="#">Passive Income</NavLink></li>
-            <li><NavLink to="/dashboard/wallet">Contacts</NavLink></li>
+            <li><NavLink to="/press">Press Release Income</NavLink></li>
+            <li><NavLink to="/dashboard/wallet">Passive Income</NavLink></li>
+            <li><NavLink to="/contact">Contacts</NavLink></li>
 
             <li><NavLink to="/about">Careers</NavLink></li>
             

@@ -6,6 +6,8 @@ import { NavLink } from 'react-router-dom'
 const Berlin = () => {
   const dispatch = useDispatch()
   const {offers} = useSelector(state => state.assets)
+  const berlinCategory = offers.filter((asset) => asset.city == "dubai")
+
   useEffect(()=> {
 
     dispatch(getAssets())
@@ -28,7 +30,7 @@ const Berlin = () => {
    
   
 	<div class="property-listing-header">
-    <span class="property-count left">{offers.length} properties found</span>
+    <span class="property-count left">{berlinCategory.length} properties found</span>
       <form action="#" method="get" class="right">
         <select name="sort_by" onchange="this.form.submit();">
           <option value="date_desc">New to Old</option>
@@ -45,7 +47,7 @@ const Berlin = () => {
 	  </div>
     
     <div class="row">
-    {offers.map((asset) => (
+    {berlinCategory.map((asset) => (
       <div class="col-lg-4 col-md-4">
       <div class="property shadow-hover">
         <NavLink to={`/assets_details/${asset.id}`} className="property-img">
@@ -83,19 +85,6 @@ const Berlin = () => {
 		
 	</div>
 	
-	
-	{/* <div class="pagination">
-        <div class="center">
-            <ul>
-              <li><a href="#" class="button small grey"><i class="fa fa-angle-left"></i></a></li>
-              <li class="current"><a href="#" class="button small grey">1</a></li>
-              <li><a href="#" class="button small grey">2</a></li>
-              <li><a href="#" class="button small grey">3</a></li>
-              <li><a href="#" class="button small grey"><i class="fa fa-angle-right"></i></a></li>
-            </ul>
-        </div>
-        <div class="clear"></div>
-    </div> */}
 
   </div>
 </section>

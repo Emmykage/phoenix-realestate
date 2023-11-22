@@ -78,6 +78,9 @@
 .font-bold{
 	font-weight: 700;
 }
+.grid{
+	display: grid;
+}
 .grid-3{
 	grid-template-columns: 1fr 1fr 1fr;
 
@@ -102,6 +105,15 @@
   }
   .p-3{
 	padding: 1.5rem;
+  }
+  .p-4{
+	padding: 2rem;
+  }
+  .p-5{
+	padding: 2.5rem;
+  }
+  .p-6{
+	padding: 3rem;
   }
   .px-1{
 	padding: 0.5rem;
@@ -307,6 +319,9 @@ aside .dash-logo img{
 }
 .m-h-300{
   min-height: 300px;
+}
+.h-screen{
+	min-height: 100vh;
 }
 .w-full{
   width: 100%;

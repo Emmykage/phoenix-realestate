@@ -6,6 +6,8 @@ import { NavLink } from 'react-router-dom'
 const Tokyo = () => {
   const dispatch = useDispatch()
   const {offers} = useSelector(state => state.assets)
+  const tokyoCategory = offers.filter((asset) => asset.city == "Tokyo")
+
   useEffect(()=> {
 
     dispatch(getAssets())
@@ -28,7 +30,7 @@ const Tokyo = () => {
    
   
 	<div class="property-listing-header">
-    <span class="property-count left">{offers.length} properties found</span>
+    <span class="property-count left">{tokyoCategory.length} properties found</span>
       <form action="#" method="get" class="right">
         <select name="sort_by" onchange="this.form.submit();">
           <option value="date_desc">New to Old</option>
@@ -45,7 +47,7 @@ const Tokyo = () => {
 	  </div>
     
     <div class="row">
-    {offers.map((asset) => (
+    {tokyoCategory.map((asset) => (
       <div class="col-lg-4 col-md-4">
       <div class="property shadow-hover">
         <NavLink to={`/assets_details/${asset.id}`} className="property-img">
