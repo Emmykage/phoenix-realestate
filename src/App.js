@@ -50,7 +50,7 @@ function App() {
         <Route path="/contact" element={<MainLayout><Contact/></MainLayout>}/>
         <Route path="/press" element={<Press/>}/>
         <Route path="/berlin" element={<MainLayout><Berlin/></MainLayout>}/>
-        <Route path="/unted_kingdom" element={<MainLayout><UnitedKingdom/></MainLayout>}/>
+        <Route path="/united_kingdom" element={<MainLayout><UnitedKingdom/></MainLayout>}/>
         
         <Route path="/dubai" element={<MainLayout><Dubai/></MainLayout>}/>
         <Route path="/shangai" element={<MainLayout><Shangai/></MainLayout>}/>

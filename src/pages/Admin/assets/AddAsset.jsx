@@ -5,64 +5,120 @@ import { createAsset } from '../../../redux/actions/assets';
 const AddAsset = () => {
   const [toggleForm, setToggleForm] = useState('false');
   const dispatch = useDispatch();
-  const [assetForm, setAssetForm] = useState({
-    name: '',asset_category: "", address: "", tenure: '', sale_type: '', area: '', number_of_bedrooms: '', number_of_bathrooms: '', status: ''
-  });
+  // const [assetForm, setAssetForm] = useState({
+  //   name: '',asset_category: "", address: "", tenure: '', sale_type: '', area: '', number_of_bedrooms: '', number_of_bathrooms: '', status: ''
+  // });
 
-  const handleInput = (e) => {
-    setAssetForm({
+  // const handleInput = (e) => {
+  //   setAssetForm({
 
-      ...assetForm,
-      [e.target.name]: e.target.value,
-    });
-  };
+  //     ...assetForm,
+  //     [e.target.name]: e.target.value,
+  //   });
+  // };
+  // const [name, setName] = useState(null)
+  // const [image, setImage] = useState(null)
+  // const handleInputImage = (e) => {
+  //     setImage(e.target.files[0])
+  // }
+//   const handleInput = (e) => {
+//     setName(e.target.value)
+//     console.log(name)
+// }
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createAsset(assetForm));
+  
+    
+    const formData = new FormData();
+
+    formData.append('asset[name]', e.target.name.value)
+    formData.append('asset[image]', e.target.image.files[0])
+    formData.append('asset[price]', e.target.price.value)
+    formData.append('asset[asset_category]', e.target.asset_category.value)
+    formData.append('asset[address]', e.target.address.value)
+    formData.append('asset[tenure]', e.target.tenure.value)
+    formData.append('asset[sale_type]', e.target.sale_type.value)
+    formData.append('asset[area]', e.target.area.value)
+    formData.append('asset[number_of_bedrooms]', e.target.number_of_bedrooms.value)
+    formData.append('asset[number_of_bathrooms]', e.target.number_of_bathrooms.value)
+    formData.append('asset[status]', e.target.status.value)
+    formData.append('asset[city]', e.target.city.value)
+
+    const data = Object.fromEntries(formData)
+    console.log(formData)
+    console.log(data)
+    dispatch(createAsset(formData));
+    e.currentTarget.reset()
+   
   };
   return (
     <div className="assets-forms">
       <div className="asset-div border">
 
         <span onClick={() => setToggleForm(!toggleForm)}>Add Property</span>
-        <form onSubmit={handleSubmit} className={toggleForm && 'hide-form'}>
+        <form
+ 
+        onSubmit={handleSubmit} className={toggleForm && 'hide-form'}>
         <div>
+            <label>Property Title</label>
+            <input type="text" id="name" 
+        
+            name="name" 
+         
+             />
+          </div> 
+    <div>
             <label>Asset Category</label>
             <select
               name="asset_category"
               id="asset_category"
-              value={assetForm.asset_category}
-              onChange={handleInput}
+           
             >
               <option value="Family Home">Family Home </option>
               <option value="Studio Apartment">Studio Apartment </option>
-              <option value="quarteCondo & Villarly">Condo & Villa </option>
+              <option value="Condo & Villa">Condo & Villa </option>
               <option value="Water Front Home">Water Front Home  </option>
               <option value="Cozy Home">Cozy Home </option>
 
             </select>
           </div>
+          
+          
           <div>
-            <label>Property Title</label>
-            <input type="text" id="name" name="name" value={assetForm.name} onChange={handleInput} />
+            <label>City</label>
+            <select
+              name="city"
+              id="city"
+             
+            >
+              <option value="United Kingdom">United Kingdom </option>
+              <option value="Dubai">Dubai </option>
+              <option value="Tokyo">Tokyo </option>
+              <option value="Berlin">Berlin  </option>
+              <option value="Shangai">Shangai </option>
+              <option value="Spain">Spain </option>
+
+            </select>
           </div>
           <div>
             <label>Address</label>
-            <input type="text" id="address" name="address" value={assetForm.address} onChange={handleInput} />
+            <input type="text" id="address" name="address" />
           </div>
 
           <div>
             <label>Price</label>
-            <input type="number" id="price" name="price" value={assetForm.price} onChange={handleInput} />
+            <input type="number" id="price" name="price" 
+            
+             />
           </div>
+           
 
           <div>
             <label>Tenure</label>
             <select
               name="tenure"
               id="tenure"
-              value={assetForm.tenure}
-              onChange={handleInput}
+             
             >
               <option value="event Based">Event based </option>
               <option value="monthly">Monthly </option>
@@ -77,8 +133,7 @@ const AddAsset = () => {
             <select
               name="sale_type"
               id="sale_type"
-              value={assetForm.sale_type}
-              onChange={handleInput}
+            
             >
               <option value="Rent">Rent </option>
               <option value="Sale">Sale </option>
@@ -88,29 +143,41 @@ const AddAsset = () => {
           <div>
             {' '}
             <labal>Area</labal>
-            <input type="text" name="area" value={assetForm.area} onChange={handleInput} />
+            <input type="text" name="area" />
           </div>
           <div>
             {' '}
             <labal>Number of Bedrooms</labal>
-            <input type="number" name="number_of_bedrooms" value={assetForm.number_of_bedrooms} onChange={handleInput} />
+            <input type="number" name="number_of_bedrooms"
+             
+              />
           </div>
           <div>
             {' '}
             <labal>Number of Bathrooms</labal>
-            <input type="number" name="number_of_bathrooms" value={assetForm.number_of_bathrooms} onChange={handleInput} />
+            <input type="number" name="number_of_bathrooms" 
+             />
           </div>
           <h4>Return & Management fees</h4>
           <div>
             {' '}
             <labal>status</labal>
-            <input type="text" name="status" value={assetForm.status} onChange={handleInput} />
-          </div>
+            <input type="text" name="status" 
+            
+             />
+          </div> 
           <div>
+            {' '}
+            <labal>image upload</labal>
+            <input type="file" name="image" 
+              // onChange={handleInputImage}
+            />
+          </div>
+          {/* <div>
             {' '}
             <labal>image</labal>
             <input type="text" name="images" value={assetForm.images} onChange={handleInput} />
-          </div>
+          </div> */}
 
          
 

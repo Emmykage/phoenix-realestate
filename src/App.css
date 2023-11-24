@@ -384,12 +384,15 @@ aside .dash-logo img{
 .property-display .property-img{
   max-width: 800px;
   width: 100%;
+  height: 400px;
+  
 }
 .asset-details{
 
 }
 .property-img img{
 	width: 100%;
+	object-fit: contain;
 }
 @media only screen and  (max-width: 900px) {
 	.md-bg-blue-light{

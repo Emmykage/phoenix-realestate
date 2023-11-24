@@ -27,7 +27,7 @@ const Transaction = () => {
 
     </div>
     <div className='flex gap-2'>
-    <div className='flex-1 px-4'>
+    <div className='flex-1 px-2'>
       <ul><h3>Deposits</h3>
       {deposits < 1 ? <h3>No Deposite made</h3> :deposits.map((transaction) => {
         if(transaction.transaction_type == "deposit")
@@ -49,17 +49,20 @@ const Transaction = () => {
       </ul>
 
     </div>
-    <div className='flex-1 p-4'>
+    <div className='flex-1 px-2'>
       <ul><h3>Withdrawals</h3>
       {withdrawals < 1 ? <h3>No Withdrawals yet</h3> : user.wallet.transactions.map((transaction) => {
         if (transaction.transaction_type == "withdraw")
         return(
-        <li>
-          <div className="row">
+        <li className='box-shadow p-2'>
+          <div className="p-2">
+            <div className='flex items-center'>
+
           
-          <h5 className='col-sm-6 p-4'> {usd_format(transaction.amount)} </h5> 
-          <a className='col-sm-6 '> {transaction.status}</a>
-            
+          <h5 className='flex-1'> {usd_format(transaction.amount)} </h5> 
+          <a className={`flex-1 status ${transaction.status == "pending" && "cancel"} `}> {transaction.status}</a>
+          </div>
+          
           </div>
           </li>
 

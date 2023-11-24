@@ -42,7 +42,7 @@ const Nav = ({user}) => {
   
         <div class="header-details">
           <div class="header-item header-search left">
-            <table>
+            {/* <table>
                 <tr>
                 <td><i class="fa fa-search"></i></td>
                 <td class="header-item-text">
@@ -52,7 +52,7 @@ const Nav = ({user}) => {
                   </form>
                 </td>
               </tr>
-            </table>
+            </table> */}
           </div>
           <div class="header-item header-phone left">
             <table>
@@ -102,7 +102,7 @@ const Nav = ({user}) => {
             <li class="current-menu-item">
               <NavLink to="/">Home</NavLink>
             </li>
-            <li class="menu-item-has-children">
+            <li class="menu-item-has-childre">
               <NavLink to="/properties">Property Investments</NavLink>
               <ul class="sub-menu">
               <li><NavLink to="/united_kingdom">UNITED KIGDOM</NavLink></li>

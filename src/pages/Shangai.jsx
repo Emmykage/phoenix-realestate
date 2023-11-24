@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 const Shangai = () => {
   const dispatch = useDispatch()
   const {offers} = useSelector(state => state.assets)
-  const shangaiCategory = offers.filter((asset) => asset.city == "shangai")
+  const shangaiCategory = offers.filter((asset) => asset.city == "Shangai")
 
   useEffect(()=> {
     dispatch(getAssets())

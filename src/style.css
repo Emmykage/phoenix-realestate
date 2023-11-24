@@ -819,7 +819,9 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 
 .property:hover .property-color-bar { width:100%; }
 
-.property-img { position:relative; display:block }
+.property-img { 
+	position:relative; 
+	display:block; height: 300px }
 .property-img img { max-width:100%; height:auto; height: 100%; }
 
 .property-price {

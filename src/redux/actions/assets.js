@@ -8,12 +8,12 @@ const createAsset = createAsyncThunk('asset/create_asset', async (data) => {
   const response = await fetch(`${baseUrl}assets`, {
     method: 'POST',
     headers: {
-      'Content-type': 'application/json',
-      Authorization: `Bearer ${token()}`,
+       Authorization: `Bearer ${token()}`,
 
     },
-    body: JSON.stringify(data),
+    body: data,
   }).then((res) => res.json());
+  console.log(data)
   return response;
 });
 
@@ -33,7 +33,7 @@ const getAsset = createAsyncThunk('asset/get_assets', async (id) => {
   const response = await fetch(`${baseUrl}assets/${id}`, {
     method: 'GET',
     headers: {
-      'Content-type': 'application/json',
+      // 'Content-type': 'application/json',
       Authorization: `Bearer ${token}`,
 
     },

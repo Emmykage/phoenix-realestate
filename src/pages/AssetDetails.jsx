@@ -11,6 +11,7 @@ const AssetDetails = () => {
   const {id} = useParams()
 
   const asset = offers.find((prop) => prop.id == id)
+  console.log(asset)
   const dispatch = useDispatch()
   useEffect(()=> {
   dispatch(getAssets())
@@ -32,7 +33,7 @@ const AssetDetails = () => {
               <div class="property-tag button status">{asset.sale_type}</div>
               <div class="property-price">${asset.price} <span>{asset.tenure}</span></div>
               <div class="property-color-bar"></div>
-              <img src={asset.images} alt="" />
+              <img src={asset.image_url} alt="" />
             </a>
             <div class="property-content">
               <div className='flex justify-between w-max-800'>

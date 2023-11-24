@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAssets } from '../redux/actions/assets'
 import { NavLink } from 'react-router-dom'
+import { usd_format } from '../components/misc/USD'
 
 const Properties = () => {
   const dispatch = useDispatch()
@@ -11,13 +12,13 @@ const Properties = () => {
     dispatch(getAssets())
 
   },[])
-
+console.log(offers)
 
   return (
     <div>
         <section class="subheader">
   <div class="container">
-    <h1 className='bg-gray-dark-trans p-2'>Property Listing Grid</h1>
+    <h1 className='bg-gray-dark-trans p-2'>Property Listing</h1>
     <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">Properties</a></div>
     <div class="clear"></div>
   </div>
@@ -51,9 +52,9 @@ const Properties = () => {
         <NavLink to={`/assets_details/${asset.id}`} className="property-img">
           <div class="img-fade"></div>
           <div class="property-tag button status">{asset.sale_type}</div>
-          <div class="property-price">${asset.price}</div>
+          <div class="property-price">{usd_format(asset.price)}</div>
           <div class="property-color-bar"></div>
-          <img src={asset.images} alt={asset.name} />
+          <img src={asset.image_url} alt={asset.name} />
         </NavLink>
         <div class="property-content">
           <div class="property-title">
