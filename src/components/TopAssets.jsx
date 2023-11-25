@@ -19,7 +19,7 @@ const TopAssets = () => {
         <p>Morbi accumsan ipsum velit nam nec tellus a odiose tincidunt auctor a ornare odio sed non mauris vitae erat consequat auctor</p>
       </div>
   
-      <div class="row">
+      <div class="flex justify-center gap-2">
         {assets?.map(asset => (
             <>
             <div class="col-lg-4 col-md-4">
@@ -30,7 +30,7 @@ const TopAssets = () => {
                 <div class="property-tag button status">{asset.sale_type}</div>
                 <div class="property-price">${asset.price}</div>
                 <div class="property-color-bar"></div>
-                <img src={asset.images} alt="" />
+                <img src={asset.image_url} alt="" />
               </NavLink>
               <div class="property-content">
                 <div class="property-title">

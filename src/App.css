@@ -1,4 +1,7 @@
-
+*{
+	box-sizing: border-box;
+	
+}
 .dashboard{
 	position: relative;
 	display: flex;
@@ -13,9 +16,17 @@
 	height: 100vh;
 	overflow-x: auto;
 }
+.overflow-auto{
+	overflow: auto;
+
+}
+.flex-wrap{
+	flex-wrap: wrap;
+}
 .fixed{
 	position: fixed;
 }
+
 .relative{
 	position: relative;
 }.absolute{
@@ -364,6 +375,9 @@ aside .dash-logo img{
 	background-color: #989898;
 	border-radius: 8px;
 	color: white;
+}
+.status.pending{
+	background-color: rgb(255, 55, 0);
 }
 
 .btn:hover{

@@ -33,9 +33,9 @@ const AdminLayout = ({ children }) => {
     // user.role === "admin" && <h1 className='text-gray'>You are not Authorized to view this page</h1>
 
   return (
-    <div className="admin container">
+    <div className="admin contain">
       <Aside />
-      <main>
+      <main className='overflow-auto'>
         {children}
       </main>
 

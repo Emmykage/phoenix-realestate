@@ -186,8 +186,8 @@ a:hover { color:#68b4e8; text-decoration:none; }
 /** FORM ELEMENTS **/
 input, textarea, select {
 	width:100%;
-	padding:9px;
-	margin-bottom:20px;
+	/* padding:9px; */
+	/* margin-bottom:20px; */
 	border-radius:3px;
 	border:none;
 	font-weight:300;

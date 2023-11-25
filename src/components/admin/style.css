@@ -25,18 +25,24 @@
 }
 
 
-.admin.container {
+.admin.contain {
+  padding: 1rem;
   display: grid;
-  width: 96%;
+  width: 100%;
+  /* height: 100vh; */
   margin: 0 auto;
   gap: 2%;
   color: var(--color-dark);
   background-color: var(--color-background);
   grid-template-columns: 14rem 3fr 1fr;
 }
+main {
 
+  height: 100%;
+}
 aside {
   height: 100vh;
+  /* position: fixed; */
 }
 
 .admin a {
@@ -113,7 +119,7 @@ aside .top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1.4rem;
+  /* margin-top: 1.4rem; */
 }
 
 aside .logo {
@@ -195,10 +201,8 @@ aside .side-bar .message-count {
   border-radius: var(--border-radius-1);
 }
 
-main {
-  margin-top: 1.4rem;
-  padding-top: 2rem;
-}
+
+/* .bg-b */
 
 main .date {
   display: inline-block;
@@ -358,9 +362,9 @@ main .recent-orders a {
   color: var(--color-primary);
 }
 
-.admin .right {
+/* .admin .right {
   margin-top: 1.4rem;
-}
+} */
 
 .right .top {
   display: flex;
@@ -570,10 +574,10 @@ main .recent-orders a {
 }
 
 @media screen and (max-width: 1200px) {
-  .admin.container {
-    padding: 1rem;
+  .admin.contain {
+    /* padding: 1rem; */
     width: 100%;
-    grid-template-columns: 7rem auto 23rem;
+    grid-template-columns: 7rem 2fr 1fr;
   }
 
   aside .logo h2 {
@@ -623,7 +627,7 @@ main .recent-orders a {
 }
 
 @media screen and (max-width: 768px) {
-  .admin.container {
+  .admin.contain {
     grid-template-columns: 1fr;
     width: 100%;
   }
@@ -638,6 +642,9 @@ main .recent-orders a {
     height: 100vh;
     padding-right: var(--card-padding);
     display: none;
+  }
+  .admin.contain .right{
+    /* display: none; */
   }
 
   aside .logo {
@@ -668,7 +675,7 @@ main .recent-orders a {
   }
 
   main {
-    margin-top: 8rem;
+    margin-top: 5rem;
     padding: 0 1rem;
   }
 

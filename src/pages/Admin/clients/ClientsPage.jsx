@@ -39,10 +39,10 @@ const ClientsPage = () => {
       </div>
       <div className="profile-detail">
         <ul className="">
-          <li className="flex-space ">
+          <li className="flex-space font-semibold">
             <span>Name: </span>
             {' '}
-            <span>
+            <span className='font-semibold'>
               {' '}
               {user.first_name}
               {' '}
@@ -78,8 +78,8 @@ const ClientsPage = () => {
 
       <div className="asset-details">
         <p className='p-1 flex justify-around'>
-          <span className='font-bold'>
-            total inestment
+          <span className='font-bold text-2xl'>
+            Investment
           </span>
           <span className='font-bold'>
             value: {user.total_asset}
@@ -90,13 +90,13 @@ const ClientsPage = () => {
           <h2>{usd_format(user.wallet.wallet_balance)}</h2>
 
           <p>{user.wallet.transactions.map(transaction => (
-              <li className='flex items-center my-1 px-1 py-2 justify-between box-shadow'>
-              <span className='flex-1'>{transaction.coin_type}</span>
-              <span className='flex-1'>{transaction.transaction_type}</span>
-              <span className='flex-1'>{transaction.amount}</span>
-              <span className='flex-1'>{transaction.status}</span>
-              <span className='flex-2'>{transaction.id}</span>
-              <button className='approve text-sm' onClick={()=> handleApprove(transaction.id)}>Approve</button>
+              <li className='flex items-center my-1 px-1 py-2 justify-between box-shadow flex-wrap gap-1'>
+              <span className='font-medium flex-1'>{transaction.coin_type}</span>
+              <span className='flex-1 font-normal'>{transaction.transaction_type}</span>
+              <span className='flex-1 font-medium'>{usd_format(transaction.amount)}</span>
+              {/* <span className={`flex-1 status ${transaction.status == "pending" && "cancel" }`}>{transaction.status}</span> */}
+              {/* <span className='flex-2'>{transaction.id}</span> */}
+              <button className={`approve text-sm status w-full my-1 ${transaction.status == "completed" ? "status" : "pending"}`} onClick={()=> handleApprove(transaction.id)}>{transaction.status == "completed" ?  "approved" : "pending"}</button>
             </li>
            
             
@@ -104,7 +104,7 @@ const ClientsPage = () => {
 
           </div>
           <hr />
-        {user.portfolios.length < 1 ? <h3>User has no Portfolios</h3>
+        {user.portfolios.length < 1 ? <h3 className='py-3'>User has no Portfolios</h3>
 
           : user.portfolios.map((portfolio) => (
             <div className="asset-infos">
