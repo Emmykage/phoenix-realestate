@@ -625,7 +625,27 @@ main .recent-orders a {
     display: none;
   }
 }
+.blog-post form{
+  margin-top: 2rem;
 
+}
+.blog-post form button{
+  padding: 0.8rem 1rem;
+  display: block;
+  background: #135092;
+  border: none;
+  color: white;
+  width: 100%;
+
+}
+.blog-post form input, .blog-post form textarea{
+
+  border: red;
+  outline: #135092;
+  background-color: rgb(240, 238, 238);
+
+
+}
 @media screen and (max-width: 768px) {
   .admin.contain {
     grid-template-columns: 1fr;

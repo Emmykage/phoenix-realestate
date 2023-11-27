@@ -186,8 +186,8 @@ a:hover { color:#68b4e8; text-decoration:none; }
 /** FORM ELEMENTS **/
 input, textarea, select {
 	width:100%;
-	/* padding:9px; */
-	/* margin-bottom:20px; */
+	padding:9px; 
+	 margin-bottom:20px; 
 	border-radius:3px;
 	border:none;
 	font-weight:300;
@@ -1368,7 +1368,7 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 /*====================================================================================*/
  /* 04 BLOG
 /*====================================================================================*/
-.blog-post { background:white; margin-bottom:40px;}
+/* .blog-post { background:white; margin-bottom:40px;} */
 
 .blog-post-img { position:relative; display:block; }
 .blog-post-date { 

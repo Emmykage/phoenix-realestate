@@ -5,26 +5,7 @@ import { createAsset } from '../../../redux/actions/assets';
 const AddAsset = () => {
   const [toggleForm, setToggleForm] = useState('false');
   const dispatch = useDispatch();
-  // const [assetForm, setAssetForm] = useState({
-  //   name: '',asset_category: "", address: "", tenure: '', sale_type: '', area: '', number_of_bedrooms: '', number_of_bathrooms: '', status: ''
-  // });
 
-  // const handleInput = (e) => {
-  //   setAssetForm({
-
-  //     ...assetForm,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
-  // const [name, setName] = useState(null)
-  // const [image, setImage] = useState(null)
-  // const handleInputImage = (e) => {
-  //     setImage(e.target.files[0])
-  // }
-//   const handleInput = (e) => {
-//     setName(e.target.value)
-//     console.log(name)
-// }
   const handleSubmit = (e) => {
     e.preventDefault();
   
@@ -45,8 +26,8 @@ const AddAsset = () => {
     formData.append('asset[city]', e.target.city.value)
 
     const data = Object.fromEntries(formData)
-    console.log(formData)
-    console.log(data)
+    // console.log(formData)
+    // console.log(data)
     dispatch(createAsset(formData));
     e.currentTarget.reset()
    
@@ -61,9 +42,7 @@ const AddAsset = () => {
         onSubmit={handleSubmit} className={toggleForm && 'hide-form'}>
         <div>
             <label>Property Title</label>
-            <input type="text" id="name" 
-        
-            name="name" 
+            <input type="text" id="name" name="name" 
          
              />
           </div> 

@@ -41,6 +41,8 @@ import Tokyo from './pages/Tokyo';
 import UnitedKingdom from './pages/UnitedKingdom';
 import Contact from './pages/Contact';
 import Press from './pages/Press';
+import PressPage from './pages/PressPage';
+import AddPost from './pages/Admin/blog/AddPost';
 function App() {
   return (
     <div className="App">
@@ -48,7 +50,9 @@ function App() {
         <Route path="/" element={<MainLayout><Home/></MainLayout>}/>
         <Route path="/properties" element={<MainLayout><Properties/></MainLayout>}/>
         <Route path="/contact" element={<MainLayout><Contact/></MainLayout>}/>
-        <Route path="/press" element={<Press/>}/>
+        <Route path="/press" element={<MainLayout><Press/></MainLayout>}/>
+        <Route path="/press/:id" element={<MainLayout><PressPage/></MainLayout>}/>
+        
         <Route path="/berlin" element={<MainLayout><Berlin/></MainLayout>}/>
         <Route path="/united_kingdom" element={<MainLayout><UnitedKingdom/></MainLayout>}/>
         
@@ -92,6 +96,7 @@ function App() {
         <Route path='reports' element={<AdminLayout><Reports/></AdminLayout>}/>
         <Route path='settings' element={<AdminLayout><Settings/></AdminLayout>}/>
         <Route path='add_asset' element={<AdminLayout><AddAsset/></AdminLayout>}/>
+        <Route path="add_blog" element={<AdminLayout><AddPost/></AdminLayout>}/>
 
         </Route>
       </Routes>

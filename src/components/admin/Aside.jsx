@@ -60,9 +60,9 @@ const Aside = () => {
           <span><FiSettings /></span>
           <h3>Settings</h3>
         </NavLink>
-        <NavLink to="/admin/add_asset" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
+        <NavLink to="/admin/add_blog" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
           <span><AiOutlinePlus /></span>
-          <h3>Add Products</h3>
+          <h3>Add Post</h3>
         </NavLink>
         <NavLink className={({ isActive }) => (isActive ? activeLink : normalLink)}>
           <span><BiLogOut /></span>

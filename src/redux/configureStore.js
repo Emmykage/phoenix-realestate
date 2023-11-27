@@ -9,13 +9,15 @@ import assetSlice from "./assets/assets"
 import portfolioSlice from "./portfolio/portfolio"
 import walletSlice from './wallet/wallet'
 import transactionSlice from './wallet/transaction'
+import postSlice from "./blog/blog"
 const rootReducer = combineReducers({
     user: useSlice,
     users: usersSlice,
     assets: assetSlice,
     portfolios: portfolioSlice,
     wallet: walletSlice,
-    transactions: transactionSlice
+    transactions: transactionSlice,
+    blog_posts: postSlice
 })
 
 const store = configureStore({reducer: rootReducer}, applyMiddleware(thunk, logger))

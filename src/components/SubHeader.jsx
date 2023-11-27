@@ -91,7 +91,7 @@ console.log(offers)
   </div>
   
   <div class="slider-wrap">
-    <div class="slider slider-featured">
+    <div class="slider slider-featured flex justify-center">
     {offers.map(offer => (
 
   
