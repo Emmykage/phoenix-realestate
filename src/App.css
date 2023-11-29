@@ -35,6 +35,16 @@
 .text-white{
 	color: white;
 }
+.text-gray{
+	color: rgb(107 114 128);
+}
+.hover-text-gray:hover{
+	color: rgb(235, 232, 232);
+
+}
+.border-none{
+	border: none;
+}
 .dashboard aside{
 
 	max-width: 300px;
@@ -45,23 +55,28 @@
 }
 .bg-blue{
 	background: blue;
+}.bg-primary-light{
+	background: rgba(52, 122, 183, 0.5);
 }
 .dashboard aside ul{
-	margin-top: 3rem;
+	/* margin-top: 3rem; */
 	background: white;
 }
-
+.dashboard aside .bottom{
+	border-top: 1px solid gray;
+	/* background-color: red; */
+}
 .dashboard aside ul li{
 
 	padding: 1rem;
-	border-bottom: 1px solid gray;
+	/* border-bottom: 1px solid gray; */
 
 }
 .dashboard .logo{
 	margin-top: 3rem;
 }
 .dashboard aside .nav-list{
-	margin-top: 6rem;
+	/* margin-top: 6rem; */
 }
 .dashboard .grid{
 	display: grid;
@@ -96,10 +111,10 @@
 .font-bold{
 	font-weight: 700;
 }
-.grid{
+.grid, .grid-display{
 	display: grid;
 }
-.grid-blog{
+ .grid-third{
 	grid-template-columns: 3fr 1fr;
 }
 .grid-3{
@@ -137,10 +152,11 @@
 	padding: 3rem;
   }
   .px-1{
-	padding: 0.5rem;
-  }
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;  }
   .px-2{
-	padding: 1rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
   }
   .px-3{
 	padding: 1.5rem;
@@ -195,6 +211,10 @@
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
 }
+.my-4{
+	margin-top: 2.5rem;
+	margin-bottom: 2.5rem;
+}
 .mr-1{
 	margin-right: 0.5rem;
 }
@@ -210,6 +230,10 @@
 .mr-5{
 	margin-right: 2.5rem;
 }
+.m-auto{
+	margin: auto;
+
+}
 .form-card{
 	padding: 1rem;
 	border-radius: 0.6rem;
@@ -220,8 +244,25 @@ gap: 1%;
 .gap-2{
 	gap: 2%;
 	}
+	.gap-3{
+		gap: 3%;
+		}.gap-4{
+			gap: 4%;
+			}
 .dashboard .grid > div{
 	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+}
+hr{
+	border: 1px solid #454955;
+}
+.account-settings form input{
+	border: 1px solid rgb(116, 114, 114);
+	/* outline: none; */
+
+}
+.account-settings form input:focus{
+	outline: none;
+	border: none;
 }
 .dashboard .top-details{
 	margin-top: 3rem;
@@ -261,7 +302,9 @@ gap: 1%;
 	background: #5f636e;
 
 }
-
+.w-5{
+	width: 2.5rem;
+}
 .border{
 	border: 1px solid gray
 }

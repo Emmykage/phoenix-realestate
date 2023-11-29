@@ -12,6 +12,20 @@ const initialState = {
 const usersSlice = createSlice({
     name: "users",
     initialState,
+    reducers: {
+        updateUser: (state, action) => {
+            const value = action.payload.target.value
+            const name = action.payload.target.name
+            return{
+                ...state,
+                user: {
+                    ...state.user,
+                    [name]: value
+                }
+            }
+
+        }
+    },
     extraReducers: {
         [listUsers.fulfilled]: (state, action) => {
             const response = action.payload;
@@ -43,8 +57,7 @@ const usersSlice = createSlice({
         },
         [getUser.fulfilled]: (state, action) => {
             const response = action.payload;
-            console.log("response")
-
+           console.log(response)
             if(action.payload.message){
                 return {
                     ...state,
@@ -62,7 +75,6 @@ const usersSlice = createSlice({
             }
         },
         [getUser.pending]: (state)=> {
-            console.log("loadiing...")
 
             return{
                 ...state,
@@ -73,16 +85,17 @@ const usersSlice = createSlice({
 
         },
         [getUser.rejected]: (state) => {
-            console.log("response")
-
+            
             return{
                 ...state,
                 loading: false,
                 error: true,
                 message: "No internet"
             }
-        }
+        },
+       
 
     }
 })
 export default usersSlice.reducer
+export const {updateUser} = usersSlice.actions

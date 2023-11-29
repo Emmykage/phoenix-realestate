@@ -1,26 +1,36 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { NavLink, useParams } from 'react-router-dom'
+import { getPost } from '../redux/actions/blog';
 
 const PressPage = () => {
+  const {id} = useParams();
+  const dispatch = useDispatch()
+  const {post} = useSelector(state => state.blog_posts)
+  useEffect(()=> {
+    dispatch(getPost(id))
+  },[])
+  console.log(post)
+
   return (
     <div className='container blog py-6 bg-white'>
-      <div className='grid grid-blog gap-2'>
+      <div className='grid grid-third gap-2'>
 
      
       <div className='box-shadow p-2 m-1'>
         <div className='flex items-center '>
          
-        <h3 className='mr-5'>Post title</h3> 
-        <h4>Secondary Text</h4>
+        <h3 className='mr-5'>{post.title}</h3> 
+        <h4>{post.secondary_text}</h4>
          
         </div>
-        <div><p>written by John Doe, 30 04 2016</p></div>
+        {/* <div><p>written by {post.user.first_name}, 30 04 2016</p></div> */}
         <div className='blog-image'>
-          <img src="./images/530x345.png" alt="" className='w-full' />
+          <img src={post.img_url} alt="" className='w-full' />
 
         </div>
         <div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, aut esse debitis obcaecati deserunt, ipsa exercitationem dolore ut, inventore cupiditate ullam eveniet nam doloribus aliquam dolorum fugit illum modi assumenda voluptatum ratione perspiciatis dolores quaerat. Est harum molestias sunt eveniet!</p>
+          <p>{post.body}</p>
           
         </div>
       </div>

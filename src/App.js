@@ -43,6 +43,7 @@ import Contact from './pages/Contact';
 import Press from './pages/Press';
 import PressPage from './pages/PressPage';
 import AddPost from './pages/Admin/blog/AddPost';
+import AccountSettings from './components/dashboard/Settings';
 function App() {
   return (
     <div className="App">
@@ -74,6 +75,8 @@ function App() {
           </Route>
           <Route path='account' element={<Account/>} />
           <Route path='reference' element={<References/>} />          
+          <Route path='settings' element={<AccountSettings/>}/>
+
         </Route>
 
         <Route path='auth'>

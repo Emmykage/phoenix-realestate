@@ -80,7 +80,7 @@ console.log(offers)
   <div class="container">
     <div class="module-header">
       <h2>Featured <strong>Properties</strong></h2>
-      <img src="images/divider.png" alt="" />
+      <img src="images/divider.png" alt=""/>
       <p>Morbi accumsan ipsum velit nam nec tellus a odiose tincidunt auctor a ornare odio sed non mauris vitae erat consequat auctor</p>
     </div>
   </div>

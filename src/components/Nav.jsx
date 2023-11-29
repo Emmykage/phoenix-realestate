@@ -71,7 +71,7 @@ const Nav = ({user}) => {
                 <td><i class="fa fa-envelope"></i></td>
                 <td class="header-item-text">
                   Drop us a line<br/>
-                  <span>hello@homely.com</span>
+                  <span>info@phoenix-homes.com</span>
                 </td>
               </tr>
             </table>

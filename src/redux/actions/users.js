@@ -25,4 +25,14 @@ const getUser = createAsyncThunk('user/get_account', async () => {
   }).then((res) => res.json());
   return response;
 });
-export { listUsers, getUser };
+const patchUser = createAsyncThunk('user/update_user', async() => {
+  const response = await fetch(`${baseUrl}users`, {
+    method: 'PATCH',
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${token()}`,
+    }
+  }).then((res) => res.json());
+  return response
+})
+export { listUsers, getUser, patchUser };

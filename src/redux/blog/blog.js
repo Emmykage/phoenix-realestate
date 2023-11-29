@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { createPost, getPosts } from "../actions/blog"
+import { createPost, getPost, getPosts } from "../actions/blog"
 
 const initialState = {
-    posts: []
+    posts: [],
+    post: {}
 }
 
 const postSlice = createSlice({
@@ -29,6 +30,22 @@ const postSlice = createSlice({
             return{
             ...state,
             posts: action.payload
+        }},
+        [getPost.pending]: (state) => { 
+            return{
+            ...state,
+          
+        }},
+        [getPost.rejected]: (state, action) => { 
+            return{
+            ...state,
+  
+        }},
+        [getPost.fulfilled]: (state, action) => { 
+            // console.log(action.payload)
+            return{
+            ...state,
+            post: action.payload
         }}
     }
 })

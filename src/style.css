@@ -455,7 +455,7 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 	display:none;
 	position:absolute;
 	background:#2a2e3b;
-	width:200px;
+	width:100%;
 	margin-top:15px;
 	font-size:14px;
 	-webkit-transition:all 0.4s; 
@@ -500,7 +500,7 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 .header-default .main-menu-wrap { height:60px; top:0px; width:100%; background:#323746; }
 .header-default .navbar-toggle.fixed { position:fixed; top:0; left:0; margin-top:0; width:100%; background:#323746; border-radius:0px; padding:15px;}
 .header-default .main-menu-wrap.fixed { position:fixed; }
-.header-default .main-menu-wrap .container-fixed { max-width:1140px; margin:0 auto; }
+.header-default .main-menu-wrap .container-fixed { max-width:1140px; margin:0 auto; background-color: #21252f;}
 .header-default .nav.navbar-nav { float:left; }
 .header-default .nav.navbar-nav li a { letter-spacing:0.4px; color:white; font-size:14px; font-weight:600; padding:20px 20px; }
 .header-default .nav.navbar-nav li a:hover { color:#48a0dc; }
@@ -1807,6 +1807,9 @@ footer .divider { background:rgba(255, 255, 255, 0.1); }
 	position:relative;
 	z-index:10;
 }
+/* .bottom{
+	border-top: 1px solid gray;
+} */
 
 /* 
 ================================================================
