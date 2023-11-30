@@ -57,7 +57,6 @@ const usersSlice = createSlice({
         },
         [getUser.fulfilled]: (state, action) => {
             const response = action.payload;
-           console.log(response)
             if(action.payload.message){
                 return {
                     ...state,

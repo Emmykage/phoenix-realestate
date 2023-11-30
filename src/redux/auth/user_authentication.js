@@ -16,9 +16,9 @@ const userSlice = createSlice({
     userLog: (state) => {
       try {
         const auth = localStorage.getItem('phoenix_auth');
-        return {
+          return {
           ...state,
-          user: JSON.parse(auth),
+          user: JSON.parse(auth).user,
         };
       } catch {
         return {

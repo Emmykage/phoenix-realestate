@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-// import Loader
 import { NavLink, Outlet } from 'react-router-dom'
 import { usd_format } from '../misc/USD'
 import { getUser } from '../../redux/actions/users'

@@ -13,9 +13,10 @@ const AdminLayout = ({ children }) => {
   const { user, loading, error } = useSelector((state) => state.user);
   const navigation = useNavigate()
   useEffect(() => {
-    // dispatch(getUser());
-    // dispatch(userLog())
+    dispatch(getUser());
+    dispatch(userLog())
   }, []);
+
   if (loading) {
     return (<Loader />);
   }
@@ -26,11 +27,20 @@ const AdminLayout = ({ children }) => {
       {' '}
     </div>;
   }
-  // if(user == null){
-  //   (navigation('/auth/admin_login '))
-  // }else{
+  if(user == null){
+    (navigation('/auth/admin_login'))
+  }else{
+    console.log(user)
+    if(user.role === "client"){
+      return(
+        <>
+        <h1 className='text-gray text-center my-4'>You are not Authorized to view this page</h1>
+        <h2 className='text-gray text-center my-4'>Login</h2>
+        </>
 
-    // user.role === "admin" && <h1 className='text-gray'>You are not Authorized to view this page</h1>
+      )
+    }else{
+
 
   return (
     <div className="admin contain">
@@ -39,11 +49,12 @@ const AdminLayout = ({ children }) => {
         {children}
       </main>
 
-      <Right />
+      <Right/>
 
     </div>
   );
-// };
+}
+};
     
 }
 

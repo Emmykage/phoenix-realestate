@@ -55,12 +55,12 @@ const portfolioSlice = createSlice({
         message: 'something went wrong',
       };
     },
-    [makePayment.pending]: (state, action) => ({
+    [makePayment.pending]: (state) => ({
       ...state,
       loading: true,
       error: false,
     }),
-    [makePayment.rejected]: (state, action) => ({
+    [makePayment.rejected]: (state) => ({
       ...state,
       loading: false,
       error: true,
