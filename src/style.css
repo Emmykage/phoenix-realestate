@@ -1818,3 +1818,8 @@ footer .divider { background:rgba(255, 255, 255, 0.1); }
 ================================================================
 		Dashboard
 ================================================================= */
+.container.fit{
+	max-width: 870px;
+	/* background-color: red; */
+	margin: auto;
+}

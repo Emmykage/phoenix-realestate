@@ -32,27 +32,28 @@ const userSlice = createSlice({
   extraReducers: {
     [registerUser.fulfilled]: (state, action) => {
       const response = action.payload;
+      console.log(response)
       if (response.user) {
         const collect = JSON.stringify(response);
         localStorage.setItem('phoenix_auth', collect);
 
         return {
-
           ...state,
           logged: true,
           user: response,
           loading: false,
         };
-      }
-      if (response.error) {
+      }else if(response.error) {
         return {
           ...state,
           loading: false,
           error: true,
-          message: 'Enter a valid email',
+          message: response.error,
 
         };
-      }
+      }else{
+
+  
 
       return {
         ...state,
@@ -60,13 +61,14 @@ const userSlice = createSlice({
         error: true,
         message: response.error,
       };
+    }
     },
-    [registerUser.pending]: (state, action) => ({
+    [registerUser.pending]: (state) => ({
       ...state,
       loading: true,
       error: false,
     }),
-    [registerUser.rejected]: (state, action) => ({
+    [registerUser.rejected]: (state) => ({
       ...state,
       message: 'No internet connection',
       loading: false,
@@ -75,6 +77,7 @@ const userSlice = createSlice({
 
     [userSession.fulfilled]: (state, action) => {
       const response = action.payload;
+      console.log(response)
       if (response.user) {
         const collect = JSON.stringify(response);
         localStorage.setItem('phoenix_auth', collect);
@@ -85,7 +88,9 @@ const userSlice = createSlice({
           user: response,
           loading: false,
         };
-      }
+      }else if(response.error){
+
+   
       return {
         ...state,
         logged: false,
@@ -93,6 +98,11 @@ const userSlice = createSlice({
         error: true,
         message: response.error,
       };
+    }else{
+      return{
+        ...state
+      }
+    }
     },
     [userSession.pending]: (state) => ({
       ...state,

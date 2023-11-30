@@ -7,7 +7,7 @@ import { userLog } from '../../redux/auth/user_authentication'
 const Login = () => {
     const navigation = useNavigate()
     const dispatch = useDispatch()
-    const {user} = useSelector(state => state.user)
+    const {user, error, loading, message} = useSelector(state => state.user)
     const [formInput, setFormInput] = useState({email: "", password: ""})
     useEffect(()=> {
         dispatch(userLog())
@@ -54,6 +54,9 @@ const Login = () => {
                     <div class="form-block">
                     <label><input type="checkbox" name="remember" />Remember Me</label><br/>
                     </div>
+                    <p>{loading && "Loading..." }</p>
+                    <p className='text-red'>{error && message}</p>
+            
                     <div class="form-block">
                     <button class="button button-icon" type="submit"><i class="fa fa-angle-right"></i>Login</button>
                     </div>

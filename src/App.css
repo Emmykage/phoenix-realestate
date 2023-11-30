@@ -82,7 +82,12 @@
 	display: grid;
 	padding: 2rem;
 }
-
+.text-red{
+	color: red;
+}
+.text-green{
+	color: green;
+}
 .text-xs{
 	font-size: 12px;
 }

@@ -7,7 +7,7 @@ import { userLog } from '../../redux/auth/user_authentication'
 const AdminRegister = () => {
   const navigation = useNavigate()
   const dispatch = useDispatch()
-  const {user} = useSelector(state => state.user)
+  const {user, loading, error, message} = useSelector(state => state.user)
   const [formInput, setFormInput] = useState({first_name: "", last_name: "", email: "", password: "", role: "admin"})
   useEffect(()=> {
     dispatch(userLog())
@@ -34,7 +34,7 @@ const AdminRegister = () => {
   if(user == null || user == undefined){
 
   return (
-    <div>
+    <div className=''>
         
 <section class="subheader register">
   <div class="container">
@@ -45,7 +45,7 @@ const AdminRegister = () => {
 </section>
 
 <section class="module login">
-  <div class="container">
+  <div class="container fit">
 
     <div class="row">
       <div class="col-lg-4 col-lg-offset-4"> 
@@ -75,6 +75,9 @@ const AdminRegister = () => {
                 <label>check</label>
                 <input class="border" type="checkbox" name="completed"  checked={formInput.completed} onChange={handleInputChange} />
             </div>
+            <p>{loading && "Loading..." }</p>
+            <p className='text-red'>{error && message}</p>
+            
             
             <div class="form-block">
                 <button class="button button-icon" type="submit"><i class="fa fa-angle-right"></i>Register</button>

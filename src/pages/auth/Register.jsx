@@ -7,8 +7,8 @@ import { userLog } from '../../redux/auth/user_authentication'
 const Register = () => {
   const navigation = useNavigate()
   const dispatch = useDispatch()
-  const {user} = useSelector(state => state.user)
-  const [formInput, setFormInput] = useState({first_name: "", last_name: "", email: "", password: "", role: "client", confirm_password: "", completed: false})
+  const {user, error, message, loading } = useSelector(state => state.user)
+  const [formInput, setFormInput] = useState({first_name: "", last_name: "", email: "", password: "", role: "client"})
   useEffect(()=> {
     dispatch(userLog())
 },[])
@@ -45,7 +45,7 @@ const Register = () => {
 </section>
 
 <section class="module login">
-  <div class="container">
+  <div class="container fit">
 
     <div class="row">
       <div class="col-lg-4 col-lg-offset-4"> 
@@ -75,6 +75,8 @@ const Register = () => {
                 <label>check</label>
                 <input class="border" type="checkbox" name="completed"  checked={formInput.completed} onChange={handleInputChange} />
             </div>
+            <p>{loading && "Loading..." }</p>
+            <p className='text-red'>{error && message}</p>
             
             <div class="form-block">
                 <button class="button button-icon" type="submit"><i class="fa fa-angle-right"></i>Register</button>
