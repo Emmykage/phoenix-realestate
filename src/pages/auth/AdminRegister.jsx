@@ -8,7 +8,7 @@ const AdminRegister = () => {
   const navigation = useNavigate()
   const dispatch = useDispatch()
   const {user} = useSelector(state => state.user)
-  const [formInput, setFormInput] = useState({first_name: "", last_name: "", email: "", password: "", role: "admin", confirm_password: "", completed: false})
+  const [formInput, setFormInput] = useState({first_name: "", last_name: "", email: "", password: "", role: "admin"})
   useEffect(()=> {
     dispatch(userLog())
 },[])
@@ -24,21 +24,22 @@ const AdminRegister = () => {
       [e.target.name]: e.target.value
     })
   }
+ 
   }
   const handleFormSubmit = (e) => {
     e.preventDefault()
-    dispatch(registerUser(formInput))
-  
+    dispatch(registerUser({user: formInput}))    
+    
   }
   if(user == null || user == undefined){
 
   return (
     <div>
         
-<section class="subheader">
+<section class="subheader register">
   <div class="container">
-    <h1>Register as An Admin</h1>
-    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <NavLink to="#" class="current">Register</NavLink></div>
+    <h1>Admin Register</h1>
+    <div class="breadcrumb right"><NavLink to={'/'}>Home</NavLink>  <i class="fa fa-angle-right"></i> <NavLink to="#" class="current">Register</NavLink></div>
     <div class="clear"></div>
   </div>
 </section>
@@ -48,7 +49,7 @@ const AdminRegister = () => {
 
     <div class="row">
       <div class="col-lg-4 col-lg-offset-4"> 
-        <p>Already have an account? <strong><NavLink to="/auth/login">Login here.</NavLink></strong></p> 
+        <p>Already have an account? <strong><NavLink to="/auth/admin/login">Login here.</NavLink></strong></p> 
             <form onSubmit={handleFormSubmit} class="login-form">
             <div class="form-block">
                 <label>First Name</label>
@@ -108,7 +109,6 @@ const AdminRegister = () => {
 }else{
   navigation('/admin/dashboard')
 }
-
 }
 
 export default AdminRegister

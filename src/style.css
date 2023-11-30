@@ -539,6 +539,9 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 	position:relative;
 	z-index:1;
 }
+.subheader.login, .subheader.register{
+	background: #787878 url(../public/images/banner-902581_960_720.jpg);
+}
 .subheader h1 {
 	margin-bottom:0px;
 	font-weight:700;

@@ -21,14 +21,14 @@ const AdminLogin = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
-        dispatch(userSession())
+        dispatch(userSession({user: formInput}))
     }
     if(user ==  null || user == undefined){
 
 
   return (
     <div>
-        <section class="subheader">
+        <section class="subheader login">
             <div class="container">
             <h1>Login as an Admin</h1>
             <div class="breadcrumb right"><NavLink to={'/'}>Home</NavLink>  <i class="fa fa-angle-right"></i> <a href="#" class="current">Login</a></div>
@@ -41,7 +41,7 @@ const AdminLogin = () => {
         
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-4"> 
-                <p>Don't have an account? <strong><NavLink to="/auth/register">Register here.</NavLink></strong></p> 
+                <p>Don't have an account? <strong><NavLink to="/auth/admin/register">Register here.</NavLink></strong></p> 
                 <form onSubmit={handleFormSubmit} class="login-form">
                     <div class="form-block">
                     <label>Email</label>
@@ -85,7 +85,7 @@ const AdminLogin = () => {
     </div>
   )
 }else{
-    navigation("/dashboard/wallet/wallet")
+    navigation("/admin/dashboard")
 }
 }
 
