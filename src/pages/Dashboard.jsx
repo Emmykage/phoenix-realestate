@@ -11,6 +11,9 @@ const Dashboard = () => {
       <Aside/>
       <div className='main-content'>
         <div className='title box-shadow p-2'> <h3 className='text-white'>Dashboard</h3> </div>
+        <div className='w-max-1450'>
+
+      
         <div className='top-details box-shadow'>
           <div className=''>
             <div className='text-left'>
@@ -23,6 +26,7 @@ const Dashboard = () => {
             
         </div>
         <Outlet/>
+        </div>
 
       </div>
 

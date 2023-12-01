@@ -7,7 +7,7 @@ const UnitedKingdom = () => {
   const dispatch = useDispatch()
   const {offers} = useSelector(state => state.assets)
   const unitedKingdomCategory = offers.filter((asset) => asset.city == "United Kingdom")
-
+console.log(unitedKingdomCategory)
   useEffect(()=> {
 
     dispatch(getAssets())
@@ -55,7 +55,7 @@ const UnitedKingdom = () => {
           <div class="property-tag button status">{asset.sale_type}</div>
           <div class="property-price">${asset.price}</div>
           <div class="property-color-bar"></div>
-          <img src={asset.images} alt={asset.name} />
+          <img src={asset.image_url} alt={asset.name} />
         </NavLink>
         <div class="property-content">
           <div class="property-title">

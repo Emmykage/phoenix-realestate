@@ -16,9 +16,19 @@
 	height: 100vh;
 	overflow-x: auto;
 }
+.dashboard .card:hover{
+	box-shadow: 0 0 3px 0 green;
+
+}
+.text-right{
+	text-align: right;
+}
 .overflow-auto{
 	overflow: auto;
 
+}
+.portfolios a.btn, .decoration-none{
+	text-decoration: none;
 }
 .flex-wrap{
 	flex-wrap: wrap;
@@ -74,6 +84,9 @@
 }
 .dashboard .logo{
 	margin-top: 3rem;
+}
+.icon{
+	font-size: 26px;
 }
 .dashboard aside .nav-list{
 	/* margin-top: 6rem; */
@@ -443,6 +456,10 @@ aside .dash-logo img{
   width: 100%;
   max-width: 800px;
 }
+.w-max-1450{
+	width: 100%;
+	max-width: 1450px;
+  }
 .btn{
   background-color: #0B2C62;
   border-radius: 8px;
@@ -514,6 +531,13 @@ aside .dash-logo img{
 }
 .blog .blog-image img{
 	height: 100%;
+}
+.portfolio-img{
+	height: 200px;
+}
+.portfolio-img img{
+	height: 100%;
+	width: 100%;
 }
 .blog .more{
 	display: inline-block;

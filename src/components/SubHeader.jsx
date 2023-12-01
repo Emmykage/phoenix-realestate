@@ -197,7 +197,7 @@ console.log(offers)
   <div class="container">
     <div class="slider slider-testimonials">
       <div class="testimonial slide">
-        <h3>"Homely helped us sell our house with minimal effort. Their team was efficient and always there to help!"</h3>
+        <h3>"Phoenix Homes helped us sell our house with minimal effort. Their team was efficient and always there to help!"</h3>
         <div class="testimonial-details">
           <img class="testimonial-img" src="images/70x70.png" alt="" />
           <p class="testimonial-name"><strong>John Doe</strong></p>
@@ -205,7 +205,7 @@ console.log(offers)
         </div>
       </div>
       <div class="testimonial slide">
-        <h3>"Homely helped us sell our house with minimal effort. Their team was efficient and always there to help! Homely helped us sell our house with minimal effort. Their team was efficient and always there to help!"</h3>
+        <h3>"Phoenx Homes helped us sell our house with minimal effort. Their team was efficient and always there to help! Homely helped us sell our house with minimal effort. Their team was efficient and always there to help!"</h3>
         <div class="testimonial-details">
           <img class="testimonial-img" src="images/70x70.png" alt="" />
           <p class="testimonial-name"><strong>John Doe</strong></p>

@@ -4,11 +4,16 @@ import { NavLink, Outlet } from 'react-router-dom'
 import { usd_format } from '../misc/USD'
 import { getUser } from '../../redux/actions/users'
 import Loader from '../loader/Loader'
+import { IoWalletOutline } from "react-icons/io5";
+import { FaFolderOpen } from "react-icons/fa";
+import { MdAttachMoney } from "react-icons/md";
+import { FaArrowRight } from "react-icons/fa";
 
 const Wallet = () => {
   const dispatch = useDispatch()
   const {user, error, message, loading} = useSelector(state => state.users)
   const pendingTransaction = useSelector(state => state.transactions.loading)
+  console.log(user)
   useEffect(() => {
       dispatch(getUser())
   }, [pendingTransaction])
@@ -29,25 +34,23 @@ if(error){
     <>
     <div className='grid gap-2 grid-3 cards text-left p-3'>
             <div className='pt-6 card'>
-              <p>Wallet</p>
+              <p><IoWalletOutline className='icon'/></p>
+
               <h2>{usd_format(user.wallet.wallet_balance)}</h2>
-              <NavLink to={'/dashboard/wallet/wallet'} className={'items-center flex gap-2'}>Wallet 
-              <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+              <NavLink to={'/dashboard/wallet/wallet'} className={'items-center flex gap-2'}>Wallet <FaArrowRight/>
               </NavLink>
             </div>
-            <div className='card'><p>Portfolios</p>
+            <div className='card'><p><FaFolderOpen className='icon'/></p>
               <h2>{usd_format(user.total_asset)}</h2>
-              <NavLink to={'/dashboard/wallet/portfolios'} className={'items-center flex gap-2'}>
-                View
-                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
-
+              <NavLink to={'/dashboard/wallet/portfolios'} className={'items-center flex gap-2 text-gray'}>
+              Portfolios
+              <FaArrowRight/>
                 </NavLink></div>
-            <div className='card'><p>Bonus</p>
-              <h2>$00.0</h2>
+            <div className='card'><p><MdAttachMoney className='icon'/></p>
+              <h2>{usd_format(user.total_earnings)}</h2>
               <NavLink to={'/dashboard/wallet/bonuses'} className='items-center flex gap-2'>
-                View 
-              <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
-
+                Earnings 
+                <FaArrowRight/>
               </NavLink></div>
 
         </div>
