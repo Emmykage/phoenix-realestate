@@ -48,7 +48,13 @@ aside {
 .admin a {
   color: var(--color-dark);
 }
-
+.admin .asset-infos a{
+  color: white;
+  text-decoration: none;
+}
+.admin .asset-infos a:hover{
+  color: #135092;
+}
 .admin img {
   display: block;
   width: 100%;
@@ -505,7 +511,9 @@ main .recent-orders a {
   padding: 4rem 0 0;
   color: var(--color-dark);
 }
+.asset-infos{
 
+}
 .assets-forms span {
   font-size: 1.3rem;
   font-weight: 600;
