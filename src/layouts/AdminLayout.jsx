@@ -30,7 +30,7 @@ const AdminLayout = ({ children }) => {
   if(user == null){
     (navigation('/auth/admin_login'))
   }else{
-    console.log(user)
+  
     if(user.role === "client"){
       return(
         <>

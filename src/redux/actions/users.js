@@ -25,6 +25,8 @@ const getUser = createAsyncThunk('user/get_account', async () => {
   }).then((res) => res.json());
   return response;
 });
+
+
 const patchUser = createAsyncThunk('user/update_user', async() => {
   const response = await fetch(`${baseUrl}users`, {
     method: 'PATCH',

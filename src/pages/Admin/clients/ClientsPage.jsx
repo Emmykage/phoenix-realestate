@@ -8,15 +8,18 @@ import { userLog } from '../../../redux/auth/user_authentication';
 import Loader from '../../../components/loader/Loader';
 import { usd_format } from '../../../components/misc/USD';
 import { approveTransaction } from '../../../redux/actions/wallet';
+import { userPorfolio } from '../../../redux/actions/portfolio';
 
 const ClientsPage = () => {
-  const { id } = useParams();
+  const { client_id, id } = useParams();
   const dispatch = useDispatch();
   const { users } = useSelector((state) => state.users);
+  const {portfolios} = useSelector(state => state.portfolios)
   const {loading} = useSelector((state)=> state.transactions)
   useEffect(() => {
     dispatch(listUsers());
-    dispatch(userLog());
+    dispatch(userPorfolio(id))
+    // dispatch(userLog());
   }, [loading]);
 
   const handleApprove = (id) => {
@@ -104,9 +107,9 @@ const ClientsPage = () => {
 
           </div>
           <hr />
-        {user.portfolios.length < 1 ? <h3 className='py-3'>User has no Portfolios</h3>
+        {portfolios.length < 1 ? <h3 className='py-3'>User has no Portfolios</h3>
 
-          : user.portfolios.map((portfolio) => (
+          : portfolios.map((portfolio) => (
             <div className="asset-infos">
               <li className='text-left box-shadow rounded-base my-1'>
                 <div className='flex rounded-base'>
@@ -139,7 +142,7 @@ const ClientsPage = () => {
                             </div>
                         </div>
                         <div class="text-right p-2">
-                            <NavLink to="" className="btn inline-block p-1 text-white">view interest</NavLink>
+                            <NavLink to={`/admin/client/${id}/portfolio/${portfolio.id}`} className="btn inline-block p-1 text-white">view interest</NavLink>
                         </div>
                         
                         

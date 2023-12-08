@@ -44,6 +44,7 @@ import Press from './pages/Press';
 import PressPage from './pages/PressPage';
 import AddPost from './pages/Admin/blog/AddPost';
 import AccountSettings from './components/dashboard/Settings';
+import PortfolioItems from './pages/Admin/clients/PortfolioItems';
 function App() {
   return (
     <div className="App">
@@ -93,6 +94,7 @@ function App() {
         <Route path='asset/:id' element={<AdminLayout><AssetView/></AdminLayout>}/>
         <Route path='clients' element={<AdminLayout><Clients/></AdminLayout>}/>
         <Route path='client/:id' element={<AdminLayout><ClientsPage/></AdminLayout>}/>
+        <Route path='client/:client_id/portfolio/:portfolio_id' element={<AdminLayout><PortfolioItems/></AdminLayout>}/>
         <Route path='orders' element={<AdminLayout><Orders/></AdminLayout>}/>
         <Route path='analytics' element={<AdminLayout><Analytics/></AdminLayout>}/>
         <Route path='messages' element={<AdminLayout><AlertMessages/></AdminLayout>}/>

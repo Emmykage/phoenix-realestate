@@ -15,10 +15,11 @@ const createPortfolio = createAsyncThunk('portfolio/create_portfolios', async (d
     body: JSON.stringify(data),
 
   }).then((res) => res.json());
+  // console.log(response)
   return response;
 });
 
-const getPortfolios = createAsyncThunk('portfolio/get_portfolios', async () => {
+const getPortfolios = createAsyncThunk('portfolios/get_portfolios', async () => {
   const response = await fetch(`${baseUrl}portfolios`, {
     method: 'GET',
     headers: {
@@ -28,8 +29,33 @@ const getPortfolios = createAsyncThunk('portfolio/get_portfolios', async () => {
     },
 
   }).then((res) => res.json());
+  // console.log(response)
   return response;
 });
+const getPortfolio = createAsyncThunk('portfolios/get_portfolio', async (id) => {
+  const response = await fetch(`${baseUrl}portfolios/${id}`, {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${token()}`,
+
+    },
+
+  }).then((res) => res.json());
+
+  return response;
+});
+const userPorfolio = createAsyncThunk('user/pick_user', async(id) => {
+  const response = await fetch(`${baseUrl}portfolios_user/${id}`, {
+    method: "GET",
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${token()}`
+    }
+  }).then(res => res.json())
+
+  return response
+})
 
 const makePayment = createAsyncThunk('portfolio/make_payment', async (id) => {
   const response = await fetch(`${baseUrl}portfolios/${id}`, {
@@ -44,4 +70,4 @@ const makePayment = createAsyncThunk('portfolio/make_payment', async (id) => {
   return response;
 });
 
-export { createPortfolio, getPortfolios, makePayment };
+export { createPortfolio, getPortfolios, getPortfolio, makePayment, userPorfolio };
