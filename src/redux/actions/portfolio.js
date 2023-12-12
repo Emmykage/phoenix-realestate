@@ -15,7 +15,7 @@ const createPortfolio = createAsyncThunk('portfolio/create_portfolios', async (d
     body: JSON.stringify(data),
 
   }).then((res) => res.json());
-  // console.log(response)
+
   return response;
 });
 
@@ -29,7 +29,7 @@ const getPortfolios = createAsyncThunk('portfolios/get_portfolios', async () => 
     },
 
   }).then((res) => res.json());
-  // console.log(response)
+
   return response;
 });
 const getPortfolio = createAsyncThunk('portfolios/get_portfolio', async (id) => {

@@ -10,7 +10,6 @@ const PressPage = () => {
   useEffect(()=> {
     dispatch(getPost(id))
   },[])
-  console.log(post)
 
   return (
     <div className='container blog py-6 bg-white'>

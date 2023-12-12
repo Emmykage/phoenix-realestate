@@ -12,9 +12,8 @@ const AddPost = () => {
         formData.append("blog[image]", e.target.image.files[0])
         formData.append("blog[body]", e.target.body.value)
         
-        // console.log(Object.fromEntries(formData))
         dispatch(createPost(formData))
-        // e.currentTarget.reset()
+
     }
   return (
     <div className='blog-post'>

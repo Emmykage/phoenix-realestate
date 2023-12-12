@@ -32,7 +32,6 @@ const userSlice = createSlice({
   extraReducers: {
     [registerUser.fulfilled]: (state, action) => {
       const response = action.payload;
-      console.log(response)
       if (response.user) {
         const collect = JSON.stringify(response);
         localStorage.setItem('phoenix_auth', collect);
@@ -77,7 +76,6 @@ const userSlice = createSlice({
 
     [userSession.fulfilled]: (state, action) => {
       const response = action.payload;
-      console.log(response)
       if (response.user) {
         const collect = JSON.stringify(response);
         localStorage.setItem('phoenix_auth', collect);

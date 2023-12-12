@@ -5,9 +5,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import DepositModal from '../modals/DepositModal'
 import WithdrawalModal from '../modals/WithdrawalModal'
 import { usd_format } from '../misc/USD'
-import { getUser } from '../../redux/actions/users'
+// import { getUser } from '../../redux/actions/users'
 
 const Transaction = () => {
+
   const dispatch = useDispatch()
 
   const {user} = useSelector(state => state.users)
@@ -28,7 +29,8 @@ const Transaction = () => {
     </div>
     <div className='flex gap-2'>
     <div className='flex-1 px-2'>
-      <ul><h4>Deposits</h4>
+      <ul>
+        <h4>Deposits</h4>
       {deposits < 1 ? <p className='text-lg font-medium'>No Deposite made</p> :deposits.map((transaction) => {
         if(transaction.transaction_type == "deposit")
         return        (

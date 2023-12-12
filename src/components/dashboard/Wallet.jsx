@@ -13,10 +13,12 @@ const Wallet = () => {
   const dispatch = useDispatch()
   const {user, error, message, loading} = useSelector(state => state.users)
   const pendingTransaction = useSelector(state => state.transactions.loading)
-  console.log(user)
+  const mes = useSelector(state => state.earnings.loading)
+
+
   useEffect(() => {
       dispatch(getUser())
-  }, [pendingTransaction])
+  }, [pendingTransaction, mes])
 if(error){
   return (
     <h3 className='text-center'>{message}</h3>
@@ -47,7 +49,7 @@ if(error){
               <FaArrowRight/>
                 </NavLink></div>
             <div className='card'><p><MdAttachMoney className='icon'/></p>
-              <h2>{usd_format(user.total_earnings)}</h2>
+              <h2>{usd_format(user.net_earnings)}</h2>
               <NavLink to={'/dashboard/wallet/bonuses'} className='items-center flex gap-2'>
                 Earnings 
                 <FaArrowRight/>

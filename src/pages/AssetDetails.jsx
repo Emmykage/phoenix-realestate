@@ -11,7 +11,6 @@ const AssetDetails = () => {
   const {id} = useParams()
 
   const asset = offers.find((prop) => prop.id == id)
-  console.log(asset)
   const dispatch = useDispatch()
   useEffect(()=> {
   dispatch(getAssets())

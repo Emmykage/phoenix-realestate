@@ -6,7 +6,6 @@ import { usd_format } from './misc/USD';
 
 const SubHeader = () => {
   const {offers} = useSelector(state => state.assets)
-console.log(offers)
   return (
     <div>
       <section class="subheader simple-search">

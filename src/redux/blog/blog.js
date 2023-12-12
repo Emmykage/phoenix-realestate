@@ -42,7 +42,6 @@ const postSlice = createSlice({
   
         }},
         [getPost.fulfilled]: (state, action) => { 
-            // console.log(action.payload)
             return{
             ...state,
             post: action.payload

@@ -6,11 +6,9 @@ import { getPosts } from '../redux/actions/blog'
 const Press = () => {
   const dispatch = useDispatch()
   const {posts} = useSelector(state => state.blog_posts)
-console.log(posts)
   useEffect(()=> {
     dispatch(getPosts())
   },[])
-  console.log(posts)
   return (
     <div className='container blog py-6 my-2 bg-white'>
         <div className='grid-display grid-third gap-2'>

@@ -7,7 +7,6 @@ const UnitedKingdom = () => {
   const dispatch = useDispatch()
   const {offers} = useSelector(state => state.assets)
   const unitedKingdomCategory = offers.filter((asset) => asset.city == "United Kingdom")
-console.log(unitedKingdomCategory)
   useEffect(()=> {
 
     dispatch(getAssets())

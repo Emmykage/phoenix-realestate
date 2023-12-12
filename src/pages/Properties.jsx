@@ -12,7 +12,6 @@ const Properties = () => {
     dispatch(getAssets())
 
   },[])
-// console.log(offers)
 
   return (
     <div>

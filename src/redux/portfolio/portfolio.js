@@ -21,7 +21,7 @@ const portfolioSlice = createSlice({
       portfolios: action.payload,
     }), 
     [getPortfolio.fulfilled]: (state, action) => {
-      console.log(action.payload)
+
       return {
         ...state,
         loading: false,

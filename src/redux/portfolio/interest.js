@@ -13,7 +13,7 @@ const interestSlice = createSlice({
     initialState,
     extraReducers: {
         [createInterest.fulfilled]: (state, action) => {
-            console.log(action.payload)
+
             return{
                 ...state,
                 interest: action.payload,
