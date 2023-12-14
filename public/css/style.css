@@ -106,7 +106,7 @@ h4 { font-size:25px; }
 h5 { font-size:20px; }
 
 a { 
-	color:#48a0dc;
+	color: #062E62;
 	outline:0 !important;
 	-webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
@@ -563,7 +563,7 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 .subheader.simple-search {
 	text-align:center;
 	padding:200px 0px;
-	background-image:url(../images/1920x950.png);
+	background-image:url(../images/Real-Estate-Wallpaper-05-2866x1516-1-scaled.jpg);
 }
 .subheader.simple-search h1 { float:none; font-size:48px; font-weight:700; }
 .subheader.simple-search p {
@@ -1000,11 +1000,11 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 	background-repeat:no-repeat;
 	transition:all 0.4s;
 }
-.property-cat h3 { color:white; font-weight:200; }
+.property-cat h3 { color:white; font-weight:200; background-color: rgba(0, 0, 0, 0.7);}
 .property-cat:hover .color-bar { width:130px; }
 
-.property-cat-apartments { background-image:url(../images/1000x560.png);}
-.property-cat-houses { background-image:url(../images/1000x560.png);}
+.property-cat-apartments { background-image:url(../images/d4mq83s-0511e07c-421c-4282-b2f6-22357513ffd5.jpg);}
+.property-cat-houses { background-image:url(../images/ai-generative-interior-design-decor-showing-modern-bedroom-area-in-open-plan-luxury-studio-apartment-showroom-with-sofa-bed-photo.jpg);}
 .property-cat-condos { background-image:url(../images/1000x560.png);}
 .property-cat-waterfront { background-image:url(../images/1000x560.png);}
 .property-cat-cozy { background-image:url(../images/1000x560.png);}
@@ -1810,122 +1810,3 @@ footer .divider { background:rgba(255, 255, 255, 0.1); }
 ================================================================
 		Dashboard
 ================================================================= */
-
-.dashboard{
-	position: relative;
-	display: flex;
-	height: 100vh;
-	background-color: white;
-}
-
-.dashboard .main-content{
-	flex: 1;
-}
-.dashboard aside{
-	max-width: 300px;
-	width: 100%;
-	height: 100%;
-	padding: 1rem;
-	/* background-color: blue; */
-	border: 1px solid gray;
-}
-.dashboard aside ul{
-	margin-top: 3rem;
-	/* background-color: red; */
-	background: white;
-}
-.dashboard aside ul li{
-
-	padding: 1rem;
-	border-bottom: 1px solid gray;
-
-}
-.dashboard .logo{
-	margin-top: 3rem;
-}
-.dashboard aside .nav-list{
-	margin-top: 6rem;
-}
-.dashboard .grid{
-	display: grid;
-	padding: 2rem;
-}
-.grid-3{
-	grid-template-columns: 1fr 1fr 1fr;
-
-
-}
-.grid-2{
-	grid-template-columns: 1fr 1fr;
-
-
-}
-.form-card{
-	padding: 1rem;
-	border-radius: 0.6rem;
-}
-.gap-1{
-gap: 1%;
-}
-.gap-2{
-	gap: 2%;
-	}
-.dashboard .grid > div{
-	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
-	/* display: flex; */
-}
-.dashboard .top-details{
-	width: 100%;
-	min-height: 300px;
-	padding: 30px 10px ;
-	border: 1px solid gray;
-
-}
-.dashboard .cards .card{
-	padding: 1rem;
-}
-.bg-green{
-	background-color: green !important;
-}
-.border{
-	border: 1px solid gray
-}
-.modal-container{
-	position: absolute;
-	left: 0;
-	height: 100vh;
-	top: 0;
-	width: 100%;
-	opacity: 0;
-	pointer-events: none;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: rgba(0, 0, 0, 0.5);
-}
-.modal-container.show-modal{
-	opacity: 1;
-	pointer-events: all;
-}
-
-.modal-info{
-	width: 50%;
-	height: 300px;
-	background-color: white;
-	border-radius: 8px;
-	box-shadow: 0 0 22px rgba(0, 0, 0, 0.5) ;
-}
-.modal-info .close-icon{
-	padding-right: 1rem ;
-	padding-top: 1rem;
-}
-
-.bg-red{
-	background-color: red;
-}
-.bg-yellow{
-	background-color: yellow;
-}
-.bg-blue{
-	background-color: blue;
-}

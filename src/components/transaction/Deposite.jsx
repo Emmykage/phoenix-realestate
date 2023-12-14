@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 
-const Deposit = ({toggleModal, setToggleModal}) => {
-    const [deposit, setDeposit] = useState({coin_type: "USD THETHER", amount: "", wallet_address: "", transaction_type: "deposit"})
+const Deposit = ({setToggleModal, deposit, setDeposit}) => {
     const handleWithdrawalModal = (e) => {
         e.preventDefault()
-        setToggleModal("show-modal")
+        setToggleModal("show-modal deposit")
 
 
     }
@@ -16,7 +15,6 @@ const Deposit = ({toggleModal, setToggleModal}) => {
         })        
 
     }
-    console.log(deposit)
   return (
     <div className='form-card'>
            <div className='bg-white box-shadow p-3 b-radius-1 text-left'>
@@ -26,7 +24,7 @@ const Deposit = ({toggleModal, setToggleModal}) => {
                 <label className='block m-1'>Select Coin to receive payment</label> 
                 <div className=''>
                
-                <select name='coin_type' className='bg-green form-select form-select-lg mb-3 ' value={deposit.coin_type} onChange={handleDepositInput} required>
+                <select name='coin_type' className='border form-select form-select-lg mb-3 ' value={deposit.coin_type} onChange={handleDepositInput} required>
                     <option className='border' value="USD THETHER" selected>USD THETHER</option>
                     <option value="BITCOIN">BITCOIN</option>
                     <option value="ETHERUM">ETHERUM (ERC-20)</option>
@@ -36,7 +34,7 @@ const Deposit = ({toggleModal, setToggleModal}) => {
             </div>
             <div>
                 <label className='block m-1' htmlFor="amount">Enter Amount</label>
-                <input type="number" className='border' placeholder='Enter Amount in USD' name="amount" value={deposit.amount} onChange={handleDepositInput} required/>
+                <input type="number" className='border' placeholder='Enter Amount in USD' name="amount" value={deposit.amount} onChange={handleDepositInput} required min={10}/>
             </div>
             <div className='m-2'>
                     <p className='text-red text-center'>Pay to the following Wallet Address</p>

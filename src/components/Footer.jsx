@@ -1,4 +1,5 @@
 import React from 'react'
+import logo from '../assets/images/logo1.jpg'
 
 const Footer = () => {
   return (
@@ -24,7 +25,8 @@ const Footer = () => {
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-4 widget footer-widget">
-                <a class="footer-logo" href="index.html"><img src="images/logo-white.png" alt="Homely" /></a>
+                <a class="footer-logo" href="index.html">
+                    <img src={logo} alt="Homely" /></a>
                 <p>Lorem ipsum dolor amet, consectetur adipiscing elit. Sed ut 
                 purus eget nunc ut dignissim cursus at a nisl. Mauris vitae 
                 turpis quis eros egestas tempor sit amet a arcu. Duis egestas 
