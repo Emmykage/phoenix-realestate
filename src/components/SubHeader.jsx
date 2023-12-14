@@ -94,26 +94,26 @@ const SubHeader = () => {
     {offers.map(offer => (
 
   
-    <div class="property property-hidden-content slide">
-      <a href="#" class="property-content">
-        <div class="property-title">
-          <h4>{offer.name}</h4>
-          <p class="property-address"><i class="fa fa-map-marker icon"></i>123 Smith Dr, Annapolis, MD</p>
+    <div class="property property-hidden-content">
+      <NavLink to={`/assets_details/${offer.id}`} className="property-content">
+        <div className="property-title">
+          <h4 className='text-black'>{offer.name}</h4>
+          <p className="property-address"><i class="fa fa-map-marker icon"></i>123 Smith Dr, Annapolis, MD</p>
         </div>
-        <table class="property-details">
+        <table className="property-details">
           <tr>
-            <td><i class="fa fa-bed"></i> {offer.number_of_beds} Beds</td>
-            <td><i class="fa fa-tint"></i> {offer.number_of_bathrooms} Baths</td>
-            <td><i class="fa fa-expand"></i> {offer.area} Ft</td>
+            <td><i className="fa fa-bed"></i> {offer.number_of_beds} Beds</td>
+            <td><i className="fa fa-tint"></i> {offer.number_of_bathrooms} Baths</td>
+            <td><i className="fa fa-expand"></i> {offer.area} Ft</td>
           </tr>
         </table>
-      </a>
-      <a href="#" class="property-img">
-          <div class="img-fade"></div>
-          <div class="property-tag button alt featured">{offer.status}</div>
-          <div class="property-tag button status">For {offer.sale_type}</div>
-          <div class="property-price">{usd_format(offer.price)}</div>
-          <div class="property-color-bar"></div>
+      </NavLink>
+      <a href="#" className="property-img">
+          <div className="img-fade"></div>
+          <div className="property-tag button alt featured">{offer.status}</div>
+          <div className="property-tag button status">For {offer.sale_type}</div>
+          <div className="property-price">{usd_format(offer.price)}</div>
+          <div className="property-color-bar"></div>
           <img src={offer.image_url} alt="" />
       </a>
     </div>
