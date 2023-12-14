@@ -480,6 +480,16 @@ aside .dash-logo img{
   border-radius: 8px;
   color: white;
 }
+.earning .top{
+	padding-right: 10px;
+}
+.earning .btn.all-earning{
+	margin-left: auto;
+	display: block;
+	max-width: 300px;
+	/* margin-right: 10px; */
+
+}
 .status{
 	background-color: rgb(52, 109, 52);
 	border-radius: 8px;

@@ -6,6 +6,7 @@ const ConfirmEarning = ({amount, toggleModal, setToggleModal}) => {
     const {loading, error} = useSelector(state => state.earnings)
     const dispatch = useDispatch()
     const handlePurchase =() => {
+      console.log(amount)
       dispatch(withdrawEarning(amount))
     }
     useEffect(()=> {

@@ -5,7 +5,7 @@ import ConfirmEarning from '../modals/ConfirmEarning'
 import ClearConfirmEarning from '../modals/ClearConfirmEarning'
 import { getUser } from '../../redux/actions/users'
 
-const Bonus = () => {
+const Earnings = () => {
   const dispatch = useDispatch()
   const [toggleModal, setToggleModal] = useState(null)
   const [clearModal, setClearModal] = useState()
@@ -14,10 +14,10 @@ const Bonus = () => {
   const {user} = useSelector(state => state.users)
 
   return (
-    <div>
+    <div className='earning'>
       <h3 className='text-center'>Withdraw Earnings</h3>
-      <div>
-        <a className='btn' onClick={()=> setToggleModal("show-modal deposit") }>Widthdraw all Earnings</a>
+      <div className='top'>
+        <a className='btn all-earning' onClick={()=> setToggleModal("show-modal deposit") }>Widthdraw all Earnings</a>
       </div>
 
       <WithdrawEarning toggleModal={toggleModal} setToggleModal={setToggleModal} withdrawEarning={withdrawEarning} setWithdrawEarning={setWithdrawEarning} />
@@ -27,4 +27,4 @@ const Bonus = () => {
   )
 }
 
-export default Bonus
+export default Earnings

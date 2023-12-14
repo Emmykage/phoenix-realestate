@@ -4,7 +4,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import default_photo from '../../../assets/users/profile_pic.jpg';
 import { listUsers } from '../../../redux/actions/users';
-import { userLog } from '../../../redux/auth/user_authentication';
+// import { userLog } from '../../../redux/auth/user_authentication';
 import Loader from '../../../components/loader/Loader';
 import { usd_format } from '../../../components/misc/USD';
 import { approveTransaction } from '../../../redux/actions/wallet';

@@ -14,7 +14,7 @@ const Wallet = () => {
   const {user, error, message, loading} = useSelector(state => state.users)
   const pendingTransaction = useSelector(state => state.transactions.loading)
   const mes = useSelector(state => state.earnings.loading)
-
+console.log(user)
 
   useEffect(() => {
       dispatch(getUser())
