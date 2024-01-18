@@ -9,39 +9,39 @@ const Nav = ({user}) => {
   }
 
   return (
-    <header class="header-default">
+    <header className="header-default">
 
-    <div class="top-bar">
-      <div class="container">
-          <div class="top-bar-left left">
-            <ul class="top-bar-item right social-icons">
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+    <div classNameName="top-bar">
+      <div className="container">
+          <div className="top-bar-left left">
+            <ul className="top-bar-item right social-icons">
+              <li><a href="#"><i className="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i className="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i className="fa fa-google-plus"></i></a></li>
             </ul>
-            <div class="clear"></div>
+            <div className="clear"></div>
           </div>
-          <div class="top-bar-right right">
-            {user ? <span  onClick={logout} class="cursor-pointer top-bar-item"><i class="fa fa-sign-out icon"></i>Logout</span> : (<>
+          <div className="top-bar-right right">
+            {user ? <span  onClick={logout} className="cursor-pointer top-bar-item"><i className="fa fa-sign-out icon"></i>Logout</span> : (<>
          
 
-            <NavLink to="/auth/login" class="top-bar-item"><i class="fa fa-sign-in icon"></i>Login</NavLink>
-            <NavLink to="/auth/register" class="top-bar-item"><i class="fa fa-user-plus icon"></i>Register</NavLink>
+            <NavLink to="/auth/login" className="top-bar-item"><i className="fa fa-sign-in icon"></i>Login</NavLink>
+            <NavLink to="/auth/register" className="top-bar-item"><i className="fa fa-user-plus icon"></i>Register</NavLink>
             </>
           )}
-            <div class="clear"></div>
+            <div className="clear"></div>
           </div>
-          <div class="clear"></div>
+          <div className="clear"></div>
       </div>
     </div>
   
-    <div class="container">
+    <div className="container">
   
       {/* <!-- navbar header --> */}
-      <div class="navbar-header">
+      <div className="navbar-header">
   
-        <div class="header-details">
-          <div class="header-item header-search left">
+        <div className="header-details">
+          <div className="header-item header-search left">
             {/* <table>
                 <tr>
                 <td><i class="fa fa-search"></i></td>
@@ -54,64 +54,64 @@ const Nav = ({user}) => {
               </tr>
             </table> */}
           </div>
-          <div class="header-item header-phone left">
+          <div className="header-item header-phone left">
             <table>
               <tr>
-                <td><i class="fa fa-phone"></i></td>
-                <td class="header-item-text">
+                <td><i className="fa fa-phone"></i></td>
+                <td className="header-item-text">
                   Call us anytime<br/>
                   <span>(+200) 123 456 5665</span>
                 </td>
               </tr>
             </table>
           </div>
-          <div class="header-item header-phone left">
+          <div className="header-item header-phone left">
             <table>
               <tr>
-                <td><i class="fa fa-envelope"></i></td>
-                <td class="header-item-text">
+                <td><i className="fa fa-envelope"></i></td>
+                <td className="header-item-text">
                   Drop us a line<br/>
                   <span>info@phoenix-homes.com</span>
                 </td>
               </tr>
             </table>
           </div>
-          <div class="clear"></div>
+          <div className="clear"></div>
         </div>
   
         <NavLink to="/" className="navbar-brand logo-icon" ><img src="images/logo1.jpg" alt="Homely" /></NavLink>
   
         {/* <!-- nav toggle --> */}
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+        <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span className="icon-bar"></span>
+          <span className="icon-bar"></span>
+          <span className="icon-bar"></span>
         </button>
   
       </div>
   
       {/* <!-- main menu --> */}
-      <div class="navbar-collapse collapse">
-        <div class="main-menu-wrap">
-          <div class="container-fixed md-bg-gray-dark">
+      <div className="relative navbar-collapse">
+        <div className="main-menu-wrap">
+          <div className="container-fixed md-bg-gray-dark">
   
-          <div class="member-actions right">
-            <a href="user-submit-property.html" class="button small alt button-icon"><i class="fa fa-plus"></i>Submit Property</a>
+          <div className="member-actions right">
+            <a href="user-submit-property.html" className="button small alt button-icon"><i className="fa fa-plus"></i>Submit Property</a>
           </div>
-          <ul class="nav navbar-nav right">
-            <li class="current-menu-item">
-              <NavLink to="/">Home</NavLink>
+          <ul className=" nav navbar-nav flex-row">
+            <li className="current-menu-item nav-item">
+              <NavLink to="/" className={"nav-link"}>Home</NavLink>
             </li>
-            <li class="menu-item-has-childre">
-              <NavLink to="/properties">Property Investments</NavLink>
-              <ul class="sub-menu">
+            <li className="menu-item-has-childre nav-item">
+              <NavLink to="/properties" className={"nav-link active"}>Property Investments</NavLink>
+              <ul className="sub-menu">
               <li><NavLink to="/united_kingdom">UNITED KIGDOM</NavLink></li>
               <li><NavLink to="/dubai">DUBAI</NavLink></li>
               <li><NavLink to="/spain">SPAIN</NavLink></li>
               <li><NavLink to="/berlin">BERLIN</NavLink></li>
               <li><NavLink to="/tokyo">TOKYO</NavLink></li>
               <li><NavLink to="/shangai">SHANGAI</NavLink></li>
-              {/* <li class="menu-item-has-children">
+              {/* <li className="menu-item-has-children">
                 <a href="property-single.html">Property Single</a>
                 <ul class="sub-menu">
                   <li><a href="property-single.html">Property Single Classic</a></li>
@@ -120,22 +120,22 @@ const Nav = ({user}) => {
               </li> */}
             </ul>
             </li>
-            <li><NavLink to="/press">Press Release</NavLink></li>
-            <li><NavLink to="/dashboard/wallet">Passive Income</NavLink></li>
-            <li><NavLink to="/contact">Contacts</NavLink></li>
+            <li><NavLink to="/press" className={"nav-link"}>Press Release</NavLink></li>
+            <li><NavLink to="/dashboard/wallet"className={"nav-link"}>Passive Income</NavLink></li>
+            <li><NavLink to="/contact" className={"nav-link"}>Contacts</NavLink></li>
 
-            <li><NavLink to="/about">Careers</NavLink></li>
+            <li><NavLink to="/about" className={"nav-link"}>Careers</NavLink></li>
             
             <li>
-            {user ? <a onClick={logout}>Logout</a> : (<>
+            {user ? <a onClick={logout} className={"nav-link"}>Logout</a> : (<>
          
 
-         <NavLink to="/auth/login">Login</NavLink>
+         <NavLink to="/auth/login" className={"nav-link"}>Login</NavLink>
          </>
        )}
           </li>
           </ul>
-          <div class="clear"></div>
+          <div className="clear"></div>
   
         </div>
   

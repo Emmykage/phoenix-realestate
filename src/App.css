@@ -2,6 +2,12 @@
 	box-sizing: border-box;
 	
 }
+a{
+	text-decoration: none;
+}
+.phoenix-green{
+	background: #4fba6f;
+}
 .dashboard{
 	position: relative;
 	display: flex;
@@ -73,8 +79,9 @@
 	background: rgba(52, 122, 183, 0.5);
 }
 .dashboard aside ul{
+	list-style: none;
 	/* margin-top: 3rem; */
-	background: white;
+	/* background: white; */
 }
 .dashboard aside .bottom{
 	border-top: 1px solid gray;
@@ -410,7 +417,9 @@ aside .dash-logo img{
 .portfolios img{
   width: 100%;
 }
-
+.flex-row{
+	flex-direction: row;
+}
 .flex{
   display: flex;
 }
