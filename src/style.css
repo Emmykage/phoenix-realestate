@@ -27,6 +27,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /*====================================================================================*/
  /* 01 RESET
 /*====================================================================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 * { margin:0px; padding:0px; }
 
@@ -42,7 +43,9 @@ ul, ul li { list-style:none; }
 html { width:100%; height:100%; }
 
 body {
-	font-family:'Raleway', Arial;
+
+	font-family: "poppins", sans-serif, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana;
+
 	font-weight:300;
 	font-size:15px;
 	color:#464646;

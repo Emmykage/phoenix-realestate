@@ -8,6 +8,12 @@ a{
 .phoenix-green{
 	background: #4fba6f;
 }
+.phoenix-blue{
+	background-color: #59aee9;
+}
+.phoenix-blue-lite{
+	background-color: #1f4865c8;
+}
 .dashboard{
 	position: relative;
 	display: flex;
@@ -33,6 +39,7 @@ a{
 	overflow: auto;
 
 }
+
 .portfolios a.btn, .decoration-none{
 	text-decoration: none;
 }
@@ -42,6 +49,10 @@ a{
 .fixed{
 	position: fixed;
 }
+.h-450{
+	height: 450px;
+}
+
 
 .relative{
 	position: relative;
@@ -127,6 +138,13 @@ a{
 .text-2xl{
 	font-size: 22px;
 }
+.text-3xl{
+	font-size: 26px;
+}
+.text-4xl{
+	font-size: 30px;
+}
+
 
 .font-normal{
 	font-weight: 400;
@@ -188,7 +206,7 @@ a{
 	padding-right: 1rem;
   }
   .px-3{
-	padding: 1.5rem;
+	padding: 0 1.5rem;
   }
 .px-4{
 	padding-left: 4rem;
@@ -373,8 +391,18 @@ hr{
 	padding-right: 1rem ;
 	padding-top: 1rem;
 }
+.w-350{
+	width: 350px;
+}
 .h-full{
   height: 100%;
+}
+.slick-slide > div {
+	margin-right: 1rem;
+
+}
+.flex-col{
+	flex-direction: column;
 }
 .block {
 	display: block;
@@ -429,9 +457,20 @@ aside .dash-logo img{
 .justify-around{
   justify-content: space-around;
 }
+.w-08{
+	width: 70%;
+}
+.bg-gray{
+	background-color: rgb(234, 234, 234);
+}
 
 .justify-between{
   justify-content: space-between;
+}
+.barc input:focus{
+	outline: none;
+	/* background-color: red; */
+	border: none;
 }
 .items-center{
   align-items: center;
@@ -444,6 +483,12 @@ aside .dash-logo img{
 }
 .flex-3{
   flex: 3;
+}
+.rounded-sm{
+	border-radius: 6px;
+}
+.rounded-md{
+	border-radius: 8px;
 }
 
 .rounded-base{
@@ -464,11 +509,20 @@ aside .dash-logo img{
 .m-h-300{
   min-height: 300px;
 }
+.h-350{
+	height: 350px;
+}
+.h-250{
+	height: 250px;
+}
+.w-250{
+	width: 250px;
+}
 .h-screen{
 	min-height: 100vh;
 }
 .w-full{
-  width: 100%;
+  width: 100% !important;
 }
 .w-max-800{
   width: 100%;

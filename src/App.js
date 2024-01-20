@@ -45,6 +45,9 @@ import PressPage from './pages/PressPage';
 import AddPost from './pages/Admin/blog/AddPost';
 import AccountSettings from './components/dashboard/Settings';
 import PortfolioItems from './pages/Admin/clients/PortfolioItems';
+import DepositPage from './pages/DepositPage';
+import WithdrawPage from './pages/WithdrawPage';
+import ViewImage from './pages/ViewImage';
 function App() {
   return (
     <div className="App">
@@ -69,6 +72,8 @@ function App() {
         <Route path='/about' element={<MainLayout><About/></MainLayout>}/>
         <Route path='/faq' element={<MainLayout><FAQ/></MainLayout>}/>
         <Route path='/dashboard' element={<UserLayout><Dashboard/></UserLayout> }>
+        <Route path='deposit' element={<UserLayout><DepositPage/></UserLayout>}/>
+        <Route path='withdraw' element={<UserLayout><WithdrawPage/></UserLayout>}/>
           <Route path='wallet' element={<Main/>}>
             <Route path='wallet' element={<Transaction/>}/>
             <Route path='portfolios' element={<Portfolios/>}/>
@@ -94,6 +99,7 @@ function App() {
         <Route path='asset/:id' element={<AdminLayout><AssetView/></AdminLayout>}/>
         <Route path='clients' element={<AdminLayout><Clients/></AdminLayout>}/>
         <Route path='client/:id' element={<AdminLayout><ClientsPage/></AdminLayout>}/>
+        <Route path='transaction/:id' element={<AdminLayout><ViewImage/></AdminLayout>}/>
         <Route path='client/:client_id/portfolio/:portfolio_id' element={<AdminLayout><PortfolioItems/></AdminLayout>}/>
         <Route path='orders' element={<AdminLayout><Orders/></AdminLayout>}/>
         <Route path='analytics' element={<AdminLayout><Analytics/></AdminLayout>}/>

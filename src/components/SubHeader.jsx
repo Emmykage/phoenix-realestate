@@ -2,10 +2,20 @@ import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import TopAssets from './TopAssets';
 import { useSelector } from 'react-redux';
-import { usd_format } from './misc/USD';
 
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 const SubHeader = () => {
   const {offers} = useSelector(state => state.assets)
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 3
+  };
   return (
     <div>
       <section class="subheader simple-search">
@@ -45,27 +55,21 @@ const SubHeader = () => {
               <div class="service-item shadow-hover">
                 <i class="fa fa-home"></i>
                 <h4>Sell Property</h4>
-                <p>Morbi accumsan ipsum velit Nam nec tellus 
-                a odio tincidunt auctor a ornare odio sedlon 
-                maurisvitae erat consequat auctor</p>
+                <p>Every property is unique, and so is our approach. We craft personalized selling strategies to meet your specific needs, ensuring a stress-free and rewarding experience.</p>
               </div>
             </div>
             <div class="col-lg-4 col-md-4">
               <div class="service-item shadow-hover">
                 <i class="fa fa-group"></i>
                 <h4>Expert Agents</h4>
-                <p>Morbi accumsan ipsum velit Nam nec tellus 
-                a odio tincidunt auctor a ornare odio sedlon 
-                maurisvitae erat consequat auctor</p>
+                <p>Trust our team of expert agents at to navigate your property journey with market mastery, negotiation prowess, and personalized solutions, ensuring you receive unparalleled guidance every step of the way.</p>
               </div>
             </div>
             <div class="col-lg-4 col-md-4">
               <div class="service-item shadow-hover">
                 <i class="fa fa-file-text"></i>
                 <h4>Daily Listings</h4>
-                <p>Morbi accumsan ipsum velit Nam nec tellus 
-                a odio tincidunt auctor a ornare odio sedlon 
-                maurisvitae erat consequat auctor</p>
+                <p>we pride ourselves on delivering a dynamic and constantly updated portfolio of properties. With our daily listings, you gain exclusive access to the latest and most exciting real estate opportunities in the market.!"</p>
               </div>
             </div>
           </div>
@@ -84,44 +88,35 @@ const SubHeader = () => {
     </div>
   </div>
 
-  <div class="slider-nav slider-nav-properties-featured">
-    <span class="slider-prev"><i class="fa fa-angle-left"></i></span>
-    <span class="slider-next"><i class="fa fa-angle-right"></i></span>
-  </div>
-  
-  <div class="slider-wrap">
-    <div class="slider slider-featured flex justify-center">
-    {offers.map(offer => (
-
-  
-    <div class="property property-hidden-content">
-      <NavLink to={`/assets_details/${offer.id}`} className="property-content">
-        <div className="property-title">
-          <h4 className='text-black'>{offer.name}</h4>
-          <p className="property-address"><i class="fa fa-map-marker icon"></i>123 Smith Dr, Annapolis, MD</p>
+ 
+  <div className=''>
+    <div className='container'>
+    <Slider {...settings}>
+      {offers.map((offer) => (
+        <div className="bg-white mr-2 w-350 bg-red mt-2">
+          <div className='h-350'>
+            <img src={offer.image_url} alt="" className='w-full h-full' />
+          </div>
+          <div className='flex flex-col justify-center items-center gap-4'>
+            <p className='font-bold mt-1'> {offer.name}</p>
+            <p className='m-0'>{offer.address}</p>
+            <p className='m-0'>{offer.city}</p>
+            <button className='text-white border p-2 px-4 rounded-md phoenix-blue mb-2'>View</button>
+           
+          </div>
         </div>
-        <table className="property-details">
-          <tr>
-            <td><i className="fa fa-bed"></i> {offer.number_of_beds} Beds</td>
-            <td><i className="fa fa-tint"></i> {offer.number_of_bathrooms} Baths</td>
-            <td><i className="fa fa-expand"></i> {offer.area} Ft</td>
-          </tr>
-        </table>
-      </NavLink>
-      <a href="#" className="property-img">
-          <div className="img-fade"></div>
-          <div className="property-tag button alt featured">{offer.status}</div>
-          <div className="property-tag button status">For {offer.sale_type}</div>
-          <div className="property-price">{usd_format(offer.price)}</div>
-          <div className="property-color-bar"></div>
-          <img src={offer.image_url} alt="" />
-      </a>
+      ))}
+        </Slider>
     </div>
-  ))}
-      
-    </div>
+
   </div>
+  
+
 </section>
+
+  <section>
+  
+  </section>
 
 <section class="module property-categories">
   <div class="container">

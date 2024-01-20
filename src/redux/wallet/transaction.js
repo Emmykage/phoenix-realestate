@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { approveTransaction, createTransaction } from "../actions/wallet";
+import { approveTransaction, createTransaction, getTransaction } from "../actions/wallet";
 
 const initialState = {
     transaction: "",
@@ -42,7 +42,7 @@ const transactionSlice = createSlice({
             return{
             ...state,
             loading: true,
-paid: false
+            paid: false
 
 
 
@@ -74,6 +74,23 @@ paid: false
             loading: true,
             status: "pending"
         }),
+
+        [getTransaction.fulfilled]: (state, action) => ({
+            ...state,
+            loading: false,
+            transaction: action.payload
+        })
+        ,
+        [getTransaction.pending]: (state) => ({
+            ...state,
+            loading: true,
+       
+        }),
+        [getTransaction.rejected]: (state) => ({
+            ...state,
+            loading: false,
+       
+        })
 
 
     }

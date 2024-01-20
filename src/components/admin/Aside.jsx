@@ -18,7 +18,7 @@ const Aside = () => {
       <div className="top">
         <div className="logo">
           <img src={LOGO} alt="logo" />
-       
+        
         </div>
         <div className="close" id="close-btn">
           <span>

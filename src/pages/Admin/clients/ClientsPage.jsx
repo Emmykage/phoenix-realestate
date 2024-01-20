@@ -97,6 +97,8 @@ const ClientsPage = () => {
               <span className='font-medium flex-1'>{transaction.coin_type}</span>
               <span className='flex-1 font-normal'>{transaction.transaction_type}</span>
               <span className='flex-1 font-medium'>{usd_format(transaction.amount)}</span>
+              <NavLink to={`/admin/transaction/${transaction.id}`} className='flex-1 font-normal border text-center py-1 bg-primary text-white cursor'>view Receipt</NavLink>
+
               <button className={`approve text-sm status w-full my-1 ${transaction.status == "completed" ? "status" : "pending"}`} onClick={()=> handleApprove(transaction.id)}>{transaction.status == "completed" ?  "approved" : "pending"}</button>
             </li>
            

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import DepositModal from '../modals/DepositModal'
 import WithdrawalModal from '../modals/WithdrawalModal'
 import { usd_format } from '../misc/USD'
+import { NavLink } from 'react-router-dom'
 // import { getUser } from '../../redux/actions/users'
 
 const Transaction = () => {
@@ -23,8 +24,10 @@ const Transaction = () => {
   return (
     <div className='transaction'>
     <div className='grid grid-2 gap-2'>
-        <Deposit toggleModal={toggleModalDeposit} setToggleModal={setToggleModalDeposit} deposit={deposit} setDeposit={setDeposit}/>
-        <Withdraw toggleModal={toggleModalWithdrawal} setToggleModal={setToggleModalWithdrawal} setWithdrawal={setWithdraw} withdrawal={withdraw}/>
+    <NavLink to={'/dashboard/deposit'} className='btn py-4'>  Deposit </NavLink>
+    <NavLink to={'/dashboard/withdraw'} className='btn py-4'> Withdraw </NavLink>
+        {/* <Deposit toggleModal={toggleModalDeposit} setToggleModal={setToggleModalDeposit} deposit={deposit} setDeposit={setDeposit}/> */}
+        {/* <Withdraw toggleModal={toggleModalWithdrawal} setToggleModal={setToggleModalWithdrawal} setWithdrawal={setWithdraw} withdrawal={withdraw}/> */}
 
     </div>
     <div className='flex gap-2'>

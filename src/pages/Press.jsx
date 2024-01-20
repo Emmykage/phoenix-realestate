@@ -2,13 +2,15 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { getPosts } from '../redux/actions/blog'
-
+import { formattedDate } from '../components/misc/Date'
 const Press = () => {
   const dispatch = useDispatch()
   const {posts} = useSelector(state => state.blog_posts)
+
   useEffect(()=> {
     dispatch(getPosts())
   },[])
+  
   return (
     <div className='container blog py-6 my-2 bg-white'>
         <div className='grid-display grid-third gap-2'>
@@ -16,17 +18,15 @@ const Press = () => {
 
         
             {posts.map(post => (
-              <>
-            
-                  
+              <>                            
               <div className='p-2 m-1'>
-                <div className='flex items-center '>
+                <div className='flex items-center'>
                 
                 <h3 className='mr-2'>{post.title}</h3> 
-                <h4 className='text-base font-normal'>{post.secondary_text}</h4>
+                <h4 className='text-base font-semibold text-gray'>{post.secondary_text}</h4>
                 
                 </div>
-                <div><p>written by {post.user.first_name}, 30 04 2016</p></div>
+                <div><p>written by {post.user.first_name}, {formattedDate(post.created_at)}</p></div>
                 <div className='blog-image'>
                   <img src={post.img_url} alt="" className='w-full' />
 
