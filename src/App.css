@@ -637,8 +637,26 @@ aside .dash-logo img{
 
 	
 }
+/* #navbarSupportedContent{
+	background-color: red;
+} */
+ul.nav{
+	width: 100%;
+	/* background-color: red; */
+
+}
+.nav.navbar-nav li{
+	border-bottom: 1px solid rgb(70, 70, 70);
+}
 .text-center{
 	text-align: center;
+}
+@media only screen and  (max-width: 990px) {
+
+	.sub-menu{
+		width: 100%;
+		position: relative !important;
+	}
 }
 @media only screen and  (max-width: 900px) {
 	.md-bg-blue-light{
@@ -651,5 +669,6 @@ aside .dash-logo img{
 	}
 	.sub-menu{
 		width: 100%;
+		position: relative !important;
 	}
 }

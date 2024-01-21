@@ -84,7 +84,7 @@ const SubHeader = () => {
     <div class="module-header">
       <h2>Featured <strong>Properties</strong></h2>
       <img src="images/divider.png" alt=""/>
-      <p>Morbi accumsan ipsum velit nam nec tellus a odiose tincidunt auctor a ornare odio sed non mauris vitae erat consequat auctor</p>
+      <p>Discover excellence with our featured product – where innovation meets elegance for a standout online experience</p>
     </div>
   </div>
 

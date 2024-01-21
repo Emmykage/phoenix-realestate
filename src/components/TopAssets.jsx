@@ -16,7 +16,7 @@ const TopAssets = () => {
       <div class="module-header">
         <h2>Recently Added <strong>Properties</strong></h2>
         <img src="images/divider.png" alt="" />
-        <p>Morbi accumsan ipsum velit nam nec tellus a odiose tincidunt auctor a ornare odio sed non mauris vitae erat consequat auctor</p>
+        <p>Discover our recently added properties, where exceptional features and prime locations combine to offer you the latest and most desirable listings</p>
       </div>
   
       <div class="flex justify-center gap-2">

@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 
 const Nav = ({user}) => {
+  const [show, setShow] = useState("collapse")
   const navigation = useNavigate()
   const logout = () => {
     localStorage.setItem('phoenix_auth', null);
@@ -40,19 +41,9 @@ const Nav = ({user}) => {
       {/* <!-- navbar header --> */}
       <div className="navbar-header">
   
-        <div className="header-details">
+        <div className="header-details bg-white">
           <div className="header-item header-search left">
-            {/* <table>
-                <tr>
-                <td><i class="fa fa-search"></i></td>
-                <td class="header-item-text">
-                  <form class="search-form">
-                    <input type="text" placeholder="Search..." />
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                  </form>
-                </td>
-              </tr>
-            </table> */}
+           
           </div>
           <div className="header-item header-phone left">
             <table>
@@ -79,17 +70,21 @@ const Nav = ({user}) => {
           <div className="clear"></div>
         </div>
         
-  
+        <div className='bg-'>
         <NavLink to="/" className="navbar-brand logo-icon" ><img src="images/logo1.jpg" alt="Homely" /></NavLink>
+
+
+        </div>
+  
 
   
       </div>
   
       {/* <!-- main menu --> */}
       <nav class="navbar navbar-expand-lg navbar-light  bg- p-0">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+      <button class="navbar-toggler" type="button" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div className="relative navbar-collapse">
         <div className="main-menu-wrap">
           <div className="container-fixed md-bg-gray-dark">
@@ -99,31 +94,31 @@ const Nav = ({user}) => {
           </div>
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div className={`${show} navbar-collapse `} id="navbarSupportedContent">
     <ul class="nav navbar-nav mr-auto">
       <li class="nav-item active text-white">
-        <NavLink className="nav-link text-white" to="/">Home <span class="sr-only">(current)</span></NavLink>
+        <NavLink className="nav-link text-white" to="/" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Home <span class="sr-only">(current)</span></NavLink>
       </li>
-        <li className="menu-item-has-childre nav-item text-white">
+        <li className="relative menu-item-has-childre nav-item text-white">
         <NavLink to="/properties" className={"nav-link active text-white"}>Property Investments</NavLink>
-        <ul className="sub-menu">
-          <li><NavLink to="/united_kingdom">UNITED KIGDOM</NavLink></li>
-              <li><NavLink to="/dubai">DUBAI</NavLink></li>
-              <li><NavLink to="/spain">SPAIN</NavLink></li>
-              <li><NavLink to="/berlin">BERLIN</NavLink></li>
-              <li><NavLink to="/tokyo">TOKYO</NavLink></li>
-              <li><NavLink to="/shangai">SHANGAI</NavLink></li>
+        <ul className="sub-menu relative">
+          <li><NavLink to="/united_kingdom" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>UNITED KIGDOM</NavLink></li>
+              <li><NavLink to="/dubai" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>DUBAI</NavLink></li>
+              <li><NavLink to="/spain" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>SPAIN</NavLink></li>
+              <li><NavLink to="/berlin" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>BERLIN</NavLink></li>
+              <li><NavLink to="/tokyo" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>TOKYO</NavLink></li>
+              <li><NavLink to="/shangai" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>SHANGAI</NavLink></li>
            
             </ul>
             </li>
-            <li><NavLink to="/press" className={"nav-link text-white"}>Press Release</NavLink></li>
-            <li><NavLink to="/dashboard/wallet"className={"nav-link text-white"}>Passive Income</NavLink></li>
-            <li><NavLink to="/contact" className={"nav-link text-white"}>Contacts</NavLink></li>
+            <li><NavLink to="/press" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Press Release</NavLink></li>
+            <li><NavLink to="/dashboard/wallet"className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li>
+            <li><NavLink to="/contact" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Contacts</NavLink></li>
 
-            <li><NavLink to="/about" className={"nav-link text-white"}>Careers</NavLink></li>
+            <li><NavLink to="/about" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Careers</NavLink></li>
             
             <li>
-            {user ? <a onClick={logout} className={"nav-link text-white"}>Logout</a> : (<>
+            {user ? <a onClick={logout} className={"nav-link text-white"} >Logout</a> : (<>
          
 
          <NavLink to="/auth/login" className={"nav-link text-white"}>Login</NavLink>
