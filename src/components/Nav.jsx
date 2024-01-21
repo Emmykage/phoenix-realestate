@@ -81,17 +81,15 @@ const Nav = ({user}) => {
         
   
         <NavLink to="/" className="navbar-brand logo-icon" ><img src="images/logo1.jpg" alt="Homely" /></NavLink>
-  
-        {/* <!-- nav toggle --> */}
-        <button type="button" className="navbar-toggle btn btn-light" data-toggle="collapse" data-target=".navbar-collapse">
-          <span className="icon-bar"></span>
-          <span className="icon-bar"></span>
-          <span className="icon-bar"></span>
-        </button>
+
   
       </div>
   
       {/* <!-- main menu --> */}
+      <nav class="navbar navbar-expand-lg navbar-light  bg- p-0">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
       <div className="relative navbar-collapse">
         <div className="main-menu-wrap">
           <div className="container-fixed md-bg-gray-dark">
@@ -99,12 +97,7 @@ const Nav = ({user}) => {
           <div className="member-actions right">
             <a href="user-submit-property.html" className="button small alt button-icon"><i className="fa fa-plus"></i>Submit Property</a>
           </div>
-        
-    <nav class="navbar navbar-expand-lg navbar-light  bg- p-0 ">
-  {/* <a class="navbar-brand" href="#">Navbar</a> */}
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="nav navbar-nav mr-auto">
@@ -120,13 +113,7 @@ const Nav = ({user}) => {
               <li><NavLink to="/berlin">BERLIN</NavLink></li>
               <li><NavLink to="/tokyo">TOKYO</NavLink></li>
               <li><NavLink to="/shangai">SHANGAI</NavLink></li>
-              {/* <li className="menu-item-has-children">
-                <a href="property-single.html">Property Single</a>
-                <ul class="sub-menu">
-                  <li><a href="property-single.html">Property Single Classic</a></li>
-                  <li><a href="property-single-full.html">Property Single Full Width</a></li>
-                </ul>
-              </li> */}
+           
             </ul>
             </li>
             <li><NavLink to="/press" className={"nav-link text-white"}>Press Release</NavLink></li>
@@ -146,7 +133,7 @@ const Nav = ({user}) => {
     </ul>
     
   </div>
-</nav>
+
 
           <div className="clear"></div>
   
@@ -154,7 +141,7 @@ const Nav = ({user}) => {
   
         </div>
       </div>
-  
+      </nav>
     </div>
   </header>
   )
