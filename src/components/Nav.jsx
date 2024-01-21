@@ -78,11 +78,12 @@ const Nav = ({user}) => {
           </div>
           <div className="clear"></div>
         </div>
+        
   
         <NavLink to="/" className="navbar-brand logo-icon" ><img src="images/logo1.jpg" alt="Homely" /></NavLink>
   
         {/* <!-- nav toggle --> */}
-        <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <button type="button" className="navbar-toggle btn btn-light" data-toggle="collapse" data-target=".navbar-collapse">
           <span className="icon-bar"></span>
           <span className="icon-bar"></span>
           <span className="icon-bar"></span>
@@ -98,14 +99,22 @@ const Nav = ({user}) => {
           <div className="member-actions right">
             <a href="user-submit-property.html" className="button small alt button-icon"><i className="fa fa-plus"></i>Submit Property</a>
           </div>
-          <ul className=" nav navbar-nav flex-row">
-            <li className="current-menu-item nav-item">
-              <NavLink to="/" className={"nav-link"}>Home</NavLink>
-            </li>
-            <li className="menu-item-has-childre nav-item">
-              <NavLink to="/properties" className={"nav-link active"}>Property Investments</NavLink>
-              <ul className="sub-menu">
-              <li><NavLink to="/united_kingdom">UNITED KIGDOM</NavLink></li>
+        
+    <nav class="navbar navbar-expand-lg navbar-light  bg- p-0 ">
+  {/* <a class="navbar-brand" href="#">Navbar</a> */}
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="nav navbar-nav mr-auto">
+      <li class="nav-item active text-white">
+        <NavLink className="nav-link text-white" to="/">Home <span class="sr-only">(current)</span></NavLink>
+      </li>
+        <li className="menu-item-has-childre nav-item text-white">
+        <NavLink to="/properties" className={"nav-link active text-white"}>Property Investments</NavLink>
+        <ul className="sub-menu">
+          <li><NavLink to="/united_kingdom">UNITED KIGDOM</NavLink></li>
               <li><NavLink to="/dubai">DUBAI</NavLink></li>
               <li><NavLink to="/spain">SPAIN</NavLink></li>
               <li><NavLink to="/berlin">BERLIN</NavLink></li>
@@ -120,21 +129,25 @@ const Nav = ({user}) => {
               </li> */}
             </ul>
             </li>
-            <li><NavLink to="/press" className={"nav-link"}>Press Release</NavLink></li>
-            <li><NavLink to="/dashboard/wallet"className={"nav-link"}>Passive Income</NavLink></li>
-            <li><NavLink to="/contact" className={"nav-link"}>Contacts</NavLink></li>
+            <li><NavLink to="/press" className={"nav-link text-white"}>Press Release</NavLink></li>
+            <li><NavLink to="/dashboard/wallet"className={"nav-link text-white"}>Passive Income</NavLink></li>
+            <li><NavLink to="/contact" className={"nav-link text-white"}>Contacts</NavLink></li>
 
-            <li><NavLink to="/about" className={"nav-link"}>Careers</NavLink></li>
+            <li><NavLink to="/about" className={"nav-link text-white"}>Careers</NavLink></li>
             
             <li>
-            {user ? <a onClick={logout} className={"nav-link"}>Logout</a> : (<>
+            {user ? <a onClick={logout} className={"nav-link text-white"}>Logout</a> : (<>
          
 
-         <NavLink to="/auth/login" className={"nav-link"}>Login</NavLink>
+         <NavLink to="/auth/login" className={"nav-link text-white"}>Login</NavLink>
          </>
        )}
           </li>
-          </ul>
+    </ul>
+    
+  </div>
+</nav>
+
           <div className="clear"></div>
   
         </div>
