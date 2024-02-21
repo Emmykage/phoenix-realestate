@@ -25,7 +25,7 @@ const AddAsset = () => {
     formData.append('asset[status]', e.target.status.value)
     formData.append('asset[city]', e.target.city.value)
 
-    const data = Object.fromEntries(formData)
+    // const data = Object.fromEntries(formData)
     dispatch(createAsset(formData));                                                                                                                                                  
     e.currentTarget.reset()
    

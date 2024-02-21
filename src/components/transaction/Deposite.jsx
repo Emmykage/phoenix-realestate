@@ -21,7 +21,7 @@ const Deposit = ({setToggleModal, deposit, setDeposit}) => {
             <h3>Deposit</h3>
             <form onSubmit={handleWithdrawalModal}>
             <div  className='m-3 text-left'>
-                <label className='block m-1'>Select Coin to receive payment</label> 
+                <label className='block m-1'>Select Coin to receive payment</label>
                 <div className=''>
                
                 <select name='coin_type' className='border form-select form-select-lg mb-3 ' value={deposit.coin_type} onChange={handleDepositInput} required>

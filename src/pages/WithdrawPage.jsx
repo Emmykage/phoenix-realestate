@@ -1,26 +1,46 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import WithdrawalModal from '../components/modals/WithdrawalModal'
+import { useDispatch, useSelector } from 'react-redux'
+import { reset } from '../redux/wallet/transaction'
 const WithdrawPage = () => {
+    const formRef = useRef(null)
     const [toggleModalWithdrawal, setToggleModalWithdrawal] = useState(null)
     const [withdraw, setWithdraw] = useState(null)  
-
+    const [show, setShow] = useState("hidden")
+    const {status} = useSelector(state => state.transactions)
+    const dispatch = useDispatch()
     const handleDepositModal = (e) => {
         e.preventDefault()
         const formData = new FormData()
-        formData.append('transaction[coin_type]', e.target.coin_type.value)
-        formData.append('transaction[amount]', e.target.amount.value)
-        formData.append('transaction[wallet_address]', e.target.wallet_address.value)
-        formData.append('transaction[receipt]', e.target.receipt.files[0])
-
-        const data = Object.fromEntries(formData)
+       
+        // const data = Object.fromEntries(formData)
         setToggleModalWithdrawal("show-modal withdrawal")
-     
+      
+            formData.append('transaction[coin_type]', e.target.coin_type.value)
+            formData.append('transaction[amount]', e.target.amount.value)
+            formData.append('transaction[address]', e.target.wallet_address.value)
+            formData.append('transaction[transaction_type]', "withdraw")
 
+   
         setWithdraw(formData)
-        // e.currentTarget.reset()
-        
+               
     }
+
+    useEffect(()=> {
+        const element = formRef.current
+
+        console.log(element)
+        if(status =="success"){
+            setShow("flex")
+            element.reset()
+            
+            setInterval(()=> {setShow("hidden"); dispatch(reset())})
+
+        }else{
+            setShow("hidden")
+        }
+    },[status])
 
 
 
@@ -29,12 +49,19 @@ const WithdrawPage = () => {
 
   return (
     <div className='px-3'>
+        <div className={`${show} p-2  rounded-md my-1 gap-3 fixed`}>
+            <p className='text-base text-green border p-2 rounded-md box-shadow'>
+                <span>Payment was success full </span> 
+                <span className="text-gray font-semibold" onClick={()=> setShow("hidden")}>X</span> 
+            </p>
+            
+        </div>
         <div>
             <h3 className='text-right font-semibold'>Withdraw from Wallet</h3>
         </div>
 
         <div>
-        <form onSubmit={handleDepositModal}>
+        <form onSubmit={handleDepositModal} ref={formRef}>
             <div  className='my-3 text-left'>
                 <label className='block m-1 font-medium'>Payment Method</label> 
                 <div className=''>
@@ -70,9 +97,9 @@ const WithdrawPage = () => {
                     </div>
 
                 </div>
-                <div className=''>
+                {/* <div className=''>
                     <input type="file" name='receipt' className='border w-full' />
-                </div>
+                </div> */}
         <div>
         <button type='submit' className='btn w-full bg-semi text-white'>Request</button>
         </div>

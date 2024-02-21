@@ -490,12 +490,18 @@ aside .dash-logo img{
 .rounded-md{
 	border-radius: 8px;
 }
+.rounded-full{
+	border-radius: 100%;
+}
 
 .rounded-base{
   border-radius: 1rem;
 }
 .text-lg{
   font-size: 18px;
+}
+.hidden{
+	display: none;
 }
 .text-xl{
   font-size: 20px;

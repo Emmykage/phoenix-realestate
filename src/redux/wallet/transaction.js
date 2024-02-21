@@ -15,6 +15,10 @@ const transactionSlice = createSlice({
     reducers: {
         loadTransaction: (state) =>({
             ...state
+        }),
+        reset: (state) => ({
+            ...state,
+            status: ""
         })
     },
     extraReducers: {
@@ -33,7 +37,8 @@ const transactionSlice = createSlice({
             loading: false,
             error: false,
             paid: true,
-            status: "pay was successful"
+            message: "pay was successful",
+            status: "success"
             
 
         }}, 
@@ -93,8 +98,9 @@ const transactionSlice = createSlice({
         })
 
 
-    }
+    }, 
+    
 })
 
 export default transactionSlice.reducer;
-export const {loadTransaction} = transactionSlice.actions
+export const {loadTransaction, reset} = transactionSlice.actions
