@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams } from 'react-router-dom'
 import { getPost } from '../redux/actions/blog';
+import photo from '../../src/assets/images/default.avif'
 
 const PressPage = () => {
   const {id} = useParams();
@@ -25,7 +26,7 @@ const PressPage = () => {
         </div>
         {/* <div><p>written by {post.user.first_name}, 30 04 2016</p></div> */}
         <div className='blog-image'>
-          <img src={post.img_url} alt="" className='w-full' />
+          <img src={post.img_url ? post.img_url : photo} alt="" className='w-full' />
 
         </div>
         <div>

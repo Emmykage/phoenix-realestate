@@ -327,7 +327,7 @@ hr{
 	padding: 1rem;
 }
 .bg-white{
-	background-color: white;
+	background-color: white !important;
 }
 .bg-green{
 	background-color: green !important;
@@ -493,6 +493,15 @@ aside .dash-logo img{
 .rounded-full{
 	border-radius: 100%;
 }
+.fix-header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 2000;
+	background: transparent;
+}
+/* .bg-white */
 
 .rounded-base{
   border-radius: 1rem;
@@ -619,6 +628,7 @@ aside .dash-logo img{
 }
 .blog .blog-image img{
 	height: 100%;
+	object-fit: cover;
 }
 .portfolio-img{
 	height: 200px;

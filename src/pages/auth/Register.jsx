@@ -31,7 +31,7 @@ const Register = () => {
     dispatch(registerUser({user: formInput}))    
     
   }
-  if(user == null || user == undefined){
+  if(!user ){
 
   return (
     <div>
@@ -109,7 +109,7 @@ const Register = () => {
     </div>
   )  
 }else{
-  navigation('/dashboard/wallet/wallet')
+  navigation('/auth/login')
 }
 
 }

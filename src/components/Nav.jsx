@@ -1,16 +1,36 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 
 const Nav = ({user}) => {
   const [show, setShow] = useState("collapse")
+  const [stickyNav, setStickyNav] = useState("nav")
+
   const navigation = useNavigate()
   const logout = () => {
     localStorage.setItem('phoenix_auth', null);
     navigation('/auth/login')
   }
+  const handleStickNav = (e) => {
+
+    setStickyNav('fix-header')
+
+    if(window.scrollY >= 10){
+
+      setStickyNav('fix-header')
+
+
+    }else{
+      setStickyNav("")
+
+    }
+  }
+  useEffect(()=> {
+    window.addEventListener('scroll', handleStickNav)
+
+  }, [])
 
   return (
-    <header className="header-default">
+    <header className="header-default bg-white">
 
     <div classNameName="top-bar">
       <div className="container">
@@ -81,7 +101,7 @@ const Nav = ({user}) => {
       </div>
   
       {/* <!-- main menu --> */}
-      <nav class="navbar navbar-expand-lg navbar-light  bg- p-0">
+      <nav class={`${stickyNav} bg-white navbar navbar-expand-lg navbar-light  bg- p-0`}>
       <button class="navbar-toggler" type="button" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -97,7 +117,7 @@ const Nav = ({user}) => {
   <div className={`${show} navbar-collapse `} id="navbarSupportedContent">
     <ul class="nav navbar-nav mr-auto">
       <li class="nav-item active text-white">
-        <NavLink className="nav-link text-white" to="/" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Home <span class="sr-only">(current)</span></NavLink>
+        <NavLink className="nav-link text-white" to="/" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Home <span class="sr-only"></span></NavLink>
       </li>
         <li className="relative menu-item-has-childre nav-item text-white">
         <NavLink to="/properties" className={"nav-link active text-white"}>Property Investments</NavLink>

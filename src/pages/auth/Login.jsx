@@ -23,7 +23,7 @@ const Login = () => {
         e.preventDefault()
         dispatch(userSession({user: formInput}))
     }
-    if(user ==  null || user == undefined){
+    if(!user || (user && user.token ==  null) || user.token == undefined){
 
 
   return (

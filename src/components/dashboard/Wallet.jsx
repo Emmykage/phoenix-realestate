@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet } from 'react-router-dom'
 import { usd_format } from '../misc/USD'
 import { getUser } from '../../redux/actions/users'
 import Loader from '../loader/Loader'
@@ -14,13 +14,16 @@ const Wallet = () => {
   const {user, error, message, loading} = useSelector(state => state.users)
   const pendingTransaction = useSelector(state => state.transactions.loading)
   const mes = useSelector(state => state.earnings.loading)
-
+  console.log(user)
   useEffect(() => {
       dispatch(getUser())
   }, [pendingTransaction, mes])
 if(error){
   return (
-    <h3 className='text-center'>{message}</h3>
+    <div>
+      <h3 className='text-center'>{message}</h3>
+      <Link to="/auth/login">Login</Link>
+    </div>
   )
 }
 

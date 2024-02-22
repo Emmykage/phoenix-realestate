@@ -31,7 +31,7 @@ const AdminRegister = () => {
     dispatch(registerUser({user: formInput}))    
     
   }
-  if(user == null || user == undefined){
+  if(!user){
 
   return (
     <div className=''>
@@ -110,7 +110,7 @@ const AdminRegister = () => {
     </div>
   )  
 }else{
-  navigation('/admin/dashboard')
+  navigation('/auth/admin/login')
 }
 }
 

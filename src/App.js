@@ -72,16 +72,16 @@ function App() {
         <Route path='/about' element={<MainLayout><About/></MainLayout>}/>
         <Route path='/faq' element={<MainLayout><FAQ/></MainLayout>}/>
         <Route path='/dashboard' element={<UserLayout><Dashboard/></UserLayout> }>
-        <Route path='deposit' element={<UserLayout><DepositPage/></UserLayout>}/>
-        <Route path='withdraw' element={<UserLayout><WithdrawPage/></UserLayout>}/>
+          <Route path='deposit' element={<UserLayout><DepositPage/></UserLayout>}/>
+          <Route path='withdraw' element={<UserLayout><WithdrawPage/></UserLayout>}/>
           <Route path='wallet' element={<Main/>}>
             <Route path='wallet' element={<Transaction/>}/>
             <Route path='portfolios' element={<Portfolios/>}/>
             <Route path='bonuses' element={<Bonus/>}/>
           </Route>
-          <Route path='account' element={<Account/>} />
-          <Route path='reference' element={<References/>} />          
-          <Route path='settings' element={<AccountSettings/>}/>
+            <Route path='account' element={<Account/>} />
+            <Route path='reference' element={<References/>} />          
+            <Route path='settings' element={<AccountSettings/>}/>
 
         </Route>
 

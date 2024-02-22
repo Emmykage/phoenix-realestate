@@ -32,7 +32,7 @@ const Press = () => {
 
                 </div>
                 <div>
-                  <p>{'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, aut esse debitis obcaecati deserunt, ipsa exercitationem dolore ut, inventore cupiditate ullam eveniet nam doloribus aliquam dolorum fugit illum modi assumenda voluptatum ratione perspiciatis dolores quaerat. Est harum molestias sunt eveniet!'.substring(0, 300)}...</p>
+                  <p>{post.body && post.body.substring(0, 300)}...</p>
                   <NavLink to={`/press/${post.id}`} className='more'>READ MORE</NavLink>
                 </div>
               </div>
