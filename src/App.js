@@ -49,6 +49,7 @@ import DepositPage from './pages/DepositPage';
 import WithdrawPage from './pages/WithdrawPage';
 import ViewImage from './pages/ViewImage';
 import ForgotPassword from './pages/auth/ForgotPassword';
+import BrokenPage from './pages/BrokenPage';
 function App() {
   return (
     <div className="App">
@@ -69,6 +70,7 @@ function App() {
         <Route path="/family_homes" element={<MainLayout><Family/></MainLayout>}/>
         <Route path="/studio_homes" element={<MainLayout><StudioApartment/></MainLayout>}/>
         <Route path="/assets_details/:id" element={<MainLayout><AssetDetails/></MainLayout>}/>
+        <Route path='*' element={<MainLayout><BrokenPage/></MainLayout>}/>
 
         <Route path='/about' element={<MainLayout><About/></MainLayout>}/>
         <Route path='/faq' element={<MainLayout><FAQ/></MainLayout>}/>

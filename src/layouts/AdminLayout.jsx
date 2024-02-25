@@ -28,7 +28,7 @@ const AdminLayout = ({ children }) => {
     </div>;
   }
   if(user == null){
-    (navigation('/auth/admin_login'))
+    (navigation('/auth/admin/login'))
   }else{
   
     if(user.role === "client"){
