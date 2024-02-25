@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { userSession } from '../../redux/actions/auth'
+import { PasswordReset } from '../../redux/actions/auth'
 import { userLog } from '../../redux/auth/user_authentication'
 
-const Login = () => {
+const ForgotPassword = () => {
     const navigation = useNavigate()
     const dispatch = useDispatch()
     const {user, error, loading, message} = useSelector(state => state.user)
-    const [formInput, setFormInput] = useState({email: "", password: ""})
+    const [formInput, setFormInput] = useState({email: ""})
     useEffect(()=> {
         dispatch(userLog())
     },[])
@@ -21,7 +21,7 @@ const Login = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
-        dispatch(userSession({user: formInput}))
+        dispatch(PasswordReset( formInput))
     }
     if(!user || (user && user.token ==  null) || user.token == undefined){
 
@@ -30,7 +30,7 @@ const Login = () => {
     <div>
         <section class="subheader">
             <div class="container">
-            <h1>Login</h1>
+            <h1>Forgot Password</h1>
             <div class="breadcrumb right"><NavLink to={'/'}>Home</NavLink>  <i class="fa fa-angle-right"></i> <a href="#" class="current">Login</a></div>
             <div class="clear"></div>
             </div>
@@ -41,27 +41,21 @@ const Login = () => {
         
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-4"> 
-                <p>Don't have an account? <strong><NavLink to="/auth/register">Register here.</NavLink></strong></p> 
+                <p>Enter your registered email to reset your password<strong><NavLink to="/auth/register">Register here.</NavLink></strong></p> 
                 <form onSubmit={handleFormSubmit} class="login-form">
                     <div class="form-block">
-                    <label>Email</label>
+                    <label>Email Address</label>
                     <input class="border" type="text" name="email" onChange={handleInputChange} />
                     </div>
-                    <div class="form-block">
-                    <label>Password</label>
-                    <input class="border" type="password" name="password" onChange={handleInputChange}/>
-                    </div>
-                    <div class="form-block">
-                    <label><input type="checkbox" name="remember" />Remember Me</label><br/>
-                    </div>
+                    
+                    
                     <p>{loading && "Loading..." }</p>
                     <p className='text-red'>{error && message}</p>
             
                     <div class="form-block">
-                    <button class="button button-icon" type="submit"><i class="fa fa-angle-right"></i>Login</button>
+                    <button class="button button-icon" type="submit"><i class="fa fa-angle-right"></i>Reset Password</button>
                     </div>
                     <div class="divider"></div>
-                    <p class="note"><NavLink to="forgot_password">I don't remember my password.</NavLink> </p>    
                 </form>
                 </div>
             </div>
@@ -92,4 +86,4 @@ const Login = () => {
 }
 }
 
-export default Login
+export default ForgotPassword

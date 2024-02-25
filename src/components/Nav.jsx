@@ -32,13 +32,14 @@ const Nav = ({user}) => {
   return (
     <header className="header-default bg-white">
 
-    <div classNameName="top-bar">
+    <div className="top-bar">
       <div className="container">
           <div className="top-bar-left left">
             <ul className="top-bar-item right social-icons">
               <li><a href="#"><i className="fa fa-facebook"></i></a></li>
               <li><a href="#"><i className="fa fa-twitter"></i></a></li>
               <li><a href="#"><i className="fa fa-google-plus"></i></a></li>
+              
             </ul>
             <div className="clear"></div>
           </div>

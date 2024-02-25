@@ -48,6 +48,7 @@ import PortfolioItems from './pages/Admin/clients/PortfolioItems';
 import DepositPage from './pages/DepositPage';
 import WithdrawPage from './pages/WithdrawPage';
 import ViewImage from './pages/ViewImage';
+import ForgotPassword from './pages/auth/ForgotPassword';
 function App() {
   return (
     <div className="App">
@@ -87,6 +88,7 @@ function App() {
 
         <Route path='auth'>
           <Route path='login' element={<Login/>}/>  
+          <Route path='forgot_password' element={<ForgotPassword/>}/>  
           <Route path='register' element={<Register/>}/>   
           <Route path='admin/login' element={<AdminLogin/>}/>   
           <Route path='admin/register' element={<AdminRegister/>}/>   

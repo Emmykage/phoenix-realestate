@@ -26,4 +26,16 @@ const userSession = createAsyncThunk('user/session', async (data) => {
   return response;
 });
 
-export { registerUser, userSession };
+
+const PasswordReset = createAsyncThunk('user/password_reset', async(data) => {
+  const response = await fetch(`${baseUrl}users/forgot_password`, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  }).then(res => res.json())
+  console.log(response)
+  return response
+})
+export { registerUser, userSession , PasswordReset};
