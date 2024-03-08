@@ -50,6 +50,7 @@ import WithdrawPage from './pages/WithdrawPage';
 import ViewImage from './pages/ViewImage';
 import ForgotPassword from './pages/auth/ForgotPassword';
 import BrokenPage from './pages/BrokenPage';
+import ConfirmEmail from './pages/ConfirmEmail';
 function App() {
   return (
     <div className="App">
@@ -74,6 +75,7 @@ function App() {
 
         <Route path='/about' element={<MainLayout><About/></MainLayout>}/>
         <Route path='/faq' element={<MainLayout><FAQ/></MainLayout>}/>
+        <Route path='/confirm_email' element={<MainLayout><ConfirmEmail/></MainLayout>}/>
         <Route path='/dashboard' element={<UserLayout><Dashboard/></UserLayout> }>
           <Route path='deposit' element={<UserLayout><DepositPage/></UserLayout>}/>
           <Route path='withdraw' element={<UserLayout><WithdrawPage/></UserLayout>}/>

@@ -6,16 +6,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from '../redux/actions/users';
 import Loader from '../components/loader/Loader';
 import { userLog } from '../redux/auth/user_authentication';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const AdminLayout = ({ children }) => {
   const dispatch = useDispatch();
   const { user, loading, error } = useSelector((state) => state.user);
   const navigation = useNavigate()
   useEffect(() => {
-    dispatch(getUser());
+    // dispatch(getUser());
     dispatch(userLog())
   }, []);
+ console.log(user)
+  const logout = () => {
+    localStorage.setItem('phoenix_auth', null);
+    navigation('/auth/login')
+  }
 
   if (loading) {
     return (<Loader />);
@@ -35,7 +40,7 @@ const AdminLayout = ({ children }) => {
       return(
         <>
         <h1 className='text-gray text-center my-4'>You are not Authorized to view this page</h1>
-        <h2 className='text-gray text-center my-4'>Login</h2>
+        <h2 className='text-gray text-center my-4'><a onClick={logout}>Login</a> </h2>
         </>
 
       )

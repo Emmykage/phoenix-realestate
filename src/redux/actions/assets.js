@@ -13,6 +13,7 @@ const createAsset = createAsyncThunk('asset/create_asset', async (data) => {
     },
     body: data,
   }).then((res) => res.json());
+  // console.log(response)
   return response;
 });
 
@@ -26,6 +27,7 @@ const getAssets = createAsyncThunk('asset/get_assets', async (data) => {
     },
 
   }).then((res) => res.json());
+  // console.log(response)
   return response;
 });
 const getAsset = createAsyncThunk('asset/get_assets', async (id) => {

@@ -12,6 +12,7 @@ const Login = () => {
     useEffect(()=> {
         dispatch(userLog())
     },[])
+    // console.log(user)
     const handleInputChange = (e)=> {
         setFormInput({
             ...formInput,
@@ -43,6 +44,8 @@ const Login = () => {
                 <div class="col-lg-4 col-lg-offset-4"> 
                 <p>Don't have an account? <strong><NavLink to="/auth/register">Register here.</NavLink></strong></p> 
                 <form onSubmit={handleFormSubmit} class="login-form">
+                    {user && !user.confirmed_at && <p className='my-3 text-red'>Check your Email and Confirm your account</p>}
+
                     <div class="form-block">
                     <label>Email</label>
                     <input class="border" type="text" name="email" onChange={handleInputChange} />

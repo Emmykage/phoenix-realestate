@@ -69,7 +69,7 @@ const Properties = () => {
           </table>
         </div>
         <div class="property-footer">
-          <span class="left"><i class="fa fa-calendar-o icon"></i> 5 days ago</span>
+          <span class="left"><i class="fa fa-calendar-o icon"></i>5 days ago</span>
           <span class="right">
             <a href="#"><i class="fa fa-heart-o icon"></i></a>
             <a href="#"><i class="fa fa-share-alt"></i></a>

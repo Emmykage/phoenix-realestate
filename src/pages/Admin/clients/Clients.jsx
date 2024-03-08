@@ -6,10 +6,19 @@ import { listUsers } from '../../../redux/actions/users';
 
 const Clients = () => {
   const dispatch = useDispatch();
-  const { users } = useSelector((state) => state.users);
+  const { users, message, error } = useSelector((state) => state.users);
+  console.log(users)
   useEffect(() => {
     dispatch(listUsers());
   }, []);
+
+if(error){
+  return(
+    <div>
+      <h1 className='center'>{message}</h1>
+    </div>
+  )
+}
   if (users.length < 1) {
     return (
       <div>

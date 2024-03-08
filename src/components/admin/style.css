@@ -552,8 +552,8 @@ main .recent-orders a {
   width: 100%;
   padding: 0.82rem 0.6rem;
   outline: #363949;
-  border: 1px solid #363949;
-  border-radius: 1rem;
+  border: 1px solid #ababab;
+  border-radius: 6px;
 }
 
 .assets-forms form option {

@@ -3,9 +3,9 @@ import { useDispatch } from 'react-redux';
 import { createAsset } from '../../../redux/actions/assets';
 
 const AddAsset = () => {
-  const [toggleForm, setToggleForm] = useState('false');
+  const [toggleForm, setToggleForm] = useState(false);
   const dispatch = useDispatch();
-
+console.log(toggleForm)
   const handleSubmit = (e) => {
     e.preventDefault();
   
@@ -27,6 +27,7 @@ const AddAsset = () => {
 
     // const data = Object.fromEntries(formData)
     dispatch(createAsset(formData));                                                                                                                                                  
+    // dispatch(createAsset(data.asset));                                                                                                                                                  
     e.currentTarget.reset()
    
   };
@@ -44,7 +45,7 @@ const AddAsset = () => {
          
              />
           </div> 
-    <div>
+        <div>
             <label>Asset Category</label>
             <select
               name="asset_category"
@@ -162,9 +163,9 @@ const AddAsset = () => {
         </form>
       </div>
 
-      <div className="asset-div mx-5"><span>Add Transport</span></div>
+      {/* <div className="asset-div mx-5"><span>Add Transport</span></div>
       <div className="asset-div"><span>Add Crypto</span></div>
-      <div className="asset-div"><span>Add Art</span></div>
+      <div className="asset-div"><span>Add Art</span></div> */}
     </div>
   );
 };

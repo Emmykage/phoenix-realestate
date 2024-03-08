@@ -35,26 +35,30 @@ const AssetDetails = () => {
               <img src={asset.image_url} alt="" />
             </a>
             <div class="property-content">
-              <div className='flex justify-between w-max-800'>
+              <div className='flex justify-between w-max-80'>
              
               <div class="property-title">
               <h4><a href="#">{asset.name}</a></h4>
                 <p class="property-address"><i class="fa fa-map-marker icon"></i>{asset.address}</p>
               </div>
               <div>
-              <a onClick={()=> setToggleModal("show-modal")} className='btn p-3'>
+              <a onClick={()=> setToggleModal("show-modal")} className='btn p-1 px-3'>
                   Purchase
                 </a>
               </div>
                  
               </div>
-              <table class="property-details">
-                <tr>
-                  <td><i class="fa fa-bed"></i> {asset.number_of_bedrooms} Beds</td>
-                  <td><i class="fa fa-tint"></i> {asset.number_of_bedrooms} Baths</td>
-                  <td><i class="fa fa-expand"></i>{asset.area} Sq Ft</td>
-                </tr>
-              </table>
+              <div className='w-half font-medium text-sm'>
+                <table class="property-details">
+                  <tr>
+                    <td><i class="fa fa-bed"></i> {asset.number_of_bedrooms} Beds</td>
+                    <td><i class="fa fa-tint"></i> {asset.number_of_bedrooms} Baths</td>
+                    <td><i class="fa fa-expand"></i>{asset.area} Sq Ft</td>
+                  </tr>
+                </table>
+
+              </div>
+             
               
             </div>
             <div class="property-footer">

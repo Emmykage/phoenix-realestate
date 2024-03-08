@@ -616,7 +616,7 @@ aside .dash-logo img{
 }
 .property-img img{
 	width: 100%;
-	object-fit: contain;
+	object-fit: cover;
 }
 .blog {
 
@@ -636,6 +636,9 @@ aside .dash-logo img{
 .portfolio-img img{
 	height: 100%;
 	width: 100%;
+}
+.w-half{
+	width: 50%;
 }
 .blog .more{
 	display: inline-block;
@@ -691,4 +694,7 @@ ul.nav{
 		background-color: #062E62;
 		display: none;
 	}
+}
+.text-blue{
+	color: #062E62 !important;
 }
