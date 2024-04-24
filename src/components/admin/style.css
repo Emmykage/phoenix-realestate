@@ -1,28 +1,4 @@
-:root {
-  --color-primary: #7380ec;
-  --color-danger: #ff7782;
-  --color-success: #41f1b6;
-  --color-warning: #fb5;
-  --color-orange: #ff4500;
-  --color-theme: rgba(255, 69, 0, 1);
-  --color-theme-variant: rgb(20, 56, 80);
-  --color-white: #fff;
-  --color-info-dark: #7d8da1;
-  --color-info-light: #dce1eb;
-  --color-light-grey: rgb(216, 220, 226);
-  --color-dark: #363949;
-  --color-light: rgba(132, 139, 200, 0.18);
-  --color-primary-variant: #135092;
-  --color-dark-variant: #677483;
-  --color-background: #f6f6f9;
-  --card-border-radius: 2rem;
-  --border-radius-1: 0.4rem;
-  --border-radius-2: 0.8rem;
-  --border-radium-3: 1.2rem;
-  --card-padding: 0.8rem;
-  --padding-1: 1.2rem;
-  --box-shadow: 0 2rem 3rem var(--color-light);
-}
+
 
 
 .admin.contain {

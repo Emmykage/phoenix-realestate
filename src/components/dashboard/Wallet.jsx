@@ -16,7 +16,6 @@ const Wallet = () => {
   const mes = useSelector(state => state.earnings.loading)
   console.log(user)
   useEffect(() => {
-      dispatch(getUser())
   }, [pendingTransaction, mes])
 if(error){
   return (

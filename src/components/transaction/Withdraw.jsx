@@ -40,7 +40,7 @@ const Withdraw = ({toggleModal, setToggleModal, setWithdrawal, withdrawal}) => {
                 <input className='border' type='text' id="client_address" name='wallet_address' value={withdrawal.wallet_address} onChange={handleWithdrawalInput} required/>
             </div>
         <div>
-        <button className='btn w-full bg-semi text-white'>Request</button>
+        <button className='btn w-full bg-semi'>Request</button>
         </div>
         </form>
         </div>

@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { userLog } from '../redux/auth/user_authentication'
+import Aside from '../components/dashboard/Aside'
+import { getUser } from '../redux/actions/users'
 
 const UserLayout = ({children}) => {
   const dispatch = useDispatch()
@@ -10,11 +12,23 @@ const UserLayout = ({children}) => {
   const {user} = useSelector(state => state.user)
   useEffect(()=> {
     dispatch(userLog())
+    dispatch(getUser())
+
   }, [])
   if(user == null){(navigation('/auth/login'))}else{
   return (
-    <div>
-      {children}
+    <div className='user dashboard bg-space'>
+       <Aside/>
+       <div className='main-content'>
+        <div className='box-shadow p-2 bg-white box-shadow mx-1'> <h3 className='text-dark font-bold px-3'>Dashboard</h3> </div>
+        <div className='w-max-1450'>
+
+      
+       
+        {children}
+        </div>
+
+      </div>
       
     </div>
   )

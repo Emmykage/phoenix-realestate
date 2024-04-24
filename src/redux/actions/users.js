@@ -23,7 +23,6 @@ const getUser = createAsyncThunk('user/get_account', async () => {
     },
 
   }).then((res) => res.json());
-  console.log(response)
   return response;
 });
 

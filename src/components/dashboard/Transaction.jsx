@@ -22,10 +22,10 @@ const Transaction = () => {
 
 
   return (
-    <div className='transaction'>
+    <div className='transaction px-3 ' >
     <div className='grid grid-2 gap-2'>
-    <NavLink to={'/dashboard/deposit'} className='btn py-4'>  Deposit </NavLink>
-    <NavLink to={'/dashboard/withdraw'} className='btn py-4'> Withdraw </NavLink>
+    <NavLink to={'/dashboard/deposit'} className='tran-card text-xl font-semibold flex justify-center items-center py-4 rounded-sm text-dark'>  Deposit </NavLink>
+    <NavLink to={'/dashboard/withdraw'} className='tran-card text-xl font-semibold flex justify-center items-center py-4 rounded-sm text-dark'> Withdraw </NavLink>
         {/* <Deposit toggleModal={toggleModalDeposit} setToggleModal={setToggleModalDeposit} deposit={deposit} setDeposit={setDeposit}/> */}
         {/* <Withdraw toggleModal={toggleModalWithdrawal} setToggleModal={setToggleModalWithdrawal} setWithdrawal={setWithdraw} withdrawal={withdraw}/> */}
 

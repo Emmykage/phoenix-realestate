@@ -48,7 +48,7 @@ const WithdrawPage = () => {
   
 
   return (
-    <div className='px-3'>
+    <div className='px-3 max-w-1450 bg-white mx-3 box-shadow rounded-sm py-4 my-5'>
         <div className={`${show} p-2  rounded-md my-1 gap-3 fixed`}>
             <p className='text-base text-green border p-2 rounded-md box-shadow'>
                 <span>Payment was success full </span> 
@@ -56,8 +56,8 @@ const WithdrawPage = () => {
             </p>
             
         </div>
-        <div>
-            <h3 className='text-right font-semibold'>Withdraw from Wallet</h3>
+        <div className='my-3'>
+            <h3 className='text-right font-semibold'>Withdrawal</h3>
         </div>
 
         <div>
@@ -101,7 +101,7 @@ const WithdrawPage = () => {
                     <input type="file" name='receipt' className='border w-full' />
                 </div> */}
         <div>
-        <button type='submit' className='btn w-full bg-semi text-white'>Request</button>
+        <button type='submit' className='btn w-full'>Request</button>
         </div>
         </form>
         </div>

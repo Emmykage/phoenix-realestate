@@ -59,7 +59,7 @@ const DepositPage = () => {
         }
     }
   return (
-    <div className='px-3'>
+    <div className='mx-3  bg-white px-3 max-w-1450 box-shadow-gray my-6 rounded-sm py-2'>
         <div className={`${show} p-2  rounded-md my-1 gap-3 fixed`}>
             <p className='text-base text-green border p-2 rounded-md box-shadow'>
                 <span>Payment was success full </span> 
@@ -67,11 +67,10 @@ const DepositPage = () => {
             </p>
             
         </div>
-        <div>
-            <h3 className='text-right font-semibold'>Fund Account</h3>
-        </div>
+        <h3 className='text-right font-semibold text-3xl'>Fund Account</h3>
+        <div></div>
 
-        <div>
+        <div className='flex'>
         <form onSubmit={handleDepositModal} ref={formRef}>
             <div  className='my-3 text-left'>
                 <label className='block m-1 font-medium'>Payment Method</label> 
@@ -91,7 +90,40 @@ const DepositPage = () => {
                 <label className='block m-1' htmlFor="amount">Enter Amount</label>
                 <input type="number" className='border'  placeholder='Enter Amount in USD' name="amount" required min={10}/>
             </div>
-            <ul>
+           
+            <div className='m-2'>
+                <p className='text-dark text-left px-4 text-base font-medium'>Deposit Address</p>
+                <div className='flex items-center bg-gray  my-4 '>
+                    <div className='scanner-ing  mr-2'>
+                        <img src={barcode} alt="barcode" className='w-full h-full' />
+
+                    </div>
+                    <div className='flex-1 flex  items-center barc'>
+                        <div className=' w-08 mr-3 mt-3'>
+                            <input type="text"  value={textToCopy} readOnly className='text-3xl bg-gray'/>
+                        </div>  
+                        <div className='p-2 border bg-gray-light rounded-sm'>
+                        <a onClick={handleCopyClick}><FaCopy className='text-4xl ml-2 bg-gray-light ' /></a>
+
+                        </div>
+
+
+                    </div>
+
+                    
+
+                </div>
+
+            </div>
+            <div className=''>
+                <input type="file" name='receipt' className='border w-full' required/>
+            </div>
+        <div>
+        <button type='submit' className='btn w-full '>Deposite</button>
+        </div>
+        </form>
+        <div>
+        <ul>
                     <p className='font-medium'>Minimum deposit = 500 USDT</p>
                     <li className='px-3 font-normal'><p>Please make deposit before submitting the form</p></li>
                     <li className='px-3 font-normal'><p>Deposit will be credited and available on the dashboard after confirmation</p></li>
@@ -100,37 +132,8 @@ const DepositPage = () => {
                     <li className='px-3 font-normal'><p>Do not send NFTs to this address</p></li>
                     <li className='px-3 font-normal'><p>Please make deposit before submitting the form</p></li>
                 </ul>
-                <div className='m-2'>
-                    <p className='text-dark text-left px-4 text-base font-medium'>Deposit Address</p>
-                    <div className='flex items-center bg-gray  my-4 '>
-                        <div className='h-250 w-250  mr-2'>
-                            <img src={barcode} alt="barcode" className='w-full h-full' />
-
-                        </div>
-                        <div className='flex-1 flex  items-center barc'>
-                            <div className=' w-08 mr-3 mt-3'>
-                                <input type="text"  value={textToCopy} readOnly className='text-3xl bg-gray'/>
-                            </div>  
-                            <div className='p-2 border bg-gray-light rounded-sm'>
-                            <a onClick={handleCopyClick}><FaCopy className='text-4xl ml-2 bg-gray-light ' /></a>
-
-                            </div>
-   
-
-                        </div>
-
-                      
-
-                    </div>
-
-                </div>
-                <div className=''>
-                    <input type="file" name='receipt' className='border w-full' required/>
-                </div>
-        <div>
-        <button type='submit' className='btn w-full bg-semi text-white'>Deposite</button>
         </div>
-        </form>
+
         </div>
         <DepositModal toggleModal={toggleModalDeposit} setToggleModal={setToggleModalDeposit} deposit={deposit}/>
 

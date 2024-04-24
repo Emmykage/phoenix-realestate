@@ -48,6 +48,7 @@ import PortfolioItems from './pages/Admin/clients/PortfolioItems';
 import DepositPage from './pages/DepositPage';
 import WithdrawPage from './pages/WithdrawPage';
 import ViewImage from './pages/ViewImage';
+import Wallet from './components/dashboard/Wallet';
 function App() {
   return (
     <div className="App">
@@ -71,19 +72,18 @@ function App() {
 
         <Route path='/about' element={<MainLayout><About/></MainLayout>}/>
         <Route path='/faq' element={<MainLayout><FAQ/></MainLayout>}/>
-        <Route path='/dashboard' element={<UserLayout><Dashboard/></UserLayout> }>
-          <Route path='deposit' element={<UserLayout><DepositPage/></UserLayout>}/>
-          <Route path='withdraw' element={<UserLayout><WithdrawPage/></UserLayout>}/>
-          <Route path='wallet' element={<Main/>}>
-            <Route path='wallet' element={<Transaction/>}/>
-            <Route path='portfolios' element={<Portfolios/>}/>
+        <Route path='/dashboard' element={<UserLayout><Dashboard/></UserLayout> }/>
+        <Route path='/dashboard/deposit' element={<UserLayout><DepositPage/></UserLayout>}/>
+        <Route path='/dashboard/withdraw' element={<UserLayout><WithdrawPage/></UserLayout>}/>
+        <Route path='/dashboard/wallet' element={<UserLayout> <Wallet/></UserLayout>}>
+            <Route path='wallet' element={<><Transaction/></>}/>
+            <Route path='portfolios' element={<><Portfolios/></>}/>
             <Route path='bonuses' element={<Bonus/>}/>
-          </Route>
-            <Route path='account' element={<Account/>} />
+         </Route>
+            <Route path='/dashboard/account' element={<UserLayout><Account/></UserLayout>} />
             <Route path='reference' element={<References/>} />          
             <Route path='settings' element={<AccountSettings/>}/>
 
-        </Route>
 
         <Route path='auth'>
           <Route path='login' element={<Login/>}/>  
