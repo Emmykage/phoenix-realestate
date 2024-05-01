@@ -26,7 +26,7 @@ const WithdrawEarning = ({setToggleModal, setWithdrawEarning, withdrawEarning}) 
             </div>
            
         <div>
-        <button className='btn w-full bg-semi text-white'>Liquidate Earnings</button>
+        <button className='btn w-full'>Liquidate Earnings</button>
         </div>
         </form>
         </div>

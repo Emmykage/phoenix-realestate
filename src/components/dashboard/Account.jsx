@@ -38,8 +38,8 @@ const Account = () => {
               <td className='py-2 px-2 text-dark font-medium'>{transaction.coin_type}</td>
               <td className='text-sm text-gray font-medium'>{usd_format(transaction.amount)}</td>
               <td className='text-sm text-gray font-medium'>{transaction.transaction_type}</td>
-              <td className="warning">Pending</td>
-              <td className="primary">{formattedDate(transaction.created_at)}</td>
+              <td className="warning">{transaction.status}</td>
+              <td className="primary">{transaction.created_at} </td>
             </tr>
             ))
   

@@ -131,6 +131,9 @@ a{
 }.bg-primary-light{
 	background: var(--color-pry);
 }
+.hover-text-green:hover{
+	color: green;
+}
 .dashboard aside ul{
 	list-style: none;
 	margin-left: 0;
@@ -409,6 +412,9 @@ hr{
 }
 .dashboard .cards .card{
 	padding: 1rem;
+}
+.dashboard .cards .card:hover{
+	background: #ebebeb;
 }
 .bg-white{
 	background-color: white !important;

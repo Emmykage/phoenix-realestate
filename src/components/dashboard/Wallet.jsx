@@ -40,18 +40,18 @@ if(error){
               <p><IoWalletOutline className='icon'/></p>
 
               <h2>{usd_format(user.wallet.wallet_balance)}</h2>
-              <NavLink to={'/dashboard/wallet/wallet'} className={'items-center flex gap-2'}>Wallet <FaArrowRight/>
+              <NavLink to={'/dashboard/wallet/wallet'} className={'items-center flex gap-2  hover-text-green'}>Wallet <FaArrowRight/>
               </NavLink>
             </div>
             <div className='card'><p><FaFolderOpen className='icon'/></p>
               <h2>{usd_format(user.total_asset)}</h2>
-              <NavLink to={'/dashboard/wallet/portfolios'} className={'items-center flex gap-2 text-gray'}>
+              <NavLink to={'/dashboard/wallet/portfolios'} className={'items-center flex gap-2 text-gray  hover-text-green'}>
               Portfolios
               <FaArrowRight/>
                 </NavLink></div>
             <div className='card'><p><MdAttachMoney className='icon'/></p>
               <h2>{usd_format(user.net_earnings)}</h2>
-              <NavLink to={'/dashboard/wallet/bonuses'} className='items-center flex gap-2'>
+              <NavLink to={'/dashboard/wallet/bonuses'} className='items-center flex gap-2 hover-text-green'>
                 Earnings 
                 <FaArrowRight/>
               </NavLink></div>

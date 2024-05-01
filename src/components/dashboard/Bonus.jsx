@@ -17,7 +17,7 @@ const Earnings = () => {
     <div className='earning'>
       <h3 className='text-center'>Withdraw Earnings</h3>
       <div className='top'>
-        <a className='btn all-earning' onClick={()=> setToggleModal("show-modal deposit") }>Widthdraw all Earnings</a>
+        <a className='btn all-earning' onClick={()=> setToggleModal("show-modal deposit") }>Widthdraw all Earnings </a>
       </div>
 
       <WithdrawEarning toggleModal={toggleModal} setToggleModal={setToggleModal} withdrawEarning={withdrawEarning} setWithdrawEarning={setWithdrawEarning} />
