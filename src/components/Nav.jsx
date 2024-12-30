@@ -22,6 +22,7 @@ const Nav = () => {
     if(window.scrollY >= 10){
 
       setStickyNav('fix-header')
+      setToggleNav(false)
 
 
     }else{
@@ -126,7 +127,7 @@ const Nav = () => {
           </div>
 
 
-          <div className={`${show} ${toggleNav ? "top-0" : "-top-[1000%]"} transition-all duration-200 ease-linear absolute  md:top-0 bg-theme-black w-full  flex items-center`} id="navbarSupportedContent">
+          <div className={`${show} ${toggleNav ? "top-0" : "-top-[1000%]"} transition-all duration-200 ease-linear absolute  md:top-0 bg-theme-black md:bg-none w-full md:w-[80%]  flex items-center`} id="navbarSupportedContent">
             <ul class="nav navbar-nav px-2  flex-1 items-center justify-between md:flex-row flex mr-auto">
               <li class="nav-item active text-white">
                 <NavLink className="nav-link text-white p-2.5" to="/" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Home <span class="sr-only"></span></NavLink>
