@@ -13,7 +13,8 @@ module.exports = {
       },
       colors: {
         primary: "#2f3b69",
-       alt: " rgb(255 204 0)"
+       alt: " rgb(255 204 0)",
+       "theme-black": "#21252f"
       }
     },
   },

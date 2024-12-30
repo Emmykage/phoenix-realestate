@@ -112,21 +112,23 @@ const Nav = () => {
       </div>
   
       {/* <!-- main menu --> */}
-      <nav class={`${stickyNav} bg-white navbar navbar-expand-lg navbar-light p-0`}>
+      <nav class={`${stickyNav} flex flex-nowrap justify-start navbar-expand-lg navbar-light p-0`}>
       
-      <div className="relative navbar-collapse">
-        <div className="main-menu-wrap">
-          <div className="container-fixed md-bg-gray-dark">
+      <div className="relative navbar-collaps py- flex-1 ">
+        <div className="h-[60px] bg-theme-black w-full top-0 absolute bottom-0 right-0">
+          <div className="">
   
           <div className="member-actions right">
-            <a href="user-submit-property.html" className="button small alt button-icon"><i className="fa fa-plus"></i>Submit Property</a>
+            <a href="user-submit-property.html" className="button small alt button-icon">
+              <i className="fa fa-plus"></i>
+            Submit Property</a>
           </div>
 
 
-          <div className={`${show} navbar-collapse`} id="navbarSupportedContent">
-            <ul class="nav navbar-nav mr-auto">
+          <div className={`${show} absolute  flex items-center`} id="navbarSupportedContent">
+            <ul class="nav navbar-nav px-2  flex-1 items-center justify-between md:flex-row flex mr-auto">
               <li class="nav-item active text-white">
-                <NavLink className="nav-link text-white" to="/" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Home <span class="sr-only"></span></NavLink>
+                <NavLink className="nav-link text-white p-2.5" to="/" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Home <span class="sr-only"></span></NavLink>
               </li>
                 <li className="relative menu-item-has-childre nav-item text-white">
                 <NavLink to="/properties" className={"nav-link active text-white"}>Property Investments</NavLink>
