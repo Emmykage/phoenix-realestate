@@ -130,7 +130,7 @@ const Nav = ({user}) => {
            
             </ul>
             </li>
-            <li><NavLink to="/press" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Press Release</NavLink></li>
+            <li><NavLink to="/press" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Blog</NavLink></li>
             <li><NavLink to="/dashboard/wallet"className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li>
             <li><NavLink to="/contact" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Contacts</NavLink></li>
 

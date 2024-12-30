@@ -49,6 +49,7 @@ import DepositPage from './pages/DepositPage';
 import WithdrawPage from './pages/WithdrawPage';
 import ViewImage from './pages/ViewImage';
 import Wallet from './components/dashboard/Wallet';
+import Blog from './pages/blog';
 function App() {
   return (
     <div className="App">
@@ -56,7 +57,7 @@ function App() {
         <Route path="/" element={<MainLayout><Home/></MainLayout>}/>
         <Route path="/properties" element={<MainLayout><Properties/></MainLayout>}/>
         <Route path="/contact" element={<MainLayout><Contact/></MainLayout>}/>
-        <Route path="/press" element={<MainLayout><Press/></MainLayout>}/>
+        <Route path="/press" element={<MainLayout><Blog/></MainLayout>}/>
         <Route path="/press/:id" element={<MainLayout><PressPage/></MainLayout>}/>
         
         <Route path="/berlin" element={<MainLayout><Berlin/></MainLayout>}/>

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
-import Nav from '../../components/nav/Nav'
 import { blogs } from '../../assets/blogData/data'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import Banner from '../../components/heroBanner/Banner'
 import './blog.scss'
+import Nav from '../../components/Nav'
 
 const Blog = () => {
   const navigate = useNavigate()
