@@ -128,7 +128,8 @@ a{
 }
 .bg-blue{
 	background: blue;
-}.bg-primary-light{
+}
+.bg-primary-light{
 	background: var(--color-pry);
 }
 .hover-text-green:hover{
