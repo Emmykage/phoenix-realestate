@@ -58,8 +58,7 @@ const Nav = ({user}) => {
   
     <div className="container">
   
-      {/* <!-- navbar header --> */}
-      <div className="navbar-header">
+      <div className="navbar-header item-center flex justify-center">
   
         <div className="header-details bg-white">
           <div className="header-item header-search left">
