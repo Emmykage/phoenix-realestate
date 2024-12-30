@@ -7,6 +7,7 @@ const Nav = () => {
   const {user} = useSelector(state => state.user)
 
   const [show, setShow] = useState("")
+  const [toggleNav, setToggleNav] = useState(false)
   const [stickyNav, setStickyNav] = useState("nav")
 
   const navigation = useNavigate()
@@ -98,7 +99,7 @@ const Nav = () => {
         </div>
         </div>
         <button className="md:hidden block" type="button" onClick={() => {}}>
-          <span className="text-3xl">
+          <span className="text-3xl" onClick={()=> setToggleNav(prev => !prev)}>
           <AiOutlineMenuFold />
 
           </span>
@@ -114,8 +115,8 @@ const Nav = () => {
       {/* <!-- main menu --> */}
       <nav class={`${stickyNav} flex flex-nowrap justify-start navbar-expand-lg navbar-light p-0`}>
       
-      <div className="relative navbar-collaps py- flex-1 ">
-        <div className="h-[60px] bg-theme-black w-full top-0 absolute bottom-0 right-0">
+      <div className="relative w-screen navbar-collaps flex-1 ">
+        <div className="h-[60px] bg-theme-black w-full top-0  absolute bottom-0 right-0">
           <div className="">
   
           <div className="member-actions right">
@@ -125,7 +126,7 @@ const Nav = () => {
           </div>
 
 
-          <div className={`${show} absolute  flex items-center`} id="navbarSupportedContent">
+          <div className={`${show} ${toggleNav ? "top-0" : "-top-[1000%]"} transition-all duration-200 ease-linear absolute  md:top-0 bg-theme-black w-full  flex items-center`} id="navbarSupportedContent">
             <ul class="nav navbar-nav px-2  flex-1 items-center justify-between md:flex-row flex mr-auto">
               <li class="nav-item active text-white">
                 <NavLink className="nav-link text-white p-2.5" to="/" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Home <span class="sr-only"></span></NavLink>
