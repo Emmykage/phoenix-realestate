@@ -39,7 +39,7 @@ import Shangai from './pages/Shangai';
 import Spain from './pages/Spain';
 import Tokyo from './pages/Tokyo';
 import UnitedKingdom from './pages/UnitedKingdom';
-import Contact from './pages/Contact';
+import Contact from './pages/contact/Contact';
 import AddPost from './pages/Admin/blog/AddPost';
 import AccountSettings from './components/dashboard/Settings';
 import PortfolioItems from './pages/Admin/clients/PortfolioItems';
@@ -55,7 +55,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout><Home/></MainLayout>}/>
         <Route path="/properties" element={<MainLayout><Properties/></MainLayout>}/>
-        <Route path="/contact" element={<MainLayout><Contact/></MainLayout>}/>
+        <Route path="/contact-us" element={<MainLayout><Contact/></MainLayout>}/>
         <Route path="/blog" element={<MainLayout><Blog/></MainLayout>}/>
         <Route path="/blog-post/:id" element={<MainLayout><BlogPost/></MainLayout>}/>
         

@@ -1,11 +1,13 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import Nav from '../../components/Nav'
 
 
 const Contact = () => {
    
   return (
     <div>
+        <Nav/>
         <section class="subheader">
             <div class="container">
             <h1>Contact</h1>

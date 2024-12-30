@@ -1,5 +1,5 @@
 :root {
-	--color-pry: background: rgba(52, 122, 183, 0.5)
+	--color-pry: rgba(52, 122, 183, 0.5)
 	--color-primary: #7380ec;
 	--color-danger: #ff7782;
 	--color-success: #41f1b6;
@@ -129,7 +129,9 @@ a{
 .bg-blue{
 	background: blue;
 }
-
+.bg-primary-light{
+	background: var(--color-pry);
+}
 .hover-text-green:hover{
 	color: green;
 }

@@ -7,11 +7,8 @@ import Nav from '../../../components/Nav'
 const BlogPost = () => {
     const {id} = useParams()
     const navigate = useNavigate()
-    const { pathname } = useLocation();
 
     const blog = blogs?.find(blog => blog.id == id)
-
-    console.log(blog, blogs, id)
   return (
     <>
     <Nav/>

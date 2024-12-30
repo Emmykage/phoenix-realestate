@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { AiOutlineMenuFold } from 'react-icons/ai'
+import { useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
 
-const Nav = ({user}) => {
+const Nav = () => {
+  const {user} = useSelector(state => state.user)
+
   const [show, setShow] = useState("")
   const [stickyNav, setStickyNav] = useState("nav")
 
@@ -139,7 +142,7 @@ const Nav = ({user}) => {
                     </li>
                     <li><NavLink to="/blog" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Blog</NavLink></li>
                     <li><NavLink to="/dashboard/wallet"className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li>
-                    <li><NavLink to="/contact" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Contacts</NavLink></li>
+                    <li><NavLink to="/contact-us" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Contacts</NavLink></li>
 
                     <li><NavLink to="/about" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Careers</NavLink></li>
                     

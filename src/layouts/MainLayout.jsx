@@ -6,7 +6,6 @@ import { userLog } from '../redux/auth/user_authentication'
 
 const MainLayout = ({children}) => {
   const dispatch = useDispatch()
-  const {user} = useSelector(state => state.user)
   useEffect(()=> {
     dispatch(userLog())
   },[])
