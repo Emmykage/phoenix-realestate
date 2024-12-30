@@ -4,7 +4,18 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        blogLayout: "300px auto"
+      },
+      width: {
+        container: "1500px"
+      },
+      colors: {
+        primary: "#2f3b69",
+       alt: " rgb(255 204 0)"
+      }
+    },
   },
   plugins: [],
 }

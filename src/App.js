@@ -3,7 +3,7 @@ import "./style.css"
 import Home from './pages/Home';
 import Properties from './pages/Properties';
 import { Route, Routes } from 'react-router-dom';
-import About from './pages/About';
+import About from './pages/about/About';
 import Login from './pages/auth/Login';
 import FAQ from './pages/FAQ';
 import Dashboard from './pages/Dashboard';
@@ -40,8 +40,6 @@ import Spain from './pages/Spain';
 import Tokyo from './pages/Tokyo';
 import UnitedKingdom from './pages/UnitedKingdom';
 import Contact from './pages/Contact';
-import Press from './pages/Press';
-import PressPage from './pages/PressPage';
 import AddPost from './pages/Admin/blog/AddPost';
 import AccountSettings from './components/dashboard/Settings';
 import PortfolioItems from './pages/Admin/clients/PortfolioItems';
@@ -50,6 +48,7 @@ import WithdrawPage from './pages/WithdrawPage';
 import ViewImage from './pages/ViewImage';
 import Wallet from './components/dashboard/Wallet';
 import Blog from './pages/blog';
+import BlogPost from './pages/blog/blogPost/BlogPost';
 function App() {
   return (
     <div className="App">
@@ -57,8 +56,8 @@ function App() {
         <Route path="/" element={<MainLayout><Home/></MainLayout>}/>
         <Route path="/properties" element={<MainLayout><Properties/></MainLayout>}/>
         <Route path="/contact" element={<MainLayout><Contact/></MainLayout>}/>
-        <Route path="/press" element={<MainLayout><Blog/></MainLayout>}/>
-        <Route path="/press/:id" element={<MainLayout><PressPage/></MainLayout>}/>
+        <Route path="/blog" element={<MainLayout><Blog/></MainLayout>}/>
+        <Route path="/blog-post/:id" element={<MainLayout><BlogPost/></MainLayout>}/>
         
         <Route path="/berlin" element={<MainLayout><Berlin/></MainLayout>}/>
         <Route path="/united_kingdom" element={<MainLayout><UnitedKingdom/></MainLayout>}/>

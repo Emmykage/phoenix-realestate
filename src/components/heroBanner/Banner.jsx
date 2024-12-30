@@ -23,7 +23,7 @@ const Banner = ({header}) => {
             case "tax-planning":
             return "Tax Planning"
             case "blog":
-                return "ABF Accounting Blog"
+                return "Phoenix Home Blog"
             default:
                 return title
         }

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getAssets } from '../redux/actions/assets'
 import { NavLink } from 'react-router-dom'
 import { usd_format } from '../components/misc/USD'
+import Nav from '../components/Nav'
 
 const Properties = () => {
   const dispatch = useDispatch()
@@ -15,6 +16,7 @@ const Properties = () => {
 
   return (
     <div>
+      <Nav/>
         <section class="subheader">
   <div class="container">
     <h1 className='bg-gray-dark-trans p-2'>Property Listing</h1>

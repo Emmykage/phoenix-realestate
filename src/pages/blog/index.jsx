@@ -4,14 +4,11 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import Banner from '../../components/heroBanner/Banner'
 import './blog.scss'
 import Nav from '../../components/Nav'
+import usePageReset from '../../hooks/usePageRest'
 
 const Blog = () => {
   const navigate = useNavigate()
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+  usePageReset()
 
   return (
     <div>
@@ -37,7 +34,7 @@ const Blog = () => {
 
             </div>
             <div className='shadow'>
-              <h3 className='text-2xl font-semibold text-center'> Stay Updated with the Latest Accounting Insights           </h3>
+              <h3 className='text-2xl font-semibold text-center'> Stay Updated with the Latest Real Estate  Insights           </h3>
               <p className='text-center max-w-4xl m-auto font-semibold my-2'>Our blog provides expert advice and updates on the latest in UK accounting, tax regulations, and financial best practices. Stay informed to make better financial decisions for your business.              </p>
               <div className='grid gap-5 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 px-5 my-10'>
                 {blogs.map(blog => (

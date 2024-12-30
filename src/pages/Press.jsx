@@ -33,7 +33,7 @@ const Press = () => {
                 </div>
                 <div>
                   <p>{post.body && post.body.substring(0, 300)}...</p>
-                  <NavLink to={`/press/${post.id}`} className='more'>READ MORE</NavLink>
+                  <NavLink to={`/blog/${post.id}`} className='more'>READ MORE</NavLink>
                 </div>
               </div>
 

@@ -12,7 +12,6 @@ const MainLayout = ({children}) => {
   },[])
   return (
     <>
-        <Nav user={user}/>
         {children}
         <Footer/>
 
