@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { registerUser } from '../../redux/actions/auth'
 import { userLog } from '../../redux/auth/user_authentication'
+import Button from '../../components/buttons/Buttons'
+import AppButton from '../../components/buttons/Buttons'
 
 const Register = () => {
   const navigation = useNavigate()
   const dispatch = useDispatch()
-  const {user, error, message, loading } = useSelector(state => state.user)
+  const {user, error, message, loading } = useSelector(state => state.auth)
   const [formInput, setFormInput] = useState({first_name: "", last_name: "", email: "", password: "", role: "client"})
   useEffect(()=> {
     dispatch(userLog())
@@ -45,10 +47,10 @@ const Register = () => {
 </section>
 
 <section class="module login">
-  <div class="container fit">
+  <div class="container  fit">
 
-    <div class="row">
-      <div class="col-lg-4 col-lg-offset-4"> 
+    <div class="row w-full">
+      <div class="col-lg-4 w-full  col-lg-offset-4"> 
         <p>Already have an account? <strong><NavLink to="/auth/login">Login here.</NavLink></strong></p> 
             <form onSubmit={handleFormSubmit} class="login-form">
             <div class="form-block">
@@ -79,7 +81,8 @@ const Register = () => {
             <p className='text-red'>{error && message}</p>
             
             <div class="form-block">
-                <button class="button button-icon" type="submit"><i class="fa fa-angle-right"></i>Register</button>
+              <AppButton>Register </AppButton>
+                {/* <button class="button button-icon" type="submit"><i className="w-[300px] fa fa-angle-right"></i>Register</button> */}
             </div>
             <div class="divider"></div>
             <p class="note">By clicking the "Register" button you agree with our <a href="#">Terms and conditions</a></p>    

@@ -7,7 +7,7 @@ import { userLog } from '../../redux/auth/user_authentication'
 const AdminLogin = () => {
     const navigation = useNavigate()
     const dispatch = useDispatch()
-    const {user, loading, error, message} = useSelector(state => state.user)
+    const {user, loading, error, message} = useSelector(state => state.auth)
     const [formInput, setFormInput] = useState({email: "", password: ""})
     useEffect(()=> {
         dispatch(userLog())

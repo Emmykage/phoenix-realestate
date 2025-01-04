@@ -18,10 +18,10 @@ const DashboardHome = () => {
           <img src={user} alt="user icon" className='w-full h-full p-5 text-gray-500' />
         </div>
         <div className='flex gap-2 justify-between flex-col md:flex-row flex-1' >
-          <div className=' flex-1 text-center md:text-left'>
+          <div className=' flex-1  text-center '>
 
-            <h3 className='text-gray-700 font-semibold text-base md:text-xl'>Nathan Devlin</h3>
-            <p className='text-sm text-gray-500 font-semibold'>4263410275</p>
+            <h3 className='text-gray-700  md:text-left font-semibold text-base md:text-xl'>Nathan Devlin</h3>
+            <p className='text-sm text-gray-500 font-semibold md:text-left'>4263410275</p>
 
           </div>
           <div className='flex-1 text-center md:text-left'>

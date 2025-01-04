@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams } from 'react-router-dom'
-import { getPost } from '../redux/actions/blog';
+import { getPost } from '../../redux/actions/blog';
 import photo from '../../src/assets/images/default.avif'
 
 const PressPage = () => {

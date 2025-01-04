@@ -1,7 +1,7 @@
 import './App.css';
 import "./style.css"
 import Home from './pages/Home';
-import Properties from './pages/Properties';
+import Properties from './pages/property-listing';
 import { Route, Routes } from 'react-router-dom';
 import About from './pages/about/About';
 import Login from './pages/auth/Login';
@@ -81,7 +81,6 @@ function App() {
 
         </Route>
         <Route path='offering' element={<Offering/>} />
-
         </Route>
         <Route path="/" element={<MainLayout><Home/></MainLayout>}/>
         <Route path="/properties" element={<MainLayout><Properties/></MainLayout>}/>

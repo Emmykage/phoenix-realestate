@@ -9,7 +9,7 @@ const UserLayouts = ({children}) => {
   const dispatch = useDispatch()
   const navigation = useNavigate()
 
-  const {user} = useSelector(state => state.user)
+  const {user} = useSelector(state => state.auth)
   useEffect(()=> {
     dispatch(userLog())
   }, [])

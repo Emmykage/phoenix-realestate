@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import { getPosts } from '../redux/actions/blog'
-import { formattedDate } from '../components/misc/Date'
+import { getPosts } from '../../redux/actions/blog'
+import { formattedDate } from '../../components/misc/Date'
 const Press = () => {
   const dispatch = useDispatch()
   const {posts} = useSelector(state => state.blog_posts)

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAssets } from '../redux/actions/assets'
+import { getAssets } from '../../redux/actions/assets'
 import { NavLink } from 'react-router-dom'
-import { usd_format } from '../components/misc/USD'
-import Nav from '../components/Nav'
+import { usd_format } from '../../components/misc/USD'
+import Nav from '../../components/Nav'
 
 const Properties = () => {
   const dispatch = useDispatch()
@@ -13,6 +13,8 @@ const Properties = () => {
     dispatch(getAssets())
 
   },[])
+
+  console.log(offers)
 
   return (
     <div>
@@ -55,11 +57,11 @@ const Properties = () => {
           <div class="property-tag button status">{asset.sale_type}</div>
           <div class="property-price">{usd_format(asset.price)}</div>
           <div class="property-color-bar"></div>
-          <img src={asset.image_url} alt={asset.name} />
+          <img src={asset.images} alt={asset.name} />
         </NavLink>
         <div class="property-content">
           <div class="property-title">
-          <h4><a href="#">{asset.name}</a></h4>
+            <h4><a href="#">{asset.name}</a></h4>
             <p class="property-address"><i class="fa fa-map-marker icon"></i>123 Smith Dr, Annapolis, MD</p>
           </div>
           <table class="property-details">

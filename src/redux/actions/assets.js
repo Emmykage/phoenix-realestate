@@ -25,8 +25,12 @@ const getAssets = createAsyncThunk('asset/get_assets', async (data) => {
 
     },
 
-  }).then((res) => res.json());
-  return response;
+  })
+  
+  const result =  await response.json()
+
+  console.log(result, response)
+  return result;
 });
 const getAsset = createAsyncThunk('asset/get_assets', async (id) => {
   const response = await fetch(`${baseUrl}assets/${id}`, {

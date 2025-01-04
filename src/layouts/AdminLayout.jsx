@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 const AdminLayout = ({ children }) => {
   const dispatch = useDispatch();
-  const { user, loading, error } = useSelector((state) => state.user);
+  const { user, loading, error } = useSelector((state) => state.auth);
   const navigation = useNavigate()
   useEffect(() => {
 
