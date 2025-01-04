@@ -90,10 +90,10 @@ const AccountWithdraw = () => {
                     {/* <li className='px-3 font-normal'><p>Please make deposit before submitting the form</p></li> */}
                 </ul>
                 <div className='m-2'>
-                    <p className='text-dark text-left px-4 text-base font-medium'>Deposit Address</p>
+                    <p className='text-dark text-left text-base font-semibold my-3'>Deposit Address</p>
                     <div className='m-2'>
-                        <label className='block m-1' htmlFor="client_address">Enter Wallet Address</label>
-                        <input className='border' type='text' id="client_address" name='wallet_address' required/>
+                        {/* <label className='block m-1' htmlFor="client_address">Enter Wallet Address</label> */}
+                        <input className='border' type='text' id="client_address" name='wallet_address' required placeholder='Enter Wallet Address'/>
                     </div>
 
                 </div>

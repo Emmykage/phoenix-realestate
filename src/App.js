@@ -86,8 +86,8 @@ function App() {
         <Route path="/" element={<MainLayout><Home/></MainLayout>}/>
         <Route path="/properties" element={<MainLayout><Properties/></MainLayout>}/>
         <Route path="/contact-us" element={<MainLayout><Contact/></MainLayout>}/>
-        <Route path="/blog" element={<MainLayout><Blog/></MainLayout>}/>
-        <Route path="/blog-post/:id" element={<MainLayout><BlogPost/></MainLayout>}/>
+        <Route path="/press-release" element={<MainLayout><Blog/></MainLayout>}/>
+        <Route path="/press-release/:id" element={<MainLayout><BlogPost/></MainLayout>}/>
         
         <Route path="/berlin" element={<MainLayout><Berlin/></MainLayout>}/>
         <Route path="/united_kingdom" element={<MainLayout><UnitedKingdom/></MainLayout>}/>

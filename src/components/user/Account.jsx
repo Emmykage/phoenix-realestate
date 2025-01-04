@@ -12,9 +12,16 @@ const ProfileAccountDisplay = () => {
                   <p class=" text-lg text-gray-900">
                     Profits
                   </p>
-                  <p className="text-4xl mt-6 font-semibold text-gray-900">
-                     $00.00
-                  </p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-4xl mt-6 font-semibold text-gray-900">
+                    $00.00
+
+                    </span>
+                    <span className='text-green-600'>
+                    5%
+
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

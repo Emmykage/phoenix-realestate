@@ -6,7 +6,7 @@ import photo2 from '../../assets/images/pictures/pngwing.com.png'
 const Offering = () => {
   return (
     <div className='max-w-7xl w-full m-auto bg--400 py-8 bg-white my-3 rounded-md px-4 md:px-10'>
-        <h2 className='text-left text-2xl font-medium text-gray-700'>
+        <h2 className='text-left text-2xl font-semibold text-gray-700'>
         Phoenix Investment Offerings
 
         </h2>
@@ -14,11 +14,11 @@ const Offering = () => {
              is a real estate investment platform dedicated to providing access to diverse property portfolios. We're committed to making real estate investment accessible, transparent, and profitable for everyone.           </p>
 
            
-           <div className='my-4 border rounded-md p-4 flex flex-col md:flex-row gap-4 shadow hover:shadow-lg'>
-              <div className='flex-1 bg-blue-40 h-60'>
-                  <img src={photo1} alt="" className='w-full h-full object-cover'/>
+           <div className='my-4 border rounded-md p-1 md:p-4 flex flex-col md:flex-row gap-4 shadow hover:shadow-lg'>
+              <div className='md:flex-1 h-52 md:h-80'>
+                  <img src={photo1} alt="" className='w-full h-full object-contain'/>
               </div>
-              <div className='flex-1 px-1 w-full md:max-w-lg py-7 text-left '>
+              <div className='flex-1 px-1 w-full md:max-w-lg md:py-7 text-left '>
                 <h3 className='text-xl font-medium text-gray-700'>TcoinTech</h3> 
                 <p className='text-gray-500'>Custom  Investment</p>
                 <p className='text-xs text-gray-500 my-3'>We can custom-tailor an investment for you.</p>
@@ -30,7 +30,7 @@ const Offering = () => {
 
            </div>
 
-           <div className='my-4 border rounded-md p-4 flex flex-col md:flex-row gap-4 shadow hover:shadow-lg'>
+           {/* <div className='my-4 border rounded-md p-4 flex flex-col md:flex-row gap-4 shadow hover:shadow-lg'>
               <div className='flex-1 bg-blue-40 h-60'>
                   <img src={photo2} alt="" className='w-full h-full object-cover'/>
               </div>
@@ -60,7 +60,7 @@ const Offering = () => {
 
               </div>
 
-           </div>
+           </div> */}
 
            
         

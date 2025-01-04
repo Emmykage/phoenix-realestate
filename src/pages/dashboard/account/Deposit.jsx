@@ -74,7 +74,7 @@ const AccountDeposit = () => {
         <h3 className='text-right font-semibold text-3xl'>Fund Account</h3>
         <div></div>
 
-        <div className='flex'>
+        <div className='flex flex-col-reverse md:flex-row gap-10'>
         <form onSubmit={handleDepositModal} ref={formRef}>
             <div  className='my-3 text-left'>
                 <label className='block m-1 font-medium'>Payment Method</label> 
@@ -92,24 +92,24 @@ const AccountDeposit = () => {
             </div>
             <div>
                 <label className='block m-1' htmlFor="amount">Enter Amount</label>
-                <input type="number" className='border'  placeholder='Enter Amount in USD' name="amount" required min={10}/>
+                <input type="number" className='border'  placeholder='Enter Amount in USD' name="amount" required min={500}/>
             </div>
            
             <div className='m-2'>
-                <p className='text-dark text-left px-4 text-base font-medium'>Deposit Address</p>
-                <div className='flex items-center bg-gray  my-4 '>
-                    <div className='scanner-ing  mr-2'>
+                <p className='text-dark text-left text-base font-medium'>Deposit Address</p>
+                <div className='flex items-center bg-gray  my-2 '>
+                    {/* <div className='scanner-ing  mr-2'>
                         <img src={barcode} alt="barcode" className='w-full h-full' />
 
-                    </div>
+                    </div> */}
                     <div className='flex-1 flex  items-center barc'>
-                        <div className=' w-08 mr-3 mt-3'>
-                            <input type="text"  value={textToCopy} readOnly className='text-3xl bg-gray'/>
+                        <div className=' w-full mr-3'>
+                            <input type="text"  value={textToCopy} readOnly className='text-xl font-semibold bg-gray'/>
                         </div>  
-                        <div className='p-2 border bg-gray-light rounded-sm'>
+                        {/* <div className='p-2 border bg-gray-light rounded-sm'>
                         <a onClick={handleCopyClick}><FaCopy className='text-4xl ml-2 bg-gray-light ' /></a>
 
-                        </div>
+                        </div> */}
 
 
                     </div>

@@ -20,7 +20,7 @@ const BlogPost = () => {
               <h3 className='text-center text-xl my-5'>Recent Post</h3>
             
                 {blogs.slice(0, 4).map(blog => (
-                  <div onClick={()=> navigate(`/blog-post/${blog?.id}`)} key={blog.id} className='flex gap-4 my-2 cursor-pointer'>
+                  <div onClick={()=> navigate(`/press-release/${blog?.id}`)} key={blog.id} className='flex gap-4 my-2 cursor-pointer'>
                   <div className='w-20 shrink-0 h-20  '> 
                     <img src={blog.blogImage} alt="" />
                   </div>

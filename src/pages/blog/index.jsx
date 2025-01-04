@@ -20,7 +20,7 @@ const Blog = () => {
             <h3 className='text-center text-xl my-5'>Recent Post</h3>
            
               {blogs.slice(0, 4).map(blog => (
-                <div onClick={()=> navigate(`/blog-post/${blog.id}`)} key={blog.id} className='flex gap-4 my-2 cursor-pointer'>
+                <div onClick={()=> navigate(`/press-release/${blog.id}`)} key={blog.id} className='flex gap-4 my-2 cursor-pointer'>
                 <div className='w-20 shrink-0 h-20  '> 
                   <img src={blog.blogImage} alt="" />
                 </div>
@@ -40,12 +40,12 @@ const Blog = () => {
                 {blogs.map(blog => (
                   <>
                    <div  className=' rounded overflow-hidden'>              
-                      <div onClick={()=> navigate(`/blog-post/${blog.id}`)} className='w-full h-72 bg-gray-500 blg-img overflow-hidden'>
+                      <div onClick={()=> navigate(`/press-release/${blog.id}`)} className='w-full h-72 bg-gray-500 blg-img overflow-hidden'>
                         <img src={blog.blogImage} alt="" className='w-full h-full object-cover cursor-pointer' />
                       </div>
 
                         <div className='border-l-4 my-7 px-4 py-2 border-b-4 border-alt'>
-                          <NavLink to={`/blog-post/${blog.id}`} className='text-base font-semibold text-gray-600 hover:text-alt'>
+                          <NavLink to={`/press-release/${blog.id}`} className='text-base font-semibold text-gray-600 hover:text-alt'>
                             {blog.title}
                           </NavLink>
 

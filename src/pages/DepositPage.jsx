@@ -70,7 +70,7 @@ const DepositPage = () => {
         <h3 className='text-right font-semibold text-3xl'>Fund Account</h3>
         <div></div>
 
-        <div className='flex'>
+        <div className='flex flex-col md:flex-row'>
         <form onSubmit={handleDepositModal} ref={formRef}>
             <div  className='my-3 text-left'>
                 <label className='block m-1 font-medium'>Payment Method</label> 

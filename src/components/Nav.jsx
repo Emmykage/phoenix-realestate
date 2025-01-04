@@ -36,7 +36,7 @@ const Nav = () => {
   }, [])
 
   return (
-    <header className="header-default  z-50 relative ">
+    <header className="header-default bg-white z-50 relative ">
 
     <div classNameName="top-bar hidden md:block ">
       <div className="container">
@@ -144,7 +144,7 @@ const Nav = () => {
                   
                     </ul>
                     </li>
-                    <li><NavLink to="/blog" className={"nav-link text-white"} onClick={() => {}}>Blog</NavLink></li>
+                    <li><NavLink to="/press-release" className={"nav-link text-white"} onClick={() => {}}>Press</NavLink></li>
                     <li><NavLink to="/dashboard/home"className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li>
                     <li><NavLink to="/contact-us" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Contacts</NavLink></li>
 
