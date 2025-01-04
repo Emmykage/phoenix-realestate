@@ -203,7 +203,7 @@ a {
   border: 1px solid gray;
 }
 .modal-container {
-  position: absolute;
+  position: fixed;
   left: 0;
   height: 100vh;
   top: 0;
@@ -214,6 +214,7 @@ a {
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.5);
+  z-index: 999999;
 }
 .modal-container.show-modal {
   opacity: 1;

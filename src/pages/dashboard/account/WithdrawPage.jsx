@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import WithdrawalModal from '../components/modals/WithdrawalModal'
+import WithdrawalModal from '../../../components/modals/WithdrawalModal'
 import { useDispatch, useSelector } from 'react-redux'
-import { reset } from '../redux/wallet/transaction'
-const WithdrawPage = () => {
+import { reset } from '../../../redux/wallet/transaction'
+const AccountWithdraw = () => {
     const formRef = useRef(null)
     const [toggleModalWithdrawal, setToggleModalWithdrawal] = useState(null)
     const [withdraw, setWithdraw] = useState(null)  
@@ -111,4 +111,4 @@ const WithdrawPage = () => {
   )
 }
 
-export default WithdrawPage
+export default AccountWithdraw

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
 
 const Nav = () => {
-  const {user} = useSelector(state => state.user)
+  const {user} = useSelector(state => state.auth)
 
   const [show, setShow] = useState("")
   const [toggleNav, setToggleNav] = useState(false)
@@ -36,7 +36,7 @@ const Nav = () => {
   }, [])
 
   return (
-    <header className="header-default bg-white">
+    <header className="header-default  z-50 relative ">
 
     <div classNameName="top-bar hidden md:block ">
       <div className="container">
@@ -144,8 +144,8 @@ const Nav = () => {
                   
                     </ul>
                     </li>
-                    <li><NavLink to="/blog" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Blog</NavLink></li>
-                    <li><NavLink to="/dashboard/wallet"className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li>
+                    <li><NavLink to="/blog" className={"nav-link text-white"} onClick={() => {}}>Blog</NavLink></li>
+                    <li><NavLink to="/dashboard/home"className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li>
                     <li><NavLink to="/contact-us" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Contacts</NavLink></li>
 
                     <li><NavLink to="/about" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Careers</NavLink></li>

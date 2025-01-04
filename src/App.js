@@ -6,20 +6,14 @@ import { Route, Routes } from 'react-router-dom';
 import About from './pages/about/About';
 import Login from './pages/auth/Login';
 import FAQ from './pages/FAQ';
-import Dashboard from './pages/Dashboard';
 import MainLayout from './layouts/MainLayout';
-import Account from './components/dashboard/Account';
 import References from './components/dashboard/References';
-import Main from './components/dashboard/Main';
-import Portfolios from './components/dashboard/Portfolios';
-import Bonus from './components/dashboard/Bonus';
-import Transaction from './components/dashboard/Transaction';
+
 import AHome from './pages/Admin/AdminHome';
 import AdminLayout from './layouts/AdminLayout';
 import AdminLogin from './pages/auth/AdminLogin';
 import AdminRegister from './pages/auth/AdminRegister';
 import Register from './pages/auth/Register';
-import UserLayout from './layouts/UserLayouts';
 import Assets from './pages/Admin/assets/Assets';
 import Clients from './pages/Admin/clients/Clients';
 import Orders from './pages/Admin/orders/Orders';
@@ -43,16 +37,52 @@ import Contact from './pages/contact/Contact';
 import AddPost from './pages/Admin/blog/AddPost';
 import AccountSettings from './components/dashboard/Settings';
 import PortfolioItems from './pages/Admin/clients/PortfolioItems';
-import DepositPage from './pages/DepositPage';
-import WithdrawPage from './pages/WithdrawPage';
+
 import ViewImage from './pages/ViewImage';
-import Wallet from './components/dashboard/Wallet';
 import Blog from './pages/blog';
 import BlogPost from './pages/blog/blogPost/BlogPost';
+import useInitializer from './hooks/useInitializer';
+import DashboardHome from './pages/dashboard/account/Account';
+import DashboardLayout from './layouts/DashboardLayout';
+import Offering from './pages/dashboard/Offering';
+import Portfolio from './pages/dashboard/portfolio/Portfolio';
+import DashboardDocument from './pages/dashboard/Document';
+import Identity from './components/user/Identity';
+import AccountProfile from './components/user/Profile';
+import ProfileAccount from './components/user/Account';
+import PaymentMethods from './components/user/PaymentMethods';
+import AccountDeposit from './pages/dashboard/account/Deposit';
+import History from './pages/dashboard/portfolio/History';
+import Pending from './pages/dashboard/portfolio/Pending';
+import AccountInvestment from './pages/dashboard/portfolio/Investment';
+import AccountWithdraw from './pages/dashboard/account/WithdrawPage';
 function App() {
+  useInitializer()
   return (
     <div className="App">
       <Routes>
+
+      <Route path='/dashboard' element={<><DashboardLayout/></> }>
+        <Route path='home' element={<DashboardHome/>} />
+        <Route path='account' element={<DashboardHome/>}>
+          <Route path='deposit' element={<AccountDeposit/>}/>
+          <Route path='identity' element={<Identity/>}/>
+          <Route path='profile' element={<AccountProfile/>}/>
+          <Route path='' index element={<ProfileAccount/>}/>
+          <Route path='payment-method' element={<PaymentMethods/>}/>
+          <Route path='withdraw' element={<AccountWithdraw/>}/>
+        </Route>
+        <Route path='document' element={<DashboardDocument/>} />
+        <Route path='portfolio' element={<Portfolio/>}>
+          <Route path='' element={<AccountInvestment/>}/>
+          <Route path='investments' element={<AccountInvestment/>}/>
+          <Route path='history' element={<History/>}/>
+          <Route path='pending' element={<Pending/>}/>
+
+        </Route>
+        <Route path='offering' element={<Offering/>} />
+
+        </Route>
         <Route path="/" element={<MainLayout><Home/></MainLayout>}/>
         <Route path="/properties" element={<MainLayout><Properties/></MainLayout>}/>
         <Route path="/contact-us" element={<MainLayout><Contact/></MainLayout>}/>
@@ -72,7 +102,8 @@ function App() {
 
         <Route path='/about' element={<MainLayout><About/></MainLayout>}/>
         <Route path='/faq' element={<MainLayout><FAQ/></MainLayout>}/>
-        <Route path='/dashboard' element={<UserLayout><Dashboard/></UserLayout> }/>
+        
+        {/* <Route path='/dashboard' element={<UserLayout><Dashboard/></UserLayout> }/>
         <Route path='/dashboard/deposit' element={<UserLayout><DepositPage/></UserLayout>}/>
         <Route path='/dashboard/withdraw' element={<UserLayout><WithdrawPage/></UserLayout>}/>
         <Route path='/dashboard/wallet' element={<UserLayout> <Wallet/></UserLayout>}>
@@ -80,7 +111,7 @@ function App() {
             <Route path='portfolios' element={<><Portfolios/></>}/>
             <Route path='bonuses' element={<Bonus/>}/>
          </Route>
-            <Route path='/dashboard/account' element={<UserLayout><Account/></UserLayout>} />
+            <Route path='/dashboard/account' element={<UserLayout><Account/></UserLayout>} /> */}
             <Route path='reference' element={<References/>} />          
             <Route path='settings' element={<AccountSettings/>}/>
 

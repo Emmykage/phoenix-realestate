@@ -13,7 +13,7 @@ import postSlice from "./blog/blog"
 import interestSlice from "./portfolio/interest";
 import earnings from "./earnings/earnings";
 const rootReducer = combineReducers({
-    user: useSlice,
+    auth: useSlice,
     users: usersSlice,
     assets: assetSlice,
     portfolios: portfolioSlice,

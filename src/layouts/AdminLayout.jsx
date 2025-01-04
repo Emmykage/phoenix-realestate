@@ -13,7 +13,7 @@ const AdminLayout = ({ children }) => {
   const { user, loading, error } = useSelector((state) => state.user);
   const navigation = useNavigate()
   useEffect(() => {
-    dispatch(getUser());
+
     dispatch(userLog())
   }, []);
 

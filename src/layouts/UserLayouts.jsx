@@ -5,15 +5,13 @@ import { userLog } from '../redux/auth/user_authentication'
 import Aside from '../components/dashboard/Aside'
 import { getUser } from '../redux/actions/users'
 
-const UserLayout = ({children}) => {
+const UserLayouts = ({children}) => {
   const dispatch = useDispatch()
   const navigation = useNavigate()
 
   const {user} = useSelector(state => state.user)
   useEffect(()=> {
     dispatch(userLog())
-    dispatch(getUser())
-
   }, [])
   if(user == null){(navigation('/auth/login'))}else{
   return (
@@ -35,4 +33,4 @@ const UserLayout = ({children}) => {
 }
 }
 
-export default UserLayout
+export default UserLayouts

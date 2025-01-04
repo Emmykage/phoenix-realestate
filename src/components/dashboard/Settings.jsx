@@ -7,9 +7,7 @@ import { updateUser } from '../../redux/users/users'
 const AccountSettings = () => {
     const dispatch = useDispatch()
     const {user, loading} = useSelector(state => state.users)
-    useEffect(()=> {
-        dispatch(getUser())
-    },[])
+
     const handleUpdate = (e)=> {
         e.preventDefault()
         const formData = new FormData(e.currentTarget)
