@@ -20,13 +20,16 @@ const ClientsPage = () => {
     dispatch(listUsers());
     dispatch(userPorfolio(id))
     // dispatch(userLog());
-  }, [loading]);
+  }, []);
+
+  console.log(users)
 
   const handleApprove = (id) => {
     dispatch(approveTransaction({id, status: "completed" }))
   }
 
   const user = users.find((user) => user.id == id);
+  console.log(user)
 
   if (user == undefined) {
     return (
@@ -65,15 +68,10 @@ const ClientsPage = () => {
           <li className="flex-space ">
             <span>Mobile: </span>
             {' '}
-            <span> +1 703 544 3435</span>
+            <span> {user?.phone_no}</span>
 
           </li>
-          <li className="flex-space ">
-            <span>Address: </span>
-            {' '}
-            <span> John Doe</span>
-
-          </li>
+        
         </ul>
 
       </div>
@@ -90,9 +88,9 @@ const ClientsPage = () => {
         </p>
         <hr/>
         <div className='p-2'>
-          <h2>{usd_format(user.wallet.wallet_balance)}</h2>
+          <h2>{usd_format(user?.wallet?.wallet_balance ?? 0)}</h2>
 
-          <p>{user.wallet.transactions.map(transaction => (
+          <p>{user?.wallet?.transactions?.map(transaction => (
             <li className='flex items-center my-1 px-1 py-2 justify-between box-shadow flex-wrap gap-1'>
               <span className='font-medium flex-1'>{transaction.coin_type}</span>
               <span className='flex-1 font-normal'>{transaction.transaction_type}</span>

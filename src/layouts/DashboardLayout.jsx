@@ -61,7 +61,7 @@ const DashboardLayout = ({children}) => {
             </aside>
         <div className='bg-green-20 flex-1 overflow-y-auto relative'>
          
-            <header className='bg-white shadow  border-b'>
+            <header className='bg-white shadow py-6 border-b'>
                 <div className='max-w-[1500px] m-auto flex justify-between py-3  px-2 md:px-10 items-center'>
 
                     <NavLink to={'/'} className={'px-2 w-52 text-3xl text-green-700 font-semibold'}>

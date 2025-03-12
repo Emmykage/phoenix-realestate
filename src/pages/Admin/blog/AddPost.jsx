@@ -1,39 +1,58 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import { createPost } from '../../../redux/actions/blog'
+import 'trix';
+import 'trix/dist/trix.css';
 
 const AddPost = () => {
+    const formRef = useRef(null)
     const dispatch = useDispatch()
     const handleSubmit = (e) => {
         e.preventDefault()
         const formData = new FormData()
         formData.append("blog[title]", e.target.title.value)
-        formData.append("blog[secondary_text]", e.target.secondary_text.value)
+        // formData.append("blog[secondary_text]", e.target.secondary_text.value)
         formData.append("blog[image]", e.target.image.files[0])
-        formData.append("blog[body]", e.target.body.value)
+        formData.append("blog[description_body]", e.target.description_body.value)
+        formData.append("blog[date]", e.target.date.value)
+
+        // const data = Object.fromEntries(formData)
+
+        // console.log(data)
         
-        dispatch(createPost(formData))
+        dispatch(createPost(formData)).then(result => {
+            if(createPost.fulfilled.match(result)){
+                formRef.current.reset()
+
+            }
+        })
 
     }
   return (
     <div className='blog-post'>
-        <form onSubmit={handleSubmit}>
+        <form ref={formRef} onSubmit={handleSubmit}>
            <h2>Add Blog Post</h2> 
             <div className='my-1'>
                 <label htmlFor="" className='text-base font-medium'>Blog Title</label>
-                <input type="text" name="title" />
+                <input type="text" name="title" required />
             </div>
-            <div className='my-1'>
+            {/* <div className='my-1'>
                 <label htmlFor="" className='text-base font-medium'>Blog Secondary Title</label>
-                <input type="text" name="secondary_text" />
-            </div>
+                <input type="text" name="secondary_text" required />
+            </div> */}
             <div className='my-1'>
-                <label htmlFor="" className='text-base font-medium'>Image</label>
-                <input type="file" name="image" className='w-full' />
+                <label htmlFor="" className='text-base font-medium block'>Image</label>
+                <input type="file" name="image" className='w-full block' required />
             </div>
-            <div className='my-1'>
-                <label htmlFor="" className='text-base font-medium'>Blog Post</label>
-                <textarea placeholder='Enter Text' name="body"></textarea>
+            <div>
+            <input id="trix" type="hidden" name="description_body" />
+            <trix-editor input="trix" />
+
+          </div>
+
+            <div className='my-4'>  
+                <label htmlFor="date">Publish Date</label>
+                <input type="date" name="data" id="date" />
             </div>
             <button type='submit'>Post</button>
         </form>

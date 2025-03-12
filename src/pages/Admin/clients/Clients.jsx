@@ -10,7 +10,7 @@ const Clients = () => {
   useEffect(() => {
     dispatch(listUsers());
   }, []);
-  if (users.length < 1) {
+  if (users?.length < 1) {
     return (
       <div>
         <h1>No Clients </h1>
@@ -18,11 +18,13 @@ const Clients = () => {
     );
   }
 
+
+  console.log(users)
   return (
     <div className="client">
       <div className="">
         <ul className="client-row">
-          {users.map((user) => (
+          {users?.map((user) => (
             <li key={user.id} className="p-3 m-2 b-radius-2 flex justify-between border-light box-shadow overflow-hidden">
               <span>
                 Client Name: {`${user.first_name} ${user.last_name}`}

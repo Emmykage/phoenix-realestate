@@ -118,7 +118,7 @@ function App() {
         <Route path='auth'>
           <Route path='login' element={<Login/>}/>  
           <Route path='register' element={<Register/>}/>   
-          <Route path='admin/login' element={<AdminLogin/>}/>   
+          <Route path='admin_login' element={<AdminLogin/>}/>   
           <Route path='admin/register' element={<AdminRegister/>}/>   
 
 

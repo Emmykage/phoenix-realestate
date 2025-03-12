@@ -39,27 +39,24 @@ const Aside = () => {
           <span><GiReceiveMoney /></span>
           <h3>Orders</h3>
         </NavLink>
-        <NavLink to="/admin/analytics" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
+        {/* <NavLink to="/admin/analytics" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
           <span><IoAnalyticsSharp /></span>
           <h3>Analytics</h3>
-        </NavLink>
-        <NavLink to="/admin/messages" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
+        </NavLink> */}
+        {/* <NavLink to="/admin/messages" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
           <span><RiMessageLine /></span>
           <h3>Messages</h3>
           <span className="message-count">0</span>
-        </NavLink>
+        </NavLink> */}
         <NavLink to="/admin/assets" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
           <span><MdOutlineInventory /></span>
           <h3>Assets</h3>
         </NavLink>
-        <NavLink to="/admin/reports" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
-          <span><MdOutlineReport /></span>
-          <h3>Reports</h3>
-        </NavLink>
-        <NavLink to="/admin/settings" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
+        
+        {/* <NavLink to="/admin/settings" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
           <span><FiSettings /></span>
           <h3>Settings</h3>
-        </NavLink>
+        </NavLink> */}
         <NavLink to="/admin/add_blog" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
           <span><AiOutlinePlus /></span>
           <h3>Add Post</h3>
