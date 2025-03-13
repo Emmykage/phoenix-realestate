@@ -17,9 +17,24 @@ const getPost = createAsyncThunk('blog/getPost', async(id) => {
    
     return response
 })
-const getPosts = createAsyncThunk('blog/get_posts', async () => {
-    const response = fetch(`${baseUrl}blogs`).then((res) => res.json())
-    return response
+const getPosts = createAsyncThunk('blog/get_posts', async (_, {rejectWithValue}) => {
+    console.log("get post")
+    try {
+        const response = await fetch(`${baseUrl}blogs`)
+
+        const result = await response.json()
+
+        if(!response.ok){
+            return rejectWithValue({mesage: result.mesage})
+        }
+
+        console.log(result)
+        return result
+
+    } catch (error) {
+        return rejectWithValue({mesage: result?.mesage || "something went wrong"})
+
+    }
 })
 
 

@@ -11,14 +11,14 @@ const AddPost = () => {
         e.preventDefault()
         const formData = new FormData()
         formData.append("blog[title]", e.target.title.value)
-        // formData.append("blog[secondary_text]", e.target.secondary_text.value)
-        formData.append("blog[image]", e.target.image.files[0])
-        formData.append("blog[description_body]", e.target.description_body.value)
+        formData.append("blog[description]", e.target.description.value)
+        e.target.image.files[0] &&  formData.append("blog[image]", e.target.image.files[0])
+        formData.append("blog[blog_body]", e.target.blog_body.value)
         formData.append("blog[date]", e.target.date.value)
 
-        // const data = Object.fromEntries(formData)
+        const data = Object.fromEntries(formData)
 
-        // console.log(data)
+        console.log(data)
         
         dispatch(createPost(formData)).then(result => {
             if(createPost.fulfilled.match(result)){
@@ -36,16 +36,16 @@ const AddPost = () => {
                 <label htmlFor="" className='text-base font-medium'>Blog Title</label>
                 <input type="text" name="title" required />
             </div>
-            {/* <div className='my-1'>
-                <label htmlFor="" className='text-base font-medium'>Blog Secondary Title</label>
-                <input type="text" name="secondary_text" required />
-            </div> */}
+            <div className='my-1'>
+                <label htmlFor="description" className='text-base font-medium'>Description</label>
+                <input type="text" name="description" required />
+            </div>
             <div className='my-1'>
                 <label htmlFor="" className='text-base font-medium block'>Image</label>
                 <input type="file" name="image" className='w-full block' required />
             </div>
             <div>
-            <input id="trix" type="hidden" name="description_body" />
+            <input id="trix" type="hidden" name="blog_body" />
             <trix-editor input="trix" />
 
           </div>

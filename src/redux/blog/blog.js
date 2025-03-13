@@ -29,7 +29,7 @@ const postSlice = createSlice({
         [getPosts.fulfilled]: (state, action) => { 
             return{
             ...state,
-            posts: action.payload
+            posts: action.payload.data ?? []
         }},
         [getPost.pending]: (state) => { 
             return{
@@ -44,7 +44,7 @@ const postSlice = createSlice({
         [getPost.fulfilled]: (state, action) => { 
             return{
             ...state,
-            post: action.payload
+            post: action.payload.data ?? {}
         }}
     }
 })

@@ -15,11 +15,11 @@ export const blogs = [
   {
     id:  uuidv4(),
     title: "Strategies for Improving Cash Flow in Your Business",
-    blogImage: cashflowImage,
+    image: cashflowImage,
     category: "Business Consultancy",
     description: "Cash flow is the lifeblood of any business. Without effective cash flow management, businesses may struggle to meet day-to-day expenses. Here are some strategies to help you improve your business’s cash flow.", 
 
-    body: `
+    blog_body: `
     <h3 class="font-bold text-2xl">Strategies for Improving Cash Flow in Your Business</h3>
     <p className="text-xl font-bold">Cash flow is the lifeblood of any business. Without effective cash flow management, businesses may struggle to meet day-to-day expenses. Here are some strategies to help you improve your business’s cash flow.</p>
       
@@ -53,11 +53,11 @@ export const blogs = [
     {
       id: uuidv4(),
       title: "Understanding Property Investment in 2024",
-      blogImage: propertyInvestmentImage,
+      image: propertyInvestmentImage,
       category: "Real Estate Investment",
       description: "Property investment remains one of the most secure ways to build wealth. This guide explores the key trends in 2024 and provides actionable strategies for both first-time and experienced investors.", 
   
-      body: `
+      blog_body: `
       <h3 class="font-bold text-2xl">Understanding Property Investment in 2024</h3>
       <p className="text-xl font-bold">Property investment remains one of the most secure ways to build wealth. This guide explores the key trends in 2024 and provides actionable strategies for both first-time and experienced investors.</p>
         
@@ -85,11 +85,11 @@ export const blogs = [
     {
       id: uuidv4(),
       title: "How to Choose the Perfect Home",
-      blogImage: choosingHomeImage,
+      image: choosingHomeImage,
       category: "Home Buying",
       description: "Buying a home is one of the most significant decisions you'll ever make. Here's a guide to help you choose the perfect home based on your lifestyle, budget, and long-term goals.", 
   
-      body: `
+      blog_body: `
       <h3 class="font-bold text-2xl">How to Choose the Perfect Home</h3>
       <p className="text-xl font-bold">Buying a home is one of the most significant decisions you'll ever make. Here's a guide to help you choose the perfect home based on your lifestyle, budget, and long-term goals.</p>
         
@@ -114,11 +114,11 @@ export const blogs = [
     {
       id: uuidv4(),
       title: "Maximizing Rental Income in 2024",
-      blogImage: rentalIncomeImage,
+      image: rentalIncomeImage,
       category: "Rental Property",
       description: "As a landlord, maximizing your rental income while maintaining tenant satisfaction is key. Here are actionable tips to boost your property's profitability in 2024.", 
   
-      body: `
+      blog_body: `
       <h3 class="font-bold text-2xl">Maximizing Rental Income in 2024</h3>
       <p className="text-xl font-bold">As a landlord, maximizing your rental income while maintaining tenant satisfaction is key. Here are actionable tips to boost your property's profitability in 2024.</p>
         
