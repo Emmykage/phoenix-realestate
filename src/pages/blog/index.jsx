@@ -15,9 +15,8 @@ const Blog = () => {
   useEffect(()=> {
     dispatch(getPosts())
   },[])
-console.log(press)
+
   const pressBlogs = [...blogs, ...press]
-  console.log(pressBlogs)
   usePageReset()
 
   return (

@@ -1,0 +1,23 @@
+
+
+.blog-post form{
+    margin-top: 2rem;
+  
+  }
+  .blog-post form button{
+    padding: 0.8rem 1rem;
+    display: block;
+    background: #135092;
+    border: none;
+    color: white;
+    width: 100%;
+  
+  }
+  .blog-post form input, .blog-post form select, .blog-post form textarea{
+  
+    border: 1px solid rgb(218, 218, 218);
+    outline: #135092;
+    background-color: rgb(240, 238, 238);
+  
+  
+  }

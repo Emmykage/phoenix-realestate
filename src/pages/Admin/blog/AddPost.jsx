@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { createPost } from '../../../redux/actions/blog'
 import 'trix';
 import 'trix/dist/trix.css';
+import "./style.css"
 
 const AddPost = () => {
     const formRef = useRef(null)
@@ -32,9 +33,15 @@ const AddPost = () => {
     <div className='blog-post'>
         <form ref={formRef} onSubmit={handleSubmit}>
            <h2>Add Blog Post</h2> 
-            <div className='my-1'>
+           <div className='my-1'>
                 <label htmlFor="" className='text-base font-medium'>Blog Title</label>
                 <input type="text" name="title" required />
+            </div>
+            <div className='my-1'>
+                <label htmlFor="" className='text-base font-medium'>Category</label>
+                <select name="category" id="category" >
+                    <option value="finance">Finance</option>
+                </select>
             </div>
             <div className='my-1'>
                 <label htmlFor="description" className='text-base font-medium'>Description</label>
