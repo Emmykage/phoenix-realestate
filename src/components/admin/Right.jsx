@@ -6,11 +6,13 @@ import { TfiShine } from 'react-icons/tfi';
 import { NavLink } from 'react-router-dom';
 import img from '../../assets/users/profile_pic.jpg';
 
-const Right = () => (
+const Right = ({ isOpen, setIsOpen }) => (
   <div className="right">
     <div className="top">
-      <button id="menu-btn">
-        <span><AiOutlineMenu /></span>
+      <button id="menu-btn" onClick={() => {
+        setIsOpen(prev => !prev)
+      }}>
+        <span><AiOutlineMenu className='text-xl' /></span>
 
       </button>
       <div className="theme-toggler">

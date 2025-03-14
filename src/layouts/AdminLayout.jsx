@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Aside from '../components/admin/Aside';
 import '../components/admin/style.css';
 import Right from '../components/admin/Right';
@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 const AdminLayout = ({ children }) => {
   const dispatch = useDispatch();
+  const [isOpen, setIsOpen] = useState(false)
   const { user, loading, error } = useSelector((state) => state.auth);
   const navigation = useNavigate()
   useEffect(() => {
@@ -44,12 +45,12 @@ const AdminLayout = ({ children }) => {
 
   return (
     <div className="admin contain">
-      <Aside />
-      <main className='overflow-auto'>
+      <Aside isOpen={isOpen} setIsOpen={setIsOpen}/>
+        <main className='overflow-auto'>
         {children}
       </main>
 
-      <Right/>
+      <Right setIsOpen={setIsOpen}/>
 
     </div>
   );

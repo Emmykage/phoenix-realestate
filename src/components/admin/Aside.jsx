@@ -10,20 +10,22 @@ import { RiMessageLine } from 'react-icons/ri';
 import { FiSettings } from 'react-icons/fi';
 import LOGO from '../../assets/images/logo1.jpg';
 
-const Aside = () => {
+const Aside = ({isOpen, setIsOpen}) => {
   const activeLink = 'active';
   const normalLink = '';
+  console.log(isOpen)
   return (
-    <aside>
+    <aside className={isOpen ? 'close' : "open"}>
       <div className="top">
+      <span className='block ml-auto w-max' onClick={()=> setIsOpen(prev => !prev)}>
+            <AiOutlineClose className='text-2xl md:hidden ' />
+          </span>
         <div className="logo">
           <img src={LOGO} alt="logo" />
         
         </div>
         <div className="close" id="close-btn">
-          <span>
-            <AiOutlineClose />
-          </span>
+          
         </div>
       </div>
       <div className="side-bar">

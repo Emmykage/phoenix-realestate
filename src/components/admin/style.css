@@ -98,10 +98,8 @@ aside {
 }
 
 aside .top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* margin-top: 1.4rem; */
+  display: block;
+
 }
 
 aside .logo {
@@ -619,13 +617,23 @@ main .recent-orders a {
     position: fixed;
     left: 0;
     background: var(--color-white);
-    width: 18rem;
     z-index: 3;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
     box-shadow: 1rem 3rem 4rem var(--color-light);
     height: 100vh;
-    padding-right: var(--card-padding);
-    display: none;
   }
+  aside.close {
+    width: 0;
+  }
+
+  aside.open{
+    width: 18rem;
+    padding-right: var(--card-padding);
+
+
+  }
+
   .admin.contain .right{
     /* display: none; */
   }
