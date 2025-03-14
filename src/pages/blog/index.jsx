@@ -50,7 +50,7 @@ const Blog = () => {
                   <>
                    <div  className=' rounded overflow-hidden'>              
                       <div onClick={()=> navigate(`/press-release/${blog.id}`)} className='w-full h-72 bg-gray-500 blg-img overflow-hidden'>
-                        <img src={blog.image} alt="" className='w-full h-full object-cover cursor-pointer' />
+                        <img src={blog.image ?? blog?.img_url} alt="" className='w-full h-full object-cover cursor-pointer' />
                       </div>
 
                         <div className='border-l-4 my-7 px-4 py-2 border-b-4 border-alt'>

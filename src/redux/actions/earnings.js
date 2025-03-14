@@ -1,7 +1,7 @@
 
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import baseUrl from "../baseURL";
-const token = () => JSON.parse(localStorage.getItem('phoenix_auth')).token;
+import { token } from "../../utils/localStore";
 
 const withdrawEarning = createAsyncThunk('earning/earning_transactions', async (amount) => {
     const response = await fetch(`${baseUrl}earning_transactions`, {

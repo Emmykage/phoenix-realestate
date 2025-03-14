@@ -3,16 +3,20 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { blogs } from '../../../assets/blogData/data'
 import Banner from '../../../components/heroBanner/Banner'
 import Nav from '../../../components/Nav'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { getPosts } from '../../../redux/actions/blog'
 
 const BlogPost = () => {
     const {id} = useParams()
+      const dispatch = useDispatch()
+    
     const {posts} = useSelector(state => state.blog_posts)
     const navigate = useNavigate()
 
     useEffect(()=> {
-
+      dispatch(getPosts())
     },[])
+  
 
     const blog = [...posts, ...blogs]?.find(blog => blog.id == id)
 
@@ -42,7 +46,7 @@ const BlogPost = () => {
 
             </div>
 
-            <div className='max-w-5xl px-2 m-auto'>
+            <div className='max-w-5xl w-full px-2 m-auto mt-0'>
                 <div dangerouslySetInnerHTML={{__html: blog?.blog_body}} />
 
             </div>

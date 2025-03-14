@@ -2,16 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { registerUser } from '../../redux/actions/auth'
-import { userLog } from '../../redux/auth/user_authentication'
 
 const AdminRegister = () => {
   const navigation = useNavigate()
   const dispatch = useDispatch()
   const {user, loading, error, message} = useSelector(state => state.auth)
   const [formInput, setFormInput] = useState({first_name: "", last_name: "", email: "", password: "", role: "admin"})
-  useEffect(()=> {
-    dispatch(userLog())
-},[])
+
+  
   const handleInputChange = (e) => {
     if (e.target.name === "completed"){
       setFormInput({

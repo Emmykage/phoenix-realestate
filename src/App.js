@@ -56,10 +56,16 @@ import History from './pages/dashboard/portfolio/History';
 import Pending from './pages/dashboard/portfolio/Pending';
 import AccountInvestment from './pages/dashboard/portfolio/Investment';
 import AccountWithdraw from './pages/dashboard/account/WithdrawPage';
+import LoadingComponent from './components/loadingComp/LoadingComponent';
+import { useSelector } from 'react-redux';
 function App() {
+  const {loader} = useSelector(state => state.app)
   useInitializer()
   return (
     <div className="App">
+      {loader && 
+      <LoadingComponent/>
+}
       <Routes>
 
       <Route path='/dashboard' element={<><DashboardLayout/></> }>

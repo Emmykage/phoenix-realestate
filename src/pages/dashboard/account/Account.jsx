@@ -1,8 +1,11 @@
 import React from 'react'
 import user from "../../../assets/images/icons/avatar-1299805_1280.png"
 import { NavLink, Outlet } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 // import { MdReportGmailerrorred } from 'react-icons/md'
 const DashboardHome = () => {
+  const {user} = useSelector(state => state.auth)
+
   const activeLink = "active text-gray-600 text-theme-alt px-5 py-1 text-sm font-medium"
   const inactiveLink = "text-gray-600 px-5 py-1 text-sm font-medium"
   return (
@@ -20,7 +23,7 @@ const DashboardHome = () => {
         <div className='flex gap-2 justify-between flex-col md:flex-row flex-1' >
           <div className=' flex-1  text-center '>
 
-            <h3 className='text-gray-700  md:text-left font-semibold text-base md:text-xl'>Nathan Devlin</h3>
+            <h3 className='text-gray-700  md:text-left font-semibold text-base md:text-xl'>{user?.email ?? "Unknown"}</h3>
             <p className='text-sm text-gray-500 font-semibold md:text-left'>4263410275</p>
 
           </div>

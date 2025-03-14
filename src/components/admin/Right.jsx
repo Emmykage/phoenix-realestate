@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 import img from '../../assets/users/profile_pic.jpg';
 
 const Right = ({ isOpen, setIsOpen }) => (
-  <div className="right">
+  <div className="right py-4 px-1">
     <div className="top">
       <button id="menu-btn" onClick={() => {
         setIsOpen(prev => !prev)

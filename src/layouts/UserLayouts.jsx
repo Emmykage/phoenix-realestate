@@ -1,18 +1,15 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
-import { userLog } from '../redux/auth/user_authentication'
 import Aside from '../components/dashboard/Aside'
-import { getUser } from '../redux/actions/users'
+
 
 const UserLayouts = ({children}) => {
   const dispatch = useDispatch()
   const navigation = useNavigate()
 
   const {user} = useSelector(state => state.auth)
-  useEffect(()=> {
-    dispatch(userLog())
-  }, [])
+
   if(user == null){(navigation('/auth/login'))}else{
   return (
     <div className='user dashboard bg-space'>

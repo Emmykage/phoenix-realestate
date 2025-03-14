@@ -2,16 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { userSession } from '../../redux/actions/auth'
-import { userLog } from '../../redux/auth/user_authentication'
+import { SET_LOADER } from '../../redux/app/app'
 
 const Login = () => {
-    const navigation = useNavigate()
+    const navigate = useNavigate();
     const dispatch = useDispatch()
     const {user, error, loading, message} = useSelector(state => state.auth)
     const [formInput, setFormInput] = useState({email: "", password: ""})
-    useEffect(()=> {
-        dispatch(userLog())
-    },[])
+   
     const handleInputChange = (e)=> {
         setFormInput({
             ...formInput,
@@ -20,10 +18,22 @@ const Login = () => {
     }
 
     const handleFormSubmit = (e) => {
-        e.preventDefault()
-        dispatch(userSession({user: formInput}))
+       e.preventDefault();
+       
+               dispatch(SET_LOADER(true))
+               dispatch(userSession({ user: formInput })).then(result => {
+                   if(userSession.fulfilled.match(result)){
+                       navigate("/dashboard/home");
+                       dispatch(SET_LOADER(false))
+       
+       
+                   }else
+                   {
+                       dispatch(SET_LOADER(false))
+       
+                   }
+               });
     }
-    if(!user || (user && user.token ==  null) || user.token == undefined){
 
 
   return (
@@ -87,9 +97,6 @@ const Login = () => {
         </section>
     </div>
   )
-}else{
-    navigation("/dashboard/wallet/wallet")
-}
 }
 
 export default Login

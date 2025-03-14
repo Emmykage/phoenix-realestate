@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import baseUrl from "../baseURL";
+import { token } from "../../utils/localStore";
 
-const token = () => JSON.parse(localStorage.getItem('phoenix_auth')).token;
 const createTransaction = createAsyncThunk("transaction/create_transaction", async (data) => {
     const response = await fetch(`${baseUrl}transactions`, {
         method: "POST",

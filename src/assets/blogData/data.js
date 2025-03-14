@@ -1,12 +1,8 @@
-import payroll from "../../assets/images/blogs/Outsourcing-Payroll-1.webp"
-import corporateImage from '../../assets/images/blogs/uk-taxes.webp'
+
 import cashflowImage from '../../assets/images/blogs/CashFlow1-scaled.jpg'
-import accountSoftware from '../../assets/images/blogs/how-to-choose-the-right-accounting-software-for-your-business.png'
 import rentalIncomeImage from '../../assets/images/blogs/rental-income-profit-1.jpg'
 import propertyInvestmentImage from '../../assets/images/blogs/Understanding-Property-Taxes-And-Their-Impact-On-Your-Real-Estate-Investment-1024x679.webp'
-// import propertyInvestmentImage from '../../assets/images/blogs/how-to-choose-the-right-accounting-software-for-your-business.png'
 import choosingHomeImage from '../../assets/images/blogs/Picking-A-Home.jpg'
-import blogUpdate from '../../assets/images/blogs/blog-update.webp'
 import {v4 as uuidv4} from "uuid"
 
 const blogid = uuidv4()

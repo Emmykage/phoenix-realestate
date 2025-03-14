@@ -11,9 +11,7 @@ const Register = () => {
   const dispatch = useDispatch()
   const {user, error, message, loading } = useSelector(state => state.auth)
   const [formInput, setFormInput] = useState({first_name: "", last_name: "", email: "", password: "", role: "client"})
-  useEffect(()=> {
-    dispatch(userLog())
-},[])
+
   const handleInputChange = (e) => {
     if (e.target.name === "completed"){
       setFormInput({

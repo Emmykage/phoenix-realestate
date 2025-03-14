@@ -12,8 +12,8 @@ const Clients = () => {
   }, []);
   if (users?.length < 1) {
     return (
-      <div>
-        <h1>No Clients </h1>
+      <div className='py-10'>
+        <h1 className='text-center'> No Clients </h1>
       </div>
     );
   }

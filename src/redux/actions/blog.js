@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import baseUrl from "../baseURL";
-const token = () => JSON.parse(localStorage.getItem('phoenix_auth')).token
+import { token } from "../../utils/localStore";
 
 const createPost = createAsyncThunk('blog/create_post', async (data) => {
     const response = fetch(`${baseUrl}blogs`, {
