@@ -58,6 +58,8 @@ import AccountInvestment from './pages/dashboard/portfolio/Investment';
 import AccountWithdraw from './pages/dashboard/account/WithdrawPage';
 import LoadingComponent from './components/loadingComp/LoadingComponent';
 import { useSelector } from 'react-redux';
+import AboutPhoenixPrecast from './pages/about/PhoenixPrecast';
+import OurTeam from './pages/about/Team';
 function App() {
   const {loader} = useSelector(state => state.app)
   useInitializer()
@@ -67,10 +69,14 @@ function App() {
       <LoadingComponent/>
 }
       <Routes>
+      <Route path='about-us' element={<MainLayout> <About/></MainLayout>} />
+      <Route path='why-phoenix' element={<MainLayout> <AboutPhoenixPrecast/> </MainLayout>} />
+      <Route path='our-team' element={<MainLayout> <OurTeam/> </MainLayout>} />
+
 
       <Route path='/dashboard' element={<><DashboardLayout/></> }>
-        <Route path='home' element={<DashboardHome/>} />
-        <Route path='account' element={<DashboardHome/>}>
+      <Route path='home' element={<DashboardHome/>} />
+      <Route path='account' element={<DashboardHome/>}>
           <Route path='deposit' element={<AccountDeposit/>}/>
           <Route path='identity' element={<Identity/>}/>
           <Route path='profile' element={<AccountProfile/>}/>

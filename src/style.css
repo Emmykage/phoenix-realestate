@@ -105,17 +105,8 @@ body {
 }
 
 /* page & post content */
-.content p {
-  line-height: 1.8;
-  margin-bottom: 27px;
-}
-.content ul li {
-  list-style-type: disc;
-  margin-left: 20px;
-}
-.content ul li ul {
-  margin-left: 20px;
-}
+
+
 .content ul li ul li {
   list-style-type: circle;
 }
@@ -769,6 +760,7 @@ textarea.border,
   font-size: 14px;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
+  min-width: 300px;
 }
 .nav.navbar-nav li .sub-menu li a {
   display: block;
@@ -795,10 +787,10 @@ textarea.border,
 }
 
 /* MEMBER ACTIONS */
-.member-actions {
+/* .member-actions {
   padding-top: 25px;
   margin-left: 20px;
-}
+} */
 
 /** HEADER DEFAULT **/
 .header-default {
@@ -896,9 +888,9 @@ textarea.border,
   font-weight: 300;
 }
 
-.header-default .member-actions {
+/* .header-default .member-actions {
   padding: 0;
-}
+} */
 .header-default .member-actions .button {
   padding: 20px 20px 20px 40px;
   letter-spacing: 0.4px;
@@ -2949,7 +2941,9 @@ textarea.border,
 
 /** CALL TO ACTIONS **/
 .cta {
-  background: #59aee9;
+  /* background: #59aee9; */
+  background: linear-gradient(#21252fda, #21252fda), url(../public/images/pattern.jpg);
+
   color: white;
   padding: 60px 0px;
 }
@@ -3005,7 +2999,7 @@ textarea.border,
 }
 
 .cta.hexs {
-  background: #59aee9 url(../public/images/pattern.jpg) no-repeat bottom;
+  background: linear-gradient(#21252fda, #21252fda), url(../public/images/pattern.jpg);
   background-size: cover;
 }
 .cta.hexs .hex {

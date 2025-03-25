@@ -10,6 +10,8 @@ const Nav = () => {
   const [toggleNav, setToggleNav] = useState(false)
   const [stickyNav, setStickyNav] = useState("nav")
 
+  console.log(toggleNav)
+
   const navigation = useNavigate()
   const logout = () => {
     localStorage.setItem('phoenix_auth', null);
@@ -32,6 +34,12 @@ const Nav = () => {
   }
   useEffect(()=> {
     window.addEventListener('scroll', handleStickNav)
+
+
+    return () => {
+      window.addEventListener('scroll', handleStickNav)
+
+    }
 
   }, [])
 
@@ -69,8 +77,8 @@ const Nav = () => {
         
         
         <div className='flex justify-between items-center'>
-        <NavLink to="/" className="inline-block w-36 h-24 logo-icon" ><img src="images/logo1.jpg" alt="Homely" /></NavLink>
-        <div className=" bg-red-300">
+        <NavLink to="/" className="inline-block w-36 h-24 p-4 logo-icon" ><img src="/logo.png" alt="Homely" /></NavLink>
+        <div className=" ">
           
         <div className="bg-white hidden lg:block">
        
@@ -118,46 +126,53 @@ const Nav = () => {
       
       <div className="relative w-screen navbar-collaps flex-1 ">
         <div className="h-[60px] bg-theme-black w-full top-0  absolute bottom-0 right-0">
-          <div className="">
+          <div className="bg-red-">
   
-          <div className="member-actions right">
+          <div className="member-actions  right">
             <a href="user-submit-property.html" className="button small alt button-icon">
               <i className="fa fa-plus"></i>
             Submit Property</a>
           </div>
 
 
-          <div className={`${show} ${toggleNav ? "top-0" : "-top-[1000%]"} transition-all duration-200 ease-linear absolute  md:top-0 bg-theme-black md:bg-none w-full md:w-[80%]  flex items-center`} id="navbarSupportedContent">
-            <ul class="nav navbar-nav px-2  flex-1 items-center justify-between md:flex-row flex mr-auto">
+          <div className={`${show} ${toggleNav ? "top-0" : "-top-[1000%]"} transition-all duration-200 ease-linear  md:top-0 bg-theme-black py-0 z-50 absolute h-min md:h-full md:bg-none w-full md:w-[80%]  flex items-center`} id="navbarSupportedContent">
+            <ul class="nav navbar-nav px-2  flex-1 items-center justify-between md:flex-row flex mr-auto bg-red-">
               <li class="nav-item active text-white">
                 <NavLink className="nav-link text-white p-2.5" to="/" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Home <span class="sr-only"></span></NavLink>
               </li>
-                <li className="relative menu-item-has-childre nav-item text-white">
-                <NavLink to="/properties" className={"nav-link active text-white"}>Property Investments</NavLink>
-                <ul className="sub-menu relative">
-                  <li><NavLink to="/united_kingdom" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>UNITED KIGDOM</NavLink></li>
-                      <li><NavLink to="/dubai" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>DUBAI</NavLink></li>
-                      <li><NavLink to="/spain" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>SPAIN</NavLink></li>
-                      <li><NavLink to="/berlin" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>BERLIN</NavLink></li>
-                      <li><NavLink to="/tokyo" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>TOKYO</NavLink></li>
-                      <li><NavLink to="/shangai" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>SHANGAI</NavLink></li>
+              <li className="relative menu-item-has-childre nav-item text-white">
+                <NavLink to="/about-us" className={"nav-link active text-white"}>About Us</NavLink>
+                <ul className="sub-menu relative max-w-xl w-full ">
+                  <li><NavLink to="/why-phoenix" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>About Phoenix Precast</NavLink></li>
+                      <li><NavLink to="/why-phoenix" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Why Phoenix</NavLink></li>
+                      <li><NavLink to="/our-team" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Our Team</NavLink></li>
                   
                     </ul>
                     </li>
-                    <li><NavLink to="/press-release" className={"nav-link text-white"} onClick={() => {}}>Press</NavLink></li>
+
+                <li className="relative menu-item-has-childre nav-item text-white">
+                <NavLink to="/properties" className={"nav-link active text-white"}>Investment Opportunity</NavLink>
+                <ul className="sub-menu relative">
+                  <li><NavLink to="/united_kingdom" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li>
+                      <li><NavLink to="/dubai" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>How It Works</NavLink></li>
+                  
+                    </ul>
+                    </li>
+                    <li><NavLink to="/press-release" className={"nav-link text-white"} onClick={() => {}}>News </NavLink></li>
                     {/* <li><NavLink to="/dashboard/home"className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li> */}
-                    <li><NavLink to="/contact-us" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Contacts</NavLink></li>
+                    <li><NavLink to="/contact-us" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Contacts Us</NavLink></li>
+                    {/* <li><NavLink to="/contact-us" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>FAQ</NavLink></li> */}
 
                     <li><NavLink to="/about" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Careers</NavLink></li>
                     
-                    <li>
+                    {/* <li>
                     {user ? <a onClick={logout} className={"nav-link text-white"} >Logout</a> : (<>
                 
 
                 <NavLink to="/auth/login" className={"nav-link text-white"}>Login</NavLink>
                 </>
               )}
-                  </li>
+                  </li> */}
             </ul>
             
           </div>

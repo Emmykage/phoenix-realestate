@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import photo1 from '../../assets/images/pictures/pngegg.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAssets } from '../../redux/actions/assets'
 import { usd_format } from '../../components/misc/USD'
