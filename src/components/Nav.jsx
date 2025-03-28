@@ -122,7 +122,7 @@ const Nav = () => {
       </div>
   
       {/* <!-- main menu --> */}
-      <nav class={`${stickyNav} flex flex-nowrap justify-start navbar-expand-lg navbar-light p-0`}>
+      <nav className={`${stickyNav} flex flex-nowrap justify-start navbar-expand-lg navbar-light p-0`}>
       
       <div className="relative w-screen navbar-collaps flex-1 ">
         <div className="h-[60px] bg-theme-black w-full top-0  absolute bottom-0 right-0">
@@ -136,9 +136,9 @@ const Nav = () => {
 
 
           <div className={`${show} ${toggleNav ? "top-0" : "-top-[1000%]"} transition-all duration-200 ease-linear  md:top-0 bg-theme-black py-0 z-50 absolute h-min md:h-full md:bg-none w-full md:w-[80%]  flex items-center`} id="navbarSupportedContent">
-            <ul class="nav navbar-nav px-2  flex-1 items-center justify-between md:flex-row flex mr-auto bg-red-">
-              <li class="nav-item active text-white">
-                <NavLink className="nav-link text-white p-2.5" to="/" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Home <span class="sr-only"></span></NavLink>
+            <ul className="nav navbar-nav px-2  flex-1 items-center justify-between md:flex-row flex mr-auto bg-red-">
+              <li className="nav-item active text-white">
+                <NavLink className="nav-link text-white p-2.5" to="/" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Home <span className="sr-only"></span></NavLink>
               </li>
               <li className="relative menu-item-has-childre nav-item text-white">
                 <NavLink to="/about-us" className={"nav-link active text-white"}>About Us</NavLink>
@@ -151,10 +151,10 @@ const Nav = () => {
                     </li>
 
                 <li className="relative menu-item-has-childre nav-item text-white">
-                <NavLink to="/properties" className={"nav-link active text-white"}>Investment Opportunity</NavLink>
+                <NavLink to="#" className={"nav-link active text-white"}>Investment Opportunity</NavLink>
                 <ul className="sub-menu relative">
-                  <li><NavLink to="/united_kingdom" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li>
-                      <li><NavLink to="/dubai" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>How It Works</NavLink></li>
+                  <li><NavLink to="/passive-income" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li>
+                      <li><NavLink to="/how-it-work" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>How It Works</NavLink></li>
                   
                     </ul>
                     </li>

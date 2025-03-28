@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 const AppButton = ({
     disbaled,
     onClick,
+    className,
     children,
     endIcon,
     loading
@@ -12,6 +13,7 @@ const AppButton = ({
   return (
     <Stack spacing={2} direction="row">
       <Button 
+      className={className}
         endIcon={endIcon}
         disabled={disbaled} 
         disableElevation
@@ -22,6 +24,7 @@ const AppButton = ({
             '&:hover': { backgroundColor: '#3a89b5' }, // Darker shade for hover effect
             color: '#fff', // Text color
             width: "100%"
+            // marginLeft: 
           }}
         loadingPosition="end"
       variant="contained"

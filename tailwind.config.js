@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      opacity: {
+        none: "0%"
+      },
       gridTemplateColumns: {
         blogLayout: "300px auto"
       },

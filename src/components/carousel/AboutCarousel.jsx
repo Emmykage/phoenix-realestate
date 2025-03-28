@@ -66,17 +66,17 @@ const responsive = {
             itemClass="carousel-item-padding-40-px px-3"
             >
                 {items.map(item => 
-                     <div className='group rounded-full relative bg-gray-200 flex overflow-hidden items-center justify-center min-h-96'>
+                     <div className='group shadow-lg hover:shadow-none rounded-2xl relative bg-gray-200 flex overflow-hidden items-center justify-center min-h-96'>
 
                       
-                      <img src="/images/Real-Estate-Wallpaper-05-2866x1516-1-scaled.jpg" className='w-full absolute top-0 left-0  h-full bg-red-300 object-cover' alt="" />
+                      <img src={item.image} className='w-full absolute top-0 left-0  h-full bg-red-300 object-cover' alt="" />
                       <p className='text-lg z-10 text-white bg-gray-950/70 px-4 font-semibold transition-all duration-300 ease-linear text-center group-hover:opacity-0'>
                         {item.title}
         
         
                       </p>
        
-                     <div className='absolute z-20 transition-all duration-300 ease-linear opacity-10 bg-gray-900/70 group-hover:opacity-100 text-center flex items-center justify-center p-10 top-0 h-full left-0 w-full'>
+                     <div className='absolute z-20 transition-all duration-300 ease-linear opacity-none bg-gray-900/70 group-hover:opacity-100 text-center flex items-center justify-center p-10 top-0 h-full left-0 w-full'>
        
                      <p className='text-lg font-medium text-white'>{item.text}</p>
        

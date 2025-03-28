@@ -9,7 +9,7 @@ const ProfileAccountDisplay = () => {
           
               <div className=" border-black">
                 <div className="px-3 py-2">
-                  <p class=" text-lg text-gray-900">
+                  <p className=" text-lg text-gray-900">
                     Profits
                   </p>
                   <div className="flex justify-between items-center">
@@ -30,7 +30,7 @@ const ProfileAccountDisplay = () => {
           
               <div className=" border-black">
                 <div className="px-3 py-2">
-                  <p class=" text-lg text-gray-900">
+                  <p className=" text-lg text-gray-900">
                     Trading
                   </p>
                   <p className="text-4xl mt-6 font-semibold text-gray-900">

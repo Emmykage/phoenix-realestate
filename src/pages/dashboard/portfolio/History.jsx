@@ -11,17 +11,17 @@ const History = () => {
     dispatch(getWallet())
   },[])
   return (
-    <div class="inline-block min-w-full py-2 align-middle">
-      <table class="min-w-full bg-white border border-gray-200 rounded-md border-separate border-spacing-0 table-auto overflow-hidden">
+    <div className="inline-block min-w-full py-2 align-middle">
+      <table className="min-w-full bg-white border border-gray-200 rounded-md border-separate border-spacing-0 table-auto overflow-hidden">
         <thead className='bg-gray-300'>
           <tr>
-            <th scope="col" class="sticky top-0 z-10 border-b border-gray-200/50 bg-gray-200 bg-opacity-75 py-3.5 pl-4 pr-3 text-left text-xs font-semibold text-gray-600 backdrop-blur backdrop-filter sm:pl-6 lg:pl-8">Name</th>
-            <th scope="col" class="sticky top-0  z-10 border-b border-gray-200/50 bg-opacity-75 px-3 py-3.5 pr-3 text-left text-xs font-semibold text-gray-600 backdrop-blur backdrop-filter">Amount</th>
-            <th scope="col" class="sticky top-0 z-10 hidden border-b border-gray-200/50 bg-opacity-75 px-6 py-3.5  text-left text-xs font-semibold text-gray-600 backdrop-blur backdrop-filter sm:table-cell">Amount</th>
-            <th scope="col" class="sticky top-0 z-10 hidden border-b border-gray-200/50  bg-opacity-75 px-3 py-3.5 text-left text-xs font-semibold text-gray-600 backdrop-blur backdrop-filter lg:table-cell">Payment Method</th>
-            <th scope="col" class="sticky top-0 z-10 border-b border-gray-200/50 bg-opacity-75 px-3 py-3.5 text-left text-xs font-semibold text-gray-600 backdrop-blur backdrop-filter">Status</th>
-            <th scope="col" class="sticky top-0 z-10 border-b border-gray-200/50  bg-opacity-75 py-3.5 pl-3 pr-4 backdrop-blur backdrop-filter sm:pr-6 lg:pr-8">
-              <span class="sr-only">Edit</span>
+            <th scope="col" className="sticky top-0 z-10 border-b border-gray-200/50 bg-gray-200 bg-opacity-75 py-3.5 pl-4 pr-3 text-left text-xs font-semibold text-gray-600 backdrop-blur backdrop-filter sm:pl-6 lg:pl-8">Name</th>
+            <th scope="col" className="sticky top-0  z-10 border-b border-gray-200/50 bg-opacity-75 px-3 py-3.5 pr-3 text-left text-xs font-semibold text-gray-600 backdrop-blur backdrop-filter">Amount</th>
+            <th scope="col" className="sticky top-0 z-10 hidden border-b border-gray-200/50 bg-opacity-75 px-6 py-3.5  text-left text-xs font-semibold text-gray-600 backdrop-blur backdrop-filter sm:table-cell">Amount</th>
+            <th scope="col" className="sticky top-0 z-10 hidden border-b border-gray-200/50  bg-opacity-75 px-3 py-3.5 text-left text-xs font-semibold text-gray-600 backdrop-blur backdrop-filter lg:table-cell">Payment Method</th>
+            <th scope="col" className="sticky top-0 z-10 border-b border-gray-200/50 bg-opacity-75 px-3 py-3.5 text-left text-xs font-semibold text-gray-600 backdrop-blur backdrop-filter">Status</th>
+            <th scope="col" className="sticky top-0 z-10 border-b border-gray-200/50  bg-opacity-75 py-3.5 pl-3 pr-4 backdrop-blur backdrop-filter sm:pr-6 lg:pr-8">
+              <span className="sr-only">Edit</span>
             </th>
           </tr>
         </thead>

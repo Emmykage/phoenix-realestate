@@ -1,6 +1,6 @@
 import React from 'react'
 import Nav from '../../components/Nav'
-
+import aboutImg from "../../assets/images/pictures/breno-assis-r3WAWU5Fi5Q-unsplash.jpg"
 const About = () => {
   return (
     <div>
@@ -14,11 +14,11 @@ const About = () => {
           <div className="clear"></div>
         </div>
       </section>
-  <section className="module content">
+  <section className="module content bg-gray-100 ">
     <div className="container">
-      <div className="flex md:flex-row flex-col">
+      <div className="flex md:flex-row flex-col items- gap-10 bg--300">
 
-        <div className="flex-1 font-medium">
+        <div className="flex-1 font-medium leading-8">
             <h3>Proven Property Specialists Celebrating 20 Years in Property Investment</h3>
             <img src="images/divider-half.png" alt="" /><br/><br/>
             <p><strong>PHEONIX PRECAST LTD (11231705) is a Manchester & London-based, proven property investment specialist with a 12-year history in the property investment business. We specialise in identifying and sourcing high-yield property investments for clients across the UK and overseas. Our purpose is to help investors navigate the property investment market by providing expert advice and access to exclusive opportunities, allowing our clients to build their wealth.
@@ -37,8 +37,8 @@ const About = () => {
 
           </div>
     
-          <div className="flex-1">
-            <a href="https://youtu.be/mehLx_Fjv_c" className="html5lightbox"><img className="about-video-thumb " src="images/530x345.png" alt="about" /></a>
+          <div className="flex-1 bg-red-">
+           <img className="about-video-thumb rounded-xl object-cover h-full backdrop-grayscale-0" src={aboutImg} alt="about" />
             <div className="clear"></div>
           </div>
           </div>
@@ -84,7 +84,7 @@ const About = () => {
     </div>
   </section>
   
-  <section className="module team">
+  {/* <section className="module team">
     <div className="container">
 
       <div className="module-header">
@@ -152,7 +152,7 @@ const About = () => {
               <img className="hex" src="images/hexagon.png" alt="" />
               <h4>John Doe</h4>
               <p>Senior Agent</p>
-              <ul class="social-icons circle">
+              <ul className="social-icons circle">
                   <li><a href="#"><i className="fa fa-facebook"></i></a></li>
                   <li><a href="#"><i className="fa fa-instagram"></i></a></li>
                   <li><a href="#"><i className="fa fa-twitter"></i></a></li>
@@ -165,7 +165,7 @@ const About = () => {
       </div>
 
     </div>
-  </section>
+  </section> */}
     </div>
   )
 }

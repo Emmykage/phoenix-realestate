@@ -120,7 +120,7 @@ const ClientsPage = () => {
                             <div className='flex-1' >
                         
                             <h4>{portfolio.asset.name}</h4>
-                            <p><i class="fa fa-map-marker icon"></i>{portfolio.asset.address}</p>
+                            <p><i className="fa fa-map-marker icon"></i>{portfolio.asset.address}</p>
                                 
                             </div>
                             <div><span className='text-lg font-medium text-green' >Profits: </span> <span className='text-lg font-medium'>{usd_format(portfolio.investment_interest)}</span></div>
@@ -132,12 +132,12 @@ const ClientsPage = () => {
       
                             </div>
                             <div className='flex-1 flex justify-between'>
-                                <span><i class="fa fa-bed"></i> {portfolio.asset.number_of_bedrooms} beds</span>
-                                <span><i class="fa fa-tint"></i> {portfolio.asset.number_of_bathrooms} Baths</span>
-                                <span><i class="fa fa-expand"></i> {portfolio.asset.area}Sq Ft</span>
+                                <span><i className="fa fa-bed"></i> {portfolio.asset.number_of_bedrooms} beds</span>
+                                <span><i className="fa fa-tint"></i> {portfolio.asset.number_of_bathrooms} Baths</span>
+                                <span><i className="fa fa-expand"></i> {portfolio.asset.area}Sq Ft</span>
                             </div>
                         </div>
-                        <div class="text-right p-2">
+                        <div className="text-right p-2">
                             <NavLink to={`/admin/client/${id}/portfolio/${portfolio.id}`} className="btn inline-block p-1 text-white">view interest</NavLink>
                         </div>
                         

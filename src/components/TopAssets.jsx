@@ -10,48 +10,48 @@ const TopAssets = () => {
     },[])
     const {assets} = useSelector(state => state.assets)
   return (
-    <section class="module properties">
-    <div class="container">
+    <section className="module properties">
+    <div className="container">
   
-      <div class="module-header">
+      <div className="module-header">
         <h2>Recently Added <strong>Properties</strong></h2>
-        <img src="images/divider.png" alt="" />
+        <img src="images/divider.png" alt="" className='block m-auto' />
         <p>Discover our recently added properties, where exceptional features and prime locations combine to offer you the latest and most desirable listings</p>
       </div>
   
-      <div class="flex justify-center gap-2">
+      <div className="flex justify-center gap-2">
         {assets?.map(asset => (
             <>
-            <div class="col-lg-4 col-md-4">
-            <div class="property shadow-hover">
+            <div className="col-lg-4 col-md-4">
+            <div className="property shadow-hover">
               <NavLink to={`/assets_details/${asset.id}`} className="property-img">
-                <div class="img-fade"></div>
-                <div class="property-tag button alt featured">{asset.status}</div>
-                <div class="property-tag button status">{asset.sale_type}</div>
-                <div class="property-price">${asset.price}</div>
-                <div class="property-color-bar"></div>
+                <div className="img-fade"></div>
+                <div className="property-tag button alt featured">{asset.status}</div>
+                <div className="property-tag button status">{asset.sale_type}</div>
+                <div className="property-price">${asset.price}</div>
+                <div className="property-color-bar"></div>
                 <img src={asset.image_url} alt="" />
               </NavLink>
-              <div class="property-content">
-                <div class="property-title">
+              <div className="property-content">
+                <div className="property-title">
                 <h4><a href="#">{asset.name}</a></h4>
-                  <p class="property-address"><i class="fa fa-map-marker icon"></i>123 Smith Dr, Annapolis, MD</p>
+                  <p className="property-address"><i className="fa fa-map-marker icon"></i>123 Smith Dr, Annapolis, MD</p>
                 </div>
-                <table class="property-details">
+                <table className="property-details">
                   <tr>
-                    <td><i class="fa fa-bed"></i> {asset.number_of_bedrooms} Beds</td>
-                    <td><i class="fa fa-tint"></i> {asset.number_of_bathrooms} Baths</td>
-                    <td><i class="fa fa-expand"></i> {asset.area}Sq Ft</td>
+                    <td><i className="fa fa-bed"></i> {asset.number_of_bedrooms} Beds</td>
+                    <td><i className="fa fa-tint"></i> {asset.number_of_bathrooms} Baths</td>
+                    <td><i className="fa fa-expand"></i> {asset.area}Sq Ft</td>
                   </tr>
                 </table>
               </div>
-              <div class="property-footer">
-                <span class="left"><i class="fa fa-calendar-o icon"></i> 5 days ago</span>
-                <span class="right">
-                  <a href="#"><i class="fa fa-heart-o icon"></i></a>
-                  <a href="#"><i class="fa fa-share-alt"></i></a>
+              <div className="property-footer">
+                <span className="left"><i className="fa fa-calendar-o icon"></i> 5 days ago</span>
+                <span className="right">
+                  <a href="#"><i className="fa fa-heart-o icon"></i></a>
+                  <a href="#"><i className="fa fa-share-alt"></i></a>
                 </span>
-                <div class="clear"></div>
+                <div className="clear"></div>
               </div>
             </div>
           </div>
@@ -64,7 +64,7 @@ const TopAssets = () => {
           
       </div>
   
-      <div class="center"><a href="#" class="button button-icon more-properties-btn"><i class="fa fa-angle-right"></i> View More Properties</a></div>
+      <div className="center"><a href="#" className="button button-icon more-properties-btn"><i className="fa fa-angle-right"></i> View More Properties</a></div>
   
     </div>
   </section>

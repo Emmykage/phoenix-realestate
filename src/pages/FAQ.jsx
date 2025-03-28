@@ -4,21 +4,21 @@ const FAQ = () => {
   return (
     <div>
         
-<section class="subheader">
-  <div class="container">
+<section className="subheader">
+  <div className="container">
     <h1>Frequently Asked Questions</h1>
-    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">FAQ</a></div>
-    <div class="clear"></div>
+    <div className="breadcrumb right">Home <i className="fa fa-angle-right"></i> <a href="#" className="current">FAQ</a></div>
+    <div className="clear"></div>
   </div>
 </section>
 
-<section class="module">
-  <div class="container">
+<section className="module">
+  <div className="container">
 
-    <div class="row">
-      <div class="col-lg-8 col-md-8">
+    <div className="row">
+      <div className="col-lg-8 col-md-8">
 
-        <div id="accordion" class="content">
+        <div id="accordion" className="content">
           <h3>How can I sign up?</h3>
           <div>
             <p>
@@ -31,8 +31,8 @@ const FAQ = () => {
             amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
             odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
             </p>
-            <div class="divider"></div>
-            <span class="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+            <div className="divider"></div>
+            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
           </div>
           <h3>How is loan interest calculated?</h3>
           <div>
@@ -42,8 +42,8 @@ const FAQ = () => {
             velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
             suscipit faucibus urna.
             </p>
-            <div class="divider"></div>
-            <span class="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+            <div className="divider"></div>
+            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
           </div>
           <h3>Where do I find an agent?</h3>
           <div>
@@ -58,8 +58,8 @@ const FAQ = () => {
               <li>List item two</li>
               <li>List item three</li>
             </ul>
-            <div class="divider"></div>
-            <span class="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+            <div className="divider"></div>
+            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
           </div>
           <h3>What is the quickest way I can sell my home?</h3>
           <div>
@@ -74,8 +74,8 @@ const FAQ = () => {
             Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
             inceptos himenaeos.
             </p>
-            <div class="divider"></div>
-            <span class="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+            <div className="divider"></div>
+            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
           </div>
           <h3>How can I sign up?</h3>
           <div>
@@ -85,8 +85,8 @@ const FAQ = () => {
             amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
             odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
             </p>
-            <div class="divider"></div>
-            <span class="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+            <div className="divider"></div>
+            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
           </div>
           <h3>How is loan interest calculated?</h3>
           <div>
@@ -96,8 +96,8 @@ const FAQ = () => {
             velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
             suscipit faucibus urna.
             </p>
-            <div class="divider"></div>
-            <span class="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+            <div className="divider"></div>
+            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
           </div>
           <h3>Where do I find an agent?</h3>
           <div>
@@ -112,8 +112,8 @@ const FAQ = () => {
               <li>List item two</li>
               <li>List item three</li>
             </ul>
-            <div class="divider"></div>
-            <span class="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+            <div className="divider"></div>
+            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
           </div>
           <h3>What is the quickest way I can sell my home?</h3>
           <div>
@@ -128,8 +128,8 @@ const FAQ = () => {
             Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
             inceptos himenaeos.
             </p>
-            <div class="divider"></div>
-            <span class="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+            <div className="divider"></div>
+            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
           </div>
           <h3>What is the quickest way I can sell my home?</h3>
           <div>
@@ -144,8 +144,8 @@ const FAQ = () => {
             Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
             inceptos himenaeos.
             </p>
-            <div class="divider"></div>
-            <span class="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+            <div className="divider"></div>
+            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
           </div>
           <h3>How can I sign up?</h3>
           <div>
@@ -155,8 +155,8 @@ const FAQ = () => {
             amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
             odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
             </p>
-            <div class="divider"></div>
-            <span class="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+            <div className="divider"></div>
+            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
           </div>
           <h3>How is loan interest calculated?</h3>
           <div>
@@ -166,42 +166,42 @@ const FAQ = () => {
             velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
             suscipit faucibus urna.
             </p>
-            <div class="divider"></div>
-            <span class="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+            <div className="divider"></div>
+            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
           </div>
         </div>
 
       </div>
-      <div class="col-lg-4 col-md-4">
+      <div className="col-lg-4 col-md-4">
 
-        <div class="widget widget-sidebar recent-properties">
+        <div className="widget widget-sidebar recent-properties">
           <h4><span>Recent Properties</span> <img src="images/divider-half.png" alt="" /></h4>
-          <div class="widget-content">
+          <div className="widget-content">
 
-          <div class="recent-property">
-            <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4"><a href="#"><img src="images/1837x1206.png" alt="" /></a></div>
-            <div class="col-lg-8 col-md-8 col-sm-8">
+          <div className="recent-property">
+            <div className="row">
+            <div className="col-lg-4 col-md-4 col-sm-4"><a href="#"><img src="images/1837x1206.png" alt="" /></a></div>
+            <div className="col-lg-8 col-md-8 col-sm-8">
               <h5><a href="#">Beautiful Waterfront Condo</a></h5>
               <p><strong>$1,800</strong> Per Month</p>
             </div>
             </div>
           </div>
 
-          <div class="recent-property">
-            <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4"><a href="#"><img src="images/1837x1206.png" alt="" /></a></div>
-            <div class="col-lg-8 col-md-8 col-sm-8">
+          <div className="recent-property">
+            <div className="row">
+            <div className="col-lg-4 col-md-4 col-sm-4"><a href="#"><img src="images/1837x1206.png" alt="" /></a></div>
+            <div className="col-lg-8 col-md-8 col-sm-8">
               <h5><a href="#">Family Home</a></h5>
               <p><strong>$500,000</strong></p>
             </div>
             </div>
           </div>
 
-          <div class="recent-property">
-            <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4"><a href="#"><img src="images/1837x1206.png" alt="" /></a></div>
-            <div class="col-lg-8 col-md-8 col-sm-8">
+          <div className="recent-property">
+            <div className="row">
+            <div className="col-lg-4 col-md-4 col-sm-4"><a href="#"><img src="images/1837x1206.png" alt="" /></a></div>
+            <div className="col-lg-8 col-md-8 col-sm-8">
               <h5><a href="#">Ubran Apartment</a></h5>
               <p><strong>$1,800</strong> Per Month</p>
             </div>
@@ -211,36 +211,36 @@ const FAQ = () => {
           </div>
         </div>
 
-        <div class="widget widget-sidebar recent-posts">
+        <div className="widget widget-sidebar recent-posts">
           <h4><span>Recent Blog Posts</span> <img src="images/divider-half.png" alt="" /></h4>
-          <div class="widget-content">
+          <div className="widget-content">
 
-          <div class="recent-property">
-            <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4"><a href="#"><img src="images/1837x1206.png" alt="" /></a></div>
-            <div class="col-lg-8 col-md-8 col-sm-8">
+          <div className="recent-property">
+            <div className="row">
+            <div className="col-lg-4 col-md-4 col-sm-4"><a href="#"><img src="images/1837x1206.png" alt="" /></a></div>
+            <div className="col-lg-8 col-md-8 col-sm-8">
               <h5><a href="#">6 Tips to help you sell your house</a></h5>
-              <p><i class="fa fa-calendar-o"></i> Feb, 18th 2017</p>
+              <p><i className="fa fa-calendar-o"></i> Feb, 18th 2017</p>
             </div>
             </div>
           </div>
 
-          <div class="recent-property">
-            <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4"><a href="#"><img src="images/1837x1206.png" alt="" /></a></div>
-            <div class="col-lg-8 col-md-8 col-sm-8">
+          <div className="recent-property">
+            <div className="row">
+            <div className="col-lg-4 col-md-4 col-sm-4"><a href="#"><img src="images/1837x1206.png" alt="" /></a></div>
+            <div className="col-lg-8 col-md-8 col-sm-8">
               <h5><a href="#">Common mistakes to avoid when moving </a></h5>
-              <p><i class="fa fa-calendar-o"></i> Feb, 18th 2017</p>
+              <p><i className="fa fa-calendar-o"></i> Feb, 18th 2017</p>
             </div>
             </div>
           </div>
 
-          <div class="recent-property">
-            <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4"><a href="#"><img src="images/1837x1206.png" alt="" /></a></div>
-            <div class="col-lg-8 col-md-8 col-sm-8">
+          <div className="recent-property">
+            <div className="row">
+            <div className="col-lg-4 col-md-4 col-sm-4"><a href="#"><img src="images/1837x1206.png" alt="" /></a></div>
+            <div className="col-lg-8 col-md-8 col-sm-8">
               <h5><a href="#">How to design a minimal but productive home office </a></h5>
-              <p><i class="fa fa-calendar-o"></i> Feb, 18th 2017</p>
+              <p><i className="fa fa-calendar-o"></i> Feb, 18th 2017</p>
             </div>
             </div>
           </div>
@@ -248,10 +248,10 @@ const FAQ = () => {
           </div>
         </div>
         
-        <div class="widget widget-sidebar recent-properties">
+        <div className="widget widget-sidebar recent-properties">
           <h4><span>Quick Links</span> <img src="images/divider-half.png" alt="" /></h4>
-          <div class="widget-content box">
-          <ul class="bullet-list">
+          <div className="widget-content box">
+          <ul className="bullet-list">
             <li><a href="#">Featured Properties</a></li>
             <li><a href="#">Featured Agents</a></li>
             <li><a href="#">Terms & Conditions</a></li>

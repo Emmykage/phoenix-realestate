@@ -60,6 +60,8 @@ import LoadingComponent from './components/loadingComp/LoadingComponent';
 import { useSelector } from 'react-redux';
 import AboutPhoenixPrecast from './pages/about/PhoenixPrecast';
 import OurTeam from './pages/about/Team';
+import PassiveIncome from './pages/opportunities/PassiveIncome';
+import HowItWorks from './pages/opportunities/HowItWorks';
 function App() {
   const {loader} = useSelector(state => state.app)
   useInitializer()
@@ -72,6 +74,8 @@ function App() {
       <Route path='about-us' element={<MainLayout> <About/></MainLayout>} />
       <Route path='why-phoenix' element={<MainLayout> <AboutPhoenixPrecast/> </MainLayout>} />
       <Route path='our-team' element={<MainLayout> <OurTeam/> </MainLayout>} />
+      <Route path='passive-income' element={<MainLayout> <PassiveIncome/> </MainLayout>} />
+      <Route path='how-it-work' element={<MainLayout> <HowItWorks/> </MainLayout>} />
 
 
       <Route path='/dashboard' element={<><DashboardLayout/></> }>

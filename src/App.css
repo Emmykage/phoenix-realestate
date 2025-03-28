@@ -25,11 +25,16 @@
   --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    font-family: "poppins";
+}
 /** CALL TO ACTIONS **/
 .pattern {
   color: white;
   padding: 60px 0px;
-  /* background-image: ; */
   background: linear-gradient(#21252fda, #21252fda), url(../public/images/pattern.jpg);
 
 }
@@ -179,28 +184,12 @@ aside .dash-logo img {
 }
 /* .bg-white */
 
-.rounded-base {
-  border-radius: 1rem;
-}
+
 
 .font-semibold {
   font-weight: 600;
 }
-.w-3-4 {
-  max-width: 1500px;
-}
-.m-h-300 {
-  min-height: 300px;
-}
-.h-350 {
-  height: 350px;
-}
-.h-250 {
-  height: 250px;
-}
-.w-250 {
-  width: 250px;
-}
+
 .scanner-ing {
   width: 130px;
   height: 130px;
@@ -225,37 +214,6 @@ aside .dash-logo img {
   border-radius: 8px;
   color: white;
 }
-.btn.cancel {
-  background-color: #989898;
-  border-radius: 8px;
-  color: white;
-}
-.earning .top {
-  padding-right: 10px;
-}
-.earning .btn.all-earning {
-  margin-left: auto;
-  display: block;
-  max-width: 300px;
-  /* margin-right: 10px; */
-}
-.status {
-  background-color: rgb(52, 109, 52);
-  border-radius: 8px;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-  font-weight: 500;
-}
-.status.cancel {
-  background-color: #989898;
-  border-radius: 8px;
-  color: white;
-}
-.status.pending {
-  background-color: rgb(255, 55, 0);
-}
-
 .btn:hover {
   background-color: white;
   color: #0b2c62;

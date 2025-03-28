@@ -38,40 +38,40 @@ const Login = () => {
 
   return (
     <div>
-        <section class="subheader">
-            <div class="container">
+        <section className="subheader">
+            <div className="container">
             <h1>Login</h1>
-            <div class="breadcrumb right"><NavLink to={'/'}>Home</NavLink>  <i class="fa fa-angle-right"></i> <a href="#" class="current">Login</a></div>
-            <div class="clear"></div>
+            <div className="breadcrumb right"><NavLink to={'/'}>Home</NavLink>  <i className="fa fa-angle-right"></i> <a href="#" className="current">Login</a></div>
+            <div className="clear"></div>
             </div>
         </section>
         
-        <section class="module login">
-            <div class="container">
+        <section className="module login">
+            <div className="container">
         
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-4"> 
+            <div className="row">
+                <div className="col-lg-4 col-lg-offset-4"> 
                 <p>Don't have an account? <strong><NavLink to="/auth/register">Register here.</NavLink></strong></p> 
-                <form onSubmit={handleFormSubmit} class="login-form">
-                    <div class="form-block">
+                <form onSubmit={handleFormSubmit} className="login-form">
+                    <div className="form-block">
                     <label>Email</label>
-                    <input class="border" type="text" name="email" onChange={handleInputChange} />
+                    <input className="border" type="text" name="email" onChange={handleInputChange} />
                     </div>
-                    <div class="form-block">
+                    <div className="form-block">
                     <label>Password</label>
-                    <input class="border" type="password" name="password" onChange={handleInputChange}/>
+                    <input className="border" type="password" name="password" onChange={handleInputChange}/>
                     </div>
-                    <div class="form-block">
+                    <div className="form-block">
                     <label><input type="checkbox" name="remember" />Remember Me</label><br/>
                     </div>
                     <p>{loading && "Loading..." }</p>
                     <p className='text-red'>{error && message}</p>
             
-                    <div class="form-block">
-                    <button class="button button-icon" type="submit"><i class="fa fa-angle-right"></i>Login</button>
+                    <div className="form-block">
+                    <button className="button button-icon" type="submit"><i className="fa fa-angle-right"></i>Login</button>
                     </div>
-                    <div class="divider"></div>
-                    <p class="note"><a href="#">I don't remember my password.</a> </p>    
+                    <div className="divider"></div>
+                    <p className="note"><a href="#">I don't remember my password.</a> </p>    
                 </form>
                 </div>
             </div>
@@ -79,17 +79,17 @@ const Login = () => {
             </div>
         </section>
         
-        <section class="module cta newsletter">
-            <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-7">
+        <section className="module cta newsletter">
+            <div className="container">
+            <div className="row">
+                <div className="col-lg-7 col-md-7">
                     <h3>Sign up for our <strong>newsletter.</strong></h3>
                     <p>Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
                 </div>
-                <div class="col-lg-5 col-md-5">
-                    <form method="post" id="newsletter-form" class="newsletter-form">
+                <div className="col-lg-5 col-md-5">
+                    <form method="post" id="newsletter-form" className="newsletter-form">
                         <input type="email" placeholder="Your email..." />
-                        <button type="submit" form="newsletter-form"><i class="fa fa-send"></i></button>
+                        <button type="submit" form="newsletter-form"><i className="fa fa-send"></i></button>
                     </form>
                 </div>
             </div>

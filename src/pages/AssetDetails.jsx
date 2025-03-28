@@ -24,22 +24,22 @@ const AssetDetails = () => {
   return (
     <>
     <div className='asset-details container'>
-        <div class="">
-          <div class="property property-display shadow-hover">
-            <a href="#" class="property-img">
-              <div class="img-fade"></div>
-              <div class="property-tag button alt featured">Featured</div>
-              <div class="property-tag button status">{asset.sale_type}</div>
-              <div class="property-price">${asset.price} <span>{asset.tenure}</span></div>
-              <div class="property-color-bar"></div>
+        <div className="">
+          <div className="property property-display shadow-hover">
+            <a href="#" className="property-img">
+              <div className="img-fade"></div>
+              <div className="property-tag button alt featured">Featured</div>
+              <div className="property-tag button status">{asset.sale_type}</div>
+              <div className="property-price">${asset.price} <span>{asset.tenure}</span></div>
+              <div className="property-color-bar"></div>
               <img src={asset.image_url} alt="" />
             </a>
-            <div class="property-content">
+            <div className="property-content">
               <div className='flex justify-between w-max-800'>
              
-              <div class="property-title">
+              <div className="property-title">
               <h4><a href="#">{asset.name}</a></h4>
-                <p class="property-address"><i class="fa fa-map-marker icon"></i>{asset.address}</p>
+                <p className="property-address"><i className="fa fa-map-marker icon"></i>{asset.address}</p>
               </div>
               <div>
               <a onClick={()=> setToggleModal("show-modal")} className='btn p-3'>
@@ -48,22 +48,22 @@ const AssetDetails = () => {
               </div>
                  
               </div>
-              <table class="property-details">
+              <table className="property-details">
                 <tr>
-                  <td><i class="fa fa-bed"></i> {asset.number_of_bedrooms} Beds</td>
-                  <td><i class="fa fa-tint"></i> {asset.number_of_bedrooms} Baths</td>
-                  <td><i class="fa fa-expand"></i>{asset.area} Sq Ft</td>
+                  <td><i className="fa fa-bed"></i> {asset.number_of_bedrooms} Beds</td>
+                  <td><i className="fa fa-tint"></i> {asset.number_of_bedrooms} Baths</td>
+                  <td><i className="fa fa-expand"></i>{asset.area} Sq Ft</td>
                 </tr>
               </table>
               
             </div>
-            <div class="property-footer">
-              <span class="left"><i class="fa fa-calendar-o icon"></i> 1 week ago</span>
-              <span class="right">
-                <a href="#"><i class="fa fa-heart-o icon"></i></a>
-                <a href="#"><i class="fa fa-share-alt"></i></a>
+            <div className="property-footer">
+              <span className="left"><i className="fa fa-calendar-o icon"></i> 1 week ago</span>
+              <span className="right">
+                <a href="#"><i className="fa fa-heart-o icon"></i></a>
+                <a href="#"><i className="fa fa-share-alt"></i></a>
               </span>
-              <div class="clear"></div>
+              <div className="clear"></div>
             </div>
           </div>
         </div>       

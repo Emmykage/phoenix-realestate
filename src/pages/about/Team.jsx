@@ -122,7 +122,7 @@ Ever considered a career in property? Whether your skills lie in sales, customer
               <img className="hex" src="images/hexagon.png" alt="" />
               <h4>John Doe</h4>
               <p>Senior Agent</p>
-              <ul class="social-icons circle">
+              <ul className="social-icons circle">
                   <li><a href="#"><i className="fa fa-facebook"></i></a></li>
                   <li><a href="#"><i className="fa fa-instagram"></i></a></li>
                   <li><a href="#"><i className="fa fa-twitter"></i></a></li>

@@ -8,20 +8,20 @@ const Contact = () => {
   return (
     <div>
         <Nav/>
-        <section class="subheader">
-            <div class="container">
+        <section className="subheader">
+            <div className="container">
             <h1>Contact</h1>
-            <div class="breadcrumb right"><NavLink to={'/'}>Home</NavLink>  <i class="fa fa-angle-right"></i> <a href="#" class="current">Contact</a></div>
-            <div class="clear"></div>
+            <div className="breadcrumb right"><NavLink to={'/'}>Home</NavLink>  <i className="fa fa-angle-right"></i> <a href="#" className="current">Contact</a></div>
+            <div className="clear"></div>
             </div>
         </section>
         
-            <section class="mb-4 container p-5">
+            <section className="mb-4 container p-5">
                 <div className='grid grid-2'>
                     <div className='flex justify-center items-center'>
 
-                    <div class=" text-center py-3 font-semibold">
-                        <ul class="list-unstyled mb-0 w-full">
+                    <div className=" text-center py-3 font-semibold">
+                        <ul className="list-unstyled mb-0 w-full">
                             <li>
                             <svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
                                 <p>San Francisco, CA 94126, USA</p>
@@ -44,61 +44,61 @@ const Contact = () => {
                   
 
 
-                {/* <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2> */}
+                {/* <h2 className="h1-responsive font-weight-bold text-center my-4">Contact us</h2> */}
 
-                <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+                <p className="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
                     a matter of hours to help you.</p>
 
-                <div class="row">
+                <div className="row">
 
             
-                    <div class=" mb-md-0 mb-5">
+                    <div className=" mb-md-0 mb-5">
                         <form id="contact-form" name="contact-form" action="mail.php" method="POST">
 
                 
-                            <div class="row">
+                            <div className="row">
 
                         
-                                <div class="col-md-6">
-                                    <div class="md-form mb-0">
-                                    <label for="name" class="">Your name</label>
+                                <div className="col-md-6">
+                                    <div className="md-form mb-0">
+                                    <label for="name" className="">Your name</label>
 
-                                        <input type="text" id="name" name="name" class="form-control"/>
+                                        <input type="text" id="name" name="name" className="form-control"/>
                                     </div>
                                 </div>
                         
 
                         
-                                <div class="col-md-6">
-                                    <div class="md-form mb-0">
-                                    <label for="email" class="">Your email</label>
+                                <div className="col-md-6">
+                                    <div className="md-form mb-0">
+                                    <label for="email" className="">Your email</label>
 
-                                        <input type="text" id="email" name="email" class="form-control"/>
+                                        <input type="text" id="email" name="email" className="form-control"/>
                                     </div>
                                 </div>
                     
 
                             </div>
                     
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="md-form mb-0">
-                                    <label for="subject" class="">Subject</label>
+                            <div className="row">
+                                <div className="col-md-12">
+                                    <div className="md-form mb-0">
+                                    <label for="subject" className="">Subject</label>
 
-                                        <input type="text" id="subject" name="subject" class="form-control"/>
+                                        <input type="text" id="subject" name="subject" className="form-control"/>
                                     </div>
                                 </div>
                             </div>
                 
-                            <div class="row">
+                            <div className="row">
 
                         
-                                <div class="col-md-12">
+                                <div className="col-md-12">
 
-                                    <div class="md-form">
+                                    <div className="md-form">
                                     <label for="message">Your message</label>
 
-                                        <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                                        <textarea type="text" id="message" name="message" rows="2" className="form-control md-textarea"></textarea>
                                     </div>
 
                                 </div>
@@ -107,10 +107,10 @@ const Contact = () => {
 
                         </form>
 
-                        <div class="text-md-left">
-                            <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+                        <div className="text-md-left">
+                            <a className="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
                         </div>
-                        {/* <div class="status"></div> */}
+                        {/* <div className="status"></div> */}
                     </div>
 
                    
