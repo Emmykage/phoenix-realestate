@@ -131,7 +131,7 @@ const Nav = () => {
           <div className="member-actions  right">
             <a href="user-submit-property.html" className="button small alt button-icon">
               <i className="fa fa-plus"></i>
-            Submit Property</a>
+            Dashboard</a>
           </div>
 
 

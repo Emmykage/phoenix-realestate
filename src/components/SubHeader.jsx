@@ -20,9 +20,12 @@ const SubHeader = () => {
     <div>
       <section className="subheader simple-search">
         <div className="container bg-gray-light-trans p-3">
+          <div className='bg-gray-900/70 rounded-lg max-w-7xl p-4'>
           <h1>Find your new home today.</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec risus egestas, vestibulum arcu.</p>
+          <p className='text-alt font-medium'>Explore a wide range of properties tailored to your needs. Whether you're looking for a cozy apartment or a spacious family home, we’ll help you find the perfect place. Start your journey today!</p>
 
+          </div>
+        
           <form className="simple-search-form">
             <div className="tabs">
               <ul>

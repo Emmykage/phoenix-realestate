@@ -33,7 +33,7 @@ const Footer = () => {
                 hendrerit diam.</p>
                 <div className="divider"></div>
                 <ul className="social-icons circle">
-                    <li><a href="#"><i className="fa fa-facebook"></i></a></li>
+                    <li><a href="#" className='text-gray-200'><i className="fa fa-facebook"></i></a></li>
                     <li><a href="#"><i className="fa fa-instagram"></i></a></li>
                     <li><a href="#"><i className="fa fa-twitter"></i></a></li>
                     <li><a href="#"><i className="fa fa-google-plus"></i></a></li>

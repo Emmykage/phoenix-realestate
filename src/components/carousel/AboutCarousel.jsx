@@ -69,7 +69,7 @@ const responsive = {
                      <div className='group shadow-lg hover:shadow-none rounded-2xl relative bg-gray-200 flex overflow-hidden items-center justify-center min-h-96'>
 
                       
-                      <img src={item.image} className='w-full absolute top-0 left-0  h-full bg-red-300 object-cover' alt="" />
+                      <img src={item.image} className='w-full absolute top-0 left-0  h-full bg-gray-100 object-cover' alt="" />
                       <p className='text-lg z-10 text-white bg-gray-950/70 px-4 font-semibold transition-all duration-300 ease-linear text-center group-hover:opacity-0'>
                         {item.title}
         

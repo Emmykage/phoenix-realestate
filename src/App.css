@@ -278,3 +278,7 @@ aside .dash-logo img {
     position: relative !important;
   }
 }
+.social-icons.circle li a{
+
+@apply text-gray-200;
+}
