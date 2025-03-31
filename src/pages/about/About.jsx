@@ -14,8 +14,8 @@ const About = () => {
           <div className="clear"></div>
         </div>
       </section>
-  <section className="module content bg-gray-100 ">
-    <div className="container">
+  <section className="module content bg-white ">
+    <div className="container bg-white">
       <div className="flex md:flex-row flex-col items- gap-10 bg--300">
 
         <div className="flex-1 font-medium leading-8">
@@ -51,29 +51,29 @@ const About = () => {
       <div className="module-header">
         <h2>What We've <strong>Been Up To</strong></h2>
         <img src="images/divider-white.png" alt="" className="block m-auto" />
-        <p>Morbi accumsan ipsum velit nam nec tellus a odiose tincidunt auctor a ornare odio sed non mauris vitae erat consequat auctor</p>
+        <p>We're actively acquiring high-potential properties, optimizing assets, and expanding into new markets. With a focus on strong returns and sustainable growth, we're shaping the future of real estate investment. Stay tuned!</p>
       </div>
 
-      <div className="row">
-        <div className="col-lg-3 col-md-3 col-sm-3">
+      <div className="flex overflow-x-auto flex-nowrap no-scroll">
+        <div className="md:flex-1 w-full shrink-0">
           <div className="hex">
             <img src="images/hexagon-dark.png" alt="" />
             <p><span>1,200</span> Satisfied Customers</p>
           </div>
         </div>
-        <div className="col-lg-3 col-md-3 col-sm-3">
+        <div className="md:flex-1 w-full  shrink-0">
           <div className="hex">
             <img src="images/hexagon-dark.png" alt="" />
             <p><span>3,000</span> Properties Listed</p>
           </div>
         </div>
-        <div className="col-lg-3 col-md-3 col-sm-3">
+        <div className="md:flex-1 w-full shrink-0">
           <div className="hex">
             <img src="images/hexagon-dark.png" alt="" />
             <p><span>2,220</span> Properties Sold</p>
           </div>
         </div>
-        <div className="col-lg-3 col-md-3 col-sm-3">
+        <div className="md:flex-1 w-full  shrink-0">
           <div className="hex">
             <img src="images/hexagon-dark.png" alt="" />
             <p><span>140</span> Happy Agents</p>

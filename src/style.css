@@ -34,6 +34,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   padding: 0px;
 }
 
+
+html {
+  scroll-padding-top: 100px; /* Adjust based on header height */
+}
+
+.no-scroll{
+  scrollbar-width: none;
+} 
+
 h1,
 h2,
 h3,
@@ -98,11 +107,7 @@ body {
 .module-header img {
   margin-bottom: 15px;
 }
-.module-header p {
-  font-size: 16px;
-  margin: 0 auto;
-  width: 60%;
-}
+
 
 /* page & post content */
 
