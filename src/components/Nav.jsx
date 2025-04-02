@@ -47,7 +47,7 @@ const Nav = () => {
     <header className="header-default bg-white z-50 relative ">
 
     {/* <div classNameName="top-bar hidden md:block ">
-      <div className="container">
+      <div className="container m-auto">
           <div className="top-bar-left left">
             <ul className="top-bar-item right social-icons">
               <li><a href="#"><i className="fa fa-facebook"></i></a></li>

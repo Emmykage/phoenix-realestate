@@ -27,7 +27,7 @@ const Aside = ({isOpen, setIsOpen}) => {
   return (
     <aside className={isOpen ? 'open' : "close"}>
       <div className="top">
-      <span className='block ml-auto w-max' onClick={()=> setIsOpen(prev => !prev)}>
+      <span className='block mt-5 ml-auto w-max' onClick={()=> setIsOpen(prev => !prev)}>
             <AiOutlineClose className='text-2xl md:hidden ' />
           </span>
         <div className="logo p-5">

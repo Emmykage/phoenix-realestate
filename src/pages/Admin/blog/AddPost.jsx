@@ -44,23 +44,25 @@ const AddPost = () => {
                 </select>
             </div>
             <div className='my-1'>
-                <label htmlFor="description" className='text-base font-medium'>Description</label>
+                <label htmlFor="description" className='text-base font-medium'>Description (short description)</label>
                 <input type="text" name="description" required />
             </div>
             <div className='my-1'>
                 <label htmlFor="" className='text-base font-medium block'>Image</label>
                 <input type="file" name="image" className='w-full block' required />
             </div>
+            <div className='my-4'>  
+                <label htmlFor="date text-base font-medium">Publish Date</label>
+                <input type="date" name="data" id="date" />
+            </div>
             <div>
+                <label htmlFor="trix" className='text-base font-medium block'>Blog Body</label>
             <input id="trix" type="hidden" name="blog_body" />
             <trix-editor input="trix" />
 
           </div>
 
-            <div className='my-4'>  
-                <label htmlFor="date">Publish Date</label>
-                <input type="date" name="data" id="date" />
-            </div>
+           
             <button type='submit'>Post</button>
         </form>
     </div>

@@ -9,7 +9,7 @@ const Contact = () => {
     <div>
         <Nav/>
         <section className="subheader">
-            <div className="container">
+            <div className="container m-auto">
             <h1>Contact</h1>
             <div className="breadcrumb right"><NavLink to={'/'}>Home</NavLink>  <i className="fa fa-angle-right"></i> <a href="#" className="current">Contact</a></div>
             <div className="clear"></div>

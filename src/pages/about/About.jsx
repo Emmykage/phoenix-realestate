@@ -14,8 +14,8 @@ const About = () => {
           <div className="clear"></div>
         </div>
       </section>
-  <section className="module content bg-white ">
-    <div className="container bg-white">
+  <section className="module content bg-white px-4 ">
+    <div className="max-w-7xl m-auto bg-white">
       <div className="flex md:flex-row flex-col items- gap-10 bg--300">
 
         <div className="flex-1 font-medium leading-8">

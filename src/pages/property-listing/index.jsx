@@ -28,7 +28,7 @@ const Properties = () => {
 </section>
 
 <section class="module">
-  <div class="container">
+  <div class="container m-auto">
    
   
 	<div class="property-listing-header">

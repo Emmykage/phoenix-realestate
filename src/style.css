@@ -77,8 +77,9 @@ body {
   background: #ebf1f5;
 }
 
-.container {
+.container  {
   position: relative;
+  margin: auto;
 }
 
 .module {

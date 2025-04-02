@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import TopAssets from './TopAssets';
 import { useSelector } from 'react-redux';
@@ -8,14 +8,30 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 const SubHeader = () => {
   const {offers} = useSelector(state => state.assets)
+  const [isMobileView, setIsMobileView] = useState(false)
+
+
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: isMobileView ? 1 : 2,
     slidesToScroll: 3
   };
+
+  const handleResize = () => {
+    window.innerWidth  < 680 && setIsMobileView(true)
+
+  }
+
+
+  useEffect(()=> {
+    window.addEventListener("resize", handleResize)
+    return ()=> window.removeEventListener("resize", handleResize)
+  })
+
+  console.log("is mobile view", isMobileView)
   return (
     <div>
       <section className="subheader simple-search">
@@ -53,7 +69,7 @@ const SubHeader = () => {
 
       <section className="module services">
         <div className="container m-auto">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-3 gap-4">
             <div className="">
               <div className="service-item shadow-hover">
                 <i className="fa fa-home"></i>
@@ -93,10 +109,10 @@ const SubHeader = () => {
 
  
   <div className=''>
-    <div className='container m-auto'>
+    <div className='container px-7 m-auto'>
     <Slider {...settings}>
       {offers.map((offer) => (
-        <div className="bg-white mr-2 w-350 bg-red mt-2">
+        <div className="bg-white md:mr-0 w-350 bg-red mt-2">
           <div className='h-350'>
             <img src={offer.image_url} alt="" className='w-full h-full' />
           </div>

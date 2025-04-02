@@ -66,11 +66,11 @@ const Footer = () => {
             </div>
         </footer>
 
-<div className="bottom-bar">
-    <div className="container">
-    © 2017  |  Homely - A theme by <a href="http://rypecreative.com/" target="_blank">Rype Creative</a>  |  All Rights Reserved
-    </div>
-</div>
+        <div className="bottom-bar">
+            <div className="container m-auto">
+            © 2017  |  Homely - A theme by <a href="http://rypecreative.com/" target="_blank">Rype Creative</a>  |  All Rights Reserved
+            </div>
+        </div>
     </div>
   )
 }
