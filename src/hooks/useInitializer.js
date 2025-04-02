@@ -9,8 +9,6 @@ const useInitializer = () => {
     useEffect(() => {
         dispatch(userProfile())
     },[])
-
-    console.log(user)
 }
 
 

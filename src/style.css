@@ -205,8 +205,8 @@ h5 {
 }
 
 a {
-  color: #062e62;
-  outline: 0 !important;
+  /* color: #062e62;
+  outline: 0 !important; */
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
@@ -3165,12 +3165,6 @@ textarea.border,
 }
 .login .note {
   font-size: 13px;
-}
-.login-form {
-  background: white;
-  padding: 30px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
-  margin-bottom: 20px;
 }
 
 /** 404 Error **/

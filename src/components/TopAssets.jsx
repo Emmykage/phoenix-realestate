@@ -9,9 +9,10 @@ const TopAssets = () => {
       dispatch(getAssets())
     },[])
     const {assets} = useSelector(state => state.assets)
+    console.log(assets)
   return (
-    <section className="module properties">
-    <div className="container">
+    <section className="py-6 md:py-20 px-4 properties">
+    <div className="container m-auto">
   
       <div className="module-header">
         <h2>Recently Added <strong>Properties</strong></h2>
@@ -19,7 +20,7 @@ const TopAssets = () => {
         <p>Discover our recently added properties, where exceptional features and prime locations combine to offer you the latest and most desirable listings</p>
       </div>
   
-      <div className="flex justify-center gap-2">
+      <div className="grid md:grid-cols-2 gap-2">
         {assets?.map(asset => (
             <>
             <div className="col-lg-4 col-md-4">

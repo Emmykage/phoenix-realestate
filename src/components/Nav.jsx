@@ -46,7 +46,7 @@ const Nav = () => {
   return (
     <header className="header-default bg-white z-50 relative ">
 
-    <div classNameName="top-bar hidden md:block ">
+    {/* <div classNameName="top-bar hidden md:block ">
       <div className="container">
           <div className="top-bar-left left">
             <ul className="top-bar-item right social-icons">
@@ -68,9 +68,9 @@ const Nav = () => {
           </div>
           <div className="clear"></div>
       </div>
-    </div>
+    </div> */}
   
-    <div className="container">
+    <div className="container m-auto max-">
   
       <div className="navbar-header item-center flex justify-center">
   
@@ -129,9 +129,9 @@ const Nav = () => {
           <div className="bg-red-">
   
           <div className="member-actions  right">
-            <a href="user-submit-property.html" className="button small alt button-icon">
+            <NavLink to="/auth/register" className="button small alt button-icon">
               <i className="fa fa-plus"></i>
-            Dashboard</a>
+            Dashboard</NavLink>
           </div>
 
 

@@ -7,11 +7,25 @@ const initialState = {
   message: '',
   loading: true,
   logged: false,
+  userReg: {
+    user: {}
+  }
 };
 
 const userSlice = createSlice({
   name: 'auth',
   initialState,
+  reducers: {
+    accountInfo: (state, action) => {
+      return{
+        userReg: {
+          ...state.userReg,
+          [action.payload.name]: action.payload.value
+        }
+
+      }
+    }
+  },
   extraReducers: {
     [registerUser.fulfilled]: (state, action) => {
       const response = action.payload;
@@ -79,4 +93,4 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
-// export const { userLog } = userSlice.actions;
+export const { accountInfo } = userSlice.actions;

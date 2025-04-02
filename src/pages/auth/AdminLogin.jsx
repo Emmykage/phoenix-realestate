@@ -46,7 +46,7 @@ const AdminLogin = () => {
     return (
         <div>
             <section className="subheader login">
-                <div className="container">
+                <div className="container m-auto  ">
                     <h1>Login as an Admin</h1>
                     <div className="breadcrumb right">
                         <NavLink to="/">Home</NavLink>  
@@ -57,8 +57,8 @@ const AdminLogin = () => {
                 </div>
             </section>
             
-            <section className="module login">
-                <div className="container">
+            <section className=" login py-8 md:py-20 px-4">
+                <div className="m-auto  max-w-5xl ">
                     <div className="row">
                         <div className="col-lg-4 col-lg-offset-4"> 
                             <p>Don't have an account? <strong><NavLink to="/auth/admin/register">Register here.</NavLink></strong></p> 

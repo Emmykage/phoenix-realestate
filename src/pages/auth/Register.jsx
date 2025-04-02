@@ -2,16 +2,104 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { registerUser } from '../../redux/actions/auth'
-import { userLog } from '../../redux/auth/user_authentication'
+import { accountInfo, userLog } from '../../redux/auth/user_authentication'
 import Button from '../../components/buttons/Buttons'
 import AppButton from '../../components/buttons/Buttons'
+import GetStarted from './steps/GetStarted'
+import "./style.scss"
+import InvestmentProp from './steps/InvestmentProp'
+import InitialInvestment from './steps/InitialInvestment'
+import UserInfo from './steps/UserInfo'
+import InvestorType from './steps/InvestorType'
+import UserInfoPassword from './steps/UserInfoPassword'
 
 const Register = () => {
+  const {userReg, error, message, loading } = useSelector(state => state.auth)
+  const navigate = useNavigate()
+  const [step, setStep] = useState(1)
+  const handleNext = (data) => {
+    console.log(step, data )
+
+    dispatch(accountInfo(data))
+    setStep(step => Math.min(step +1, regJourney.length))
+console.log( step === regJourney.length, step, regJourney.length )
+    step === regJourney.length && handleFormSubmit()
+
+  }
+
+  const handlePrev = () => {
+
+  }
   const navigation = useNavigate()
   const dispatch = useDispatch()
-  const {user, error, message, loading } = useSelector(state => state.auth)
+
+  const handleFormSubmit = () => {
+    dispatch(registerUser(userReg)).then(result => {
+      if(registerUser.fulfilled.match(result)){
+        navigate("/dashboard/home")
+      }else{
+        toasti
+      }
+    })  
+    
+  }
+
+
+
+  
+  const regJourney = [{
+    step: 1,
+    label: "Get Started",
+    render: <GetStarted setStep={setStep} handleNext={handleNext}/>
+  },
+  {
+    step: 5,
+    label: "User Info",
+    render: <InvestorType handleNext={handleNext}/>
+  },{
+    step: 6,
+    label: "User Password",
+    render: <UserInfoPassword handleNext={handleNext}/>
+  },
+
+
+  
+  {
+    step: 2,
+    label: "Investment Property",
+    render: <InvestmentProp loading={loading} error={error} handleNext={handleNext}/>
+  }, {
+    step: 3,
+    label: "Investment Type",
+    render: <InitialInvestment  loading={loading} error={error} handleNext={handleNext}/>
+  }, {
+    step: 4,
+    label: "User Info",
+    render: <UserInfo loading={loading} error={error} handleNext={handleNext}/>
+  }]
+  console.log(userReg)
+
+  return (
+    <div>
+      {regJourney.map(item => {
+        if(item.step === step){
+          return item.render
+        }
+      })}
+
+ 
+
+    </div>
+  )  
+
+
+}
+
+
+const SignUp = ({handleFormSubmit, error, handleNext, loading}) => {
   const [formInput, setFormInput] = useState({first_name: "", last_name: "", email: "", password: "", role: "client"})
 
+  
   const handleInputChange = (e) => {
     if (e.target.name === "completed"){
       setFormInput({
@@ -26,54 +114,52 @@ const Register = () => {
   }
  
   }
-  const handleFormSubmit = (e) => {
-    e.preventDefault()
-    dispatch(registerUser({user: formInput}))    
-    
-  }
-  if(!user ){
+  return(
+  
 
-  return (
-    <div>
-        
-<section className="subheader">
-  <div className="container">
-    <h1>Register</h1>
-    <div className="breadcrumb right"><NavLink to={'/'}>Home</NavLink>  <i className="fa fa-angle-right"></i> <NavLink to="#" className="current">Register</NavLink></div>
-    <div className="clear"></div>
-  </div>
-</section>
+<section className="module login h-screen get-started w-full bg-primary px-4 text-white flex justify-center items-center">
+  <div className="bg max-w-4xl  fit">
 
-<section className="module login">
-  <div className="container  fit">
-
-    <div className="row w-full">
+    <div className="w-full px-4">
       <div className="col-lg-4 w-full  col-lg-offset-4"> 
-        <p>Already have an account? <strong><NavLink to="/auth/login">Login here.</NavLink></strong></p> 
-            <form onSubmit={handleFormSubmit} className="login-form">
+        <p>
+        Great - no matter the selection,You could enjoy guaranteed returns of up to 5-6.5% per Month from our portfolio of
+exclusive property investments.
+</p>
+<p>
+We only work with trusted developers that have proven track records of delivering consistent returns.
+
+
+        </p>
+        <p>Already have an account? <strong className='text-alt'><NavLink to="/auth/login">Login here.</NavLink></strong></p> 
+            <form onSubmit={handleNext} className="login-form">
+              <div className='flex md:gap-6 flex-col md:flex-row'>
+
+            <div className="form-block flex-1">
+                <label className='my-2 text-sm'>First Name</label>
+                <input className="border bg-transparent border-gray-200 rounded-xl" type="text" name="first_name" placeholder='First Name' onChange={handleInputChange} />
+            </div>
+            <div className="form-block flex-1">
+                <label className='my-2 text-sm'>Last Name</label>
+                <input className="border  bg-transparent border-gray-200 rounded-xl" type="text" name="last_name" placeholder='Last Name' onChange={handleInputChange}/>
+            </div>
+            </div>
+
             <div className="form-block">
-                <label>First Name</label>
-                <input className="border" type="text" name="first_name" onChange={handleInputChange} />
+                <label className='my-2 text-sm'>Email</label>
+                <input className="border  bg-transparent border-gray-200 rounded-xl" type="text" name="email" placeholder='Email' onChange={handleInputChange}/>
             </div>
             <div className="form-block">
-                <label>Last Name</label>
-                <input className="border" type="text" name="last_name" onChange={handleInputChange}/>
-            </div>
-            <div className="form-block">
-                <label>Email</label>
-                <input className="border" type="text" name="email" onChange={handleInputChange}/>
-            </div>
-            <div className="form-block">
-                <label>Password</label>
-                <input className="border" type="password" name="password" onChange={handleInputChange}/>
+                <label className='my-2 text-sm'>Password</label>
+                <input className="border  bg-transparent border-gray-200 rounded-xl" type="password" name="password" placeholder='Password' onChange={handleInputChange}/>
             </div>
             <div className="form-block">
                 <label>Confirm Password</label>
-                <input className="border" type="password" name="confirm_password" onChange={handleInputChange} />
+                <input className="border  bg-transparent border-gray-200 rounded-xl" type="password" name="confirm_password" placeholder='Confirm Password' onChange={handleInputChange} />
             </div>
             <div className="form-block">
-                <label>check</label>
-                <input className="border" type="checkbox" name="completed"  checked={formInput.completed} onChange={handleInputChange} />
+                <label className='my-2 text-sm'>check</label>
+                <input className="border bg-transparent border-gray-200 rounded-xl" type="checkbox" name="completed"  checked={formInput.completed} onChange={handleInputChange} />
             </div>
             <p>{loading && "Loading..." }</p>
             <p className='text-red'>{error && message}</p>
@@ -90,29 +176,7 @@ const Register = () => {
 
   </div>
 </section>
-
-<section className="module cta newsletter">
-  <div className="container">
-	<div className="row">
-		<div className="col-lg-7 col-md-7">
-			<h3>Sign up for our <strong>newsletter.</strong></h3>
-			<p>Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-		</div>
-		<div className="col-lg-5 col-md-5">
-			<form method="post" id="newsletter-form" className="newsletter-form">
-				<input type="email" placeholder="Your email..." />
-				<button type="submit" form="newsletter-form"><i className="fa fa-send"></i></button>
-			</form>
-		</div>
-	</div>
-  </div>
-</section>
-    </div>
-  )  
-}else{
-  navigation('/auth/login')
-}
-
+)
 }
 
 export default Register

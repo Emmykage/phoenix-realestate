@@ -19,8 +19,8 @@ const SubHeader = () => {
   return (
     <div>
       <section className="subheader simple-search">
-        <div className="container bg-gray-light-trans p-3">
-          <div className='bg-gray-900/70 rounded-lg max-w-7xl p-4'>
+        <div className="container bg-gray-light-trans p-3 m-auto">
+          <div className='bg-gray-900/70 m-auto rounded-lg max-w-7xl p-4'>
           <h1>Find your new home today.</h1>
           <p className='text-alt font-medium'>Explore a wide range of properties tailored to your needs. Whether you're looking for a cozy apartment or a spacious family home, we’ll help you find the perfect place. Start your journey today!</p>
 
@@ -52,9 +52,9 @@ const SubHeader = () => {
       </section>
 
       <section className="module services">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-4 col-md-4">
+        <div className="container m-auto">
+          <div className="grid grid-cols-3 gap-4">
+            <div className="">
               <div className="service-item shadow-hover">
                 <i className="fa fa-home"></i>
                 <h4>Sell Property</h4>
@@ -83,7 +83,7 @@ const SubHeader = () => {
 
 <section className="module no-padding properties featured">
 
-  <div className="container">
+  <div className="container m-auto">
     <div className="module-header">
       <h2>Featured <strong>Properties</strong></h2>
       <img src="images/divider.png" alt="" className='block m-auto'/>
@@ -93,7 +93,7 @@ const SubHeader = () => {
 
  
   <div className=''>
-    <div className='container'>
+    <div className='container m-auto'>
     <Slider {...settings}>
       {offers.map((offer) => (
         <div className="bg-white mr-2 w-350 bg-red mt-2">
@@ -122,7 +122,7 @@ const SubHeader = () => {
   </section>
 
 <section className="module property-categories">
-  <div className="container">
+  <div className="container m-auto">
 
     <div className="module-header">
       <h2>Browse Our Most <strong>Popular Categories</strong></h2>
@@ -176,7 +176,7 @@ const SubHeader = () => {
 
 <section className="module testimonials">
 
-  <div className="container">
+  <div className="container m-auto">
     <div className="module-header">
       <h2>Our <strong>Testimonials</strong></h2>
       <img src="images/divider-white.png" alt="" className='block m-auto' />
