@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { blogs } from '../../../assets/blogData/data'
 import Banner from '../../../components/heroBanner/Banner'
-import Nav from '../../../components/Nav'
+import Nav from '../../../components/nav/Nav'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPosts } from '../../../redux/actions/blog'
 

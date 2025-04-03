@@ -34,7 +34,7 @@ body{
 /** CALL TO ACTIONS **/
 .pattern {
   color: white;
-  padding: 60px 0px;
+  padding: 60px 1rem;
   background: linear-gradient(#21252fda, #21252fda), url(../public/images/pattern.jpg);
 
 }

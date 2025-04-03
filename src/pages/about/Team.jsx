@@ -1,8 +1,11 @@
 import React from 'react'
-import Nav from '../../components/Nav'
+import Nav from '../../components/nav/Nav'
 import teamPhoto from "../../assets/images/about/team.jpg"
+import AppButton from '../../components/buttons/Buttons'
+import { useNavigate } from 'react-router-dom'
 
 const OurTeam = () => {
+  const navigate = useNavigate()
   return (
     <div>
       <Nav/>
@@ -15,11 +18,11 @@ const OurTeam = () => {
           <div className="clear"></div>
         </div>
       </section>
-  <section className="module content">
+  <section className="module content px-4">
     <div className="container">
-      <div className="flex md:flex-row flex-col">
+      <div className="flex md:flex-row gap-10 flex-col">
 
-        <div className="flex-1 font-medium">
+        <div className="flex-1 font-medium text-justify leading-7">
             <h3>Our Team</h3>
             <img src="images/divider-half.png" alt="" /><br/><br/>
 
@@ -35,12 +38,7 @@ const OurTeam = () => {
 
             </p>
 
-            <h5 className='font-semibold'>                Join our Team. </h5>
-            <p>
 
-Ever considered a career in property? Whether your skills lie in sales, customer care, IT or marketing, you’ll be able to build a successful career within our company and in turn, enjoy a number of employee benefits, as well as being surrounded by a friendly and welcoming team. 
-
-            </p>
 
           </div>
     
@@ -51,9 +49,28 @@ Ever considered a career in property? Whether your skills lie in sales, customer
           </div>
         </div>
   </section>
-  
+  <section className='py-20 px-4 bg-white shadow-sm '>
+
+
+  <div className='text-center max-w-5xl m-auto '>
+  <h5 className='font-semibold mt-6 text-4xl text-gray-800'>    
+                   Join our Team. </h5>
+            <p className='leading-8'>
+
+Ever considered a career in property? Whether your skills lie in sales, customer care, IT or marketing, you’ll be able to build a successful career within our company and in turn, enjoy a number of employee benefits, as well as being surrounded by a friendly and welcoming team. 
+
+            </p>
+            <div className='max-w-sm m-auto mt-10'>
+            <AppButton onClick={() => navigate("/contact-us")}>Join </AppButton>
+
+            </div>
+
+  </div>
+  </section>
 
   
+
+{/*   
   <section className="module team">
     <div className="container">
 
@@ -135,7 +152,7 @@ Ever considered a career in property? Whether your skills lie in sales, customer
       </div>
 
     </div>
-  </section>
+  </section> */}
     </div>
   )
 }

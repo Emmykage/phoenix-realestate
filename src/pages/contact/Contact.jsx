@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import Nav from '../../components/Nav'
+import Nav from '../../components/nav/Nav'
+import SubHeader from '../../components/subHeader/SubHeader'
 
 
 const Contact = () => {
@@ -8,13 +9,7 @@ const Contact = () => {
   return (
     <div>
         <Nav/>
-        <section className="subheader">
-            <div className="container m-auto">
-            <h1>Contact</h1>
-            <div className="breadcrumb right"><NavLink to={'/'}>Home</NavLink>  <i className="fa fa-angle-right"></i> <a href="#" className="current">Contact</a></div>
-            <div className="clear"></div>
-            </div>
-        </section>
+        <SubHeader tittle={"Contact Us"}/>
         
             <section className="mb-4 container md:p-5 my-5 bg-white">
                 <div className='grid grid-2'>

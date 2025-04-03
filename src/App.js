@@ -76,6 +76,7 @@ function App() {
       <Route path='our-team' element={<MainLayout> <OurTeam/> </MainLayout>} />
       <Route path='passive-income' element={<MainLayout> <PassiveIncome/> </MainLayout>} />
       <Route path='how-it-work' element={<MainLayout> <HowItWorks/> </MainLayout>} />
+      <Route path='faq' element={<MainLayout> <FAQ/> </MainLayout>} />
 
 
       <Route path='/dashboard' element={<><DashboardLayout/></> }>

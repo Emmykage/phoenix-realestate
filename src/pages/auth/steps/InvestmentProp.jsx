@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import AppButton from '../../../components/buttons/Buttons'
 import "./style.scss"
-const InvestmentProp = ({handleNext}) => {
+const InvestmentProp = ({handleNext, handlePrev}) => {
     const dipatch = useDispatch()
     const [selectedOption, setSelectedOption] = useState()
     const handleSelection = (e) => {
@@ -43,9 +43,15 @@ const InvestmentProp = ({handleNext}) => {
                             </div>
                             
                         </div>
-                        <AppButton onClick={()=> {
-                            selectedOption && handleNext({value: selectedOption, name: "investment_property" })
-                        }}>Next</AppButton>
+                        <div className='flex gap-5 mt-10 bg-blue- justify-center'>
+
+                            <AppButton onClick={()=> {
+                                handlePrev()
+                            }}>Prev</AppButton>  
+                            <AppButton onClick={()=> {
+                                selectedOption && handleNext({value: selectedOption, name: "initial_investment"})
+                            }}>Next</AppButton>
+                                                    </div>
                     </form>
                 </div>
             </div>

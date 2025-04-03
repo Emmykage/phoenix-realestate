@@ -1,273 +1,115 @@
 import React from 'react'
+import Nav from '../components/nav/Nav'
+import SubHeader from '../components/subHeader/SubHeader'
 
 const FAQ = () => {
   return (
     <div>
-        
-<section className="subheader">
-  <div className="container">
-    <h1>Frequently Asked Questions</h1>
-    <div className="breadcrumb right">Home <i className="fa fa-angle-right"></i> <a href="#" className="current">FAQ</a></div>
-    <div className="clear"></div>
-  </div>
-</section>
+      <Nav/>
+      <SubHeader tittle={"Frequently Asked Questions"}/>
 
-<section className="module">
-  <div className="container">
+      <section className="module">
+        <div className="container">
 
-    <div className="row">
-      <div className="col-lg-8 col-md-8">
+          <div className="row">
+            <div className="col-lg-8 col-md-8">
 
-        <div id="accordion" className="content">
-          <h3>How can I sign up?</h3>
-          <div>
-            <p>
-            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-            ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-            amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-            </p>
-            <p>Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-            amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-            </p>
-            <div className="divider"></div>
-            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+              <div id="accordion" className="content">
+                <h3>Who can invest with Phoenix Precast?</h3>
+                <div>
+                  <p className='mt-4'>Phoenix Precast is open to a wide range of investors who are looking for an easily accessible option to put their funds into.</p>
+
+                  <p>The following entities can make an investment: Individuals, joint names, on behalf of children, partnerships, trusts (including self managed superannuation funds) and companies.            </p>
+
+                  <div className="divider"></div>
+                  <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+                </div>
+                <h3>How is your property portfolio sourced?</h3>
+                <div>
+                  <p className='mt-4'>
+                  Phoenix Precast Develops and Buys industrial, residential,retail and office premises in London, United Kingdom and United Arab Emirates.
+                  <br /> In particular, the Phoenix targets multi-tenant flexible industrial properties that provide diversification in tenant base and use.
+                Every project is carefully vetted by our expert team before being invested , ensuring that our investment is as safe and secure as possible.  </p>
+                  <div className="divider"></div>
+                  <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+                </div>
+                <h3>What are the Advantages of Passive Real Estate Investment? </h3>
+                <div>
+                  <p className='mt-4'>1. We provide an investment with a lower risk profile, and one that is likely to provide more stable returns over time with regular payouts.        </p>
+                  <p className='mt-4'>2. Investing at a lower capital amount / barrier to entry (and “owning a piece” of the real estate project).         </p>
+                  <p className='mt-4'>3. Less involvement in the day-to-day management of the asset (perhaps none) Removing personal liability.</p>
+                  <p className='mt-4'>4. Being able to access assets across the country, not just in your own back yard. </p>
+            
+                  
+                  <div className="divider"></div>
+                  <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+                </div>
+                <h3>How is my investment managed?</h3>
+                <div>
+                <p className='mt-4'>Your portfolio is completely managed by our team of investment experts. We’ll keep in close contact with you throughout your entire journey with us, ensuring that you’re completely comfortable with how your investment capital is being spent.</p>
+
+                  <div className="divider"></div>
+                  <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+                </div>
+                <h3>Can I Top up on my investment? </h3>
+                <div>
+                <p className='mt-4'>Yes, but the minimum top up amount is £1,000. </p>
+                  <div className="divider"></div>
+                  <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+                </div>
+                <h3><p className='text'>Can i reinvest my Quarterly Return? </p>          </h3>
+                <div>
+                <p className='mt-4'>Yes, Distributions can be reinvested and at zero fees.</p>
+
+                  <div className="divider"></div>
+                  <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+                </div>
+                <h3>What information will I receive to help me Manage my investments? </h3>
+                <div>
+                
+                  <p className='mt-4'>Upon investing you will receive a receipt confirming your investment sum. 
+                  Every time you are issued with profit at the end of the month you will receive an email, alternatively you can follow your investment progress monthly on your interactive dashboard.
+                  You will also be provided with an annual investment statement that summarises the movements in your investment account and confirms the balance at year end.</p>
+
+                  
+                  <div className="divider"></div>
+                  <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+                </div>
+                <h3>What is the quickest way I can sell my home?</h3>
+                <div>
+                  <p className='mt-4'>While you are welcome to send us a cheque within the UK, the quickest way to remit your investment sum is to transfer the fund electronically (Bank Wire/Transfer or Cryptocurrency. 
+                    Be sure to retain a receipt evidencing your EFT or deposit! 
+                    </p>
+                
+                  <div className="divider"></div>
+                  <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+                </div>
+                <h3>What if I have more Questions or Need Help? </h3>
+                <div>
+                <p className='mt-4'>You can send your unanswered questions to admin@phoenixprecast.com (expect a reply within one business day).
+                </p>
+                  <div className="divider"></div>
+                  <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+                </div>
+                <h3>How much can I start investing from?</h3>
+                <div><p className='mt-4'>For investors interested in our Capital Growth product , you can get started from as little as £30,000, with typical investment terms of 3-5years. 
+                  For our Fixed Income product, you can get started from as little as £5,000 .we’d also recommend starting no lower than £20,000 for larger income. 
+
+                  </p>
+                  <div className="divider"></div>
+                  <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
+                </div>
+              
+              </div>
+
+            </div>
+            
           </div>
-          <h3>How is loan interest calculated?</h3>
-          <div>
-            <p>
-            Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-            purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-            velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-            suscipit faucibus urna.
-            </p>
-            <div className="divider"></div>
-            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
-          </div>
-          <h3>Where do I find an agent?</h3>
-          <div>
-            <p>
-            Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-            Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-            ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-            lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-            </p>
-            <ul>
-              <li>List item one</li>
-              <li>List item two</li>
-              <li>List item three</li>
-            </ul>
-            <div className="divider"></div>
-            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
-          </div>
-          <h3>What is the quickest way I can sell my home?</h3>
-          <div>
-            <p>
-            Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-            et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-            faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-            mauris vel est.
-            </p>
-            <p>
-            Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos.
-            </p>
-            <div className="divider"></div>
-            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
-          </div>
-          <h3>How can I sign up?</h3>
-          <div>
-            <p>
-            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-            ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-            amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-            </p>
-            <div className="divider"></div>
-            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
-          </div>
-          <h3>How is loan interest calculated?</h3>
-          <div>
-            <p>
-            Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-            purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-            velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-            suscipit faucibus urna.
-            </p>
-            <div className="divider"></div>
-            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
-          </div>
-          <h3>Where do I find an agent?</h3>
-          <div>
-            <p>
-            Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-            Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-            ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-            lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-            </p>
-            <ul>
-              <li>List item one</li>
-              <li>List item two</li>
-              <li>List item three</li>
-            </ul>
-            <div className="divider"></div>
-            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
-          </div>
-          <h3>What is the quickest way I can sell my home?</h3>
-          <div>
-            <p>
-            Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-            et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-            faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-            mauris vel est.
-            </p>
-            <p>
-            Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos.
-            </p>
-            <div className="divider"></div>
-            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
-          </div>
-          <h3>What is the quickest way I can sell my home?</h3>
-          <div>
-            <p>
-            Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-            et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-            faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-            mauris vel est.
-            </p>
-            <p>
-            Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos.
-            </p>
-            <div className="divider"></div>
-            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
-          </div>
-          <h3>How can I sign up?</h3>
-          <div>
-            <p>
-            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-            ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-            amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-            </p>
-            <div className="divider"></div>
-            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
-          </div>
-          <h3>How is loan interest calculated?</h3>
-          <div>
-            <p>
-            Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-            purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-            velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-            suscipit faucibus urna.
-            </p>
-            <div className="divider"></div>
-            <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
-          </div>
+
         </div>
+      </section>
 
-      </div>
-      <div className="col-lg-4 col-md-4">
 
-        <div className="widget widget-sidebar recent-properties">
-          <h4><span>Recent Properties</span> <img src="images/divider-half.png" alt="" /></h4>
-          <div className="widget-content">
-
-          <div className="recent-property">
-            <div className="row">
-            <div className="col-lg-4 col-md-4 col-sm-4"><a href="#"><img src="images/1837x1206.png" alt="" /></a></div>
-            <div className="col-lg-8 col-md-8 col-sm-8">
-              <h5><a href="#">Beautiful Waterfront Condo</a></h5>
-              <p><strong>$1,800</strong> Per Month</p>
-            </div>
-            </div>
-          </div>
-
-          <div className="recent-property">
-            <div className="row">
-            <div className="col-lg-4 col-md-4 col-sm-4"><a href="#"><img src="images/1837x1206.png" alt="" /></a></div>
-            <div className="col-lg-8 col-md-8 col-sm-8">
-              <h5><a href="#">Family Home</a></h5>
-              <p><strong>$500,000</strong></p>
-            </div>
-            </div>
-          </div>
-
-          <div className="recent-property">
-            <div className="row">
-            <div className="col-lg-4 col-md-4 col-sm-4"><a href="#"><img src="images/1837x1206.png" alt="" /></a></div>
-            <div className="col-lg-8 col-md-8 col-sm-8">
-              <h5><a href="#">Ubran Apartment</a></h5>
-              <p><strong>$1,800</strong> Per Month</p>
-            </div>
-            </div>
-          </div>
-
-          </div>
-        </div>
-
-        <div className="widget widget-sidebar recent-posts">
-          <h4><span>Recent Blog Posts</span> <img src="images/divider-half.png" alt="" /></h4>
-          <div className="widget-content">
-
-          <div className="recent-property">
-            <div className="row">
-            <div className="col-lg-4 col-md-4 col-sm-4"><a href="#"><img src="images/1837x1206.png" alt="" /></a></div>
-            <div className="col-lg-8 col-md-8 col-sm-8">
-              <h5><a href="#">6 Tips to help you sell your house</a></h5>
-              <p><i className="fa fa-calendar-o"></i> Feb, 18th 2017</p>
-            </div>
-            </div>
-          </div>
-
-          <div className="recent-property">
-            <div className="row">
-            <div className="col-lg-4 col-md-4 col-sm-4"><a href="#"><img src="images/1837x1206.png" alt="" /></a></div>
-            <div className="col-lg-8 col-md-8 col-sm-8">
-              <h5><a href="#">Common mistakes to avoid when moving </a></h5>
-              <p><i className="fa fa-calendar-o"></i> Feb, 18th 2017</p>
-            </div>
-            </div>
-          </div>
-
-          <div className="recent-property">
-            <div className="row">
-            <div className="col-lg-4 col-md-4 col-sm-4"><a href="#"><img src="images/1837x1206.png" alt="" /></a></div>
-            <div className="col-lg-8 col-md-8 col-sm-8">
-              <h5><a href="#">How to design a minimal but productive home office </a></h5>
-              <p><i className="fa fa-calendar-o"></i> Feb, 18th 2017</p>
-            </div>
-            </div>
-          </div>
-
-          </div>
-        </div>
-        
-        <div className="widget widget-sidebar recent-properties">
-          <h4><span>Quick Links</span> <img src="images/divider-half.png" alt="" /></h4>
-          <div className="widget-content box">
-          <ul className="bullet-list">
-            <li><a href="#">Featured Properties</a></li>
-            <li><a href="#">Featured Agents</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Frequently Asked Questions</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Submit a Property</a></li>
-          </ul>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-
-  </div>
-</section>
 
 
 

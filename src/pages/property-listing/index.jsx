@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getAssets } from '../../redux/actions/assets'
 import { NavLink } from 'react-router-dom'
 import { usd_format } from '../../components/misc/USD'
-import Nav from '../../components/Nav'
+import Nav from '../../components/nav/Nav'
 
 const Properties = () => {
   const dispatch = useDispatch()

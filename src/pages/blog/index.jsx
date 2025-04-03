@@ -3,10 +3,11 @@ import { blogs } from '../../assets/blogData/data'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import Banner from '../../components/heroBanner/Banner'
 import './blog.scss'
-import Nav from '../../components/Nav'
+import Nav from '../../components/nav/Nav'
 import usePageReset from '../../hooks/usePageRest'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPosts } from '../../redux/actions/blog'
+import SubHeader from '../../components/subHeader/SubHeader'
 
 const Blog = () => {
   const navigate = useNavigate()
@@ -22,7 +23,7 @@ const Blog = () => {
   return (
     <div>
         <Nav/>
-        <Banner header="blog"/>
+        <SubHeader tittle="Press Release"/>
         <section className='md:px-5 px-3 bg-white py-10'>
           <div className="blog max-w-[1600px] m-auto gap-6 grid md:grid-cols-blogLayout">
             <div className='shadow px-2'>

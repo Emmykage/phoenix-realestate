@@ -22,12 +22,12 @@ const Register = () => {
 
     dispatch(accountInfo(data))
     setStep(step => Math.min(step +1, regJourney.length))
-console.log( step === regJourney.length, step, regJourney.length )
     step === regJourney.length && handleFormSubmit()
 
   }
 
   const handlePrev = () => {
+    setStep(count => Math.max(count -1, 1))
 
   }
   const navigation = useNavigate()
@@ -38,7 +38,7 @@ console.log( step === regJourney.length, step, regJourney.length )
       if(registerUser.fulfilled.match(result)){
         navigate("/dashboard/home")
       }else{
-        toasti
+console.log("first")
       }
     })  
     
@@ -55,11 +55,11 @@ console.log( step === regJourney.length, step, regJourney.length )
   {
     step: 5,
     label: "User Info",
-    render: <InvestorType handleNext={handleNext}/>
+    render: <InvestorType handleNext={handleNext}  handlePrev={handlePrev}/>
   },{
     step: 6,
     label: "User Password",
-    render: <UserInfoPassword handleNext={handleNext}/>
+    render: <UserInfoPassword handleNext={handleNext}  handlePrev={handlePrev}/>
   },
 
 
@@ -67,17 +67,17 @@ console.log( step === regJourney.length, step, regJourney.length )
   {
     step: 2,
     label: "Investment Property",
-    render: <InvestmentProp loading={loading} error={error} handleNext={handleNext}/>
+    render: <InvestmentProp loading={loading}  handlePrev={handlePrev} error={error} handleNext={handleNext}/>
   }, {
     step: 3,
-    label: "Investment Type",
-    render: <InitialInvestment  loading={loading} error={error} handleNext={handleNext}/>
+    label: "Initial Investment",
+    render: <InitialInvestment  loading={loading}  handlePrev={handlePrev} error={error} handleNext={handleNext}/>
   }, {
     step: 4,
     label: "User Info",
-    render: <UserInfo loading={loading} error={error} handleNext={handleNext}/>
+    render: <UserInfo loading={loading} error={error}  handlePrev={handlePrev} handleNext={handleNext}/>
   }]
-  console.log(userReg)
+  console.log(userReg, step)
 
   return (
     <div>
@@ -94,7 +94,6 @@ console.log( step === regJourney.length, step, regJourney.length )
 
 
 }
-
 
 const SignUp = ({handleFormSubmit, error, handleNext, loading}) => {
   const [formInput, setFormInput] = useState({first_name: "", last_name: "", email: "", password: "", role: "client"})

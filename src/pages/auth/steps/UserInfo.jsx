@@ -2,7 +2,7 @@ import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import AppButton from "../../../components/buttons/Buttons"
 
-const UserInfo = ({handleFormSubmit, error, handleNext, loading}) => {
+const UserInfo = ({handleNext, handlePrev}) => {
     const [formInput, setFormInput] = useState({first_name: "", last_name: "", email: "", password: "", role: "client"})
   
     
@@ -57,13 +57,15 @@ const UserInfo = ({handleFormSubmit, error, handleNext, loading}) => {
                   <input className="border  bg-transparent border-gray-200 rounded-xl" type="text" name="phone" placeholder='Pnone Number' onChange={handleInputChange}/>
               </div>
 
-              <div className="form-block">
-                <AppButton 
-                onClick={() => {
-                    formInput && handleNext({name: "user", value: formInput })
-                }}>NEXT </AppButton>
-                  {/* <button className="button button-icon" type="submit"><i className="w-[300px] fa fa-angle-right"></i>Register</button> */}
-              </div>
+              <div className='flex gap-5 mt-10 bg-blue- justify-center'>
+
+                            <AppButton onClick={()=> {
+                                handlePrev()
+                            }}>Prev</AppButton>  
+                            <AppButton onClick={()=> {
+                                formInput && handleNext({value: formInput, name: "user"})
+                            }}>Next</AppButton>
+                                                    </div>
               <div className="divider"></div>
               <p className="note">By clicking the "Register" button you agree with our <a href="#">Terms and conditions</a></p>    
               </form>

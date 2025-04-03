@@ -84,7 +84,7 @@ body {
 
 .module {
   position: relative;
-  padding: 70px 0px 70px 0px;
+  padding: 70px 1rem 70px ;
 }
 .module.no-padding {
   padding: 0;
@@ -755,7 +755,7 @@ textarea.border,
 /* SUB MENU */
 .nav.navbar-nav li:hover .sub-menu {
   display: block;
-  margin-top: 0;
+  margin-top: 18px;
 }
 .sub-menu {
   display: none;
@@ -2951,7 +2951,6 @@ textarea.border,
   background: linear-gradient(#21252fda, #21252fda), url(../public/images/pattern.jpg);
 
   color: white;
-  padding: 60px 0px;
 }
 .cta h3,
 .cta h2 {

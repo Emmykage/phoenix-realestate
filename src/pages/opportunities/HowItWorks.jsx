@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from '../../components/Nav'
+import Nav from '../../components/nav/Nav'
 import SubHeader from '../../components/subHeader/SubHeader'
 
 import propInvestment from "../../assets/images/pictures/Understanding-Property-Taxes-And-Their-Impact-On-Your-Real-Estate-Investment-1024x679.webp"

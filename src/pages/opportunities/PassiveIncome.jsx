@@ -1,6 +1,6 @@
 import React from 'react'
 import returnsImg from "../../assets/images/services/greyphin-transparent-pricing.webp"
-import Nav from '../../components/Nav'
+import Nav from '../../components/nav/Nav'
 import SubHeader from '../../components/subHeader/SubHeader'
 import AppButton from '../../components/buttons/Buttons'
 import { PlanningIcon } from '../../assets/svgs/icons'
@@ -18,7 +18,7 @@ const PassiveIncome = () => {
 
 
             </h3>
-            <p className='text-center font-medium text-base my-5'>Invest in one of Our platform </p>
+            <p className='text-center text-lg font-medium  my-5'>Invest in one of Our platform </p>
             <div className='grid items-cente  gap-4 md:gap-10 md:grid-cols-2 m-auto max-w-5xl'>
                 <div className='px-4 border bg-white p-6 shadow  font-medium text-gray-600 tracking-widest leading-9'>
                         <h3 className='text-xl text-center mb-10 '>FIXED INCOME</h3>
@@ -52,7 +52,7 @@ const PassiveIncome = () => {
                     </div>
                 <div className='px-4 border bg-white p-6 shadow  font-medium text-gray-600 tracking-widest leading-9'>
                     <h3 className='text-xl text-center mb-10 '>CAPITAL GROWTH  </h3>
-                    <p className='border-b border-gray-300'>Short-term high yield investment</p>
+                    <p className='border-b border-gray-300'>Long-term high yield investment</p>
 
                     <p className='border-b border-gray-300 flex items-center gap-5'>
                         <FaCheck className='text-xs'/>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { AiOutlineMenuFold } from 'react-icons/ai'
 import { useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
+import "./nav.scss"
 
 const Nav = () => {
   const {user} = useSelector(state => state.auth)
@@ -10,7 +11,6 @@ const Nav = () => {
   const [toggleNav, setToggleNav] = useState(false)
   const [stickyNav, setStickyNav] = useState("nav")
 
-  console.log(toggleNav)
 
   const navigation = useNavigate()
   const logout = () => {
@@ -70,14 +70,15 @@ const Nav = () => {
       </div>
     </div> */}
   
-    <div className="container m-auto max-">
+    <div className="container m-auto ">
   
       <div className="navbar-header item-center flex justify-center">
   
         
         
         <div className='flex justify-between items-center'>
-        <NavLink to="/" className="inline-block w-36 h-24 p-4 logo-icon" ><img src="/logo.png" alt="Homely" /></NavLink>
+        <NavLink to="/" className="inline-block w-24 h-24 p-4 logo-icon" >
+        <img src="/logo.png" alt="Homely" className='py-2 w-full h-full' /></NavLink>
         <div className=" ">
           
         <div className="bg-white hidden lg:block">
@@ -135,8 +136,8 @@ const Nav = () => {
           </div>
 
 
-          <div className={`${show} ${toggleNav ? "top-0" : "-top-[1000%]"} transition-all duration-200 ease-linear  md:top-0 bg-theme-black py-0 z-50 absolute h-min md:h-full md:bg-none w-full md:w-[80%]  flex items-center`} id="navbarSupportedContent">
-            <ul className="nav navbar-nav px-2  flex-1 items-center justify-between md:flex-row flex mr-auto bg-red-">
+          <div className={`${show} ${toggleNav ? "left-0" : "-left-full"} top-0 md:left-0 transition-all duration-200 ease-linear  md:top-0 bg-theme-black py-0 z-50 absolute h-screen md:h-full md:bg-none w-full md:w-[80%]  flex nav-contain`} id="navbarSupportedContent">
+            <ul className="nav navbar-nav px-2  flex-1 items-center justify-between md:flex-row  mr-auto md:flex block bg-blue-">
               <li className="nav-item active text-white">
                 <NavLink className="nav-link text-white p-2.5" to="/" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Home <span className="sr-only"></span></NavLink>
               </li>
@@ -161,7 +162,7 @@ const Nav = () => {
                     <li><NavLink to="/press-release" className={"nav-link text-white"} onClick={() => {}}>News </NavLink></li>
                     {/* <li><NavLink to="/dashboard/home"className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li> */}
                     <li><NavLink to="/contact-us" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Contacts Us</NavLink></li>
-                    {/* <li><NavLink to="/contact-us" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>FAQ</NavLink></li> */}
+                    <li><NavLink to="/faq" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>FAQ</NavLink></li>
 
                     <li><NavLink to="/about" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Careers</NavLink></li>
                     
