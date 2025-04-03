@@ -36,11 +36,11 @@ const UserInfoPassword = ({handleNext, handlePrev}) => {
               
   
               <div className="form-block">
-                <label className='my-2 text-sm'>Password</label>
+                {/* <label className='my-2 text-sm'>Password</label> */}
                 <input className="border  bg-transparent border-gray-200 rounded-xl" type="password" name="password" placeholder='Password' onChange={handleInputChange}/>
             </div>
             <div className="form-block">
-                <label>Confirm Password</label>
+                {/* <label>Confirm Password</label> */}
                 <input className="border  bg-transparent border-gray-200 rounded-xl" type="password" name="confirm_password" placeholder='Confirm Password' onChange={handleInputChange} />
             </div>
 

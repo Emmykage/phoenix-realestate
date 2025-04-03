@@ -120,7 +120,7 @@ const SignUp = ({handleFormSubmit, error, handleNext, loading}) => {
   <div className="bg max-w-4xl  fit">
 
     <div className="w-full px-4">
-      <div className="col-lg-4 w-full  col-lg-offset-4"> 
+      <div className="col-lg-4 w-full  col-lg-offset-4 text-center"> 
         <p>
         Great - no matter the selection,You could enjoy guaranteed returns of up to 5-6.5% per Month from our portfolio of
 exclusive property investments.
