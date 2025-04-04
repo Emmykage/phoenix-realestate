@@ -4,12 +4,19 @@ import { createPost } from '../../../redux/actions/blog'
 import 'trix';
 import 'trix/dist/trix.css';
 import "./style.css"
+import { SET_LOADER } from '../../../redux/app/app';
 
-const AddPost = () => {
-    const formRef = useRef(null)
+const AddPost = ({
+    handleClose
+}) => {
     const dispatch = useDispatch()
+
+
+    const formRef = useRef(null)
     const handleSubmit = (e) => {
         e.preventDefault()
+        dispatch(SET_LOADER(true))
+
         const formData = new FormData()
         formData.append("blog[title]", e.target.title.value)
         formData.append("blog[description]", e.target.description.value)
@@ -24,6 +31,10 @@ const AddPost = () => {
         dispatch(createPost(formData)).then(result => {
             if(createPost.fulfilled.match(result)){
                 formRef.current.reset()
+                dispatch(SET_LOADER(false))
+                // handleClose()
+            }else{
+                dispatch(SET_LOADER(false))
 
             }
         })

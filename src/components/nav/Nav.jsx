@@ -162,9 +162,9 @@ const Nav = () => {
                     <li><NavLink to="/press-release" className={"nav-link text-white"} onClick={() => {}}>News </NavLink></li>
                     {/* <li><NavLink to="/dashboard/home"className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li> */}
                     <li><NavLink to="/contact-us" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Contacts Us</NavLink></li>
-                    <li><NavLink to="/faq" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>FAQ</NavLink></li>
+                    <li><NavLink to="/faq" className={"nav-link text-white"}>FAQ</NavLink></li>
 
-                    <li><NavLink to="/about" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Careers</NavLink></li>
+                    {/* <li><NavLink to="/about" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Careers</NavLink></li> */}
                     
                     {/* <li>
                     {user ? <a onClick={logout} className={"nav-link text-white"} >Logout</a> : (<>

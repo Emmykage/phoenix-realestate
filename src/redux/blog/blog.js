@@ -12,7 +12,7 @@ const postSlice = createSlice({
     extraReducers: {
         [createPost.fulfilled]: (state, action) => ({
             ...state,
-            posts: action.payload,
+            post: action.payload,
             loading: false,
             error: false
         }),
@@ -29,7 +29,7 @@ const postSlice = createSlice({
         [getPosts.fulfilled]: (state, action) => { 
             return{
             ...state,
-            posts: action.payload.data ?? []
+            posts: action.payload ?? []
         }},
         [getPost.pending]: (state) => { 
             return{

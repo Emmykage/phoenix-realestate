@@ -1,35 +1,58 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import baseUrl from "../baseURL";
 import { token } from "../../utils/localStore";
+const createPost = createAsyncThunk('blog/create_post', async (assetdata, { rejectWithValue }) => {
+    try {
+        const response = await fetch(`${baseUrl}blogs`, {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${token()}`
+            },
+            body: assetdata
+        });
 
-const createPost = createAsyncThunk('blog/create_post', async (data) => {
-    const response = fetch(`${baseUrl}blogs`, {
-        method: "POST",
-        headers: {
-            Authorization: `Bearer ${token()}`
-        },
-        body: data
-    }).then((res) => res.json())
-    return response
-})
+        const {data} = await response.json();
+
+        if (!response.ok) {
+            return rejectWithValue({ message: data.message ?? "Something went wrong" });
+        }
+
+        return data;
+    } catch (error) {
+        return rejectWithValue({ message: error.message ?? "Something went wrong" });
+    }
+});
 const getPost = createAsyncThunk('blog/getPost', async(id) => {
-    const response = fetch(`${baseUrl}blogs/${id}`).then(res => res.json())
-   
-    return response
+    try {
+        const response = await fetch(`${baseUrl}blogs/${id}`)
+
+        const {data} = await response.json()
+
+        if(!response.ok){
+            return rejectWithValue({mesage: result.mesage})
+        }
+
+        console.log(data)
+        return data
+
+    } catch (error) {
+        return rejectWithValue({mesage: result?.mesage || "something went wrong"})
+
+    }
 })
 const getPosts = createAsyncThunk('blog/get_posts', async (_, {rejectWithValue}) => {
     console.log("get post")
     try {
         const response = await fetch(`${baseUrl}blogs`)
 
-        const result = await response.json()
+        const {data} = await response.json()
 
         if(!response.ok){
             return rejectWithValue({mesage: result.mesage})
         }
 
-        console.log(result)
-        return result
+        console.log(data)
+        return data
 
     } catch (error) {
         return rejectWithValue({mesage: result?.mesage || "something went wrong"})

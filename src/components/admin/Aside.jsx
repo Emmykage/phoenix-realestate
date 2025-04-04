@@ -67,10 +67,10 @@ const Aside = ({isOpen, setIsOpen}) => {
         
      
         <NavLink 
-         onClick={setIsOpen(prev => !prev)}
-         to="/admin/add_blog" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
+         onClick={()=>setIsOpen(prev => !prev)}
+         to="/admin/posts" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
           <span><AiOutlinePlus /></span>
-          <h3>Add Post</h3>
+          <h3>Post</h3>
         </NavLink>
         <a onClick={handleLogOut} className={({ isActive }) => (isActive ? activeLink : normalLink)}>
           <span><BiLogOut /></span>
