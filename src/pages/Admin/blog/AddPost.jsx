@@ -9,6 +9,8 @@ import { SET_LOADER } from '../../../redux/app/app';
 const AddPost = ({
     handleClose
 }) => {
+    const [imagePreviews, setImagePreviews] = useState([]);
+    
     const dispatch = useDispatch()
 
 
@@ -40,6 +42,24 @@ const AddPost = ({
         })
 
     }
+
+    
+    const handleImageChange = (e) => {
+        const files = Array.from(e.target.files);
+        const previews = files.map((file) => {
+          const reader = new FileReader();
+          reader.readAsDataURL(file);
+          return new Promise((resolve) => {
+            reader.onload = () => {
+              resolve(reader.result);
+            };
+          });
+        });
+    
+        Promise.all(previews).then((images) => {
+          setImagePreviews(images);
+        });
+      };
   return (
     <div className='blog-post'>
         <form ref={formRef} onSubmit={handleSubmit}>
@@ -48,20 +68,32 @@ const AddPost = ({
                 <label htmlFor="" className='text-base font-medium'>Blog Title</label>
                 <input type="text" name="title" required />
             </div>
-            <div className='my-1'>
+            {/* <div className='my-1'>
                 <label htmlFor="" className='text-base font-medium'>Category</label>
                 <select name="category" id="category" >
                     <option value="finance">Finance</option>
                 </select>
-            </div>
+            </div> */}
             <div className='my-1'>
                 <label htmlFor="description" className='text-base font-medium'>Description (short description)</label>
                 <input type="text" name="description" required />
             </div>
+            <div className="flex gap-4 my-6">
+                {imagePreviews && imagePreviews.length > 0 && <h4 className="text-green-600">New Photo</h4>}
+                {imagePreviews.map((image, index) => (
+                  <img src={image} alt="" key={index} className="w-20 border border-gray-400 rounded overflow-hidden bg-gray-100 p-3" />
+                ))}
+              </div>
             <div className='my-1'>
                 <label htmlFor="" className='text-base font-medium block'>Image</label>
-                <input type="file" name="image" className='w-full block' required />
-            </div>
+                <input
+                  onInput={handleImageChange}
+                  type="file"
+                  accept="image/*"
+                  name="image"
+                  id="image"
+                  
+                />            </div>
             <div className='my-4'>  
                 <label htmlFor="date text-base font-medium">Publish Date</label>
                 <input type="date" name="data" id="date" />

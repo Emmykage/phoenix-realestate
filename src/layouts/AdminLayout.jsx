@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from '../redux/actions/users';
 import Loader from '../components/loader/Loader';
 import { useNavigate } from 'react-router-dom';
+import LoadingPage from '../pages/LoadingPage';
 
 const AdminLayout = ({ children }) => {
   const dispatch = useDispatch();
@@ -28,7 +29,7 @@ const AdminLayout = ({ children }) => {
     }
   }, [user, loading, navigate]);
 
-  if (loading) return <Loader />; // Show loader while checking auth
+  if (loading) return <LoadingPage />; // Show loader while checking auth
 
   return (
     <div className="admin contain">

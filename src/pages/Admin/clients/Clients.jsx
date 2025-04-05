@@ -21,7 +21,7 @@ const Clients = () => {
 
   console.log(users)
   return (
-    <div className="client">
+    <div className="client md:pt-20">
       <div className="">
         <ul className="client-row">
           {users?.map((user) => (

@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import SubHeader from '../components/FeaturedProperty'
 import { useSelector } from 'react-redux'
 import Nav from '../components/nav/Nav'
 import NewsLetter from '../components/newsLetter/NewsLetter'
 import { NavLink } from 'react-router-dom'
 import TopAssets from '../components/TopAssets'
-
+import Aos from 'aos'
+import "aos/dist/aos.css";
 const Home = () => {
     const {user} = useSelector(state => state.auth)
+
+    useEffect(()=> {
+      Aos.init()
+      Aos.refresh()
+    },[])
   
   return (
     <div>
@@ -45,24 +51,24 @@ const Home = () => {
 
         </div>
       </section>
-      <section className="module services">
+      <section className="module services z-10">
         <div className="container m-auto">
           <div className="grid md:grid-cols-3 gap-4">
-            <div className="">
+            <div data-aos="fade-up" className="">
               <div className="service-item shadow-hover">
                 <i className="fa fa-home"></i>
                 <h4>Sell Property</h4>
                 <p>Every property is unique, and so is our approach. We craft personalized selling strategies to meet your specific needs, ensuring a stress-free and rewarding experience.</p>
               </div>
             </div>
-            <div className="col-lg-4 col-md-4">
+            <div data-aos="fade-up" className="col-lg-4 col-md-4">
               <div className="service-item shadow-hover">
                 <i className="fa fa-group"></i>
                 <h4>Expert Agents</h4>
                 <p>Trust our team of expert agents at to navigate your property journey with market mastery, negotiation prowess, and personalized solutions, ensuring you receive unparalleled guidance every step of the way.</p>
               </div>
             </div>
-            <div className="col-lg-4 col-md-4">
+            <div data-aos="fade-up" className="col-lg-4 col-md-4">
               <div className="service-item shadow-hover">
                 <i className="fa fa-file-text"></i>
                 <h4>Daily Listings</h4>

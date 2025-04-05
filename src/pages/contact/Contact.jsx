@@ -4,7 +4,7 @@ import Nav from '../../components/nav/Nav'
 import SubHeader from '../../components/subHeader/SubHeader'
 import AppButton from '../../components/buttons/Buttons'
 
-
+import "./contact.scss"
 const Contact = () => {
    
   return (
@@ -59,7 +59,7 @@ const Contact = () => {
                                     <div className="md-form mb-0">
                                     <label for="name" className="">Your name</label>
 
-                                        <input type="text" id="name" name="name" className="form-control bg-gray-300"/>
+                                        <input type="text" id="name" name="name" className="form-control"/>
                                     </div>
                                 </div>
                         
@@ -69,7 +69,7 @@ const Contact = () => {
                                     <div className="md-form mb-0">
                                     <label for="email" className="">Your email</label>
 
-                                        <input type="text" id="email" name="email" className="form-control bg-gray-300"/>
+                                        <input type="text" id="email" name="email" className="form-control"/>
                                     </div>
                                 </div>
                     
@@ -81,7 +81,7 @@ const Contact = () => {
                                     <div className="md-form mb-0">
                                     <label for="subject" className="">Subject</label>
 
-                                        <input type="text" id="subject" name="subject" className="form-control bg-gray-300 border-red-400"/>
+                                        <input type="text" id="subject" name="subject" className="form-control"/>
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@ const Contact = () => {
                                     <div className="md-form">
                                     <label for="message">Your message</label>
 
-                                        <textarea type="text" id="message" name="message" rows="2" className="form-control md-textarea bg-gray-300"></textarea>
+                                        <textarea type="text" id="message" name="message" rows="2" className="form-control md-textarea"></textarea>
                                     </div>
 
                                 </div>

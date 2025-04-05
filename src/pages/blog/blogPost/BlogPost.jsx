@@ -47,6 +47,7 @@ const BlogPost = () => {
             </div>
 
             <div className='max-w-5xl w-full px-2 m-auto mt-0'>
+              <h3 className='mb-4'>{blog?.title}</h3>
                 <div dangerouslySetInnerHTML={{__html: blog?.blog_body}} />
 
             </div>

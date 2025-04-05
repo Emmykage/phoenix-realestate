@@ -20,7 +20,6 @@ const Aside = ({isOpen, setIsOpen}) => {
   console.log(isOpen)
 
   const handleLogOut = () => {
-    console.log("login out")
     localStorage.removeItem("phoenix_auth")
     dispatch(userProfile())
   }

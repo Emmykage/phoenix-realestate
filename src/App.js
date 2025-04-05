@@ -63,6 +63,7 @@ import OurTeam from './pages/about/Team';
 import PassiveIncome from './pages/opportunities/PassiveIncome';
 import HowItWorks from './pages/opportunities/HowItWorks';
 import PostList from './pages/Admin/blog/PostList';
+import ViewPost from './pages/Admin/blog/ViewPost';
 function App() {
   const {loader} = useSelector(state => state.app)
   useInitializer()
@@ -156,6 +157,7 @@ function App() {
         <Route path='settings' element={<AdminLayout><Settings/></AdminLayout>}/>
         <Route path='add_asset' element={<AdminLayout><AddAsset/></AdminLayout>}/>
         <Route path="add_blog" element={<AdminLayout><AddPost/></AdminLayout>}/>
+        <Route path="posts/:id" element={<AdminLayout><ViewPost/></AdminLayout>}/>
         <Route path="posts" element={<AdminLayout><PostList/></AdminLayout>}/>
 
         </Route>

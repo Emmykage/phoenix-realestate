@@ -39,39 +39,6 @@ body{
 
 }
 
-/* * {
-  box-sizing: border-box;
-} */
-.dashboard {
-  position: relative;
-  display: flex;
-  background: var(--color-background);
-}
-.dashboard .title {
-  background: linear-gradient(#323746, #505461);
-}
-.dashboard .main-content {
-  flex: 1;
-  height: 100vh;
-  overflow-x: auto;
-}
-.dashboard .card:hover {
-  box-shadow: 0 0 3px 0 green;
-}
-.text-right {
-  text-align: right;
-}
-.overflow-auto {
-  overflow: auto;
-}
-
-.portfolios a.btn,
-.decoration-none {
-  text-decoration: none;
-}
-
-/* ==========================text color================================ */
-
 .dashboard aside {
   max-width: 300px;
   width: 100%;
@@ -96,13 +63,7 @@ body{
   /* background-color: red; */
 }
 
-.tran-card {
-  height: 260px;
-  box-shadow: 0 0 2px gray;
-}
-.tran-card:hover {
-  background: #ebebeb;
-}
+
 
 .user-dashboard aside ul li {
   padding: 0.3rem;
@@ -110,9 +71,7 @@ body{
 .dashboard .logo {
   margin-top: 3rem;
 }
-.icon {
-  font-size: 26px;
-}
+
 .modal-container {
   position: fixed;
   left: 0;
@@ -166,12 +125,6 @@ aside .dash-logo img {
   width: 70%;
 }
 
-.barc input:focus {
-  outline: none;
-  /* background-color: red; */
-  border: none;
-}
-
 .fix-header {
   position: fixed;
   top: 0;
@@ -184,9 +137,7 @@ aside .dash-logo img {
 
 
 
-.font-semibold {
-  font-weight: 600;
-}
+
 
 .scanner-ing {
   width: 130px;
@@ -197,36 +148,15 @@ aside .dash-logo img {
   width: 100%;
   max-width: 800px;
 }
-.w-max-1450 {
-  width: 100%;
-  max-width: 1450px;
-}
 .btn {
   background-color: #0b2c62;
   border-radius: 8px;
   color: white;
 }
-.btn-primary {
-  display: block;
-  background-color: #4fba6f;
-  border-radius: 8px;
-  color: white;
-}
-.btn:hover {
-  background-color: white;
-  color: #0b2c62;
-  border: 1px solid #0b2c62;
-}
-.max-content {
-  width: max-content;
-}
 .box-shadow {
   box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.25);
 }
 
-.cursor-pointer {
-  cursor: pointer;
-}
 .property-display {
   width: 100%;
 }
@@ -235,8 +165,7 @@ aside .dash-logo img {
   width: 100%;
   height: 400px;
 }
-.asset-details {
-}
+
 .property-img img {
   width: 100%;
   object-fit: contain;
@@ -252,11 +181,6 @@ aside .dash-logo img {
 
 .aside {
   height: 80vh;
-}
-
-
-.text-center {
-  text-align: center;
 }
 @media only screen and (max-width: 990px) {
   .sub-menu {

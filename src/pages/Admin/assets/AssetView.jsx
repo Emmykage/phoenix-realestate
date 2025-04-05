@@ -12,63 +12,64 @@ const AssetView = () => {
     dispatch(getAssets());
   }, []);
   const asset = offers.find((offer) => offer.id == id);
+  console.log(asset)
   if (loading) {
     <Loader />;
   } else if (error) {
     <h1 className="text-center">Check you connection</h1>;
   } else {
     return (
-      <div className="content-container asset-view">
+      <div className="content-container asset-view mt-20 max-w-5xl bg-white p-4 shadow rounded-xl">
         <div className="">
-          <div className="grid-display-assets border-b">
+          <div className="grid-display-assets border-b py-5">
             <span>Asset Class: </span>
-            <span>
+            <span className='block'>
               {' '}
               {asset.asset_type}
             </span>
           </div>
 
-          <div className="grid-display-assets border-b">
-            <span>Asset Title: </span>
-            <span>
+          <div className="grid-display-assets border-b my-2">
+            <span className='font-semibold'>Asset Title: </span>
+            <p>
               {' '}
               {asset.name}
-            </span>
+            </p>
           </div>
-          <div className="grid-display-assets border-b">
-            <span>Price: </span>
-            <span>
+          <div className="grid-display-assets border-b my-2 py-2">
+            <span className='font-semibold'>Price: </span>
+            <p>
               {' '}
               {asset.price}
-            </span>
+            </p>
           </div>
-          <div className="grid-display-assets border-b">
+          <div className="grid-display-assets border-b py-2">
             <span>Property Address: </span>
-            <span>{ asset.address}</span>
+            <p>{ asset.address}</p>
           </div>
-          <div className="grid-display-assets border-b">
+          <div className="grid-display-assets border-b py-2">
             <span>tenure: </span>
-            <span>{ asset.tenure}</span>
+            <p>{ asset.tenure}</p>
           </div>
-          <div className="grid-display-assets border-b">
+          <div className="grid-display-assets border-b py-2">
             <span>Sale Type: </span>
-            <span>{asset.sale_type}</span>
+            <p>{asset.sale_type}</p>
           </div>
-          <div className="grid-display-assets border-b">
+          <div className="grid-display-assets border-b py-2">
             <span>Area: </span>
-            <span>{asset.area}</span>
+            <p>{asset.area}</p>
           </div>
-          <div className="grid-display-assets border-b">
+          <div className="grid-display-assets border-b py-2">
             <span>Bedrooms: </span>
-            <span>{asset.number_of_bedrooms}</span>
+            <p>{asset.number_of_bedrooms}</p>
           </div>
-          <div className="grid-display-assets border-b">
+          <div className="grid-display-assets border-b py-2">
             <span>Bathrooms: </span>
-            <span>{asset.number_of_bathrooms}</span>
+            <p>{asset.number_of_bathrooms}</p>
           </div>
           <div className="grid-display-assets border-b">
             <span>Status: </span>
-            <span>{asset.status}</span>
+            <p>{asset.status}</p>
           </div>
           
         </div>
