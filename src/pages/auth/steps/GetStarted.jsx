@@ -17,18 +17,13 @@ const GetStarted = ({handleNext}) => {
     <div className='h-screen get-started  w-full bg-primary px-4 text-white flex justify-center items-center'>
         <div>
             <div>
-                <h2 className='text-white my-6 '>Get Started</h2>
-                <p htmlFor="investment_purpose" className='my-6 font-medium  text-3xl font-med'> Why are you interested in property investment</p>
+                <h2 className='text-white my-6 '>Lets Get You Started</h2>
+                <p htmlFor="investment_purpose" className='my-6 font-medium  text-3xl font-med'> Why are you interested in property investment?</p>
 
                 <div className='interest-form'>
                     <form action="">
                         <div>
-                            <div className='flex items-cente gap-4 my-5'>
-                                <input type="radio" id='financial_dependence' value={"financial dependence"} name={"investment_purpose"} onChange={handleSelection}/>
-                                <label htmlFor="financial_dependence"> Why are you interested in property investment</label>
-
-
-                            </div>
+                         
                             <div className='my-5'>
                                 <label htmlFor="retirement_saving" className='flex items-center gap-4'>
                                     <input type="radio" id='retirement_saving' value={"retirement saving"} name={"investment_purpose"}  onChange={handleSelection} />

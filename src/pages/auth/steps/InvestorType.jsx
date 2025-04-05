@@ -18,19 +18,14 @@ const InvestorType = ({handleNext, handlePrev}) => {
             <div>
                 {/* <h2 className='text-white my-6 '>Get Started</h2> */}
                 <p className='my-6 font-medium  text-2xl font-med'> To invest in this offer, we must
-ascertain what type of investor
-you are
-</p>
+                    ascertain what type of investor
+                    you are
+                    </p>
 
                 <div className='interest-form'>
                     <form action="">
                         <div>
-                            <div className='flex items-cente gap-4 my-5'>
-                                <input type="radio" id='financial_dependence' value={"financial_dependence"} name={"investment_type"} onChange={handleSelection}/>
-                                <label htmlFor="financial_dependence"> Why are you interested in property investment</label>
-
-
-                            </div>
+                           
                             <div className='my-5'>
                                 <label htmlFor="company" className='flex items-center gap-4'>
                                     <input type="radio" id='company' value={"company"} name={"investor_type"}  onChange={handleSelection} />
