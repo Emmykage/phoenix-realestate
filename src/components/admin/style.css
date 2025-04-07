@@ -498,7 +498,7 @@ main .recent-orders a {
   margin: auto;
   padding: 1rem;
   max-width: 1400px;
-  height: 630px;
+  /* height: 630px; */
   overflow: auto;
   background-color: var(--color-background);
   transition: height 0.73s ease-in-out;
@@ -521,10 +521,10 @@ main .recent-orders a {
 .assets-forms textarea,
 .assets-forms form select {
   width: 100%;
-  padding: 0.82rem 0.6rem;
+  padding: 0.82rem 1.6rem;
   outline: #363949;
-  border: 1px solid #363949;
-  border-radius: 1rem;
+  border: 1px solid #d1d1d1;
+  border-radius: 0.41rem;
 }
 
 .assets-forms form option {

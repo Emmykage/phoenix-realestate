@@ -9,11 +9,13 @@ const AppButton = ({
     className,
     children,
     endIcon,
-    loading
+    loading,
+    type
 }) =>  {
   return (
     <Stack spacing={2} direction="row">
       <Button 
+      type={type}
       className={className}
         endIcon={endIcon}
         disabled={disbaled} 

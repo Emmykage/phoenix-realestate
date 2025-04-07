@@ -17,7 +17,6 @@ const Aside = ({isOpen, setIsOpen}) => {
   const dispatch = useDispatch()
   const activeLink = 'active';
   const normalLink = '';
-  console.log(isOpen)
 
   const handleLogOut = () => {
     localStorage.removeItem("phoenix_auth")

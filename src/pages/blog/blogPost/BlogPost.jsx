@@ -5,6 +5,7 @@ import Banner from '../../../components/heroBanner/Banner'
 import Nav from '../../../components/nav/Nav'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPosts } from '../../../redux/actions/blog'
+import dateFormater from '../../../utils/dateFormat'
 
 const BlogPost = () => {
     const {id} = useParams()
@@ -25,7 +26,7 @@ const BlogPost = () => {
     <>
     <Nav/>
     <Banner header={blog?.category}/>
-    <section className='px-5 py-20'>
+    <section className='px-5 py-20 bg-white'>
 
           <div className="blog max-w-[1600px] m-auto gap-4 grid md:grid-cols-blogLayout">
             <div className='shadow px-2'>
@@ -46,8 +47,15 @@ const BlogPost = () => {
 
             </div>
 
-            <div className='max-w-5xl w-full px-2 m-auto mt-0'>
-              <h3 className='mb-4'>{blog?.title}</h3>
+            <div className='max-w-5xl border shadow min-h-96 p-6 rounded-lg w-full px-2 m-auto mt-0'>
+
+              <div className='flex flex-col md:flex-row  border-b mb-5 justify-between'>
+              <h3 className='mb-2'>{blog?.title}</h3>
+
+                <p>
+                  {dateFormater(blog?.date)}
+                </p>
+              </div>
                 <div dangerouslySetInnerHTML={{__html: blog?.blog_body}} />
 
             </div>

@@ -17,12 +17,12 @@ const Assets = () => {
   useEffect(() => {
     dispatch(getAssets());
   }, []);
+  console.log(offers)
   return (
     <>
     
     <div className='md:pt-20'>
-
-    <Button 
+      <Button 
     sx={{
       marginLeft: "auto"
     }}

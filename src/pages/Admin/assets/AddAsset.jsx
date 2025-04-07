@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { createAsset } from '../../../redux/actions/assets';
+import { createAsset, getAssets } from '../../../redux/actions/assets';
+import AppButton from '../../../components/buttons/Buttons';
+import { SET_LOADER } from '../../../redux/app/app';
 
 const AddAsset = () => {
   const [toggleForm, setToggleForm] = useState('false');
@@ -8,6 +10,8 @@ const AddAsset = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(SET_LOADER(true))
+
   
     
     const formData = new FormData();
@@ -26,18 +30,27 @@ const AddAsset = () => {
     formData.append('asset[city]', e.target.city.value)
 
     // const data = Object.fromEntries(formData)
-    dispatch(createAsset(formData));                                                                                                                                                  
+    dispatch(createAsset(formData)).then(result => {
+      if(createAsset.fulfilled.match(result)){
+        dispatch(getAssets())
+        dispatch(SET_LOADER(false))
+      }else{
+        dispatch(SET_LOADER(false))
+
+      }
+    });                                                                                                                                                  
     e.currentTarget.reset()
    
   };
   return (
     <div className="assets-forms">
-      <div className="asset-div border">
+      <div className="asset-div border b">
 
         <span onClick={() => setToggleForm(!toggleForm)}>Add Property</span>
         <form
  
-        onSubmit={handleSubmit} className={toggleForm && 'hide-form'}>
+        onSubmit={handleSubmit} 
+        className={ ''}>
         <div>
             <label>Property Title</label>
             <input type="text" id="name" name="name" 
@@ -158,14 +171,10 @@ const AddAsset = () => {
 
          
 
-          <button className="btn" type="submit"> create assets</button>
+          <AppButton className="btn" type="submit"> create assets</AppButton>
         </form>
       </div>
-
-      <div className="asset-div mx-5"><span>Add Transport</span></div>
-      <div className="asset-div"><span>Add Crypto</span></div>
-      <div className="asset-div"><span>Add Art</span></div>
-    </div>
+ </div>
   );
 };
 

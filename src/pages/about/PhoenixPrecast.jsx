@@ -70,7 +70,7 @@ const AboutPhoenixPrecast = () => {
                   <h3>Why Phoenix PRECAST?         </h3>
                   <img src="images/divider-half.png" alt="" /><br/><br/>
                   <p><strong>Launched in mid-2013,our platform was created to enable investors to diversify their portfolio into the vibrant UK and International property market, in a way that provides the security of a fixed-term investment, with capital growth. </strong></p>
-                  <p>Our strict investment criteria ensure we maximise investor returns.
+                  <p className='mt-4'>Our strict investment criteria ensure we maximise investor returns.
                   Since inception, we have provided 91 investment offerings with a total Gross Development Value of £416,793,318   </p> 
                   <p>Established in 2013, our extensive market knowledge, established relationships within the industry, and the ability to identify emerging investment hotspots allow us to offer a comprehensive end-to-end service in property investment. We focus on conducting thorough due diligence to select high-yield properties, providing a trusted and reliable investment solution for our clients. </p>
 

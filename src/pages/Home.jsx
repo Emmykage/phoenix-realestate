@@ -83,7 +83,10 @@ const Home = () => {
         <SubHeader/>
         
 <section className="module property-categories">
-  <div className="container m-auto">
+  <div
+  data-aos="fade-up"
+  data-aos-duration="3000"
+   className="container m-auto">
 
     <div className="module-header">
       <h2>Browse Our Most <strong>Popular Categories</strong></h2>

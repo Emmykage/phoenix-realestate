@@ -19,12 +19,12 @@ const About = () => {
             </strong></p>
             <p>At Phoenix Precast LTD, we are committed to providing a transparent, professional, and client-centric approach to property investment, prioritising the delivery of exceptional guidance, maintaining strong relationships with developers and partners, and ensuring our clients have access to thoroughly researched and well-managed investment opportunities.
             </p> 
-            <p>Established in 2013, our extensive market knowledge, established relationships within the industry, and the ability to identify emerging investment hotspots allow us to offer a comprehensive end-to-end service in property investment. We focus on conducting thorough due diligence to select high-yield properties, providing a trusted and reliable investment solution for our clients.
+            <p className='mt-3'>Established in 2013, our extensive market knowledge, established relationships within the industry, and the ability to identify emerging investment hotspots allow us to offer a comprehensive end-to-end service in property investment. We focus on conducting thorough due diligence to select high-yield properties, providing a trusted and reliable investment solution for our clients.
             </p>
 
-            <p>Our mission is to serve as a reliable and consistent partner for real estate investors seeking flexible financing solutions. We aim to facilitate the realisation of their property investment goals by offering accessible, transparent, and innovative investment opportunities. </p>
+            <p className='mt-3'>Our mission is to serve as a reliable and consistent partner for real estate investors seeking flexible financing solutions. We aim to facilitate the realisation of their property investment goals by offering accessible, transparent, and innovative investment opportunities. </p>
 
-            <p>
+            <p className='mt-3'>
             Our commitment to fostering long-term relationships extends beyond the closing of a deal. We strive to be a trusted advisor and reliable partner, supporting our clients throughout their real estate investment journey..
 
             </p>

@@ -1,33 +1,71 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Nav from '../../components/nav/Nav'
 import SubHeader from '../../components/subHeader/SubHeader'
 
 import propInvestment from "../../assets/images/pictures/Understanding-Property-Taxes-And-Their-Impact-On-Your-Real-Estate-Investment-1024x679.webp"
 import HowItWorksComp from '../components/HowItWorks'
-import globalIcon from '../../assets/icons/international.png'
-import recuitment from '../../assets/icons/recruitment.png'
-// import recuitment from '../../assets/icons/recruitment.png'
-import realIcon from '../../assets/icons/real-estate-market.png'
-import investmentIcon from '../../assets/icons/investment.png'
 import StatInfo from '../../components/stat-info/StatInfo'
-
+import howImage from "../../assets/images/pictures/how-it-works.jpg"
+import Aos from 'aos'
 const HowItWorks = () => {
+      useEffect(()=> {
+        Aos.init()
+        Aos.refresh()
+      },[])
+
+
   return (
     <div>
       <Nav/>
       <SubHeader tittle="How it works"/>
-      <HowItWorksComp/>
+      {/* <HowItWorksComp/> */}
+
+      <section className='px-4 pattern bg-blue-950'>
+      <div className='m-auto max-w-7xl'>
+      <div>
+        <div className='grid md:grid-cols-2 my-10 gap-10'>
+        
+
+          <div data-aos="zoom-in-down" className='px-4 leading-7'>
+          <h3 className='text-alt text-3xl mb-10'>How It Works     </h3>
+
+          <p className='mt-6 pl-5'>
+           - We Study the Global real estate market and it’s demand & assure a Fixed- Returns of Up To 50-70% Per Annum 
+          </p>
+          <p className='mt-5 pl-5'>
+          - Looking for accessible, straight-forward, and hands-free profitable UK & UAE property investment?
+            We provide a simple and secure pathway to grow your wealth - and you can start today from as little as £5,000.
+        
+          </p>
+
+          <p className='mt-4 pl-5'>
+           - PHEONIX PRECAST acquires and manages real estate properties with a focus on both near-term income generation and long-term value creation; to provide everyday investors access to the institutional-grade real estate deals that are normally reserved for only the largest investors. 
+      
+          </p>
+          <p className='mt-4 pl-5'>
+           - Our carefully chosen investment solutions are designed to cater to every individual investor, from those seeking fixed income streams to those interested in portfolio diversification and/or long-term growth.
+      
+          </p>
+        </div>
+        <div data-aos="flip-right" className='rounded-lg overflow-hidden shadow-lg'>
+            <img src={howImage} alt="" className='w-full h-full' />
+          </div>
+        </div>
+
+      </div>
+      </div>
+      </section>
 
 
       <section className='px-4 pattern bg-blue-950'>
       <div className='m-auto max-w-7xl'>
       <div>
         <div className='grid md:grid-cols-2 my-10 gap-10'>
-          <div className='rounded-lg overflow-hidden shadow-lg'>
+          <div data-aos="fade-up" className='rounded-lg overflow-hidden shadow-lg'>
             <img src={propInvestment} alt="" className='w-full h-full' />
           </div>
 
-          <div className='px-4'>
+          <div data-aos="fade-right" className='px-4'>
           <h3 className='text-white text-3xl mb-10'>Simple And Structured Property Investments       </h3>
 
           <p className='font-medium text-gray-100'>
@@ -71,7 +109,9 @@ const HowItWorks = () => {
           </p>
 
           <div className=' gap-10 grid md:grid-cols-2 '>
-            <div className='flex bg-white md:flex-row flex-col shadow rounded-lg p-4 items-center gap-5 '>
+            <div data-aos="fade-up"
+               data-aos-duration="3000"
+            className='flex bg-white md:flex-row flex-col shadow rounded-lg p-4 items-center gap-5 '>
 
               <div className='w-20 h-20 flex justify-center items-center text-3xl font-semibold  shrink-0 bg-gray-200'>
                   1
@@ -84,7 +124,10 @@ const HowItWorks = () => {
               </div>
             </div>
 
-            <div className='flex bg-white shadow rounded-lg p-4 items-center gap-5 flex-  md:flex-row flex-col'>
+            <div 
+            data-aos="fade-up"
+            data-aos-duration="3000"
+             className='flex bg-white shadow rounded-lg p-4 items-center gap-5 flex-  md:flex-row flex-col'>
               <div className='w-20 h-20 flex justify-center items-center text-3xl font-semibold  shrink-0 bg-gray-200'> 2 </div>
               <div>
 
@@ -96,7 +139,10 @@ const HowItWorks = () => {
               </div>
             </div>
 
-            <div className='flex bg-white shadow rounded-lg p-4 items-center gap-5 flex-  md:flex-row flex-col'>
+            <div 
+            data-aos="fade-up"
+            data-aos-duration="3000"
+             className='flex bg-white shadow rounded-lg p-4 items-center gap-5 flex-  md:flex-row flex-col'>
 
               <div className='w-20 h-20 flex justify-center items-center text-3xl font-semibold  shrink-0 bg-gray-200'>
                   3
@@ -111,7 +157,9 @@ const HowItWorks = () => {
               </div>
             </div>
 
-            <div className='flex bg-white shadow rounded-lg p-4 items-center gap-5 flex-  md:flex-row flex-col'>
+            <div data-aos="fade-up"
+            data-aos-duration="3000"
+            className='flex bg-white shadow rounded-lg p-4 items-center gap-5 flex-  md:flex-row flex-col'>
 
               <div className='w-20 h-20 flex justify-center items-center text-3xl font-semibold  shrink-0 bg-gray-200'>
                 4

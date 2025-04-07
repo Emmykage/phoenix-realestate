@@ -2,15 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import TopAssets from './TopAssets';
 import { useSelector } from 'react-redux';
+import defaultImage from "../assets/images/pictures/daria-nepriakhina-LZkbXfzJK4M-unsplash.jpg"
 
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import useScrollEffect from '../hooks/useScrllEffect';
 const FeaturedProperty = () => {
   const {offers} = useSelector(state => state.assets)
   const [isMobileView, setIsMobileView] = useState(false)
 
-
+useScrollEffect()
 
   const settings = {
     dots: true,
@@ -41,7 +43,7 @@ const FeaturedProperty = () => {
 <section className="module no-padding properties featured">
 
   <div className="container m-auto">
-    <div className="module-header">
+    <div data-aos="fade-up" className="module-header">
       <h2>Featured <strong>Properties</strong></h2>
       <img src="images/divider.png" alt="" className='block m-auto'/>
       <p>Discover excellence with our featured product – where innovation meets elegance for a standout online experience</p>
@@ -49,19 +51,21 @@ const FeaturedProperty = () => {
   </div>
 
  
-  <div className=''>
+  <div data-aos="fade-up"
+     data-aos-duration="3000"
+      className=''>
     <div className='container px-7 m-auto'>
     <Slider {...settings}>
       {offers.map((offer) => (
-        <div className="bg-white md:mr-0 w-350 bg-red mt-2">
-          <div className='h-350'>
-            <img src={offer.image_url} alt="" className='w-full h-full' />
+        <div className="bg-white md:mr-0 w-3 h- px-2  mt-2">
+          <div className='h-96 bg-green-50 p-4'>
+            <img src={offer.image_url ?? defaultImage} alt="" className='w-full h-full  rounded-lg' />
           </div>
           <div className='flex flex-col justify-center items-center gap-4'>
             <p className='font-bold mt-1'> {offer.name}</p>
             <p className='m-0'>{offer.address}</p>
             <p className='m-0'>{offer.city}</p>
-            <button className='text-white border p-2 px-4 rounded-md phoenix-blue mb-2'>View</button>
+            <button className='text-gray-700 border p-2 px-4 rounded-md phoenix-blue mb-2'>Explore</button>
            
           </div>
         </div>

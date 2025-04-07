@@ -1,9 +1,20 @@
-import React from 'react'
+import Aos from 'aos'
+import React, { useEffect } from 'react'
 
 const StatInfo = () => {
+        useEffect(()=> {
+          Aos.init()
+          Aos.refresh()
+        },[])
+  
+  
+
   return (
    
-  <section className="module cta hexs">
+  <section
+  data-aos="fade-up"
+     data-aos-duration="3000"
+      className="module cta hexs">
   <div className="container">
 
     <div className="module-header">
