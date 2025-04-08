@@ -3,9 +3,11 @@ import { AiOutlineMenuFold } from 'react-icons/ai'
 import { useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
 import "./nav.scss"
+import { Button, Menu, MenuItem } from '@mui/material'
 
 const Nav = () => {
   const {user} = useSelector(state => state.auth)
+  
 
   const [show, setShow] = useState("")
   const [toggleNav, setToggleNav] = useState(false)
@@ -43,33 +45,23 @@ const Nav = () => {
 
   }, [])
 
+
+
+
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+
   return (
     <header className="header-default bg-white z-50 relative ">
 
-    {/* <div classNameName="top-bar hidden md:block ">
-      <div className="container m-auto">
-          <div className="top-bar-left left">
-            <ul className="top-bar-item right social-icons">
-              <li><a href="#"><i className="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i className="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i className="fa fa-google-plus"></i></a></li>
-            </ul>
-            <div className="clear"></div>
-          </div>
-          <div className="top-bar-right right">
-            {user ? <span  onClick={logout} className="cursor-pointer top-bar-item"><i className="fa fa-sign-out icon"></i>Logout</span> : (<>
-         
-
-            <NavLink to="/auth/login" className="top-bar-item"><i className="fa fa-sign-in icon"></i>Login</NavLink>
-            <NavLink to="/auth/register" className="top-bar-item"><i className="fa fa-user-plus icon"></i>Register</NavLink>
-            </>
-          )}
-            <div className="clear"></div>
-          </div>
-          <div className="clear"></div>
-      </div>
-    </div> */}
-  
     <div className="container m-auto ">
   
       <div className="navbar-header item-center flex justify-center">
@@ -130,9 +122,54 @@ const Nav = () => {
           <div className="bg-red-">
   
           <div className="member-actions  right">
-            <NavLink to="/auth/register" className="button small alt button-icon">
-              <i className="fa fa-plus"></i>
-            Dashboard</NavLink>
+            <span  className="button small alt button-icon bg-blue-400">
+
+
+            <span>
+      
+        <i 
+        id="basic-button"
+        aria-controls={open ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+        className="fa fa-plus"></i>   
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            PaperProps={{
+              sx: {
+                backgroundColor: '#21252f',
+                color: 'white', // optional
+              },
+            }}
+            onClose={handleClose}
+            MenuListProps={{
+              'aria-labelledby': 'basic-button',
+            }}
+          >
+            <MenuItem onClick={handleClose}>Profile</MenuItem>
+            <MenuItem onClick={handleClose}>My account</MenuItem>
+            {user ? <MenuItem onClick={handleClose}>Logout</MenuItem> : <MenuItem ><NavLink to="/auth/login"> Login</NavLink></MenuItem>}
+            
+          </Menu>
+          </span>
+
+
+
+          {user ? 
+                        <NavLink className={"bg-re block w-full"} to="/auth/register">
+                        Dashboard
+                        </NavLink> : 
+                        
+                        <NavLink className={"bg-re block w-full"} to="/auth/register">
+                        Get Started
+                        </NavLink> }
+              
+              
+
+            </span>
           </div>
 
 
