@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import AppModal from '../../../components/modals/AppModal'
 import { Button } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,7 +9,7 @@ import Loader from '../../../components/loader/Loader';
 
 const PostList = () => {
     const {posts, loading} = useSelector(state => state.blog_posts)
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
     const navigate = useNavigate()
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -32,7 +32,7 @@ const PostList = () => {
     <div onClick={() => navigate(`/admin/posts/${item.id}`)} key={item.id} className='h-40 relative cursor-pointer overflow-hidden  p-4 rounded-xl bg-gray-200 flex justify-center items-center'>
         <img src={item.img_url} alt="" className=' bg-gray-300 absolute top-0 left-0 w-full h-full' />
         <div className=' bg-red-50/20 h-full w-full flex justify-center items-center'>
-        <p className='z-10 bg-gray-900/70 text-white px-3 rounded font-medium'> {item?.title}</p>
+        <p className='z-10 bg-gray-900/70 text-white p-3 text-center rounded font-medium'> {item?.title}</p>
 
         </div>
 

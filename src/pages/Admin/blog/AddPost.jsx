@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { createPost } from '../../../redux/actions/blog'
 import 'trix';
@@ -26,15 +26,13 @@ const AddPost = ({
         formData.append("blog[blog_body]", e.target.blog_body.value)
         formData.append("blog[date]", e.target.date.value)
 
-        const data = Object.fromEntries(formData)
-
-        console.log(data)
+        // const data = Object.fromEntries(formData)
         
         dispatch(createPost(formData)).then(result => {
             if(createPost.fulfilled.match(result)){
                 formRef.current.reset()
                 dispatch(SET_LOADER(false))
-                // handleClose()
+                handleClose()
             }else{
                 dispatch(SET_LOADER(false))
 
@@ -68,12 +66,7 @@ const AddPost = ({
                 <label htmlFor="" className='text-base font-medium'>Blog Title</label>
                 <input type="text" name="title" required />
             </div>
-            {/* <div className='my-1'>
-                <label htmlFor="" className='text-base font-medium'>Category</label>
-                <select name="category" id="category" >
-                    <option value="finance">Finance</option>
-                </select>
-            </div> */}
+
             <div className='my-1'>
                 <label htmlFor="description" className='text-base font-medium'>Description (short description)</label>
                 <input type="text" name="description" required />

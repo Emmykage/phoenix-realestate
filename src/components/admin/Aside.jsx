@@ -28,7 +28,7 @@ const Aside = ({isOpen, setIsOpen}) => {
             <AiOutlineClose className='text-2xl md:hidden ' />
           </span>
         <div className="logo p-5">
-          <img src={"./logo.png"} alt="logo"/>
+          <img src={"/logos/12.png"} alt="logo" className='max-w-32 m-auto'/>
         
         </div>
         <div className="close" id="close-btn">

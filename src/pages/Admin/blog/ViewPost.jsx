@@ -90,9 +90,9 @@ useEffect(() => {
     <div>
            <div className='blog-post'>
         <form  onSubmit={handleUpdate}>
-           <h2>Add Blog Post</h2> 
+           <h2 className='font-semibold mb-6'>{post?.title}</h2> 
            <div className='my-1'>
-                <label htmlFor="" className='text-base font-medium'>Blog Title {post?.title}</label>
+                <label htmlFor="" className='text-base font-medium'>Blog Title </label>
                 <input type="text" name="title" 
                  onChange={(e) => setFormValues({ ...formValues, title: e.target.value })}
                  required  value={formValues?.title}/>

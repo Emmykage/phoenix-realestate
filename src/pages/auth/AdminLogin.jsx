@@ -47,7 +47,7 @@ const AdminLogin = () => {
         <div>
             <section className="subheader login">
                 <div className="container m-auto  ">
-                    <h1>Login as an Admin</h1>
+                    <h1 className="text-5xl text-white font-semibold">Login as an Admin</h1>
                     <div className="breadcrumb right">
                         <NavLink to="/">Home</NavLink>  
                         <i className="fa fa-angle-right"></i> 
