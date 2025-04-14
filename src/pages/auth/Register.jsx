@@ -12,14 +12,15 @@ import InitialInvestment from './steps/InitialInvestment'
 import UserInfo from './steps/UserInfo'
 import InvestorType from './steps/InvestorType'
 import UserInfoPassword from './steps/UserInfoPassword'
+import useScrollEffect from '../../hooks/useScrllEffect'
 
 const Register = () => {
+
+  useScrollEffect()
   const {userReg, error, message, loading } = useSelector(state => state.auth)
   const navigate = useNavigate()
   const [step, setStep] = useState(1)
   const handleNext = (data) => {
-    console.log(step, data )
-
     dispatch(accountInfo(data))
     setStep(step => Math.min(step +1, regJourney.length))
     step === regJourney.length && handleFormSubmit()

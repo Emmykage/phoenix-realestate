@@ -14,7 +14,7 @@ const InvestorType = ({handleNext, handlePrev}) => {
 
   return (
     <div className='h-screen get-started w-full bg-primary px-4 text-white flex justify-center items-center'>
-        <div>
+        <div data-aos="zoom-in-down">
             <div>
                 {/* <h2 className='text-white my-6 '>Get Started</h2> */}
                 <p className='my-6 font-medium  text-2xl font-med'> To invest in this offer, we must

@@ -12,7 +12,7 @@ const InvestmentProp = ({handleNext, handlePrev}) => {
 
   return (
     <div className='h-screen get-started w-full bg-primary px-4 text-white flex justify-center items-center'>
-        <div>
+        <div data-aos="zoom-in-down">
             <div>
                 <h2 className='text-white my-6 '></h2>
                 <p className='my-6 font-medium  text-3xl font-med'> Which type of property investment are you most interested in?</p>

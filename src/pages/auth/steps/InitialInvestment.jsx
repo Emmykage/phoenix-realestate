@@ -14,7 +14,7 @@ const InitialInvestment = ({handleNext,  handlePrev}) => {
 
   return (
         <div className='h-screen get-started w-full bg-primary px-4 text-white flex justify-center items-center'>
-            <div>
+            <div data-aos="zoom-in-down">
                 {/* <h2 className='text-white my-6 '>Get Started</h2> */}
                 <p  className='my-6 font-medium text-center text-3xl font-med'>How much are you looking to invest initially?</p>
                 <p className='text-center'>(We have opportunities available from just £5,000)</p>

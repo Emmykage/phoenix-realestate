@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { AiOutlineMenuFold } from 'react-icons/ai'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
 import "./nav.scss"
 import { Button, Menu, MenuItem } from '@mui/material'
+import { userlogOut } from '../../redux/actions/auth'
 
 const Nav = () => {
   const {user} = useSelector(state => state.auth)
-  
+  const dispatch = useDispatch()
 
   const [show, setShow] = useState("")
   const [toggleNav, setToggleNav] = useState(false)
@@ -15,9 +16,13 @@ const Nav = () => {
 
 
   const navigation = useNavigate()
-  const logout = () => {
-    localStorage.setItem('phoenix_auth', null);
-    navigation('/auth/login')
+  const handleLogout = () => {
+    dispatch(userlogOut()).then(result => {
+      if(userlogOut.fulfilled.match(result)){
+        navigation('/auth/login')
+
+      }
+    })
   }
   const handleStickNav = (e) => {
 
@@ -60,7 +65,7 @@ const Nav = () => {
 
 
 
-  console.log(user)
+  console.log("login status",user)
   return (
     <header className="header-default bg-white z-50 relative ">
 
@@ -153,7 +158,7 @@ const Nav = () => {
           >
             <MenuItem onClick={handleClose}>Profile</MenuItem>
             <MenuItem onClick={handleClose}>My account</MenuItem>
-            {user ? <MenuItem onClick={handleClose}>Logout</MenuItem> : <MenuItem ><NavLink to="/auth/login"> Login</NavLink></MenuItem>}
+            {user ? <MenuItem onClick={handleLogout}>Logout</MenuItem> : <MenuItem ><NavLink to="/auth/login"> Login</NavLink></MenuItem>}
             
           </Menu>
           </span>

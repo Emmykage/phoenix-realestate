@@ -100,6 +100,13 @@ console.log("first", token())
 });
 
 
-// const 
+export const userlogOut = createAsyncThunk("log-out", async() => {
+  
+  localStorage.removeItem("phoenix_auth")
+  return {message: "logout successful"}
+
+  
+
+})
 
 export { registerUser, userSession };

@@ -24,11 +24,11 @@ const UserInfoPassword = ({handleNext, handlePrev}) => {
     
   
   <section className="module  min-h-screen get-started w-full bg-primary px-4 text-white flex justify-center  items-center">
-    <div className="">
+    <div data-aos="zoom-in-down" className="">
   
       <div className=" px-4 text-justify">
         <div className="col-lg-4 w-full  col-lg-offset-4"> 
-          <p className="text-xl text-center">
+          <p className="text-xl my-4 text-center">
             User  Password
             </p>
             
@@ -54,7 +54,7 @@ const UserInfoPassword = ({handleNext, handlePrev}) => {
               }}>Submit</AppButton>
                                       </div>
               <div className="divider"></div>
-              <p className="note">By clicking the "Register" button you agree with our <a href="#">Terms and conditions</a></p>    
+              <p className="note mt-5">By clicking the "Register" button you agree with our <a href="#">Terms and conditions</a></p>    
               </form>
 
         </div>

@@ -16,7 +16,7 @@ const GetStarted = ({handleNext}) => {
   return (
     <div className='h-screen get-started  w-full bg-primary px-4 text-white flex justify-center items-center'>
         <div>
-            <div>
+            <div data-aos="zoom-in-up">
                 <h2 className='text-white my-6 '>Lets Get You Started</h2>
                 <p htmlFor="investment_purpose" className='my-6 font-medium  text-3xl font-med'> Why are you interested in property investment?</p>
 

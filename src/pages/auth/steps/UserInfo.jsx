@@ -23,7 +23,7 @@ const UserInfo = ({handleNext, handlePrev}) => {
     return(
     
   
-  <div className="h-screen get-started w-full bg-primary px-4 text-white flex justify-center items-center text-justify">
+  <div data-aos="zoom-in-down" className="h-screen get-started w-full bg-primary px-4 text-white flex justify-center items-center text-justify">
   
         <div className=" w-full max-w-5xl ma h-max"> 
           <p className="text-xl text-center my-4">
