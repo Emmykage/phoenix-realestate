@@ -966,6 +966,18 @@ textarea.border,
   text-align: center;
   padding: 200px 0px;
   background-image: url(../public/images/Real-Estate-Wallpaper-05-2866x1516-1-scaled.jpg);
+
+
+}
+
+@media (max-width: 690px) {
+  .subheader.simple-search {
+    /* text-align: center; */
+    padding: 50px 0px;
+    height: 88vh;
+  
+  
+  }
 }
 .subheader.simple-search h1 {
   float: none;
@@ -3085,23 +3097,12 @@ textarea.border,
   z-index: 1;
 }
 
-.testimonial-details {
-  margin: 0 auto;
-  display: inline-block;
-}
+
 .testimonial-img {
-  display: inline-block !important;
-  margin-bottom: 10px;
-  width: 67px;
-  height: 67px;
-  border-radius: 100%;
+
   box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.2);
 }
-.testimonial-name {
-  font-size: 18px;
-  margin-top: 5px;
-  margin-bottom: 0px;
-}
+
 
 .slider-nav-testimonials .slider-prev,
 .slider-nav-testimonials .slider-next {

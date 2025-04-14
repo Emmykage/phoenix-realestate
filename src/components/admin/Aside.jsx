@@ -8,7 +8,6 @@ import { GiReceiveMoney } from 'react-icons/gi';
 import { IoAnalyticsSharp, IoAddSharp } from 'react-icons/io5';
 import { RiMessageLine } from 'react-icons/ri';
 import { FiSettings } from 'react-icons/fi';
-import LOGO from '../../assets/images/logo1.jpg';
 import { useDispatch } from 'react-redux';
 import { userProfile } from '../../redux/actions/auth';
 
@@ -29,7 +28,7 @@ const Aside = ({isOpen, setIsOpen}) => {
             <AiOutlineClose className='text-2xl md:hidden ' />
           </span>
         <div className="logo p-5">
-          <img src={LOGO} alt="logo"/>
+          <img src={"./logo.png"} alt="logo"/>
         
         </div>
         <div className="close" id="close-btn">

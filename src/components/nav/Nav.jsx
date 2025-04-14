@@ -62,10 +62,6 @@ const Nav = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
-
-
-  console.log("login status",user)
   return (
     <header className="header-default bg-white z-50 relative ">
 
@@ -75,9 +71,9 @@ const Nav = () => {
   
         
         
-        <div className='flex justify-between items-center'>
+        <div className='flex px-4 justify-between items-center'>
         <NavLink to="/" className="inline-block w-24 h-24 p-4 logo-icon" >
-        <img src="/logo.png" alt="Homely" className='py-2 w-full h-full' /></NavLink>
+        <img src="/logos/12.png" alt="Homely" className='py-2 w-full h-full' /></NavLink>
         <div className=" ">
           
         <div className="bg-white hidden lg:block">
@@ -183,7 +179,7 @@ const Nav = () => {
           <div className={`${show} ${toggleNav ? "left-0" : "-left-full"} top-0 md:left-0 transition-all duration-200 ease-linear  md:top-0 bg-theme-black py-0 z-50 absolute h-screen md:h-full md:bg-none w-full md:w-[80%]  flex nav-contain`} id="navbarSupportedContent">
             <ul className="nav navbar-nav px-2  flex-1 items-center justify-between md:flex-row  mr-auto md:flex block bg-blue-">
               <li className="nav-item active text-white">
-                <NavLink className="nav-link text-white p-2.5" to="/" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Home <span className="sr-only"></span></NavLink>
+                <NavLink className="nav-link text-white" to="/" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Home <span className="sr-only"></span></NavLink>
               </li>
               <li className="relative menu-item-has-childre nav-item text-white">
                 <NavLink to="/about-us" className={"nav-link active text-white"}>About Us</NavLink>

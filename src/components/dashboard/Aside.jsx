@@ -1,6 +1,5 @@
 import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import logo from '../../assets/images/logo1.jpg'
 import "../../App.css"
 
 const Aside = () => {
@@ -19,7 +18,7 @@ const Aside = () => {
           <div className='dash-logo'>
             
             <>
-              <NavLink to="/" className="block"><img src={logo}/> </NavLink>
+              <NavLink to="/" className="block"><img src={"/logo.png"}/> </NavLink>
             </>
           </div>
           <ul>

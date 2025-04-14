@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { registerUser, userProfile, userSession } from '../actions/auth';
+import { registerUser, userlogOut, userProfile, userSession } from '../actions/auth';
 
 const initialState = {
   user: null,
@@ -86,6 +86,12 @@ const userSlice = createSlice({
       ...state,
       loading: true,
     }),
+    [userlogOut.fulfilled]: (state, action) => ({
+      ...state,
+      loading: false,
+      user: null
+    }),
+    
 
     
   },
