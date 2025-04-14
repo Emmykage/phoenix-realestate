@@ -12,8 +12,8 @@ const registerUser = createAsyncThunk('user/register', async (data, {rejectWithV
   data?.user.role && formData.append("user[role]", data.user.role)
   data?.phone && formData.append("user[phone_no]", data.user.phone)
 
-  const dataO = Object.fromEntries(formData)
-  console.log(dataO)
+  // const dataO = Object.fromEntries(formData)
+  // console.log(dataO)
   try {
 
     const response = await fetch(`${baseUrl}users`, {
@@ -98,5 +98,8 @@ console.log("first", token())
   }
   
 });
+
+
+// const 
 
 export { registerUser, userSession };

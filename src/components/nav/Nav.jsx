@@ -59,6 +59,8 @@ const Nav = () => {
   };
 
 
+
+  console.log(user)
   return (
     <header className="header-default bg-white z-50 relative ">
 
@@ -159,7 +161,7 @@ const Nav = () => {
 
 
           {user ? 
-                        <NavLink className={"bg-re block w-full"} to="/auth/register">
+                        <NavLink className={"bg-re block w-full"} to="/dashboard/home">
                         Dashboard
                         </NavLink> : 
                         

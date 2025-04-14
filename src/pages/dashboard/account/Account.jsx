@@ -2,7 +2,8 @@ import React from 'react'
 import user from "../../../assets/images/icons/avatar-1299805_1280.png"
 import { NavLink, Outlet } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-// import { MdReportGmailerrorred } from 'react-icons/md'
+import userImage from "../../../assets/images/pictures/user.png"
+
 const DashboardHome = () => {
   const {user} = useSelector(state => state.auth)
 
@@ -18,7 +19,7 @@ const DashboardHome = () => {
 
       <div className='w-full bg-white shadow-md p-8 flex flex-col md:flex-row items-center gap-4 rounded-md'>
         <div className='h-28 w-28 shadow-md rounded-full border'>
-          <img src={user} alt="user icon" className='w-full h-full p-5 text-gray-500' />
+          <img src={userImage} alt="user icon" className='w-full h-full p-5 text-gray-500' />
         </div>
         <div className='flex gap-2 justify-between flex-col md:flex-row flex-1' >
           <div className=' flex-1  text-center '>

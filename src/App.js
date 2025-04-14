@@ -64,6 +64,7 @@ import PassiveIncome from './pages/opportunities/PassiveIncome';
 import HowItWorks from './pages/opportunities/HowItWorks';
 import PostList from './pages/Admin/blog/PostList';
 import ViewPost from './pages/Admin/blog/ViewPost';
+import Profile from './pages/dashboard/profile/Profile';
 function App() {
   const {loader} = useSelector(state => state.app)
   useInitializer()
@@ -83,6 +84,7 @@ function App() {
 
       <Route path='/dashboard' element={<><DashboardLayout/></> }>
       <Route path='home' element={<DashboardHome/>} />
+      <Route path='profile' element={<Profile/>} />
       <Route path='account' element={<DashboardHome/>}>
           <Route path='deposit' element={<AccountDeposit/>}/>
           <Route path='identity' element={<Identity/>}/>

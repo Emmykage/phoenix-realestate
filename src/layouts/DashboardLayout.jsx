@@ -3,10 +3,11 @@ import { BiCustomize } from 'react-icons/bi';
 import { BsBriefcase } from 'react-icons/bs';
 import { FaQuestionCircle, FaRegUser } from "react-icons/fa";
 import { GrDocumentDownload } from 'react-icons/gr';
-import { IoMdMenu, IoMdNotificationsOutline } from "react-icons/io";
+import { IoMdHome, IoMdMenu, IoMdNotificationsOutline } from "react-icons/io";
 import { MdSupervisorAccount } from 'react-icons/md';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
+import { CiLogout } from "react-icons/ci";
 
 const DashboardLayout = ({children}) => {
     // const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -17,41 +18,65 @@ const DashboardLayout = ({children}) => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    console.log(user, isLogged)
 
+
+    useEffect(() => {
+        const aside = document.querySelector("#aside")
+        console.log(aside)
+
+    },[])
+    
+    const items = [
+        {
+            link: '/dashboard/home/',
+            label: "Home",
+            icon: <IoMdHome  className='text-2xl'/>
+        }, {
+            link: '/dashboard/account/',
+            label: "Account",
+            icon: <MdSupervisorAccount className='text-2xl'/>
+        },
+        {
+            link: '/dashboard/offering/',
+            label: "Offering",
+            icon: <BiCustomize className='text-2xl'/>
+        },
+        {
+            link: '/dashboard/portfolio/',
+            label: "Portfolio",
+            icon: < BsBriefcase className='text-2xl'/>
+        }
+    ]
+    const active = "bg-gray-200 flex items-center gap-4 px-2 m-auto w-full h-full hover:bg-gray-300"
+    const inactive = " flex items-center gap-4 px-2 m-auto w-full h-full hover:bg-gray-300"
   return (
     <div className='h-screen flex  bg-gray-200 overflow-y-auto'>
        
-       <aside className={`${toggle ? "w-0 " : "w-20 px-2"} h-scre bg-white shrink-0 absolute md:relative z-10 shadow h-full bg-whit border-t md:pl-2 py-32 overflow-hidden`}>
-                {/* <a href="/account">Accounts</a> */}
-                <ul>
-                    <li className='my-3'>
-                    <NavLink to={'/dashboard/account/'} className="block m-auto w-max">
-                        <MdSupervisorAccount className='text-xl' />
-                        </NavLink>
-                            </li>
-                            <li className='my-3'>
-                            <NavLink to={'/dashboard/offering/'}  className="block m-auto w-max">
-                        <BiCustomize  className='text-xl' />
-                        </NavLink>
+       <aside id='aside' className={`${toggle ? "w-0 " : "w-60 px-2"} bg-white flex flex-col border shrink-0 absolute md:relative z-10 shadow h-full bg-whit border-t md:pl-2 py-10 overflow-hidden`}>
 
-                            </li>
-                            <li className='my-3 text-center'>
-                            <NavLink to={'/dashboard/portfolio/'}  className="block m-auto w-max -300">
-                        <BsBriefcase className='text-xl' />
+                <div className='bg-r mb-10'>
+                    <img src={"/logo.png"} alt="" className='w-20  block m-auto'/>
+                </div>
+                <ul className=' flex-1 flex flex-col h-full'>
+                    {items.map(item => (
+                        <li className='my-2 h-10 '>
+                        <NavLink to={item.link} className={({isActive}) => isActive ? active: inactive }>
+                        {item.icon}
+                        <span className='text-base font-medium'>{item.label}</span>
                         </NavLink>
-                            </li>
-                            <li className='flex justify-center items-center '>
-                            <NavLink to={'/dashboard/document/'}  className="block m-auto w-max" >
-                        <GrDocumentDownload  className='text-xl' />
-                        </NavLink>
-                    </li>
+                        </li>
+                    ))}
+                    <li className='my-2 h-10 mt-auto bg-gray-100'>
+                        <a onClick={()=> {dispatch(logOut()); navigate('/auth/login');  }} className={inactive}>
+                        <CiLogout/>
+
+                        <span className='text-base font-medium'>Log Out</span>
+                        </a>
+                        </li>
                  
                 </ul>
 
-                {/* <span className='block my-24 text-gray-700 text-gray-600 font-medium cursor-pointer'
-                 onClick={()=> {dispatch(logOut()); navigate('/auth/login');  }}
-                 >log out</span> */}
+             
 
             
                 
@@ -80,7 +105,7 @@ const DashboardLayout = ({children}) => {
                 <ul className=' gap-8 items-center md:flex hidden'>
                 <li><NavLink><FaQuestionCircle /></NavLink></li>
                 <li><NavLink to={''}><IoMdNotificationsOutline /></NavLink></li>
-                <li><NavLink to={''}><FaRegUser /></NavLink></li>
+                <li><NavLink to={'/dashboard/profile'}><FaRegUser /></NavLink></li>
                 <li><NavLink to={''}>{user?.email}</NavLink></li>
                 </ul>
                 <a onClick={()=> setToggle(prev => !prev)} target="_blank" rel="noopener noreferrer" className='flex sm:hidden'><IoMdMenu className='text-4xl'/></a>
@@ -88,7 +113,7 @@ const DashboardLayout = ({children}) => {
 
         </header>
 
-            <div className='flex-1 pr-6 m-auto max-w-[1500px]'>
+            <div className='flex-1 pr-6 m-auto max-w-[1500px] p-4'>
                 <Outlet/>
 
             </div>
