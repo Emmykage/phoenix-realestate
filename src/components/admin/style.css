@@ -138,7 +138,7 @@ aside .side-bar a {
   transition: all 300 ease;
 }
 
-aside .side-bar a.active {
+aside .side-bar a.active, aside .side-bar a:hover {
   background: var(--color-light);
   color: var(--color-primary);
 }
@@ -149,8 +149,7 @@ aside .side-bar a span {
 }
 
 
-
-aside .side-bar a.active::before {
+aside .side-bar a.active::before,aside .side-bar a:hover::before {
   content: "";
   width: 6px;
   height: 100%;
