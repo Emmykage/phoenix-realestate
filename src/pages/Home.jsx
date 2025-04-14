@@ -21,9 +21,9 @@ const Home = () => {
 
        <section className="subheader simple-search">
         <div className="container bg-gray-light-trans p-3 m-auto">
-          <div className='bg-gray-900/70 m-auto rounded-lg max-w-7xl p-4'>
-          <h1>Find your new home today.</h1>
-          <p className='text-alt font-medium'>Explore a wide range of properties tailored to your needs. Whether you're looking for a cozy apartment or a spacious family home, we’ll help you find the perfect place. Start your journey today!</p>
+          <div className='bg-gray-900/70 m-auto rounded-lg max-w-7xl p-4 pt-10'>
+          <h1 className='text-3xl mb-3 leading-9 text-center md:text-5xl text-white font-bold'>Find your new home today.</h1>
+          <p className='text-alt leading-8 font-medium mt-5 text-xl'>Explore a wide range of properties tailored to your needs. Whether you're looking for a cozy apartment or a spacious family home, we’ll help you find the perfect place. Start your journey today!</p>
 
           </div>
         
