@@ -453,6 +453,7 @@ textarea.border,
   text-align: center;
   padding-top: 4px;
   border-radius: 100%;
+  color: white;
 }
 .social-icons.circle li a:hover {
   background: #48a0dc;

@@ -31,6 +31,10 @@
 body{
     font-family: "poppins";
 }
+
+html{
+  scroll-behavior: smooth;
+}
 /** CALL TO ACTIONS **/
 .pattern {
   color: white;
@@ -38,6 +42,7 @@ body{
   background: linear-gradient(#21252fda, #21252fda), url(../public/images/pattern.jpg);
 
 }
+
 
 .dashboard aside {
   max-width: 300px;

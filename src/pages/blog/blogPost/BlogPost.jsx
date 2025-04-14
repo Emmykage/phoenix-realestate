@@ -6,6 +6,7 @@ import Nav from '../../../components/nav/Nav'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPosts } from '../../../redux/actions/blog'
 import dateFormater from '../../../utils/dateFormat'
+import SubHeader from '../../../components/subHeader/SubHeader'
 
 const BlogPost = () => {
     const {id} = useParams()
@@ -19,13 +20,11 @@ const BlogPost = () => {
     },[])
   
 
-    const blog = [...posts, ...blogs]?.find(blog => blog.id == id)
-
-    console.log(blog)
+    const blog = [...posts]?.find(blog => blog.id == id)
   return (
     <>
     <Nav/>
-    <Banner header={blog?.category}/>
+    <SubHeader tittle={blog?.title}/>
     <section className='px-5 py-20 bg-white'>
 
           <div className="blog max-w-[1600px] m-auto gap-4 grid md:grid-cols-blogLayout">

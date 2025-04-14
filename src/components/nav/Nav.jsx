@@ -194,8 +194,9 @@ const Nav = () => {
                 <li className="relative menu-item-has-childre nav-item text-white">
                 <NavLink to="#" className={"nav-link active text-white"}>Investment Opportunity</NavLink>
                 <ul className="sub-menu relative">
-                  <li><NavLink to="/passive-income" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li>
-                      <li><NavLink to="/how-it-work" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>How It Works</NavLink></li>
+                <li><NavLink to="/properties" >Property Listing</NavLink></li>
+                <li><NavLink to="/passive-income" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li>
+                <li><NavLink to="/how-it-work" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>How It Works</NavLink></li>
                   
                     </ul>
                     </li>

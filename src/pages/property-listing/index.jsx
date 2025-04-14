@@ -4,6 +4,7 @@ import { getAssets } from '../../redux/actions/assets'
 import { NavLink } from 'react-router-dom'
 import { usd_format } from '../../components/misc/USD'
 import Nav from '../../components/nav/Nav'
+import SubHeader from '../../components/subHeader/SubHeader'
 
 const Properties = () => {
   const dispatch = useDispatch()
@@ -19,13 +20,8 @@ const Properties = () => {
   return (
     <div>
       <Nav/>
-        <section class="subheader">
-  <div class="container">
-    <h1 className='bg-gray-dark-trans p-2'>Property Listing</h1>
-    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">Properties</a></div>
-    <div class="clear"></div>
-  </div>
-</section>
+    
+<SubHeader tittle={"Property Listing"} />
 
 <section class="module">
   <div class="container m-auto">

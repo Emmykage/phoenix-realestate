@@ -65,8 +65,10 @@ import HowItWorks from './pages/opportunities/HowItWorks';
 import PostList from './pages/Admin/blog/PostList';
 import ViewPost from './pages/Admin/blog/ViewPost';
 import Profile from './pages/dashboard/profile/Profile';
+import usePageReset from './hooks/usePageRest';
 function App() {
   const {loader} = useSelector(state => state.app)
+  usePageReset()
   useInitializer()
   return (
     <div className="App">
