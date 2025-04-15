@@ -5,10 +5,11 @@ import { NavLink } from 'react-router-dom'
 import { usd_format } from '../../components/misc/USD'
 import Nav from '../../components/nav/Nav'
 import SubHeader from '../../components/subHeader/SubHeader'
+import Loader from '../../components/loader/Loader'
 
 const Properties = () => {
   const dispatch = useDispatch()
-  const {offers} = useSelector(state => state.assets)
+  const {offers, loading} = useSelector(state => state.assets)
   useEffect(()=> {
 
     dispatch(getAssets())
@@ -23,13 +24,13 @@ const Properties = () => {
     
 <SubHeader tittle={"Property Listing"} />
 
-<section class="module">
-  <div class="container m-auto">
+<section className="module">
+  <div className="container m-auto">
    
   
-	<div class="property-listing-header">
-    <span class="property-count left">{offers.length} properties found</span>
-      <form action="#" method="get" class="right">
+	<div className="property-listing-header">
+    <span className="property-count left">{offers.length} properties found</span>
+      <form action="#" method="get" className="right">
         <select name="sort_by" onchange="this.form.submit();">
           <option value="date_desc">New to Old</option>
           <option value="date_asc">Old to New</option>
@@ -38,48 +39,59 @@ const Properties = () => {
         </select>
       </form>
       <div class="property-layout-toggle right">
-        <a href="property-listing-grid.html" class="property-layout-toggle-item active"><i class="fa fa-th-large"></i></a>
-        <a href="property-listing-row.html" class="property-layout-toggle-item"><i class="fa fa-bars"></i></a>
+        <a  class="property-layout-toggle-item active"><i class="fa fa-th-large"></i></a>
+        <a  class="property-layout-toggle-item"><i class="fa fa-bars"></i></a>
       </div>
       <div class="clear"></div>
 	  </div>
     
-    <div class="">
-    {offers.map((asset) => (
-      <div class="col-lg-4 col-md-4">
-      <div class="property shadow-hover">
-        <NavLink to={`/assets_details/${asset.id}`} className="property-img">
-          <div class="img-fade"></div>
-          <div class="property-tag button status">{asset.sale_type}</div>
-          <div class="property-price">{usd_format(asset.price)}</div>
-          <div class="property-color-bar"></div>
-          <img src={asset.image_url} alt={asset.name} className='object-cover m-auto ' />
-        </NavLink>
-        <div class="property-content">
-          <div class="property-title">
-            <h4><a href="#">{asset.name}</a></h4>
-            <p class="property-address"><i class="fa fa-map-marker icon"></i>123 Smith Dr, Annapolis, MD</p>
-          </div>
-          <table class="property-details">
-            <tr>
-              <td><i class="fa fa-bed"></i> {asset.number_of_bedrooms} Beds</td>
-              <td><i class="fa fa-tint"></i>{asset.number_of_bathrooms} 2 Baths</td>
-              <td><i class="fa fa-expand"></i> {asset.area} Sq Ft</td>
-            </tr>
-          </table>
+    <div class="grid grid-cols-2 gap-10 relative min-h-96">
+    {loading ? <div className='h-full w-full absolute top-0 left-0 bg-red-'> <Loader/> </div> :  offers.length > 0  ? offers.map((asset) => (
+      <div className="h-max rounded-lg overflow-hidden">
+      <div className=" shadow-hover bg-white ">
+        <div  className="property-img relative bg-gray-900 p-0 h-96">
+          <div className="img-fade"></div>
+          <div className="property-tag button status">{asset.sale_type}</div>
+          <div className="property-price">{usd_format(asset.price)}</div>
+          <div className="property-color-bar"></div>
+          <img src={asset.image_url} alt={asset.name} className='object-cover m-auto h-full w-full' />
         </div>
-        <div class="property-footer">
-          <span class="left"><i class="fa fa-calendar-o icon"></i> 5 days ago</span>
-          <span class="right">
-            <a href="#"><i class="fa fa-heart-o icon"></i></a>
-            <a href="#"><i class="fa fa-share-alt"></i></a>
-          </span>
-          <div class="clear"></div>
-        </div>
+        <div className="property-content p-4">
+            <h4><NavLink to={`/assets_details/${asset.id}`} className='text-xl hover:text-theme-pry text-primary font-semibold'>{asset.name}</NavLink></h4>
+
+              <div className='flex justify-between items-center my-3'>
+             
+              <div className="property-title ">
+                <p className="property-address"><i className="fa fa-map-marker icon"></i>{asset.address}</p>
+              </div>
+              <div>
+           
+              </div>
+                 
+              </div>
+              <div className=' '>
+
+              <table className="property-details  items-center my-5">
+                <tr>
+                  <td><i className="fa fa-bed"></i> {asset.number_of_bedrooms} Beds</td>
+                  <td><i className="fa fa-tint"></i> {asset.number_of_bedrooms} Baths</td>
+                  <td><i className="fa fa-expand"></i>{asset.area} Sq Ft</td>
+                </tr>
+              </table>
+              </div>
+
+              
+            </div>
+    
       </div>
     </div>
       
-    ))}        
+    ))
+  : 
+  <div>
+    <h3 className='text-theme-alt font-semibold'>
+      No Property Listing available
+      </h3> </div>}        
 		
 	</div>
 	
