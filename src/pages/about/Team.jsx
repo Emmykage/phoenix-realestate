@@ -57,7 +57,7 @@ const OurTeam = () => {
                    Join our Team. </h5>
             <p className='leading-8'>
 
-Ever considered a career in property? Whether your skills lie in sales, customer care, IT or marketing, you’ll be able to build a successful career within our company and in turn, enjoy a number of employee benefits, as well as being surrounded by a friendly and welcoming team. 
+Ever considered a career in property? Whether your skills lie in sales, customer care or marketing, you’ll be able to build a successful career within our company and in turn, enjoy a number of employee benefits, as well as being surrounded by a friendly and welcoming team. 
 
             </p>
             <div className='max-w-sm m-auto mt-10'>

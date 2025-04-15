@@ -26,7 +26,7 @@ const Blog = () => {
         <SubHeader tittle="Press Release"/>
         <section className='md:px-5 px-3 bg-white py-10'>
           <div className="blog max-w-[1600px] m-auto gap-6 grid md:grid-cols-blogLayout">
-            <div className='shadow px-2'>
+            <div className='shadow bg-white px-2'>
             <h3 className='text-center text-xl my-5'>Recent Post</h3>
            
               {pressBlogs.slice(0, 4).map(blog => (

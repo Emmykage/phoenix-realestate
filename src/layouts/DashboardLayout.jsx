@@ -8,6 +8,7 @@ import { MdSupervisorAccount } from 'react-icons/md';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { CiLogout } from "react-icons/ci";
+import { userlogOut } from '../redux/actions/auth';
 
 const DashboardLayout = ({children}) => {
     // const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -25,6 +26,17 @@ const DashboardLayout = ({children}) => {
         console.log(aside)
 
     },[])
+
+    console.log(user)
+
+    useEffect(() => {
+
+        if(!user && !loading) {
+            navigate("/auth/login")
+
+        }
+
+    },[user])
     
     const items = [
         {
@@ -67,7 +79,13 @@ const DashboardLayout = ({children}) => {
                         </li>
                     ))}
                     <li className='my-2 h-10 mt-auto bg-gray-100'>
-                        <a onClick={()=> {dispatch(logOut()); navigate('/auth/login');  }} className={inactive}>
+                        <a onClick={()=> {
+                            dispatch(userlogOut()).then(result => {
+                                if(userlogOut.fulfilled.match(result)){
+                                    navigate('/auth/login');
+                                }
+                            }); 
+                             }} className={inactive}>
                         <CiLogout/>
 
                         <span className='text-base font-medium'>Log Out</span>

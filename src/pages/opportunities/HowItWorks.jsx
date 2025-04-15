@@ -29,21 +29,21 @@ const HowItWorks = () => {
           <div data-aos="zoom-in-down" className='px-4 leading-7'>
           <h3 className='text-alt text-3xl mb-10'>How It Works     </h3>
 
-          <p className='mt-6 pl-5'>
-           - We Study the Global real estate market and it’s demand & assure a Fixed- Returns of Up To 50-70% Per Annum 
+          <p className='mt-6 pl-5 font-semibold'>
+           We Study the Global real estate market and it’s demand & assure a Fixed- Returns of Up To 50-70% Per Annum 
           </p>
           <p className='mt-5 pl-5'>
-          - Looking for accessible, straight-forward, and hands-free profitable UK & UAE property investment?
+           Looking for accessible, straight-forward, and hands-free profitable UK & UAE property investment?
             We provide a simple and secure pathway to grow your wealth - and you can start today from as little as £5,000.
         
           </p>
 
           <p className='mt-4 pl-5'>
-           - PHEONIX PRECAST acquires and manages real estate properties with a focus on both near-term income generation and long-term value creation; to provide everyday investors access to the institutional-grade real estate deals that are normally reserved for only the largest investors. 
+           -PHEONIX PRECAST acquires and manages real estate properties with a focus on both near-term income generation and long-term value creation; to provide everyday investors access to the institutional-grade real estate deals that are normally reserved for only the largest investors. 
       
           </p>
           <p className='mt-4 pl-5'>
-           - Our carefully chosen investment solutions are designed to cater to every individual investor, from those seeking fixed income streams to those interested in portfolio diversification and/or long-term growth.
+           Our carefully chosen investment solutions are designed to cater to every individual investor, from those seeking fixed income streams to those interested in portfolio diversification and/or long-term growth.
       
           </p>
         </div>
@@ -66,7 +66,7 @@ const HowItWorks = () => {
           </div>
 
           <div data-aos="fade-right" className='px-4'>
-          <h3 className='text-white text-3xl mb-10'>Simple And Structured Property Investments       </h3>
+          <h3 className='text-white font-semibold text-2xl mb-10'>Simple And Structured Property Investments       </h3>
 
           <p className='font-medium text-gray-100'>
             At PHEONIX PRECACT , we offer access to two types of investment products under the development finance umbrella – fixed income and capital growth. While your investment will always be made into property development projects, this choice of two routes depends on how you wish to receive your returns, as well as your investment goals.
@@ -170,6 +170,21 @@ const HowItWorks = () => {
                 <p className='text-sm text-justify font-normal text-gray-700'>
                     We Then meet with you again to share our bespoke investment plan, and you then select your preferred investment options.  
                 </p>
+
+              </div>
+            </div>
+            <div data-aos="fade-up"
+            data-aos-duration="3000"
+            className='flex bg-white shadow rounded-lg p-4 items-center gap-5 flex-  md:flex-row flex-col'>
+
+              <div className='w-20 h-20 flex justify-center items-center text-3xl font-semibold  shrink-0 bg-gray-200'>
+                5
+              </div>
+              <div>
+
+                <h4 className='text-theme-alt text-center md:text-left'>Action and Liaison: </h4>
+                <p className='text-sm text-justify font-normal text-gray-700'>
+                Once agreed, we then implement your chosen investment plan. Your designated investment consultant will then keep you updated on its performance and any relevant market activity or opportunities in line with your evolving needs and to complement your existing portfolio.                </p>
 
               </div>
             </div>

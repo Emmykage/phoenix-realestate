@@ -28,7 +28,7 @@ const BlogPost = () => {
     <section className='px-5 py-20 bg-white'>
 
           <div className="blog max-w-[1600px] m-auto gap-4 grid md:grid-cols-blogLayout">
-            <div className='shadow px-2'>
+            <div className='shadow bg-white px-2'>
               <h3 className='text-center text-xl my-5'>Recent Post</h3>
             
                 {blogs.slice(0, 4).map(blog => (

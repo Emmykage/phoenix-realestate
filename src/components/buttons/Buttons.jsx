@@ -3,7 +3,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { Drawer } from '@mui/material';
 
-const AppButton = ({
+const ClassicButton = ({
     disbaled,
     onClick,
     className,
@@ -42,4 +42,4 @@ const AppButton = ({
 }
 
 
-export default AppButton
+export default ClassicButton

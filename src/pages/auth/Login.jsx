@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { userSession } from '../../redux/actions/auth'
 import { SET_LOADER } from '../../redux/app/app'
+import SubHeader from '../../components/subHeader/SubHeader'
+import NewsLetter from '../../components/newsLetter/NewsLetter'
 
 const Login = () => {
     const navigate = useNavigate();
@@ -38,20 +40,14 @@ const Login = () => {
 
   return (
     <div>
-        <section className="subheader">
-            <div className="container">
-            <h1>Login</h1>
-            <div className="breadcrumb right"><NavLink to={'/'}>Home</NavLink>  <i className="fa fa-angle-right"></i> <a href="#" className="current">Login</a></div>
-            <div className="clear"></div>
-            </div>
-        </section>
+        <SubHeader tittle={"Login"} link={"/"}  />
         
-        <section className="module login">
-            <div className="container">
+        <section className="py-10  login px-4">
+            <div className="max-w-6xl m-auto">
         
             <div className="row">
                 <div className="col-lg-4 col-lg-offset-4"> 
-                <p>Don't have an account? <strong><NavLink to="/auth/register">Register here.</NavLink></strong></p> 
+                <p>Don't have an account? <strong><NavLink to="/auth/register" className={"text-theme-pry"}> Register here.</NavLink></strong></p> 
                 <form onSubmit={handleFormSubmit} className="login-form">
                     <div className="form-block">
                     <label>Email</label>
@@ -79,22 +75,7 @@ const Login = () => {
             </div>
         </section>
         
-        <section className="module cta newsletter">
-            <div className="container">
-            <div className="row">
-                <div className="col-lg-7 col-md-7">
-                    <h3>Sign up for our <strong>newsletter.</strong></h3>
-                    <p>Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-                </div>
-                <div className="col-lg-5 col-md-5">
-                    <form method="post" id="newsletter-form" className="newsletter-form">
-                        <input type="email" placeholder="Your email..." />
-                        <button type="submit" form="newsletter-form"><i className="fa fa-send"></i></button>
-                    </form>
-                </div>
-            </div>
-            </div>
-        </section>
+        <NewsLetter/>
     </div>
   )
 }

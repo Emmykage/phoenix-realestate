@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getAssets } from '../redux/actions/assets';
 import { NavLink } from 'react-router-dom';
+import AppButton from './buttons/appButton';
 
 const TopAssets = () => {
     const dispatch = useDispatch();
@@ -65,7 +66,13 @@ const TopAssets = () => {
           
       </div>
   
-      <div className="center"><a href="#" className="button button-icon more-properties-btn"><i className="fa fa-angle-right"></i> View More Properties</a></div>
+      <div className="center">
+      
+        <AppButton>
+
+          View More Properties
+        </AppButton>
+        </div>
   
     </div>
   </section>

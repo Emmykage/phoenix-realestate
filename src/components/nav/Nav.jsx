@@ -152,23 +152,38 @@ const Nav = () => {
               'aria-labelledby': 'basic-button',
             }}
           >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
+            <MenuItem onClick={()=>{
+              navigation("/dashboard/home")
+              handleClose()
+            }
+            }>Dashboard</MenuItem>
+            <MenuItem 
+             onClick={()=>{
+              navigation("/auth/register")
+              handleClose()
+            }
+            }
+            > Get Started</MenuItem>
             {user ? <MenuItem onClick={handleLogout}>Logout</MenuItem> : <MenuItem ><NavLink to="/auth/login"> Login</NavLink></MenuItem>}
             
           </Menu>
           </span>
+          <a
+           onClick={handleClick}
+            className={"bg-re block w-full"}>
+                        Dashboard
+                        </a>
 
 
 
-          {user ? 
+          {/* {user ? 
                         <NavLink className={"bg-re block w-full"} to="/dashboard/home">
                         Dashboard
                         </NavLink> : 
                         
                         <NavLink className={"bg-re block w-full"} to="/auth/register">
                         Get Started
-                        </NavLink> }
+                        </NavLink> } */}
               
               
 
@@ -179,42 +194,35 @@ const Nav = () => {
           <div className={`${show} ${toggleNav ? "left-0" : "-left-full"} top-0 md:left-0 transition-all duration-200 ease-linear  md:top-0 bg-theme-black py-0 z-50 absolute h-screen md:h-full md:bg-none w-full md:w-[80%]  flex nav-contain`} id="navbarSupportedContent">
             <ul className="nav navbar-nav px-2  flex-1 items-center justify-between md:flex-row  mr-auto md:flex block bg-blue-">
               <li className="nav-item active text-white">
-                <NavLink className="nav-link text-white" to="/" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Home <span className="sr-only"></span></NavLink>
+                <NavLink className="nav-link text-white" to="/" >Home <span className="sr-only"></span></NavLink>
               </li>
               <li className="relative menu-item-has-childre nav-item text-white">
                 <NavLink to="/about-us" className={"nav-link active text-white"}>About Us</NavLink>
                 <ul className="sub-menu relative max-w-xl w-full ">
-                  <li><NavLink to="/about-us" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>About Phoenix Precast</NavLink></li>
-                      <li><NavLink to="/why-phoenix" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Why Phoenix</NavLink></li>
-                      <li><NavLink to="/our-team" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Our Team</NavLink></li>
+                  <li><NavLink to="/about-us">About Phoenix Precast</NavLink></li>
+                      <li><NavLink to="/why-phoenix" >Why Phoenix</NavLink></li>
+                      <li><NavLink to="/our-team">Our Team</NavLink></li>
                   
                     </ul>
-                    </li>
+                </li>
+
+                <li><NavLink to="/properties" >Property Listing</NavLink></li>
+
 
                 <li className="relative menu-item-has-childre nav-item text-white">
                 <NavLink to="#" className={"nav-link active text-white"}>Investment Opportunity</NavLink>
                 <ul className="sub-menu relative">
-                <li><NavLink to="/properties" >Property Listing</NavLink></li>
-                <li><NavLink to="/passive-income" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li>
-                <li><NavLink to="/how-it-work" onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>How It Works</NavLink></li>
+                <li><NavLink to="/passive-income" >Passive Income</NavLink></li>
+                <li><NavLink to="/how-it-work" >How It Works</NavLink></li>
                   
                     </ul>
                     </li>
-                    <li><NavLink to="/press-release" className={"nav-link text-white"} onClick={() => {}}>News </NavLink></li>
+                    <li><NavLink to="/press-release" className={"nav-link text-white"} >News </NavLink></li>
                     {/* <li><NavLink to="/dashboard/home"className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li> */}
-                    <li><NavLink to="/contact-us" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Contacts Us</NavLink></li>
+                    <li><NavLink to="/contact-us" className={"nav-link text-white"} >Contacts Us</NavLink></li>
                     <li><NavLink to="/faq" className={"nav-link text-white"}>FAQ</NavLink></li>
 
-                    {/* <li><NavLink to="/about" className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Careers</NavLink></li> */}
-                    
-                    {/* <li>
-                    {user ? <a onClick={logout} className={"nav-link text-white"} >Logout</a> : (<>
-                
-
-                <NavLink to="/auth/login" className={"nav-link text-white"}>Login</NavLink>
-                </>
-              )}
-                  </li> */}
+           
             </ul>
             
           </div>

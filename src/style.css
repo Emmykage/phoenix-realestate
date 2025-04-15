@@ -926,8 +926,6 @@ textarea.border,
     no-repeat center;
   background-size: cover;
   color: white;
-  padding-top: 160px;
-  padding-bottom: 40px;
   letter-spacing: 0.5px;
   position: relative;
   z-index: 1;
