@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAssets } from '../redux/actions/assets'
 import Loader from '../components/loader/Loader'
+import Nav from '../components/nav/Nav'
+import SubHeader from '../components/subHeader/SubHeader'
 
 const AssetDetails = () => {
   const [toggleModal, setToggleModal] = useState(null)
@@ -23,22 +25,23 @@ const AssetDetails = () => {
  }else{
   return (
     <>
-    <div className='asset-details container'>
+    <Nav/>
+    <SubHeader/>
+    <div className='asset-details m-auto max-w-7xl py-10 my-10 '>
         <div className="">
-          <div className="property property-display shadow-hover">
-            <a href="#" className="property-img">
-              <div className="img-fade"></div>
-              <div className="property-tag button alt featured">Featured</div>
+          <div className="property property-display shadow-hover my-10">
+            <div className="property-img relative  p-1 bg-black">
+              <div className="img-fade bg-blue-200"></div>
+              <div className="absolute p-2 rounded-lg text-white text-xs z-10 bg-[#4fba6f] right-3">Featured</div>
               <div className="property-tag button status">{asset.sale_type}</div>
               <div className="property-price">${asset.price} <span>{asset.tenure}</span></div>
               <div className="property-color-bar"></div>
-              <img src={asset.image_url} alt="" />
-            </a>
+              <img src={asset.image_url} alt="" className='mx-aut w-full h-full object-cover'/>
+            </div>
             <div className="property-content">
-              <div className='flex justify-between w-max-800'>
+              <div className='flex justify-between px-10 items-center my-10'>
              
-              <div className="property-title">
-              <h4><a href="#">{asset.name}</a></h4>
+              <div className="property-title py-8">
                 <p className="property-address"><i className="fa fa-map-marker icon"></i>{asset.address}</p>
               </div>
               <div>
@@ -48,13 +51,17 @@ const AssetDetails = () => {
               </div>
                  
               </div>
-              <table className="property-details">
+              <div className=' px-10'>
+
+              <table className="property-details  items-center my-10">
                 <tr>
                   <td><i className="fa fa-bed"></i> {asset.number_of_bedrooms} Beds</td>
                   <td><i className="fa fa-tint"></i> {asset.number_of_bedrooms} Baths</td>
                   <td><i className="fa fa-expand"></i>{asset.area} Sq Ft</td>
                 </tr>
               </table>
+              </div>
+
               
             </div>
             <div className="property-footer">

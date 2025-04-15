@@ -215,13 +215,15 @@ a {
   transition: all 0.2s linear;
 }
 
-a:hover {
+/* a:hover {
   color: #68b4e8;
   text-decoration: none;
-}
+} */
 
 .shadow-hover {
   transition: all 0.4s linear;
+  /* background-color: red; */
+  height: 100%;
 }
 .shadow-hover:hover {
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
@@ -1454,26 +1456,12 @@ textarea.border,
 /* PROPERTIES
 /*====================================================================================*/
 /* GLOBAL PROPERTY MODULE */
-.property {
-  background: white;
-  position: relative;
-  margin-bottom: 30px;
-}
 
 .property:hover .property-color-bar {
   width: 100%;
 }
 
-.property-img {
-  position: relative;
-  display: block;
-  height: 300px;
-}
-.property-img img {
-  max-width: 100%;
-  height: auto;
-  height: 100%;
-}
+
 
 .property-price {
   color: white;
@@ -1498,10 +1486,7 @@ textarea.border,
   z-index: 20;
 }
 
-.property-tag.featured {
-  right: 10px;
-  margin-top: 10px;
-}
+
 .property-tag.status {
   right: 10px;
   bottom: 10px;
@@ -1540,18 +1525,11 @@ textarea.border,
   transition: all 0.4s;
 }
 
-.property-content {
-  padding: 5%;
-}
+
 .property-content p {
   margin: 0;
 }
 
-.property-title {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-}
 .property-title h4 {
   width: 100%;
   white-space: nowrap;

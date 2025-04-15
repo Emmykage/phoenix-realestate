@@ -15,7 +15,7 @@ const Properties = () => {
 
   },[])
 
-  console.log(offers)
+  console.log("sdsds",offers)
 
   return (
     <div>
@@ -44,7 +44,7 @@ const Properties = () => {
       <div class="clear"></div>
 	  </div>
     
-    <div class="row">
+    <div class="">
     {offers.map((asset) => (
       <div class="col-lg-4 col-md-4">
       <div class="property shadow-hover">
@@ -53,7 +53,7 @@ const Properties = () => {
           <div class="property-tag button status">{asset.sale_type}</div>
           <div class="property-price">{usd_format(asset.price)}</div>
           <div class="property-color-bar"></div>
-          <img src={asset.images} alt={asset.name} />
+          <img src={asset.image_url} alt={asset.name} className='object-cover m-auto ' />
         </NavLink>
         <div class="property-content">
           <div class="property-title">
