@@ -16,6 +16,15 @@ module.exports = {
       },
       colors: {
 
+        light: {
+          100: "F9FAFB",
+          200: "#FAF8F5",
+          300: "#F5F7FA",
+          400: "#F0F4F8",
+          500: "FFFDF9"
+
+        },
+
         "primary": "#2f3b69",
        alt: " rgb(255 204 0)",
        "theme-alt": "#68b4e8",

@@ -26,23 +26,23 @@ const HowItWorks = () => {
         <div className='grid md:grid-cols-2 my-10 gap-10'>
         
 
-          <div data-aos="zoom-in-down" className='px-4 leading-7'>
+          <div data-aos="zoom-in-down" className=' leading-7'>
           <h3 className='text-alt text-3xl mb-10'>How It Works     </h3>
 
-          <p className='mt-6 pl-5 font-semibold'>
+          <p className='mt-6 font-semibold'>
            We Study the Global real estate market and it’s demand & assure a Fixed- Returns of Up To 50-70% Per Annum 
           </p>
-          <p className='mt-5 pl-5'>
+          <p className='mt-5 '>
            Looking for accessible, straight-forward, and hands-free profitable UK & UAE property investment?
             We provide a simple and secure pathway to grow your wealth - and you can start today from as little as £5,000.
         
           </p>
 
-          <p className='mt-4 pl-5'>
-           -PHEONIX PRECAST acquires and manages real estate properties with a focus on both near-term income generation and long-term value creation; to provide everyday investors access to the institutional-grade real estate deals that are normally reserved for only the largest investors. 
+          <p className='mt-4'>
+           PHEONIX PRECAST acquires and manages real estate properties with a focus on both near-term income generation and long-term value creation; to provide everyday investors access to the institutional-grade real estate deals that are normally reserved for only the largest investors. 
       
           </p>
-          <p className='mt-4 pl-5'>
+          <p className='mt-4'>
            Our carefully chosen investment solutions are designed to cater to every individual investor, from those seeking fixed income streams to those interested in portfolio diversification and/or long-term growth.
       
           </p>
@@ -61,15 +61,15 @@ const HowItWorks = () => {
       <div className='m-auto max-w-7xl'>
       <div>
         <div className='grid md:grid-cols-2 my-10 gap-10'>
-          <div data-aos="fade-up" className='rounded-lg overflow-hidden shadow-lg'>
-            <img src={propInvestment} alt="" className='w-full h-full' />
+          <div data-aos="fade-up" className='rounded-lg order-2 md:order-1 overflow-hidden shadow-lg'>
+            <img src={propInvestment} alt="investment image" className='w-full h-full' />
           </div>
 
-          <div data-aos="fade-right" className='px-4'>
+          <div data-aos="fade-right" className='order-1 md:order-2'>
           <h3 className='text-white font-semibold text-2xl mb-10'>Simple And Structured Property Investments       </h3>
 
           <p className='font-medium text-gray-100'>
-            At PHEONIX PRECACT , we offer access to two types of investment products under the development finance umbrella – fixed income and capital growth. While your investment will always be made into property development projects, this choice of two routes depends on how you wish to receive your returns, as well as your investment goals.
+            At PHEONIX PRECACT, we offer access to two types of investment products under the development finance umbrella – fixed income and capital growth. While your investment will always be made into property development projects, this choice of two routes depends on how you wish to receive your returns, as well as your investment goals.
 
           </p>
           <p className='mt-6'>
@@ -78,12 +78,11 @@ const HowItWorks = () => {
           <br /><br />
             Returns of up to 5% monthly,
             Investment terms are typically 3-4 months.( Returns are paid quarterly).
-            *We generally advise a minimum investment of £20,000.
-
+            *We generally advise a minimum investment of £20,000
 
           </p>
 
-          <p>
+          <p className='mt-4'>
             2. <span className='text-alt'> Capital Growth: </span>
             This suits investors who wish to invest directly into individual development projects. Returns are provided by way of a fixed return on capital, as well as a share of the profits upon completion of the development. Investment terms are typically 3-5 years with a minimum investment of £30,000.          <br /><br />
           
@@ -105,7 +104,7 @@ const HowItWorks = () => {
         <div className='max-w-7xl m-auto '>
           <h3 className='text-center'>Your Investment Journey Explained</h3>
           <p className='text-center my-4 font-medium text-gray-600'>
-            At Devete Financials, we don't rush any of our clients into making any investment decisions that they’re not completely comfortable with. We stick by our signature, step-by-step process to ensure that all of our clients are happy with their experience with us, and are set up for their next successful investment.
+            At Phoenix Precast, we don't rush any of our clients into making any investment decisions that they’re not completely comfortable with. We stick by our signature, step-by-step process to ensure that all of our clients are happy with their experience with us, and are set up for their next successful investment.
           </p>
 
           <div className=' gap-10 grid md:grid-cols-2 '>

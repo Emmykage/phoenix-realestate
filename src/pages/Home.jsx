@@ -94,15 +94,15 @@ const Home = () => {
       <p>Morbi accumsan ipsum velit nam nec tellus a odiose tincidunt auctor a ornare odio sed non mauris vitae erat consequat auctor</p>
     </div>
 
-    <div className="row">
-      <div className="col-lg-8 col-md-8">
+    <div className="flex flex-col md:flex-row gap-3">
+      <div className=" md:w-2/3">
         <NavLink to="#" className="property-cat property-cat-apartments">
           <h3>Studio Apartments</h3>
           <div className="color-bar"></div>
           <span className="button small">234 Properties</span>
         </NavLink>
       </div>
-      <div className="col-lg-4 col-md-4">
+      <div className="md:w-1/3">
         <NavLink to="#" className="property-cat property-cat-houses">
           <h3>Family Homes</h3>
           <div className="color-bar"></div>

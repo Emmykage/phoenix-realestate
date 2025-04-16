@@ -125,7 +125,7 @@ const Nav = () => {
           <div className="bg-red-">
   
           <div className="member-actions  right">
-            <span  className="button small alt button-icon bg-blue-400">
+            <p  className="button small block w-full alt button-icon bg-blue-400">
 
 
             <span>
@@ -168,11 +168,16 @@ const Nav = () => {
             
           </Menu>
           </span>
-          <a
-           onClick={handleClick}
-            className={"bg-re block w-full"}>
+          <button
+            className={" block w-full h-full "}>
+
                         Dashboard
-                        </a>
+                        <p 
+                         onClick={handleClick}
+                         className='absolute top-0 left-0 w-full h-full'>
+
+                        </p>
+                        </button>
 
 
 
@@ -187,7 +192,7 @@ const Nav = () => {
               
               
 
-            </span>
+            </p>
           </div>
 
 

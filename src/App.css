@@ -38,11 +38,22 @@ html{
 /** CALL TO ACTIONS **/
 .pattern {
   color: white;
-  padding: 60px 1rem;
+  padding: 40px 1rem;
   background: linear-gradient(#21252fda, #21252fda), url(../public/images/pattern.jpg);
 
 }
+.passive{
+  background: linear-gradient(#21252fda, #21252fda);
+  background-position: center;
+  background-size: cover;
+}
 
+.passive-bg{
+  background: linear-gradient(#21252fda, #21252fda), url("./assets/images/backgrounds/sky-bg.avif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 .dashboard aside {
   max-width: 300px;

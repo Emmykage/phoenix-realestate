@@ -11,16 +11,34 @@ const PassiveIncome = () => {
     <div>
         <Nav/>
         <SubHeader tittle={"Passive Income"}/>
-        <section className='px-4 py-20 bg-gray-100'>
 
-            <h3 className='text-center'>
-            Passive income 
+        <section className='passive-bg my-0 text-white py-20 md:py-40 px-4'>
+
+        <div className='grid m-auto max-w-5xl  grid-cols-1 my-10 bg-rose-'>
+
+            <div>
+
+            </div>
+            <div>
+            <h3 className='text-center text-white font-semibold'>
+                Earn up to 75% passively investing in real estate projects Annually.
 
 
-            </h3>
-            <p className='text-center text-lg font-medium  my-5'>Invest in one of Our platform </p>
+                </h3>
+                <p className='text-center text-lg font-medium  my-5'>Broaden your investment portfolio by incorporating income-producing real estate assets that have been vetted and initiated by our team of analysts, aimed at generating wealth.</p>
+
+            </div>
+
+            </div>
+
+        </section>
+        <section className='px-4 py-20 bg-gray-900/50'>
+
+
+    
+
             <div className='grid items-cente  gap-4 md:gap-10 md:grid-cols-2 m-auto max-w-5xl'>
-                <div className='px-4 border bg-white p-6 shadow  font-medium text-gray-600 tracking-widest leading-9'>
+                <div className='px-4 border bg-gradient-to-r from-[#fdfbfb] to-[#ebedee] p-6 shadow-lg hover:shadow-none rounded-lg  font-medium text-gray-600 tracking-widest leading-9'>
                         <h3 className='text-xl text-center mb-10 '>FIXED INCOME</h3>
                         <p className='border-b border-gray-300'>Short-term high yield investment</p>
 
@@ -31,7 +49,7 @@ const PassiveIncome = () => {
                         <p className='border-b border-gray-300 flex gap-4 items-center'>
                         <FaCheck className='text-xs'/>
 
-                        UPTO 5% MONTHLY ROI 
+                        UP TO 5% MONTHLY ROI 
 
 
                         </p>
@@ -50,7 +68,7 @@ const PassiveIncome = () => {
 
                         </div>
                     </div>
-                <div className='px-4 border bg-white p-6 shadow  font-medium text-gray-600 tracking-widest leading-9'>
+                <div className='px-4 border  p-6 bg-gradient-to-r from-[#fdfbfb] to-[#ebedee] shadow-lg hover:shadow-none rounded-lg  font-medium text-gray-600 tracking-widest leading-9'>
                     <h3 className='text-xl text-center mb-10 '>CAPITAL GROWTH  </h3>
                     <p className='border-b border-gray-300'>Long-term high yield investment</p>
 
