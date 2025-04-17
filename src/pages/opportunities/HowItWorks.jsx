@@ -4,6 +4,7 @@ import SubHeader from '../../components/subHeader/SubHeader'
 
 import propInvestment from "../../assets/images/pictures/Understanding-Property-Taxes-And-Their-Impact-On-Your-Real-Estate-Investment-1024x679.webp"
 import HowItWorksComp from '../components/HowItWorks'
+import achievement from "../../assets/images/icons/kindpng_4455113.png"
 import StatInfo from '../../components/stat-info/StatInfo'
 import howImage from "../../assets/images/pictures/how-it-works.jpg"
 import Aos from 'aos'
@@ -190,7 +191,45 @@ const HowItWorks = () => {
           </div>
         </div>
       </section>
+      <section className='py-20 px-4 bg-theme-black'>
+        <div data-aos="fade-up" className='m-auto max-w-6xl flex flex-col md:flex-row grid-cols-2'>
+
+        <div className='w-60 m-auto'>
+          <img src={achievement} alt="" className='h-40 shrink-0 m-auto md:mr-auto '/>
+        </div>
+        <div className='max-w-7xl w-full bg-gray-900/70 px-6 rounded-lg py-4 text-white '>
+          <h4 className='font-medium text-alt'>TRACK RECORD  </h4>
+          <p>
+             John Anthony has been investing in real estate for over 25 years. Since becoming director in 2021, PHEONIX PRECAST has raised over £300M across 25 funds from over 3,000 accredited and non-accredited investors. Our real estate portfolio consists of 7,000 apartment units across 42 multifamily properties along with over 200,000 square feet of commercial office space.
+
+          </p>
+
+        </div>
+        </div>
+
+        <div data-aos="zoom-out-left" className='m-auto max-w-6xl flex mt-20'>
+          
+          <div>
+            <h3 className='text-white'>
+            Why use PHEONIX for your next investment?
+
+            </h3>
+            <p className='text-gray-200'>
+            Choosing the right investment partner is crucial for your financial success. At Pheonix Precast, we offer a combination of low entry points, attractive returns, and expert guidance that sets us apart in the property investment market.
+
+
+            </p>
+            <p className='text-gray-200 mt-5'>
+            We only work with trusted Engineers & developers with proven track records of delivering returns. Use our investment finder now to discover the property investments in our portfolio that best fit your goals and requirements.
+            </p>
+
+          </div>
+        </div>
+
+      </section>
       <StatInfo/>
+
+      
     </div>
   )
 }
