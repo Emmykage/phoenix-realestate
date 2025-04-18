@@ -62,7 +62,7 @@ const Blog = () => {
                         
                         </div>
 
-                        <p className=' px-1 text-sm my-5 text-gray-600'>Admin / Rental /  0 Comments</p>
+                        <p className=' px-1 text-sm my-5 text-gray-600'> Rental /  0 Comments</p>
 
                         <div className='px-2'> 
                           <p>{blog.description?.substring(0,150)}...</p>              

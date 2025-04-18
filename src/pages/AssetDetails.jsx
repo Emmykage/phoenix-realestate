@@ -32,11 +32,11 @@ const AssetDetails = () => {
           <div className="property property-display shadow-hover my-10">
             <div className="property-img relative  p-1 bg-black">
               <div className="img-fade bg-blue-200"></div>
-              <div className="absolute p-2 rounded-lg text-white text-xs z-10 bg-[#4fba6f] right-3">Featured</div>
+              <div className="absolute p-2 rounded-lg text-white text-xs z-10 bg-[#4fba6f] right-3 mt-10">Featured</div>
               <div className="property-tag button status">{asset.sale_type}</div>
               <div className="property-price">${asset.price} <span>{asset.tenure}</span></div>
               <div className="property-color-bar"></div>
-              <img src={asset.image_url} alt="" className='mx-aut w-full h-full object-cover'/>
+              <img src={asset.images_url ? asset.images_url[0] : "/images/ai-generative-interior-design-decor-showing-modern-bedroom-area-in-open-plan-luxury-studio-apartment-showroom-with-sofa-bed-photo.jpg" } alt="" className='mx-aut w-full h-full object-cover'/>
             </div>
             <div className="property-content">
               <div className='flex justify-between px-10 items-center my-10'>

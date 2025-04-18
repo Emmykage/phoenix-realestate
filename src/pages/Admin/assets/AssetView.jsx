@@ -71,8 +71,32 @@ const AssetView = () => {
             <span>Status: </span>
             <p>{asset.status}</p>
           </div>
+
+          <div className="grid-display-assets border-b">
+            <span>Description </span>
+            <p>{asset.asset_description}</p>
+          </div>
+
+
+        
+
+          
           
         </div>
+        <div className='grid grid-cols-3 gap-2 my-10'>
+          {asset.images_url
+            ? asset.images_url.map((image) => (
+                <img
+                  key={image}
+                  src={image}
+                  alt=""
+                  className="w-full h-96 rounded-lg object-cover my-2"
+                />
+              ))
+            : null}
+        </div>
+
+
       </div>
     );
   }

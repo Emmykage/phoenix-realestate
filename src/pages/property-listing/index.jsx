@@ -54,7 +54,7 @@ const Properties = () => {
           <div className="property-tag button status">{asset.sale_type}</div>
           <div className="property-price">{usd_format(asset.price)}</div>
           <div className="property-color-bar"></div>
-          <img src={asset.image_url} alt={asset.name} className='object-cover m-auto h-full w-full' />
+          <img src={asset.images_url ? asset.images_url[0] :  "/images/ai-generative-interior-design-decor-showing-modern-bedroom-area-in-open-plan-luxury-studio-apartment-showroom-with-sofa-bed-photo.jpg" } alt={asset.name} className='object-cover m-auto h-full w-full' />
         </div>
         <div className="property-content p-4">
             <h4><NavLink to={`/assets_details/${asset.id}`} className='text-xl hover:text-theme-pry text-primary font-semibold'>{asset.name}</NavLink></h4>

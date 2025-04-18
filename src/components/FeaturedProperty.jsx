@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import TopAssets from './TopAssets';
 import { useSelector } from 'react-redux';
 import defaultImage from "../assets/images/pictures/daria-nepriakhina-LZkbXfzJK4M-unsplash.jpg"
@@ -38,7 +38,7 @@ const testimonials = [
 const FeaturedProperty = () => {
   const {offers} = useSelector(state => state.assets)
   const [isMobileView, setIsMobileView] = useState(false)
-
+const navigate = useNavigate()
 useScrollEffect()
 
 
@@ -114,13 +114,13 @@ function SamplePrevArrow(props) {
       {offers.map((offer) => (
         <div className="bg-white md:mr-0 w-3 h- px-2  mt-2">
           <div className='h-96 bg-green-50 p-4'>
-            <img src={offer.image_url ?? defaultImage} alt="" className='w-full h-full  rounded-lg' />
+            <img src={offer.images_url ? offer.images_url[0] : defaultImage} alt="" className='w-full h-full  rounded-lg' />
           </div>
           <div className='flex flex-col justify-center items-center gap-4'>
             <p className='font-bold mt-1'> {offer.name}</p>
             <p className='m-0'>{offer.address}</p>
             <p className='m-0'>{offer.city}</p>
-            <button className='text-gray-700 border p-2 px-4 rounded-md phoenix-blue mb-2'>Explore</button>
+            <button onClick={() => navigate(`/assets_details/${offer.id}`)} className='text-gray-700 border p-2 px-4 rounded-md phoenix-blue mb-2'>Explore</button>
            
           </div>
         </div>
@@ -138,7 +138,7 @@ function SamplePrevArrow(props) {
   </section>
 
 
-<section className=" pattern">
+{/* <section className=" pattern">
 
   <div data-aos="fade-up"
      data-aos-anchor-placement="top-bottom"
@@ -177,7 +177,7 @@ function SamplePrevArrow(props) {
  
   
   </div>
-</section>
+</section> */}
 
 
 

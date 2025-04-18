@@ -4,8 +4,10 @@ import { createAsset, getAssets } from '../../../redux/actions/assets';
 import AppButton from '../../../components/buttons/Buttons';
 import { SET_LOADER } from '../../../redux/app/app';
 
-const AddAsset = () => {
-  const [toggleForm, setToggleForm] = useState('false');
+const AddAsset = ({
+  handleClose,
+}) => {
+  const [toggleForm, setToggleForm] = useState(false);
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -17,29 +19,42 @@ const AddAsset = () => {
     const formData = new FormData();
 
     formData.append('asset[name]', e.target.name.value)
-    formData.append('asset[image]', e.target.image.files[0])
+    // formData.append('asset[images]', e.target.images.files[0])
     formData.append('asset[price]', e.target.price.value)
     formData.append('asset[asset_category]', e.target.asset_category.value)
     formData.append('asset[address]', e.target.address.value)
     formData.append('asset[tenure]', e.target.tenure.value)
     formData.append('asset[sale_type]', e.target.sale_type.value)
     formData.append('asset[area]', e.target.area.value)
+    formData.append('asset[asset_description]', e.target.asset_description.value)
+
+    
     formData.append('asset[number_of_bedrooms]', e.target.number_of_bedrooms.value)
     formData.append('asset[number_of_bathrooms]', e.target.number_of_bathrooms.value)
     formData.append('asset[status]', e.target.status.value)
     formData.append('asset[city]', e.target.city.value)
 
     // const data = Object.fromEntries(formData)
+
+    Array.from(e.target.images.files).forEach((file, index) => (
+      formData.append(`asset[photos][]`, file)
+    ))
+
     dispatch(createAsset(formData)).then(result => {
       if(createAsset.fulfilled.match(result)){
         dispatch(getAssets())
+
         dispatch(SET_LOADER(false))
+        // setToggleForm(false)
+        handleClose()
       }else{
         dispatch(SET_LOADER(false))
 
       }
-    });                                                                                                                                                  
+    });   
+    
     e.currentTarget.reset()
+
    
   };
   return (
@@ -156,12 +171,24 @@ const AddAsset = () => {
             
              />
           </div> 
+
+          <div>
+            {' '}
+            <labal>Description</labal>
+            <textarea type="text" placeholder='description' cols={6} rows={8} name="asset_description" 
+            
+             ></textarea>
+          </div> 
+
+          
           <div>
             {' '}
             <labal>image upload</labal>
-            <input type="file" name="image" 
-              // onChange={handleInputImage}
-            />
+            <input 
+            multiple
+            type="file" name="images" 
+
+/>
           </div>
           {/* <div>
             {' '}

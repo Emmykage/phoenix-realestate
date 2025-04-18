@@ -23,18 +23,16 @@ const TopAssets = () => {
   
       <div className="grid md:grid-cols-2 gap-2">
         {assets?.map(asset => (
-            <>
-            <div className="col-lg-4 col-md-4">
             <div className="property shadow-hover">
-              <NavLink to={`/assets_details/${asset.id}`} className="property-img">
+              <NavLink to={`/assets_details/${asset.id}`} className="property-img relative">
                 <div className="img-fade"></div>
-                <div className="property-tag button alt featured">{asset.status}</div>
+                <div className="property-tag button alt mt-4 ml-3 featured">{asset.status}</div>
                 <div className="property-tag button status">{asset.sale_type}</div>
                 <div className="property-price">${asset.price}</div>
                 <div className="property-color-bar"></div>
-                <img src={asset.image_url} alt="" />
+                <img src={asset?.images_url ? asset.images_url[0] : "/images/d4mq83s-0511e07c-421c-4282-b2f6-22357513ffd5.jpg" } alt="" className='' />
               </NavLink>
-              <div className="property-content">
+              <div className="property-content px-4">
                 <div className="property-title">
                 <h4><a href="#">{asset.name}</a></h4>
                   <p className="property-address"><i className="fa fa-map-marker icon"></i>123 Smith Dr, Annapolis, MD</p>
@@ -56,17 +54,14 @@ const TopAssets = () => {
                 <div className="clear"></div>
               </div>
             </div>
-          </div>
-  
-          
-          </>
+ 
 
         ))}
   
           
       </div>
   
-      <div className="center">
+      <div className="center pt-4">
       
         <AppButton>
 
