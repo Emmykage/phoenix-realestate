@@ -20,6 +20,8 @@ const Blog = () => {
   const pressBlogs = [...press]
   usePageReset()
 
+  console.log(pressBlogs)
+
   return (
     <div>
         <Nav/>
@@ -31,11 +33,11 @@ const Blog = () => {
            
               {pressBlogs.slice(0, 4).map(blog => (
                 <div onClick={()=> navigate(`/press-release/${blog.id}`)} key={blog.id} className='flex gap-4 my-2 cursor-pointer'>
-                <div className='w-20 shrink-0 h-20  '> 
-                  <img src={blog.image} alt="" />
+                <div className='w-20 shrink-0 h-20 rounded-md overflow-hidden'>  
+                  <img src={blog.img_url} alt="" className='w-full h-full' />
                 </div>
                 <div>
-                  <h6 className='font-medium'>{blog?.category}</h6>
+                  <h6 className='font-medium'>{blog?.description.substring(0, 20)}</h6>
                   <p className='font-semibold text-gray-600'>{blog?.title?.substring(0, 40)}...</p>
                 </div>
               </div>

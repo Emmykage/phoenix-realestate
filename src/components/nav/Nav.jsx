@@ -5,6 +5,9 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import "./nav.scss"
 import { Button, Menu, MenuItem } from '@mui/material'
 import { userlogOut } from '../../redux/actions/auth'
+import { FaWhatsapp } from "react-icons/fa";
+
+import { MdOutlineMailOutline } from "react-icons/md";
 
 const Nav = () => {
   const {user} = useSelector(state => state.auth)
@@ -81,10 +84,10 @@ const Nav = () => {
           <div className="header-item header-phone left">
             <table>
               <tr>
-                <td><i className="fa fa-phone"></i></td>
-                <td className="header-item-text">
+                <td className='mr-4'><FaWhatsapp className='text-3xl text-green-600' /></td>
+                <td className="pl-4 header-item-text">
                   Call us anytime<br/>
-                  <span>(+200) 123 456 5665</span>
+                  <span>+44757800966</span>
                 </td>
               </tr>
             </table>
@@ -92,10 +95,10 @@ const Nav = () => {
           <div className="header-item header-phone left">
             <table>
               <tr>
-                <td><i className="fa fa-envelope"></i></td>
-                <td className="header-item-text">
+                <td><MdOutlineMailOutline className='text-3xl text-gray-700'/></td>
+                <td className="pl-4 header-item-text">
                   Drop us a line<br/>
-                  <span>info@phoenix-homes.com</span>
+                  <span>info@phoenixprecastltd.com</span>
                 </td>
               </tr>
             </table>

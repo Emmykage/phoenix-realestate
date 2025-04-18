@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import useScrollEffect from '../hooks/useScrllEffect';
-import { GrFormPreviousLink, GrLinkNext, GrLinkPrevious } from 'react-icons/gr';
+import { GrLinkNext, GrLinkPrevious } from 'react-icons/gr';
 
 const testimonials = [
   {
@@ -40,7 +40,6 @@ const FeaturedProperty = () => {
   const [isMobileView, setIsMobileView] = useState(false)
 const navigate = useNavigate()
 useScrollEffect()
-
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -89,15 +88,14 @@ function SamplePrevArrow(props) {
   })
 
   return (
-    <div>
       
-      
+      <>
 
 {/* =============================================================== */}
 
-<section className="module no-padding properties featured">
+<section className="properties featured">
 
-  <div className="container m-auto">
+  <div className=" m-auto">
     <div data-aos="fade-up" className="module-header">
       <h2>Featured <strong>Properties</strong></h2>
       <img src="images/divider.png" alt="" className='block m-auto'/>
@@ -109,11 +107,11 @@ function SamplePrevArrow(props) {
   <div data-aos="fade-up"
      data-aos-duration="3000"
       className=''>
-    <div className='container px-7 m-auto'>
+    <div className=' px-7 m-auto max-w-7xl bg-white rounded'>
     <Slider {...settings}>
       {offers.map((offer) => (
-        <div className="bg-white md:mr-0 w-3 h- px-2  mt-2">
-          <div className='h-96 bg-green-50 p-4'>
+        <div className="bg-whi md:mr-0 w-3 h- px-2  mt-2">
+          <div className='h-96 p-4'>
             <img src={offer.images_url ? offer.images_url[0] : defaultImage} alt="" className='w-full h-full  rounded-lg' />
           </div>
           <div className='flex flex-col justify-center items-center gap-4'>
@@ -190,7 +188,7 @@ function SamplePrevArrow(props) {
 {/* ======================================================================= */}
 
 
-    </div>
+    </>
   )
 }
 

@@ -75,7 +75,7 @@ const HowItWorks = () => {
           </p>
           <p className='mt-6'>
             1. <span className='text-alt'> Fixed Income: </span>
-            Best for those who wish to receive a regular income from their investment. Funds are invested across a portfolio of developments at different stages of completion with fixed rates of return. This also boasts one for the lowest entry points on the market with a minimum investment of only £5k.
+            Best for those who wish to receive a regular income from their investment. Funds are invested across a portfolio of developments at different stages of completion with fixed rates of return. This also boasts one of the lowest entry points on the market with a minimum investment of only £5k.
           <br /><br />
             Returns of up to 5% monthly,
             Investment terms are typically 3-4 months.( Returns are paid quarterly).
