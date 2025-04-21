@@ -28,11 +28,13 @@ const Blog = () => {
         <SubHeader tittle="Press Release"/>
         <section className='md:px-5 px-3 bg-white py-10'>
           <div className="blog max-w-[1600px] m-auto gap-6 grid md:grid-cols-blogLayout">
-            <div className='shadow bg-white px-2'>
+          <div className='relative shadow border p-2 border-gray-300/60 rounded'>
+
+            <div className=' bg-white  sticky top-20 left-0 px-2'>
             <h3 className='text-center text-xl my-5'>Recent Post</h3>
            
               {pressBlogs.slice(0, 4).map(blog => (
-                <div onClick={()=> navigate(`/press-release/${blog.id}`)} key={blog.id} className='flex gap-4 my-2 cursor-pointer'>
+                <div onClick={()=> navigate(`/press-release/${blog.id}`)} key={blog.id} className='flex gap-4 my-4 cursor-pointer border-b border-gray-400/30 pb-4'>
                 <div className='w-20 shrink-0 h-20 rounded-md overflow-hidden'>  
                   <img src={blog.img_url} alt="" className='w-full h-full' />
                 </div>
@@ -45,6 +47,7 @@ const Blog = () => {
            
 
             </div>
+            </div>
             <div className='shadow'>
               <h3 className='text-2xl font-semibold text-center'> Stay Updated with the Latest Real Estate  Insights           </h3>
               <p className='text-center max-w-4xl m-auto font-semibold my-2'>Our blog provides expert advice and updates on the latest in UK accounting, tax regulations, and financial best practices. Stay informed to make better financial decisions for your business.              </p>
@@ -52,7 +55,7 @@ const Blog = () => {
                 {pressBlogs.map(blog => (
                   <>
                    <div  className=' rounded overflow-hidden'>              
-                      <div onClick={()=> navigate(`/press-release/${blog.id}`)} className='w-full h-72 bg-gray-500 blg-img overflow-hidden'>
+                      <div onClick={()=> navigate(`/press-release/${blog.id}`)} className='w-full h-72 bg-gray-100 blg-img overflow-hidden'>
                         <img src={blog.image ?? blog?.img_url} alt="" className='w-full h-full object-cover cursor-pointer' />
                       </div>
 
@@ -64,7 +67,7 @@ const Blog = () => {
                         
                         </div>
 
-                        <p className=' px-1 text-sm my-5 text-gray-600'> Rental /  0 Comments</p>
+                        {/* <p className=' px-1 text-sm my-5 text-gray-600'> Rental /  0 Comments</p> */}
 
                         <div className='px-2'> 
                           <p>{blog.description?.substring(0,150)}...</p>              

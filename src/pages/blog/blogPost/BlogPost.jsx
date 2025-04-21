@@ -28,11 +28,11 @@ const BlogPost = () => {
 
           <div className="blog  max-w-[1600px] m-auto gap-4 grid md:grid-cols-blogLayout">
            <div className='relative shadow border p-2 border-gray-300/60 rounded'>
-           <div className=' bg-white px-2 sticky top-32 left-0'>
+           <div className=' bg-white px-2 sticky top-20 left-0'>
               <h3 className='text-center text-xl my-5'>Recent Post</h3>
             
                 {posts.slice(0, 4).map(blog => (
-                  <div onClick={()=> navigate(`/press-release/${blog?.id}`)} key={blog.id} className='flex gap-4 my-2 cursor-pointer'>
+                  <div onClick={()=> navigate(`/press-release/${blog?.id}`)} key={blog.id} className='flex gap-4 my-4 border-gray-300/30 cursor-pointer'>
                   <div className='w-20 shrink-0 h-20 rounded-md overflow-hidden '> 
                     <img src={blog?.img_url} alt={blog.title} className='h-full w-full' />
                   </div>

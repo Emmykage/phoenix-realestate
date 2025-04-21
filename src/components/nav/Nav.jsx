@@ -86,7 +86,10 @@ const Nav = () => {
               <tr>
                 <td className='mr-4'><FaWhatsapp className='text-3xl text-green-600' /></td>
                 <td className="pl-4 header-item-text">
+                  <a href="tel:+44757800966">
                   Chat Us on Whatsapp<br/>
+                  </a>
+           
                   <span>+44757800966</span>
                 </td>
               </tr>
@@ -222,13 +225,13 @@ const Nav = () => {
                 <ul className="sub-menu relative">
                 <li className=''><NavLink to="/passive-income" >Passive Income</NavLink></li>
                 <li className='re'><NavLink to="/how-it-work" >How It Works</NavLink></li>
+                <li className='re'><NavLink to="/faq" >FAQ</NavLink></li>
                   
                     </ul>
                     </li>
                     <li className='relative my-0 h-full flex justify-center items-center menu-item-has-childre nav-item text-white'><NavLink to="/press-release" className={"nav-link text-white"} >News </NavLink></li>
                     {/* <li><NavLink to="/dashboard/home"className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li> */}
                     <li className='relative my-0 h-full flex justify-center items-center  menu-item-has-childre nav-item text-white'><NavLink to="/contact-us" className={"nav-link text-white"} >Contacts Us</NavLink></li>
-                    <li className='relative my-0 h-full flex justify-center items-center  menu-item-has-childre nav-item text-white'><NavLink to="/faq" className={"nav-link text-white"}>FAQ</NavLink></li>
 
            
             </ul>
