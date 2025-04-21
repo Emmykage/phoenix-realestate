@@ -86,7 +86,7 @@ const Nav = () => {
               <tr>
                 <td className='mr-4'><FaWhatsapp className='text-3xl text-green-600' /></td>
                 <td className="pl-4 header-item-text">
-                  <a href="tel:+44757800966">
+                  <a href="https://wa.me/message/UQGPSPYRACWPP1">
                   Chat Us on Whatsapp<br/>
                   </a>
            
