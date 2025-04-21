@@ -51,10 +51,6 @@ h5 {
   margin-top: 0px;
 }
 
-ul,
-ul li {
-  list-style: none;
-}
 
 /*====================================================================================*/
 /* 02 GLOBAL SETTINGS
@@ -757,14 +753,16 @@ textarea.border,
 /* SUB MENU */
 .nav.navbar-nav li:hover .sub-menu {
   display: block;
-  margin-top: 18px;
+  /* margin-top: 18px; */
 }
 .sub-menu {
   display: none;
   position: absolute;
   background: #2a2e3b;
   width: 100%;
-  margin-top: 15px;
+  /* margin-top: 15px; */
+  top: 100%;
+  left: 0;
   font-size: 14px;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;

@@ -80,9 +80,9 @@ const Home = () => {
       </section>
 
 
-        <SubHeader/>
+        {/* <SubHeader/> */}
         
-<section className="module property-categories">
+{/* <section className="module property-categories">
   <div
   data-aos="fade-up"
   data-aos-duration="3000"
@@ -111,32 +111,10 @@ const Home = () => {
       </div>
     </div>
 
-    <div className="row">
-      {/* <div className="col-lg-4 col-md-4">
-        <a href="#" className="property-cat property-cat-condos">
-          <h3>Condos & Villas</h3>
-          <div className="color-bar"></div>
-          <span className="button small">234 Properties</span>
-        </a>
-      </div> */}
-      {/* <div className="col-lg-4 col-md-4">
-        <a href="#" className="property-cat property-cat-waterfront">
-          <h3>Waterfront Homes</h3>
-          <div className="color-bar"></div>
-          <span className="button small">234 Properties</span>
-        </a>
-      </div> */}
-      {/* <div className="col-lg-4 col-md-4">
-        <a href="#" className="property-cat property-cat-cozy">
-          <h3>Cozy Houses</h3>
-          <div className="color-bar"></div>
-          <span className="button small">234 Properties</span>
-        </a>
-      </div> */}
-    </div>
+  
 
   </div>
-</section>
+</section> */}
 <TopAssets/>
 
         <NewsLetter/>

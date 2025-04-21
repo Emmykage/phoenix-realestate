@@ -17,8 +17,8 @@ const Footer = () => {
             <div className="container m-auto px-4">
                 <div className="row grid md:grid-cols-4 gap-6">
                     <div className="col-lg-3 col-md-3 col-sm-4 widget footer-widget">
-                        <a className="footer-logo" href="index.html">
-                            <img src={"/logos/16.png"} alt="Homely" /></a>
+                        <NavLink className="footer-logo" to="/">
+                            <img src={"/logos/16.png"} alt="Homely" /></NavLink>
                         <p>PHEONIX PRECAST LTD (11231705) is a Manchester & London-based, proven property investment specialist with a 12-year history in the property investment business.</p>
                         <div className="divider"></div>
                         <ul className="social-icons circle">

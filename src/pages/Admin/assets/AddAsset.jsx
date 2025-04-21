@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createAsset, getAssets } from '../../../redux/actions/assets';
 import AppButton from '../../../components/buttons/Buttons';
 import { SET_LOADER } from '../../../redux/app/app';
+import { InputLabel, MenuItem, OutlinedInput, Select, useTheme } from '@mui/material';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
 const AddAsset = ({
   handleClose,
 }) => {
   const [toggleForm, setToggleForm] = useState(false);
+  const [assetFeatures, setAssetFeatures] = useState([])
   const dispatch = useDispatch();
+
+  const theme = useTheme();
+  const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,12 +41,20 @@ const AddAsset = ({
     formData.append('asset[number_of_bathrooms]', e.target.number_of_bathrooms.value)
     formData.append('asset[status]', e.target.status.value)
     formData.append('asset[city]', e.target.city.value)
+    formData.append('asset[property_type]', e.target.property_type.value)
+    // formData.append('asset[features][]', assetFeatures)
+    assetFeatures.forEach(item => (
+      formData.append('asset[features][]', item)
+    ))
 
-    // const data = Object.fromEntries(formData)
+    
 
     Array.from(e.target.images.files).forEach((file, index) => (
       formData.append(`asset[photos][]`, file)
     ))
+
+    const data = Object.fromEntries(formData)
+    console.log(data)
 
     dispatch(createAsset(formData)).then(result => {
       if(createAsset.fulfilled.match(result)){
@@ -52,11 +68,100 @@ const AddAsset = ({
 
       }
     });   
+
+
+
     
-    e.currentTarget.reset()
+    // e.currentTarget.reset()
 
    
   };
+
+
+  const MenuProps = {
+    PaperProps: {
+      style: {
+        maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+        width: 250,
+      },
+    },
+  };
+
+  function getStyles(name, personName, theme) {
+    return {
+      fontWeight: personName.includes(name)
+        ? theme.typography.fontWeightMedium
+        : theme.typography.fontWeightRegular,
+    };
+  }
+  
+  const handleChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setAssetFeatures(
+      // On autofill we get a stringified value.
+      // value,
+      typeof value === 'string' ? value.split(',') : value,
+    );
+  };
+
+
+  console.log(assetFeatures)
+  const propertyTypes = [
+    "Detached",
+    "Semi-Detached",
+    "Terraced",
+    "End of Terrace",
+    "Bungalow",
+    "Flat / Apartment",
+    "Maisonette",
+    "Cottage",
+    "Villa",
+    "Townhouse",
+    "Duplex",
+    "Penthouse",
+    "Studio",
+    "Condominium (Condo)",
+    "Mobile Home / Park Home",
+    "Loft",
+    "Farmhouse",
+    "Mansion",
+    "Cluster Home"
+  ];
+
+  const propertyFeatures = [
+    "Semi-Detached",
+    "Garage",
+    "Extended",
+    "Off Street Parking",
+    "Chain Free",
+    "Double Glazed Throughout",
+    "Garden",
+    "Balcony",
+    "Newly Renovated",
+    "Central Heating",
+    "Air Conditioning",
+    "Fireplace",
+    "Swimming Pool",
+    "Solar Panels",
+    "Hardwood Floors",
+    "Open Plan Living",
+    "En Suite Bathroom",
+    "Walk-In Closet",
+    "Basement",
+    "Loft Conversion"
+  ];
+  
+
+  // useEffect(() => {
+  //   dispatch(SET_LOADER(false))
+
+  // }, [])
+  
+
+  console.log(assetFeatures)
+
   return (
     <div className="assets-forms">
       <div className="asset-div border b">
@@ -72,7 +177,7 @@ const AddAsset = ({
          
              />
           </div> 
-    <div>
+          <div>
             <label>Asset Category</label>
             <select
               name="asset_category"
@@ -87,6 +192,46 @@ const AddAsset = ({
 
             </select>
           </div>
+
+          <div>
+            <label>Property Type</label>
+            <select
+              name="property_type"
+              id="property_type"
+           
+            >
+              {
+                propertyTypes.map(item => (
+                  <option value={item}>{item} </option>
+
+                ))
+              }
+           
+            </select>
+          </div>
+
+          <div>
+        <InputLabel id="demo-multiple-name-label">Features</InputLabel>
+        <Select
+          labelId="demo-multiple-name-label"
+          id="demo-multiple-name"
+          multiple
+          value={assetFeatures}
+          onChange={handleChange}
+          input={<OutlinedInput label="Name" />}
+          MenuProps={MenuProps}
+        >
+          {propertyFeatures.map((name) => (
+            <MenuItem
+              key={name}
+              value={name}
+              // style={getStyles(name, assetFeatures, theme)}
+            >
+              {name}
+            </MenuItem>
+          ))}
+        </Select>
+    </div>
           
           
           <div>

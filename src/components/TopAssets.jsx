@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getAssets } from '../redux/actions/assets';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import AppButton from './buttons/appButton';
 
 const TopAssets = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate()
     useEffect(()=> {
       dispatch(getAssets())
     },[])
@@ -24,14 +25,14 @@ const TopAssets = () => {
       <div className="grid md:grid-cols-2 gap-2">
         {assets?.map(asset => (
             <div className="property shadow-hover">
-              <NavLink to={`/assets_details/${asset.id}`} className="property-img relative">
+              <div onClick={() => { navigate(`/assets_details/${asset.id}`)}} className="property-img h-96 w-full relative p-4 bg-red-400">
                 <div className="img-fade"></div>
                 <div className="property-tag button alt mt-4 ml-3 featured">{asset.status}</div>
                 <div className="property-tag button status">{asset.sale_type}</div>
                 <div className="property-price">${asset.price}</div>
                 <div className="property-color-bar"></div>
-                <img src={asset?.images_url ? asset.images_url[0] : "/images/d4mq83s-0511e07c-421c-4282-b2f6-22357513ffd5.jpg" } alt="" className='' />
-              </NavLink>
+                <img src={asset?.images_url ? asset.images_url[0] : "/images/d4mq83s-0511e07c-421c-4282-b2f6-22357513ffd5.jpg" } alt="" className='absolute top-0 left-0 h-full w-full' />
+              </div>
               <div className="property-content px-4">
                 <div className="property-title">
                 <h4><a href="#">{asset.name}</a></h4>

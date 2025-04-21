@@ -9,7 +9,8 @@ module.exports = {
         none: "0%"
       },
       gridTemplateColumns: {
-        blogLayout: "300px auto"
+        blogLayout: "300px auto",
+        propDetails: "2fr 1fr",
       },
       width: {
         container: "1500px"
