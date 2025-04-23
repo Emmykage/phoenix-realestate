@@ -11,6 +11,33 @@ const AssetView = () => {
   useEffect(() => {
     dispatch(getAssets());
   }, []);
+
+
+  const handleUpdate = (e) => {
+          // dispatch(SET_LOADER(true))
+          // e.preventDefault()
+  
+  
+          // const formData = new FormData()
+          // formData.append("blog[title]", e.target.title.value)
+          // formData.append("blog[description]", e.target.description.value)
+          // e.target.image.files[0] &&  formData.append("blog[image]", e.target.image.files[0])
+          // formData.append("blog[blog_body]", e.target.blog_body.value)
+          // e.target.date.value && formData.append("blog[date]", e.target.date.value)
+  
+          // console.log("date:", e.target.date.value)
+  
+          // dispatch(updatePost({id, formData})).then(result => {
+          //     if(updatePost.fulfilled.match(result)){
+          //         dispatch(SET_LOADER(false))
+          //         // handleClose()
+          //     }else{
+          //         dispatch(SET_LOADER(false))
+  
+          //     }
+          // })
+  
+      }
   const asset = offers.find((offer) => offer.id == id);
   console.log(asset)
   if (loading) {
@@ -21,6 +48,9 @@ const AssetView = () => {
     return (
       <div className="content-container asset-view mt-20 max-w-5xl bg-white p-4 shadow rounded-xl">
         <div className="">
+
+          <form onSubmit={handleUpdate}>
+
           <div className="grid-display-assets border-b py-5">
             <span>Asset Class: </span>
             <span className='block'>
@@ -74,16 +104,10 @@ const AssetView = () => {
 
           <div className="grid-display-assets border-b">
             <span>Description </span>
-            <p>{asset.asset_description}</p>
+            <p dangerouslySetInnerHTML={{__html: asset.description_body}}/>
           </div>
 
-
-        
-
-          
-          
-        </div>
-        <div className='grid grid-cols-3 gap-2 my-10'>
+          <div className='grid grid-cols-3 gap-2 my-10'>
           {asset.images_url
             ? asset.images_url.map((image) => (
                 <img
@@ -95,6 +119,19 @@ const AssetView = () => {
               ))
             : null}
         </div>
+
+          <button type='submit' className='bg-primary text-white px-4 py-2  rounded'>Update Post</button>
+          
+          </form>
+
+
+
+        
+
+          
+          
+        </div>
+      
 
 
       </div>

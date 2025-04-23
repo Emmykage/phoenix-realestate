@@ -26,7 +26,7 @@ const Assets = () => {
     sx={{
       marginLeft: "auto"
     }}
-    variant='outlined' onClick={()=> setOpen(true)} >Create Post</Button>
+    variant='outlined' onClick={()=> setOpen(true)} >Add Property</Button>
 
         <ul>
           {offers.map((asset) => (

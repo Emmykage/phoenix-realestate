@@ -39,7 +39,7 @@ const Blog = () => {
                   <img src={blog.img_url} alt="" className='w-full h-full' />
                 </div>
                 <div>
-                  <h6 className='font-medium'>{blog?.description.substring(0, 20)}</h6>
+                  <h6 className='font-medium'>{blog?.description?.substring(0, 20)}</h6>
                   <p className='font-semibold text-gray-600'>{blog?.title?.substring(0, 40)}...</p>
                 </div>
               </div>
@@ -70,7 +70,7 @@ const Blog = () => {
                         {/* <p className=' px-1 text-sm my-5 text-gray-600'> Rental /  0 Comments</p> */}
 
                         <div className='px-2'> 
-                          <p>{blog.description?.substring(0,150)}...</p>              
+                          <p>{blog?.description?.substring(0,150)}...</p>              
                         </div>
 
         

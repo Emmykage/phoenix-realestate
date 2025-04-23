@@ -3,21 +3,16 @@ import Nav from '../../components/nav/Nav'
 import teamPhoto from "../../assets/images/about/team.jpg"
 import AppButton from '../../components/buttons/Buttons'
 import { useNavigate } from 'react-router-dom'
+import SubHeader from '../../components/subHeader/SubHeader'
 
 const OurTeam = () => {
   const navigate = useNavigate()
   return (
     <div>
       <Nav/>
-       <section className="subheader">
-        <div className="container">
-          <h1 className='bg-gray-900/50 px-4 py-1 rounded-lg'>Our Team</h1>
-          <div className="breadcrumb right">Home <i className="fa fa-angle-right"></i> 
-          <a href="#" className="current">About Us</a>
-          </div>
-          <div className="clear"></div>
-        </div>
-      </section>
+
+      <SubHeader tittle={"Our Team"}/>
+    
   <section className="module content px-4">
     <div className="container">
       <div className="flex md:flex-row gap-10 flex-col">

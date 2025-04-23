@@ -41,6 +41,17 @@ const InvestmentProp = ({handleNext, handlePrev}) => {
                                 </label>
 
                             </div>
+
+                            <div className='mb-4'>
+                                <label htmlFor="capital_growth" className='flex items-center gap-4'>
+                                    <input type="radio" id='capital_growth' value={"capital growth"} name={"investment_property"} onChange={handleSelection}/>
+                                    C. Both: <br />
+
+
+
+                                </label>
+
+                            </div>
                             
                         </div>
                         <div className='flex gap-5 mt-10 bg-blue- justify-center'>

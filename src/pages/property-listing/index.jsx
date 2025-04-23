@@ -6,6 +6,10 @@ import { usd_format } from '../../components/misc/USD'
 import Nav from '../../components/nav/Nav'
 import SubHeader from '../../components/subHeader/SubHeader'
 import Loader from '../../components/loader/Loader'
+import { FaLocationDot } from 'react-icons/fa6'
+import { FaBath, FaBed } from 'react-icons/fa'
+import { TbRulerMeasure } from "react-icons/tb";
+
 
 const Properties = () => {
   const dispatch = useDispatch()
@@ -15,8 +19,6 @@ const Properties = () => {
     dispatch(getAssets())
 
   },[])
-
-  console.log("sdsds",offers)
 
   return (
     <div>
@@ -30,18 +32,18 @@ const Properties = () => {
   
 	<div className="property-listing-header">
     <span className="property-count left">{offers.length} properties found</span>
-      <form action="#" method="get" className="right">
+      {/* <form action="#" method="get" className="right">
         <select name="sort_by" onchange="this.form.submit();">
           <option value="date_desc">New to Old</option>
           <option value="date_asc">Old to New</option>
           <option value="price_desc">Price (High to Low)</option>
           <option value="price_asc">Price (Low to High)</option>
         </select>
-      </form>
-      <div class="property-layout-toggle right">
+      </form> */}
+      {/* <div class="property-layout-toggle right">
         <a  class="property-layout-toggle-item active"><i class="fa fa-th-large"></i></a>
         <a  class="property-layout-toggle-item"><i class="fa fa-bars"></i></a>
-      </div>
+      </div> */}
       <div class="clear"></div>
 	  </div>
     
@@ -62,7 +64,8 @@ const Properties = () => {
               <div className='flex justify-between items-center my-3'>
              
               <div className="property-title ">
-                <p className="property-address"><i className="fa fa-map-marker icon"></i>{asset.address}</p>
+                <p className="property-address flex gap-4 items-center">
+                  <span><FaLocationDot className='text-theme-pry'/></span>{asset.address}</p>
               </div>
               <div>
            
@@ -73,9 +76,9 @@ const Properties = () => {
 
               <table className="property-details  items-center my-5">
                 <tr>
-                  <td><i className="fa fa-bed"></i> {asset.number_of_bedrooms} Beds</td>
-                  <td><i className="fa fa-tint"></i> {asset.number_of_bedrooms} Baths</td>
-                  <td><i className="fa fa-expand"></i>{asset.area} Sq Ft</td>
+                  <td className='fl-4'> <p className='flex items-center gap-4'><FaBed className='text-theme-pry'/>  {asset.number_of_bedrooms} Beds</p> </td>
+                  <td className='fl-4'> <p className='flex items-center gap-4'><FaBath  className='text-theme-pry'/>  {asset?.number_of_bathrooms} Baths</p> </td>
+                  <td> <p className='flex items-center gap-4'><TbRulerMeasure  className='text-theme-pry'/>{asset.area} Sq Ft </p></td>
                 </tr>
               </table>
               </div>

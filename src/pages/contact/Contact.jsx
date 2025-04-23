@@ -42,7 +42,7 @@ const Contact = () => {
 
                 {/* <h2 className="h1-responsive font-weight-bold text-center my-4">Contact us</h2> */}
 
-                <p className="text-center w-responsive mx-auto text-gray-600  text-2xl font-semibold my-5">Whether you have questions about our real estate investment offerings or require top-notch advice, reach out to our team of skilled financial advisors</p>
+                <p className="text-center w-responsive mx-auto text-gray-600  text-xl font-semibold my-5">Whether you have questions about our real estate investment offerings or require top-notch advice, reach out to our team of skilled financial advisors</p>
 
                 <div className="row">
 

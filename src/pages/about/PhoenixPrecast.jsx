@@ -12,6 +12,7 @@ import img2 from "../../assets/images/pictures/r-architecture-JvQ0Q5IkeMM-unspla
 import img3 from "../../assets/images/pictures/r-architecture-KQgrVfR3r74-unsplash.jpg"
 import img4 from "../../assets/images/pictures/r-architecture-wJAOeXvxudM-unsplash.jpg"
 import img5 from "../../assets/images/pictures/daria-nepriakhina-LZkbXfzJK4M-unsplash.jpg"
+import SubHeader from '../../components/subHeader/SubHeader'
 const AboutPhoenixPrecast = () => {
 
  const  items = [{
@@ -51,15 +52,8 @@ const AboutPhoenixPrecast = () => {
   return (
     <div>
       <Nav/>
-       <section className="subheader">
-        <div className="">
-          <h1 className=' px-4 py-1 rounded-lg'>Why Phoenix PRECAST?</h1>
-          <div className="breadcrumb right bg-red-300">Home<i className="fa fa-angle-right"></i> 
-          <a href="#" className="current">About Us</a>
-          </div>
-          <div className="clear"></div>
-        </div>
-        </section>
+      <SubHeader tittle={"Why Phoenix PRECAST?"}/>
+   
         <section className="module content ">
           <div className="container px-4 bg-green-60 m-auto">
 

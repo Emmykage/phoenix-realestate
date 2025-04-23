@@ -100,8 +100,9 @@ const Nav = () => {
               <tr>
                 <td><MdOutlineMailOutline className='text-3xl text-gray-700'/></td>
                 <td className="pl-4 header-item-text">
-                  Drop us a line<br/>
-                  <span>info@phoenixprecastltd.com</span>
+                  Email Us at<br/>
+                  <a href="mailto:">info@phoenixprecastltd.com</a>
+
                 </td>
               </tr>
             </table>
@@ -204,10 +205,10 @@ const Nav = () => {
 
           <div className={`${show} ${toggleNav ? "left-0" : "-left-full"} top-0 md:left-0 transition-all duration-200 ease-linear  md:top-0 bg-theme-black py-0 z-50 absolute h-screen md:h-full md:bg-none w-full md:w-[80%]  flex nav-contain`} id="navbarSupportedContent">
             <ul className="nav navbar-nav px-2  flex-1 items-center justify-between md:flex-row  mr-auto md:flex block bg-blue-">
-              <li className="relative my-0 h-full flex justify-center items-center menu-item-has-childre nav-item text-white">
+              <li className="relative my-0 md:h-full flex justify-center items-center menu-item-has-childre nav-item text-white">
                 <NavLink className="nav-link active text-white items-center flex " to="/" >Home <span className="sr-only"></span></NavLink>
               </li>
-              <li className="relative my-0 h-full flex justify-center items-center  menu-item-has-childre nav-item text-white">
+              <li className="relative my-0 md:h-full flex justify-center items-center  menu-item-has-childre nav-item text-white">
                 <NavLink to="/about-us" className={"nav-link active text-white  h-full items-center flex "}>About Us</NavLink>
                 <ul className="sub-menu relative max-w-xl w-full ">
                   <li><NavLink to="/about-us">About Phoenix Precast</NavLink></li>
@@ -217,10 +218,10 @@ const Nav = () => {
                     </ul>
                 </li>
 
-                <li className='relative my-0 h-full flex justify-center items-center menu-item-has-childre nav-item text-white'><NavLink to="/properties" >Property Listing</NavLink></li>
+                <li className='relative my-0 md:h-full flex justify-center items-center menu-item-has-childre nav-item text-white'><NavLink to="/properties" >Property Listing</NavLink></li>
 
 
-                <li className="relative my-0 h-full flex justify-center items-center menu-item-has-childre nav-item text-white">
+                <li className="relative my-0 md:h-full flex justify-center items-center menu-item-has-childre nav-item text-white">
                 <NavLink to="#" className={"nav-link active tex nav-link active text-white  h- items-center flex "}>Investment Opportunity</NavLink>
                 <ul className="sub-menu relative">
                 <li className=''><NavLink to="/passive-income" >Passive Income</NavLink></li>
@@ -229,9 +230,9 @@ const Nav = () => {
                   
                     </ul>
                     </li>
-                    <li className='relative my-0 h-full flex justify-center items-center menu-item-has-childre nav-item text-white'><NavLink to="/press-release" className={"nav-link text-white"} >News </NavLink></li>
+                    <li className='relative my-0 md:h-full flex justify-center items-center menu-item-has-childre nav-item text-white'><NavLink to="/press-release" className={"nav-link text-white"} >News </NavLink></li>
                     {/* <li><NavLink to="/dashboard/home"className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li> */}
-                    <li className='relative my-0 h-full flex justify-center items-center  menu-item-has-childre nav-item text-white'><NavLink to="/contact-us" className={"nav-link text-white"} >Contacts Us</NavLink></li>
+                    <li className='relative my-0 md:h-full flex justify-center items-center  menu-item-has-childre nav-item text-white'><NavLink to="/contact-us" className={"nav-link text-white"} >Contacts Us</NavLink></li>
 
            
             </ul>

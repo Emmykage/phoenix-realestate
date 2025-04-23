@@ -60,7 +60,7 @@ const AssetDetails = () => {
           <h5 className='text-xl mb-4 capitalize'>{asset?.name} </h5>
 
           <span>Guide Price</span>
-          <p className='text-2xl'>{moneyFormat(asset?.price, "EUR")}</p>
+          <p className='text-2xl'>{moneyFormat(asset?.price, "GBP")}</p>
         
           </div>
           <div className='overflow-x-auto'>
@@ -85,7 +85,7 @@ const AssetDetails = () => {
               <p>AREA SIZE</p>
               <p className='flex items-center my-2 gap-4'><MdLocationSearching />{asset?.area}</p>
             </div> <div>
-              <p>TENURE</p>
+              <p>PAYMENT PLAN</p>
               <p className='flex items-center my-2 gap-4'><MdOutlineAccessTime /> {asset?.tenure}</p>
             </div>
       </div>
@@ -117,9 +117,8 @@ const AssetDetails = () => {
       </div>
       <div className='py-7'>
         <h5>Description</h5>
-        <p className='mt-6'>
-          {asset?.asset_description}
-        </p>
+        <p className='mt-6' dangerouslySetInnerHTML={{__html: asset?.description_body}}/>
+         
       </div>
       
 
@@ -138,15 +137,18 @@ const AssetDetails = () => {
 
               <div className='bg-primary rounded px-4 py-4 mt-5'>
                 <button className='bg-alt flex items-center font-medium text-sm p-4 text-center w-full rounded-lg justify-start gap-5 text-primary'>
-                <MdOutlinePhone /> Call Agent
+                <MdOutlinePhone className='text-'/> Call Agent
                 </button>
                 <button>
               
                 </button>
-                <button className='bg-alt flex items-center font-medium text-sm p-4 text-center w-full rounded-lg justify-start gap-5 text-primary'>
+                <a href="tel:+44757800966" className='bg-alt flex items-center font-medium text-sm p-4 text-center w-full rounded-lg justify-start gap-5 text-primary'>
+                
+              
                 <FaRegMessage />
                 Request Details
-                </button>
+           
+                </a>
 
 
               </div>

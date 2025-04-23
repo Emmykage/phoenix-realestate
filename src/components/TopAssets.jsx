@@ -25,7 +25,7 @@ const TopAssets = () => {
       <div className="grid md:grid-cols-2 gap-2">
         {assets?.map(asset => (
             <div className="property shadow-hover">
-              <div onClick={() => { navigate(`/assets_details/${asset.id}`)}} className="property-img h-96 w-full relative p-4 bg-red-400">
+              <div onClick={() => { navigate(`/assets_details/${asset.id}`)}} className="property-img h-96 w-full relative p-4 bg-gray-100">
                 <div className="img-fade"></div>
                 <div className="property-tag button alt mt-4 ml-3 featured">{asset.status}</div>
                 <div className="property-tag button status">{asset.sale_type}</div>
@@ -64,7 +64,7 @@ const TopAssets = () => {
   
       <div className="center pt-4">
       
-        <AppButton>
+        <AppButton onClick={() => navigate("/properties")}>
 
           View More Properties
         </AppButton>

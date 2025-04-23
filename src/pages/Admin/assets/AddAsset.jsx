@@ -4,8 +4,8 @@ import { createAsset, getAssets } from '../../../redux/actions/assets';
 import AppButton from '../../../components/buttons/Buttons';
 import { SET_LOADER } from '../../../redux/app/app';
 import { InputLabel, MenuItem, OutlinedInput, Select, useTheme } from '@mui/material';
-import { propTypes } from 'react-bootstrap/esm/Image';
-
+import 'trix';
+import 'trix/dist/trix.css';
 const AddAsset = ({
   handleClose,
 }) => {
@@ -34,7 +34,6 @@ const ITEM_PADDING_TOP = 8;
     formData.append('asset[tenure]', e.target.tenure.value)
     formData.append('asset[sale_type]', e.target.sale_type.value)
     formData.append('asset[area]', e.target.area.value)
-    formData.append('asset[asset_description]', e.target.asset_description.value)
 
     
     formData.append('asset[number_of_bedrooms]', e.target.number_of_bedrooms.value)
@@ -42,8 +41,9 @@ const ITEM_PADDING_TOP = 8;
     formData.append('asset[status]', e.target.status.value)
     formData.append('asset[city]', e.target.city.value)
     formData.append('asset[property_type]', e.target.property_type.value)
+    formData.append('asset[description_body]', e.target.description.value)
     // formData.append('asset[features][]', assetFeatures)
-    assetFeatures.forEach(item => (
+    assetFeatures.forEach((item, index) => (
       formData.append('asset[features][]', item)
     ))
 
@@ -317,13 +317,13 @@ const ITEM_PADDING_TOP = 8;
              />
           </div> 
 
+
           <div>
-            {' '}
-            <labal>Description</labal>
-            <textarea type="text" placeholder='description' cols={6} rows={8} name="asset_description" 
-            
-             ></textarea>
-          </div> 
+            <label htmlFor="trix" className='text-base font-medium block'>Description</label>
+            <input id="trix" type="hidden" name="description" />
+            <trix-editor input="trix" />
+
+          </div>
 
           
           <div>

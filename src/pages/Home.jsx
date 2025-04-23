@@ -117,7 +117,7 @@ const Home = () => {
 </section> */}
 <TopAssets/>
 
-        <NewsLetter/>
+        {/* <NewsLetter/> */}
     </div>
   )
 }
