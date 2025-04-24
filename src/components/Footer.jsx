@@ -1,22 +1,23 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPosts } from '../redux/actions/blog'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 const Footer = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
           const {posts: press} = useSelector(state => state.blog_posts)
       useEffect(()=> {
         dispatch(getPosts())
       },[])
 
   return (
-    <div>   
+    <div className='px-0'>   
 
-        <footer id="footer">
-            <div className="container m-auto px-4">
-                <div className="row grid md:grid-cols-4 gap-6">
-                    <div className="col-lg-3 col-md-3 col-sm-4 widget footer-widget">
+        <footer id="footer" className='px-4 overflow-' >
+            <div className="container m-auto">
+                <div className="grid md:grid-cols-4 gap-6">
+                    <div className="">
                         <NavLink className="footer-logo" to="/">
                             <img src={"/logos/16.png"} alt="Homely" /></NavLink>
                         <p>PHEONIX PRECAST LTD (11231705) is a Manchester & London-based, proven property investment specialist with a 12-year history in the property investment business.</p>
@@ -28,13 +29,14 @@ const Footer = () => {
                           
                         </ul>
                     </div>
-                    <div className="col-lg-3 col-md-3 col-sm-4 widget footer-widget from-the-blog">
-                        <h4><span>From the Blog</span> <img src="images/divider-half.png" alt="" /></h4>
+                    <div className="">
+                        <h4 className='mb-7'><span>From the Blog</span> <img src="images/divider-half.png" alt="" /></h4>
                         <ul>
                             {press?.slice(0,2).map(item => (
-                                <li>
-                                    <p><h3>{item?.title}</h3></p>
-                                    <p>{item?.description}<br/> <NavLink  to={`/press-release/${item.id}`}>Read More</NavLink></p>
+                                <li className='cursor-pointer mb-4'>
+                                    <p><h3 className='  overflow-hidden text-ellipsis text-xl text-white'>{item?.title}</h3></p>
+                                    <p className='hover:text-theme-pry'>{item?.description}<br/> 
+                                    <NavLink className={"text-base text-alt"} to={`/press-release/${item.id}`}>Read More</NavLink></p>
                                     <div className="clear"></div>
                                 </li>
                             ))}
@@ -42,8 +44,8 @@ const Footer = () => {
 
                         </ul>
                     </div>
-                    <div className="col-lg-3 col-md-3 col-sm-4 widget footer-widget">
-                        <h4><span>Get In Touch</span> <img src="images/divider-half.png" alt="" /></h4>
+                    <div className="">
+                     <h4 className='mb-7'><span>Get In Touch</span> <img src="images/divider-half.png" alt="" /></h4>
                         <p>2-3 Little Burrow, <br/>
                         Welwyn Garden City, Herts, AL7 4SP<br/>
                         England
@@ -54,23 +56,23 @@ const Footer = () => {
                         Saturday: 9 am - 1pm<br/>
                         Sunday: Closed
                         </p>
-                        <p className="footer-phone"><i className="fa fa-phone icon"></i> +44757800966</p>
+                        <p className="footer-phone"><i className="fa fa-phone icon"></i> +44757800966</p> 
                     </div>
-                    <div className="col-lg-3 col-md-3 col-sm-12 widget footer-widget newsletter">
-                        <h4><span>Newsletter</span> <img src="images/divider-half.png" alt="" /></h4>
+                    <div className=" newsletter">
+                        <h4 className='mb-7'><span>Newsletter</span> <img src="images/divider-half.png" alt="" /></h4>
                         <p><b>Subscribe to our newsletter!</b> 
-                        {/* Vel lorem ipsum. Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. */}
+                         Vel lorem ipsum. Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. */}
                          </p>
-                        <form className="subscribe-form" method="post" action="#">
+                         <form className="subscribe-form bg-re px-0" method="post" action="#">
                             <input type="text" name="email" value="Your email" />
-                            <input type="submit" name="submit" value="SEND" className="button small alt" />
-                        </form>
+                            <input type="submit" name="submit" value="SEND" className="button small alt w-full" />
+                        </form> 
                     </div>
                 </div>
             </div>
         </footer>
 
-        <div className="bottom-bar">
+         <div className="bottom-bar">
             <div className="container m-auto">
             © 2013-2025| <a href="http://rypecreative.com/" target="_blank">Pheonix Precast Limited -</a>  |  All Rights Reserved
             </div>

@@ -48,7 +48,7 @@ const Properties = () => {
       <div class="clear"></div>
 	  </div>
     
-    <div class="grid grid-cols-2 gap-10 relative min-h-96">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 relative min-h-96">
     {loading ? <div className='h-full w-full absolute top-0 left-0 bg-red-'> <Loader/> </div> :  offers.length > 0  ? offers.map((asset) => (
       <div className="h-max rounded-lg overflow-hidden">
       <div className=" shadow-hover bg-white ">

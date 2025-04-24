@@ -42,10 +42,10 @@ const AssetDetails = () => {
           <img src={asset.images_url ? asset.images_url[0] : "/images/ai-generative-interior-design-decor-showing-modern-bedroom-area-in-open-plan-luxury-studio-apartment-showroom-with-sofa-bed-photo.jpg" } alt="" className='w-full h-full object-cover' />
         </div>
         <div className='md:w-1/3 flex flex-col  gap-4'>
-          <div className='bg-gray-200 h-72 md:h-1/2 -1'>
+          <div className='bg-gray-100 h-72 md:h-1/2 -1'>
             <img src={asset.images_url ? asset.images_url[1] : "/images/ai-generative-interior-design-decor-showing-modern-bedroom-area-in-open-plan-luxury-studio-apartment-showroom-with-sofa-bed-photo.jpg" } alt="" className='w-full h-full object-cover' />
           </div>
-          <div className='bg-green-400 h-72 md:h-1/2  overflow-hidden'>
+          <div className='bg-gray-100 h-72 md:h-1/2  overflow-hidden'>
             <img src={asset.images_url ? asset.images_url[2] : "/images/ai-generative-interior-design-decor-showing-modern-bedroom-area-in-open-plan-luxury-studio-apartment-showroom-with-sofa-bed-photo.jpg" } alt="" className='w-full h-full px-0 object-cover' />
           </div>
 
@@ -117,9 +117,8 @@ const AssetDetails = () => {
       </div>
       <div className='py-7'>
         <h5>Description</h5>
-        <p className='mt-6' dangerouslySetInnerHTML={{__html: asset?.description_body}}/>
-         
-      </div>
+        {asset.asset_description ? <p>{asset.asset_description}</p> :  <p className='mt-6' dangerouslySetInnerHTML={{__html: asset?.description_body}}/>}
+        </div>
       
 
       </div>

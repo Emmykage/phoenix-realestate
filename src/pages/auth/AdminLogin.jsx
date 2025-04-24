@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, NavLink } from "react-router-dom";
 import { userSession } from "../../redux/actions/auth";
 import { SET_LOADER } from "../../redux/app/app";
+import SubHeader from "../../components/subHeader/SubHeader";
 // import { userSession } from "../../actions/authActions"; // Ensure this is correctly imported
 
 const AdminLogin = () => {
@@ -45,18 +46,9 @@ const AdminLogin = () => {
 
     return (
         <div>
-            <section className="subheader login">
-                <div className="container m-auto  ">
-                    <h1 className="text-5xl text-white font-semibold">Login as an Admin</h1>
-                    <div className="breadcrumb right">
-                        <NavLink to="/">Home</NavLink>  
-                        <i className="fa fa-angle-right"></i> 
-                        <a href="#" className="current">Login</a>
-                    </div>
-                    <div className="clear"></div>
-                </div>
-            </section>
-            
+            <SubHeader tittle={"Login as an Admin"}/>
+
+         
             <section className=" login py-8 md:py-20 px-4">
                 <div className="m-auto  max-w-5xl ">
                     <div className="row">
