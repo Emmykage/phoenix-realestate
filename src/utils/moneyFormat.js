@@ -9,7 +9,6 @@ const moneyFormat = (amount, currency = "USD") => {
 
     return curr.format(amount);
   } catch (error) {
-    console.error(`Invalid currency code: ${currency}. Defaulting to NGN.`);
     return `${currency?.toUpperCase()} ${amount?.toFixed(2) ?? "0.00"}`;
   }
 };

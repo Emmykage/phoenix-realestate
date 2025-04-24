@@ -11,6 +11,8 @@ const AddAsset = ({
 }) => {
   const [toggleForm, setToggleForm] = useState(false);
   const [assetFeatures, setAssetFeatures] = useState([])
+  const [photos, setPhotos] = useState()
+  const [mainPhoto, setMainPhoto] = useState(null)
   const dispatch = useDispatch();
 
   const theme = useTheme();
@@ -42,8 +44,10 @@ const ITEM_PADDING_TOP = 8;
     formData.append('asset[city]', e.target.city.value)
     formData.append('asset[property_type]', e.target.property_type.value)
     formData.append('asset[description_body]', e.target.description.value)
+    formData.append('asset[mainphoto]', mainPhoto)
+    
     // formData.append('asset[features][]', assetFeatures)
-    assetFeatures.forEach((item, index) => (
+    assetFeatures.forEach((item) => (
       formData.append('asset[features][]', item)
     ))
 
@@ -76,6 +80,16 @@ const ITEM_PADDING_TOP = 8;
 
    
   };
+
+
+  const handleImagesChanges = (e) => {
+    const files =  Array.from(e.target.files)
+    setPhotos(files)
+
+  }
+
+  console.log(mainPhoto)
+
 
 
   const MenuProps = {
@@ -331,10 +345,24 @@ const ITEM_PADDING_TOP = 8;
             <labal>image upload</labal>
             <input 
             multiple
+            onChange={handleImagesChanges}
             type="file" name="images" 
 
 />
           </div>
+
+          <div className='grid grid-cols-4 gap-4'>
+            {photos?.map(photo => (
+              <div className={`${photo?.name === mainPhoto && "border-2 border-gray-600"} cursor-pointer  w-40 h-40 rounded-lg overflow-hidden` }>
+                <img onClick={()=> setMainPhoto(photo.name)} src={URL.createObjectURL(photo)} alt={photo.name} className={`w-full h-full rounded`}/>
+            </div>
+            
+            ))}
+
+          </div>
+
+          <p className='my-4 text-green-800'>Click to select cover photo</p>
+
           {/* <div>
             {' '}
             <labal>image</labal>

@@ -9,6 +9,7 @@ import Loader from '../../components/loader/Loader'
 import { FaLocationDot } from 'react-icons/fa6'
 import { FaBath, FaBed } from 'react-icons/fa'
 import { TbRulerMeasure } from "react-icons/tb";
+import { moneyFormat } from '../../utils/moneyFormat'
 
 
 const Properties = () => {
@@ -54,7 +55,7 @@ const Properties = () => {
         <div  className="property-img relative bg-gray-900 p-0 h-96">
           <div className="img-fade"></div>
           <div className="property-tag button status">{asset.sale_type}</div>
-          <div className="property-price">{usd_format(asset.price)}</div>
+          <div className="property-price">{moneyFormat(asset.price, "GBP")}</div>
           <div className="property-color-bar"></div>
           <img src={asset.images_url ? asset.images_url[0] :  "/images/ai-generative-interior-design-decor-showing-modern-bedroom-area-in-open-plan-luxury-studio-apartment-showroom-with-sofa-bed-photo.jpg" } alt={asset.name} className='object-cover m-auto h-full w-full' />
         </div>
