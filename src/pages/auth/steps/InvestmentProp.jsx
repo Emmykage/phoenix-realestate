@@ -43,8 +43,8 @@ const InvestmentProp = ({handleNext, handlePrev}) => {
                             </div>
 
                             <div className='mb-4'>
-                                <label htmlFor="capital_growth" className='flex items-center gap-4'>
-                                    <input type="radio" id='capital_growth' value={"capital growth"} name={"investment_property"} onChange={handleSelection}/>
+                                <label htmlFor="both" className='flex items-center gap-4'>
+                                    <input type="radio" id='both' value={"both"} name={"investment_property"} onChange={handleSelection}/>
                                     C. Both: <br />
 
 
@@ -60,7 +60,7 @@ const InvestmentProp = ({handleNext, handlePrev}) => {
                                 handlePrev()
                             }}>Prev</AppButton>  
                             <AppButton onClick={()=> {
-                                selectedOption && handleNext({value: selectedOption, name: "initial_investment"})
+                                selectedOption && handleNext({value: selectedOption, name: "investment_property"})
                             }}>Next</AppButton>
                                                     </div>
                     </form>

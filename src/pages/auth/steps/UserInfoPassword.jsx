@@ -1,24 +1,36 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import AppButton from "../../../components/buttons/Buttons"
+import { useDispatch, useSelector } from "react-redux"
+import { accountInfo } from "../../../redux/auth/user_authentication"
 
 const UserInfoPassword = ({handleNext, handlePrev}) => {
-    const [formInput, setFormInput] = useState({confirm_password: "",  password: "", role: "client"})
-  
+    // const [formInput, setFormInput] = useState({confirm_password: "",  password: "", role: "client"})
+     const {userReg, error, message, loading } = useSelector(state => state.auth)
     
+    const [notce, setNotice] = useState({message: null, error: false})
+    const dispatch = useDispatch()
     const handleInputChange = (e) => {
-      if (e.target.name === "completed"){
-        setFormInput({
-          ...formInput,
-          [e.target.name]: e.target.checked
-        })
-      }else{
-      setFormInput({
-        ...formInput,
-        [e.target.name]: e.target.value
-      })
-    }
+  
+      // setFormInput({
+      //   ...formInput,
+      //   [e.target.name]: e.target.value
+      // })
+
+      dispatch(accountInfo({name: e.target.name, value: e.target.value }))
+
    
+    }
+
+    const handleVerification = () => {   
+      if(userReg && userReg.confirm_password === userReg.password){
+        handleNext()
+
+      }
+      else{
+        setNotice({error: true, message: "Set Matching password"})
+
+      }
     }
     return(
     
@@ -42,6 +54,7 @@ const UserInfoPassword = ({handleNext, handlePrev}) => {
             <div className="form-block">
                 {/* <label>Confirm Password</label> */}
                 <input className="border  bg-transparent border-gray-200 rounded-xl" type="password" name="confirm_password" placeholder='Confirm Password' onChange={handleInputChange} />
+                <p className="text-red-500">{notce.message && notce.message }</p>
             </div>
 
             <div className='flex gap-5 mt-10 bg-blue- justify-center'>
@@ -49,9 +62,7 @@ const UserInfoPassword = ({handleNext, handlePrev}) => {
               <AppButton onClick={()=> {
                   handlePrev()
               }}>Prev</AppButton>  
-              <AppButton onClick={()=> {
-                  formInput && handleNext({value: formInput, name: "password"})
-              }}>Submit</AppButton>
+              <AppButton onClick={handleVerification}>Submit</AppButton>
                                       </div>
               <div className="divider"></div>
               <p className="note mt-5">By clicking the "Register" button you agree with our <a href="#">Terms and conditions</a></p>    

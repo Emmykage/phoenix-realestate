@@ -59,7 +59,7 @@ const AssetDetails = () => {
           <div  className='pb-6 bg--400 border-b border-gray-400/50'>
           <h5 className='text-xl mb-4 capitalize'>{asset?.name} </h5>
 
-          <span>Guide Price</span>
+          <span>Starting Price</span>
           <p className='text-2xl'>{moneyFormat(asset?.price, "GBP")}</p>
         
           </div>

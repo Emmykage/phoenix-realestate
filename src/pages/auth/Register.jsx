@@ -13,6 +13,8 @@ import UserInfo from './steps/UserInfo'
 import InvestorType from './steps/InvestorType'
 import UserInfoPassword from './steps/UserInfoPassword'
 import useScrollEffect from '../../hooks/useScrllEffect'
+import { toast } from 'react-toastify'
+import { SET_LOADER } from '../../redux/app/app'
 
 const Register = () => {
 
@@ -21,7 +23,7 @@ const Register = () => {
   const navigate = useNavigate()
   const [step, setStep] = useState(1)
   const handleNext = (data) => {
-    dispatch(accountInfo(data))
+    data &&  dispatch(accountInfo(data))
     setStep(step => Math.min(step +1, regJourney.length))
     step === regJourney.length && handleFormSubmit()
 
@@ -34,12 +36,20 @@ const Register = () => {
   const navigation = useNavigate()
   const dispatch = useDispatch()
 
+
   const handleFormSubmit = () => {
+   dispatch(SET_LOADER(true))
     dispatch(registerUser(userReg)).then(result => {
       if(registerUser.fulfilled.match(result)){
+       dispatch(SET_LOADER(false))
         navigate("/dashboard/home")
       }else{
-console.log("first")
+
+        dispatch(SET_LOADER(false))
+        toast(result.payload.message || "Something went wrong", {type: "error"})
+
+        
+        // console.log(result)
       }
     })  
     
@@ -78,7 +88,7 @@ console.log("first")
     label: "User Info",
     render: <UserInfo loading={loading} error={error}  handlePrev={handlePrev} handleNext={handleNext}/>
   }]
-  console.log(userReg, step)
+  console.log(userReg, step, regJourney.length)
 
   return (
     <div>
@@ -114,6 +124,7 @@ const SignUp = ({handleFormSubmit, error, handleNext, loading}) => {
   }
  
   }
+
   return(
   
 

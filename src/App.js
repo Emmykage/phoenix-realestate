@@ -66,12 +66,15 @@ import PostList from './pages/Admin/blog/PostList';
 import ViewPost from './pages/Admin/blog/ViewPost';
 import Profile from './pages/dashboard/profile/Profile';
 import usePageReset from './hooks/usePageRest';
+import ToastifyContainer from './components/toastContainer';
+// import { ToastContainer } from 'react-toastify';
 function App() {
   const {loader} = useSelector(state => state.app)
   usePageReset()
   useInitializer()
   return (
     <div className="App">
+      <ToastifyContainer />
       {loader && 
       <LoadingComponent/>
 }

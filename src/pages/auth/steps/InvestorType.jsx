@@ -71,7 +71,7 @@ const InvestorType = ({handleNext, handlePrev}) => {
                                 handlePrev()
                             }}>Prev</AppButton>  
                             <AppButton onClick={()=> {
-                                selectedOption && handleNext({value: selectedOption, name: "initial_investment"})
+                                selectedOption && handleNext({value: selectedOption, name: "investor_type"})
                             }}>Next</AppButton>
                                                     </div>
                       

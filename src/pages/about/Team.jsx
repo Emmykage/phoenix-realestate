@@ -38,7 +38,7 @@ const OurTeam = () => {
           </div>
     
           <div className="flex-1">
-           <img className="about-video-thumb rounded-lg " src={teamPhoto} alt="about" />
+           {/* <img className="about-video-thumb rounded-lg " src={teamPhoto} alt="about" /> */}
             <div className="clear"></div>
           </div>
           </div>

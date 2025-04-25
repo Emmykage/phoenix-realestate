@@ -77,16 +77,15 @@ const FAQ = () => {
                 </div>
                 <h3>What is the quickest way I can sell my home?</h3>
                 <div>
-                  <p className='mt-4'>While you are welcome to send us a cheque within the UK, the quickest way to remit your investment sum is to transfer the fund electronically (Bank Wire/Transfer or Cryptocurrency. 
-                    Be sure to retain a receipt evidencing your EFT or deposit! 
-                    </p>
+                  <p className='mt-4'>While you are welcome to send us a cheque within the UK, the quickest way to remit your investment sum is to transfer the fund electronically (Bank Wire/Transfer or Cryptocurrency). 
+                 <br/> Be sure to retain a receipt evidencing your EFT or deposit!    </p>
                 
                   <div className="divider"></div>
                   <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
                 </div>
                 <h3>What if I have more Questions or Need Help? </h3>
                 <div>
-                <p className='mt-4'>You can send your unanswered questions to admin@phoenixprecast.com (expect a reply within one business day).
+                <p className='mt-4'>You can send your unanswered questions to support@phoenixprecast.com (expect a reply within one business day).
                 </p>
                   <div className="divider"></div>
                   <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>

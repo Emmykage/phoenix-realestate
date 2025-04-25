@@ -30,7 +30,7 @@ const InitialInvestment = ({handleNext,  handlePrev}) => {
                             </div>
                             <div className='my-5'>
                                 <label htmlFor="30000" className='flex items-center gap-4'>
-                                    <input type="radio" id='30000' value={"30000"} name={"initial_investment"}  onChange={handleSelection} />
+                                    <input type="radio" id='30000' value={30000} name={"initial_investment"}  onChange={handleSelection} />
                                     £30,000+
 
                                 </label>
@@ -38,7 +38,7 @@ const InitialInvestment = ({handleNext,  handlePrev}) => {
                             </div>
                             <div>
                                 <label htmlFor="100000" className='flex items-center gap-4'>
-                                    <input type="radio" id='100000' value={"100000"} name={"initial_investment"} onChange={handleSelection}/>
+                                    <input type="radio" id='100000' value={100000} name={"initial_investment"} onChange={handleSelection}/>
                                     £100,000+ 
 
 
@@ -47,7 +47,7 @@ const InitialInvestment = ({handleNext,  handlePrev}) => {
                             </div>
                             <div className='my-4'>
                                 <label htmlFor="1000000" className='flex items-center gap-4'>
-                                <input type="radio" id='1000000' value={"1000000"} name={"initial_investment"} onChange={handleSelection}/>
+                                <input type="radio" id='1000000' value={1000000} name={"initial_investment"} onChange={handleSelection}/>
                                 £1,000,000+
 
                                 </label>
@@ -55,7 +55,7 @@ const InitialInvestment = ({handleNext,  handlePrev}) => {
                             </div>
                             <div className='my-4'>
                                 <label htmlFor="additional_income" className='flex items-center gap-4'>
-                                <input type="radio" id='additional_income' value={"additional_income"} name={"initial_investment"} onChange={handleSelection}/>
+                                <input type="radio" id='additional_income' value={null} name={"initial_investment"} onChange={handleSelection}/>
                                 l'm not sure yet
  
 
