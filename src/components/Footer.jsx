@@ -61,7 +61,9 @@ const Footer = () => {
                     <div className=" newsletter">
                         <h4 className='mb-7'><span>Newsletter</span> <img src="images/divider-half.png" alt="" /></h4>
                         <p><b>Subscribe to our newsletter!</b> 
-                         Vel lorem ipsum. Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. */}
+                        <br/>
+                        Stay tuned for exclusive investment opportunities, real estate insights, and early access to new property listings.
+                         {/* We’re excited to have you on this journey toward building lasting wealth through smart property investments. */}
                          </p>
                          <form className="subscribe-form bg-re px-0" method="post" action="#">
                             <input type="text" name="email" value="Your email" />

@@ -121,7 +121,6 @@ const ITEM_PADDING_TOP = 8;
   };
 
 
-  console.log(assetFeatures)
   const propertyTypes = [
     "Detached",
     "Semi-Detached",
@@ -133,6 +132,7 @@ const ITEM_PADDING_TOP = 8;
     "Cottage",
     "Villa",
     "Townhouse",
+    "Office", "Warehouse",
     "Duplex",
     "Penthouse",
     "Studio",
@@ -199,10 +199,10 @@ const ITEM_PADDING_TOP = 8;
            
             >
               <option value="Family Home">Family Home </option>
-              <option value="Studio Apartment">Studio Apartment </option>
+              <option value="Apartment Building"> Apartment Building </option>
               <option value="Condo & Villa">Condo & Villa </option>
               <option value="Water Front Home">Water Front Home  </option>
-              <option value="Cozy Home">Cozy Home </option>
+              <option value="Commercial">Commercial </option>
 
             </select>
           </div>

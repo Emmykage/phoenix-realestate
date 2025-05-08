@@ -19,7 +19,7 @@ const TopAssets = () => {
     <div className="container m-auto">
   
       <div className="module-header">
-        <h2>Recently Added <strong>Properties</strong></h2>
+        <h2>Whats's on <strong>the Market</strong></h2>
         <img src="images/divider.png" alt="" className='block m-auto' />
         <p>Discover our recently added properties, where exceptional features and prime locations combine to offer you the latest and most desirable listings</p>
       </div>

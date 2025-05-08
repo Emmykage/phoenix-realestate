@@ -4,9 +4,39 @@ import teamPhoto from "../../assets/images/about/team.jpg"
 import AppButton from '../../components/buttons/Buttons'
 import { useNavigate } from 'react-router-dom'
 import SubHeader from '../../components/subHeader/SubHeader'
+import meydon from "../../assets/images/partners/1739260992184-5.png"
+import ellington from "../../assets/images/partners/1739262049038-12.png"
+import partnerdubaiProp from "../../assets/images/partners/1739262186758-14.png"
+import sobhaRealty from "../../assets/images/partners/1739262224223-7.png"
+import cogemad from "../../assets/images/partners/cogemad.png"
+import majid from "../../assets/images/partners/majid.png"
+// import majid from "../../"
 
 const OurTeam = () => {
   const navigate = useNavigate()
+
+
+  const partners = [
+    {
+      logo: ellington,
+      link: "https://www.dp.ae/"
+    },
+    {
+      logo: partnerdubaiProp,
+      link: "https://www.meydan.ae/"
+    },
+    {
+      logo: sobhaRealty,
+      link: "https://sobharealty.com/"
+    },  {
+      logo: cogemad,
+      link: "https://www.cogemad.com/"
+    },
+    {
+      logo: majid,
+      link: "https://www.majidalfuttaim.com/"
+    }
+  ]
   return (
     <div>
       <Nav/>
@@ -15,7 +45,7 @@ const OurTeam = () => {
     
   <section className="module content px-4">
     <div className="container">
-      <div className="flex md:flex-row gap-10 flex-col">
+      <div className="flex md:flex-row gap-10 flex-col items-">
 
         <div className="flex-1 font-medium text-justify leading-7">
             <h3>Our Team</h3>
@@ -37,13 +67,29 @@ const OurTeam = () => {
 
           </div>
     
-          <div className="flex-1">
-           {/* <img className="about-video-thumb rounded-lg " src={teamPhoto} alt="about" /> */}
+          <div className="flex-1 flex justify-center items-center">
+           
+           <img className="about-video-thumb rounded-lg w-80" src={"/logos/12.png"} alt="about" />
             <div className="clear"></div>
           </div>
           </div>
         </div>
   </section>
+
+
+<section className="bg-gray-950 py-10 pb-20  px-4">
+  <h2 className="text-center">Our Patners</h2>
+<div className="grid md:grid-cols-5 max-w-7xl m-auto">
+ 
+  {partners.map(item =>(
+     <a href={item.link} target="_blank" rel="noopener noreferrer">
+     <img src={item.logo} />
+   
+     </a>
+            ))}
+  </div>
+</section>
+ 
   <section className='py-20 px-4 bg-white shadow-sm '>
 
 

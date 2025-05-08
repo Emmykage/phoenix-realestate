@@ -67,6 +67,10 @@ import ViewPost from './pages/Admin/blog/ViewPost';
 import Profile from './pages/dashboard/profile/Profile';
 import usePageReset from './hooks/usePageRest';
 import ToastifyContainer from './components/toastContainer';
+import SellProperty from './pages/SellProperty';
+import BuyProperty from './pages/BuyProperty';
+import FixedIncome from './pages/dashboard/fixed-income/FixedIncome';
+import CapitalGrowth from './pages/dashboard/capital-growth/CapitalGrowth';
 // import { ToastContainer } from 'react-toastify';
 function App() {
   const {loader} = useSelector(state => state.app)
@@ -80,6 +84,8 @@ function App() {
 }
       <Routes>
       <Route path='about-us' element={<MainLayout> <About/></MainLayout>} />
+      <Route path='sell-property' element={<MainLayout> <SellProperty/></MainLayout>} />
+      <Route path='buy-property' element={<MainLayout> <BuyProperty/></MainLayout>} />
       <Route path='why-phoenix' element={<MainLayout> <AboutPhoenixPrecast/> </MainLayout>} />
       <Route path='our-team' element={<MainLayout> <OurTeam/> </MainLayout>} />
       <Route path='passive-income' element={<MainLayout> <PassiveIncome/> </MainLayout>} />
@@ -90,13 +96,15 @@ function App() {
       <Route path='/dashboard' element={<><DashboardLayout/></> }>
       <Route path='home' element={<DashboardHome/>} />
       <Route path='profile' element={<Profile/>} />
+      <Route path='fixed-income' element={<FixedIncome/>} />
+      <Route path='capital-growth' element={<CapitalGrowth/>} />
       <Route path='account' element={<DashboardHome/>}>
           <Route path='deposit' element={<AccountDeposit/>}/>
           <Route path='identity' element={<Identity/>}/>
           <Route path='profile' element={<AccountProfile/>}/>
           <Route path='' index element={<ProfileAccount/>}/>
           <Route path='payment-method' element={<PaymentMethods/>}/>
-          <Route path='withdraw' element={<AccountWithdraw/>}/>
+          <Route path='withdrawal' element={<AccountWithdraw/>}/>
         </Route>
         <Route path='document' element={<DashboardDocument/>} />
         <Route path='portfolio' element={<Portfolio/>}>

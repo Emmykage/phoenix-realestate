@@ -3,8 +3,13 @@ import React from 'react'
 const Identity = () => {
   return (
     <div>
-        <p className='text-xs text-gray-500 text-justify leading-5'>FarmFundr has implemented this verification step to stay legally compliant with KYC/AML (Know Your Customer/Anti-Money Laundering) regulations. This is an additional measure to ensure against accepting fraudulent contributions. All investors must complete the KYC/AML form before making any investments through FarmFundr.</p>
-
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Investor Verification</h2>
+        <p class="text-sm text-gray-600 mb-8">
+            Phoenix Precast has implemented this verification step to remain compliant with
+            <span class="font-semibold">KYC/AML (Know Your Customer / Anti-Money Laundering)</span> regulations.
+            This helps protect against fraudulent activity. All investors are required to complete this form before
+            making any investments through Phoenix Precast.
+        </p>
      
         <div className="isolate bg-white px-6 py-2 rounded-md my-6">
             <div className="">

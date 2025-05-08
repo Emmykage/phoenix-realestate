@@ -63,7 +63,7 @@ const AccountWithdraw = () => {
         <div>
         <form onSubmit={handleDepositModal} ref={formRef}>
             <div  className='my-3 text-left'>
-                <label className='block m-1 font-medium'>Payment Method</label> 
+                <label className='block m-1 font-medium uppercase'>Payment Method</label> 
                 <div className=''>
                
                 <select name='coin_type' id='coin_type' className='border form-select form-select-lg mb-3' required>
@@ -77,7 +77,7 @@ const AccountWithdraw = () => {
                 </div>
             </div>
             <div>
-                <label className='block m-1' htmlFor="amount">Enter Amount</label>
+                <label className='uppercase font-medium block m-1' htmlFor="amount">Enter Amount</label>
                 <input type="number" className='border'  placeholder='Enter Amount in USD' name="amount" required min={10}/>
             </div>
             <ul>
@@ -89,19 +89,19 @@ const AccountWithdraw = () => {
                     <li className='px-3 font-normal'><p>Your withdrawal request will be confirmed and approved in a minute</p></li>
                     {/* <li className='px-3 font-normal'><p>Please make deposit before submitting the form</p></li> */}
                 </ul>
-                <div className='m-2'>
-                    <p className='text-dark text-left text-base font-semibold my-3'>Deposit Address</p>
-                    <div className='m-2'>
-                        {/* <label className='block m-1' htmlFor="client_address">Enter Wallet Address</label> */}
+                {/* <div className='m-2'> */}
+                    {/* <p className='text-dark text-left text-base font-semibold my-3'>Deposit Address</p> */}
+                    <div className='my-2'>
+                        <label className='block m-1 uppercase font-medium' htmlFor="client_address">Enter Wallet Address</label>
                         <input className='border' type='text' id="client_address" name='wallet_address' required placeholder='Enter Wallet Address'/>
                     </div>
 
-                </div>
+                {/* </div> */}
                 {/* <div className=''>
                     <input type="file" name='receipt' className='border w-full' />
                 </div> */}
         <div>
-        <button type='submit' className='btn w-full'>Request</button>
+        <button type='submit' className='btn py-3 w-full'>Request</button>
         </div>
         </form>
         </div>

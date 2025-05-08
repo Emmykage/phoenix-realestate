@@ -74,7 +74,7 @@ const AccountDeposit = () => {
         <h3 className='text-right font-semibold text-3xl'>Fund Account</h3>
         <div></div>
 
-        <div className='flex flex-col-reverse md:flex-row gap-10'>
+        <div className='grid md:grid-cols-2  gap-10'>
         <form onSubmit={handleDepositModal} ref={formRef}>
             <div  className='my-3 text-left'>
                 <label className='block m-1 font-medium'>Payment Method</label> 
@@ -123,7 +123,7 @@ const AccountDeposit = () => {
                 <input type="file" name='receipt' className='border w-full' required/>
             </div>
         <div>
-        <button type='submit' className='btn w-full '>Deposite</button>
+        <button type='submit' className='py-2 btn w-full '>Deposite</button>
         </div>
         </form>
         <div>

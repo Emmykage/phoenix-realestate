@@ -23,12 +23,12 @@ const Offering = () => {
            {offers.map(item => (
               <div className='my-4 border rounded-md p-1 md:p-4 flex flex-col md:flex-row gap-4 shadow hover:shadow-lg'>
                 <div className='md:flex-1 h-52 md:h-80'>
-                    <img src={item.images} alt="" className='w-full h-full object-contain'/>
+                    <img src={item.images_url[0]}  alt="" className='w-full object-cover h-full'/>
                 </div>
                 <div className='flex-1 px-1 w-full md:max-w-lg md:py-7 text-left '>
                   <h3 className='text-xl font-semibold text-gray-700'>{item.name}</h3> 
-                  <p className='text-gray-500'>Custom  Investment</p>
-                  <p className='text-xs text-gray-500 my-3'>We can custom-tailor an investment for you.</p>
+                  <p className='text-gray-500 uppercase'>{item?.tenure}</p>
+                  <p className='text-xs text-gray-500 my-3'>{item?.address}</p>
                   <span className='text-green-600 text-2xl font-medium'>{usd_format(item?.price)}</span> <span className='text-sm text-gray-500'>or More </span>
 
                   <NavLink to={'#'} className={'bg-gray-200 text-sm py-3 rounded my-5 text-gray-600 font-medium text-center block'}> LEARN MORE</NavLink>

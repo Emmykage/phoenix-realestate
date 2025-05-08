@@ -218,7 +218,16 @@ const Nav = () => {
                     </ul>
                 </li>
 
-                <li className='relative my-0 md:h-full flex justify-center items-center menu-item-has-childre nav-item text-white'><NavLink to="/properties" >Property Listing</NavLink></li>
+                <li className='relative my-0 md:h-full flex justify-center items-center menu-item-has-childre nav-item text-white'><NavLink to="/properties" >Property Listing</NavLink>
+                  <ul className="sub-menu relative">
+                    <li className=''><NavLink to="/properties" >Buy Property</NavLink></li>
+                    <li className='re'><NavLink to="/sell-property" >Sell Property</NavLink></li>
+                    
+                  </ul>
+                </li>
+
+
+
 
 
                 <li className="relative my-0 md:h-full flex justify-center items-center menu-item-has-childre nav-item text-white">
@@ -229,7 +238,7 @@ const Nav = () => {
                 <li className='re'><NavLink to="/faq" >FAQ</NavLink></li>
                   
                     </ul>
-                    </li>
+                </li>
                     <li className='relative my-0 md:h-full flex justify-center items-center menu-item-has-childre nav-item text-white'><NavLink to="/press-release" className={"nav-link text-white"} >News </NavLink></li>
                     {/* <li><NavLink to="/dashboard/home"className={"nav-link text-white"} onClick={() => show == "collapse" ?  setShow("null") : setShow('collapse')}>Passive Income</NavLink></li> */}
                     <li className='relative my-0 md:h-full flex justify-center items-center  menu-item-has-childre nav-item text-white'><NavLink to="/contact-us" className={"nav-link text-white"} >Contacts Us</NavLink></li>

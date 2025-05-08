@@ -2,13 +2,16 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 import { BiCustomize } from 'react-icons/bi';
 import { BsBriefcase } from 'react-icons/bs';
 import { FaQuestionCircle, FaRegUser } from "react-icons/fa";
-import { GrDocumentDownload } from 'react-icons/gr';
+import { GrDocumentDownload, GrFolderCycle, GrTransaction } from 'react-icons/gr';
 import { IoMdHome, IoMdMenu, IoMdNotificationsOutline } from "react-icons/io";
 import { MdSupervisorAccount } from 'react-icons/md';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { CiLogout } from "react-icons/ci";
 import { userlogOut } from '../redux/actions/auth';
+import { IoAnalyticsOutline } from "react-icons/io5";
+import { RiLuggageDepositLine } from "react-icons/ri";
+
 
 const DashboardLayout = ({children}) => {
     // const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -44,8 +47,8 @@ const DashboardLayout = ({children}) => {
             label: "Home",
             icon: <IoMdHome  className='text-2xl'/>
         }, {
-            link: '/dashboard/account/',
-            label: "Account",
+            link: '/dashboard/account/identity',
+            label: "Bio Data",
             icon: <MdSupervisorAccount className='text-2xl'/>
         },
         {
@@ -57,6 +60,29 @@ const DashboardLayout = ({children}) => {
             link: '/dashboard/portfolio/',
             label: "Portfolio",
             icon: < BsBriefcase className='text-2xl'/>
+        },
+        {
+            link: '/dashboard/fixed-income/',
+            label: "Fixed Income",
+            icon: < GrTransaction  className='text-2xl'/>
+        }, {
+            link: '/dashboard/capital-growth/',
+            label: "Capital Growth",
+            icon: < IoAnalyticsOutline  className='text-2xl'/>
+        },
+       
+    ]
+
+    const itemFunding = [
+        {
+            link: '/dashboard/account/withdrawal',
+            label: "Withdrawal",
+            icon: <GrFolderCycle   className='text-2xl'/>
+        },
+        {
+            link: '/dashboard/account/Deposit/',
+            label: "Deposit",
+            icon: <RiLuggageDepositLine className='text-2xl'/>
         }
     ]
     const active = "bg-gray-200 flex items-center gap-4 px-2 m-auto w-full h-full hover:bg-gray-300"
@@ -78,6 +104,17 @@ const DashboardLayout = ({children}) => {
                         </NavLink>
                         </li>
                     ))}
+                     <li className="mt-4 text-sm text-gray-400 px-6">Funding</li>
+
+                    
+                    {itemFunding.map(item => (
+                        <li className='my-2 h-10 '>
+                        <NavLink to={item.link} className={({isActive}) => isActive ? active: inactive }>
+                        {item.icon}
+                        <span className='text-base font-medium'>{item.label}</span>
+                        </NavLink>
+                        </li>
+                    ))}
                     <li className='my-2 h-10 mt-auto bg-gray-100'>
                         <a onClick={()=> {
                             dispatch(userlogOut()).then(result => {
@@ -91,8 +128,10 @@ const DashboardLayout = ({children}) => {
                         <span className='text-base font-medium'>Log Out</span>
                         </a>
                         </li>
-                 
-                </ul>
+
+           
+          
+          </ul>
 
              
 
@@ -101,7 +140,8 @@ const DashboardLayout = ({children}) => {
                
               
               
-            </aside>
+            </aside> 
+        
         <div className='bg-green-20 flex-1 overflow-y-auto relative'>
          
             <header className='bg-white shadow py-6 border-b'>
