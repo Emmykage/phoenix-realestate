@@ -133,8 +133,7 @@ const AccountDeposit = () => {
                     <li className='px-3 font-normal'><p>Deposit will be credited and available on the dashboard after confirmation</p></li>
                     <li className='px-3 font-normal'><p>Crypto deposits are recommended</p></li>
                     <li className='px-3 font-normal'><p>Deposit may be via any of the supported networks: Tron (TRC20), BSC(BEP20), ETH(ER20), Polygon, Arbitum Network </p></li>
-                    <li className='px-3 font-normal'><p>Do not send NFTs to this address</p></li>
-                    <li className='px-3 font-normal'><p>Please make deposit before submitting the form</p></li>
+
                 </ul>
         </div>
 

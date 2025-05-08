@@ -119,7 +119,7 @@ const DepositPage = () => {
                 <input type="file" name='receipt' className='border w-full' required/>
             </div>
         <div>
-        <button type='submit' className='btn w-full '>Deposite</button>
+        <button type='submit' className='btn w-full '>Deposit</button>
         </div>
         </form>
         <div>
@@ -130,7 +130,7 @@ const DepositPage = () => {
                     <li className='px-3 font-normal'><p>Crypto deposits are recommended</p></li>
                     <li className='px-3 font-normal'><p>Deposit may be via any of the supported networks: Tron (TRC20), BSC(BEP20), ETH(ER20), Polygon, Arbitum Network </p></li>
                     <li className='px-3 font-normal'><p>Do not send NFTs to this address</p></li>
-                    <li className='px-3 font-normal'><p>Please make deposit before submitting the form</p></li>
+
                 </ul>
         </div>
 

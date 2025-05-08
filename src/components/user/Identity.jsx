@@ -16,7 +16,7 @@ const Identity = () => {
                 <h2 className="mt-2 text-lg leading-8 text-gray-600 text-left">CONTACT INFOMATION</h2>
             </div>
             <form action="#" method="POST" className="sm:mt-2">
-                <div className="flex gap-x-8 gap-y-6 text-gray-500 text-left">
+                <div className="flex md:flex-row flex-col gap-x-8 md:gap-y-6 text-gray-500 text-left">
                     <div className='flex-1'>
                         <label for="first-name" className="text-left block text-sm font-semibold">First name</label>
                         <div className="mt-2.5">
@@ -36,7 +36,7 @@ const Identity = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex gap-x-8 text-left my-3 text-gray-500'>
+                <div className='flex flex-col md:flex-row gap-x-8 text-left my-3 text-gray-500'>
                     <div className="flex-1 sm:col-span-2">
                         <label for="company" className="block text-sm font-semibold">Title</label>
                         <div className="mt-1">
@@ -83,7 +83,7 @@ const Identity = () => {
     
         </div>
 
-        <div className='flex gap-x-8'>
+        <div className='flex flex-col md:flex-row gap-x-8'>
             <div className='flex-1'>
                 <div className="mt-2.5">
                     <input placeholder='city' type="text" name="first_name" id="first_name" autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
@@ -105,7 +105,7 @@ const Identity = () => {
 
         <h3 className='mt-2 text-lg leading-8 text-gray-600 text-left'>IDENTITY VERIFICATION</h3>
 
-        <div className='flex gap-x-8'>
+        <div className='flex flex-col md:flex-row gap-x-8'>
             <div className='flex-1'>
                 <label for="entity_Name" className="text-left block text-sm font-semibold">Nationality</label>
                 <div className="mt-2.5">

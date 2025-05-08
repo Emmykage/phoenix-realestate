@@ -80,7 +80,7 @@ const DashboardLayout = ({children}) => {
             icon: <GrFolderCycle   className='text-2xl'/>
         },
         {
-            link: '/dashboard/account/Deposit/',
+            link: '/dashboard/account/deposit',
             label: "Deposit",
             icon: <RiLuggageDepositLine className='text-2xl'/>
         }
