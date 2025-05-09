@@ -63,7 +63,7 @@ const AccountDeposit = () => {
         }
     }
   return (
-    <div className='mx-3  bg-white px-3 max-w-1450 box-shadow-gray my-6 rounded-sm py-2'>
+    <div className='bg-white max-w-1450 box-shadow-gray my-6 rounded-sm py-2'>
         <div className={`${show} p-2  rounded-md my-1 gap-3 fixed`}>
             <p className='text-base text-green border p-2 rounded-md box-shadow'>
                 <span>Payment was success full </span> 

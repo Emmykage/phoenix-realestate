@@ -21,7 +21,6 @@ const DashboardLayout = ({children}) => {
     const {isLogged, loading} = useSelector(state => state.auth)
 
     const navigate = useNavigate()
-    const dispatch = useDispatch()
 
 
     useEffect(() => {
@@ -32,66 +31,18 @@ const DashboardLayout = ({children}) => {
         }
 
     },[user])
+
+    console.log(user)
     return (
     <div className='h-screen flex  bg-gray-200 overflow-y-auto'>
        
-        {/* <aside id='aside' className={`${toggle ? "w-0 " : "w-60 px-2"} bg-white flex flex-col border shrink-0 absolute md:relative z-10 shadow h-full bg-whit border-t md:pl-2 py-10 overflow-hidden`}>
-
-                <div className='bg-r mb-10'>
-                    <img src={"/logo.png"} alt="" className='w-20  block m-auto'/>
-                </div>
-                <ul className=' flex-1 flex flex-col h-full'>
-                    {items.map(item => (
-                        <li className='my-2 h-10 '>
-                        <NavLink to={item.link} className={({isActive}) => isActive ? active: inactive }>
-                        {item.icon}
-                        <span className='text-base font-medium'>{item.label}</span>
-                        </NavLink>
-                        </li>
-                    ))}
-                     <li className="mt-4 text-sm text-gray-400 px-6">Funding</li>
-
-                    
-                    {itemFunding.map(item => (
-                        <li className='my-2 h-10 '>
-                        <NavLink to={item.link} className={({isActive}) => isActive ? active: inactive }>
-                        {item.icon}
-                        <span className='text-base font-medium'>{item.label}</span>
-                        </NavLink>
-                        </li>
-                    ))}
-                    <li className='my-2 h-10 mt-auto bg-gray-100'>
-                        <a onClick={()=> {
-                            dispatch(userlogOut()).then(result => {
-                                if(userlogOut.fulfilled.match(result)){
-                                    navigate('/auth/login');
-                                }
-                            }); 
-                             }} className={inactive}>
-                        <CiLogout/>
-
-                        <span className='text-base font-medium'>Log Out</span>
-                        </a>
-                        </li>
-
-           
-          
-          </ul>
-
-             
-
-            
-                
-               
-              
-              
-            </aside>  */}
+    
 
             <Aside open={toggle} onClose={()=> {setToggle(false)}}/>
         
         <div className='bg-green-20 flex-1 overflow-y-auto relative'>
          
-            <header className='bg-white sticky top-0 left-0 shadow py-6 border-b'>
+            <header className='bg-white sticky top-0 left-0 shadow py-6 border-b z-10'>
                 <div className='max-w-[1500px] m-auto flex justify-between py-3  px-2 md:px-10 items-center'>
 
                     <NavLink to={'/'} className={'px-2 w-52 text-3xl text-green-700 font-semibold'}>
@@ -118,7 +69,7 @@ const DashboardLayout = ({children}) => {
 
         </header>
 
-            <div className='flex-1 pr-6 m-auto max-w-[1500px] p-4'>
+            <div className='flex-1 m-auto max-w-[1500px] py-4 px-4'>
                 <Outlet/>
 
             </div>

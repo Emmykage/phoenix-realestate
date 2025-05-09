@@ -47,7 +47,7 @@ const CapitalGrowth = () => {
       </div>
 
        <ul className='flex mt-8 overflow-x-auto'>
-              <li className='relative border-b py-2'><NavLink className={({isActive}) => (isActive ? activeLink : inactiveLink)} to="/dashboard/capital/transactions">TRANSACTIONS</NavLink> </li>
+              <li className='relative border-b py-2'><NavLink className={({isActive}) => (isActive ? activeLink : inactiveLink)} to="/dashboard/capital-growth/transactions">TRANSACTIONS</NavLink> </li>
               {/* <li className='relative border-b py-2'><NavLink className={({isActive}) => (isActive ? activeLink : inactiveLink)} to="/dashboard/account/profile">PROFILE</NavLink> </li> */}
               <li className='relative border-b py-2'><NavLink className={({isActive}) => (isActive ? activeLink : inactiveLink)} to="/dashboard/capital-growth/withdrawal">WITHDRAW</NavLink> </li>
               <li className='relative border-b py-2'><NavLink className={({isActive}) => (isActive ? activeLink : inactiveLink)} to="/dashboard/capital-growth/deposit">DEPOSIT</NavLink> </li>

@@ -12,7 +12,7 @@ const DashboardHome = () => {
   return (
     <div className='max-w-7x mx-0 sm:m-auto  px-2 account'>
       <div className='flex justify-between'>
-      <h2 className='text-left text-gray-900 text-2xl font-semibold my-8'><NavLink to={'dashboard/account/'} className={'hover:text-gray-500'}> My Account </NavLink> </h2>
+      <h2 className='text-left text-gray-900 text-2xl font-semibold my-3'><NavLink to={'dashboard/account/'} className={'hover:text-gray-500'}> My Account </NavLink> </h2>
   
 
       </div>

@@ -21,10 +21,12 @@ import { userlogOut } from '../../redux/actions/auth';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { IoMdHome } from 'react-icons/io';
 import { GrFolderCycle, GrTransaction } from 'react-icons/gr';
+import { useDispatch } from 'react-redux';
 export default function Aside({
     open,
     onClose
 }) {
+    const dispatch = useDispatch()
 
   const [state, setState] = React.useState({
     top: false,
@@ -50,27 +52,28 @@ export default function Aside({
         link: '/dashboard/home/',
         label: "Home",
         icon: <IoMdHome  className='text-2xl'/>
-    }, {
+    },
+     {
         link: '/dashboard/account/identity',
         label: "Bio Data",
         icon: <MdSupervisorAccount className='text-2xl'/>
     },
-    {
-        link: '/dashboard/offering/',
-        label: "Offering",
-        icon: <BiCustomize className='text-2xl'/>
-    },
-    {
-        link: '/dashboard/portfolio/',
-        label: "Portfolio",
-        icon: < BsBriefcase className='text-2xl'/>
-    },
+    // {
+    //     link: '/dashboard/offering/',
+    //     label: "Offering",
+    //     icon: <BiCustomize className='text-2xl'/>
+    // },
+    // {
+    //     link: '/dashboard/portfolio/',
+    //     label: "Portfolio",
+    //     icon: < BsBriefcase className='text-2xl'/>
+    // },
     {
         link: '/dashboard/fixed-income/transactions',
         label: "Fixed Income",
         icon: < GrTransaction  className='text-2xl'/>
     }, {
-        link: '/dashboard/capital-growth/capital-transactions',
+        link: '/dashboard/capital-growth/transactions',
         label: "Capital Growth",
         icon: < IoAnalyticsOutline  className='text-2xl'/>
     },
@@ -96,7 +99,7 @@ const list = () => {
 return(
     <>
        <div className='bg-r mb-10'>
-                    <img src={"/logo.png"} alt="" className='w-20  block m-auto'/>
+                    <img src={"/logos/12.png"} alt="" className='w-20  block m-auto'/>
                 </div>
                 <ul className=' flex-1 flex flex-col h-full'>
                     {items.map(item => (
@@ -161,7 +164,7 @@ return(
             onClose={onClose}
           >
 
-             <aside id='aside' className={`bg-white w-80 flex flex-col border shrink-0 relative z-10 shadow h-full bg-whit border-t md:pl-2 py-10 overflow-hidden`}>
+             <aside id='aside' className={`bg-white w-60 flex flex-col border shrink-0 relative z-10 shadow h-full bg-whit border-t md:pl-2 py-10 overflow-hidden`}>
 
              {list()}
                 

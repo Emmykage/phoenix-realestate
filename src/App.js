@@ -108,9 +108,9 @@ function App() {
         <Route path='transactions' element={<Pending/>}/>
       </Route>
      <Route path='capital-growth' element={<CapitalGrowth/>}>
-     <Route path='capital-deposit' element={<CapitalDeposit/>}/>
-        <Route path='capital-withdrawal' element={<CapitaltWithdraw/>}/>
-        <Route path='capital-transactions' element={<CapitalTransactions/>}/>
+        <Route path='deposit' element={<CapitalDeposit/>}/>
+        <Route path='withdrawal' element={<CapitaltWithdraw/>}/>
+        <Route path='transactions' element={<CapitalTransactions/>}/>
      
      </Route>
      <Route path='account' element={<DashboardHome/>}>
