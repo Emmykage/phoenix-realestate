@@ -75,7 +75,7 @@ const FAQ = () => {
                   <div className="divider"></div>
                   <span className="accordion-footer">Was this answer helpful? <a href="#">Yes</a> <a href="#">No</a></span>
                 </div>
-                <h3>What is the quickest way I can sell my home?</h3>
+                <h3>What is the quickest way to deposit my money?</h3>
                 <div>
                   <p className='mt-4'>While you are welcome to send us a cheque within the UK, the quickest way to remit your investment sum is to transfer the fund electronically (Bank Wire/Transfer or Cryptocurrency). 
                  <br/> Be sure to retain a receipt evidencing your EFT or deposit!    </p>

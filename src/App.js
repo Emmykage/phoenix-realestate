@@ -71,6 +71,12 @@ import SellProperty from './pages/SellProperty';
 import BuyProperty from './pages/BuyProperty';
 import FixedIncome from './pages/dashboard/fixed-income/FixedIncome';
 import CapitalGrowth from './pages/dashboard/capital-growth/CapitalGrowth';
+import AdminAccountProfile from './pages/Admin/account/AccountProfile';
+import FixedtWithdraw from './pages/dashboard/fixed-income/WithdrawPage';
+import FixedDeposit from './pages/dashboard/fixed-income/Deposit';
+import CapitalTransactions from './pages/dashboard/capital-growth/Pending';
+import CapitaltWithdraw from './pages/dashboard/capital-growth/WithdrawPage';
+import CapitalDeposit from './pages/dashboard/capital-growth/Deposit';
 // import { ToastContainer } from 'react-toastify';
 function App() {
   const {loader} = useSelector(state => state.app)
@@ -93,18 +99,27 @@ function App() {
       <Route path='faq' element={<MainLayout> <FAQ/> </MainLayout>} />
 
 
-      <Route path='/dashboard' element={<><DashboardLayout/></> }>
+      <Route path='/dashboard' element={<><DashboardLayout/></>}>
       <Route path='home' element={<DashboardHome/>} />
-      <Route path='profile' element={<Profile/>} />
-      <Route path='fixed-income' element={<FixedIncome/>} />
-      <Route path='capital-growth' element={<CapitalGrowth/>} />
-      <Route path='account' element={<DashboardHome/>}>
-          <Route path='deposit' element={<AccountDeposit/>}/>
-          <Route path='identity' element={<Identity/>}/>
-          <Route path='profile' element={<AccountProfile/>}/>
-          <Route path='' index element={<ProfileAccount/>}/>
-          <Route path='payment-method' element={<PaymentMethods/>}/>
-          <Route path='withdrawal' element={<AccountWithdraw/>}/>
+      <Route path='profile' element={<Profile/>}/>
+      <Route path='fixed-income' element={<FixedIncome/>}>
+        <Route path='deposit' element={<FixedDeposit/>}/>
+        <Route path='withdrawal' element={<FixedtWithdraw/>}/>
+        <Route path='transactions' element={<Pending/>}/>
+      </Route>
+     <Route path='capital-growth' element={<CapitalGrowth/>}>
+     <Route path='capital-deposit' element={<CapitalDeposit/>}/>
+        <Route path='capital-withdrawal' element={<CapitaltWithdraw/>}/>
+        <Route path='capital-transactions' element={<CapitalTransactions/>}/>
+     
+     </Route>
+     <Route path='account' element={<DashboardHome/>}>
+        <Route path='deposit' element={<AccountDeposit/>}/>
+        <Route path='identity' element={<Identity/>}/>
+        <Route path='profile' element={<AccountProfile/>}/>
+        <Route path='' index element={<ProfileAccount/>}/>
+        <Route path='payment-method' element={<PaymentMethods/>}/>
+        <Route path='withdrawal' element={<AccountWithdraw/>}/>
         </Route>
         <Route path='document' element={<DashboardDocument/>} />
         <Route path='portfolio' element={<Portfolio/>}>
@@ -160,6 +175,7 @@ function App() {
         <Route path={"/admin"}>
         <Route path='dashboard' element={<AdminLayout><AHome/></AdminLayout>}/>
         <Route path='assets' element={<AdminLayout><Assets/></AdminLayout>}/>
+        <Route path='account-profile' element={<AdminLayout><AdminAccountProfile/></AdminLayout>}/>
         <Route path='asset/:id' element={<AdminLayout><AssetView/></AdminLayout>}/>
         <Route path='clients' element={<AdminLayout><Clients/></AdminLayout>}/>
         <Route path='client/:id' element={<AdminLayout><ClientsPage/></AdminLayout>}/>

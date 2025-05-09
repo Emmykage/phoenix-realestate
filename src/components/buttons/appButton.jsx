@@ -10,7 +10,8 @@ const AppButton = ({
     children,
     endIcon,
     loading,
-    type
+    type,
+    dark
 }) =>  {
   return (
     // <Stack spacing={2} direction="row">
@@ -18,13 +19,12 @@ const AppButton = ({
       // startIcon={<IoChevronForward  className='text-xs'/>}
       type={type}
       className={className}
-        // endIcon={endIcon}
         disabled={disbaled} 
         disableElevation
         onClick={onClick}
         loading={true}
         sx={{
-            backgroundColor: '#48a0dc',
+            backgroundColor: `${dark ? " white" : "#1980c5" }`,
             borderRadius: 1,
             overflow: "hidden",
             padding: 0,
@@ -38,10 +38,10 @@ const AppButton = ({
         loadingPosition="end"
       variant="contained"
       >
-        <span className='bg-[#1980c5]  h-full w-10 flex justify-center items-center'>
+        <span className={`bg-[#1980c5]  h-full w-10 flex justify-center items-center`}>
         <IoChevronForward  className='text-xs'/>
         </span>
-       <p className='text-xs pl-5'>
+       <p className='text-xs pl-5 text-gray-600'>
        {children}
 
        </p>

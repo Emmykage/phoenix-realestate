@@ -11,6 +11,7 @@ import { CiLogout } from "react-icons/ci";
 import { userlogOut } from '../redux/actions/auth';
 import { IoAnalyticsOutline } from "react-icons/io5";
 import { RiLuggageDepositLine } from "react-icons/ri";
+import Aside from '../components/aside/Aside';
 
 
 const DashboardLayout = ({children}) => {
@@ -23,15 +24,6 @@ const DashboardLayout = ({children}) => {
     const dispatch = useDispatch()
 
 
-
-    useEffect(() => {
-        const aside = document.querySelector("#aside")
-        console.log(aside)
-
-    },[])
-
-    console.log(user)
-
     useEffect(() => {
 
         if(!user && !loading) {
@@ -40,57 +32,10 @@ const DashboardLayout = ({children}) => {
         }
 
     },[user])
-    
-    const items = [
-        {
-            link: '/dashboard/home/',
-            label: "Home",
-            icon: <IoMdHome  className='text-2xl'/>
-        }, {
-            link: '/dashboard/account/identity',
-            label: "Bio Data",
-            icon: <MdSupervisorAccount className='text-2xl'/>
-        },
-        {
-            link: '/dashboard/offering/',
-            label: "Offering",
-            icon: <BiCustomize className='text-2xl'/>
-        },
-        {
-            link: '/dashboard/portfolio/',
-            label: "Portfolio",
-            icon: < BsBriefcase className='text-2xl'/>
-        },
-        {
-            link: '/dashboard/fixed-income/',
-            label: "Fixed Income",
-            icon: < GrTransaction  className='text-2xl'/>
-        }, {
-            link: '/dashboard/capital-growth/',
-            label: "Capital Growth",
-            icon: < IoAnalyticsOutline  className='text-2xl'/>
-        },
-       
-    ]
-
-    const itemFunding = [
-        {
-            link: '/dashboard/account/withdrawal',
-            label: "Withdrawal",
-            icon: <GrFolderCycle   className='text-2xl'/>
-        },
-        {
-            link: '/dashboard/account/deposit',
-            label: "Deposit",
-            icon: <RiLuggageDepositLine className='text-2xl'/>
-        }
-    ]
-    const active = "bg-gray-200 flex items-center gap-4 px-2 m-auto w-full h-full hover:bg-gray-300"
-    const inactive = " flex items-center gap-4 px-2 m-auto w-full h-full hover:bg-gray-300"
-  return (
+    return (
     <div className='h-screen flex  bg-gray-200 overflow-y-auto'>
        
-       <aside id='aside' className={`${toggle ? "w-0 " : "w-60 px-2"} bg-white flex flex-col border shrink-0 absolute md:relative z-10 shadow h-full bg-whit border-t md:pl-2 py-10 overflow-hidden`}>
+        {/* <aside id='aside' className={`${toggle ? "w-0 " : "w-60 px-2"} bg-white flex flex-col border shrink-0 absolute md:relative z-10 shadow h-full bg-whit border-t md:pl-2 py-10 overflow-hidden`}>
 
                 <div className='bg-r mb-10'>
                     <img src={"/logo.png"} alt="" className='w-20  block m-auto'/>
@@ -140,11 +85,13 @@ const DashboardLayout = ({children}) => {
                
               
               
-            </aside> 
+            </aside>  */}
+
+            <Aside open={toggle} onClose={()=> {setToggle(false)}}/>
         
         <div className='bg-green-20 flex-1 overflow-y-auto relative'>
          
-            <header className='bg-white shadow py-6 border-b'>
+            <header className='bg-white sticky top-0 left-0 shadow py-6 border-b'>
                 <div className='max-w-[1500px] m-auto flex justify-between py-3  px-2 md:px-10 items-center'>
 
                     <NavLink to={'/'} className={'px-2 w-52 text-3xl text-green-700 font-semibold'}>

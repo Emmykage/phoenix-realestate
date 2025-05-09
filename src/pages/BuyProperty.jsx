@@ -30,11 +30,17 @@ const BuyProperty = () => {
 
       {/* Exclusive Listing Section */}
       <section className="space-y-4">
-        <h2 className="text-3xl font-bold">Exclusively List Your Property with Phoenix Precast</h2>
+        <div className='grid grid-cols-2'>
+          <div>
+          <h2 className="text-3xl font-bold">Exclusively List Your Property with Phoenix Precast</h2>
         <p>
           Phoenix Precast, a founding member of the prestigious Forbes Global Properties, has an excellent standing in the UAE’s real estate sector. 
           We have the highest number of property transactions in the UAE and are the best-performing agency in the UAE’s secondary market.
         </p>
+
+          </div>
+        </div>
+       
       </section>
 
       {/* Placeholder for Image */}
@@ -47,7 +53,7 @@ const BuyProperty = () => {
         <h2 className="text-3xl font-bold mb-6">Our Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { title: "Strictly Qualified Buyers", icon: "/icons/buy.png", desc: "Get only the highest-quality buyers through Phoenix Precast’s strict qualifying process." },
+            { title: "Strictly Qualified Buyers",  desc: "Get only the highest-quality buyers through Phoenix Precast’s strict qualifying process." },
             { title: "Top Notch Marketing", desc: "Elevate your listing with high-quality professional photography." },
             { title: "Maximum Exposure", desc: "Get visibility and swift buyer engagement on top property portals." },
             { title: "Ultra-Streamlined Process", desc: "Navigate legal hurdles with our expert conveyance team." },
@@ -55,7 +61,7 @@ const BuyProperty = () => {
             { title: "Mortgage Advisory", desc: "Experience smooth transactions with our expert mortgage advisors." },
             { title: "Complete Privacy", desc: "Maintain full privacy throughout the sales process for all parties." }
           ].map((service, idx) => (
-            <div key={idx} className="p-4 border rounded-xl shadow-sm bg-white">
+            <div key={idx} className="p-4 border rounded-xl shadow-sm bg-green-200">
               <img src={service.icon}  alt={service.title} className='h-20' />
               <h3 className="font-semibold text-xl mt-3 mb-2">{service.title}</h3>
               <p className="text-gray-700">{service.desc}</p>

@@ -78,7 +78,7 @@ const OurTeam = () => {
 
 
 <section className="bg-gray-950 py-10 pb-20  px-4">
-  <h2 className="text-center">Our Patners</h2>
+  <h2 className="text-center text-gray-100">Our Patners</h2>
 <div className="grid md:grid-cols-5 max-w-7xl m-auto">
  
   {partners.map(item =>(

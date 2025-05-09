@@ -5,8 +5,10 @@ import SubHeader from '../../components/subHeader/SubHeader'
 import AppButton from '../../components/buttons/Buttons'
 import { PlanningIcon } from '../../assets/svgs/icons'
 import { FaCheck } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 
 const PassiveIncome = () => {
+    const navigate = useNavigate()
   return (
     <div>
         <Nav/>
@@ -64,7 +66,7 @@ const PassiveIncome = () => {
 
                         </p>
                         <div className='max-w- mr-auto my-6'>
-                        <AppButton className='py-4 px-4 bg-primary rounded-xl ml-auto  text-white hover:text-primary hover:bg-alt transition-all ease-linear duration-300'>Get Started</AppButton>
+                        <AppButton onClick={() => navigate("/auth/register")} className='py-4 px-4 bg-primary rounded-xl ml-auto  text-white hover:text-primary hover:bg-alt transition-all ease-linear duration-300'>Get Started</AppButton>
 
                         </div>
                     </div>
@@ -77,7 +79,7 @@ const PassiveIncome = () => {
                         <span> <strong  className='text-primary'> £30,000 </strong> MINIMUM INVESTMENT                        </span>
                     </p>
                    
-                    <p className='border-b  border-gray-300 flex gap-4 items-center border-gray-300'>
+                    <p className='border-b flex gap-4 items-center border-gray-300'>
                     <FaCheck className='text-xs'/>
                     UPTO 6.5% MONTHLY ROI
 
@@ -96,7 +98,7 @@ const PassiveIncome = () => {
 
 
                     <div className='max-w- mr-auto my-6'>
-                    <AppButton className='py-4 px-4 bg-primary rounded-xl ml-auto  text-white hover:text-primary hover:bg-alt transition-all ease-linear duration-300'>Get Started</AppButton>
+                    <AppButton onClick={() => navigate("/auth/register")} className='py-4 px-4 bg-primary rounded-xl ml-auto  text-white hover:text-primary hover:bg-alt transition-all ease-linear duration-300'>Get Started</AppButton>
 
                     </div>
                 </div>

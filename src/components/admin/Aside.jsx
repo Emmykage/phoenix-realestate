@@ -69,6 +69,12 @@ const Aside = ({isOpen, setIsOpen}) => {
           <span><AiOutlinePlus /></span>
           <h3>Post</h3>
         </NavLink>
+        <NavLink 
+         onClick={()=>setIsOpen(prev => !prev)}
+         to="/admin/account-profile" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
+          <span><AiOutlinePlus /></span>
+          <h3>Account</h3>
+        </NavLink>
         <a onClick={handleLogOut} className={({ isActive }) => (isActive ? activeLink : normalLink)}>
           <span><BiLogOut /></span>
           <h3>Logout</h3>

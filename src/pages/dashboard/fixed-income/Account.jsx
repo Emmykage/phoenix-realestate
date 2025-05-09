@@ -28,10 +28,10 @@ const DashboardHome = () => {
             <p className='text-sm text-gray-500 font-semibold md:text-left'>4263410275</p>
 
           </div>
-          {/* <div className='flex-1 text-center md:text-left'>
+          <div className='flex-1 text-center md:text-left'>
             <p className=' text-lg md:text-2xl font-semibold'>Balance </p>
             <span className='md:text-xl text-base text-gray-600 font-semibold'>$00.00</span>
-          </div> */}
+          </div>
 
         </div>
       
