@@ -7,10 +7,25 @@ import { FaCopy } from 'react-icons/fa'
 // import DepositModal from '../components/modals/DepositModal'
 import { useDispatch, useSelector } from 'react-redux'
 import DepositModal from '../../../components/modals/DepositModal'
+import { getInvestmentPortfolio } from '../../../redux/actions/portfolio'
+import { getInvestments } from '../../../redux/actions/investment'
+import { getAccountProfile } from '../../../redux/actions/accountProfile'
 // import { reset } from '../redux/wallet/transaction'
 const FixedDeposit = () => {
     const formRef = useRef(null)
     const dispatch = useDispatch()
+
+    
+    const {wallet, loading} = useSelector(state => state.wallet)
+    const [selectPayment, setSelectedPayment] = useState(null)
+    const [paymentOptions, setPaymentOptions] = useState([])
+    const {account_profile} = useSelector(state => state.account)
+
+    
+    const {investments} = useSelector(state => state.investment)
+    const {portfolio} = useSelector(state => state.portfolios)
+
+
     const [toggleModalDeposit, setToggleModalDeposit] = useState(null)
     const [deposit, setDeposit] = useState(null)  
     const [show, setShow] = useState("hidden")
@@ -21,7 +36,8 @@ const FixedDeposit = () => {
          formData.append('transaction[coin_type]', e.target.coin_type.value)
          formData.append('transaction[amount]', e.target.amount.value)
          formData.append('transaction[receipt]', e.target.receipt.files[0])
-         formData.append('transaction[transaction_type]', "deposit")
+         formData.append('transaction[transaction_type]', "deposit") 
+         formData.append('transaction[portfolio_id]', portfolio.id )
 
 
         // const data = Object.fromEntries(formData)
@@ -31,7 +47,51 @@ const FixedDeposit = () => {
 
         
     }
+   
+    useEffect(()=>{
+        dispatch(getInvestmentPortfolio("fixed income"))
+      },[])
+    
+      useEffect(()=>{
+        dispatch(getInvestments())
+      },[])     
+       useEffect(()=>{
+        dispatch(getAccountProfile()).then(result => {
+            if(getAccountProfile.fulfilled.match(result)){
+                setSelectedPayment(result.payload[0])
+            }
+        })
+      },[])
+
+
+      useEffect(()=> {
+
+        const options = Object.entries(account_profile).map((item) => ({
+            label: item[0], value: item[1]
+        })).slice(1)
+        setPaymentOptions(options)
+        setSelectedPayment(options[3]?.value)
+
+        console.log(options[3]?.value)
+      },
+    [account_profile])
+
+    useEffect(()=> {
+        setSelectedPayment(paymentOptions[0]?.value)
+    },[paymentOptions])
+
+
+    
+      const handleSubmit = () => {
+        
+        
+      }
+    
+     
     const element = formRef.current
+
+
+    console.log("selected payment ====>", account_profile, paymentOptions, selectPayment)
  
  
     useEffect(()=> {       
@@ -62,7 +122,14 @@ const FixedDeposit = () => {
             console.error('Unable to copy text: ', err)
         }
     }
-  return (
+
+    const handleChange = (e) => {
+        setSelectedPayment(e.target.value)
+
+    }
+
+
+    return (
     <div className='bg-white max-w-1450 box-shadow-gray my-6 rounded-sm py-2'>
         <div className={`${show} p-2  rounded-md my-1 gap-3 fixed`}>
             <p className='text-base text-green border p-2 rounded-md box-shadow'>
@@ -80,10 +147,13 @@ const FixedDeposit = () => {
                 <label className='block m-1 font-medium'>Payment Method</label> 
                 <div className=''>
                
-                <select name='coin_type' id='coin_type' className='border form-select form-select-lg mb-3' required>
-                    <option className='border' value="USD THETHER" selected>USD THETHER</option>
-                    <option value="BITCOIN">BITCOIN</option>
-                    <option value="ETHERUM">ETHERUM (ERC-20)</option>
+                <select onChange={handleChange} value={selectPayment} name='coin_type' id='coin_type' className='border form-select form-select-lg mb-3' required>
+
+                    {paymentOptions?.map(item => (
+                    <option value={item?.value}>{item.label?.toUpperCase()}</option>
+
+                    ))}
+                  
                 </select>
 
                
@@ -104,7 +174,7 @@ const FixedDeposit = () => {
                     </div> */}
                     <div className='flex-1 flex  items-center barc'>
                         <div className=' w-full mr-3'>
-                            <input type="text"  value={textToCopy} readOnly className='text-xl font-semibold bg-gray'/>
+                            <input type="text"  value={selectPayment} readOnly className='text-xl font-semibold bg-gray'/>
                         </div>  
                         {/* <div className='p-2 border bg-gray-light rounded-sm'>
                         <a onClick={handleCopyClick}><FaCopy className='text-4xl ml-2 bg-gray-light ' /></a>

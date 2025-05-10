@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import UserButton from "../components/Button";
+import { useDispatch, useSelector } from "react-redux";
+import { getInvestments } from "../../../redux/actions/investment";
 
 const FixedIncomeDashboard = () => {
+  const {investments} = useSelector(state => state.investment)
+
+
+  const dispatch = useDispatch()
   const data = {
     investmentValue: 25000,
     roi: 0.12, // 12%
@@ -9,15 +16,50 @@ const FixedIncomeDashboard = () => {
     duration: "12 Months",
     lastUpdated: "2025-05-08",
   };
+
+
+  useEffect(() => {
+    dispatch(getInvestments())
+  }, [])
+
+  const [formInput, setFormInput] = useState({amount: "", name: ""})
   const activeLink = "active text-gray-600 text-theme-alt px-5 py-1 text-sm font-medium"
   const inactiveLink = "text-gray-600 px-5 py-1 text-sm font-medium"
- 
+
+
 
   return (
     <div className="min-h-screen bg-gray00 text-black py-6">
-      <h1 className="text-2xl font-bold mb-6">Fixed Income Dashboard</h1>
+      <h1 className="text-2xl font-bold mb-6">Fixed Income</h1>
+
+      {/* <div className="m-auto border my-10 bg-white p-4 rounded-lg max-w-3xl">
+        <h3 className="mb-4">Initiate a deposit</h3>
+
+
+      <form action=" ">
+      <div className="flex  flex-col gap-x-8 md:gap-y- text-gray-500 text-left">
+        <div className='flex-1'>
+            <label for="first-name" className="text-left block text-sm font-semibold">Amount</label>
+            <div className="mt-2.5">
+                <input type="number" name="amount" id="amount" value={formInput?.amount}  autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
+            </div>
+        </div>
+    
+        <div className='flex-1'>
+            <label for="name" className="block text-sm font-semibold">Last name</label>
+            <div className="mt-2.5">
+                <input type="text" name="name" id="name" value={formInput?.name} disabled  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
+            </div>
+        </div>
+        </div>
+
+        <UserButton />     </form>
+        </div> */}
 
       {/* Summary Cards */}
+
+
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <div className="bg-white rounded-2xl p-5 shadow-md">
           <h2 className="text-sm text-gray-400 mb-1">Investment Value</h2>

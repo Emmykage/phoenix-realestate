@@ -35,10 +35,10 @@ const accountSlice = createSlice({
         }),
         [getAccountProfile.fulfilled]: (state, action) => {
             const response = action.payload;
-            console.log(response)
+
             return{
                 ...state,
-                account_profile: response.data,
+                account_profile: response,
                 error: false,
                 loading: false
             }

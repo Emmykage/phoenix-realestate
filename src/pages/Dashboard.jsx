@@ -60,7 +60,7 @@ const Dashboard = () => {
 
           </thead>
           <tbody>
-            {user?.wallet?.transactions.length < 1 ? <td> No Transaction Available </td> : 
+            {user?.wallet?.transactions?.length < 1 ? <td> No Transaction Available </td> : 
             user?.wallet?.transactions.map(transaction => (
               <tr className=''>
 

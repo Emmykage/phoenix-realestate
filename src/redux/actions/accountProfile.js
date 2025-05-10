@@ -29,7 +29,7 @@ export const createAccountProfile = createAsyncThunk('account/profile', async (a
 });
 
 
-export const updateAccountProfile = createAsyncThunk('account/profile', async (account_profile, {rejectWithValue}) => {
+export const updateAccountProfile = createAsyncThunk('update-account/profile', async (account_profile, {rejectWithValue}) => {
         const id = account_profile.account_profile.id
 
     try {
@@ -58,7 +58,7 @@ export const updateAccountProfile = createAsyncThunk('account/profile', async (a
   
 
 
-export const getAccountProfile = createAsyncThunk('account/profile', async (account_profile, {rejectWithValue}) => {
+export const getAccountProfile = createAsyncThunk('account/get-profile', async (account_profile, {rejectWithValue}) => {
     try {
       const response = await fetch(`${baseUrl}account_profiles`)
       

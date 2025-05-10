@@ -45,6 +45,36 @@ const getPortfolio = createAsyncThunk('portfolios/get_portfolio', async (id) => 
 
   return response;
 });
+
+
+
+const getInvestmentPortfolio = createAsyncThunk('portfolios/get_portfolio', async (id, {rejectWithValue}) => {
+  
+  try {
+    const response = await fetch(`${baseUrl}portfolios/${id}/investment`, {
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${token()}`,
+  
+      },
+  
+    })
+    
+    const {data, message} =  await response.json()
+  
+    if(!response.ok) {
+      return rejectWithValue({message: message || "something failed to fetch"} )
+    }
+
+  
+    return data;
+  } catch (error) {
+    return rejectWithValue({message: error.message || "something fa"} )
+
+  }
+ 
+});
 const userPorfolio = createAsyncThunk('user/pick_user', async(id) => {
   const response = await fetch(`${baseUrl}portfolios_user/${id}`, {
     method: "GET",
@@ -70,4 +100,4 @@ const makePayment = createAsyncThunk('portfolio/make_payment', async (id) => {
   return response;
 });
 
-export { createPortfolio, getPortfolios, getPortfolio, makePayment, userPorfolio };
+export { createPortfolio, getInvestmentPortfolio, getPortfolios, getPortfolio, makePayment, userPorfolio };

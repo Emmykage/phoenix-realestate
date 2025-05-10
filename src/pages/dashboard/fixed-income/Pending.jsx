@@ -5,11 +5,21 @@ import Loader from '../../../components/loader/Loader'
 
 const Pending = () => {
   const {wallet, loading} = useSelector(state => state.wallet)
+    const {investments} = useSelector(state => state.invest)
+    const fixedDeposit = investments.find(invest => invest.name === "fixed deposit")
+
 
   const dispatch = useDispatch()
   useEffect(()=>{
-    dispatch(getWallet())
+    dispatch(getInvestmentPortfolio(fixedDeposit.id))
   },[])
+
+  const handleSubmit = () => {
+    
+    
+  }
+
+ 
   return (
     <div class="inline-block min-w-full py-2 align-middle">
       <table class="min-w-full bg-white border border-gray-200 rounded-md border-separate border-spacing-0 table-auto overflow-hidden">
@@ -28,7 +38,7 @@ const Pending = () => {
               
         <tbody>
         {loading ? (<td colSpan={6}><Loader/></td>) :
-          wallet?.transactions.length < 1 ? <td colSpan={6} className='py-6 font-medium text-center'> No Transaction Available </td> : 
+          wallet?.transactions?.length < 1 ? <td colSpan={6} className='py-6 font-medium text-center'> No Transaction Available </td> : 
             wallet?.transactions.map(transaction => (
               <tr className=''>
 
