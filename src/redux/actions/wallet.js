@@ -88,6 +88,5 @@ export const getUserTransactions = createAsyncThunk("transactions/GET_USER_TRANS
         
     }
    
-    return response
 } )
 export { createTransaction, getWallet, approveTransaction, getTransaction }

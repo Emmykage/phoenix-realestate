@@ -1,16 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { getWallet } from '../../../redux/actions/wallet'
-import Loader from '../../../components/loader/Loader'
 
 const DashboardPortfolio = () => {
-  const {wallet, loading} = useSelector(state => state.wallet)
 
-  const dispatch = useDispatch()
-  useEffect(()=>{
-    dispatch(getWallet())
-  },[])
+
   const activeLink = "active text-[#68b4e8] text-gray-600 py-1 text-sm font-medium"
   const inactiveLink = "text-gray-600 py-1 text-sm font-medium"
   return (

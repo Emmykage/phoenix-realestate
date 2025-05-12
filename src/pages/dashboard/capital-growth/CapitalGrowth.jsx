@@ -17,7 +17,8 @@ const CapitalGrowth = () => {
   
     const dispatch = useDispatch()
     const {portfolio} = useSelector(state => state.portfolios)
-
+    const {wallet} = useSelector(state => state.wallet)
+  
   useEffect(()=>{
     dispatch(getInvestmentPortfolio("capital growth"))
   },[])
@@ -45,7 +46,7 @@ const CapitalGrowth = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <div className="bg-white rounded-2xl p-5 shadow-md">
           <h2 className="text-sm text-gray-400 mb-1">Investment Value</h2>
-          <p className="text-2xl font-semibold">{moneyFormat(portfolio?.investment_interest?.toLocaleString())}</p>
+          <p className="text-2xl font-semibold">{moneyFormat(wallet?.capital_growth?.toLocaleString())}</p>
         </div>
         <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">
           <h2 className="text-sm text-gray-400 mb-1">Return on Investment</h2>
@@ -63,12 +64,12 @@ const CapitalGrowth = () => {
 
       {/* Detailed Section */}
       <div className="bg-gray-100 rounded-2xl p-6 shadow-md space-y-4">
-        <h2 className="text-xl font-semibold">Investment Overview</h2>
-        <p className="text-gray-600">
-          Your investment of <span className="font-semibold">${data.investmentValue}</span> has yielded a return of <span className="font-semibold">${data.earnings}</span> over a period of <span className="font-semibold">{data.duration}</span>. This is a ROI of <span className="font-semibold">{(data.roi * 100).toFixed(2)}%</span>.
-        </p>
-        <p className="text-sm text-gray-500">Last updated: {data.lastUpdated}</p>
-      </div>
+             <h2 className="text-xl font-semibold">Investment Overview</h2>
+             <p className="text-gray-600">
+               Your investment of <span className="font-semibold">{moneyFormat(wallet?.capital_growth)}</span> has yielded a return of <span className="font-semibold">{moneyFormat(portfolio?.investment_interest?.toLocaleString())}</span> over a period of <span className="font-semibold">{data.duration}</span>. This is a ROI of <span className="font-semibold">{(data.roi * 100).toFixed(2)}%</span>.
+             </p>
+             <p className="text-sm text-gray-500">Last updated: {data.lastUpdated}</p>
+        </div>
 
        <ul className='flex mt-8 overflow-x-auto'>
               <li className='relative border-b py-2'><NavLink className={({isActive}) => (isActive ? activeLink : inactiveLink)} to="/dashboard/capital-growth/transactions">TRANSACTIONS</NavLink> </li>

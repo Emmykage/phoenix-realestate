@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getWallet } from '../../../redux/actions/wallet'
 import Loader from '../../../components/loader/Loader'
 import { moneyFormat } from '../../../utils/moneyFormat'
 import dateFormater from '../../../utils/dateFormat'
@@ -9,9 +8,7 @@ const CapitalTransactions = () => {
   const {capitalTransactions, loading} = useSelector(state => state.transactions)
 
   const dispatch = useDispatch()
-  useEffect(()=>{
-    dispatch(getWallet())
-  },[])
+
 
 
   return (

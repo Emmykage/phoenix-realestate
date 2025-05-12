@@ -13,7 +13,7 @@ import { IoAnalyticsOutline } from "react-icons/io5";
 import { RiLuggageDepositLine } from "react-icons/ri";
 import Aside from '../components/aside/Aside';
 import { getPortfolios, getUserPortfolios } from '../redux/actions/portfolio';
-import { getUserTransactions } from '../redux/actions/wallet';
+import { getUserTransactions, getWallet } from '../redux/actions/wallet';
 
 
 const DashboardLayout = ({children}) => {
@@ -37,10 +37,9 @@ const DashboardLayout = ({children}) => {
     useEffect(() => {
         dispatch(getUserPortfolios())
         dispatch(getUserTransactions())
+        dispatch(getWallet())
 
     },[])
-
-
 
     console.log(user)
     return (

@@ -1,15 +1,11 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getWallet } from '../../../redux/actions/wallet'
+import { useSelector } from 'react-redux'
 import Loader from '../../../components/loader/Loader'
 
 const History = () => {
   const {wallet, loading} = useSelector(state => state.wallet)
 
-  const dispatch = useDispatch()
-  useEffect(()=>{
-    dispatch(getWallet())
-  },[])
+
   return (
     <div className="inline-block min-w-full py-2 align-middle">
       <table className="min-w-full bg-white border border-gray-200 rounded-md border-separate border-spacing-0 table-auto overflow-hidden">

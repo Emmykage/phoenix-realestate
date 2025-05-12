@@ -1,22 +1,12 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getWallet } from '../../../redux/actions/wallet'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import Loader from '../../../components/loader/Loader'
 import { moneyFormat } from '../../../utils/moneyFormat'
 import dateFormater from '../../../utils/dateFormat'
 
 const FixedIncomeTrasactions = () => {
-  const {wallet, loading} = useSelector(state => state.wallet)
+  const {fixedtransactions, loading} = useSelector(state => state.transactions)
 
-  const {fixedtransactions} = useSelector(state => state.transactions)
-
-
-  const dispatch = useDispatch()
-  useEffect(()=>{
-    dispatch(getWallet())
-  },[])
-
-  
 
  
   return (
