@@ -8,7 +8,7 @@ import { MdSupervisorAccount } from 'react-icons/md';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { CiLogout } from "react-icons/ci";
-import { userlogOut } from '../redux/actions/auth';
+import { userlogOut, userProfile } from '../redux/actions/auth';
 import { IoAnalyticsOutline } from "react-icons/io5";
 import { RiLuggageDepositLine } from "react-icons/ri";
 import Aside from '../components/aside/Aside';
@@ -23,6 +23,11 @@ const DashboardLayout = ({children}) => {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(userProfile())
+
+    },[])
 
     useEffect(() => {
 
@@ -41,7 +46,7 @@ const DashboardLayout = ({children}) => {
 
     },[])
 
-    console.log(user)
+    console.log(user, !user && !loading)
     return (
     <div className='h-screen flex  bg-gray-200 overflow-y-auto'>
        

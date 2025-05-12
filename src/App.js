@@ -42,7 +42,6 @@ import ViewImage from './pages/ViewImage';
 import Blog from './pages/blog';
 import BlogPost from './pages/blog/blogPost/BlogPost';
 import useInitializer from './hooks/useInitializer';
-import DashboardHome from './pages/dashboard/account/Account';
 import DashboardLayout from './layouts/DashboardLayout';
 import Offering from './pages/dashboard/Offering';
 import Portfolio from './pages/dashboard/portfolio/Portfolio';
@@ -78,6 +77,8 @@ import CapitalTransactions from './pages/dashboard/capital-growth/Pending';
 import CapitaltWithdraw from './pages/dashboard/capital-growth/WithdrawPage';
 import CapitalDeposit from './pages/dashboard/capital-growth/Deposit';
 import WithdrawalPending from './pages/dashboard/fixed-income/Pending';
+import DashboardHomeAccount from './pages/dashboard/account/Account';
+import DashboardHome from './pages/dashboard/Index';
 // import { ToastContainer } from 'react-toastify';
 function App() {
   const {loader} = useSelector(state => state.app)
@@ -114,7 +115,7 @@ function App() {
         <Route path='transactions' element={<CapitalTransactions/>}/>
      
      </Route>
-     <Route path='account' element={<DashboardHome/>}>
+     <Route path='account' element={<DashboardHomeAccount/>}>
         <Route path='deposit' element={<AccountDeposit/>}/>
         <Route path='identity' element={<Identity/>}/>
         <Route path='profile' element={<AccountProfile/>}/>
