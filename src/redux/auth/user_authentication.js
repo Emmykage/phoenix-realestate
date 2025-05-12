@@ -75,7 +75,7 @@ const userSlice = createSlice({
     [userProfile.fulfilled]: (state, action) => ({
       ...state,
       loading: false,
-      user: action.payload.data
+      user: action.payload
     }),
     [userProfile.rejected]: (state) => ({
       ...state,

@@ -74,8 +74,7 @@ const userSession = createAsyncThunk('user/session', async (data, {rejectWithVal
   }
 });
 
-export const userProfile = createAsyncThunk('user/profile', async (data, {rejectWithValue}) => {
-// console.log("first", token())
+export const userProfile = createAsyncThunk('user/profile', async (_, {rejectWithValue}) => {
 
   try{
     const response = await fetch(`${baseUrl}users/account`, {
@@ -87,16 +86,18 @@ export const userProfile = createAsyncThunk('user/profile', async (data, {reject
       },
     })
 
-    const result = await response.json()
+    const {data, message} = await response.json()
 
-    console.log(result)
+
+
 
     if(!response.ok){
-      return rejectWithValue({message: result.message ?? "Failed to login"})
+      return rejectWithValue({message: message})
     }  
-    return result;
+    return data;
   }catch (error) {
-    return rejectWithValue({message: error?.response.message ?? "Failed to login"})
+
+    return rejectWithValue({message: error?.message ?? "Something went wrong:Failed to login"})
 
   }
   

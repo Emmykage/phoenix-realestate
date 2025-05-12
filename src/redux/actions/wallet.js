@@ -83,7 +83,7 @@ export const getUserTransactions = createAsyncThunk("transactions/GET_USER_TRANS
         return data
     } catch (error) {
 
-        return rejectWithValue({message: error.message || "Something went wrong"})
+        return rejectWithValue({message: error?.message || "Something went wrong"})
 
         
     }

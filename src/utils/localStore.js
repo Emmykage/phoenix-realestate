@@ -1,7 +1,7 @@
 export const token = () => {
   const token =  localStorage.getItem('phoenix_auth')
   const string =  JSON.parse(token);
-  console.log(string)
+  // console.log(string)
 
   return string
   

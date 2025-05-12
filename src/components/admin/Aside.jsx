@@ -3,11 +3,9 @@ import { BsFillGrid1X2Fill } from 'react-icons/bs';
 import { AiOutlineClose, AiOutlinePlus, AiOutlineUser } from 'react-icons/ai';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { BiLogOut } from 'react-icons/bi';
-import { MdOutlineInventory, MdOutlineReport } from 'react-icons/md';
+import { MdOutlineInventory } from 'react-icons/md';
 import { GiReceiveMoney } from 'react-icons/gi';
-import { IoAnalyticsSharp, IoAddSharp } from 'react-icons/io5';
-import { RiMessageLine } from 'react-icons/ri';
-import { FiSettings } from 'react-icons/fi';
+
 import { useDispatch } from 'react-redux';
 import { userProfile } from '../../redux/actions/auth';
 

@@ -16,11 +16,11 @@ const AdminLayout = ({ children }) => {
 
   console.log("User:", user, "Loading:", loading);
 
-  useEffect(() => {
-    if (!user) {
-      dispatch(getUser()); // Fetch user data if not in Redux
-    }
-  }, [user, dispatch]);
+  // useEffect(() => {
+  //   if (!user) {
+  //     dispatch(getUser()); // Fetch user data if not in Redux
+  //   }
+  // }, [user, dispatch]);
 
   useEffect(() => {
 
