@@ -7,7 +7,6 @@ export const getInvestments = createAsyncThunk("investments/get-investment", asy
 
         const {data, message} = await response.json()
 
-        console.log("first=====>", data)
         if(!response.ok){
          return rejectWithValue({message: message || "failed to fetch data"})
 

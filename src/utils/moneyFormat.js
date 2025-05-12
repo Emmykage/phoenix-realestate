@@ -1,5 +1,5 @@
 
-const moneyFormat = (amount, currency = "USD") => {
+const moneyFormat = (amount, currency = "GBP") => {
   try {
     const curr = new Intl.NumberFormat("en-NG", {
       style: "currency",

@@ -1,61 +1,88 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import WithdrawalModal from '../../../components/modals/WithdrawalModal'
 import { useDispatch, useSelector } from 'react-redux'
-import { reset } from '../../../redux/wallet/transaction'
+import AppModal from '../../../components/modals/AppModal'
+import Confirmation from '../../../components/modals/DepositModal'
+import { createTransaction } from '../../../redux/actions/wallet'
+import { toast } from 'react-toastify'
 const CapitaltWithdraw = () => {
     const formRef = useRef(null)
-    const [toggleModalWithdrawal, setToggleModalWithdrawal] = useState(null)
-    const [withdraw, setWithdraw] = useState(null)  
-    const [show, setShow] = useState("hidden")
-    const {status} = useSelector(state => state.transactions)
-    const dispatch = useDispatch()
+        const [formInput, setFormInput] = useState({
+            amount: 0,
+            address: "",
+            coin_type: "",
+            transaction_type: "deposit"
+    
+        })
+    const {account_profile} = useSelector(state => state.account)
+    const [paymentOptions, setPaymentOptions] = useState([])
+    
+
+        const {portfolio} = useSelector(state => state.portfolios)
+    
+    
+    const [openModal, setOpenModal] = useState(false)
+
+
     const handleDepositModal = (e) => {
         e.preventDefault()
-        const formData = new FormData()
-       
-        // const data = Object.fromEntries(formData)
-        setToggleModalWithdrawal("show-modal withdrawal")
-      
-            formData.append('transaction[coin_type]', e.target.coin_type.value)
-            formData.append('transaction[amount]', e.target.amount.value)
-            formData.append('transaction[address]', e.target.wallet_address.value)
-            formData.append('transaction[transaction_type]', "withdraw")
-
-   
-        setWithdraw(formData)
-               
+        setOpenModal(prev => !prev)    
     }
+   
 
-    useEffect(()=> {
+    const dispatch = useDispatch()
+
+    
+    const handleSubmit = () => {
         const element = formRef.current
 
-        console.log(element)
-        if(status =="success"){
-            setShow("flex")
-            element.reset()
-            
-            setInterval(()=> {setShow("hidden"); dispatch(reset())})
+        const typeCoin = paymentOptions.find(item => item.value === formInput.coin_type)
 
-        }else{
-            setShow("hidden")
-        }
-    },[status])
+         const formData = new FormData()
+         formData.append('transaction[coin_type]', typeCoin.label)
+         formData.append('transaction[amount]', formInput.amount)
+         formData.append('transaction[address]', formInput.address)
+         formData.append('transaction[transaction_type]', "withdraw") 
+         formData.append('transaction[portfolio_id]', portfolio.id )
 
 
+        // const data = Object.fromEntries(formData)
+
+        dispatch(createTransaction(formData)).then(result => {
+            if(createTransaction.fulfilled.match(result)){
+                element.reset()
+                setOpenModal(false)
+                toast(result.payload.message || "Withdrawal has been successful", {type: "success"})
+
+            }else{
+               toast(result.payload.message, {type: "error"})
+            }
+        })
+        
+      }
+    
+
+      useEffect(()=> {
+
+        const options = Object.entries(account_profile).map((item) => ({
+            label: item[0], value: item[1]
+        })).slice(1)
+        setPaymentOptions(options)
+
+      },
+    [account_profile])
+
+
+    useEffect(()=> {
+        setFormInput({...formInput, coin_type: paymentOptions[0]?.value})
+    },[paymentOptions])
 
 
   
 
   return (
-    <div className='px-3 max-w-1450 bg-white mx-3 box-shadow rounded-sm py-4 my-5'>
-        <div className={`${show} p-2  rounded-md my-1 gap-3 fixed`}>
-            <p className='text-base text-green border p-2 rounded-md box-shadow'>
-                <span>Payment was success full </span> 
-                <span className="text-gray font-semibold" onClick={()=> setShow("hidden")}>X</span> 
-            </p>
-            
-        </div>
+    <div className='md:px-4 max-w-1450 bg-white mx-3 box-shadow rounded-sm py-4 my-5'>
+       
         <div className='my-3'>
             <h3 className='text-right font-semibold'>Withdrawal</h3>
         </div>
@@ -66,20 +93,23 @@ const CapitaltWithdraw = () => {
                 <label className='block m-1 font-medium uppercase'>Payment Method</label> 
                 <div className=''>
                
-                <select name='coin_type' id='coin_type' className='border form-select form-select-lg mb-3' required>
-                    <option className='border' value="USD THETHER" selected>USD THETHER</option>
-                    <option value="BITCOIN">BITCOIN</option>
-                    <option value="ETHERUM">ETHERUM (ERC-20)</option>
-                </select>
+                <select onChange={(e) => setFormInput({...formInput, coin_type:  e.target.value})}  name='coin_type' id='coin_type' className='border form-select form-select-lg mb-3' required>
+
+                    {paymentOptions?.map(item => (
+                    <option value={item?.value}>{item.label?.toUpperCase()}</option>
+
+                    ))}
+
+                    </select>
 
                
                      
                 </div>
             </div>
             <div>
-                <label className='uppercase font-medium block m-1' htmlFor="amount">Enter Amount</label>
-                <input type="number" className='border'  placeholder='Enter Amount in USD' name="amount" required min={10}/>
-            </div>
+                    <label className='block m-1' htmlFor="amount">Enter Amount</label>
+                    <input type="number" className='border'  placeholder='Enter Amount in USD' name="amount" onChange={(e)=> setFormInput({...formInput, amount: e.target.value})} required min={500}/>
+                </div>
             <ul>
                     <p className='font-medium'>Minimum Withdrawal = 500 USDT</p>
                     <li className='px-3 font-normal'><p>Ensure that your account information is accurate and up-to-date</p></li>
@@ -93,7 +123,7 @@ const CapitaltWithdraw = () => {
                     {/* <p className='text-dark text-left text-base font-semibold my-3'>Deposit Address</p> */}
                     <div className='my-2'>
                         <label className='block m-1 uppercase font-medium' htmlFor="client_address">Enter Wallet Address</label>
-                        <input className='border' type='text' id="client_address" name='wallet_address' required placeholder='Enter Wallet Address'/>
+                        <input className='border' type='text' onChange={(e) => setFormInput({...formInput, address: e.target.value})} id="client_address" name='wallet_address' required placeholder='Enter Wallet Address'/>
                     </div>
 
                 {/* </div> */}
@@ -105,7 +135,10 @@ const CapitaltWithdraw = () => {
         </div>
         </form>
         </div>
-        <WithdrawalModal toggleModal={toggleModalWithdrawal} setToggleModal={setToggleModalWithdrawal} withdrawal={withdraw}/>
+
+           <AppModal  open={openModal}>
+                    <Confirmation onCancel={()=> setOpenModal(false)} message={`Confirm Withdrawal`} title={"Confirm Withdrawal"} onConfirm={handleSubmit}  />
+            </AppModal>
 
     </div>
   )

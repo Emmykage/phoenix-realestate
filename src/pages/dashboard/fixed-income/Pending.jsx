@@ -2,22 +2,21 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getWallet } from '../../../redux/actions/wallet'
 import Loader from '../../../components/loader/Loader'
+import { moneyFormat } from '../../../utils/moneyFormat'
+import dateFormater from '../../../utils/dateFormat'
 
-const Pending = () => {
+const FixedIncomeTrasactions = () => {
   const {wallet, loading} = useSelector(state => state.wallet)
-    const {investments} = useSelector(state => state.invest)
-    const fixedDeposit = investments.find(invest => invest.name === "fixed deposit")
+
+  const {fixedtransactions} = useSelector(state => state.transactions)
 
 
   const dispatch = useDispatch()
   useEffect(()=>{
-    dispatch(getInvestmentPortfolio(fixedDeposit.id))
+    dispatch(getWallet())
   },[])
 
-  const handleSubmit = () => {
-    
-    
-  }
+  
 
  
   return (
@@ -38,15 +37,14 @@ const Pending = () => {
               
         <tbody>
         {loading ? (<td colSpan={6}><Loader/></td>) :
-          wallet?.transactions?.length < 1 ? <td colSpan={6} className='py-6 font-medium text-center'> No Transaction Available </td> : 
-            wallet?.transactions.map(transaction => (
+          fixedtransactions?.length < 1 ? <td colSpan={6} className='py-6 font-medium text-center'> No Transaction Available </td> : 
+          fixedtransactions.map(transaction => (
               <tr className=''>
 
-              <td className='py-2 px-2 text-dark font-medium'>{transaction.coin_type}</td>
-              <td className='text-sm text-gray font-medium'>{usd_format(transaction.amount)}</td>
-              <td className='text-sm text-gray font-medium'>{transaction.transaction_type}</td>
-              <td className="warning">{transaction.status}</td>
-              <td className="primary">{transaction.created_at} </td>
+              <td className='py-2 px-4 text-dark text-sm font-medium uppercase'>{transaction.coin_type}</td>
+              <td className='text-sm text-gray font-medium pl-2'>{moneyFormat(transaction.amount)}</td>
+              <td className={` font-medium text-orange-700 pl-4`}>{transaction.status}</td>
+              <td className="text-blue-900">{dateFormater(transaction.created_at)} </td>
             </tr>
             ))
 
@@ -58,4 +56,4 @@ const Pending = () => {
   )
 }
 
-export default Pending
+export default FixedIncomeTrasactions

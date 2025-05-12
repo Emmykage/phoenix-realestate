@@ -1,46 +1,29 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { createTransaction } from '../../redux/actions/wallet'
+import React from 'react'
 
-const DepositModal = ({toggleModal, setToggleModal, deposit}) => {
-const {loading, error} = useSelector(state => state.transactions)
-  const dispatch = useDispatch()
-  useEffect(()=> {
-    if(!loading && !error){
-      setToggleModal(null)
-    }
-
-  },[loading, error])
-  const handleDeposit =() => {
-   dispatch(createTransaction(deposit))
-  
-  }  
+const Confirmation = ({title, message, onCancel, onConfirm}) => {
   
   return (
-    <div className={`modal-container ${toggleModal}`}>
-        <div className='modal-info'>
+     
 
-
-           <div className='close-icon text-right pr-8'>
-            <span onClick={()=> setToggleModal(null)}>
-              <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
-              <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-              </svg>   
-                      
-              </span>   
-           <i className="bi bi-x-lg"></i>
-           </div>
-           <h3 className='text-center'>Confirm Deposit</h3>
-           <div className='bg- h-full items-center flex'>
-            <div className='flex justify-around w-full'>
-              <button onClick={()=> setToggleModal(null)} className='btn cancel'>Cancel</button>
-              <button onClick={handleDeposit} className='btn'>Confirm</button>
-            </div>
-           
-           </div>
+        <div className="w-full p-6">
+          <h2 className="text-xl font-semibold text-center text-gray-800 mb-4">{title}</h2>
+          <p className="text-gray-600 mb-6 text-center">{message}</p>
+          <div className="flex  justify-center gap-4">
+            <button
+              onClick={onCancel}
+              className="px-4 py-2 rounded-xl bg-gray-200 text-gray-700 hover:bg-gray-300"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={onConfirm}
+              className="px-4 py-2 rounded-xl bg-green-600 text-white hover:bg-green-700"
+            >
+              Confirm
+            </button>
+          </div>
         </div>
-    </div>
   )
 }
 
-export default DepositModal
+export default Confirmation

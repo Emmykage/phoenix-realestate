@@ -3,10 +3,12 @@ import { NavLink, Outlet } from "react-router-dom";
 import UserButton from "../components/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { getInvestments } from "../../../redux/actions/investment";
+import { moneyFormat } from "../../../utils/moneyFormat";
+import { getInvestmentPortfolio } from "../../../redux/actions/portfolio";
 
 const FixedIncomeDashboard = () => {
   const {investments} = useSelector(state => state.investment)
-
+    const {portfolio} = useSelector(state => state.portfolios)
 
   const dispatch = useDispatch()
   const data = {
@@ -16,6 +18,12 @@ const FixedIncomeDashboard = () => {
     duration: "12 Months",
     lastUpdated: "2025-05-08",
   };
+
+
+  useEffect(()=>{
+    dispatch(getInvestmentPortfolio("capital growth"))
+  },[])
+
 
 
   useEffect(() => {
@@ -60,24 +68,24 @@ const FixedIncomeDashboard = () => {
 
 
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-white rounded-2xl p-5 shadow-md">
-          <h2 className="text-sm text-gray-400 mb-1">Investment Value</h2>
-          <p className="text-2xl font-semibold">${data.investmentValue.toLocaleString()}</p>
-        </div>
-        <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">
-          <h2 className="text-sm text-gray-400 mb-1">Return on Investment</h2>
-          <p className="text-2xl font-semibold">{(data.roi * 100).toFixed(2)}%</p>
-        </div>
-        <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">
-          <h2 className="text-sm text-gray-400 mb-1">Total Earnings</h2>
-          <p className="text-2xl font-semibold">${data.earnings.toLocaleString()}</p>
-        </div>
-        <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">
-          <h2 className="text-sm text-gray-400 mb-1">Duration</h2>
-          <p className="text-2xl font-semibold">{data.duration}</p>
-        </div>
-      </div>
+       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <div className="bg-white rounded-2xl p-5 shadow-md">
+                <h2 className="text-sm text-gray-400 mb-1">Investment Value</h2>
+                <p className="text-2xl font-semibold">{moneyFormat(portfolio?.investment_interest?.toLocaleString())}</p>
+              </div>
+              <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">
+                <h2 className="text-sm text-gray-400 mb-1">Return on Investment</h2>
+                <p className="text-2xl font-semibold">{(data.roi * 100).toFixed(2)}%</p>
+              </div>
+              <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">
+                <h2 className="text-sm text-gray-400 mb-1">Total Earnings</h2>
+                <p className="text-2xl font-semibold">{moneyFormat(portfolio?.investment_interest?.toLocaleString())}</p>
+              </div>
+              <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">
+                <h2 className="text-sm text-gray-400 mb-1">Duration</h2>
+                <p className="text-2xl font-semibold">{data.duration}</p>
+              </div>
+            </div>
 
       {/* Detailed Section */}
       <div className="bg-gray-100 rounded-2xl p-6 shadow-md space-y-4">

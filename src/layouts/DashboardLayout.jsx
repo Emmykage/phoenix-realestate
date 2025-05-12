@@ -12,16 +12,17 @@ import { userlogOut } from '../redux/actions/auth';
 import { IoAnalyticsOutline } from "react-icons/io5";
 import { RiLuggageDepositLine } from "react-icons/ri";
 import Aside from '../components/aside/Aside';
+import { getPortfolios, getUserPortfolios } from '../redux/actions/portfolio';
+import { getUserTransactions } from '../redux/actions/wallet';
 
 
 const DashboardLayout = ({children}) => {
     // const [isLoggedIn, setIsLoggedIn] = useState(false)
     const [toggle, setToggle] = useState(false)
-    const {user} = useSelector(state => state.auth)
-    const {isLogged, loading} = useSelector(state => state.auth)
+    const {user, loading} = useSelector(state => state.auth)
 
     const navigate = useNavigate()
-
+    const dispatch = useDispatch()
 
     useEffect(() => {
 
@@ -31,6 +32,15 @@ const DashboardLayout = ({children}) => {
         }
 
     },[user])
+
+
+    useEffect(() => {
+        dispatch(getUserPortfolios())
+        dispatch(getUserTransactions())
+
+    },[])
+
+
 
     console.log(user)
     return (

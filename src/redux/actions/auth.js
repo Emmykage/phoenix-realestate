@@ -10,7 +10,7 @@ const registerUser = createAsyncThunk('user/register', async (data, {rejectWithV
   data?.user.email && formData.append("user[email]", data.user.email)
   data?.password && formData.append("user[password]", data.password)
   data?.role && formData.append("user[role]", data.user.role)
-  data?.phone && formData.append("user[phone_no]", data.user.phone)
+  data?.user.phone && formData.append("user[phone_no]", data.user.phone)
   data?.investment_purpose && formData.append("user[profile_attributes][investment_purpose]", data.investment_purpose)
   data?.investment_property && formData.append("user[profile_attributes][investment_property]", data.investment_property)
   data?.initial_investment && formData.append("user[profile_attributes][initial_investment]", data.initial_investment)

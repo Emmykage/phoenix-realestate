@@ -77,6 +77,7 @@ import FixedDeposit from './pages/dashboard/fixed-income/Deposit';
 import CapitalTransactions from './pages/dashboard/capital-growth/Pending';
 import CapitaltWithdraw from './pages/dashboard/capital-growth/WithdrawPage';
 import CapitalDeposit from './pages/dashboard/capital-growth/Deposit';
+import WithdrawalPending from './pages/dashboard/fixed-income/Pending';
 // import { ToastContainer } from 'react-toastify';
 function App() {
   const {loader} = useSelector(state => state.app)
@@ -105,7 +106,7 @@ function App() {
       <Route path='fixed-income' element={<FixedIncome/>}>
         <Route path='deposit' element={<FixedDeposit/>}/>
         <Route path='withdrawal' element={<FixedtWithdraw/>}/>
-        <Route path='transactions' element={<Pending/>}/>
+        <Route path='transactions' element={<WithdrawalPending/>}/>
       </Route>
      <Route path='capital-growth' element={<CapitalGrowth/>}>
         <Route path='deposit' element={<CapitalDeposit/>}/>

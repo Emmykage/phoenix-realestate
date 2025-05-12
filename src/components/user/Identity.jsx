@@ -39,12 +39,12 @@ const Identity = () => {
                     </div>
                 </div>
                 <div className='flex flex-col md:flex-row gap-x-8 text-left my-3 text-gray-500'>
-                    <div className="flex-1 sm:col-span-2">
+                    {/* <div className="flex-1 sm:col-span-2">
                         <label for="company" className="block text-sm font-semibold">Title</label>
                         <div className="mt-1">
                             <input type="text" name="title" id="title" value={"Mr/Mrs"} disabled autocomplete="title" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm"/>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="flex-1 sm:col-span-2">
                         <label for="title" className="block text-sm font-semibold">Phone Number</label>
                         <div className="mt-1">
@@ -64,7 +64,7 @@ const Identity = () => {
             <div className='flex-1'>
                 <label for="entity_Name" className="text-left block text-sm font-semibold">Entity Name</label>
                 <div className="mt-2.5">
-                    <input type="text" name="entity_Name" id="entity_Name" autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
+                    <input type="text" name="entity_Name" id="entity_Name" disabled autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
                 </div>
             </div>         
     
@@ -73,13 +73,13 @@ const Identity = () => {
             <div className='flex-1'>
                 <label for="address" className="text-left block text-sm font-semibold">Address</label>
                 <div className="mt-2.5">
-                    <input type="text" placeholder='street Address' name="address" id="address" autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
+                    <input type="text" placeholder='street Address' name="address" disabled id="address" autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
                 </div>
             </div>   
             <div className='flex-1'>
                 <label for="entity_Name" className="text-left block text-sm font-semibold">Unit</label>
                 <div className="mt-2.5">
-                    <input type="text" placeholder='Suite/Unit' name="first_name" id="first_name" autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
+                    <input type="text" placeholder='Suite/Unit' name="first_name" disabled id="first_name" autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
                 </div>
             </div>       
     
@@ -88,18 +88,18 @@ const Identity = () => {
         <div className='flex flex-col md:flex-row gap-x-8'>
             <div className='flex-1'>
                 <div className="mt-2.5">
-                    <input placeholder='city' type="text" name="first_name" id="first_name" autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
+                    <input placeholder='city' type="text" name="first_name" disabled id="first_name" autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
                 </div>
             </div>   
             <div className='flex-1'>
                 <div className="mt-2.5">
-                    <input placeholder='State/ Region' type="text" name="first_name" id="first_name" autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
+                    <input placeholder='State/ Region' type="text" name="first_name" disabled id="first_name" autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
                 </div>
             </div>  
             <div className='flex-1'>
                 {/* <label for="entity_Name" className="text-left block text-sm font-semibold">Entity Name</label> */}
                 <div className="mt-2.5">
-                    <input placeholder='' type="text" name="first_name" id="first_name" autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
+                    <input placeholder='' type="text" name="first_name" disabled id="first_name" autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
                 </div>
             </div>       
     
@@ -111,19 +111,19 @@ const Identity = () => {
             <div className='flex-1'>
                 <label for="entity_Name" className="text-left block text-sm font-semibold">Nationality</label>
                 <div className="mt-2.5">
-                    <input type="text" name="first_name" id="first_name" autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
+                    <input type="text" name="first_name" id="first_name" disabled autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
                 </div>
             </div>   
             <div className='flex-1'>
                 <label for="entity_Name" className="text-left block text-sm font-semibold">Country of Residence</label>
                 <div className="mt-2.5">
-                    <input type="text" name="first_name" id="first_name" autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
+                    <input type="text" name="first_name" id="first_name" disabled autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
                 </div>
             </div>  
             <div className='flex-1'>
                 <label for="entity_Name" className="text-left block text-sm font-semibold">Identification</label>
                 <div className="mt-2.5">
-                    <input type="text" name="first_name" id="first_name" autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
+                    <input type="text" name="first_name" id="first_name"  disabled autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
                 </div>
             </div>     
 
@@ -133,7 +133,7 @@ const Identity = () => {
 
         <div>
         <div className='my-6'>
-                <input type="file" name="identification" id="identification"  className='w-full border '/>
+                <input type="file" name="identification" id="identification" disabled  className='w-full border '/>
                 
             </div>
             

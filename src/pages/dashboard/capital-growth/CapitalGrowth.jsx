@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Outlet } from "react-router-dom";
+import { getInvestmentPortfolio } from "../../../redux/actions/portfolio";
+import { getAccountProfile } from "../../../redux/actions/accountProfile";
+import { moneyFormat } from "../../../utils/moneyFormat";
 
 const CapitalGrowth = () => {
   const data = {
@@ -9,6 +13,26 @@ const CapitalGrowth = () => {
     duration: "12 Months",
     lastUpdated: "2025-05-08",
   };
+
+  
+    const dispatch = useDispatch()
+    const {portfolio} = useSelector(state => state.portfolios)
+
+  useEffect(()=>{
+    dispatch(getInvestmentPortfolio("capital growth"))
+  },[])
+
+
+
+
+       useEffect(()=>{
+          dispatch(getAccountProfile())
+        },[])
+  
+
+        console.log(portfolio)
+
+
   const activeLink = "active text-gray-600 text-theme-alt px-5 py-1 text-sm font-medium"
   const inactiveLink = "text-gray-600 px-5 py-1 text-sm font-medium"
  
@@ -21,7 +45,7 @@ const CapitalGrowth = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <div className="bg-white rounded-2xl p-5 shadow-md">
           <h2 className="text-sm text-gray-400 mb-1">Investment Value</h2>
-          <p className="text-2xl font-semibold">${data.investmentValue.toLocaleString()}</p>
+          <p className="text-2xl font-semibold">{moneyFormat(portfolio?.investment_interest?.toLocaleString())}</p>
         </div>
         <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">
           <h2 className="text-sm text-gray-400 mb-1">Return on Investment</h2>
@@ -29,7 +53,7 @@ const CapitalGrowth = () => {
         </div>
         <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">
           <h2 className="text-sm text-gray-400 mb-1">Total Earnings</h2>
-          <p className="text-2xl font-semibold">${data.earnings.toLocaleString()}</p>
+          <p className="text-2xl font-semibold">{moneyFormat(portfolio?.investment_interest?.toLocaleString())}</p>
         </div>
         <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">
           <h2 className="text-sm text-gray-400 mb-1">Duration</h2>

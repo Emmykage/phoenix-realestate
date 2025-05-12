@@ -1,12 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { approveTransaction, createTransaction, getTransaction } from "../actions/wallet";
+import { approveTransaction, createTransaction, getTransaction, getUserTransactions } from "../actions/wallet";
 
 const initialState = {
-    transaction: "",
+    transaction: {},
+    transactions: [],
     loading: true,
     error: false,
     status: '',
     paid: false,
+    fixedtransactions: [],
+    capitalTransactions: []
 }
 
 const transactionSlice = createSlice({
@@ -23,22 +26,13 @@ const transactionSlice = createSlice({
     },
     extraReducers: {
         [createTransaction.fulfilled]: (state, action) => {
-                if(action.payload.error){
-                    return{
-                        ...state,
-                        error: true,
-                        loading: false,
-                        paid: false
-                    }
-                }
+             
             return{
             ...state,
             transaction: action.payload,
             loading: false,
             error: false,
             paid: true,
-            message: "pay was successful",
-            status: "success"
             
 
         }}, 
@@ -55,29 +49,31 @@ const transactionSlice = createSlice({
         [createTransaction.rejected]: (state, action) => ({
             ...state,
             loading: false,
-            paid: false
+            error: true,
+            message: action.payload
 
 
 
         }),
-        [approveTransaction.fulfilled]: (state) => {
+        [approveTransaction.fulfilled]: (state, action) => {
      
             return{
             ...state,
             loading: false,
-            status: "success"
+            error: false,
+            transaction: action.payload
         }},
         [approveTransaction.rejected]: (state) => {
      
             return {
             ...state,
-            status: "failed",
+            error: true,
             loading: false
         }},
         [approveTransaction.pending]: (state) => ({
             ...state,
             loading: true,
-            status: "pending"
+            error: false
         }),
 
         [getTransaction.fulfilled]: (state, action) => ({
@@ -92,6 +88,32 @@ const transactionSlice = createSlice({
        
         }),
         [getTransaction.rejected]: (state) => ({
+            ...state,
+            loading: false,
+       
+        }),
+        [getUserTransactions.fulfilled]: (state, action) => {
+
+            const fixedIncomeTransactions = action.payload.filter(transaction => transaction.portfolio.portfolio_name === "fixed income")
+            const capitalGrowthTransactions = action.payload.filter(transaction => transaction.portfolio.portfolio_name === "capital growth")
+            console.log("======>", action.payload)
+            return{
+
+            
+            ...state,
+            loading: false,
+            transactions: action.payload,
+            fixedtransactions: fixedIncomeTransactions,
+            capitalTransactions: capitalGrowthTransactions
+            }
+        }
+        ,
+        [getUserTransactions.pending]: (state) => ({
+            ...state,
+            loading: true,
+       
+        }),
+        [getUserTransactions.rejected]: (state) => ({
             ...state,
             loading: false,
        
