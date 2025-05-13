@@ -48,7 +48,7 @@ const Login = () => {
             <div className="row">
                 <div className="col-lg-4 col-lg-offset-4"> 
                 <p>Don't have an account? <strong><NavLink to="/auth/register" className={"text-theme-pry"}> Register here.</NavLink></strong></p> 
-                <form onSubmit={handleFormSubmit} className="login-form">
+                <form onSubmit={handleFormSubmit} className="login-form mt-10 rounded-lg bg-white p-4">
                     <div className="form-block">
                     <label>Email</label>
                     <input className="border" type="text" name="email" onChange={handleInputChange} />

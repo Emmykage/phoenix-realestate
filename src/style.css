@@ -341,6 +341,7 @@ select {
   font-weight: 300;
   font-family: "Raleway" !important;
   background: white;
+  font-size: 16px;
 }
 
 input[type="file"] {
