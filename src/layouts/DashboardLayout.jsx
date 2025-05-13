@@ -50,13 +50,11 @@ const DashboardLayout = ({children}) => {
     return (
     <div className='h-screen flex  bg-gray-200 overflow-y-auto'>
        
-    
-
-            <Aside open={toggle} onClose={()=> {setToggle(false)}}/>
+        <Aside open={toggle} onClose={()=> {setToggle(false)}}/>
         
         <div className='bg-green-20 flex-1 overflow-y-auto relative'>
          
-            <header className='bg-white sticky top-0 left-0 shadow py-6 border-b z-10'>
+            <header className='bg-white sticky top-0 left-0 shadow py-2 md:py-6 border-b z-10'>
                 <div className='max-w-[1500px] m-auto flex justify-between py-3  px-2 md:px-10 items-center'>
 
                     <NavLink to={'/'} className={'px-2 w-52 text-3xl text-green-700 font-semibold'}>
