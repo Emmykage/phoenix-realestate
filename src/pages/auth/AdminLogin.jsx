@@ -4,6 +4,7 @@ import { useNavigate, NavLink } from "react-router-dom";
 import { userSession } from "../../redux/actions/auth";
 import { SET_LOADER } from "../../redux/app/app";
 import SubHeader from "../../components/subHeader/SubHeader";
+import { toast } from "react-toastify";
 // import { userSession } from "../../actions/authActions"; // Ensure this is correctly imported
 
 const AdminLogin = () => {
@@ -27,10 +28,14 @@ const AdminLogin = () => {
             if(userSession.fulfilled.match(result)){
                 navigate("/admin/dashboard");
                 dispatch(SET_LOADER(false))
+                   toast(result.payload.message || "Login Successful", {type: "success"})
+                
 
 
             }else
             {
+                toast(result.payload.message || "Failed to Login", {type: "error"})
+                              
                 dispatch(SET_LOADER(false))
 
             }

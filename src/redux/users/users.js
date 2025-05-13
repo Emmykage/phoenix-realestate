@@ -30,29 +30,23 @@ const usersSlice = createSlice({
         [listUsers.fulfilled]: (state, action) => {
             const response = action.payload;
    
-            if(response.message){
+           
                 return{
                     ...state,
-                    error: true,
-                    loading: false,
-                    message: response.message
-                }
-            }else{
-                return{
-                    ...state,
-                    users: response,
+                    users: response.data,
                     error: false,
                     loading: false
 
                 }
                 
-            }
+        
         },
-        [listUsers.rejected]: (state) => {
+        [listUsers.rejected]: (state, action) => {
             
             return{
                 ...state,
                 error: true,
+                message: action.payload.message,
                 loading: false
             }
         },

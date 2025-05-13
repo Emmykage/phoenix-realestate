@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AutoGraphOutlinedIcon from '@mui/icons-material/AutoGraphOutlined';
+import { useDispatch, useSelector } from 'react-redux';
+import { listUsers } from '../../redux/actions/users';
+import dateFormater from '../../utils/dateFormat';
+import { NavLink } from 'react-router-dom';
 
-const AHome = () => (
+const AHome = () => {
+
+  const {users} = useSelector(state => state.users)
+
+
+  const dispatch = useDispatch()
+  useEffect(()=> {
+    dispatch(listUsers())
+  }, [])
+
+
+  console.log("user send ====>",users)
+  return(
   <>
     <div>
       <h1>Dashboard</h1>
-      <div className="date">
+      {/* <div className="date">
         <input type="date" />
-      </div>
+      </div> */}
       <div className="insights">
         <div className="sales">
           <span><AutoGraphOutlinedIcon /></span>
@@ -76,60 +92,48 @@ const AHome = () => (
       </div>
 
       {/* -----------end of insights ------------- */}
-      <div className="recent-orders">
-        <h2>Recent Orders</h2>
-        <table>
+      <div className="recent-orders bg-white p-4">
+        <h2>Recent User</h2>
+
+        <div className='overflow-x-auto w-full'>
+        <table className='w-full'>
           <thead>
-            <tr>
-              <th>Product Name</th>
-              <th>Product Number</th>
-              <th>Payment</th>
-              <th>Status</th>
+            <tr className=''>
+              <th className='px-4 text-left py-2 bg-gray-200'>Name</th>
+              <th className='px-4 text-left py-2 bg-gray-200'>Email</th>
+              <th className='px-4 text-left py-2 bg-gray-200'>Status</th>
+              <th className='px-4 text-left py-2 bg-gray-200'>Date</th>
+
               <th />
             </tr>
 
           </thead>
           <tbody>
-            <tr>
 
-              <td>New York Boulevad</td>
-              <td>85631</td>
-              <td>Due</td>
-              <td className="warning">Pending</td>
-              <td className="primary">Details</td>
-            </tr>
-            <tr>
+            {users.map(user => (
+              <tr>
 
-              <td>New York Boulevad</td>
-              <td>85631</td>
-              <td>Due</td>
-              <td className="warning">Pending</td>
-              <td className="primary">Details</td>
-            </tr>
-            <tr>
+              <td className='px-4 py-2 text-left border-b border-gray-100'>{`${user?.first_name} ${user?.last_name} `}</td>
+              <td className="px-4 py-2 text-left border-b border-gray-100">{user?.email}</td>
+              <td className="px-4 py-2 text-left border-b border-gray-100 text-green-600">Active</td>
 
-              <td>New York Boulevad</td>
-              <td>85631</td>
-              <td>Due</td>
-              <td className="warning">Pending</td>
-              <td className="primary">Details</td>
-            </tr>
-            <tr>
-
-              <td>New York Boulevad</td>
-              <td>85631</td>
-              <td>Due</td>
-              <td className="warning">Pending</td>
-              <td className="primary">Details</td>
-            </tr>
+              <td className="px-4 py-2 text-left">{ dateFormater(user?.created_at)}</td>
+              </tr>
+            ))}
+           
+          
           </tbody>
 
         </table>
-        <a href="">Show All</a>
+        </div>
+     
+
+        
+        <NavLink to="/admin/clients">Show All</NavLink>
       </div>
     </div>
 
   </>
-);
+)};
 
 export default AHome;

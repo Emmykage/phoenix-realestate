@@ -92,8 +92,8 @@ const itemFunding = [
     //     icon: <RiLuggageDepositLine className='text-2xl'/>
     // }
 ]
-const active = "bg-gray-200 flex items-center gap-4 px-2 py-4 m-auto w-full h-full hover:bg-gray-300"
-const inactive = " flex items-center gap-4 my-0 py-4 px-2 m-auto w-full h-full hover:bg-gray-300"
+const active = "bg-gray-200 flex items-center  px-2 py-4 m-auto w-full h-full hover:bg-gray-300"
+const inactive = " flex items-center py-4 px-2 m-auto w-full h-full hover:bg-gray-300"
 
 // const active = ""
 // const inactive = ""

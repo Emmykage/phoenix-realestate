@@ -6,6 +6,7 @@ import { SET_LOADER } from '../../../redux/app/app';
 import { InputLabel, MenuItem, OutlinedInput, Select, useTheme } from '@mui/material';
 import 'trix';
 import 'trix/dist/trix.css';
+import { propertyFeatures, propertyTypes } from './data/propertyTypes';
 const AddAsset = ({
   handleClose,
 }) => {
@@ -121,51 +122,7 @@ const ITEM_PADDING_TOP = 8;
   };
 
 
-  const propertyTypes = [
-    "Detached",
-    "Semi-Detached",
-    "Terraced",
-    "End of Terrace",
-    "Bungalow",
-    "Flat / Apartment",
-    "Maisonette",
-    "Cottage",
-    "Villa",
-    "Townhouse",
-    "Office", "Warehouse",
-    "Duplex",
-    "Penthouse",
-    "Studio",
-    "Condominium (Condo)",
-    "Mobile Home / Park Home",
-    "Loft",
-    "Farmhouse",
-    "Mansion",
-    "Cluster Home"
-  ];
-
-  const propertyFeatures = [
-    "Semi-Detached",
-    "Garage",
-    "Extended",
-    "Off Street Parking",
-    "Chain Free",
-    "Double Glazed Throughout",
-    "Garden",
-    "Balcony",
-    "Newly Renovated",
-    "Central Heating",
-    "Air Conditioning",
-    "Fireplace",
-    "Swimming Pool",
-    "Solar Panels",
-    "Hardwood Floors",
-    "Open Plan Living",
-    "En Suite Bathroom",
-    "Walk-In Closet",
-    "Basement",
-    "Loft Conversion"
-  ];
+ 
   
 
   // useEffect(() => {
@@ -174,7 +131,6 @@ const ITEM_PADDING_TOP = 8;
   // }, [])
   
 
-  console.log(assetFeatures)
 
   return (
     <div className="assets-forms">
@@ -371,7 +327,7 @@ const ITEM_PADDING_TOP = 8;
 
          
 
-          <AppButton className="btn" type="submit"> create assets</AppButton>
+          <AppButton className="btn" type="submit"> Create Assets</AppButton>
         </form>
       </div>
  </div>

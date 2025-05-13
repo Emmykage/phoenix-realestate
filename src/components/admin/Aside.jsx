@@ -3,7 +3,7 @@ import { BsFillGrid1X2Fill } from 'react-icons/bs';
 import { AiOutlineClose, AiOutlinePlus, AiOutlineUser } from 'react-icons/ai';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { BiLogOut } from 'react-icons/bi';
-import { MdOutlineInventory } from 'react-icons/md';
+import { MdAccountBalance, MdOutlineInventory } from 'react-icons/md';
 import { GiReceiveMoney } from 'react-icons/gi';
 
 import { useDispatch } from 'react-redux';
@@ -13,11 +13,12 @@ const Aside = ({isOpen, setIsOpen}) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const activeLink = 'active';
-  const normalLink = '';
+  const normalLink = 'pl-3';
 
   const handleLogOut = () => {
     localStorage.removeItem("phoenix_auth")
     dispatch(userProfile())
+    navigate("/auth/admin_login")
   }
   return (
     <aside className={isOpen ? 'open' : "close"}>
@@ -25,10 +26,10 @@ const Aside = ({isOpen, setIsOpen}) => {
       <span className='block mt-5 ml-auto w-max' onClick={()=> setIsOpen(prev => !prev)}>
             <AiOutlineClose className='text-2xl md:hidden ' />
           </span>
-        <div className="logo p-5">
+        <NavLink to={"/admin/dashboard"} className="logo p-5">
           <img src={"/logos/12.png"} alt="logo" className='max-w-32 m-auto'/>
         
-        </div>
+        </NavLink>
         <div className="close" id="close-btn">
           
         </div>
@@ -70,7 +71,7 @@ const Aside = ({isOpen, setIsOpen}) => {
         <NavLink 
          onClick={()=>setIsOpen(prev => !prev)}
          to="/admin/account-profile" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
-          <span><AiOutlinePlus /></span>
+          <span><MdAccountBalance  /></span>
           <h3>Account</h3>
         </NavLink>
         <a onClick={handleLogOut} className={({ isActive }) => (isActive ? activeLink : normalLink)}>

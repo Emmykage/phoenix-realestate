@@ -28,6 +28,31 @@ const createAsset = createAsyncThunk('asset/create_asset', async (assetData, {re
  
 });
 
+export const updateAsset = createAsyncThunk('asset/UPDATE_ASSET', async ({id, assetData}, {rejectWithValue}) => {
+  
+  try {
+    const response = await fetch(`${baseUrl}assets/${id}`, {
+      method: 'PATCH',
+      headers: {
+         Authorization: `Bearer ${token()}`,
+  
+      },
+      body: assetData,
+    })
+    
+    const result = await response.json()
+    if(!response.ok){
+      return rejectWithValue({message: result.message })
+
+    }
+    return result;
+  } catch (error) {
+    return rejectWithValue({message: error.message ?? "Something went wrong"})
+
+  }
+ 
+});
+
 const getAssets = createAsyncThunk('asset/get_assets', async (_, {rejectWithValue}) => {
 console.log("first")
   try {
@@ -41,21 +66,21 @@ console.log("first")
   
     })
     
-    const {data, message} =  await response.json()
+    const result =  await response.json()
 
     if(!response.ok){
-      return rejectWithValue({message: message })
+      return rejectWithValue({message: result.message })
 
     }
   
-    return data;
+    return result;
   } catch (error) {
     return rejectWithValue({message: error.message ?? "Something went wrong"})
 
   }
   
 });
-const getAsset = createAsyncThunk('asset/get_assets', async (id, {rejectWithValue}) => {
+const getAsset = createAsyncThunk('asset/GET_ASSET', async (id, {rejectWithValue}) => {
   try {
     const response = await fetch(`${baseUrl}assets/${id}`, {
       method: 'GET',
@@ -66,15 +91,15 @@ const getAsset = createAsyncThunk('asset/get_assets', async (id, {rejectWithValu
   
     })
     
-    const {data, message} = await response.json()
+    const result = await response.json()
 
     if(!response.ok){
-      return rejectWithValue({message: message })
+      return rejectWithValue({message:result.message })
 
     }
 
 
-    return data
+    return result
   } catch (error) {
     return rejectWithValue({message: error.message ?? "Something went wrong"})
     

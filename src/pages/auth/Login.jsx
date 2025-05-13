@@ -5,6 +5,7 @@ import { userSession } from '../../redux/actions/auth'
 import { SET_LOADER } from '../../redux/app/app'
 import SubHeader from '../../components/subHeader/SubHeader'
 import NewsLetter from '../../components/newsLetter/NewsLetter'
+import { toast } from 'react-toastify'
 
 const Login = () => {
     const navigate = useNavigate();
@@ -26,11 +27,14 @@ const Login = () => {
                dispatch(userSession({ user: formInput })).then(result => {
                    if(userSession.fulfilled.match(result)){
                        navigate("/dashboard/home");
+                       toast(result.payload.message || "Login successful", {type: "success"})
+
                        dispatch(SET_LOADER(false))
        
        
                    }else
                    {
+                    toast(result.payload.message || "Failed to Login", {type: "error"})
                        dispatch(SET_LOADER(false))
        
                    }

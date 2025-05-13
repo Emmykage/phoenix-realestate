@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { delAsset, getAssets } from '../../../redux/actions/assets';
 import { SET_LOADER } from '../../../redux/app/app';
 
@@ -32,7 +32,7 @@ const AssetCard = ({ asset }) => {
       </div>
       <div className='flex justify-end gap-10'>
         {' '}
-        <span onClick={() => navigation(`/admin/asset/${asset.id}`)}> view</span>
+        <NavLink to={`/admin/asset/${asset.id}`} className={"font-medium text-blue-400"}> view</NavLink>
         <span onClick={() => handleDel(asset.id)} className='bg-primary px-3 py-2 text-white'>delete</span>
       </div>
     </li>

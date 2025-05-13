@@ -35,22 +35,14 @@ const assetSlice = createSlice({
         }),
         [getAssets.fulfilled]: (state, action) => {
             const response = action.payload
-            if(response.error){
-
-      
-            return{
-            ...state,
-            loading: false,
-            error: true,                 
-        }
-        }else{
+            
             return{
                 ...state,
                 loading: false,
-                offers: action.payload,
-                assets: action.payload.slice(0, 2),
+                offers: response?.data,
+                assets: response?.data.slice(0, 2),
                 error: false,                 
-            }
+            
     
           }},
 
@@ -60,6 +52,30 @@ const assetSlice = createSlice({
             error: true,
           }),
           [getAssets.pending]: (state) => ({
+            ...state,
+            loading: true,
+            error: false,
+      
+          }),
+
+          [getAsset.fulfilled]: (state, action) => {
+            const response = action.payload
+            
+            return{
+                ...state,
+                loading: false,
+                asset: response?.data,
+                error: false,                 
+            
+    
+          }},
+
+          [getAsset.rejected]: (state) => ({
+            ...state,
+            loading: false,
+            error: true,
+          }),
+          [getAsset.pending]: (state) => ({
             ...state,
             loading: true,
             error: false,
