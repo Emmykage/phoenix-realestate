@@ -3,7 +3,7 @@ import baseUrl from "../baseURL";
 import { token } from "../../utils/localStore";
 
 export const createAccountProfile = createAsyncThunk('account/profile', async (account_profile, {rejectWithValue}) => {
-  console.log(account_profile)
+
   try {
     const response = await fetch(`${baseUrl}account_profiles`, {
       method: 'POST',

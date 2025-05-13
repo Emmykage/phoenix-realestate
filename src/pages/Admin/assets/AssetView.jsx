@@ -5,7 +5,7 @@ import { getAsset, updateAsset } from '../../../redux/actions/assets';
 import Loader from '../../../components/loader/Loader';
 import { propertyFeatures, propertyTypes } from './data/propertyTypes';
 import { InputLabel, MenuItem, OutlinedInput, Select, useTheme } from '@mui/material';
-import AppButton from '../../../components/buttons/appButton';
+
 import { SET_LOADER } from '../../../redux/app/app';
 import { toast } from 'react-toastify';
 import ClassicButton from '../../../components/buttons/Buttons';
@@ -20,8 +20,8 @@ const AssetView = () => {
   const { asset, loading, error } = useSelector((state) => state.assets);
     const [photos, setPhotos] = useState()
     const [mainPhoto, setMainPhoto] = useState(null)
-    console.log("get view asset", formInput)
 
+    
   useEffect(() => {
     dispatch(getAsset(id));
   }, []);
@@ -57,7 +57,7 @@ const AssetView = () => {
     formData.append('asset[city]', formInput.city)
     formData.append('asset[property_type]', formInput.property_type)
     formData.append('asset[description_body]', formInput.description_body)
-    formData.append('asset[mainphoto]', mainPhoto)
+    mainPhoto && formData.append('asset[mainphoto]', mainPhoto)
     
     // formData.append('asset[features][]', assetFeatures)
     formInput.features.forEach((item) => (
@@ -71,13 +71,10 @@ const AssetView = () => {
     ))
 
 
-    console.log(formData)
 
 
     dispatch(updateAsset({id: formInput,id, assetData: formData})).then(result => {
       if(updateAsset.fulfilled.match(result)){
-
-        console.log(result.payload.message)
         toast(result.payload.message || "Updated Successfully", {type: "success"})
         dispatch(getAsset(id))
         setPhotos([])
@@ -131,7 +128,11 @@ const ITEM_PADDING_TOP = 8;
 
 
   if (loading) {
-    <Loader />;
+
+    return(
+      <Loader />
+
+    )
   } else if (error) {
     <h1 className="text-center">Check you connection</h1>;
   } else {

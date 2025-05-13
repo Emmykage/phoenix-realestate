@@ -48,9 +48,7 @@ const Register = () => {
         dispatch(SET_LOADER(false))
         toast(result.payload.message || "Something went wrong", {type: "error"})
 
-        
-        // console.log(result)
-      }
+        }
     })  
     
   }
@@ -88,7 +86,6 @@ const Register = () => {
     label: "User Info",
     render: <UserInfo loading={loading} error={error}  handlePrev={handlePrev} handleNext={handleNext}/>
   }]
-  console.log(userReg, step, regJourney.length)
 
   return (
     <div>

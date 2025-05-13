@@ -12,9 +12,6 @@ const GetStarted = ({handleNext}) => {
         setSelectedOption(e.target.value)
     }
 
-
-    console.log(selectedOption)
-
   return (
     <div className='h-screen get-started  w-full bg-primary px-4 text-white flex justify-center items-center'>
         <div>

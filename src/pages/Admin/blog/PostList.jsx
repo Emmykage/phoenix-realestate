@@ -18,8 +18,6 @@ const PostList = () => {
         dispatch(getPosts())
     }, [])
 
-
-    console.log(posts)
   return (
     <div className='py-20'>
 

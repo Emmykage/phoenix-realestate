@@ -9,7 +9,7 @@ const AssetCard = ({ asset }) => {
   const dispatch = useDispatch()
 
   const handleDel = (id) => {
-    console.log("deleted: ", id)
+
     dispatch(SET_LOADER(true))
 
     dispatch(delAsset(id)).then(result =>{

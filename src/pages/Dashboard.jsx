@@ -11,7 +11,7 @@ import { formattedDate } from '../components/misc/Date'
 
 const Dashboard = () => {
   const {user} = useSelector(state => state.users)
-  console.log(user)
+
   return (
     <div className='user-dashboard my-5'>
      

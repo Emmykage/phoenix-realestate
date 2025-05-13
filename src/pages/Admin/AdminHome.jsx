@@ -16,14 +16,11 @@ const AHome = () => {
   }, [])
 
 
-  console.log("user send ====>",users)
   return(
   <>
     <div>
       <h1>Dashboard</h1>
-      {/* <div className="date">
-        <input type="date" />
-      </div> */}
+    
       <div className="insights">
         <div className="sales">
           <span><AutoGraphOutlinedIcon /></span>

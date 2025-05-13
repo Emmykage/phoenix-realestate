@@ -19,8 +19,8 @@ const BlogPost = () => {
   
 
     const blog = [...posts]?.find(blog => blog.id == id)
-    console.log(blog)
-  return (
+
+    return (
     <>
     <Nav/>
     <SubHeader tittle={blog?.title}/>

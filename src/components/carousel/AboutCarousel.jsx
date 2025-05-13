@@ -22,10 +22,6 @@ const AboutCarousel = ({items}) => {
         return () => window.removeEventListener("resize", handleResize)
     }, [])
 
-    console.log(deviceType)
-    
-
-
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },

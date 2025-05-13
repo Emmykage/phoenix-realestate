@@ -30,7 +30,6 @@ const AccountWithdraw = () => {
     useEffect(()=> {
         const element = formRef.current
 
-        console.log(element)
         if(status =="success"){
             setShow("flex")
             element.reset()

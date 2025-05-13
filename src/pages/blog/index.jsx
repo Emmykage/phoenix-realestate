@@ -20,8 +20,6 @@ const Blog = () => {
   const pressBlogs = [...press]
   usePageReset()
 
-  console.log(pressBlogs)
-
   return (
     <div>
         <Nav/>

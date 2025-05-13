@@ -33,8 +33,6 @@ const ViewPost = () => {
         formData.append("blog[blog_body]", e.target.blog_body.value)
         e.target.date.value && formData.append("blog[date]", e.target.date.value)
 
-        console.log("date:", e.target.date.value)
-
         dispatch(updatePost({id, formData})).then(result => {
             if(updatePost.fulfilled.match(result)){
                 dispatch(SET_LOADER(false))
@@ -169,17 +167,13 @@ useEffect(() => {
             dispatch(SET_LOADER(true))
             dispatch(delPost(id)).then(result => {
                 if(delPost.fulfilled.match(result)){
-                    console.log("deleted")
-
                     dispatch(SET_LOADER(false))
-                    console.log("deleted")
+
                     navigate("/admin/posts")
                 }else{
                     dispatch(SET_LOADER(false))
-                    console.log("deleted")
 
-
-                }
+                  }
             })
         }} className='bg-red-600 py-3 px-3 my-4 rounded-lg text-white'>
             Delete 

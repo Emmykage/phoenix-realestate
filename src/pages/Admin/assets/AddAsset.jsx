@@ -58,8 +58,7 @@ const ITEM_PADDING_TOP = 8;
       formData.append(`asset[photos][]`, file)
     ))
 
-    const data = Object.fromEntries(formData)
-    console.log(data)
+ 
 
     dispatch(createAsset(formData)).then(result => {
       if(createAsset.fulfilled.match(result)){
@@ -88,9 +87,6 @@ const ITEM_PADDING_TOP = 8;
     setPhotos(files)
 
   }
-
-  console.log(mainPhoto)
-
 
 
   const MenuProps = {

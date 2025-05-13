@@ -15,7 +15,7 @@ const accountSlice = createSlice({
     extraReducers: {
         [createAccountProfile.fulfilled]: (state, action) => {
             const response = action.payload;
-            console.log(response)
+
             return{
                 ...state,
                 account_profile: response.data,
@@ -57,7 +57,7 @@ const accountSlice = createSlice({
 
         [updateAccountProfile.fulfilled]: (state, action) => {
             const response = action.payload;
-            console.log(response)
+
             return{
                 ...state,
                 account_profile: response.data,

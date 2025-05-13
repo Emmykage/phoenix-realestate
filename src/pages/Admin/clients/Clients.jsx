@@ -18,8 +18,6 @@ const Clients = () => {
     );
   }
 
-
-  console.log(users)
   return (
     <div className="client md:pt-20">
       <div className="">

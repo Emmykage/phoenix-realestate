@@ -10,7 +10,7 @@ const Offering = () => {
   useEffect(()=> {
     dispatch(getAssets())
   },[])
-  console.log(offers)
+
   return (
     <div className='max-w-7xl w-full m-auto bg--400 py-8 bg-white my-3 rounded-md px-4 md:px-10'>
         <h2 className='text-left text-2xl font-semibold text-gray-700'>

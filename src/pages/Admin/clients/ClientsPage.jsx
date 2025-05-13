@@ -20,15 +20,14 @@ const ClientsPage = () => {
     dispatch(userPorfolio(id))
   }, []);
 
-  console.log(users)
 
   const handleApprove = (id) => {
     dispatch(approveTransaction({id, status: "completed" }))
   }
 
   const user = users.find((user) => user.id == id);
-  console.log(user)
 
+  
   if (user == undefined) {
     return (
       <Loader />

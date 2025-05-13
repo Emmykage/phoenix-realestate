@@ -3,7 +3,7 @@ import baseUrl from '../baseURL';
 import { setToken, token } from '../../utils/localStore';
 
 const registerUser = createAsyncThunk('user/register', async (data, {rejectWithValue}) => {
-  console.log(data)
+
   const formData = new FormData
   data?.user.first_name && formData.append("user[first_name]", data.user.first_name)
   data?.user.last_name && formData.append("user[last_name]", data.user.last_name)
@@ -37,7 +37,6 @@ const registerUser = createAsyncThunk('user/register', async (data, {rejectWithV
     return data;
 
   } catch (error) {
-    console.log("error response", result.response)
 
 
     return rejectWithValue({message: error?.response.message ?? "Failed to login"})

@@ -14,13 +14,6 @@ const AdminLayout = ({ children }) => {
   const { user, loading, error } = useSelector((state) => state.auth);
   const navigate = useNavigate();
 
-  console.log("User:", user, "Loading:", loading);
-
-  // useEffect(() => {
-  //   if (!user) {
-  //     dispatch(getUser()); // Fetch user data if not in Redux
-  //   }
-  // }, [user, dispatch]);
 
   useEffect(() => {
 

@@ -17,7 +17,7 @@ const Assets = () => {
   useEffect(() => {
     dispatch(getAssets());
   }, []);
-  console.log(offers)
+
   return (
     <>
     

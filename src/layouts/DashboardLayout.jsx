@@ -46,7 +46,6 @@ const DashboardLayout = ({children}) => {
 
     },[])
 
-    console.log(user, !user && !loading)
     return (
     <div className='h-screen flex  bg-gray-200 overflow-y-auto'>
        

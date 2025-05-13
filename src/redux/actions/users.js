@@ -14,8 +14,6 @@ const listUsers = createAsyncThunk('users/GET_CLIENTS', async (_, {rejectWithVal
     })
 
     const result = await response.json()
-    console.log(result)
-
     if(!response.ok){
       return rejectWithValue({message: result.message})
     }

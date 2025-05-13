@@ -54,7 +54,6 @@ export const updateAsset = createAsyncThunk('asset/UPDATE_ASSET', async ({id, as
 });
 
 const getAssets = createAsyncThunk('asset/get_assets', async (_, {rejectWithValue}) => {
-console.log("first")
   try {
     const response = await fetch(`${baseUrl}assets`, {
       method: 'GET',
@@ -111,7 +110,7 @@ const getAsset = createAsyncThunk('asset/GET_ASSET', async (id, {rejectWithValue
 
 
 export const delAsset = createAsyncThunk('asset/delete-asset', async (id, {rejectWithValue}) => {
-  console.log("Clicked")
+
   try {
     const response = await fetch(`${baseUrl}assets/${id}`, {
       method: 'DELETE',
