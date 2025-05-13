@@ -86,40 +86,50 @@ const itemFunding = [
         label: "Withdrawal",
         icon: <GrFolderCycle   className='text-2xl'/>
     },
-    {
-        link: '/dashboard/account/deposit',
-        label: "Deposit",
-        icon: <RiLuggageDepositLine className='text-2xl'/>
-    }
+    // {
+    //     link: '/dashboard/account/deposit',
+    //     label: "Deposit",
+    //     icon: <RiLuggageDepositLine className='text-2xl'/>
+    // }
 ]
-const active = "bg-gray-200 flex items-center gap-4 px-2 m-auto w-full h-full hover:bg-gray-300"
-const inactive = " flex items-center gap-4 px-2 m-auto w-full h-full hover:bg-gray-300"
+const active = "bg-gray-200 flex items-center gap-4 px-2 py-4 m-auto w-full h-full hover:bg-gray-300"
+const inactive = " flex items-center gap-4 my-0 py-4 px-2 m-auto w-full h-full hover:bg-gray-300"
+
+// const active = ""
+// const inactive = ""
 
 const list = () => {
 return(
-    <>
+    <Box
+    
+    onClick={onClose}
+    sx={{width: 250}}>
        <div className='bg-r mb-10'>
                     <img src={"/logos/12.png"} alt="" className='w-20  block m-auto'/>
                 </div>
-                <ul className=' flex-1 flex flex-col h-full'>
+                <List className=' flex-1 flex flex-col h-full'>
                     {items.map(item => (
-                        <li className='my-2 h-10 '>
+                        <ListItem  className='my-2 h-10 '>
                         <NavLink to={item.link} className={({isActive}) => isActive ? active: inactive }>
-                        {item.icon}
+                        <ListItemIcon>
+                             {item.icon}
+                         </ListItemIcon> 
                         <span className='text-base font-medium'>{item.label}</span>
                         </NavLink>
-                        </li>
+                        </ListItem >
                     ))}
                      <li className="mt-4 text-sm text-gray-400 px-6">Funding</li>
 
                     
                     {itemFunding.map(item => (
-                        <li className='my-2 h-10 '>
+                        <ListItem className='my-2 h-10'>
                         <NavLink to={item.link} className={({isActive}) => isActive ? active: inactive }>
-                        {item.icon}
+                        <ListItemIcon>
+                             {item.icon}
+                         </ListItemIcon> 
                         <span className='text-base font-medium'>{item.label}</span>
                         </NavLink>
-                        </li>
+                        </ListItem>
                     ))}
                     <li className='my-2 h-10 mt-auto bg-gray-100'>
                         <a onClick={()=> {
@@ -137,12 +147,12 @@ return(
 
            
           
-          </ul>
+          </List>
 
              
 
             
-    </>
+    </Box>
 )
 }
 
@@ -151,7 +161,7 @@ return(
 
   return (
     <div>
-     <aside id='aside' className={`w-60 px-2 bg-white hidden md:flex flex-col border shrink-0 absolute md:relative z-10 shadow h-full bg-whit border-t md:pl-2 py-10 overflow-hidden`}>
+     <aside id='aside' className={`px-2 bg-white hidden md:flex flex-col border shrink-0 absolute md:relative z-10 shadow h-full bg-whit border-t md:pl-2 py-10 overflow-hidden`}>
         
         {list()}                 
     </aside> 
@@ -164,7 +174,7 @@ return(
             onClose={onClose}
           >
 
-             <aside id='aside' className={`bg-white w-60 flex flex-col border shrink-0 relative z-10 shadow h-full bg-whit border-t md:pl-2 py-10 overflow-hidden`}>
+             <aside id='aside' className={`bg-white flex flex-col border shrink-0 relative z-10 shadow h-full bg-whit border-t md:pl-2 py-10 overflow-hidden`}>
 
              {list()}
                 
