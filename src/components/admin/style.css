@@ -24,9 +24,6 @@ aside {
   /* position: fixed; */
 }
 
-.admin a {
-  color: var(--color-dark);
-}
 .admin .asset-infos a{
   color: white;
   text-decoration: none;
@@ -34,9 +31,7 @@ aside {
 .admin .asset-infos a:hover{
   color: #135092;
 }
-.admin img {
-  display: block;
-}
+
 
 .admin h1 {
   font-weight: 800;

@@ -4,32 +4,8 @@ import './client.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { listUsers } from '../../../redux/actions/users';
 import { moneyFormat } from '../../../utils/moneyFormat';
+import { FaArrowLeft } from 'react-icons/fa';
 
-// const Clients = () => {
- 
-//   return (
-//     <div className="client md:pt-20">
-//       <div className="">
-//         <ul className="client-row">
-//           {users?.map((user) => (
-//             <li key={user.id} className="p-3 m-2 b-radius-2 flex justify-between border-light box-shadow overflow-hidden">
-//               <span>
-//                 Client Name: {`${user.first_name} ${user.last_name}`}
-//               </span>
-//               <span>
-//                 <NavLink to={``}>View</NavLink>
-//               </span>
-//             </li>
-
-//           ))}
-
-//         </ul>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Clients;
 
 
 const Clients = () => {
@@ -53,7 +29,13 @@ const Clients = () => {
   return (
     <>
 
-    <h2 className='my-10 text-4xl font-semibold'>Users and Clients</h2>
+      <div className='mt-10 flex justify-between'>
+        <button onClick={() => navigate(-1)}><FaArrowLeft /> </button>
+        <h2 className='my-10 text-4xl font-semibold'>Users and Clients</h2>
+
+        </div>
+        
+
     
     <div className="max-w-7xl mx-auto p-6 bg-white shadow-lg rounded-xl">
       <h2 className="text-xl font-bold mb-4">User List</h2>

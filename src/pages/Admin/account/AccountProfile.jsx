@@ -64,7 +64,7 @@ const AdminAccountProfile = () => {
  
     }
   return (
-    <div>
+    <div className='bg-white p-4 rounded-lg mt-20 shadow-lg'>
         <h2 className='my-5'>Add Account Profile</h2>
         <div>
             

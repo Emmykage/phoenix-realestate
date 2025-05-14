@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './client.css';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import default_photo from '../../../assets/users/profile_pic.jpg';
 import { getClient, listUsers } from '../../../redux/actions/users';
@@ -9,6 +9,7 @@ import { usd_format } from '../../../components/misc/USD';
 import { approveTransaction } from '../../../redux/actions/wallet';
 import { userPorfolio } from '../../../redux/actions/portfolio';
 import { moneyFormat } from '../../../utils/moneyFormat';
+import { FaArrowLeft } from "react-icons/fa";
 
 // const ClientsPage = () => {
 //  
@@ -166,6 +167,7 @@ const UserProfileDashboard = () => {
 
   const { id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const { user } = useSelector((state) => state.users);
 
@@ -194,8 +196,14 @@ const UserProfileDashboard = () => {
   );
 
   return (
+    <>
+    <div className='mt-10'>
+    <button onClick={() => navigate(-1)}><FaArrowLeft /> </button>
+    </div>
+    
     <div className="max-  mt-20 mx-auto p-6 bg-white shadow-md rounded-2xl space-y-6">
       <div className="flex justify-between items-center border-b pb-4">
+       
         <div>
           <h2 className="text-xl font-bold">User Profile</h2>
           <p className="text-sm text-gray-500">{user?.role}</p>
@@ -247,6 +255,7 @@ const UserProfileDashboard = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
