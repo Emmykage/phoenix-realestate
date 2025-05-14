@@ -42,22 +42,25 @@ const AssetView = () => {
     
     const formData = new FormData();
 
-    formData.append('asset[name]', formInput.name)
-    formData.append('asset[price]', formInput.price)
-    formData.append('asset[asset_category]', formInput.asset_category)
-    formData.append('asset[address]', formInput.address)
-    formData.append('asset[tenure]', formInput.tenure)
-    formData.append('asset[sale_type]', formInput.sale_type)
-    formData.append('asset[area]', formInput.area)
 
-    
-    formData.append('asset[number_of_bedrooms]', formInput.number_of_bedrooms)
-    formData.append('asset[number_of_bathrooms]', formInput.number_of_bathrooms)
-    formData.append('asset[status]', formInput.status)
-    formData.append('asset[city]', formInput.city)
-    formData.append('asset[property_type]', formInput.property_type)
-    formData.append('asset[description_body]', formInput.description_body)
+    formInput.name &&  formData.append('asset[name]', formInput.name)
+    formInput.asset_category &&  formData.append('asset[asset_category]', formInput.asset_category)
+    formInput.address &&  formData.append('asset[address]', formInput.address)
+    formInput.price &&  formData.append('asset[price]', formInput.price)
+    formInput.tenure &&   formData.append('asset[tenure]', formInput.tenure)
+    formInput.sale_type &&  formData.append('asset[sale_type]', formInput.sale_type)
+    formInput.area && formData.append('asset[area]', formInput.area)
+   
+    formInput.number_of_bedrooms &&     formData.append('asset[number_of_bedrooms]', formInput.number_of_bedrooms)
+    formInput.number_of_bathrooms &&     formData.append('asset[number_of_bathrooms]', formInput.number_of_bathrooms)
+    formInput.status &&  formData.append('asset[status]', formInput.status)
+    formInput.property_type &&  formData.append('asset[property_type]', formInput.property_type)
+    formInput.description_body &&   formData.append('asset[description_body]', e.target.description_body.value)
+    formInput.city &&   formData.append('asset[city]', formInput.city)
     mainPhoto && formData.append('asset[mainphoto]', mainPhoto)
+    
+   
+
     
     // formData.append('asset[features][]', assetFeatures)
     formInput.features.forEach((item) => (
@@ -102,6 +105,7 @@ const AssetView = () => {
   }
 
   const handleChange = (event) => {
+    console.log(event.target)
 
     const {
       target: { value, name },
@@ -344,7 +348,7 @@ const ITEM_PADDING_TOP = 8;
 
           <div>
             <label htmlFor="trix" className='text-base font-medium block'>Description</label>
-            <input id="trix" type="hidden" name="description" 
+            <input id="trix" type="hidden" name="description_body" 
               onChange={handleChange}
               value={formInput?.description_body} />
             <trix-editor input="trix" />

@@ -218,7 +218,7 @@ const Nav = () => {
                     </ul>
                 </li>
 
-                <li className='relative my-0 md:h-full flex justify-center items-center menu-item-has-childre nav-item text-white'><NavLink to="/properties" >Property Listing</NavLink>
+                <li className='relative my-0 md:h-full flex justify-center items-center menu-item-has-childre nav-item text-white'><NavLink to="#" >Property Listing</NavLink>
                   <ul className="sub-menu relative">
                     <li className=''><NavLink to="/properties" >Buy Property</NavLink></li>
                     <li className='re'><NavLink to="/sell-property" >Sell Property</NavLink></li>
