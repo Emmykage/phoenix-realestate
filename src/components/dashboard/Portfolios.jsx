@@ -19,10 +19,10 @@ const Portfolios = () => {
             {portfolios.length < 1 ? (<h2 className='text-center'>You have no portfolios</h2>) : portfolios.map((portfolio) => (
                 <li className='text-left box-shadow rounded-base my-1'>
                 <div className='flex rounded-base'>
-                    <div className='portfolio-img flex-1 p-3'>
+                    {/* <div className='portfolio-img flex-1 p-3'>
                         <img src={portfolio.asset.image_url} alt="" className='rounded-base' />
 
-                    </div>
+                    </div> */}
                     <div className='flex-2 p-3 '>
                         <div className='flex '>
 

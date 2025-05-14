@@ -46,6 +46,34 @@ const getUser = createAsyncThunk('user/get_account', async () => {
   return response;
 });
 
+export const getClient = createAsyncThunk('user/GET_CLIENT', async (id, {rejectWithValue}) => {
+  try {
+    const response = await fetch(`${baseUrl}users/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${token()}`,
+  
+      },
+  
+    })
+    
+    const result = await response.json()
+
+    if(!response.ok){
+      return rejectWithValue({message: result.message ?? "failed to get user"})
+    }
+
+    return result;
+
+  } catch (error) {
+    return rejectWithValue({message: "Something went wrong "})
+
+  }
+ 
+
+});
+
 
 const patchUser = createAsyncThunk('user/update_user', async() => {
   const response = await fetch(`${baseUrl}users`, {
