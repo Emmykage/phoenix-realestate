@@ -60,20 +60,20 @@ const DashboardLayout = ({children}) => {
                         <img src={"images/logo1.jpg"} alt="" />
                     </NavLink>
 
-                    <nav className='flex-1 md:block hidden'>
+                    {/* <nav className='flex-1 md:block hidden'>
                         <ul className='flex gap-6 text-sm font-medium text-gray-600'>
-                        <li><NavLink to={'/dashboard/account'}>My Account</NavLink></li>
+                            <li><NavLink to={'/dashboard/account'}>My Account</NavLink></li>
 
                             <li><NavLink to={'/dashboard/offering'}>Offerings</NavLink></li>
                             <li><NavLink to={'/dashboard/portfolio'}>Portfolio</NavLink></li>
                             <li><NavLink to={'/dashboard/document'}>My Document</NavLink></li>
                         </ul>
-                    </nav>
+                    </nav> */}
                 <ul className=' gap-8 items-center md:flex hidden'>
-                <li><NavLink><FaQuestionCircle /></NavLink></li>
-                <li><NavLink to={''}><IoMdNotificationsOutline /></NavLink></li>
-                <li><NavLink to={'/dashboard/profile'}><FaRegUser /></NavLink></li>
-                <li><NavLink to={''}>{user?.email}</NavLink></li>
+                    <li><NavLink><FaQuestionCircle /></NavLink></li>
+                    <li><NavLink to={''}><IoMdNotificationsOutline /></NavLink></li>
+                    <li><NavLink to={'/dashboard/profile'}><FaRegUser /></NavLink></li>
+                    <li><NavLink to={''}>{user?.email}</NavLink></li>
                 </ul>
                 <a onClick={()=> setToggle(prev => !prev)} target="_blank" rel="noopener noreferrer" className='flex sm:hidden'><IoMdMenu className='text-4xl'/></a>
                 </div>

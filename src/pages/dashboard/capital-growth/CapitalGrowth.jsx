@@ -45,7 +45,7 @@ const CapitalGrowth = () => {
           <p className="text-2xl font-semibold">{moneyFormat(wallet?.capital_growth?.toLocaleString())}</p>
         </div>
         <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">
-          <h2 className="text-sm text-gray-400 mb-1">Return on Investment</h2>
+          <h2 className="text-sm text-gray-400 mb-1">ROI</h2>
           <p className="text-2xl font-semibold">{(data.roi * 100).toFixed(2)}%</p>
         </div>
         <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">

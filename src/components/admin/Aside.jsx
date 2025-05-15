@@ -47,12 +47,13 @@ const Aside = ({isOpen, setIsOpen}) => {
           <span><AiOutlineUser /></span>
           <h3>Clients</h3>
         </NavLink>
-        <NavLink 
+        
+        {/* <NavLink 
          onClick={() => setIsOpen(prev => !prev)}
          to="/admin/orders" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
           <span><GiReceiveMoney /></span>
           <h3>Orders</h3>
-        </NavLink>
+        </NavLink> */}
        
         <NavLink 
          onClick={() => setIsOpen(prev => !prev)}

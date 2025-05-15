@@ -7,8 +7,9 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import AppModal from '../../../components/modals/AppModal'
 import Confirmation from '../../../components/modals/DepositModal'
-import { createTransaction } from '../../../redux/actions/wallet'
+import { createTransaction, getUserTransactions } from '../../../redux/actions/wallet'
 import { toast } from 'react-toastify'
+import { SET_LOADER } from '../../../redux/app/app'
 
 const FixedIncomeDeposit = () => {
     const formRef = useRef(null)
@@ -52,6 +53,8 @@ const FixedIncomeDeposit = () => {
 
     
       const handleSubmit = () => {
+                        dispatch(SET_LOADER(true))
+        
         const element = formRef.current
 
         const typeCoin = paymentOptions.find(item => item.value === formInput.coin_type)
@@ -69,9 +72,14 @@ const FixedIncomeDeposit = () => {
             if(createTransaction.fulfilled.match(result)){
                 element.reset()
                 setOpenModal(false)
+                dispatch(getUserTransactions())
+                dispatch(SET_LOADER(false))
+                
                 toast(result.payload.message || "Deposit has been successful", {type: "success"})
 
             }else{
+                                dispatch(SET_LOADER(false))
+                
                toast(result.payload.message, {type: "error"})
             }
         })
@@ -119,7 +127,7 @@ const FixedIncomeDeposit = () => {
                 </div>
                 <div>
                     <label className='block m-1' htmlFor="amount">Enter Amount</label>
-                    <input type="number" className='border'  placeholder='Enter Amount in USD' name="amount" onChange={(e)=> setFormInput({...formInput, amount: e.target.value})} required min={500}/>
+                    <input type="number" className='border'  placeholder='Enter Amount in USD' name="amount" onChange={(e)=> setFormInput({...formInput, amount: e.target.value})} required min={0}/>
                 </div>
             
                 <div className='m-2'>

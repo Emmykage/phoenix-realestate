@@ -5,8 +5,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import AppModal from '../../../components/modals/AppModal'
 import Confirmation from '../../../components/modals/DepositModal'
-import { createTransaction } from '../../../redux/actions/wallet'
+import { createTransaction, getUserTransactions } from '../../../redux/actions/wallet'
 import { toast } from 'react-toastify'
+import { SET_LOADER } from '../../../redux/app/app'
 // import { reset } from '../redux/wallet/transaction'
 const CapitalDeposit = () => {
     const formRef = useRef(null)
@@ -54,6 +55,8 @@ const CapitalDeposit = () => {
 
     
       const handleSubmit = () => {
+
+        dispatch(SET_LOADER(true))
         const element = formRef.current
 
         const typeCoin = paymentOptions.find(item => item.value === formInput.coin_type)
@@ -71,9 +74,15 @@ const CapitalDeposit = () => {
             if(createTransaction.fulfilled.match(result)){
                 element.reset()
                 setOpenModal(false)
+                dispatch(SET_LOADER(false))
+                        dispatch(getUserTransactions())
+                
+
                 toast(result.payload.message || "Deposit has been successful", {type: "success"})
 
             }else{
+                dispatch(SET_LOADER(false))
+
                toast(result.payload.message, {type: "error"})
             }
         })
@@ -94,6 +103,7 @@ const CapitalDeposit = () => {
 
     const selectedValue = paymentOptions?.find(coinValue => coinValue.value === formInput.coin_type) ?? ""
 
+    console.log("first", paymentOptions)
     return (
     <div className='bg-white max-w-1450 box-shadow-gray my-6 rounded-sm py-2 md:px-4'>
      
@@ -121,29 +131,18 @@ const CapitalDeposit = () => {
                 </div>
                 <div>
                     <label className='block m-1' htmlFor="amount">Enter Amount</label>
-                    <input type="number" className='border'  placeholder='Enter Amount in USD' name="amount" onChange={(e)=> setFormInput({...formInput, amount: e.target.value})} required min={500}/>
+                    <input type="number" className='border'  placeholder='Enter Amount in USD' name="amount" onChange={(e)=> setFormInput({...formInput, amount: e.target.value})} required min={0}/>
                 </div>
             
                 <div className='m-2'>
                     <p className='text-dark text-left text-base font-medium'>Deposit Address</p>
                     <div className='flex items-center bg-gray  my-2 '>
-                        {/* <div className='scanner-ing  mr-2'>
-                            <img src={barcode} alt="barcode" className='w-full h-full' />
-
-                        </div> */}
+                     
                         <div className='flex-1 flex  items-center barc'>
                             <div className=' w-full mr-3'>
                                 <input type="text"  value={selectedValue?.value} readOnly className='text-xl font-semibold bg-gray'/>
                             </div>  
-                            {/* <div className='p-2 border bg-gray-light rounded-sm'>
-                            <a onClick={handleCopyClick}><FaCopy className='text-4xl ml-2 bg-gray-light ' /></a>
-
-                            </div> */}
-
-
-                        </div>
-
-                        
+                        </div>       
 
                     </div>
 
