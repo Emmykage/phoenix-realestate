@@ -527,58 +527,7 @@ main .recent-orders a {
 
 }
 
-@media screen and (max-width: 1200px) {
-  .admin.contain {
-    /* padding: 1rem; */
-    width: 100%;
-    grid-template-columns: 7rem 2fr 1fr;
-  }
 
-  aside .logo h2 {
-    display: none;
-  }
-
-  aside .side-bar h3 {
-    display: none;
-  }
-
-  aside .side-bar a {
-    width: 5.6rem;
-  }
-
-  aside .side-bar a:last-child {
-    position: relative;
-    margin-top: 1.8rem;
-
-  }
-
-  main .insights {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  main .recent-orders {
-    width: 94%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 2rem 0 0 8.8rem;
-  }
-
-  main .recent-orders table {
-    width: 80vw;
-  }
-
-  main table thead tr th:last-child,
-  main table thead tr th:first-child {
-    display: none;
-  }
-
-  main table tbody tr td:last-child,
-  main table tbody tr td:first-child {
-    display: none;
-  }
-}
 @media screen and (max-width: 768px) {
   .admin.contain {
     grid-template-columns: 1fr;

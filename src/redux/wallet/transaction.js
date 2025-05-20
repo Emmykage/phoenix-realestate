@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { approveTransaction, createTransaction, getTransaction, getUserTransactions } from "../actions/wallet";
+import { updateTransaction, createTransaction, getTransaction, getTransactions, getUserTransactions } from "../actions/wallet";
 
 const initialState = {
     transaction: {},
@@ -55,7 +55,7 @@ const transactionSlice = createSlice({
 
 
         }),
-        [approveTransaction.fulfilled]: (state, action) => {
+        [updateTransaction.fulfilled]: (state, action) => {
      
             return{
             ...state,
@@ -63,14 +63,14 @@ const transactionSlice = createSlice({
             error: false,
             transaction: action.payload
         }},
-        [approveTransaction.rejected]: (state) => {
+        [updateTransaction.rejected]: (state) => {
      
             return {
             ...state,
             error: true,
             loading: false
         }},
-        [approveTransaction.pending]: (state) => ({
+        [updateTransaction.pending]: (state) => ({
             ...state,
             loading: true,
             error: false
@@ -107,6 +107,25 @@ const transactionSlice = createSlice({
             }
         }
         ,
+        [getUserTransactions.pending]: (state) => ({
+            ...state,
+            loading: true,
+       
+        }),
+        [getUserTransactions.rejected]: (state) => ({
+            ...state,
+            loading: false,
+       
+        }) ,
+        [getTransactions.fulfilled]: (state, action) => {
+            return{
+
+            
+            ...state,
+            loading: false,
+            transactions: action.payload,
+            }
+        },
         [getUserTransactions.pending]: (state) => ({
             ...state,
             loading: true,

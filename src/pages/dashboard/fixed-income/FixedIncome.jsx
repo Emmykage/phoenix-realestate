@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getInvestments } from "../../../redux/actions/investment";
 import { moneyFormat } from "../../../utils/moneyFormat";
 import { getInvestmentPortfolio } from "../../../redux/actions/portfolio";
+import { getAccountProfile } from "../../../redux/actions/accountProfile";
 
 const FixedIncomeDashboard = () => {
   const {investments} = useSelector(state => state.investment)
@@ -24,6 +25,10 @@ const FixedIncomeDashboard = () => {
   useEffect(()=>{
     dispatch(getInvestmentPortfolio("fixed income"))
   },[])
+
+     useEffect(()=>{
+            dispatch(getAccountProfile())
+      },[])
 
 
 

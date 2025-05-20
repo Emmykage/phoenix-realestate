@@ -78,7 +78,7 @@ const AdminAccountProfile = () => {
             type="text"
             name="bank"
             class="w-full bg-gray-100 border border-gray-700 rounded-lg px-4 py-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Enter amount"
+            placeholder="Enter Account Number"
             required
             />
         </div>
@@ -104,7 +104,7 @@ const AdminAccountProfile = () => {
             type="text"
             name="ethereum"
             class="w-full bg-gray-100 border border-gray-700 rounded-lg px-4 py-2 text- text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="ETHEREUM"
+            placeholder="Ethereum Address"
             required
             />
         </div>
@@ -117,7 +117,7 @@ const AdminAccountProfile = () => {
             type="text"
             name="usdt"
             class="w-full bg-gray-100 border border-gray-700 rounded-lg px-4 py-2 text- text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Enter amount"
+            placeholder="Enter Address"
             required
             />
         </div>

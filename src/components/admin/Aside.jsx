@@ -48,12 +48,12 @@ const Aside = ({isOpen, setIsOpen}) => {
           <h3>Clients</h3>
         </NavLink>
         
-        {/* <NavLink 
+        <NavLink 
          onClick={() => setIsOpen(prev => !prev)}
-         to="/admin/orders" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
+         to="/admin/deposit" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
           <span><GiReceiveMoney /></span>
-          <h3>Orders</h3>
-        </NavLink> */}
+          <h3>Deposits</h3>
+        </NavLink>
        
         <NavLink 
          onClick={() => setIsOpen(prev => !prev)}

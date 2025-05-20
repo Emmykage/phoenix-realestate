@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../components/loader/Loader'
-import { approveTransaction, getTransaction } from '../redux/actions/wallet'
+import { updateTransaction, getTransaction } from '../redux/actions/wallet'
 import { useParams } from 'react-router-dom'
 
 const ViewImage = () => {
@@ -14,7 +14,7 @@ const ViewImage = () => {
     }, [])
 
     const handleApprove = (id) => {
-        dispatch(approveTransaction({id, status: "completed" }))
+        dispatch(updateTransaction({id, status: "completed" }))
       }
     
 

@@ -79,7 +79,9 @@ import CapitalDeposit from './pages/dashboard/capital-growth/Deposit';
 import WithdrawalPending from './pages/dashboard/fixed-income/Pending';
 import DashboardHomeAccount from './pages/dashboard/account/Account';
 import DashboardHome from './pages/dashboard/Index';
-// import { ToastContainer } from 'react-toastify';
+import TransactionDeposits from './pages/Admin/transactions';
+import TransactionViewer from './pages/Admin/transactions/view';
+
 function App() {
   const {loader} = useSelector(state => state.app)
   usePageReset()
@@ -181,9 +183,10 @@ function App() {
         <Route path='asset/:id' element={<AdminLayout><AssetView/></AdminLayout>}/>
         <Route path='clients' element={<AdminLayout><Clients/></AdminLayout>}/>
         <Route path='client/:id' element={<AdminLayout><ClientsPage/></AdminLayout>}/>
-        <Route path='transaction/:id' element={<AdminLayout><ViewImage/></AdminLayout>}/>
+        <Route path='transaction/:id' element={<AdminLayout><TransactionViewer/></AdminLayout>}/>
         <Route path='client/:client_id/portfolio/:portfolio_id' element={<AdminLayout><PortfolioItems/></AdminLayout>}/>
         <Route path='orders' element={<AdminLayout><Orders/></AdminLayout>}/>
+        <Route path='deposit' element={<AdminLayout><TransactionDeposits/></AdminLayout>}/>
         <Route path='analytics' element={<AdminLayout><Analytics/></AdminLayout>}/>
         <Route path='messages' element={<AdminLayout><AlertMessages/></AdminLayout>}/>
         <Route path='reports' element={<AdminLayout><Reports/></AdminLayout>}/>
