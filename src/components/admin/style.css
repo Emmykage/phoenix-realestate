@@ -523,10 +523,6 @@ main .recent-orders a {
   display: none;
 }
 
-.asset-view{
-
-}
-
 
 @media screen and (max-width: 768px) {
   .admin.contain {

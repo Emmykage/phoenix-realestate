@@ -7,6 +7,7 @@ import AddAsset from './AddAsset';
 import AppModal from '../../../components/modals/AppModal';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
+import Loader from '../../../components/loader/Loader';
 
 
 const AssetList = () => {
@@ -15,7 +16,7 @@ const AssetList = () => {
     const navigate = useNavigate()
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const { offers } = useSelector((state) => state.assets);
+    const { offers, loading } = useSelector((state) => state.assets);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -61,7 +62,13 @@ const AssetList = () => {
       <div className="max-w-6xl mt-4 mx-auto p-6">
         <h2 className="text-2xl font-bold mb-6">Available Properties</h2>
         <div className="grid md:grid-cols-3 gap-6">
-          {offers?.map((asset) => (
+          {loading ? <tr> 
+            <td colSpan={4}>
+               <Loader/>
+            </td>
+            
+           </tr> :
+           offers?.map((asset) => (
             <div
               key={asset.id}
               className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"

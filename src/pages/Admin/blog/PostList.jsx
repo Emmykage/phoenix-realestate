@@ -6,14 +6,14 @@ import { getPosts } from '../../../redux/actions/blog';
 import AddPost from './AddPost';
 import { useNavigate } from 'react-router-dom';
 import Loader from '../../../components/loader/Loader';
+import { FaArrowLeft } from 'react-icons/fa';
 
 // const PostList = () => {
 //    
 //   return (
 //     <div className='py-20'>
 
-// <Button onClick={()=> setOpen(true)} >Create Post</Button>
-
+// 
 // {loading ? <Loader/> : 
 
 // <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-5 '>
@@ -33,12 +33,7 @@ import Loader from '../../../components/loader/Loader';
 // }
 
 
-//         <AppModal open={open} handleClose={handleClose} handleOpen={handleOpen}>
-// <AddPost handleClose={handleClose}/>
-//         </AppModal>
-//     </div>
-//   )
-// }
+
 
 // export default 
 
@@ -82,10 +77,25 @@ const PostList = () => {
   ];
 
   return (
+    <>
+    <div className='mt-10 flex justify-between'>
+            <button onClick={() => navigate(-1)}><FaArrowLeft /> </button>
+            <h2 className='my-2 text-4xl font-semibold'>Blog Posts</h2>
+        
+          </div>
+    
     <div className="max-w-6xl mx-auto px-4 py-8">
       <h2 className="text-2xl font-bold mb-6">Latest Blog Posts</h2>
+      <Button onClick={()=> setOpen(true)} >Create Post</Button>
+
       <div className="grid md:grid-cols-3 gap-6">
-        {posts.map((post) => (
+        {loading ? <tr> 
+            <td colSpan={4}>
+               <Loader/>
+            </td>
+            
+           </tr> :
+           posts.map((post) => (
           <div
             key={post.id}
             className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
@@ -108,7 +118,12 @@ const PostList = () => {
           </div>
         ))}
       </div>
-    </div>
+    </div>     
+    
+     <AppModal open={open} handleClose={handleClose} handleOpen={handleOpen}>
+      <AddPost handleClose={handleClose}/>
+     </AppModal>
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { createPost } from '../../../redux/actions/blog'
+import { createPost, getPosts } from '../../../redux/actions/blog'
 import 'trix';
 import 'trix/dist/trix.css';
 import "./style.css"
@@ -32,6 +32,7 @@ const AddPost = ({
             if(createPost.fulfilled.match(result)){
                 formRef.current.reset()
                 dispatch(SET_LOADER(false))
+                 dispatch(getPosts())
                 handleClose()
             }else{
                 dispatch(SET_LOADER(false))

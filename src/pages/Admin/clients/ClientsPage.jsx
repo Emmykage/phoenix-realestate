@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './client.css';
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,6 +10,9 @@ import { approveTransaction } from '../../../redux/actions/wallet';
 import { userPorfolio } from '../../../redux/actions/portfolio';
 import { moneyFormat } from '../../../utils/moneyFormat';
 import { FaArrowLeft } from "react-icons/fa";
+import { createInterest } from '../../../redux/actions/interest';
+import AppModal from '../../../components/modals/AppModal';
+import { toast } from 'react-toastify';
 
 // const ClientsPage = () => {
 //  
@@ -163,9 +166,12 @@ import { FaArrowLeft } from "react-icons/fa";
 // export default ClientsPage;
 
 
+
 const UserProfileDashboard = () => {
 
   const { id } = useParams();
+  const [selectedPortfolio, setSelectedPortfolio] = useState(null)
+  const [toggleModal, setToggleModal] = useState(false)
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
@@ -190,10 +196,34 @@ const UserProfileDashboard = () => {
     ],
   };
 
-  const totalInvestment = user_.portfolios.reduce(
-    (sum, p) => sum + p.value,
-    0
-  );
+
+  const handlePortfolioInterest = (id_) => {
+
+
+  dispatch(createInterest({portfolio_interest : {
+    portfolio_id: id_
+  }
+})).then(result => {
+  if(createInterest.fulfilled.match(result)) {
+    console.log(result)
+    setToggleModal(false)
+    toast(result.payload.message)
+    dispatch(getClient(id))
+  }else{
+        console.log(result)
+    toast(result.payload.message)
+
+  }
+})
+}
+
+
+const handleSelectedPortfolio = (portfolio) => {
+  setSelectedPortfolio(portfolio)
+  setToggleModal(true)
+}
+
+  console.log(user)
 
   return (
     <>
@@ -231,7 +261,7 @@ const UserProfileDashboard = () => {
           <div className="p-4 bg-gray-50 rounded-lg col-span-2">
             <p className="text-gray-500">Total Investment</p>
             <p className="text-lg font-semibold text-indigo-600">
-            {moneyFormat(user?.net_earnings ?? 0)}
+            {moneyFormat(user?.total_investment ?? 0)}
             </p>
           </div>
         </div>
@@ -242,11 +272,18 @@ const UserProfileDashboard = () => {
             {user?.portfolios?.map((portfolio, idx) => (
               <li
                 key={idx}
-                className="flex justify-between items-center p-3 bg-gray-100 rounded-md"
+                className="flex justify-between items-center p-3 gap-1 bg-gray-100 rounded-md"
               >
-                <span>{portfolio.name}</span>
-                <button className='text-green-700 '>Generate Interest</button>
-                <span className="font-semibold text-gray-700">
+                <p>
+                   <span className='block'>{portfolio?.name}</span>
+                    <span className='block font-semibold text-green-900'>{
+                      moneyFormat(portfolio?.portfolio_investment)}</span>
+                  
+                </p>
+               
+                <button 
+                onClick={()=> {handleSelectedPortfolio(portfolio)}} className='text-green-700 bg-green-200 md:px-3 py-1 rounded '>Generate Interest</button>
+                <span className="font-semibold text-gray-800">
                   {moneyFormat(portfolio.investment_interest)}
                 </span>
               </li>
@@ -255,6 +292,32 @@ const UserProfileDashboard = () => {
         </div>
       </div>
     </div>
+
+
+    <AppModal open={toggleModal} onClose={() => {}} title="User Portfolio">
+      <div>
+         <h2 className="text-2xl  font-bold text-center">Generate Portfolio Interest</h2>
+      <h2 className="text-lg font-bold">Portfolio Details</h2>
+      <p className="text-sm text-gray-500 uppercase">{selectedPortfolio?.portfolio_name}</p>
+      <div className="mt-4">
+        <p className="text-md font-semibold">Portfolio Name: Real Estate Fund</p>
+        <p className="text-sm text-gray-500">Investment Value: {moneyFormat(selectedPortfolio?.portfolio_investment)}</p>
+        <p className="text-sm text-gray-500">Investment Interest: {moneyFormat(selectedPortfolio?.investment_interest)}</p>
+      </div>
+
+
+      <div>
+        <p className='my-5 font-semibold text-green-600'>Generate {selectedPortfolio?.portfolio_name === "fixed income" ? "5%" : "3%"} Interest</p>
+      </div>
+      <div className='gap-4 flex my-6'>
+        <button
+        onClick={()=> setToggleModal(false)} className="bg-gray-500 text-white px-4 py-2 rounded-md">Cancel</button>
+        <button
+        onClick={()=> handlePortfolioInterest(selectedPortfolio.id)}
+        className="bg-green-500 text-white px-4 py-2 rounded-md">Generate Interest</button>
+      </div>
+    </div>
+    </AppModal>
     </>
   );
 };

@@ -7,6 +7,7 @@ import { moneyFormat } from '../../../utils/moneyFormat';
 import { FaArrowLeft } from 'react-icons/fa';
 import { getTransaction, getTransactions } from '../../../redux/actions/wallet';
 import statusColorClass from '../../../utils/statusColorClass';
+import Loader from '../../../components/loader/Loader';
 
 
 
@@ -14,20 +15,20 @@ const TransactionDeposits = () => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-  const { transactions } = useSelector((state) => state.transactions);
+  const { transactions, loading } = useSelector((state) => state.transactions);
   useEffect(() => {
     dispatch(getTransactions({
       transaction_type: "deposit"
     }));
   }, []);
 
-  if (transactions?.length < 1) {
-    return (
-      <div className='py-10'>
-        <h1 className='text-center'> No Transacioons </h1>
-      </div>
-    );
-  }
+  // if (transactions?.length < 1) {
+  //   return (
+  //     <div className='py-10'>
+  //       <h1 className='text-center'> No Transacioons </h1>
+  //     </div>
+  //   );
+  // }
 
 
   
@@ -59,7 +60,12 @@ const TransactionDeposits = () => {
           </tr>
         </thead>
         <tbody>
-          {transactions.map((transaction, index) => (
+          {loading ? <tr> 
+            <td colSpan={6}>
+               <Loader/>
+            </td>
+            
+           </tr> : transactions.map((transaction, index) => (
             <tr key={transaction.id} className="hover:bg-gray-50">
               <td className="p-3 border-b">{index + 1}</td>
               <td className="p-3 border-b font-medium">{transaction.user.email}</td> 
