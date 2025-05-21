@@ -8,6 +8,7 @@ import DashboardInfo from '../../components/dashboard-info/DashboardInfo';
 
 const DashboardHome = () => {
   const {user} = useSelector(state => state.auth)
+  console.log("awcond", user)
 
   const activeLink = "active text-gray-600 text-theme-alt px-5 py-1 text-sm font-medium"
   const inactiveLink = "text-gray-600 px-5 py-1 text-sm font-medium"
@@ -32,6 +33,10 @@ const DashboardHome = () => {
 
 const DashboardSummary = () => {
     const {wallet} = useSelector(state => state.wallet)
+      const {user} = useSelector(state => state.auth)
+
+
+    console.log("first", wallet)
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
@@ -44,6 +49,7 @@ const DashboardSummary = () => {
           <div>
             <h4 className="text-gray-500 text-sm">Wallet Balance</h4>
             <p className="text-xl font-semibold">{moneyFormat(wallet?.wallet_balance)}</p>
+             <p className="text-xs font-normal">{moneyFormat(wallet?.virtual_balance)}</p>
           </div>
         </div>
 
@@ -55,7 +61,7 @@ const DashboardSummary = () => {
           </div>
           <div>
             <h4 className="text-gray-500 text-sm">Earnings</h4>
-            <p className="text-xl font-semibold">{moneyFormat(wallet?.wallet_balance)}</p>
+            <p className="text-xl font-semibold">{moneyFormat(user?.total_earnings)}</p>
           </div>
         </div>
 

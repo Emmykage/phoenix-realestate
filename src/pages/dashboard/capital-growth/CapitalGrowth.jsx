@@ -30,6 +30,8 @@ const CapitalGrowth = () => {
           dispatch(getAccountProfile())
         },[])
 
+        console.log(portfolio)
+
   const activeLink = "active text-gray-600 text-theme-alt px-5 py-1 text-sm font-medium"
   const inactiveLink = "text-gray-600 px-5 py-1 text-sm font-medium"
  
@@ -42,7 +44,7 @@ const CapitalGrowth = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <div className="bg-white rounded-2xl p-5 shadow-md">
           <h2 className="text-sm text-gray-400 mb-1">Investment Value</h2>
-          <p className="text-2xl font-semibold">{moneyFormat(wallet?.capital_growth?.toLocaleString())}</p>
+          <p className="text-2xl font-semibold">{moneyFormat(portfolio?.portfolio_investment?.toLocaleString())}</p>
         </div>
         <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">
           <h2 className="text-sm text-gray-400 mb-1">ROI</h2>
