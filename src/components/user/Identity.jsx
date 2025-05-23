@@ -52,15 +52,15 @@ const Identity = () => {
                         </div>
                     </div>
 
-                <div className="flex-1 sm:col-span-2">
+                {/* <div className="flex-1 sm:col-span-2">
                     <label for="email" className="block text-sm font-semibold">Date Of Birth</label>
                     <div className="mt-1">
                         <input type="date" name="data" id="date" disabled autocomplete="date" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-blue-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
                     </div>
-                </div>
+                </div> */}
             </div>
-        <h2 className='mt-2 text-lg leading-8 text-gray-600 text-left'>ENTITY INFORMATION</h2>
-        <div className='flex'>
+        {/* <h2 className='mt-2 text-lg leading-8 text-gray-600 text-left'>ENTITY INFORMATION</h2> */}
+        {/* <div className='flex'>
             <div className='flex-1'>
                 <label for="entity_Name" className="text-left block text-sm font-semibold">Entity Name</label>
                 <div className="mt-2.5">
@@ -68,8 +68,8 @@ const Identity = () => {
                 </div>
             </div>         
     
-        </div>
-        <div className='flex gap-x-8'>
+        </div> */}
+        {/* <div className='flex gap-x-8'>
             <div className='flex-1'>
                 <label for="address" className="text-left block text-sm font-semibold">Address</label>
                 <div className="mt-2.5">
@@ -83,7 +83,7 @@ const Identity = () => {
                 </div>
             </div>       
     
-        </div>
+        </div> */}
 
         <div className='flex flex-col md:flex-row gap-x-8'>
             <div className='flex-1'>
@@ -105,7 +105,7 @@ const Identity = () => {
     
         </div>
 
-        <h3 className='mt-2 text-lg leading-8 text-gray-600 text-left'>IDENTITY VERIFICATION</h3>
+        {/* <h3 className='mt-2 text-lg leading-8 text-gray-600 text-left'>IDENTITY VERIFICATION</h3>
 
         <div className='flex flex-col md:flex-row gap-x-8'>
             <div className='flex-1'>
@@ -129,13 +129,13 @@ const Identity = () => {
 
            
     
-        </div>
+        </div> */}
 
         <div>
         <div className='my-6'>
                 <input type="file" name="identification" id="identification" disabled  className='w-full border '/>
                 
-            </div>
+        </div>
             
         </div>
 

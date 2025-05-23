@@ -17,10 +17,9 @@ const AdminAccountProfile = () => {
     const [openDel, setOpenDel] = useState(false)
     const [selectedId, setSelectedId] = useState(null)
     const [formInput, setFormInput] = useState({
-        name: "",
+        name: "bitcoin",
         address: "",
         routing: "",
-        account_type: "bank"
 
     })
 
@@ -68,7 +67,7 @@ const AdminAccountProfile = () => {
                     dispatch(SET_LOADER(false))
                      element.reset()
                      setFormInput({
-                        name: "",
+                        name: "bitcoin",
                         address: "",
                         routing: "",
                         account_type: "bank"
@@ -112,7 +111,6 @@ const AdminAccountProfile = () => {
     }
 
 
-    console.log(formInput?.account_type )
   return (
     <>
     <div className='bg-white p-4 rounded-lg mt-20 shadow-lg'>
@@ -182,7 +180,6 @@ const AdminAccountProfile = () => {
 
                     <select
                     className="w-full bg-gray-100 border border-gray-700 rounded-lg px-4 py-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
-
                     required
                     onChange={handleChange}
                         value={formInput?.name} name="name" id="">
@@ -194,32 +191,20 @@ const AdminAccountProfile = () => {
                     </select>
                    
                 </div>
-                <div>
-                    <label class="block text-sm font-medium mb-2">TYPE</label>
-                    <select
-                    className="w-full bg-gray-100 border border-gray-700 rounded-lg px-4 py-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
-
-                    required
-                    onChange={handleChange}
-                        value={formInput?.account_type} name="account_type" id="">
-                        <option value="bank">BANK</option>
-                        <option value="crypto">CRYPTO</option>
-                    </select>
-                
-                </div>
+              
                 <div>
                     <label class="block text-sm font-medium mb-2"> ADDRESS/ACCOUT NUMBER             </label>
                     <input
                         onChange={handleChange}
                         value={formInput?.address}
-                    type="text"
-                    name="address"
-                    class="w-full bg-gray-100 border border-gray-700 rounded-lg px-4 py-2 text- text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Enter Address or Account Number"
-                    required
-                    />
+                        type="text"
+                        name="address"
+                        class="w-full bg-gray-100 border border-gray-700 rounded-lg px-4 py-2 text- text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Enter Address or Account Number"
+                        required
+                        />
                 </div>
-                {formInput?.account_type === "bank" && (
+                {formInput?.name === "bank" && (
                      <div>
                         <label class="block text-sm font-medium mb-2">ROUTING </label>
                             <input

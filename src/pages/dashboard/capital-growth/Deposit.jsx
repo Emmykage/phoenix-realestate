@@ -13,6 +13,8 @@ import { getAccountProfiles } from '../../../redux/actions/accountProfile'
 const CapitalDeposit = () => {
     const formRef = useRef(null)
     const dispatch = useDispatch()
+        const [selectedValue, setSelectedValue] = useState(null)
+    
     const [formInput, setFormInput] = useState({
         amount: 0,
         receipt: [],
@@ -46,6 +48,17 @@ const CapitalDeposit = () => {
         setFormInput({...formInput, coin_type: account_profiles[0]?.name})
     },[account_profiles])
 
+    
+    useEffect(()=> {
+            
+    
+        const selectValue = account_profiles?.find(item => item.id === formInput.coin_type)  ?? account_profiles[0]
+  
+        setSelectedValue(selectValue)
+    
+        },[account_profiles, formInput?.coin_type])
+    
+    
     
       const handleSubmit = () => {
 
@@ -91,10 +104,6 @@ const CapitalDeposit = () => {
         }
     }
 
-
-    const selectedValue = account_profiles?.find(coinValue => coinValue.name === formInput.coin_type) ?? ""
-
-    console.log(account_profiles, selectedValue)
     return (
     <div className='bg-white max-w-1450 box-shadow-gray my-6 rounded-sm py-2 md:px-4'>
      
@@ -105,18 +114,17 @@ const CapitalDeposit = () => {
             <form onSubmit={handleDepositModal} ref={formRef}>
                 <div  className='my-3 text-left'>
                     <label className='block m-1 font-medium'>Payment Method</label> 
-                    <div className=''>
-                
-                    <select onChange={(e) => setFormInput({...formInput, coin_type:  e.target.value})}  name='coin_type' id='coin_type' className='border form-select form-select-lg mb-3' required>
+                   <div className=''>
+                        <select
+                         onChange={(e) => setFormInput({...formInput, coin_type: e.target.value})}
+                          name='coin_type' id='coin_type' className='border form-select form-select-lg mb-3' required>
 
-                        {account_profiles?.map(item => (
-                        <option value={item?.name}>{item.name?.toUpperCase()}</option>
+                                {account_profiles?.map(item => (
+                                <option value={item?.id}>{item.name?.toUpperCase()}</option>
 
-                        ))}
-                    
-                    </select>
-
-                
+                                ))}
+                            
+                            </select>               
                         
                     </div>
                 </div>

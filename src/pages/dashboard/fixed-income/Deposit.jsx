@@ -15,6 +15,7 @@ import { getAccountProfiles } from '../../../redux/actions/accountProfile'
 const FixedIncomeDeposit = () => {
     const formRef = useRef(null)
     const dispatch = useDispatch()
+    const [selectedValue, setSelectedValue] = useState(null)
     const [formInput, setFormInput] = useState({
         amount: 0,
         receipt: [],
@@ -45,10 +46,21 @@ const FixedIncomeDeposit = () => {
     },[account_profiles])
 
 
+    useEffect(()=> {
+        
+
+    const selectValue = account_profiles?.find(item => item.id === formInput.coin_type)  ?? account_profiles[0]
+    console.log("fetchedss",selectValue)
+
+    setSelectedValue(selectValue)
+
+    },[account_profiles, formInput?.coin_type])
+
+
 
     
       const handleSubmit = () => {
-                        dispatch(SET_LOADER(true))
+        dispatch(SET_LOADER(true))
         
         const element = formRef.current
          const formData = new FormData()
@@ -90,7 +102,7 @@ const FixedIncomeDeposit = () => {
         }
     }
 
-    const selectedValue = account_profiles?.find(coinValue => coinValue.name === formInput.coin_type) ?? ""
+    console.log("====>",selectedValue)
 
     return (
     <div className='bg-white max-w-1450 box-shadow-gray my-6 rounded-sm py-2 md:px-4'>
@@ -103,10 +115,12 @@ const FixedIncomeDeposit = () => {
                 <div  className='my-3 text-left'>
                     <label className='block m-1 font-medium'>Payment Method</label> 
                     <div className=''>
-                        <select onChange={(e) => setFormInput({...formInput, coin_type:  e.target.value})}  name='coin_type' id='coin_type' className='border form-select form-select-lg mb-3' required>
+                        <select
+                         onChange={(e) => setFormInput({...formInput, coin_type: e.target.value})}
+                          name='coin_type' id='coin_type' className='border form-select form-select-lg mb-3' required>
 
                                 {account_profiles?.map(item => (
-                                <option value={item?.name}>{item.name?.toUpperCase()}</option>
+                                <option value={item?.id}>{item.name?.toUpperCase()}</option>
 
                                 ))}
                             
