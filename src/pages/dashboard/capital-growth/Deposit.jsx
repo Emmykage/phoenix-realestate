@@ -49,10 +49,6 @@ const CapitalDeposit = () => {
         setFormInput({...formInput, coin_type: paymentOptions[0]?.value})
     },[paymentOptions])
 
-
-    console.log("capital portfolio", portfolio)
-
-
     
       const handleSubmit = () => {
 

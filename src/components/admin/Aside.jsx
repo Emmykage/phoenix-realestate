@@ -8,6 +8,7 @@ import { GiReceiveMoney } from 'react-icons/gi';
 
 import { useDispatch } from 'react-redux';
 import { userProfile } from '../../redux/actions/auth';
+import { PiHandWithdraw } from "react-icons/pi";
 
 const Aside = ({isOpen, setIsOpen}) => {
   const navigate = useNavigate()
@@ -53,6 +54,13 @@ const Aside = ({isOpen, setIsOpen}) => {
          to="/admin/deposit" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
           <span><GiReceiveMoney /></span>
           <h3>Deposits</h3>
+        </NavLink>
+
+         <NavLink 
+         onClick={() => setIsOpen(prev => !prev)}
+         to="/admin/withdrawal" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
+          <span><PiHandWithdraw /></span>
+          <h3>withdrawals</h3>
         </NavLink>
        
         <NavLink 

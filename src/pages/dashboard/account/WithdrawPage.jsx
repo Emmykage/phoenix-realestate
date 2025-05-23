@@ -3,47 +3,54 @@ import React, { useEffect, useRef, useState } from 'react'
 import WithdrawalModal from '../../../components/modals/WithdrawalModal'
 import { useDispatch, useSelector } from 'react-redux'
 import { reset } from '../../../redux/wallet/transaction'
+import { SET_LOADER } from '../../../redux/app/app'
+import { createTransaction, getUserTransactions } from '../../../redux/actions/wallet'
+import { toast } from 'react-toastify'
 const AccountWithdraw = () => {
     const formRef = useRef(null)
-    const [toggleModalWithdrawal, setToggleModalWithdrawal] = useState(null)
+    const [openModal, setOpenModal] = useState(null)
+        const [formInput, setFormInput] = useState({
+            amount: 0,
+            receipt: [],
+            coin_type: "",
+            transaction_type: "deposit"
+    
+        })
+    
     const [withdraw, setWithdraw] = useState(null)  
     const [show, setShow] = useState("hidden")
     const {status} = useSelector(state => state.transactions)
     const dispatch = useDispatch()
-    const handleDepositModal = (e) => {
-        e.preventDefault()
-        const formData = new FormData()
-       
-        // const data = Object.fromEntries(formData)
-        setToggleModalWithdrawal("show-modal withdrawal")
-      
-            formData.append('transaction[coin_type]', e.target.coin_type.value)
-            formData.append('transaction[amount]', e.target.amount.value)
-            formData.append('transaction[address]', e.target.wallet_address.value)
-            formData.append('transaction[transaction_type]', "withdraw")
+    const handleSubmit = (e) => {
+
+    dispatch(SET_LOADER(true))
+        
+    const element = formRef.current
+
+        const formData = new FormData()     
+        formData.append('transaction[coin_type]', formInput.coin_type)
+        formData.append('transaction[amount]', formInput.amount)
+        formData.append('transaction[address]', formInput.wallet_address)
+        formData.append('transaction[transaction_type]', "withdraw")
 
    
-        setWithdraw(formData)
-               
+        dispatch(createTransaction(formData)).then(result => {
+                    if(createTransaction.fulfilled.match(result)){
+                        element.reset()
+                        setOpenModal(false)
+                        dispatch(SET_LOADER(false))
+                         dispatch(getUserTransactions())
+                        
+
+                        toast(result.payload.message || "Deposit has been successful", {type: "success"})
+
+                    }else{
+                        dispatch(SET_LOADER(false))
+
+                    toast(result.payload.message, {type: "error"})
+                    }
+                })               
     }
-
-    useEffect(()=> {
-        const element = formRef.current
-
-        if(status =="success"){
-            setShow("flex")
-            element.reset()
-            
-            setInterval(()=> {setShow("hidden"); dispatch(reset())})
-
-        }else{
-            setShow("hidden")
-        }
-    },[status])
-
-
-
-
   
 
   return (
@@ -104,7 +111,12 @@ const AccountWithdraw = () => {
         </div>
         </form>
         </div>
-        <WithdrawalModal toggleModal={toggleModalWithdrawal} setToggleModal={setToggleModalWithdrawal} withdrawal={withdraw}/>
+
+        
+        <AppModal  open={openModal}>
+            <Confirmation onCancel={()=> setOpenModal(false)} message={`Confirm Transaction Withdrawal`} title={"Confirm Withrawwal"} onConfirm={handleSubmit}  />
+        </AppModal>
+        
 
     </div>
   )

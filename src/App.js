@@ -79,8 +79,10 @@ import CapitalDeposit from './pages/dashboard/capital-growth/Deposit';
 import WithdrawalPending from './pages/dashboard/fixed-income/Pending';
 import DashboardHomeAccount from './pages/dashboard/account/Account';
 import DashboardHome from './pages/dashboard/Index';
-import TransactionDeposits from './pages/Admin/transactions';
+// import TransactionDeposits from './pages/Admin/transactions';
 import TransactionViewer from './pages/Admin/transactions/view';
+import TransactionDeposits from './pages/Admin/transactions/deposit';
+import TransactionWithdrawal from './pages/Admin/transactions/withdrawal';
 
 function App() {
   const {loader} = useSelector(state => state.app)
@@ -186,6 +188,7 @@ function App() {
         <Route path='transaction/:id' element={<AdminLayout><TransactionViewer/></AdminLayout>}/>
         <Route path='client/:client_id/portfolio/:portfolio_id' element={<AdminLayout><PortfolioItems/></AdminLayout>}/>
         <Route path='orders' element={<AdminLayout><Orders/></AdminLayout>}/>
+        <Route path='withdrawal' element={<AdminLayout><TransactionWithdrawal /></AdminLayout>}/>
         <Route path='deposit' element={<AdminLayout><TransactionDeposits/></AdminLayout>}/>
         <Route path='analytics' element={<AdminLayout><Analytics/></AdminLayout>}/>
         <Route path='messages' element={<AdminLayout><AlertMessages/></AdminLayout>}/>
