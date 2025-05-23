@@ -6,12 +6,14 @@ import { reset } from '../../../redux/wallet/transaction'
 import { SET_LOADER } from '../../../redux/app/app'
 import { createTransaction, getUserTransactions } from '../../../redux/actions/wallet'
 import { toast } from 'react-toastify'
+import AppModal from '../../../components/modals/AppModal'
+import Confirmation from '../../../components/modals/DepositModal'
 const AccountWithdraw = () => {
     const formRef = useRef(null)
-    const [openModal, setOpenModal] = useState(null)
+    const [openModal, setOpenModal] = useState(false)
         const [formInput, setFormInput] = useState({
             amount: 0,
-            receipt: [],
+            address: "",
             coin_type: "",
             transaction_type: "deposit"
     
@@ -30,26 +32,30 @@ const AccountWithdraw = () => {
         const formData = new FormData()     
         formData.append('transaction[coin_type]', formInput.coin_type)
         formData.append('transaction[amount]', formInput.amount)
-        formData.append('transaction[address]', formInput.wallet_address)
+        formData.append('transaction[address]', formInput.address)
         formData.append('transaction[transaction_type]', "withdraw")
 
    
         dispatch(createTransaction(formData)).then(result => {
-                    if(createTransaction.fulfilled.match(result)){
-                        element.reset()
-                        setOpenModal(false)
-                        dispatch(SET_LOADER(false))
-                         dispatch(getUserTransactions())
-                        
+            if(createTransaction.fulfilled.match(result)){
+                element.reset()
+                setOpenModal(false)
+                dispatch(SET_LOADER(false))
+                    dispatch(getUserTransactions())
+                
 
-                        toast(result.payload.message || "Deposit has been successful", {type: "success"})
+                toast(result.payload.message || "withdrawl has been initiated", {type: "success"})
 
-                    }else{
-                        dispatch(SET_LOADER(false))
+            }else{
+                dispatch(SET_LOADER(false))
+                toast(result.payload.message, {type: "error"})
+            }
+        })               
+    }
 
-                    toast(result.payload.message, {type: "error"})
-                    }
-                })               
+    const handleModal = (e) => {
+        e.preventDefault()
+        setOpenModal(prev => !prev)
     }
   
 
@@ -67,15 +73,20 @@ const AccountWithdraw = () => {
         </div>
 
         <div>
-        <form onSubmit={handleDepositModal} ref={formRef}>
+        <form onSubmit={handleModal} ref={formRef}>
             <div  className='my-3 text-left'>
                 <label className='block m-1 font-medium uppercase'>Payment Method</label> 
                 <div className=''>
                
-                <select name='coin_type' id='coin_type' className='border form-select form-select-lg mb-3' required>
+                <select name='coin_type'
+
+                onChange={(e) => setFormInput({...formInput, coin_type: e.target.value})} 
+                id='coin_type' className='border form-select form-select-lg mb-3' required>
                     <option className='border' value="USD THETHER" selected>USD THETHER</option>
-                    <option value="BITCOIN">BITCOIN</option>
-                    <option value="ETHERUM">ETHERUM (ERC-20)</option>
+                    <option value="bitcoin">BITCOIN</option>
+                    <option value="ethereum">ETHERUM (ERC-20)</option>
+                    <option value="usdt">USDT</option>
+                    <option value="bank">Bank Transfer</option>
                 </select>
 
                
@@ -83,8 +94,12 @@ const AccountWithdraw = () => {
                 </div>
             </div>
             <div>
-                <label className='uppercase font-medium block m-1' htmlFor="amount">Enter Amount</label>
-                <input type="number" className='border'  placeholder='Enter Amount in USD' name="amount" required min={10}/>
+                <label
+                 className='uppercase font-medium block m-1' htmlFor="amount">Enter Amount</label>
+                <input type="number" className='border'
+                    onChange={(e) => setFormInput({...formInput, amount: e.target.value})} 
+                    placeholder='Enter Amount in USD' name="amount" required min={10}
+                />
             </div>
             <ul>
                     <p className='font-medium'>Minimum Withdrawal = 500 USDT</p>
@@ -97,9 +112,12 @@ const AccountWithdraw = () => {
                 </ul>
                 {/* <div className='m-2'> */}
                     {/* <p className='text-dark text-left text-base font-semibold my-3'>Deposit Address</p> */}
-                    <div className='my-2'>
-                        <label className='block m-1 uppercase font-medium' htmlFor="client_address">Enter Wallet Address</label>
-                        <input className='border' type='text' id="client_address" name='wallet_address' required placeholder='Enter Wallet Address'/>
+                    
+                    <div className='my-10'>
+                        <label className='block m-1 uppercase font-medium' htmlFor="address">Enter Wallet Address</label>
+                        <input
+                          onChange={(e) => setFormInput({...formInput, address: e.target.value})} 
+                        className='border' type='text' id="address" name='address' required placeholder='Enter Wallet Address'/>
                     </div>
 
                 {/* </div> */}

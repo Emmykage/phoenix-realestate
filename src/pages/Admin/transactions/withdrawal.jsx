@@ -18,7 +18,7 @@ const TransactionWithdrawal = () => {
   const { transactions, loading } = useSelector((state) => state.transactions);
   useEffect(() => {
     dispatch(getTransactions({
-      transaction_type: "withdrawal"
+      transaction_type: "withdraw"
     }));
   }, []);
 
@@ -30,6 +30,9 @@ const TransactionWithdrawal = () => {
   //   );
   // }
 
+
+
+  console.log(transactions)
 
   
 

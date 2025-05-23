@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getAssets } from '../../../redux/actions/assets';
+import { delAsset, getAssets } from '../../../redux/actions/assets';
 import { Button } from '@mui/material';
 import AddAsset from './AddAsset';
 import AppModal from '../../../components/modals/AppModal';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import Loader from '../../../components/loader/Loader';
+import { SET_LOADER } from '../../../redux/app/app';
+import Confirmation from '../../../components/modals/DepositModal';
 
 
 const AssetList = () => {
 
     const [open, setOpen] = useState(false)
+    const [opendel, setOpenDel] = useState(false)
+    const [selectedId, setSelectedId] = useState(null)
     const navigate = useNavigate()
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -28,9 +32,11 @@ const AssetList = () => {
   
       dispatch(SET_LOADER(true))
   
-      dispatch(delAsset(id)).then(result =>{
+      dispatch(delAsset(selectedId)).then(result =>{
         if(delAsset.fulfilled.match(result)){
           dispatch(SET_LOADER(false))
+          setOpenDel(false)
+          setSelectedId(null)
           dispatch(getAssets())
         }else{
           dispatch(SET_LOADER(false))
@@ -88,7 +94,9 @@ const AssetList = () => {
                     View
                   </button>
                   <button
-                  onClick={() => handleDel(asset.id)}
+                  onClick={() => {
+                    setOpenDel(true)
+                    setSelectedId(asset.id)}}
                     className="bg-red-500 text-white text-sm px-4 py-2 rounded hover:bg-red-600"
                   >
                     Delete
@@ -104,6 +112,12 @@ const AssetList = () => {
       </div>
         <AppModal open={open} handleClose={handleClose} handleOpen={handleOpen}>
         <AddAsset handleClose={handleClose}/>
+      </AppModal>
+
+        <AppModal open={opendel} handleClose={()=> setOpenDel(false)}
+        //  handleOpen={handleOpen}
+         >
+        <Confirmation title={"Confirm Delete"} message={"Confirm Property to delete"} onConfirm={handleDel} onCancel={()=> setOpenDel(false)}/>
       </AppModal>
     </>
   );

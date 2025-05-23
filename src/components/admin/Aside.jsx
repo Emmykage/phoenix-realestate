@@ -1,5 +1,5 @@
 import React from 'react';
-import { BsFillGrid1X2Fill } from 'react-icons/bs';
+import { BsArrowBarDown, BsFillGrid1X2Fill } from 'react-icons/bs';
 import { AiOutlineClose, AiOutlinePlus, AiOutlineUser } from 'react-icons/ai';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { BiLogOut } from 'react-icons/bi';
@@ -59,7 +59,7 @@ const Aside = ({isOpen, setIsOpen}) => {
          <NavLink 
          onClick={() => setIsOpen(prev => !prev)}
          to="/admin/withdrawal" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
-          <span><PiHandWithdraw /></span>
+          <span><BsArrowBarDown /></span>
           <h3>withdrawals</h3>
         </NavLink>
        
