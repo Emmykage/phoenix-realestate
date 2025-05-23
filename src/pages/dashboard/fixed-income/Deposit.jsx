@@ -10,6 +10,7 @@ import Confirmation from '../../../components/modals/DepositModal'
 import { createTransaction, getUserTransactions } from '../../../redux/actions/wallet'
 import { toast } from 'react-toastify'
 import { SET_LOADER } from '../../../redux/app/app'
+import { getAccountProfiles } from '../../../redux/actions/accountProfile'
 
 const FixedIncomeDeposit = () => {
     const formRef = useRef(null)
@@ -22,11 +23,8 @@ const FixedIncomeDeposit = () => {
 
     })
 
-    const [paymentOptions, setPaymentOptions] = useState([])
-    const {account_profile} = useSelector(state => state.account)
-
+    const {account_profiles} = useSelector(state => state.account)
     const {portfolio} = useSelector(state => state.portfolios)
-
 
     const [openModal, setOpenModal] = useState(false)
 
@@ -36,19 +34,16 @@ const FixedIncomeDeposit = () => {
     }
    
 
-      useEffect(()=> {
-
-        const options = Object.entries(account_profile).map((item) => ({
-            label: item[0], value: item[1]
-        })).slice(1)
-        setPaymentOptions(options)
-
-      },
-    [account_profile])
+        useEffect(()=> {
+            dispatch(getAccountProfiles())
+        },[])
+    
+    
 
     useEffect(()=> {
-        setFormInput({...formInput, coin_type: paymentOptions[0]?.value})
-    },[paymentOptions])
+        setFormInput({...formInput, coin_type: account_profiles[0]?.name})
+    },[account_profiles])
+
 
 
     
@@ -56,10 +51,8 @@ const FixedIncomeDeposit = () => {
                         dispatch(SET_LOADER(true))
         
         const element = formRef.current
-
-        const typeCoin = paymentOptions.find(item => item.value === formInput.coin_type)
          const formData = new FormData()
-         formData.append('transaction[coin_type]', typeCoin.label)
+         formData.append('transaction[coin_type]', selectedValue.name)
          formData.append('transaction[amount]', formInput.amount)
          formData.append('transaction[receipt]', formInput.receipt[0])
          formData.append('transaction[transaction_type]', "deposit") 
@@ -78,7 +71,7 @@ const FixedIncomeDeposit = () => {
                 toast(result.payload.message || "Deposit has been successful", {type: "success"})
 
             }else{
-                                dispatch(SET_LOADER(false))
+               dispatch(SET_LOADER(false))
                 
                toast(result.payload.message, {type: "error"})
             }
@@ -97,8 +90,7 @@ const FixedIncomeDeposit = () => {
         }
     }
 
-
-    const selectedValue = paymentOptions?.find(coinValue => coinValue.value === formInput.coin_type) ?? ""
+    const selectedValue = account_profiles?.find(coinValue => coinValue.name === formInput.coin_type) ?? ""
 
     return (
     <div className='bg-white max-w-1450 box-shadow-gray my-6 rounded-sm py-2 md:px-4'>
@@ -111,17 +103,14 @@ const FixedIncomeDeposit = () => {
                 <div  className='my-3 text-left'>
                     <label className='block m-1 font-medium'>Payment Method</label> 
                     <div className=''>
-                
-                    <select onChange={(e) => setFormInput({...formInput, coin_type:  e.target.value})}  name='coin_type' id='coin_type' className='border form-select form-select-lg mb-3' required>
+                        <select onChange={(e) => setFormInput({...formInput, coin_type:  e.target.value})}  name='coin_type' id='coin_type' className='border form-select form-select-lg mb-3' required>
 
-                        {paymentOptions?.map(item => (
-                        <option value={item?.value}>{item.label?.toUpperCase()}</option>
+                                {account_profiles?.map(item => (
+                                <option value={item?.name}>{item.name?.toUpperCase()}</option>
 
-                        ))}
-                    
-                    </select>
-
-                
+                                ))}
+                            
+                            </select>               
                         
                     </div>
                 </div>
@@ -139,7 +128,7 @@ const FixedIncomeDeposit = () => {
                         </div> */}
                         <div className='flex-1 flex  items-center barc'>
                             <div className=' w-full mr-3'>
-                                <input type="text"  value={selectedValue?.value} readOnly className='text-xl font-semibold bg-gray'/>
+                                <input type="text"  value={selectedValue?.address} readOnly className='text-xl font-semibold bg-gray'/>
                             </div>  
                             {/* <div className='p-2 border bg-gray-light rounded-sm'>
                             <a onClick={handleCopyClick}><FaCopy className='text-4xl ml-2 bg-gray-light ' /></a>

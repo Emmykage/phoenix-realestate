@@ -58,7 +58,47 @@ export const updateAccountProfile = createAsyncThunk('update-account/profile', a
   
 
 
-export const getAccountProfile = createAsyncThunk('account/get-profile', async (account_profile, {rejectWithValue}) => {
+export const getAccountProfile = createAsyncThunk('account/get-profile', async (id, {rejectWithValue}) => {
+    try {
+      const response = await fetch(`${baseUrl}account_profiles/${id}`)
+      
+      const {data, message} = await response.json()
+      if(!response.ok){
+        return rejectWithValue({message: message })
+      }
+      
+      return data;
+    } catch (error) {
+      return rejectWithValue({message: error.message ?? "Something went wrong"})
+  
+    }
+   
+  });
+export const AccountProfileDel = createAsyncThunk('account/DELETE_ACCOUNT_PROFILE', async (id, {rejectWithValue}) => {
+    try {
+      const response = await fetch(`${baseUrl}account_profiles/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-type': 'application/json',
+           Authorization: `Bearer ${token()}`,
+    
+        },
+      })
+      
+      const {message} = await response.json()
+      if(!response.ok){
+        return rejectWithValue({message: message })
+      }
+      
+      return message;
+    } catch (error) {
+      return rejectWithValue({message: error.message ?? "Something went wrong"})
+  
+    }
+   
+  });
+
+  export const getAccountProfiles = createAsyncThunk('account/GET_PROFILES', async (_, {rejectWithValue}) => {
     try {
       const response = await fetch(`${baseUrl}account_profiles`)
       

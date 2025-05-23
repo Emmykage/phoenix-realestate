@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { createAccountProfile, getAccountProfile, updateAccountProfile } from "../actions/accountProfile";
+import { createAccountProfile, getAccountProfile, getAccountProfiles, updateAccountProfile } from "../actions/accountProfile";
 
 const initialState = {
     loading: true,
-    offers: [],
+    account_profiles: [],
     error: false,
     account_profile: {}
 
@@ -49,6 +49,26 @@ const accountSlice = createSlice({
             error: false
         }),
         [getAccountProfile.rejected]: (state) => ({
+            ...state,
+            loading: false,
+            error: true
+        }),
+        [getAccountProfiles.fulfilled]: (state, action) => {
+            const response = action.payload;
+
+            return{
+                ...state,
+                account_profiles: response,
+                error: false,
+                loading: false
+            }
+        },
+        [getAccountProfiles.pending]: (state) => ({
+            ...state,
+            loading: true,
+            error: false
+        }),
+        [getAccountProfiles.rejected]: (state) => ({
             ...state,
             loading: false,
             error: true

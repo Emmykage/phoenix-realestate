@@ -8,7 +8,8 @@ import Confirmation from '../../../components/modals/DepositModal'
 import { createTransaction, getUserTransactions } from '../../../redux/actions/wallet'
 import { toast } from 'react-toastify'
 import { SET_LOADER } from '../../../redux/app/app'
-// import { reset } from '../redux/wallet/transaction'
+import { getAccountProfiles } from '../../../redux/actions/accountProfile'
+
 const CapitalDeposit = () => {
     const formRef = useRef(null)
     const dispatch = useDispatch()
@@ -20,8 +21,8 @@ const CapitalDeposit = () => {
 
     })
 
-    const [paymentOptions, setPaymentOptions] = useState([])
-    const {account_profile} = useSelector(state => state.account)
+
+    const {account_profiles} = useSelector(state => state.account)
 
     const {portfolio} = useSelector(state => state.portfolios)
 
@@ -34,30 +35,24 @@ const CapitalDeposit = () => {
     }
    
 
+    useEffect(()=> {
+        dispatch(getAccountProfiles())
+    },[])
 
-      useEffect(()=> {
 
-        const options = Object.entries(account_profile).map((item) => ({
-            label: item[0], value: item[1]
-        })).slice(1)
-        setPaymentOptions(options)
 
-      },
-    [account_profile])
 
     useEffect(()=> {
-        setFormInput({...formInput, coin_type: paymentOptions[0]?.value})
-    },[paymentOptions])
+        setFormInput({...formInput, coin_type: account_profiles[0]?.name})
+    },[account_profiles])
 
     
       const handleSubmit = () => {
 
         dispatch(SET_LOADER(true))
         const element = formRef.current
-
-        const typeCoin = paymentOptions.find(item => item.value === formInput.coin_type)
          const formData = new FormData()
-         formData.append('transaction[coin_type]', typeCoin.label)
+         formData.append('transaction[coin_type]', selectedValue.name)
          formData.append('transaction[amount]', formInput.amount)
          formData.append('transaction[receipt]', formInput.receipt[0])
          formData.append('transaction[transaction_type]', "deposit") 
@@ -97,9 +92,9 @@ const CapitalDeposit = () => {
     }
 
 
-    const selectedValue = paymentOptions?.find(coinValue => coinValue.value === formInput.coin_type) ?? ""
+    const selectedValue = account_profiles?.find(coinValue => coinValue.name === formInput.coin_type) ?? ""
 
-    console.log("first", paymentOptions)
+    console.log(account_profiles, selectedValue)
     return (
     <div className='bg-white max-w-1450 box-shadow-gray my-6 rounded-sm py-2 md:px-4'>
      
@@ -114,8 +109,8 @@ const CapitalDeposit = () => {
                 
                     <select onChange={(e) => setFormInput({...formInput, coin_type:  e.target.value})}  name='coin_type' id='coin_type' className='border form-select form-select-lg mb-3' required>
 
-                        {paymentOptions?.map(item => (
-                        <option value={item?.value}>{item.label?.toUpperCase()}</option>
+                        {account_profiles?.map(item => (
+                        <option value={item?.name}>{item.name?.toUpperCase()}</option>
 
                         ))}
                     
@@ -136,7 +131,7 @@ const CapitalDeposit = () => {
                      
                         <div className='flex-1 flex  items-center barc'>
                             <div className=' w-full mr-3'>
-                                <input type="text"  value={selectedValue?.value} readOnly className='text-xl font-semibold bg-gray'/>
+                                <input type="text"  value={selectedValue?.address} readOnly className='text-xl font-semibold bg-gray'/>
                             </div>  
                         </div>       
 
