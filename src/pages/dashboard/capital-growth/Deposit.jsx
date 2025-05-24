@@ -152,7 +152,7 @@ const CapitalDeposit = () => {
                     name='receipt' onChange={(e)=> (setFormInput({...formInput,receipt: e.target.files }))} className='border w-full' required/>
                 </div>
             <div>
-            <button type='submit' className='py-2 btn w-full '>Deposite</button>
+                <button type='submit' className='py-2 btn w-full '>Deposite</button>
             </div>
             </form>
         <div>

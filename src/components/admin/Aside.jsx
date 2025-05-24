@@ -9,88 +9,146 @@ import { GiReceiveMoney } from 'react-icons/gi';
 import { useDispatch } from 'react-redux';
 import { userProfile } from '../../redux/actions/auth';
 import { PiHandWithdraw } from "react-icons/pi";
+import { Drawer } from '@mui/material';
 
-const Aside = ({isOpen, setIsOpen}) => {
-  const navigate = useNavigate()
+const Aside = ({isOpen, 
+  setIsOpen,  
+    onClose
+}) => {
+
+
+ 
+
+  return (
+    <>
+    
+    <aside 
+    className={`px-2 bg-white hidden md:flex flex-col border shrink-0 absolute md:relative z-10 shadow h-full bg-whit border-t md:pl-2 pt-4 overflow-hidden`}
+    >
+      <List/>
+
+    </aside>
+    <div className='block md:hidden'>      
+            <React.Fragment>
+              <Drawer
+                open={isOpen}
+                onClose={onClose}
+                onClick={() => setIsOpen(false)}
+              >
+                    
+
+    
+                 <aside id='aside' className={`bg-white flex flex-col border shrink-0 relative z-10 shadow h-full bg-whit border-t md:pl-2 py-0 overflow-hidden`}>
+
+                  <div className="top">
+                    <span className='block mt-2 ml-auto w-max' onClick={()=> setIsOpen(prev => !prev)}>
+                          <AiOutlineClose className='text-2xl md:hidden ' />
+                    </span>
+                    <NavLink to={"/admin/dashboard"} className="logo p-4">
+                      <img src={"/logos/12.png"} alt="logo" className='max-w-32 m-auto'/>
+                    
+                    </NavLink>
+                      <div className="close" id="close-btn">
+                        
+                      </div>
+                    </div>
+    
+                 <List/>
+                    
+                   
+                  
+                  
+                </aside> 
+              </Drawer>
+            </React.Fragment>
+            
+        </div>
+
+    </>
+  );
+};
+
+
+const List = () => {
+    const navigate = useNavigate()
   const dispatch = useDispatch()
   const activeLink = 'active';
   const normalLink = 'pl-3';
-
-  const handleLogOut = () => {
+   const handleLogOut = () => {
     localStorage.removeItem("phoenix_auth")
     dispatch(userProfile())
     navigate("/auth/admin_login")
   }
-  return (
-    <aside className={isOpen ? 'open' : "close"}>
-      <div className="top">
-      <span className='block mt-5 ml-auto w-max' onClick={()=> setIsOpen(prev => !prev)}>
-            <AiOutlineClose className='text-2xl md:hidden ' />
-          </span>
-        <NavLink to={"/admin/dashboard"} className="logo p-5">
-          <img src={"/logos/12.png"} alt="logo" className='max-w-32 m-auto'/>
-        
-        </NavLink>
-        <div className="close" id="close-btn">
-          
-        </div>
-      </div>
-      <div className="side-bar">
-        <NavLink
-        onClick={() => setIsOpen(prev => !prev)}
-        to="/admin/dashboard" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
-          <span><BsFillGrid1X2Fill /></span>
-          <h3>Dashboard</h3>
-        </NavLink>
-        <NavLink
-         onClick={() => setIsOpen(prev => !prev)}
-          to="/admin/clients" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
-          <span><AiOutlineUser /></span>
-          <h3>Clients</h3>
-        </NavLink>
-        
-        <NavLink 
-         onClick={() => setIsOpen(prev => !prev)}
-         to="/admin/deposit" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
-          <span><GiReceiveMoney /></span>
-          <h3>Deposits</h3>
-        </NavLink>
 
-         <NavLink 
-         onClick={() => setIsOpen(prev => !prev)}
-         to="/admin/withdrawal" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
-          <span><BsArrowBarDown /></span>
-          <h3>withdrawals</h3>
-        </NavLink>
+  
+  const navItems = [
+    {
+      id: 1,
+      link: "/admin/dashboard",
+      icon: <BsFillGrid1X2Fill />,
+      label: "Dashboard"
+    },
+     {
+      id: 2,
+      link: "/admin/clients",
+      icon: <BsFillGrid1X2Fill />,
+      label: "Clients"
+    },
+     {
+      id: 3,
+      link: "/admin/deposit",
+      icon: <GiReceiveMoney />,
+      label: "Deposits"
+    },
+    {
+      id: 4,
+      link: "/admin/withdrawal",
+      icon: <MdOutlineInventory />,
+      label: "withdrawals"
+    },
+    {
+      id: 6,
+      link: "/admin/assets",
+      icon: <MdOutlineInventory />,
+      label: "Assets"
+    },
+    {
+      id: 5,
+      link: "/admin/posts",
+      icon: <AiOutlinePlus />,
+      label: "Blog"
+    },
+    {
+      id: 7,
+      link:   "/admin/account-profile",
+      icon: <MdAccountBalance />,
+      label: "Account"
+    }
+    
+  
+  ]
+  return(
+    <>
+    
+      <div className="side-bar">
+        {navItems.map(item => (
+          <NavLink
+            key={item.id}
+              onClick={() => setIsOpen(prev => !prev)}
+              to={item.link} className={({ isActive }) => (isActive ? activeLink : normalLink)}>
+                <span>{item.icon}</span>
+                <p>{item.label}</p>
+          </NavLink>
+        ))}
        
-        <NavLink 
-         onClick={() => setIsOpen(prev => !prev)}
-          to="/admin/assets" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
-          <span><MdOutlineInventory /></span>
-          <h3>Assets</h3>
-        </NavLink>
-        
-     
-        <NavLink 
-         onClick={()=>setIsOpen(prev => !prev)}
-         to="/admin/posts" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
-          <span><AiOutlinePlus /></span>
-          <h3>Post</h3>
-        </NavLink>
-        <NavLink 
-         onClick={()=>setIsOpen(prev => !prev)}
-         to="/admin/account-profile" className={({ isActive }) => (isActive ? activeLink : normalLink)}>
-          <span><MdAccountBalance  /></span>
-          <h3>Account</h3>
-        </NavLink>
+       
         <a onClick={handleLogOut} className={({ isActive }) => (isActive ? activeLink : normalLink)}>
           <span><BiLogOut /></span>
-          <h3>Logout</h3>
+          <p>Logout</p>
         </a>
       </div>
-
-    </aside>
-  );
-};
+    </>
+  )
+}
 
 export default Aside;

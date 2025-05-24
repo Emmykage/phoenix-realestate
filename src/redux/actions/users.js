@@ -15,20 +15,14 @@ const listUsers = createAsyncThunk('users/GET_CLIENTS', async (_, {rejectWithVal
 
     const result = await response.json()
     if(!response.ok){
-      return rejectWithValue({message: result.message})
+      return rejectWithValue({message: result.message ?? "Failed to fetch users"})
     }
     return result;
   } catch (error) {
-    
+    return rejectWithValue({message:  "Something went wrong: Failed to fetch users"})
+
   }
-  const response = await fetch(`${baseUrl}users`, {
-    method: 'GET',
-    headers: {
-      'Content-type': 'application/json',
-      Authorization: `Bearer ${token()}`,
-    },
-  }).then((res) => res.json());
-  return response;
+
 });
 
 const getUser = createAsyncThunk('user/get_account', async () => {

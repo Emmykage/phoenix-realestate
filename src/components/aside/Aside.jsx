@@ -165,9 +165,7 @@ return(
         
         {list()}                 
     </aside> 
-    <div className='block md:hidden'>
-        
-      
+    <div className='block md:hidden'>      
         <React.Fragment>
           <Drawer
             open={open}

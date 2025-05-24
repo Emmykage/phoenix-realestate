@@ -170,7 +170,7 @@ const AdminAccountProfile = () => {
        
     </div>
 
-    <AppModal open={openModal} setOpenModal={setOpenModal} title="Add Account Profile">
+    <AppModal open={openModal} handleClose={()=> setOpenModal(false)} title="Add Account Profile">
         <div>
                     
                 <form onSubmit={handleSubmit} ref={formRef} className="space-y-4">
