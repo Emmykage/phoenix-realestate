@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import WithdrawEarning from '../transaction/WithdrawEarning'
 import ConfirmEarning from '../modals/ConfirmEarning'
 import ClearConfirmEarning from '../modals/ClearConfirmEarning'
-import { getUser } from '../../redux/actions/users'
 
 const Earnings = () => {
   const dispatch = useDispatch()

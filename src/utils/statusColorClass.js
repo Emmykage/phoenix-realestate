@@ -1,6 +1,5 @@
 const statusColorClass = (status) => {
 
-    console.log(status)
   switch (status?.toLowerCase()) {
     case 'approved':
     case 'completed':

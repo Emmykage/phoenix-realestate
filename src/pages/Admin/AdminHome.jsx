@@ -21,7 +21,7 @@ const AHome = () => {
     <div>
       <h1>Dashboard</h1>
     
-      <div className="insights grid md:grid-cols-3">
+      <div className="insights md:gap-6 grid md:grid-cols-3">
         <div className="sales">
           <span><AutoGraphOutlinedIcon /></span>
           <div className="middle">

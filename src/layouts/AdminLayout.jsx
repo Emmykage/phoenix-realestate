@@ -3,8 +3,7 @@ import Aside from '../components/admin/Aside';
 import '../components/admin/style.css';
 import Right from '../components/admin/Right';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUser } from '../redux/actions/users';
-import Loader from '../components/loader/Loader';
+
 import { useNavigate } from 'react-router-dom';
 import LoadingPage from '../pages/LoadingPage';
 
@@ -20,7 +19,9 @@ const AdminLayout = ({ children }) => {
     if (!user && !loading || (!loading && user?.role !== "admin")) {
       navigate('/auth/admin_login');
     }
-  }, [user, loading, navigate]);
+  }, [user]);
+
+  console.log(loading, user)
 
   if (loading) return <LoadingPage />; // Show loader while checking auth
 

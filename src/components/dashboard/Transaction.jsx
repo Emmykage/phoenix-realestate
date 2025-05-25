@@ -7,7 +7,6 @@ import WithdrawalModal from '../modals/WithdrawalModal'
 import { usd_format } from '../misc/USD'
 import { NavLink } from 'react-router-dom'
 import { formattedDate } from '../misc/Date'
-// import { getUser } from '../../redux/actions/users'
 
 const Transaction = () => {
 

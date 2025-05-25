@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { getClient, getUser, listUsers, pickUser, userPorfolio } from "../actions/users";
+import { getClient, listUsers } from "../actions/users";
 
 const initialState = {
     users: [],
@@ -50,44 +50,7 @@ const usersSlice = createSlice({
                 loading: false
             }
         },
-        [getUser.fulfilled]: (state, action) => {
-            const response = action.payload;
-            console.log(response)
-            if(action.payload.message){
-                return {
-                    ...state,
-                    error: true,
-                    loading: false,
-                    message: response.message
-                }
-            }else{
-                return{
-                    ...state,
-                user: response,
-                loading: false,
-                error: false
-                }
-            }
-        },
-        [getUser.pending]: (state)=> {
-
-            return{
-                ...state,
-                loading: true,
-                error: false
-            }
-
-
-        },
-        [getUser.rejected]: (state) => {
-            
-            return{
-                ...state,
-                loading: false,
-                error: true,
-                message: "No internet"
-            }
-        },
+      
 
          [getClient.fulfilled]: (state, action) => {
             const response = action.payload;

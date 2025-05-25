@@ -25,21 +25,6 @@ const listUsers = createAsyncThunk('users/GET_CLIENTS', async (_, {rejectWithVal
 
 });
 
-const getUser = createAsyncThunk('user/get_account', async () => {
-  const response = await fetch(`${baseUrl}users/account`, {
-    method: 'GET',
-    headers: {
-      'Content-type': 'application/json',
-      Authorization: `Bearer ${token()}`,
-
-    },
-
-  }).then((res) => res.json());
-
-  console.log(response)
-  return response;
-});
-
 export const getClient = createAsyncThunk('user/GET_CLIENT', async (id, {rejectWithValue}) => {
   try {
     const response = await fetch(`${baseUrl}users/${id}`, {
@@ -79,4 +64,4 @@ const patchUser = createAsyncThunk('user/update_user', async() => {
   }).then((res) => res.json());
   return response
 })
-export { listUsers, getUser, patchUser };
+export { listUsers, patchUser };

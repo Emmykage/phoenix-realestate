@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUser } from '../../redux/actions/users'
+
 import Loader from '../loader/Loader'
 import { updateUser } from '../../redux/users/users'
 

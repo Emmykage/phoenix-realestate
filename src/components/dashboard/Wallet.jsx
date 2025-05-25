@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { usd_format } from '../misc/USD'
-import { getUser } from '../../redux/actions/users'
 import Loader from '../loader/Loader'
 import { IoWalletOutline } from "react-icons/io5";
 import { FaFolderOpen } from "react-icons/fa";

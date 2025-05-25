@@ -25,9 +25,7 @@ const Clients = () => {
     );
   }
 
-  console.log(users)
-
-  
+ 
 
   return (
     <>

@@ -134,8 +134,8 @@ const List = () => {
         {navItems.map(item => (
           <NavLink
             key={item.id}
-              onClick={() => setIsOpen(prev => !prev)}
-              to={item.link} className={({ isActive }) => (isActive ? activeLink : normalLink)}>
+d              to={item.link}
+               className={({ isActive }) => (isActive ? activeLink : normalLink)}>
                 <span>{item.icon}</span>
                 <p>{item.label}</p>
           </NavLink>

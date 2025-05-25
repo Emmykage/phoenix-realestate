@@ -95,12 +95,7 @@ export const getTransactions = createAsyncThunk("transactions/GET_TRANSACTIONS",
 
     const refinedParams = new URLSearchParams(params).toString()
 
-    console.log(refinedParams)
-
-
-
-
-    
+   
     try {
         const response = await fetch(`${baseUrl}transactions?${refinedParams}`, {
             method: "GET",
@@ -112,7 +107,7 @@ export const getTransactions = createAsyncThunk("transactions/GET_TRANSACTIONS",
         })
 
         const {data, message} = await response.json()
-        console.log(data)
+
         if(!response.ok){
             return rejectWithValue({message: message || "failed to fetch user transactions"})
         }
