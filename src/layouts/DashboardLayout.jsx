@@ -49,7 +49,7 @@ const DashboardLayout = ({children}) => {
     return (
     <div className='h-screen flex  bg-gray-200 overflow-y-auto'>
        
-        <Aside isOpen={toggle} onClose={()=> {setToggle(false)}}/>
+        <Aside open={toggle} onClose={()=> {setToggle(false)}}/>
         
         <div className='bg-green-20 flex-1 overflow-y-auto relative'>
          

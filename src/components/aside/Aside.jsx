@@ -27,6 +27,7 @@ export default function Aside({
     onClose
 }) {
     const dispatch = useDispatch()
+    console.log(open)
 
   const [state, setState] = React.useState({
     top: false,
@@ -165,7 +166,9 @@ return(
         
         {list()}                 
     </aside> 
-    <div className='block md:hidden'>      
+    <div className='block md:hidden'>
+        
+      
         <React.Fragment>
           <Drawer
             open={open}
