@@ -1,44 +1,37 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
 import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+
 import { CiLogout } from "react-icons/ci";
 
 import { IoAnalyticsOutline } from "react-icons/io5";
-import { RiLuggageDepositLine } from "react-icons/ri";
 import { MdSupervisorAccount } from 'react-icons/md';
-import { BiCustomize } from 'react-icons/bi';
-import { BsBriefcase } from 'react-icons/bs';
+
 import { userlogOut } from '../../redux/actions/auth';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { IoMdHome } from 'react-icons/io';
 import { GrFolderCycle, GrTransaction } from 'react-icons/gr';
 import { useDispatch } from 'react-redux';
+
 export default function Aside({
     open,
     onClose
 }) {
     const dispatch = useDispatch()
-    console.log(open)
 
-  const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
+    const [state, setState] = React.useState({
+        top: false,
+        left: false,
+        bottom: false,
+        right: false,
+    });
 
-      const navigate = useNavigate()
-  
-  const toggleDrawer = (anchor, open) => (event) => {
+    const navigate = useNavigate()
+
+    const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
@@ -80,7 +73,6 @@ export default function Aside({
     },
    
 ]
-
 const itemFunding = [
     {
         link: '/dashboard/account/withdrawal',
@@ -95,9 +87,6 @@ const itemFunding = [
 ]
 const active = "bg-gray-200 flex items-center  px-2 py-4 m-auto w-full h-full hover:bg-gray-300"
 const inactive = " flex items-center py-4 px-2 m-auto w-full h-full hover:bg-gray-300"
-
-// const active = ""
-// const inactive = ""
 
 const list = () => {
 return(
@@ -132,25 +121,24 @@ return(
                         </NavLink>
                         </ListItem>
                     ))}
-                    <li className='my-2 h-10 mt-auto bg-gray-100'>
-                        <a onClick={()=> {
-                            dispatch(userlogOut()).then(result => {
-                                if(userlogOut.fulfilled.match(result)){
-                                    navigate('/auth/login');
-                                }
-                            }); 
-                             }} className={inactive}>
-                        <CiLogout/>
 
-                        <span className='text-base font-medium'>Log Out</span>
+                    <ListItem  className='my-2 h-10 items-center flex'>
+                    <a onClick={()=> {
+                        dispatch(userlogOut()).then(result => {
+                            if(userlogOut.fulfilled.match(result)){
+                                navigate('/auth/login');
+                            }
+                        }); 
+                            }
+                        }
+                            className="flex items-center py-4 px-2 m-auto w-full h-full hover:bg-gray-300">
+                        <ListItemIcon className=''>
+                            <CiLogout  className='text-2xl'/>
+                        </ListItemIcon> 
+                        <span className='text-base font-medium '>Log Out</span>
                         </a>
-                        </li>
-
-           
-          
-          </List>
-
-             
+                    </ListItem>
+                </List>  
 
             
     </Box>

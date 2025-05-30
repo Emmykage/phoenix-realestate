@@ -10,7 +10,7 @@ const CapitalGrowth = () => {
     investmentValue: 25000,
     roi: 0.12, // 12%
     earnings: 3000,
-    duration: "12 Months",
+    duration: "Monthly",
     lastUpdated: "2025-05-08",
   };
 

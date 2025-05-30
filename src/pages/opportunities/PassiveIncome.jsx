@@ -23,7 +23,7 @@ const PassiveIncome = () => {
             </div>
             <div>
             <h3 className='text-center text-white font-semibold'>
-                Earn up to 75% passively investing in real estate projects Annually.
+                Earn up to 60% passively investing in real estate projects Annually.
 
 
                 </h3>
@@ -51,7 +51,7 @@ const PassiveIncome = () => {
                         <p className='border-b border-gray-300 flex gap-4 items-center'>
                         <FaCheck className='text-xs'/>
 
-                        UP TO 5% MONTHLY ROI 
+                        UP TO 3.5% MONTHLY ROI 
 
 
                         </p>
@@ -81,7 +81,7 @@ const PassiveIncome = () => {
                    
                     <p className='border-b flex gap-4 items-center border-gray-300'>
                     <FaCheck className='text-xs'/>
-                    UPTO 6.5% MONTHLY ROI
+                    UP TO 5% MONTHLY ROI
 
 
                     </p>

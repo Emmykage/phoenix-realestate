@@ -176,6 +176,7 @@ const UserProfileDashboard = () => {
   const navigate = useNavigate()
 
   const { user } = useSelector((state) => state.users);
+  const [interest, setInterest] = useState(null)
 
   console.log(id, user)
 
@@ -201,7 +202,8 @@ const UserProfileDashboard = () => {
 
 
   dispatch(createInterest({portfolio_interest : {
-    portfolio_id: id_
+    portfolio_id: id_,
+    interest
   }
 })).then(result => {
   if(createInterest.fulfilled.match(result)) {
@@ -307,7 +309,9 @@ const handleSelectedPortfolio = (portfolio) => {
 
 
       <div>
-        <p className='my-5 font-semibold text-green-600'>Generate {selectedPortfolio?.portfolio_name === "fixed income" ? "5%" : "3%"} Interest</p>
+        <p className='my-5 font-semibold text-green-600'>Generate {selectedPortfolio?.portfolio_name === "fixed income" ? "3%" : "5%" } Interest</p>
+            <label htmlFor="interest" className='font-medium text-gray-600'>Enter Interest</label>
+        <input id='interst' type="number" value={interest} onChange={(e) => setInterest(e.target.value)} placeholder='Specify interest' className='border'/>
       </div>
       <div className='gap-4 flex my-6'>
         <button

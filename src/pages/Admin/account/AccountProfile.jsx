@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 import Loader from '../../../components/loader/Loader'
 import AppModal from '../../../components/modals/AppModal'
 import { useNavigate } from 'react-router-dom'
-import { FaArrowAltCircleLeft, FaArrowCircleLeft } from 'react-icons/fa'
+import { FaArrowAltCircleLeft, FaArrowCircleLeft, FaArrowLeft } from 'react-icons/fa'
 import Confirmation from '../../../components/modals/DepositModal'
 
 const AdminAccountProfile = () => {
@@ -116,7 +116,7 @@ const AdminAccountProfile = () => {
     <div className='bg-white p-4 rounded-lg mt-20 shadow-lg'>
 
         <div className='flex justify-between'>
-            <button onClick={() => navigate(-1)} className=''><FaArrowAltCircleLeft/></button>
+            <button onClick={() => navigate(-1)}><FaArrowLeft /> </button>
             <button onClick={() => setOpenModal(true)} className='bg-primary text-white py-2 px-4 rounded-lg'>Add Account Profile</button>
         </div>
         <h2 className='my-5'>Add Account Profile</h2>

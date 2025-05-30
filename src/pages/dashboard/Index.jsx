@@ -2,7 +2,7 @@ import React from 'react'
 import { Banknote, Building, PieChart, Wallet } from 'lucide-react';
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import userImage from "../../assets/images/pictures/user.png"
+
 import { moneyFormat } from '../../utils/moneyFormat';
 import DashboardInfo from '../../components/dashboard-info/DashboardInfo';
 
@@ -12,6 +12,7 @@ const DashboardHome = () => {
 
   const activeLink = "active text-gray-600 text-theme-alt px-5 py-1 text-sm font-medium"
   const inactiveLink = "text-gray-600 px-5 py-1 text-sm font-medium"
+
   return (
     <div className='max-w-7x mx-0 sm:m-auto  px-2 account'>
       <div className='flex justify-between'>
@@ -33,10 +34,7 @@ const DashboardHome = () => {
 
 const DashboardSummary = () => {
     const {wallet} = useSelector(state => state.wallet)
-      const {user} = useSelector(state => state.auth)
-
-
-    console.log("first", wallet)
+    const {user} = useSelector(state => state.auth)
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
