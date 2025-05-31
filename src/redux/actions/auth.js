@@ -26,7 +26,7 @@ const registerUser = createAsyncThunk('user/register', async (data, {rejectWithV
       body: formData,
     })
     
-    const {data, token} = await response.json()
+    const {data, token, message} = await response.json()
 
     if(!response.ok){
       return rejectWithValue({message: message ?? "Failed to login"})

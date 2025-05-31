@@ -225,18 +225,16 @@ const handleSelectedPortfolio = (portfolio) => {
   setToggleModal(true)
 }
 
-  console.log(user)
-
   return (
     <>
     <div className='mt-10'>
     <button onClick={() => navigate(-1)}><FaArrowLeft /> </button>
     </div>
     
-    <div className="max-  mt-20 mx-auto p-6 bg-white shadow-md rounded-2xl space-y-6">
-      <div className="flex justify-between items-center border-b pb-4">
+    <div className="max-  mt-20 mx-auto p-6 bg-white shadow-md rounded-2xl space-y-2 md:space-y-6">
+      <div className="flex md:flex-row flex-col justify-between items-center border-b pb-4">
        
-        <div>
+        <div className='bg-red- text-center  md:text-left'>
           <h2 className="text-xl font-bold">User Profile</h2>
           <p className="text-sm text-gray-500">{user?.role}</p>
         </div>
@@ -245,6 +243,59 @@ const handleSelectedPortfolio = (portfolio) => {
           <p className="text-sm text-gray-500">{user?.email}</p>
         </div>
       </div>
+
+      <div className='flex gap-4'>
+        <span className='block py-2 border border-gray-200 flex-1 px-4 rounded'>
+          {user?.first_name}
+        </span>
+         <span  className='block py-2 border border-gray-200 flex-1 px-4 rounded'>
+          {user?.last_name}
+        </span>
+      </div>
+         <div className='space-y-3'>
+          
+      <div className='flex justify-between'></div>
+      <div className='flex flex-col md:flex-row gap-4'>
+
+        <div className='flex-1'>
+          <p>Purpose</p>
+          <span className='block py-2 border border-gray-200 flex-1 px-4 rounded'>
+          {user?.profile?.investment_purpose}
+        </span>
+
+        </div>
+
+        <div className='flex-1'>
+          <p>Type</p>               
+        
+          <span  className='block py-2 border border-gray-200 flex-1 px-4 rounded'>
+            {user?.profile?.investment_property}
+          </span>
+        </div>
+
+      </div>
+      <div className='flex flex-col md:flex-row gap-4 justify-between'>
+
+        <div className='flex-1 gap-4'>
+          <p>Initial Capital</p>
+          <span className='block py-2 border border-gray-200 flex-1 px-4 rounded'>
+            {user?.profile?.initial_investment}
+          </span>
+        </div>
+
+        <div className='flex-1'>
+          
+
+
+        <p>Account Type</p>
+         <span  className='block py-2 border border-gray-200 flex-1 px-4 rounded'>
+          {user?.profile?.investor_type}
+        </span>
+        
+        </div>
+      </div>
+
+      </div>  
 
       <div className="space-y-4">
         <div className="grid grid-cols-2 gap-4 text-sm">

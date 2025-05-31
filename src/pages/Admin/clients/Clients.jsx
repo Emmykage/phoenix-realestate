@@ -17,15 +17,7 @@ const Clients = () => {
   useEffect(() => {
     dispatch(listUsers());
   }, []);
-  if (users?.length < 1) {
-    return (
-      <div className='py-10'>
-        <h1 className='text-center'> No Clients </h1>
-      </div>
-    );
-  }
 
- 
 
   return (
     <>
@@ -34,7 +26,7 @@ const Clients = () => {
         <button onClick={() => navigate(-1)}><FaArrowLeft /> </button>
         <h2 className='my-10 text-4xl font-semibold'>Users and Clients</h2>
 
-        </div>
+      </div>
         
 
     
