@@ -105,8 +105,6 @@ const AssetView = () => {
   }
 
   const handleChange = (event) => {
-    console.log(event.target)
-
     const {
       target: { value, name },
     } = event;

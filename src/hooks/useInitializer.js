@@ -6,7 +6,6 @@ import { userProfile } from "../redux/actions/auth"
 const useInitializer = () => {
     const dispatch = useDispatch()
     useEffect(() => {
-        console.log("fetching user data")
         dispatch(userProfile())
     },[])
 }

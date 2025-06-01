@@ -21,20 +21,7 @@ const TransactionWithdrawal = () => {
       transaction_type: "withdraw"
     }));
   }, []);
-
-  // if (transactions?.length < 1) {
-  //   return (
-  //     <div className='py-10'>
-  //       <h1 className='text-center'> No Transacioons </h1>
-  //     </div>
-  //   );
-  // }
-
-
-
-  console.log(transactions)
-
-  
+ 
 
   return (
     <>

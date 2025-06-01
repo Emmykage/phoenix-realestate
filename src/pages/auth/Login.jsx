@@ -35,7 +35,6 @@ const Login = () => {
                    }else
                    {
               dispatch(SET_LOADER(false))
-
                     toast(result.payload.message || "Failed to Login", {type: "error"})
        
                    }

@@ -177,9 +177,6 @@ const UserProfileDashboard = () => {
 
   const { user } = useSelector((state) => state.users);
   const [interest, setInterest] = useState(null)
-
-  console.log(id, user)
-
   useEffect(() => {
   dispatch(getClient(id))
   }, [])
@@ -207,12 +204,10 @@ const UserProfileDashboard = () => {
   }
 })).then(result => {
   if(createInterest.fulfilled.match(result)) {
-    console.log(result)
     setToggleModal(false)
     toast(result.payload.message)
     dispatch(getClient(id))
   }else{
-        console.log(result)
     toast(result.payload.message)
 
   }

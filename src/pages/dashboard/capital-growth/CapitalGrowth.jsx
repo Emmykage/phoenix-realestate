@@ -26,11 +26,9 @@ const CapitalGrowth = () => {
 
 
 
-       useEffect(()=>{
-          dispatch(getAccountProfile())
-        },[])
-
-        console.log(portfolio)
+  useEffect(()=>{
+    dispatch(getAccountProfile())
+  },[])
 
   const activeLink = "active text-gray-600 text-theme-alt px-5 py-1 text-sm font-medium"
   const inactiveLink = "text-gray-600 px-5 py-1 text-sm font-medium"

@@ -50,8 +50,6 @@ const FixedIncomeDeposit = () => {
         
 
     const selectValue = account_profiles?.find(item => item.id === formInput.coin_type)  ?? account_profiles[0]
-    console.log("fetchedss",selectValue)
-
     setSelectedValue(selectValue)
 
     },[account_profiles, formInput?.coin_type])
@@ -101,8 +99,6 @@ const FixedIncomeDeposit = () => {
             console.error('Unable to copy text: ', err)
         }
     }
-
-    console.log("====>",selectedValue)
 
     return (
     <div className='bg-white max-w-1450 box-shadow-gray my-6 rounded-sm py-2 md:px-4'>

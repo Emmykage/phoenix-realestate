@@ -49,8 +49,6 @@ const PostList = () => {
         useEffect(()=> {
             dispatch(getPosts())
         }, [])
-
-        console.log(posts)
     
   const blogPosts = [
     {

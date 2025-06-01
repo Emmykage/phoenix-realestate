@@ -11,15 +11,22 @@ const TransactionViewer = () => {
     const {id} = useParams()
     const dispatch = useDispatch()
     const [toggleModal, setToggleModal] = React.useState(false)
-    const [transactionStatus, setTransactionStatus] = React.useState("completed")
+    const [toggleBonusModal, setToggleBonusModal] = React.useState(false)
+    const [transactionStatus, setTransactionStatus] = React.useState("")
+    const [transactionInfo, setTransactionInfo] = React.useState({
+      status: "",
+      bonus: null
+    })
 
     const {transaction} = useSelector(state => state.transactions)
 
-    const handleStatus = () => {
+    const handleUpdate = (transactionDetails) => {
+
+      console.log(transactionDetails)
 
         dispatch(updateTransaction({id, 
            transaction: {
-            status: transactionStatus
+            ...transactionDetails
            }          
            })).then(result => {
 
@@ -27,6 +34,14 @@ const TransactionViewer = () => {
             toast(result.payload.message || "transaction updated", {type: "success"})
             dispatch(getTransaction(id))
             setToggleModal(false)
+
+            setToggleBonusModal(false)
+            setTransactionStatus(null)
+            setTransactionInfo({
+              status: "",
+              bonus: null
+    })
+
             }else{
                 toast(result.payload.message || "Failed to update transaction", {type: "error"})
             }
@@ -40,29 +55,45 @@ const TransactionViewer = () => {
     },{})
   if (!transaction) return <div className="text-center text-gray-500">No transaction selected</div>;
 
-  console.log(transaction)
-
-  const { amount, type, status, receipt_url, transaction_type, created_at } = transaction;
-
+  const { amount, type, status, bonus, receipt_url, transaction_type, created_at } = transaction;
+    console.log(bonus)
   return (
     <div className="max-w-6xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-2xl font-sans">
       <h2 className="text-xl font-bold mb-4 text-center">Transaction Details</h2>
-      <h2 className="text-xl font-bold mb-4">{transaction_type}</h2>
+
+      <div className='flex justify-between my-2'>
+        <h2 className="text-xl font-bold mb-4">{transaction_type}</h2>
+
+           <button
+          onClick={() => {
+            setToggleBonusModal(true)
+          }
+        }
+          className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition"
+        >
+          Add Bonus
+        </button>
+      </div>
+     
 
       <div className="mb-3">
         <span className="font-semibold">Amount:</span> {moneyFormat(amount)}
+      </div>
+
+        <div className="mb-3">
+        <span className="font-semibold">Bonus:</span> {moneyFormat(bonus ?? 0)}
       </div>
 
       <div className="mb-3">
         <span className="font-semibold">Type:</span> {type}
       </div>
 
-      <div className="mb-3">
+    <div className="mb-3">
         <span className="font-semibold">Status:</span>
         <span className={`ml-2 px-2 py-1 rounded-md text-sm font-medium ${statusColorClass(status)}`}>
           {status}
         </span>
-      </div>
+      </div> 
 
       <div className="mb-3">
         <span className="font-semibold">Transaction Type:</span>
@@ -130,15 +161,55 @@ const TransactionViewer = () => {
                 class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-xl w-1/2 mr-2"
                 onClick={()=> setToggleModal(false)}
             >
-                Decline
+                Cancel
             </button>
             <button
                 class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl w-1/2 ml-2"
-                onClick={() => handleStatus()}
+                onClick={() => handleUpdate({status: transactionStatus})}
             >
                 Confirm
             </button>
             </div>
+        </div>
+    </div>
+
+      </AppModal>
+
+       <AppModal open={toggleBonusModal} onClose={() => setToggleBonusModal(false)}>
+     <div class=" inset-0  flex items-center justify-center z-50">
+
+        <div class="bg-white rounded-2xl  p-6 w-full max-w-md">
+          <form onSubmit={(e) => {
+            e.preventDefault()
+
+            if(transactionInfo.bonus){
+            handleUpdate(transactionInfo)
+
+            }
+          }}>
+            <div>
+              <label htmlFor="bonus">Bonus</label>
+              <input type="number" name='bonus' value={transactionInfo.bonus} onChange={(e)=> {setTransactionInfo({bonus: e.target.value})}}/>
+            </div>
+
+            <div class="flex justify-between">
+            <button
+                class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-xl w-1/2 mr-2"
+                onClick={()=> setToggleBonusModal(false)}
+            >
+                Cancel
+            </button>
+            <button
+                type='submit'
+                class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl w-1/2 ml-2"
+               
+              
+            >
+                Confirm
+            </button>
+            </div>
+            </form>
+            
         </div>
     </div>
 

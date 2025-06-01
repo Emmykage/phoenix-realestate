@@ -99,8 +99,6 @@ const transactionSlice = createSlice({
             const fixedIncomeTransactions = action.payload?.filter(transaction => transaction.portfolio?.portfolio_name === "fixed income") || []
             const capitalGrowthTransactions = action.payload?.filter(transaction => transaction.portfolio?.portfolio_name === "capital growth") || []
 
-
-            console.log(action.payload)
             return{
 
             

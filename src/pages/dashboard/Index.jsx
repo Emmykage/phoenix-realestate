@@ -8,8 +8,6 @@ import DashboardInfo from '../../components/dashboard-info/DashboardInfo';
 
 const DashboardHome = () => {
   const {user} = useSelector(state => state.auth)
-  console.log("awcond", user)
-
   const activeLink = "active text-gray-600 text-theme-alt px-5 py-1 text-sm font-medium"
   const inactiveLink = "text-gray-600 px-5 py-1 text-sm font-medium"
 

@@ -73,10 +73,7 @@ const usersSlice = createSlice({
 
 
         },
-        [getClient.rejected]: (state, action) => {
-
-            console.log(action.payload)
-            
+        [getClient.rejected]: (state, action) => {            
             return{
                 ...state,
                 loading: false,

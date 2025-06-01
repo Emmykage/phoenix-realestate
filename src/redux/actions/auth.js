@@ -16,8 +16,7 @@ const registerUser = createAsyncThunk('user/register', async (data, {rejectWithV
   data?.initial_investment && formData.append("user[profile_attributes][initial_investment]", data.initial_investment)
   data?.investor_type && formData.append("user[profile_attributes][investor_type]", data.investor_type)
 
-  const dataO = Object.fromEntries(formData)
-  // console.log(dataO)
+
   try {
 
     const response = await fetch(`${baseUrl}users`, {
@@ -68,7 +67,7 @@ const userSession = createAsyncThunk('user/session', async (data, {rejectWithVal
 
     return result.user;
   } catch (error) {
-    return rejectWithValue({message: error?.response.message ?? "Failed to login"})
+    return rejectWithValue({message: error?.message ?? "Failed to login: Something went wrong"})
 
   }
 });
