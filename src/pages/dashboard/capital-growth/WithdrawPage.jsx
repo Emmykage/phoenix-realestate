@@ -5,6 +5,8 @@ import AppModal from '../../../components/modals/AppModal'
 import Confirmation from '../../../components/modals/DepositModal'
 import { createTransaction } from '../../../redux/actions/wallet'
 import { toast } from 'react-toastify'
+import WithdrawalNotes from '../components/withdrawal-notes'
+import { getAccountProfiles } from '../../../redux/actions/accountProfile'
 const CapitaltWithdraw = () => {
     const formRef = useRef(null)
         const [formInput, setFormInput] = useState({
@@ -14,11 +16,10 @@ const CapitaltWithdraw = () => {
             transaction_type: "deposit"
     
         })
-    const {account_profile} = useSelector(state => state.account)
-    const [paymentOptions, setPaymentOptions] = useState([])
-    
+    const {account_profiles} = useSelector(state => state.account)
+    const [selectedValue, setSelectedValue] = useState(null)
 
-        const {portfolio} = useSelector(state => state.portfolios)
+    const {portfolio} = useSelector(state => state.portfolios)
     
     
     const [openModal, setOpenModal] = useState(false)
@@ -36,10 +37,8 @@ const CapitaltWithdraw = () => {
     const handleSubmit = () => {
         const element = formRef.current
 
-        const typeCoin = paymentOptions.find(item => item.value === formInput.coin_type)
-
          const formData = new FormData()
-         formData.append('transaction[coin_type]', typeCoin.label)
+         formData.append('transaction[coin_type]', selectedValue.name)
          formData.append('transaction[amount]', formInput.amount)
          formData.append('transaction[address]', formInput.address)
          formData.append('transaction[transaction_type]', "withdraw") 
@@ -62,26 +61,35 @@ const CapitaltWithdraw = () => {
       }
     
 
-      useEffect(()=> {
+   
 
-        const options = Object.entries(account_profile).map((item) => ({
-            label: item[0], value: item[1]
-        })).slice(1)
-        setPaymentOptions(options)
-
-      },
-    [account_profile])
+   useEffect(()=> {
+        setFormInput({...formInput, coin_type: account_profiles[0]?.name})
+    },[account_profiles])
 
 
     useEffect(()=> {
-        setFormInput({...formInput, coin_type: paymentOptions[0]?.value})
-    },[paymentOptions])
+            dispatch(getAccountProfiles())
+        },[])
+        
 
+
+   useEffect(()=> {
+        setFormInput({...formInput, coin_type: account_profiles[0]?.name})
+    },[account_profiles])
 
   
+   useEffect(()=> {    
+        const selectValue = account_profiles?.find(item => item.id === formInput.coin_type)  ?? account_profiles[0]
+        setSelectedValue(selectValue)
+        
+        },[account_profiles, formInput?.coin_type])
+    
+    
+  console.log(selectedValue)
 
   return (
-    <div className='md:px-4 max-w-1450 bg-white mx-3 box-shadow rounded-sm py-4 my-5'>
+    <div className='px-4 max-w-1450 bg-white mx-3 box-shadow rounded-sm py-4 my-5'>
        
         <div className='my-3'>
             <h3 className='text-right font-semibold'>Withdrawal</h3>
@@ -93,14 +101,16 @@ const CapitaltWithdraw = () => {
                 <label className='block m-1 font-medium uppercase'>Payment Method</label> 
                 <div className=''>
                
-                <select onChange={(e) => setFormInput({...formInput, coin_type:  e.target.value})}  name='coin_type' id='coin_type' className='border form-select form-select-lg mb-3' required>
+                <select
+                        onChange={(e) => setFormInput({...formInput, coin_type: e.target.value})}
+                        name='coin_type' id='coin_type' className='border form-select form-select-lg mb-3' required>
 
-                    {paymentOptions?.map(item => (
-                    <option value={item?.value}>{item.label?.toUpperCase()}</option>
+                            {account_profiles?.map(item => (
+                            <option value={item?.id}>{item.name?.toUpperCase()}</option>
 
-                    ))}
-
-                    </select>
+                  ))}
+                        
+                </select> 
 
                
                      
@@ -110,27 +120,13 @@ const CapitaltWithdraw = () => {
                     <label className='block m-1' htmlFor="amount">Enter Amount</label>
                     <input type="number" className='border'  placeholder='Enter Amount in USD' name="amount" onChange={(e)=> setFormInput({...formInput, amount: e.target.value})} required min={500}/>
                 </div>
-            <ul>
-                    <p className='font-medium'>Minimum Withdrawal = 500 USDT</p>
-                    <li className='px-3 font-normal'><p>Ensure that your account information is accurate and up-to-date</p></li>
-                    <li className='px-3 font-normal'><p>Be aware of any daily or transactional withdrawal limits imposed by the financial institution.</p></li>
-                    <li className='px-3 font-normal'><p>Be aware of any potential delays, especially for large or international transactions.</p></li>
-                    <li className='px-3 font-normal'><p>Withdrwal may be via any of the supported networks: Tron (TRC20), BSC(BEP20), ETH(ER20), Polygon, Arbitum Network </p></li>
-                    <li className='px-3 font-normal'><p>Your withdrawal request will be confirmed and approved in a minute</p></li>
-                    {/* <li className='px-3 font-normal'><p>Please make deposit before submitting the form</p></li> */}
-                </ul>
-                {/* <div className='m-2'> */}
-                    {/* <p className='text-dark text-left text-base font-semibold my-3'>Deposit Address</p> */}
-                    <div className='my-2'>
+        
+             <div className='my-2'>
                         <label className='block m-1 uppercase font-medium' htmlFor="client_address">Enter Wallet Address</label>
                         <input className='border' type='text' onChange={(e) => setFormInput({...formInput, address: e.target.value})} id="client_address" name='wallet_address' required placeholder='Enter Wallet Address'/>
                     </div>
-
-                {/* </div> */}
-                {/* <div className=''>
-                    <input type="file" name='receipt' className='border w-full' />
-                </div> */}
-        <div>
+                <WithdrawalNotes/>
+        <div className='mt-2'>
         <button type='submit' className='btn py-3 w-full'>Request</button>
         </div>
         </form>

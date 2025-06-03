@@ -101,7 +101,7 @@ const FixedIncomeDeposit = () => {
     }
 
     return (
-    <div className='bg-white max-w-1450 box-shadow-gray my-6 rounded-sm py-2 md:px-4'>
+    <div className='bg-white max-w-1450 box-shadow-gray my-6 px-4 rounded-sm py-2 md:px-4'>
      
         <h3 className='text-right font-semibold text-3xl'>Fund Account</h3>
         <div></div>

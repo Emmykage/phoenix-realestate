@@ -20,7 +20,30 @@ const createInterest = createAsyncThunk('interest/CREATE_INTEREST', async (inter
     if (!response.ok) {
       return rejectWithValue({message: result.message})
     }
-    return response;
+    return result;
+
+  } catch (error) {
+    return rejectWithValue({message: error.message || 'Something went wrong'})
+  }
+  });
+
+  
+export const compoundInterest = createAsyncThunk('interest/COMPOUND_INTEREST', async (id, {rejectWithValue}) => {
+  try {
+    const response = await fetch(`${baseUrl}portfolios/${id}/compound_interest`, {
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${token()}`,
+  
+      }
+    })
+    
+    const result = await response.json()
+    if (!response.ok) {
+      return rejectWithValue({message: result.message})
+    }
+    return result;
 
   } catch (error) {
     return rejectWithValue({message: error.message || 'Something went wrong'})

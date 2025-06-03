@@ -105,7 +105,7 @@ const CapitalDeposit = () => {
     }
 
     return (
-    <div className='bg-white max-w-1450 box-shadow-gray my-6 rounded-sm py-2 md:px-4'>
+    <div className='bg-white px-4 max-w-1450 box-shadow-gray my-6 rounded-sm py-2 md:px-4'>
      
         <h3 className='text-right font-semibold text-3xl'>Fund Account</h3>
         <div></div>
@@ -157,13 +157,11 @@ const CapitalDeposit = () => {
             </form>
         <div>
         <ul>
-                    <p className='font-medium'>Minimum deposit = 500 USDT</p>
-                    <li className='px-3 font-normal'><p>Please make deposit before submitting the form</p></li>
-                    <li className='px-3 font-normal'><p>Deposit will be credited and available on the dashboard after confirmation</p></li>
-                    <li className='px-3 font-normal'><p>Crypto deposits are recommended</p></li>
-                    <li className='px-3 font-normal'><p>Deposit may be via any of the supported networks: Tron (TRC20), BSC(BEP20), ETH(ER20), Polygon, Arbitum Network </p></li>
-
-                </ul>
+            <p className='font-medium'>Minimum deposit =  £500 via cryptocurrency & £5000 via Bank Wire/Transfer.</p>
+            <li className='px-3 font-normal'><p> ⁠Ensure that your Withdrawal information is accurate.</p></li>
+            <li className='px-3 font-normal'><p> ⁠Withdrawal may be via any of the supported networks: Bank transfer, Bitcoin(BTC), ETH(ER20), USDT (ER20).</p></li>
+            <li className='px-3 font-normal'><p>Blockchain withdrawals typically take 3-5 minutes to process, while Bank Transfers take a minimum of 3-5 working days.</p></li>
+        </ul>
         </div>
 
         </div>
