@@ -8,11 +8,12 @@ import { moneyFormat } from "../../../utils/moneyFormat";
 const CapitalGrowth = () => {
   const data = {
     investmentValue: 25000,
-    roi: 0.12, // 12%
+    roi: 0.05, // 12%
     earnings: 3000,
     duration: "Monthly",
     lastUpdated: "2025-05-08",
   };
+
 
   
     const dispatch = useDispatch()
@@ -23,6 +24,7 @@ const CapitalGrowth = () => {
     dispatch(getInvestmentPortfolio("capital growth"))
   },[])
 
+  console.log(portfolio)
 
 
 
@@ -40,17 +42,23 @@ const CapitalGrowth = () => {
 
       {/* Summary Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-white rounded-2xl p-5 shadow-md">
-          <h2 className="text-sm text-gray-400 mb-1">Investment Value</h2>
-          <p className="text-2xl font-semibold">{moneyFormat(portfolio?.portfolio_investment?.toLocaleString())}</p>
-        </div>
+       <div className="bg-white rounded-2xl p-5 shadow-md">
+                       <h2 className="text-sm text-gray-400 mb-1">Withdrawable</h2>
+                       <p className="text-2xl font-semibold">{moneyFormat(portfolio?.total_investment ?? 0)}</p>
+                      <p className="text-xs text-gray-600 font-medium">{moneyFormat(portfolio?.virtual_total_investment ?? 0)}</p>
+                       
+                     </div>
+                      <div className="bg-white rounded-2xl p-5 shadow-md">
+                       <h2 className="text-sm text-gray-400 mb-1">Investment Value</h2>
+                       <p className="text-2xl font-semibold">{moneyFormat(portfolio?.amount ?? 0)}</p>
+                     </div>
         <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">
           <h2 className="text-sm text-gray-400 mb-1">ROI</h2>
           <p className="text-2xl font-semibold">{(data.roi * 100).toFixed(2)}%</p>
         </div>
         <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">
           <h2 className="text-sm text-gray-400 mb-1">Total Earnings</h2>
-          <p className="text-2xl font-semibold">{moneyFormat(portfolio?.investment_interest?.toLocaleString())}</p>
+          <p className="text-2xl font-semibold">{moneyFormat(portfolio?.investment_interest ?? 0)}</p>
         </div>
         <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">
           <h2 className="text-sm text-gray-400 mb-1">Duration</h2>

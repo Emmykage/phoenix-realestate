@@ -4,8 +4,9 @@ import UserButton from "../components/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { getInvestments } from "../../../redux/actions/investment";
 import { moneyFormat } from "../../../utils/moneyFormat";
-import { getInvestmentPortfolio } from "../../../redux/actions/portfolio";
+import { getInvestmentPortfolio, updatePortfolio } from "../../../redux/actions/portfolio";
 import { getAccountProfile } from "../../../redux/actions/accountProfile";
+import { SET_LOADER } from "../../../redux/app/app";
 
 const FixedIncomeDashboard = () => {
   const {investments} = useSelector(state => state.investment)
@@ -15,11 +16,18 @@ const FixedIncomeDashboard = () => {
   const dispatch = useDispatch()
   const data = {
     investmentValue: 25000,
-    roi: 0.12, // 12%
+    roi: 0.03, // 12%
     earnings: 3000,
     duration: "3 Months",
     lastUpdated: "2025-05-08",
   };
+
+  console.log(portfolio)
+
+  const handleReinvest = () => {
+    console.log("first")
+
+  }
 
 
   useEffect(()=>{
@@ -36,6 +44,24 @@ const FixedIncomeDashboard = () => {
     dispatch(getInvestments())
   }, [])
 
+  const handleInvestment = () => {
+    dispatch(SET_LOADER(true))
+     dispatch(updatePortfolio({
+      id: portfolio?.id,
+      portfolio: {
+        amount: portfolio?.portfolio_investment
+
+      }
+    })).then(result => {
+      if(updatePortfolio.fulfilled.match(result)){
+        dispatch(SET_LOADER(false))
+        dispatch(getInvestmentPortfolio("fixed income"))
+
+      }
+    })
+
+  }
+
   const [formInput, setFormInput] = useState({amount: "", name: ""})
   const activeLink = "active text-gray-600 text-theme-alt px-5 py-1 text-sm font-medium"
   const inactiveLink = "text-gray-600 px-5 py-1 text-sm font-medium"
@@ -46,38 +72,16 @@ const FixedIncomeDashboard = () => {
     <div className="min-h-screen bg-gray00 text-black py-6">
       <h1 className="text-2xl font-bold mb-6">Fixed Income</h1>
 
-      {/* <div className="m-auto border my-10 bg-white p-4 rounded-lg max-w-3xl">
-        <h3 className="mb-4">Initiate a deposit</h3>
-
-
-      <form action=" ">
-      <div className="flex  flex-col gap-x-8 md:gap-y- text-gray-500 text-left">
-        <div className='flex-1'>
-            <label for="first-name" className="text-left block text-sm font-semibold">Amount</label>
-            <div className="mt-2.5">
-                <input type="number" name="amount" id="amount" value={formInput?.amount}  autocomplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
-            </div>
-        </div>
-    
-        <div className='flex-1'>
-            <label for="name" className="block text-sm font-semibold">Last name</label>
-            <div className="mt-2.5">
-                <input type="text" name="name" id="name" value={formInput?.name} disabled  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"/>
-            </div>
-        </div>
-        </div>
-
-        <UserButton />     </form>
-        </div> */}
-
-      {/* Summary Cards */}
-
-
-
-       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               <div className="bg-white rounded-2xl p-5 shadow-md">
+                <h2 className="text-sm text-gray-400 mb-1">Withdrawable</h2>
+                <p className="text-2xl font-semibold">{moneyFormat(portfolio?.total_investment ?? 0)}</p>
+                <p className="text-xs text-gray-600 font-medium">{moneyFormat(portfolio?.virtual_total_investment ?? 0)}</p>
+                
+              </div>
+               <div className="bg-white rounded-2xl p-5 shadow-md">
                 <h2 className="text-sm text-gray-400 mb-1">Investment Value</h2>
-                <p className="text-2xl font-semibold">{moneyFormat(portfolio?.portfolio_investment)}</p>
+                <p className="text-2xl font-semibold">{moneyFormat(portfolio?.amount ?? 0)}</p>
               </div>
               <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">
                 <h2 className="text-sm text-gray-400 mb-1">ROI</h2>
@@ -85,7 +89,7 @@ const FixedIncomeDashboard = () => {
               </div>
               <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">
                 <h2 className="text-sm text-gray-400 mb-1">Total Earnings</h2>
-                <p className="text-2xl font-semibold">{moneyFormat(portfolio?.investment_interest?.toLocaleString())}</p>
+                <p className="text-2xl font-semibold">{moneyFormat(portfolio?.investment_interest ?? 0)}</p>
               </div>
               <div className="bg-white -gray-200 rounded-2xl p-5 shadow-md">
                 <h2 className="text-sm text-gray-400 mb-1">Duration</h2>
@@ -100,6 +104,20 @@ const FixedIncomeDashboard = () => {
           Your investment of <span className="font-semibold">{moneyFormat(wallet?.fixed_income)}</span> has yielded a return of <span className="font-semibold">{moneyFormat(portfolio?.investment_interest?.toLocaleString())}</span> over a period of <span className="font-semibold">{data.duration}</span>. This is a ROI of <span className="font-semibold">{(data.roi * 100).toFixed(2)}%</span>.
         </p>
         <p className="text-sm text-gray-500">Last updated: {data.lastUpdated}</p>
+
+       
+
+           { portfolio?.maturity && 
+            <button  disabled={!portfolio?.maturity}
+                    onClick={()=> handleReinvest()}
+                    
+                    className={`${portfolio?.maturity ? "bg-blue-500" : "bg-gray-400"}  group relative text-white px-4 py-2 rounded-lg`}>
+                      <p className={`absolute w-max to-black left-0  text-xs -top-0 py-2 opacity-0 group-hover:opacity-100 bg-gray-400  group-hover:-top-10 transition-all ease-linear duration-200 text-gray-700 rounded text-left px-3`}> Re invest after maturity (3 months)</p>
+                      Re-Invest
+                      </button>
+           }
+           
+           
       </div>
 
        <ul className='flex mt-8 overflow-x-auto'>

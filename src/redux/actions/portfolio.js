@@ -19,6 +19,35 @@ const createPortfolio = createAsyncThunk('portfolio/create_portfolios', async (d
   return response;
 });
 
+export const updatePortfolio = createAsyncThunk('portfolio/UPDATE_PORTFOLIO', async ({id, portfolio}) => {
+  try {
+    const response = await fetch(`${baseUrl}portfolios/${id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${token()}`,
+
+    },
+    body: JSON.stringify({portfolio}),
+
+  })
+  
+  const result = await response.json()
+
+  if(!response.ok){
+    return rejectWithValue({message: "OPeration Failed"})
+  }
+
+
+  return result;
+      
+  } catch (error) {
+        return rejectWithValue({message: "Operation Failed"})
+
+  }
+});
+
+
 const getPortfolios = createAsyncThunk('portfolios/get_portfolios', async () => {
   const response = await fetch(`${baseUrl}portfolios`, {
     method: 'GET',

@@ -195,7 +195,7 @@ const handleSelectedPortfolio = (portfolio) => {
                 <p>
                    <span className='block'>{portfolio?.name}</span>
                     <span className='block font-semibold text-green-900'>{
-                      moneyFormat(portfolio?.portfolio_investment)}</span>
+                      moneyFormat(portfolio?.amount)}</span>
                   
                 </p>
                 <div className='gap-4 flex-1 flex justify-center items-center'>
@@ -229,8 +229,8 @@ const handleSelectedPortfolio = (portfolio) => {
       <p className="text-sm text-gray-500 uppercase">{selectedPortfolio?.portfolio_name}</p>
       <div className="mt-4">
         <p className="text-md font-semibold">Portfolio Name: Real Estate Fund</p>
-        <p className="text-sm text-gray-500">Investment Value: {moneyFormat(selectedPortfolio?.portfolio_investment)}</p>
-        <p className="text-sm text-gray-500">Investment Interest: {moneyFormat(selectedPortfolio?.investment_interest)}</p>
+        <p className="text-sm text-gray-500">Investment Value: {moneyFormat(selectedPortfolio?.portfolio_investment ?? 0)}</p>
+        <p className="text-sm text-gray-500">Investment Interest: {moneyFormat(selectedPortfolio?.investment_interest ?? 0)}</p>
       </div>
 
 

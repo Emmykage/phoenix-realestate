@@ -109,14 +109,14 @@ const CapitaltWithdraw = () => {
                 <input type="number" className='border'  placeholder='Enter Amount in USD' name="amount" onChange={(e)=> setFormInput({...formInput, amount: e.target.value})} required min={500}/>
             </div>
 
-            {selectedValue.name === "bank" &&
+            {selectedValue?.name === "bank" &&
             <div className='my-2'>
                 <label className='block m-1 uppercase font-medium' htmlFor="client_address">ROUTING ADDRESS</label>
                 <input className='border' type='text' onChange={(e) => setFormInput({...formInput, routing: e.target.value})} id="client_address" name='routing' required placeholder='Enter ROUTING  ADDRESS'/>
             </div>
 }
             <div className='my-2'>
-                <label className='block m-1 uppercase font-medium' htmlFor="client_address">{selectedValue.name === "bank" ?  "ENTER BANK NAME": "Enter Wallet Address"}</label>
+                <label className='block m-1 uppercase font-medium' htmlFor="client_address">{selectedValue?.name === "bank" ?  "ENTER BANK NAME": "Enter Wallet Address"}</label>
                 <input className='border' type='text' onChange={(e) => setFormInput({...formInput, address: e.target.value})} id="client_address" name='wallet_address' required placeholder='Enter Wallet Address'/>
             </div>
                      <WithdrawalNotes/>

@@ -20,6 +20,8 @@ const TransactionDeposits = () => {
     dispatch(getTransactions({
       transaction_type: "deposit"
     }));
+
+
   }, []);
 
   // if (transactions?.length < 1) {
@@ -45,7 +47,7 @@ const TransactionDeposits = () => {
 
     
     <div className="max-w-7xl mx-auto p-6 bg-white shadow-lg rounded-xl">
-      <h2 className="text-xl font-bold mb-4">User List</h2>
+      <h2 className="text-xl font-bold mb-4">Deposits List</h2>
       <div className="overflow-x-auto">
         
       <table className="w-full text-left border-collapse">
