@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { createPortfolio, getInvestmentPortfolio, getPortfolio, getPortfolios, getUserPortfolios, makePayment, userPorfolio } from '../actions/portfolio';
+import { createPortfolio, getInvestmentPortfolio, getPortfolio, getPortfolios, getUserPortfolios, makePayment, userPorfolio, userReinvest } from '../actions/portfolio';
 // import { userPorfolio } from '../actions/users';
 
 const initialState = {
@@ -130,6 +130,26 @@ const portfolioSlice = createSlice({
       ...state,
       loading: false,
       error: true,
+    }),
+
+    [userReinvest.fulfilled]: (state, action) => ({
+      ...state,
+      loading: false,
+      error: false,
+      portfolio: action.payload.data,
+    }),
+    [userReinvest.rejected]: (state) => ({
+      ...state,
+      status: 'failed to purchased an asset Check your internet connection',
+      loading: false,
+      error: true,
+    }),
+    
+    [userReinvest.pending]: (state) => ({
+      ...state,
+      status: '',
+      loading: true,
+      error: false
     }),
 
   },

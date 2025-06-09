@@ -4,15 +4,16 @@ import UserButton from "../components/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { getInvestments } from "../../../redux/actions/investment";
 import { moneyFormat } from "../../../utils/moneyFormat";
-import { getInvestmentPortfolio, updatePortfolio } from "../../../redux/actions/portfolio";
+import { getInvestmentPortfolio, updatePortfolio, userReinvest } from "../../../redux/actions/portfolio";
 import { getAccountProfile } from "../../../redux/actions/accountProfile";
 import { SET_LOADER } from "../../../redux/app/app";
+import { toast } from "react-toastify";
 
 const FixedIncomeDashboard = () => {
   const {investments} = useSelector(state => state.investment)
     const {portfolio} = useSelector(state => state.portfolios)
         const {wallet, loading} = useSelector(state => state.wallet)
-    
+    console.log(portfolio)
   const dispatch = useDispatch()
   const data = {
     investmentValue: 25000,
@@ -22,21 +23,32 @@ const FixedIncomeDashboard = () => {
     lastUpdated: "2025-05-08",
   };
 
-  console.log(portfolio)
-
   const handleReinvest = () => {
     console.log("first")
 
+    dispatch(SET_LOADER(true))
+    dispatch(userReinvest(portfolio.id)).then(result => {
+      if(userReinvest.fulfilled.match(result)){
+        dispatch(SET_LOADER(false))
+        console.log("re-invest suceess=>", result.payload.message)
+                toast(result.payload.message, {type: "success"})
+
+      }
+      else{
+        toast(result.payload.message, {type: "error"})
+                dispatch(SET_LOADER(false))
+
+      }
+    })
   }
-
-
+  
   useEffect(()=>{
     dispatch(getInvestmentPortfolio("fixed income"))
   },[])
 
-     useEffect(()=>{
-            dispatch(getAccountProfile())
-      },[])
+  useEffect(()=>{
+    dispatch(getAccountProfile())
+  },[])
 
 
 
@@ -109,14 +121,12 @@ const FixedIncomeDashboard = () => {
 
            { portfolio?.maturity && 
             <button  disabled={!portfolio?.maturity}
-                    onClick={()=> handleReinvest()}
-                    
-                    className={`${portfolio?.maturity ? "bg-blue-500" : "bg-gray-400"}  group relative text-white px-4 py-2 rounded-lg`}>
-                      <p className={`absolute w-max to-black left-0  text-xs -top-0 py-2 opacity-0 group-hover:opacity-100 bg-gray-400  group-hover:-top-10 transition-all ease-linear duration-200 text-gray-700 rounded text-left px-3`}> Re invest after maturity (3 months)</p>
-                      Re-Invest
-                      </button>
-           }
-           
+                onClick={()=> handleReinvest()}
+                
+                className={`${portfolio?.maturity ? "bg-blue-500" : "bg-gray-400"}  group relative text-white px-4 py-2 rounded-lg`}>
+                  Re-Invest
+              </button>
+           }             
            
       </div>
 

@@ -130,6 +130,37 @@ const getInvestmentPortfolio = createAsyncThunk('portfolios/get_investmentportfo
   }
  
 });
+
+
+export const userReinvest = createAsyncThunk('user/RE_INVEST', async(id, {rejectWithValue}) => {
+
+  try {
+    
+  const response = await fetch(`${baseUrl}portfolios/${id}/re_invest`, {
+    method: "GET",
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${token()}`
+    }
+  })
+  const result = await response.json()
+
+  if(!response.ok) {
+    console.log(result.message)
+    return rejectWithValue({message: result.message || "failed to reinvest"})
+  }
+
+
+  return result
+
+  
+  } catch (error) {
+        return rejectWithValue({message: error.message || "Soething went wrong: Failed to reinvest"})
+
+  }
+})
+
+
 const userPorfolio = createAsyncThunk('user/pick_user', async(id) => {
   const response = await fetch(`${baseUrl}portfolios_user/${id}`, {
     method: "GET",
