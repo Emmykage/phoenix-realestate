@@ -56,8 +56,8 @@ const DashboardLayout = ({children}) => {
             <header className='bg-white sticky top-0 left-0 shadow py-2 md:py-6 border-b z-10'>
                 <div className='max-w-[1500px] m-auto flex justify-between py-3  px-2 md:px-10 items-center'>
 
-                    <NavLink to={'/'} className={'px-2 w-52 text-3xl text-green-700 font-semibold'}>
-                        <img src={"images/logo1.jpg"} alt="" />
+                    <NavLink to={'/'} className={'px-2 w-52 text-3xl text-green-700 font-semibold '}>
+                        <img src={"/logos/12.png"} alt="" className='h-14 md:hidden block' />
                     </NavLink>
 
                     {/* <nav className='flex-1 md:block hidden'>
@@ -71,8 +71,8 @@ const DashboardLayout = ({children}) => {
                     </nav> */}
                 <ul className=' gap-8 items-center md:flex hidden'>
                     <li><NavLink><FaQuestionCircle /></NavLink></li>
-                    <li><NavLink to={''}><IoMdNotificationsOutline /></NavLink></li>
-                    <li><NavLink to={'/dashboard/profile'}><FaRegUser /></NavLink></li>
+                    <li><NavLink to={'/dashboard/home'}><IoMdNotificationsOutline /></NavLink></li>
+                    <li><NavLink to={'/dashboard/account/identity'}><FaRegUser /></NavLink></li>
                     <li><NavLink to={''}>{user?.email}</NavLink></li>
                 </ul>
                 <a onClick={()=> setToggle(prev => !prev)} target="_blank" rel="noopener noreferrer" className='flex sm:hidden'><IoMdMenu className='text-4xl'/></a>

@@ -6,6 +6,7 @@ import { SET_LOADER } from '../../redux/app/app'
 import SubHeader from '../../components/subHeader/SubHeader'
 import NewsLetter from '../../components/newsLetter/NewsLetter'
 import { toast } from 'react-toastify'
+import FormInput from '../../components/form/FormInput'
 
 const Login = () => {
     const navigate = useNavigate();
@@ -34,7 +35,7 @@ const Login = () => {
        
                    }else
                    {
-              dispatch(SET_LOADER(false))
+                    dispatch(SET_LOADER(false))
                     toast(result.payload.message || "Failed to Login", {type: "error"})
        
                    }
@@ -53,14 +54,20 @@ const Login = () => {
                 <div className="col-lg-4 col-lg-offset-4"> 
                 <p>Don't have an account? <strong><NavLink to="/auth/register" className={"text-theme-pry"}> Register here.</NavLink></strong></p> 
                 <form onSubmit={handleFormSubmit} className="login-form mt-10 rounded-lg bg-white p-4">
-                    <div className="form-block">
-                    <label>Email</label>
-                    <input className="border" type="text" name="email" onChange={handleInputChange} />
-                    </div>
-                    <div className="form-block">
-                    <label>Password</label>
-                    <input className="border" type="password" name="password" onChange={handleInputChange}/>
-                    </div>
+                    <FormInput
+                    label={"Email"}
+                    type={"text"}
+                    name={"email"}
+                    handleInputChange={handleInputChange}
+                    />
+
+                       <FormInput
+                    label={"Password"}
+                    type={"password"}
+                    name={"password"}
+                    handleInputChange={handleInputChange}
+                    />
+                    
                     <div className="form-block">
                     <label><input type="checkbox" name="remember" />Remember Me</label><br/>
                     </div>

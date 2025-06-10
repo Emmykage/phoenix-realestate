@@ -101,7 +101,7 @@ const handleSelectedPortfolio = (portfolio) => {
        
         <div className='bg-red- text-center  md:text-left'>
           <h2 className="text-xl font-bold">User Profile</h2>
-          <p className="text-sm text-gray-500">{user?.role}</p>
+          <p className="text-sm font-semibold text-gray-500">{user?.role}</p>
         </div>
         <div className="text-right">
           <p className="font-semibold">{user?.profile?.last_name}</p>
@@ -125,7 +125,7 @@ const handleSelectedPortfolio = (portfolio) => {
         <div className='flex-1'>
           <p>Purpose</p>
           <span className='block py-2 border border-gray-200 flex-1 px-4 rounded'>
-          {user?.profile?.investment_purpose}
+          {user?.profile?.investment_purpose ?? "N/A"}
         </span>
 
         </div>
@@ -134,7 +134,7 @@ const handleSelectedPortfolio = (portfolio) => {
           <p>Type</p>               
         
           <span  className='block py-2 border border-gray-200 flex-1 px-4 rounded'>
-            {user?.profile?.investment_property}
+            {user?.profile?.investment_property ?? "N/A"}
           </span>
         </div>
 
@@ -144,7 +144,7 @@ const handleSelectedPortfolio = (portfolio) => {
         <div className='flex-1 gap-4'>
           <p>Initial Capital</p>
           <span className='block py-2 border border-gray-200 flex-1 px-4 rounded'>
-            {user?.profile?.initial_investment}
+            {user?.profile?.initial_investment ?? "N/A"}
           </span>
         </div>
 
@@ -154,7 +154,7 @@ const handleSelectedPortfolio = (portfolio) => {
 
         <p>Account Type</p>
          <span  className='block py-2 border border-gray-200 flex-1 px-4 rounded'>
-          {user?.profile?.investor_type}
+          {user?.profile?.investor_type ?? "N/A"}
         </span>
         
         </div>

@@ -35,7 +35,7 @@ const DashboardSummary = () => {
     const {user} = useSelector(state => state.auth)
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 p-4">
          <div
           className="bg-white rounded-2xl shadow p-4 flex items-center gap-4"
         >
