@@ -3,8 +3,10 @@ import { IoIosEyeOff, IoMdEye } from "react-icons/io";
 const FormInput = ({
     label,
     type,
+    disabled,
     handleInputChange,
     name,
+    value,
     placeHolder
 }) => {
     const [see, setSee] = useState(true)
@@ -24,6 +26,8 @@ const FormInput = ({
         
         <label>{label}</label>
         <input
+        disabled={disabled}
+        value={value}
         placeHolder={placeHolder}
         className="border" 
         type={type === "text" ? "text" : see  ? "text" : "password"} 

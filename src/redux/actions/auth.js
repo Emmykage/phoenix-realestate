@@ -72,6 +72,38 @@ const userSession = createAsyncThunk('user/session', async (data, {rejectWithVal
   }
 });
 
+
+const userConfirmation = createAsyncThunk('user/CONFIRMATION', async (data, {rejectWithValue}) => {
+
+  try {
+
+    const params = new URLSearchParams(data).toString()
+    
+    const response = await fetch(`${baseUrl}users/confirm_account?${params}`, {
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json',
+
+      },
+    })
+    
+    const result = await response.json()
+
+    if(!response.ok){
+      return rejectWithValue({message: result.message ?? "Failed to conffirm account"})
+    }
+
+    setToken(result.token)
+
+
+    return result.user;
+  } catch (error) {
+    return rejectWithValue({message: error?.message ?? 'An unexpected error occurred'})
+
+  }
+});
+
+
 export const userProfile = createAsyncThunk('user/profile', async (_, {rejectWithValue}) => {
 
   try{
@@ -111,4 +143,4 @@ export const userlogOut = createAsyncThunk("log-out", async() => {
 
 })
 
-export { registerUser, userSession };
+export { registerUser, userSession, userConfirmation };

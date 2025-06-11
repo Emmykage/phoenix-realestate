@@ -83,6 +83,8 @@ import DashboardHome from './pages/dashboard/Index';
 import TransactionViewer from './pages/Admin/transactions/view';
 import TransactionDeposits from './pages/Admin/transactions/deposit';
 import TransactionWithdrawal from './pages/Admin/transactions/withdrawal';
+import ConfirmAccount from './pages/auth/confirmAccount';
+import PageNotFound from './pages/PageNotFound';
 
 function App() {
   const {loader} = useSelector(state => state.app)
@@ -167,15 +169,16 @@ function App() {
          </Route>
             <Route path='/dashboard/account' element={<UserLayout><Account/></UserLayout>} /> */}
             <Route path='reference' element={<References/>} />          
+            <Route path='*' element={<PageNotFound/>} />          
             <Route path='settings' element={<AccountSettings/>}/>
 
 
         <Route path='auth'>
           <Route path='login' element={<Login/>}/>  
           <Route path='register' element={<Register/>}/>   
+          <Route path='confiirm-account' element={<ConfirmAccount/>}/>   
           <Route path='admin_login' element={<AdminLogin/>}/>   
           <Route path='admin/register' element={<AdminRegister/>}/>   
-
 
         </Route>
         <Route path={"/admin"}>
