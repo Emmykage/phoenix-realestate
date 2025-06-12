@@ -8,7 +8,6 @@ import { GiReceiveMoney } from 'react-icons/gi';
 
 import { useDispatch } from 'react-redux';
 import { userProfile } from '../../redux/actions/auth';
-import { PiHandWithdraw } from "react-icons/pi";
 import { Drawer } from '@mui/material';
 
 const Aside = ({isOpen, 
@@ -23,34 +22,33 @@ const Aside = ({isOpen,
     <>
     
     <aside 
-    className={`px-2 bg-white hidden md:flex flex-col border shrink-0 absolute md:relative z-10 shadow h-full bg-whit border-t md:pl-2 pt-4 overflow-hidden`}
+    className={`bg-white hidden md:flex flex-col border shrink-0 absolute md:relative z-10 shadow h-full bg-whit border-t md:pl-2 pt-4 overflow-hidden`}
     >
       <List/>
 
     </aside>
-    <div className='block md:hidden'>      
+    <div className='block px-5  md:hidden'>      
             <React.Fragment>
               <Drawer
                 open={isOpen}
+
                 onClose={onClose}
                 onClick={() => setIsOpen(false)}
               >
                     
 
     
-                 <aside id='aside' className={`bg-white flex flex-col border shrink-0 relative z-10 shadow h-full bg-whit border-t md:pl-2 py-0 overflow-hidden`}>
+                 <aside id='aside' className={`w-60  flex flex-col border shrink-0 relative z-10 shadow bg-whit border-t md:pl-2 py-0 overflow-auto h-screen`}>
 
                   <div className="top">
                     <span className='block mt-2 ml-auto w-max' onClick={()=> setIsOpen(prev => !prev)}>
                           <AiOutlineClose className='text-2xl md:hidden ' />
                     </span>
-                    <NavLink to={"/admin/dashboard"} className="logo p-4">
-                      <img src={"/logos/12.png"} alt="logo" className='max-w-32 m-auto'/>
+                    <NavLink to={"/admin/dashboard"} className="logo">
+                      <img src={"/logos/12.png"} alt="logo" className='max-w-32 h-18 mx-auto'/>
                     
                     </NavLink>
-                      <div className="close" id="close-btn">
-                        
-                      </div>
+                  
                     </div>
     
                  <List/>
@@ -130,7 +128,7 @@ const List = () => {
   return(
     <>
     
-      <div className="side-bar">
+      <div className="side-bar overflow-auto flex-1">
         {navItems.map(item => (
           <NavLink
             key={item.id}
