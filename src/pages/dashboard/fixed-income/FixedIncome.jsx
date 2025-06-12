@@ -109,16 +109,6 @@ const FixedIncomeDashboard = () => {
               </div>
             </div>
 
-      {/* Detailed Section */}
-      <div className="bg-gray-100 rounded-2xl p-6 shadow-md space-y-4">
-        <h2 className="text-xl font-semibold">Investment Overview</h2>
-        <p className="text-gray-600">
-          Your investment of <span className="font-semibold">{moneyFormat(wallet?.fixed_income)}</span> has yielded a return of <span className="font-semibold">{moneyFormat(portfolio?.investment_interest?.toLocaleString())}</span> over a period of <span className="font-semibold">{data.duration}</span>. This is a ROI of <span className="font-semibold">{(data.roi * 100).toFixed(2)}%</span>.
-        </p>
-        <p className="text-sm text-gray-500">Last updated: {data.lastUpdated}</p>
-
-       
-
            { portfolio?.maturity && 
             <button  disabled={!portfolio?.maturity}
                 onClick={()=> handleReinvest()}
@@ -126,9 +116,7 @@ const FixedIncomeDashboard = () => {
                 className={`${portfolio?.maturity ? "bg-blue-500" : "bg-gray-400"}  group relative text-white px-4 py-2 rounded-lg`}>
                   Re-Invest
               </button>
-           }             
-           
-      </div>
+           }  
 
        <ul className='flex mt-8 overflow-x-auto'>
               <li className='relative border-b py-2'><NavLink className={({isActive}) => (isActive ? activeLink : inactiveLink)} to="/dashboard/fixed-income/transactions">TRANSACTIONS</NavLink> </li>

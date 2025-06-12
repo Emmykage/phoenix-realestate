@@ -104,6 +104,106 @@ const userConfirmation = createAsyncThunk('user/CONFIRMATION', async (data, {rej
 });
 
 
+export const userResetToken = createAsyncThunk('user/RESET_TOKEN', async (data, {rejectWithValue}) => {
+  console.log(data)
+
+  try {
+
+    const params = new URLSearchParams(data).toString()
+
+    
+    const response = await fetch(`${baseUrl}users/forgot_password?${params}`, {
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json',
+
+      },
+    })
+    
+    const result = await response.json()
+
+    if(!response.ok){
+      return rejectWithValue({message: result.message ?? "Failed to conffirm account"})
+    }
+
+    setToken(result.token)
+
+
+    return result.user;
+  } catch (error) {
+    return rejectWithValue({message: error?.message ?? 'An unexpected error occurred'})
+
+  }
+});
+
+
+export const confirmResetToken = createAsyncThunk('user/Confirm_RESET_TOKEN', async (data, {rejectWithValue}) => {
+  console.log(data)
+
+  try {
+
+    const params = new URLSearchParams(data).toString()
+
+    
+    const response = await fetch(`${baseUrl}users/confirm_token?${params}`, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+
+      },
+      body: JSON.stringify({user: data}),
+
+    })
+    
+    const result = await response.json()
+
+    if(!response.ok){
+      return rejectWithValue({message: result.message ?? "Failed to conffirm account"})
+    }
+
+    return result;
+  } catch (error) {
+    return rejectWithValue({message: error?.message ?? 'An unexpected error occurred'})
+
+  }
+});
+
+
+export const userPasswordChange = createAsyncThunk('user/NEW_PASSWORD', async (data, {rejectWithValue}) => {
+  console.log(data)
+
+  try {
+
+    const params = new URLSearchParams(data).toString()
+
+    
+    const response = await fetch(`${baseUrl}users/new_password`, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+
+      },
+      body: JSON.stringify(data),
+
+    })
+    
+    const result = await response.json()
+
+    if(!response.ok){
+      return rejectWithValue({message: result.message ?? "Failed to conffirm account"})
+    }
+
+    setToken(result.token)
+
+
+    return result;
+  } catch (error) {
+    return rejectWithValue({message: error?.message ?? 'An unexpected error occurred'})
+
+  }
+});
+
+
 export const userProfile = createAsyncThunk('user/profile', async (_, {rejectWithValue}) => {
 
   try{

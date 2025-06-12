@@ -64,16 +64,7 @@ const CapitalGrowth = () => {
           <h2 className="text-sm text-gray-400 mb-1">Duration</h2>
           <p className="text-2xl font-semibold">{data.duration}</p>
         </div>
-      </div>
-
-      {/* Detailed Section */}
-      <div className="bg-gray-100 rounded-2xl p-6 shadow-md space-y-4">
-             <h2 className="text-xl font-semibold">Investment Overview</h2>
-             <p className="text-gray-600">
-               Your investment of <span className="font-semibold">{moneyFormat(wallet?.capital_growth)}</span> has yielded a return of <span className="font-semibold">{moneyFormat(portfolio?.investment_interest?.toLocaleString())}</span> over a period of <span className="font-semibold">{data.duration}</span>. This is a ROI of <span className="font-semibold">{(data.roi * 100).toFixed(2)}%</span>.
-             </p>
-             <p className="text-sm text-gray-500">Last updated: {data.lastUpdated}</p>
-        </div>
+      </div>    
 
        <ul className='flex mt-8 overflow-x-auto'>
               <li className='relative border-b py-2'><NavLink className={({isActive}) => (isActive ? activeLink : inactiveLink)} to="/dashboard/capital-growth/transactions">TRANSACTIONS</NavLink> </li>

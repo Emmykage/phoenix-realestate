@@ -22,7 +22,7 @@ const WithdrawEarning = ({setToggleModal, setWithdrawEarning, withdrawEarning}) 
           
             <div>
                 <label className='block m-1' htmlFor="amount">Enter Amount</label>
-                <input type="number" className='border' min={10} placeholder='Enter Amount in USD' name="amount" value={withdrawEarning.amount} onChange={handleWithdrawalInput} required/>
+                <input type="number" className='border' min={10} placeholder='Enter Amount in GBP' name="amount" value={withdrawEarning.amount} onChange={handleWithdrawalInput} required/>
             </div>
            
         <div>

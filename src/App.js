@@ -85,6 +85,9 @@ import TransactionDeposits from './pages/Admin/transactions/deposit';
 import TransactionWithdrawal from './pages/Admin/transactions/withdrawal';
 import ConfirmAccount from './pages/auth/confirmAccount';
 import PageNotFound from './pages/PageNotFound';
+import ForgotPassword from './pages/auth/forgotPassword';
+import ResetPasswordToken from './pages/auth/ResetPasswordToken';
+import NewPassword from './pages/auth/NewPassword';
 
 function App() {
   const {loader} = useSelector(state => state.app)
@@ -177,6 +180,9 @@ function App() {
           <Route path='login' element={<Login/>}/>  
           <Route path='register' element={<Register/>}/>   
           <Route path='confiirm-account' element={<ConfirmAccount/>}/>   
+          <Route path='forgot-password' element={<ForgotPassword/>}/>   
+          <Route path='new-password' element={<NewPassword/>}/>   
+          <Route path='password-reset' element={<ResetPasswordToken/>}/>   
           <Route path='admin_login' element={<AdminLogin/>}/>   
           <Route path='admin/register' element={<AdminRegister/>}/>   
 

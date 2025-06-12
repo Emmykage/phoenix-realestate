@@ -130,7 +130,7 @@ const CapitalDeposit = () => {
                 </div>
                 <div>
                     <label className='block m-1' htmlFor="amount">Enter Amount</label>
-                    <input type="number" className='border'  placeholder='Enter Amount in USD' name="amount" onChange={(e)=> setFormInput({...formInput, amount: e.target.value})} required min={0}/>
+                    <input type="number" className='border'  placeholder='Enter Amount in GBP' name="amount" onChange={(e)=> setFormInput({...formInput, amount: e.target.value})} required min={0}/>
                 </div>
             
                 <div className='m-2'>
@@ -167,7 +167,7 @@ const CapitalDeposit = () => {
         </div>
 
         <AppModal  open={openModal}>
-            <Confirmation onCancel={()=> setOpenModal(false)} message={`Confirm Transaction deposit`} title={"Conform Deposit"} onConfirm={handleSubmit}  />
+            <Confirmation onCancel={()=> setOpenModal(false)} message={`Confirm Transaction deposit`} title={"Confirm Deposit"} onConfirm={handleSubmit}  />
         </AppModal>
 
     </div>

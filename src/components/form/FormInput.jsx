@@ -9,7 +9,7 @@ const FormInput = ({
     value,
     placeHolder
 }) => {
-    const [see, setSee] = useState(true)
+    const [see, setSee] = useState(false)
     const togglePassword = () => {
 
     }

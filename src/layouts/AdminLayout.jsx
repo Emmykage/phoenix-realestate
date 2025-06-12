@@ -21,7 +21,7 @@ const AdminLayout = ({ children }) => {
     }
   }, [user]);
 
-  if (loading) return <LoadingPage />; // Show loader while checking auth
+  if (loading) return <LoadingPage />
 
   return (
     <div className="admin contain">

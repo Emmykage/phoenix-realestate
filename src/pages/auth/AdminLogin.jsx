@@ -5,6 +5,7 @@ import { userSession } from "../../redux/actions/auth";
 import { SET_LOADER } from "../../redux/app/app";
 import SubHeader from "../../components/subHeader/SubHeader";
 import { toast } from "react-toastify";
+import FormInput from "../../components/form/FormInput";
 // import { userSession } from "../../actions/authActions"; // Ensure this is correctly imported
 
 const AdminLogin = () => {
@@ -42,12 +43,6 @@ const AdminLogin = () => {
         });
     };
 
-    // ✅ Only navigate when `loading` is false and `user` exists
-    // useEffect(() => {
-    //     if (!loading && user?.role === "admin") {
-    //         navigate("/admin/dashboard");
-    //     }
-    // }, [user, loading, navigate]);
 
     return (
         <div>
@@ -58,19 +53,21 @@ const AdminLogin = () => {
                 <div className="m-auto  max-w-5xl ">
                     <div className="row">
                         <div className="col-lg-4 col-lg-offset-4"> 
-                            <p>Don't have an account? <strong><NavLink to="/auth/admin/register">Register here.</NavLink></strong></p> 
+
                             <form onSubmit={handleFormSubmit} className="login-form">
-                                <div className="form-block">
-                                    <label>Email</label>
-                                    <input className="border" type="text" name="email" onChange={handleInputChange} required />
-                                </div>
-                                <div className="form-block">
-                                    <label>Password</label>
-                                    <input className="border" type="password" name="password" onChange={handleInputChange} required />
-                                </div>
-                                <div className="form-block">
-                                    <label><input type="checkbox" name="remember" />Remember Me</label><br/>
-                                </div>
+                                 <FormInput
+                                    label={"Email"}
+                                    type={"text"}
+                                    name={"email"}
+                                    handleInputChange={handleInputChange}
+                                    />
+                                     <FormInput
+                                    label={"Password"}
+                                    type={"password"}
+                                    name={"password"}
+                                    handleInputChange={handleInputChange}
+                                    />
+                      
                                 <p>{loading && "Loading..." }</p>
                                 <p className="text-red">{error && message}</p>
                         
@@ -80,7 +77,6 @@ const AdminLogin = () => {
                                     </button>
                                 </div>
                                 <div className="divider"></div>
-                                <p className="note"><a href="#">I don't remember my password.</a> </p>    
                             </form>
                         </div>
                     </div>

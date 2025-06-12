@@ -88,7 +88,7 @@ const DepositPage = () => {
             </div>
             <div>
                 <label className='block m-1' htmlFor="amount">Enter Amount</label>
-                <input type="number" className='border'  placeholder='Enter Amount in USD' name="amount" required min={10}/>
+                <input type="number" className='border'  placeholder='Enter Amount in GBP' name="amount" required min={10}/>
             </div>
            
             <div className='m-2'>
