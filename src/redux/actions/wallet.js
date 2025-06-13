@@ -29,7 +29,10 @@ const createTransaction = createAsyncThunk("transaction/create_transaction", asy
     }
    
 })
-const updateTransaction = createAsyncThunk("transaction/approve_transaction", async ({id, transaction}) => {
+const updateTransaction = createAsyncThunk("transaction/UPDATE_TRANSACTION", async ({id, transaction}, {rejectWithValue}) => {
+    try {
+        
+
     const response = await fetch(`${baseUrl}transactions/${id}`,{
         method: "PATCH",
         headers: {
@@ -38,8 +41,20 @@ const updateTransaction = createAsyncThunk("transaction/approve_transaction", as
         },
 
         body: JSON.stringify({transaction})
-    }).then((res) => res.json())
-    return response
+    })
+    const result = await response.json()
+
+    console.log("result ====>",result)
+
+    if(!response.ok){
+        return rejectWithValue({message: result.message ?? "failed to update transaction"})
+    }
+    return result.message
+
+        } catch (error) {
+  return rejectWithValue({message: error.message ?? "Soemthing went wrong:failed to update transaction"})
+
+    }
 })
 const getWallet = createAsyncThunk("wallet/get_wallet", async() => {
     const response = await fetch(`${baseUrl}wallets`, {
@@ -53,7 +68,10 @@ const getWallet = createAsyncThunk("wallet/get_wallet", async() => {
     return response
 } )
 
-const getTransaction = createAsyncThunk("wallet/get_transaction", async(id) => {
+const getTransaction = createAsyncThunk("wallet/GET_TRANSACTION", async(id, {rejectWithValue}) => {
+    try {
+        
+  
     const response = await fetch(`${baseUrl}transactions/${id}`, {
         method: "GET",
         headers: {
@@ -61,8 +79,19 @@ const getTransaction = createAsyncThunk("wallet/get_transaction", async(id) => {
             Authorization: `Bearer ${token()}`,
         },
 
-    }).then((res) => res.json())
-    return response
+    })
+    
+    const result = await response.json()
+
+    if(!response.ok){
+        return rejectWithValue({message: result.message ?? "failed to fetch data"})
+    }
+    return result.data
+      } catch (error) {
+         return rejectWithValue({message: error.message ?? "Something: failed to fetch data"})
+
+    }
+    
 } )
 export const getUserTransactions = createAsyncThunk("transactions/GET_USER_TRANSACTIONS", async(params, {rejectWithValue}) => {
     const refinedParams = new URLSearchParams(params).toString()

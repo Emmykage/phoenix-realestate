@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Banknote, Building, PieChart, Wallet } from 'lucide-react';
 import { NavLink } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { moneyFormat } from '../../utils/moneyFormat';
 import DashboardInfo from '../../components/dashboard-info/DashboardInfo';
+import { getWallet } from '../../redux/actions/wallet';
 
 const DashboardHome = () => {
+  const dispatch = useDispatch()
   const {user} = useSelector(state => state.auth)
   const activeLink = "active text-gray-600 text-theme-alt px-5 py-1 text-sm font-medium"
   const inactiveLink = "text-gray-600 px-5 py-1 text-sm font-medium"
 
+
+  useEffect(()=> {
+    dispatch(getWallet())
+
+  }, [])
   return (
     <div className='max-w-7x mx-0 sm:m-auto  px-2 account'>
       <div className='flex justify-between'>
@@ -45,7 +52,7 @@ const DashboardSummary = () => {
           <div>
             <h4 className="text-gray-500 text-sm">Wallet Balance</h4>
             <p className="text-xl font-semibold">{moneyFormat(wallet?.wallet_balance)}</p>
-             {/* <p className="text-xs font-normal">{moneyFormat(wallet?.virtual_balance)}</p> */}
+             <p className="text-xs font-normal">{moneyFormat(wallet?.virtual_balance)}</p>
           </div>
         </div>
 

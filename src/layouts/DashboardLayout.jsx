@@ -42,7 +42,6 @@ const DashboardLayout = ({children}) => {
     useEffect(() => {
         dispatch(getUserPortfolios())
         dispatch(getUserTransactions())
-        dispatch(getWallet())
 
     },[])
 

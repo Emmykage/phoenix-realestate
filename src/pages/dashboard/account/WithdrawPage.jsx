@@ -36,6 +36,8 @@ const AccountWithdraw = () => {
 
     
     const handleSubmit = () => {
+        dispatch(SET_LOADER(true))
+
         const element = formRef.current
 
 
@@ -52,9 +54,13 @@ const AccountWithdraw = () => {
             if(createTransaction.fulfilled.match(result)){
                 element.reset()
                 setOpenModal(false)
+                dispatch(SET_LOADER(false))
+
                 toast(result.payload.message || "Withdrawal has been successful", {type: "success"})
 
             }else{
+            dispatch(SET_LOADER(false))
+
                toast(result.payload.message, {type: "error"})
             }
         })

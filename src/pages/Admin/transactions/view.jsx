@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import AppModal from '../../../components/modals/AppModal';
 import { moneyFormat } from '../../../utils/moneyFormat';
 import statusColorClass from '../../../utils/statusColorClass';
+import { SET_LOADER } from '../../../redux/app/app';
 
 const TransactionViewer = () => {
     const {id} = useParams()
@@ -22,8 +23,9 @@ const TransactionViewer = () => {
 
     const handleUpdate = (transactionDetails) => {
 
-      console.log(transactionDetails)
 
+      
+        dispatch(SET_LOADER(true))
         dispatch(updateTransaction({id, 
            transaction: {
             ...transactionDetails
@@ -31,9 +33,10 @@ const TransactionViewer = () => {
            })).then(result => {
 
             if(updateTransaction.fulfilled.match(result)){
-            toast(result.payload.message || "transaction updated", {type: "success"})
+            toast(result.payload?.message || "transaction updated", {type: "success"})
             dispatch(getTransaction(id))
             setToggleModal(false)
+            dispatch(SET_LOADER(false))
 
             setToggleBonusModal(false)
             setTransactionStatus(null)
@@ -43,7 +46,9 @@ const TransactionViewer = () => {
     })
 
             }else{
-                toast(result.payload.message || "Failed to update transaction", {type: "error"})
+                 dispatch(SET_LOADER(false))
+
+                toast(result.payload?.message || "Failed to update transaction", {type: "error"})
             }
         })
 
