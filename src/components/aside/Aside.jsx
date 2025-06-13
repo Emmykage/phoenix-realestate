@@ -131,11 +131,11 @@ return(
                         }); 
                             }
                         }
-                            className="flex items-center py-4 px-2 m-auto w-full h-full hover:bg-gray-300">
+                            className="flex cursor-pointer items-center py-4 px-2 m-auto w-full h-full hover:bg-gray-300">
                         <ListItemIcon className=''>
                             <CiLogout  className='text-2xl'/>
                         </ListItemIcon> 
-                        <span className='text-base font-medium '>Log Out</span>
+                        <span className='text-base font-medium'>Log Out</span>
                         </a>
                     </ListItem>
                 </List>  

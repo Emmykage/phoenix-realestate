@@ -45,7 +45,7 @@ const DashboardSummary = () => {
           <div>
             <h4 className="text-gray-500 text-sm">Wallet Balance</h4>
             <p className="text-xl font-semibold">{moneyFormat(wallet?.wallet_balance)}</p>
-             <p className="text-xs font-normal">{moneyFormat(wallet?.virtual_balance)}</p>
+             {/* <p className="text-xs font-normal">{moneyFormat(wallet?.virtual_balance)}</p> */}
           </div>
         </div>
 
@@ -82,7 +82,7 @@ const DashboardSummary = () => {
           </div>
           <div>
             <h4 className="text-gray-500 text-sm">Total Investment</h4>
-            <p className="text-xl font-semibold">{moneyFormat(wallet?.wallet_balance)}</p>
+            <p className="text-xl font-semibold">{moneyFormat(wallet?.total_investment)}</p>
           </div>
         </div>
       
