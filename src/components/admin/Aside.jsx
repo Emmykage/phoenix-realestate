@@ -22,8 +22,11 @@ const Aside = ({isOpen,
     <>
     
     <aside 
-    className={`bg-white hidden md:flex flex-col border shrink-0 absolute md:relative z-10 shadow h-full bg-whit border-t md:pl-2 pt-4 overflow-hidden`}
+    className={`bg-white hidden md:flex flex-col border shrink-0 absolute md:relative z-10 shadow h-full bg-whit border-t md:pl-2 pt-10 overflow-hidden`}
     >
+    <div className='bg-r mb-10'>
+        <img src={"/logos/12.png"} alt="" className='w-20  block m-auto'/>
+    </div>
       <List/>
 
     </aside>
