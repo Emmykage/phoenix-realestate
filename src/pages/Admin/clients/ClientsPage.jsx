@@ -10,6 +10,7 @@ import { compoundInterest, createInterest } from '../../../redux/actions/interes
 import AppModal from '../../../components/modals/AppModal';
 import { toast } from 'react-toastify';
 import { SET_LOADER } from '../../../redux/app/app';
+import { updatePortfolio } from '../../../redux/actions/portfolio';
 
 
 const UserProfileDashboard = () => {
@@ -18,6 +19,7 @@ const UserProfileDashboard = () => {
   const [selectedPortfolio, setSelectedPortfolio] = useState(null)
   const [toggleModal, setToggleModal] = useState(false)
   const [toggleCompoundModal, setToggleCompoundModal] = useState(false)
+  const [toggleMaturedModal, setToggleMaturedModal] = useState(false)
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
@@ -84,6 +86,27 @@ const handleCompondInterest = (id_) => {
 })
 }
 
+const handlePortfolioMaturity =(id_) => {
+    dispatch(SET_LOADER(true))
+  dispatch(updatePortfolio({id: id_, portfolio: {
+    matured: true
+  }})).then(result => {
+  if(updatePortfolio.fulfilled.match(result)) {
+    setToggleMaturedModal(false)
+    toast(result.payload?.message || "maturity activated", {type: "success"})
+        dispatch(SET_LOADER(false))
+
+    dispatch(getClient(id))
+  }else{
+    console.log(result.payload)
+    toast(result.payload?.message || "failed to activate")
+        dispatch(SET_LOADER(false))
+
+
+  }
+})
+}
+
 
 const handleSelectedPortfolio = (portfolio) => {
   setSelectedPortfolio(portfolio)
@@ -96,7 +119,7 @@ const handleSelectedPortfolio = (portfolio) => {
     <button onClick={() => navigate(-1)}><FaArrowLeft /> </button>
     </div>
     
-    <div className="max-  mt-20 mx-auto p-6 bg-white shadow-md rounded-2xl space-y-2 md:space-y-6">
+    <div className="mt-5 mx-auto p-6 bg-white shadow-md rounded-2xl space-y-2 md:space-y-6">
       <div className="flex md:flex-row flex-col justify-between items-center border-b pb-4">
        
         <div className='bg-red- text-center  md:text-left'>
@@ -190,12 +213,24 @@ const handleSelectedPortfolio = (portfolio) => {
             {user?.portfolios?.map((portfolio, idx) => (
               <li
                 key={idx}
-                className="flex justify-between items-center p-3 gap-1 bg-gray-100 rounded-md"
+                className="flex justify-between relative items-center p-3 gap-1 bg-gray-100 rounded-md"
               >
+                {portfolio?.status === "inactive" && (
+                <div className='absolute flex text-center justify-center items-center top-0 left-0 w-full h-full bg-gray-600/30'>
+                  <span className='text-white font-semibold text-sm'>
+                    {portfolio?.status}
+
+                  </span>
+                </div>
+                )
+                }
                 <p>
                    <span className='block'>{portfolio?.name}</span>
                     <span className='block font-semibold text-green-900'>{
                       moneyFormat(portfolio?.amount)}</span>
+                      <span>
+                         {portfolio?.status}
+                      </span>
                   
                 </p>
                 <div className='gap-4 flex-1 flex justify-center items-center'>
@@ -211,16 +246,46 @@ const handleSelectedPortfolio = (portfolio) => {
                 </button>
                
                 </div>
+                <div>
+                  <button
+                  onClick={() => {
+                    setSelectedPortfolio(portfolio);
+                    setToggleMaturedModal(true);
+                  }}
+                   className={`${portfolio?.matured ? "text-purple-500" : "text-gray-500"} font-semibold text-xs block text-center"`}>{portfolio?.matured ? "matured" : "not matured"}</button>
+                   <span className="font-semibold block text-center text-gray-800">
+                    {moneyFormat(portfolio.investment_interest)}
+                  </span>
+
+                </div>
                
-                <span className="font-semibold text-gray-800">
-                  {moneyFormat(portfolio.investment_interest)}
-                </span>
+               
               </li>
             ))}
           </ul>
         </div>
       </div>
     </div>
+
+    <AppModal open={toggleMaturedModal} onClose={() => {setToggleMaturedModal(false)}} title="User Portfolio">
+      <div>
+         <h2 className="text-2xl  font-bold text-center text-purple-600">Active Maturity</h2>
+      <h2 className="text-lg font-bold">Portfolio Details</h2>
+      <p className="text-sm text-gray-500 uppercase">{selectedPortfolio?.portfolio_name}</p>
+      <p className="text-sm text-gray-500 uppercase"><span className='text-green font-semibold'>Mature:</span>  <span className={`${selectedPortfolio?.matured ? "text-green-600" : "text-gray-600"}`}> {selectedPortfolio?.matured ? "True" : "false"} </span> </p>
+  
+
+
+     
+      <div className='gap-4 flex my-6'>
+        <button
+        onClick={()=> setToggleMaturedModal(false)} className="bg-gray-500 text-white px-4 py-2 rounded-md">Cancel</button>
+        <button
+        onClick={()=> handlePortfolioMaturity(selectedPortfolio.id)}
+        className=" bg-purple-500 md:px-3  text-white px-4 py-2 rounded-md">Activate</button>
+      </div>
+    </div>
+    </AppModal>
 
     <AppModal open={toggleCompoundModal} onClose={() => {}} title="User Portfolio">
       <div>

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { listUsers } from '../../../redux/actions/users';
@@ -40,7 +40,7 @@ const TransactionDeposits = () => {
 
       <div className='mt-10 flex justify-between'>
         <button onClick={() => navigate(-1)}><FaArrowLeft /> </button>
-        <h2 className='my-10 text-4xl font-semibold'>Deposit Transactions</h2>
+        <h2 className='my-2 text-4xl font-semibold'>Deposit Transactions</h2>
 
         </div>
         
@@ -70,7 +70,12 @@ const TransactionDeposits = () => {
            </tr> : transactions.map((transaction, index) => (
             <tr key={transaction.id} className="hover:bg-gray-50">
               <td className="p-3 border-b">{index + 1}</td>
-              <td className="p-3 border-b font-medium">{transaction.user.email}</td> 
+              <td className="p-3 border-b font-medium">
+                <NavLink className={"text-blue-700 hover:underline"} to={`/admin/client/${transaction.user.id}`}>
+                {transaction.user.email}
+                </NavLink>
+                
+                </td> 
                <td className="p-3 border-b font-medium">{transaction.coin_type}</td>
               <td className="p-3 border-b text-green-600 font-semibold">
                 {moneyFormat(transaction?.amount)}

@@ -80,7 +80,7 @@ const ResetPasswordToken = () => {
                     <p className='text-red'>{error && message}</p>
             
                     <div className="form-block">
-                    <button className="button button-icon" type="submit"><i className="fa fa-angle-right"></i>Request Password</button>
+                    <button className="button button-icon" type="submit"><i className="fa fa-angle-right"></i>Confirm Token</button>
                     </div>
                     <div className="divider"></div>
                 </form>

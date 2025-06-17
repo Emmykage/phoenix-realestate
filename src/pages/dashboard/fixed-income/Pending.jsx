@@ -5,7 +5,7 @@ import { moneyFormat } from '../../../utils/moneyFormat'
 import dateFormater from '../../../utils/dateFormat'
 
 const FixedIncomeTrasactions = () => {
-  const {fixedtransactions, loading} = useSelector(state => state.transactions)
+  const {transactions, loading} = useSelector(state => state.transactions)
 
 
  
@@ -29,8 +29,8 @@ const FixedIncomeTrasactions = () => {
               
         <tbody>
         {loading ? (<td colSpan={6}><Loader/></td>) :
-          fixedtransactions?.length < 1 ? <td colSpan={6} className='py-6 font-medium text-center'> No Transaction Available </td> : 
-          fixedtransactions.map(transaction => (
+          transactions?.length < 1 ? <td colSpan={6} className='py-6 font-medium text-center'> No Transaction Available </td> : 
+          transactions.map(transaction => (
               <tr className=''>
 
               <td className='py-2 px-4 text-dark text-sm font-medium uppercase'>{transaction.coin_type}</td>

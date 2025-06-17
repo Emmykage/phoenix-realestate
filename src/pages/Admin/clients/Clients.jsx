@@ -24,7 +24,7 @@ const Clients = () => {
 
       <div className='mt-10 flex justify-between'>
         <button onClick={() => navigate(-1)}><FaArrowLeft /> </button>
-        <h2 className='my-10 text-4xl font-semibold'>Users and Clients</h2>
+        <h2 className='my-2 text-4xl font-semibold'>Users and Clients</h2>
 
       </div>
         

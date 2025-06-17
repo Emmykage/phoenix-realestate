@@ -46,8 +46,6 @@ const NewPassword = () => {
         });
     }
 
-
-    console.log(formInput)
   return (
     <div>
         <SubHeader tittle={"New Password"} link={"/"}  />
@@ -79,7 +77,7 @@ const NewPassword = () => {
                     <p className='text-red'>{error && message}</p>
             
                     <div className="form-block">
-                    <button className="button button-icon" type="submit"><i className="fa fa-angle-right"></i>Request Password</button>
+                    <button className="button button-icon" type="submit"><i className="fa fa-angle-right"></i>Save Password</button>
                     </div>
                     <div className="divider"></div>
                 </form>

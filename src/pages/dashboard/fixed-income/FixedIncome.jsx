@@ -13,19 +13,17 @@ const FixedIncomeDashboard = () => {
   const {investments} = useSelector(state => state.investment)
     const {portfolio} = useSelector(state => state.portfolios)
         const {wallet, loading} = useSelector(state => state.wallet)
-    console.log(portfolio)
-  const dispatch = useDispatch()
-  const data = {
-    investmentValue: 25000,
-    roi: 0.03, // 12%
-    earnings: 3000,
-    duration: "3 Months",
-    lastUpdated: "2025-05-08",
-  };
+
+        const dispatch = useDispatch()
+        const data = {
+          investmentValue: 25000,
+          roi: 0.03, // 12%
+          earnings: 3000,
+          duration: "3 Months",
+          lastUpdated: "2025-05-08",
+        };
 
   const handleReinvest = () => {
-    console.log("first")
-
     dispatch(SET_LOADER(true))
     dispatch(userReinvest(portfolio.id)).then(result => {
       if(userReinvest.fulfilled.match(result)){
@@ -109,11 +107,14 @@ const FixedIncomeDashboard = () => {
               </div>
             </div>
 
-           { portfolio?.maturity && 
-            <button  disabled={!portfolio?.maturity}
+           { 
+            <button  
+            // disabled={!portfolio?.maturity}
                 onClick={()=> handleReinvest()}
                 
-                className={`${portfolio?.maturity ? "bg-blue-500" : "bg-gray-400"}  group relative text-white px-4 py-2 rounded-lg`}>
+                className={`
+                  ${portfolio?.matured ? "bg-blue-500" : "bg-gray-400"}
+                  group relative text-white px-4 py-2 font-semibold rounded-lg`}>
                   Re-Invest
               </button>
            }  

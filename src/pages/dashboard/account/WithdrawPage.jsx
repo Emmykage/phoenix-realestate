@@ -112,7 +112,7 @@ const AccountWithdraw = () => {
             </div>
             <div>
                 <label className='block m-1' htmlFor="amount">Enter Amount</label>
-                <input type="number" className='border'  placeholder='Enter Amount in GBP' name="amount" onChange={(e)=> setFormInput({...formInput, amount: e.target.value})} required min={500}/>
+                <input type="number" className='border'  placeholder='Enter Amount in GBP' name="amount" onChange={(e)=> setFormInput({...formInput, amount: e.target.value})} required min={100}/>
             </div>
 
             {selectedValue?.name === "bank" &&
