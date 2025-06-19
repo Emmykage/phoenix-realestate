@@ -77,6 +77,7 @@ const FixedIncomeDashboard = () => {
   const inactiveLink = "text-gray-600 px-5 py-1 text-sm font-medium"
 
 
+  console.log(portfolio)
 
   return (
     <div className="min-h-screen bg-gray00 text-black py-6">
@@ -84,9 +85,9 @@ const FixedIncomeDashboard = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               <div className="bg-white rounded-2xl p-5 shadow-md">
-                <h2 className="text-sm text-gray-400 mb-1">Withdrawable</h2>
-                <p className="text-2xl font-semibold">{moneyFormat(portfolio?.total_investment ?? 0)}</p>
-                <p className="text-xs text-gray-600 font-medium">{moneyFormat(portfolio?.virtual_total_investment ?? 0)}</p>
+                <h2 className="text-sm text-gray-400 mb-1">comulated Returns</h2>
+                <p className="text-2xl font-semibold">{moneyFormat(portfolio?.comulated_return ?? 0)}</p>
+                {/* <p className="text-xs text-gray-600 font-medium">{moneyFormat(portfolio?.virtual_total_investment ?? 0)}</p> */}
                 
               </div>
                <div className="bg-white rounded-2xl p-5 shadow-md">

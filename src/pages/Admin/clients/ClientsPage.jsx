@@ -325,7 +325,7 @@ const handleSelectedPortfolio = (portfolio) => {
 
       <div>
         <p className='my-5 font-semibold text-green-600'>Generate {selectedPortfolio?.portfolio_name === "fixed income" ? "3%" : "5%" } Interest</p>
-            <label htmlFor="interest" className='font-medium text-gray-600'>Enter Interest</label>
+            <label htmlFor="interest" className='font-medium text-gray-600'>Enter Interest Rate(%) </label>
         <input id='interst' type="number" value={interest} onChange={(e) => setInterest(e.target.value)} placeholder='Specify interest' className='border'/>
       </div>
       <div className='gap-4 flex my-6'>
