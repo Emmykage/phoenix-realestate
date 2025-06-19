@@ -88,6 +88,7 @@ import PageNotFound from './pages/PageNotFound';
 import ForgotPassword from './pages/auth/forgotPassword';
 import ResetPasswordToken from './pages/auth/ResetPasswordToken';
 import NewPassword from './pages/auth/NewPassword';
+import WithdrawTrasactions from './pages/dashboard/account/Transactions';
 
 function App() {
   const {loader} = useSelector(state => state.app)
@@ -127,6 +128,8 @@ function App() {
      <Route path='account' element={<DashboardHomeAccount/>}>
         <Route path='deposit' element={<AccountDeposit/>}/>
         <Route path='identity' element={<Identity/>}/>
+        <Route path='transactions' element={<WithdrawTrasactions/>}/>
+        
         <Route path='profile' element={<AccountProfile/>}/>
         <Route path='' index element={<ProfileAccount/>}/>
         <Route path='payment-method' element={<PaymentMethods/>}/>

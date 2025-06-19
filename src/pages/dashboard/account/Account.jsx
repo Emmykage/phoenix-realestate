@@ -22,7 +22,7 @@ const DashboardHomeAccount = () => {
       <ul className='flex mt-8 overflow-x-auto'>
         <li className='relative border-b py-2'><NavLink className={({isActive}) => (isActive ? activeLink : inactiveLink)} to="/dashboard/account/identity">ACCOUNT</NavLink> </li>
         <li className='relative border-b py-2'><NavLink className={({isActive}) => (isActive ? activeLink : inactiveLink)} to="/dashboard/account/withdrawal">WITHDRAW</NavLink> </li>
-        {/* <li className='relative border-b py-2'><NavLink className={({isActive}) => (isActive ? activeLink : inactiveLink)} to="/dashboard/account/deposit">DEPOSIT</NavLink> </li> */}
+        <li className='relative border-b py-2'><NavLink className={({isActive}) => (isActive ? activeLink : inactiveLink)} to="/dashboard/account/transactions">TRANSACTION</NavLink> </li>
       </ul>
       <div className='min-h-96 shadow my-4 p-4 bg-white rounded-md'>
         <Outlet/>

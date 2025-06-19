@@ -128,10 +128,8 @@ const FixedIncomeDashboard = () => {
             </ul>
 
            <div className='min-h-96 shadow my-4 p-1 bg-white rounded-md'>
-                         <Outlet/>
-           
-           
-                 </div>
+             <Outlet/>
+          </div>
     </div>
   );
 };

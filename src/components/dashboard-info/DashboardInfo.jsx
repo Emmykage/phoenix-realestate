@@ -5,7 +5,6 @@ const DashboardInfo = ({
     user 
 }) => {
 
-  console.log(user)
   return (
     <div className='w-full bg-white shadow-md p-4 md:p-8 flex flex-col md:flex-row items-center gap-4 rounded-md'>
     <div className='md:h-28 md:w-28 h-20 w-20 shadow-md rounded-full border'>

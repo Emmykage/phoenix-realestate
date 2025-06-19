@@ -95,9 +95,9 @@ const getTransaction = createAsyncThunk("wallet/GET_TRANSACTION", async(id, {rej
 } )
 export const getUserTransactions = createAsyncThunk("transactions/GET_USER_TRANSACTIONS", async(params, {rejectWithValue}) => {
     const refinedParams = new URLSearchParams(params).toString()
-    
+    console.log(params, refinedParams)
     try {
-        const response = await fetch(`${baseUrl}transactions/user${refinedParams}`, {
+        const response = await fetch(`${baseUrl}transactions/user?${refinedParams}`, {
             method: "GET",
             headers: {
                 'Content-type': 'application/json',
