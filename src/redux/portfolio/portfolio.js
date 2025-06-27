@@ -88,7 +88,7 @@ const portfolioSlice = createSlice({
       status: 'succrssfully purchased an asset',
       loading: false,
       error: false,
-      new_portfolio: action.payload,
+      portfolio: action.payload.data,
     }),
     [createPortfolio.rejected]: (state) => ({
       ...state,

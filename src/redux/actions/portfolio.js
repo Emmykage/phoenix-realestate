@@ -4,19 +4,34 @@ import { token } from '../../utils/localStore';
 
 
 
-const createPortfolio = createAsyncThunk('portfolio/create_portfolios', async (data) => {
-  const response = await fetch(`${baseUrl}portfolios`, {
-    method: 'POST',
+const createPortfolio = createAsyncThunk('portfolio/CREATE_POTFOLIO', async (id, {rejectWithValue}) => {
+  
+  try {
+
+  const response = await fetch(`${baseUrl}portfolios/${id}/re_create`, {
+    method: 'GET',
     headers: {
       'Content-type': 'application/json',
       Authorization: `Bearer ${token()}`,
 
     },
-    body: JSON.stringify(data),
 
-  }).then((res) => res.json());
+  })
 
-  return response;
+  const result = await response.json();
+
+  if (!response.ok) {
+   return rejectWithValue({message: result?.message || 'Failed to create portfolio'});
+  }
+  
+
+  return result;
+
+      
+  } catch (error) {
+     return  rejectWithValue({message: error?.message || 'Something went wrong: Failed to create portfolio'});
+
+  }
 });
 
 export const updatePortfolio = createAsyncThunk('portfolio/UPDATE_PORTFOLIO', async ({id, portfolio}) => {

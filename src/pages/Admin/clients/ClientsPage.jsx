@@ -98,7 +98,6 @@ const handlePortfolioMaturity =(id_) => {
 
     dispatch(getClient(id))
   }else{
-    console.log(result.payload)
     toast(result.payload?.message || "failed to activate")
         dispatch(SET_LOADER(false))
 
@@ -215,9 +214,9 @@ const handleSelectedPortfolio = (portfolio) => {
                 key={idx}
                 className="flex justify-between relative items-center p-3 gap-1 bg-gray-100 rounded-md"
               >
-                {portfolio?.status === "inactive" && (
+                {(portfolio?.status === "inactive" || portfolio?.status ===  "withdrawn") && (
                 <div className='absolute flex text-center justify-center items-center top-0 left-0 w-full h-full bg-gray-600/30'>
-                  <span className='text-white font-semibold text-sm'>
+                  <span className='text- font-semibold text-lg text-red-600 rounded-lg bg-gray-900/60 px-4 py-2'>
                     {portfolio?.status}
 
                   </span>

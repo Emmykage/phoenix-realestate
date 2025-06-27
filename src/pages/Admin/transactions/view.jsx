@@ -61,7 +61,6 @@ const TransactionViewer = () => {
   if (!transaction) return <div className="text-center text-gray-500">No transaction selected</div>;
 
   const { amount, type, status, bonus, receipt_url, transaction_type, created_at } = transaction;
-    console.log(bonus)
   return (
     <div className="max-w-6xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-2xl font-sans">
       <h2 className="text-xl font-bold mb-4 text-center">Transaction Details</h2>

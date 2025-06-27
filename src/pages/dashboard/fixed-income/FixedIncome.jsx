@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import UserButton from "../components/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { getInvestments } from "../../../redux/actions/investment";
 import { moneyFormat } from "../../../utils/moneyFormat";
-import { getInvestmentPortfolio, updatePortfolio, userReinvest } from "../../../redux/actions/portfolio";
+import { createPortfolio, getInvestmentPortfolio, updatePortfolio, userReinvest } from "../../../redux/actions/portfolio";
 import { getAccountProfile } from "../../../redux/actions/accountProfile";
 import { SET_LOADER } from "../../../redux/app/app";
 import { toast } from "react-toastify";
@@ -28,14 +27,27 @@ const FixedIncomeDashboard = () => {
     dispatch(userReinvest(portfolio.id)).then(result => {
       if(userReinvest.fulfilled.match(result)){
         dispatch(SET_LOADER(false))
-        console.log("re-invest suceess=>", result.payload.message)
-                toast(result.payload.message, {type: "success"})
+        toast(result.payload.message, {type: "success"})
 
       }
       else{
         toast(result.payload.message, {type: "error"})
-                dispatch(SET_LOADER(false))
+        dispatch(SET_LOADER(false))
 
+      }
+    })
+  }
+
+    const handleWithdrawProfit = () => {
+    dispatch(SET_LOADER(true))
+    dispatch(createPortfolio(portfolio?.id)).then(result => {
+      if(createPortfolio.fulfilled.match(result)){
+        dispatch(SET_LOADER(false))
+        toast(result.payload.message, {type: "success"})
+      }
+      else{
+        toast(result.payload.message, {type: "error"})
+        dispatch(SET_LOADER(false))
       }
     })
   }
@@ -108,6 +120,8 @@ const FixedIncomeDashboard = () => {
               </div>
             </div>
 
+            <div className="flex  gap-4 items-center mb-6">
+              
            { 
             <button  
             // disabled={!portfolio?.maturity}
@@ -119,6 +133,21 @@ const FixedIncomeDashboard = () => {
                   Re-Invest
               </button>
            }  
+
+              { 
+            <button  
+            // disabled={!portfolio?.maturity}
+                onClick={()=> handleWithdrawProfit()}
+                
+                className={`
+                  ${portfolio?.matured ? "bg-blue-500" : "bg-gray-400"}
+                  group relative text-white px-4 py-2 font-semibold rounded-lg`}>
+                  Withdraw Profit
+                               </button>
+           }  
+           
+            </div>
+
 
        <ul className='flex mt-8 overflow-x-auto'>
               <li className='relative border-b py-2'><NavLink className={({isActive}) => (isActive ? activeLink : inactiveLink)} to="/dashboard/fixed-income/transactions">TRANSACTIONS</NavLink> </li>
