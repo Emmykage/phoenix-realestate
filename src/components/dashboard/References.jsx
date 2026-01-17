@@ -2,7 +2,7 @@ import React from 'react'
 
 const References = () => {
   return (
-    <div>References</div>
+    <h3 className='text-center'>References</h3>
   )
 }
 

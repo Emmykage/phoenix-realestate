@@ -1,90 +1,84 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getPosts } from '../redux/actions/blog'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 const Footer = () => {
-  return (
-    <div>
-        <section class="module cta newsletter">
-  <div class="container">
-	<div class="row">
-		<div class="col-lg-7 col-md-7">
-			<h3>Sign up for our <strong>newsletter.</strong></h3>
-			<p>Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-		</div>
-		<div class="col-lg-5 col-md-5">
-			<form method="post" id="newsletter-form" class="newsletter-form">
-				<input type="email" placeholder="Your email..." />
-				<button type="submit" form="newsletter-form"><i class="fa fa-send"></i></button>
-			</form>
-		</div>
-	</div>
-  </div>
-</section>
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+          const {posts: press} = useSelector(state => state.blog_posts)
+      useEffect(()=> {
+        dispatch(getPosts())
+      },[])
 
-<footer id="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-4 widget footer-widget">
-                <a class="footer-logo" href="index.html"><img src="images/logo-white.png" alt="Homely" /></a>
-                <p>Lorem ipsum dolor amet, consectetur adipiscing elit. Sed ut 
-                purus eget nunc ut dignissim cursus at a nisl. Mauris vitae 
-                turpis quis eros egestas tempor sit amet a arcu. Duis egestas 
-                hendrerit diam.</p>
-                <div class="divider"></div>
-                <ul class="social-icons circle">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
+  return (
+    <div className='px-0'>   
+
+        <footer id="footer" className='px-4 overflow-' >
+            <div className="container m-auto">
+                <div className="grid md:grid-cols-4 gap-6">
+                    <div className="">
+                        <NavLink className="footer-logo" to="/">
+                            <img src={"/logos/16.png"} alt="Homely" /></NavLink>
+                        <p>PHEONIX PRECAST LTD (11231705) is a Manchester & London-based, proven property investment specialist with a 12-year history in the property investment business.</p>
+                        <div className="divider"></div>
+                        <ul className="social-icons circle">
+                            <li><a href="#" className='text-gray-200'><i className="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i className="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i className="fa fa-twitter"></i></a></li>
+                          
+                        </ul>
+                    </div>
+                    <div className="">
+                        <h4 className='mb-7'><span>From the Blog</span> <img src="images/divider-half.png" alt="" /></h4>
+                        <ul>
+                            {press?.slice(0,2).map(item => (
+                                <li className='cursor-pointer mb-4'>
+                                    <p><h3 className='  overflow-hidden text-ellipsis text-xl text-white'>{item?.title}</h3></p>
+                                    <p className='hover:text-theme-pry'>{item?.description}<br/> 
+                                    <NavLink className={"text-base text-alt"} to={`/press-release/${item.id}`}>Read More</NavLink></p>
+                                    <div className="clear"></div>
+                                </li>
+                            ))}
+                          
+
+                        </ul>
+                    </div>
+                    <div className="">
+                     <h4 className='mb-7'><span>Get In Touch</span> <img src="images/divider-half.png" alt="" /></h4>
+                        <p>2-3 Little Burrow, <br/>
+                        Welwyn Garden City, Herts, AL7 4SP<br/>
+                        England
+                        </p>
+                        <p>
+                        <b className="open-hours">Open Hours</b><br/>
+                        Mondy - Friday: 9 am - 5 pm<br/>
+                        Saturday: 9 am - 1pm<br/>
+                        Sunday: Closed
+                        </p>
+                        <p className="footer-phone"><i className="fa fa-phone icon"></i> +44757800966</p> 
+                    </div>
+                    <div className=" newsletter">
+                        <h4 className='mb-7'><span>Newsletter</span> <img src="images/divider-half.png" alt="" /></h4>
+                        <p><b>Subscribe to our newsletter!</b> 
+                        <br/>
+                        Stay tuned for exclusive investment opportunities, real estate insights, and early access to new property listings.
+                         {/* We’re excited to have you on this journey toward building lasting wealth through smart property investments. */}
+                         </p>
+                         <form className="subscribe-form bg-re px-0" method="post" action="#">
+                            <input type="text" name="email" value="Your email" />
+                            <input type="submit" name="submit" value="SEND" className="button small alt w-full" />
+                        </form> 
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-4 widget footer-widget from-the-blog">
-                <h4><span>From the Blog</span> <img src="images/divider-half.png" alt="" /></h4>
-                <ul>
-                    <li>
-                      <a href="#"><h3>Open House at 123 Smith Drive</h3></a>
-                      <p>Vel fermentum ipsum. Quis molestie odio. Interdum et...<br/> <a href="#">Read More</a></p>
-                      <div class="clear"></div>
-                    </li>
-                     <li>
-                        <a href="#"><h3>Open House at 123 Smith Drive</h3></a>
-                        <p>Vel fermentum ipsum. Quis molestie odio. Interdum et...<br/> <a href="#">Read More</a></p>
-                        <div class="clear"></div>
-                      </li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-4 widget footer-widget">
-                <h4><span>Get In Touch</span> <img src="images/divider-half.png" alt="" /></h4>
-                <p>123 Smith Drive<br/>
-                Annapolis, MD 21012<br/>
-                United States
-                </p>
-                <p>
-                <b class="open-hours">Open Hours</b><br/>
-                Mondy - Friday: 9 am - 5 pm<br/>
-                Saturday: 9 am - 1pm<br/>
-                Sunday: Closed
-                </p>
-                <p class="footer-phone"><i class="fa fa-phone icon"></i> (123) 456-7890</p>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-12 widget footer-widget newsletter">
-                <h4><span>Newsletter</span> <img src="images/divider-half.png" alt="" /></h4>
-                <p><b>Subscribe to our newsletter!</b> Vel lorem ipsum. Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
-                <form class="subscribe-form" method="post" action="#">
-                    <input type="text" name="email" value="Your email" />
-                    <input type="submit" name="submit" value="SEND" class="button small alt" />
-                </form>
+        </footer>
+
+         <div className="bottom-bar">
+            <div className="container m-auto">
+            © 2013-2025| <a href="http://rypecreative.com/" target="_blank">Pheonix Precast Limited -</a>  |  All Rights Reserved
             </div>
         </div>
-    </div>
-</footer>
-
-<div class="bottom-bar">
-    <div class="container">
-    © 2017  |  Homely - A theme by <a href="http://rypecreative.com/" target="_blank">Rype Creative</a>  |  All Rights Reserved
-    </div>
-</div>
     </div>
   )
 }

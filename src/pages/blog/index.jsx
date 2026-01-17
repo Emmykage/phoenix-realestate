@@ -1,0 +1,90 @@
+import React, { useEffect } from 'react'
+import { blogs } from '../../assets/blogData/data'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
+import Banner from '../../components/heroBanner/Banner'
+import './blog.scss'
+import Nav from '../../components/nav/Nav'
+import usePageReset from '../../hooks/usePageRest'
+import { useDispatch, useSelector } from 'react-redux'
+import { getPosts } from '../../redux/actions/blog'
+import SubHeader from '../../components/subHeader/SubHeader'
+
+const Blog = () => {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+      const {posts: press} = useSelector(state => state.blog_posts)
+  useEffect(()=> {
+    dispatch(getPosts())
+  },[])
+
+  const pressBlogs = [...press]
+  usePageReset()
+
+  return (
+    <div>
+        <Nav/>
+        <SubHeader tittle="Press Release"/>
+        <section className='md:px-5 px-3 bg-white py-10'>
+          <div className="blog max-w-[1600px] m-auto gap-6 grid md:grid-cols-blogLayout">
+          <div className='relative shadow border p-2 border-gray-300/60 rounded'>
+
+            <div className=' bg-white  sticky top-20 left-0 px-2'>
+            <h3 className='text-center text-xl my-5'>Recent Post</h3>
+           
+              {pressBlogs.slice(0, 4).map(blog => (
+                <div onClick={()=> navigate(`/press-release/${blog.id}`)} key={blog.id} className='flex gap-4 my-4 cursor-pointer border-b border-gray-400/30 pb-4'>
+                <div className='w-20 shrink-0 h-20 rounded-md overflow-hidden'>  
+                  <img src={blog.img_url} alt="" className='w-full h-full' />
+                </div>
+                <div>
+                  <h6 className='font-medium'>{blog?.description?.substring(0, 20)}</h6>
+                  <p className='font-semibold text-gray-600'>{blog?.title?.substring(0, 40)}...</p>
+                </div>
+              </div>
+              ))}
+           
+
+            </div>
+            </div>
+            <div className='shadow'>
+              <h3 className='text-2xl font-semibold text-center'> Stay Updated with the Latest Real Estate  Insights           </h3>
+              <p className='text-center max-w-4xl m-auto font-semibold my-2'>Our blog delivers expert advice, market updates, and the latest insights on real estate trends across the UK and UAE. Stay informed to make smarter property investment and development decisions         </p>
+              <div className='grid gap-5 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 px-5 my-10'>
+                {pressBlogs.map(blog => (
+                  <>
+                   <div  className=' rounded overflow-hidden'>              
+                      <div onClick={()=> navigate(`/press-release/${blog.id}`)} className='w-full h-72 bg-gray-100 blg-img overflow-hidden'>
+                        <img src={blog.image ?? blog?.img_url} alt="" className='w-full h-full object-cover cursor-pointer' />
+                      </div>
+
+                        <div className='border-l-4 my-7 px-4 py-2 border-b-4 border-alt'>
+                          <NavLink to={`/press-release/${blog.id}`} className='text-base font-semibold text-gray-600 hover:text-alt'>
+                            {blog.title}
+                          </NavLink>
+
+                        
+                        </div>
+
+                        {/* <p className=' px-1 text-sm my-5 text-gray-600'> Rental /  0 Comments</p> */}
+
+                        <div className='px-2'> 
+                          <p>{blog?.description?.substring(0,150)}...</p>              
+                        </div>
+
+        
+              </div>  
+                  </>
+                ))}
+             
+     
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+    </div>
+  )
+}
+
+export default Blog

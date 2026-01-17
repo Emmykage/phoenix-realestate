@@ -3,8 +3,8 @@ import Wallet from './Wallet'
 
 const Main = () => {
   return (
-    <>      
-      <Wallet/>
+    <>
+      <Wallet />
     </>
   )
 }

@@ -1,0 +1,11 @@
+.blg-img{
+    img{
+        transition: all 0.2s ease-in-out;
+    }
+    &:hover{
+        img{
+            transform: scale(1.2);
+        }
+
+    }
+}

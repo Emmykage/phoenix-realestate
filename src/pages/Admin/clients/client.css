@@ -1,0 +1,49 @@
+.client-profile {
+  margin: 3rem;
+}
+
+.profile-top {
+  background-color: aliceblue;
+  text-align: center;
+  min-height: 3rem;
+}
+
+.profile-top img {
+  width: 200px;
+  height: 200px;
+  background: blue;
+  margin: auto;
+}
+
+.profile-detail ul {
+  display: block;
+}
+
+.profile-detail ul li {
+  /* box-shadow: var(--box-shadow); */
+  border: 1px solid var(--color-light);
+  margin: 0.6rem 0;
+  padding: 1.2rem 0.6rem;
+
+  /* dis */
+}
+
+.profile-detail ul li span {
+  flex-basis: 50%;
+  font-weight: 400;
+
+  /* background-color: red; */
+}
+
+.profile hr {
+  background-color: grey;
+  height: 1px;
+}
+
+.asset-info span {
+  flex-basis: 50%;
+}
+
+.client {
+
+}

@@ -1,0 +1,42 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {
+      opacity: {
+        none: "0%"
+      },
+      gridTemplateColumns: {
+        blogLayout: "300px auto",
+        propDetails: "2fr 1fr",
+      },
+      width: {
+        container: "1500px"
+      },
+      colors: {
+
+        light: {
+          100: "F9FAFB",
+          200: "#FAF8F5",
+          300: "#F5F7FA",
+          400: "#F0F4F8",
+          500: "FFFDF9"
+
+        },
+
+        "primary": "#2f3b69",
+       alt: " rgb(255 204 0)",
+       "theme-alt": "#68b4e8",
+       "theme-black": "#21252f",
+       "theme-pry": "#48a0dc", 
+      //  "theme-pry": "#48a0dc",
+      "theme-dark": "#21252f"
+       
+      }
+    },
+  },
+  plugins: [],
+}
+

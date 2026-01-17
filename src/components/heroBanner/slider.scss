@@ -1,0 +1,190 @@
+
+.hero-banner{
+    overflow: hidden;
+    position: relative;
+    .slider{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 500%;
+        height: 100%;
+        animation: slideAnime 20s linear infinite;
+
+ 
+
+    .slide{
+
+
+    &.slide-1{
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url('../../assets/images/home/office-img.avif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+    &.slide-2{
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url('../../assets/images/home/office-img-1.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+    &.slide-3{
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url('../../assets/images/home/office-img-2.avif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+    &.slide-4{
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url('../../assets/images/home/office-img-3.avif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+    &.slide-5{
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url('../../assets/images/home/office-img-4.avif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+}
+}
+}
+
+.service-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.959), rgba(0, 0, 0, 0.9022)), url('../../assets/images//services//service-banner.png');
+
+&.service{
+    background: linear-gradient(rgba(0, 0, 0, 0.959), rgba(0, 0, 0, 0.9022)), url('../../assets/images//services//service-banner.png');
+
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    img{
+        box-shadow: 0 10px 0 rgba(0, 0, 0, 0.479);
+        position: relative;
+        background-color: green;
+        &::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            display: block;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+    }
+}
+&.about{
+    background: linear-gradient(rgba(0, 0, 0, 0.959), rgba(0, 0, 0, 0.9022)), url('../../assets/images//services//service-banner.png');
+
+    // background-repeat: no-repeat;
+    // background-position: right;
+    img{
+        box-shadow: 0 10px 0 rgba(0, 0, 0, 0.479);
+        position: relative;
+        background-color: green;
+        &::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            display: block;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+    }
+}
+
+&.contact{
+    background: linear-gradient(rgba(0, 0, 0, 0.959), rgba(0, 0, 0, 0.9022)), url('../../assets/images//services//service-banner.png');
+
+    // background-repeat: no-repeat;
+    // background-position: right;
+    img{
+        box-shadow: 0 10px 0 rgba(0, 0, 0, 0.479);
+        position: relative;
+        background-color: green;
+        &::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            display: block;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+    }
+}
+&.appointment{
+    background: linear-gradient(rgba(0, 0, 0, 0.959), rgba(0, 0, 0, 0.9022)), url('../../assets/images//services//service-banner.png');
+
+    // background-repeat: no-repeat;
+    // background-position: right;
+    img{
+        box-shadow: 0 10px 0 rgba(0, 0, 0, 0.479);
+        position: relative;
+        background-color: green;
+        &::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            display: block;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+    }
+
+}
+
+}
+
+@keyframes slideAnime {
+    0%{
+        left: 0;
+    }
+    20%{
+        left: 0
+
+    }
+    25%{
+        left: -100%
+
+    }
+    45%{
+        left: -100%
+
+    }
+    50%{
+        left: -200%
+
+    }
+    70%{
+        left: -200%
+
+    }
+    75%{
+        left: -300%
+
+    }
+    95%{
+        left: -300%
+
+    }
+    100%{
+        left: -400%
+
+    }
+    
+}
